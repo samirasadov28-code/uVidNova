@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://uvidnova.org/schemas/unit_cost.schema.json",
+  "title": "uVidNova Unit Cost Table",
+  "description": "Array of unit cost entries by asset_type. Used in the deterministic cost formula: cost = unit_cost × physical_quantity × factors.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "asset_type",
+      "physical_unit",
+      "usd_per_unit_low",
+      "usd_per_unit_central",
+      "usd_per_unit_high",
+      "source_code",
+      "vintage_year"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "asset_type": {
+        "type": "string",
+        "pattern": "^[a-z_]+\\.[a-z_]+$",
+        "description": "Must match an entry in data/taxonomy.json."
+      },
+      "physical_unit": {
+        "type": "string",
+        "description": "Unit of the physical quantity (m2, MW, km, beds, units, etc.)."
+      },
+      "usd_per_unit_low": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "Low end of unit cost in USD."
+      },
+      "usd_per_unit_central": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "Central (best estimate) unit cost in USD."
+      },
+      "usd_per_unit_high": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "High end of unit cost in USD."
+      },
+      "source_code": {
+        "type": "string",
+        "enum": ["RDNA3", "KSE", "EBRD_CASE", "EU_FACILITY", "EIB_UA", "MIGA", "OCHA", "BELLINGCAT", "ACLED", "eRECOVERY"],
+        "description": "Primary authoritative source for this cost estimate."
+      },
+      "source_url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "vintage_year": {
+        "type": "integer",
+        "minimum": 2020,
+        "maximum": 2030,
+        "description": "Year of the source data. Used for inflation-adjustment flag."
+      },
+      "notes": {
+        "type": "string",
+        "description": "Any scope qualifications, regional basis, or methodology notes."
+      },
+      "heritage_premium_multiplier_low": {
+        "type": "number",
+        "minimum": 1,
+        "description": "For heritage assets: low end of conservation-premium multiplier (1.8x–3.0x). Only present for heritage asset types."
+      },
+      "heritage_premium_multiplier_high": {
+        "type": "number",
+        "minimum": 1,
+        "description": "For heritage assets: high end of conservation-premium multiplier. Only present for heritage asset types."
+      }
+    }
+  }
+}

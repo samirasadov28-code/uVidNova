@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://uvidnova.org/schemas/financing_template.schema.json",
+  "title": "uVidNova Financing Template",
+  "description": "Array of standard capital-stack templates keyed by sector × reconstruction path. grant_pct + concessional_pct + public_equity_pct + private_pct must equal 100.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "sector",
+      "path",
+      "grant_pct",
+      "concessional_pct",
+      "public_equity_pct",
+      "private_pct",
+      "rationale",
+      "key_instruments"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "sector": {
+        "type": "string",
+        "enum": [
+          "energy_and_power",
+          "healthcare",
+          "education",
+          "residential",
+          "heritage_and_culture",
+          "transport_and_ports",
+          "water_and_sanitation",
+          "industrial_and_agricultural",
+          "public_administration"
+        ]
+      },
+      "path": {
+        "type": "string",
+        "enum": ["baseline", "code_compliant", "build_back_better"]
+      },
+      "grant_pct": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100
+      },
+      "concessional_pct": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100
+      },
+      "public_equity_pct": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100
+      },
+      "private_pct": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 100
+      },
+      "rationale": {
+        "type": "string",
+        "description": "Brief explanation of why this stack is appropriate for this sector × path combination."
+      },
+      "key_instruments": {
+        "type": "array",
+        "description": "Named financing instruments applicable (EU Facility, EBRD, EIB, MIGA, etc.).",
+        "items": { "type": "string" }
+      },
+      "notes": {
+        "type": "string"
+      }
+    }
+  }
+}

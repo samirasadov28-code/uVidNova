@@ -1,0 +1,273 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://uvidnova.org/schemas/asset.schema.json",
+  "title": "uVidNova Asset Record",
+  "description": "A single damaged or destroyed asset in the uVidNova reconstruction-finance atlas. Every numeric field traces to a named source. Financing-stack percentages must sum to 100 (enforced by validate-all.js).",
+  "type": "object",
+  "required": [
+    "asset_id",
+    "name",
+    "location",
+    "asset_type",
+    "sector",
+    "damage",
+    "wartime_status",
+    "physical_specs",
+    "cost_paths",
+    "financing_structures",
+    "donor_pathway",
+    "tags",
+    "last_reviewed",
+    "version"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "asset_id": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]*$",
+      "description": "Unique stable identifier. Format: LOCATION_OR_NAME_YYYY_MM_DD (first incident date)."
+    },
+    "name": {
+      "type": "object",
+      "required": ["en", "uk"],
+      "additionalProperties": false,
+      "properties": {
+        "en": { "type": "string", "minLength": 1 },
+        "uk": { "type": "string", "minLength": 1 }
+      }
+    },
+    "location": {
+      "type": "object",
+      "required": ["lat", "lon", "oblast", "settlement"],
+      "additionalProperties": false,
+      "properties": {
+        "lat": { "type": "number", "minimum": 44.0, "maximum": 53.0, "description": "Decimal degrees, 4 dp." },
+        "lon": { "type": "number", "minimum": 22.0, "maximum": 41.0, "description": "Decimal degrees, 4 dp." },
+        "oblast": { "type": "string", "minLength": 1 },
+        "raion": { "type": ["string", "null"] },
+        "settlement": { "type": "string", "minLength": 1 },
+        "address_en": { "type": "string" }
+      }
+    },
+    "asset_type": {
+      "type": "string",
+      "pattern": "^[a-z_]+\\.[a-z_]+$",
+      "description": "Must match an entry in data/taxonomy.json. Format: sector_key.subtype_key."
+    },
+    "sector": {
+      "type": "string",
+      "enum": [
+        "energy_and_power",
+        "healthcare",
+        "education",
+        "residential",
+        "heritage_and_culture",
+        "transport_and_ports",
+        "water_and_sanitation",
+        "industrial_and_agricultural",
+        "public_administration"
+      ]
+    },
+    "damage": {
+      "type": "object",
+      "required": ["incident_date", "incident_type", "destruction_level", "re_damage_count", "verified_by", "evidence_sources"],
+      "additionalProperties": false,
+      "properties": {
+        "incident_date": {
+          "type": "string",
+          "format": "date",
+          "description": "ISO 8601. Date of first (or primary) damaging incident."
+        },
+        "incident_type": {
+          "type": "string",
+          "enum": [
+            "missile_strike",
+            "aerial_bomb",
+            "artillery_shelling",
+            "drone_strike",
+            "ground_combat",
+            "sabotage",
+            "deliberate_demolition",
+            "fire",
+            "multiple",
+            "unknown"
+          ]
+        },
+        "destruction_level": {
+          "type": "string",
+          "enum": ["light", "moderate", "severe", "destroyed"],
+          "description": "Drives destruction_factor in cost formula (§6 of CLAUDE.md)."
+        },
+        "re_damage_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of subsequent damaging incidents after the first. Yellow-flag in UI if >= 2."
+        },
+        "verified_by": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": ["KSE", "UN_OCHA", "UA_MoH", "UA_MoE", "UA_MoD", "BELLINGCAT", "CIR", "ACLED", "eRECOVERY", "EBRD", "EU", "REUTERS", "AP", "BBC", "KYIV_INDEPENDENT", "UA_GOV", "HUMAN_RIGHTS_WATCH", "AMNESTY"]
+          }
+        },
+        "evidence_sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["title", "url"],
+            "additionalProperties": false,
+            "properties": {
+              "title": { "type": "string" },
+              "url": { "type": "string", "format": "uri" },
+              "source_code": {
+                "type": "string",
+                "enum": ["RDNA3", "KSE", "EBRD_CASE", "EU_FACILITY", "EIB_UA", "MIGA", "OCHA", "BELLINGCAT", "ACLED", "eRECOVERY"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "wartime_status": {
+      "type": "object",
+      "required": ["lifecycle", "rebuildability", "de_risking", "sovereign_risk_band"],
+      "additionalProperties": false,
+      "properties": {
+        "lifecycle": {
+          "type": "string",
+          "enum": ["documented", "assessed", "in_pipeline", "funded", "under_reconstruction", "complete"]
+        },
+        "rebuildability": {
+          "type": "string",
+          "enum": ["rebuildable", "frontline_adjacent", "occupied", "recently_liberated"]
+        },
+        "de_risking": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["MIGA_WAR", "UA_GUARANTEE", "UKEF", "BPIFRANCE_AE", "ALLIANZ_TRADE", "EU_FACILITY_FIRST_LOSS", "EBRD_RSF", "NONE"]
+          }
+        },
+        "sovereign_risk_band": {
+          "type": "string",
+          "enum": ["low", "elevated", "severe"]
+        }
+      }
+    },
+    "physical_specs": {
+      "type": "object",
+      "description": "Asset physical measurements. Each value wrapped as {value, source, ref}. source must indicate provenance.",
+      "additionalProperties": {
+        "$ref": "#/$defs/sourced_quantity"
+      }
+    },
+    "cost_paths": {
+      "type": "object",
+      "required": ["baseline", "code_compliant", "build_back_better"],
+      "additionalProperties": false,
+      "properties": {
+        "pending_methodology": {
+          "type": "boolean",
+          "description": "Set true when unit_cost_table.json is not yet populated for this asset_type. Values are placeholders."
+        },
+        "baseline": { "$ref": "#/$defs/cost_triple" },
+        "code_compliant": { "$ref": "#/$defs/cost_triple" },
+        "build_back_better": { "$ref": "#/$defs/cost_triple_bbb" }
+      }
+    },
+    "financing_structures": {
+      "type": "object",
+      "required": ["baseline", "code_compliant", "build_back_better"],
+      "additionalProperties": false,
+      "description": "Capital-stack templates. grant_pct + concessional_pct + public_equity_pct + private_pct must equal 100 (enforced by validate-all.js).",
+      "properties": {
+        "baseline": { "$ref": "#/$defs/financing_stack" },
+        "code_compliant": { "$ref": "#/$defs/financing_stack" },
+        "build_back_better": { "$ref": "#/$defs/financing_stack" }
+      }
+    },
+    "donor_pathway": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "united24_url": { "type": ["string", "null"], "format": "uri" },
+        "mriya_url": { "type": ["string", "null"], "format": "uri" },
+        "vetted_ngos": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date of last editorial review."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    }
+  },
+  "$defs": {
+    "sourced_quantity": {
+      "type": "object",
+      "required": ["value", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "value": { "type": "number" },
+        "unit": { "type": "string" },
+        "source": {
+          "type": "string",
+          "enum": ["extracted_from_source", "estimated_from_photo", "pending_data", "modelled"]
+        },
+        "ref": { "type": "string" }
+      }
+    },
+    "cost_triple": {
+      "type": "object",
+      "required": ["low_usd_m", "central_usd_m", "high_usd_m"],
+      "additionalProperties": false,
+      "properties": {
+        "low_usd_m": { "type": "number", "minimum": 0 },
+        "central_usd_m": { "type": "number", "minimum": 0 },
+        "high_usd_m": { "type": "number", "minimum": 0 }
+      }
+    },
+    "cost_triple_bbb": {
+      "type": "object",
+      "required": ["low_usd_m", "central_usd_m", "high_usd_m"],
+      "additionalProperties": false,
+      "properties": {
+        "low_usd_m": { "type": "number", "minimum": 0 },
+        "central_usd_m": { "type": "number", "minimum": 0 },
+        "high_usd_m": { "type": "number", "minimum": 0 },
+        "tech_overlays": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "financing_stack": {
+      "type": "object",
+      "required": ["grant_pct", "concessional_pct", "public_equity_pct", "private_pct", "comparable_projects"],
+      "additionalProperties": false,
+      "properties": {
+        "grant_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "concessional_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "public_equity_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "private_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "rationale": { "type": "string" },
+        "comparable_projects": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}
