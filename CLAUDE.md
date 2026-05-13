@@ -340,6 +340,9 @@ Yellow-flag in UI: any asset with `re_damage_count >= 2`. This is an investor-in
 - Performance pass: Lighthouse ≥90 on every category.
 - Soft launch to a vetted seed list: 3–5 KSE / EBRD analysts, 3–5 journalists at FT / Reuters / Kyiv Independent, diaspora capital contacts. Iterate on direct feedback before broader release.
 
+### Module B (post-v1) — Weekly automated refresh
+After v1 ships, the platform gains a weekly automated job that surfaces (a) re-strike candidates on existing assets, (b) lifecycle progression events, (c) candidate new assets, (d) candidate new financing precedents, and (e) source-freshness failures — all delivered as a draft PR for human review. **Nothing auto-merges.** Specification lives at `WEEKLY_REFRESH_SPEC.md` (repo root). Do not start Module B until Weekend 6 is complete and the v1 register is stable.
+
 ---
 
 ## 10. Editorial and content rules
@@ -401,6 +404,7 @@ Full bibliography lives in `docs/sources.md`.
 - Do not include occupied or frontline-adjacent assets in the default view. They are documented as "pipeline only" with the filter off by default.
 - Do not pursue KSE Institute partnership before the platform launches. Ship clean, then pitch with a working artefact.
 - Do not incorporate as a legal entity yet. Personal project until product-market fit with institutional users is demonstrated.
+- Do not start Module B (weekly automated refresh) until v1 is shipped and stable. See `WEEKLY_REFRESH_SPEC.md` for the full spec when ready.
 
 ---
 
