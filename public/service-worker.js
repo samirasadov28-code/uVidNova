@@ -1,0 +1,90 @@
+/**
+ * uVidNova Service Worker
+ * Provides offline capability for the map shell and cached asset data.
+ * Strategy: cache-first for static assets; network-first for data files.
+ */
+
+const CACHE_VERSION = 'uvidnova-v1';
+const STATIC_CACHE = `${CACHE_VERSION}-static`;
+const DATA_CACHE = `${CACHE_VERSION}-data`;
+
+const STATIC_ASSETS = [
+  '/',
+  '/index.html',
+  '/asset.html',
+  '/about.html',
+  '/css/app.css',
+  '/js/app.js',
+  '/js/asset-view.js',
+  '/js/data-loader.js',
+  '/js/filters.js',
+  '/js/cost-calculator.js',
+  '/manifest.webmanifest'
+];
+
+const DATA_ASSETS = [
+  '/data/assets/index.json',
+  '/data/geo/ua_oblasts.geojson'
+];
+
+// ── Install ────────────────────────────────────────────────────────────────────
+self.addEventListener('install', event => {
+  event.waitUntil(
+    Promise.all([
+      caches.open(STATIC_CACHE).then(cache => cache.addAll(STATIC_ASSETS)),
+      caches.open(DATA_CACHE).then(cache => cache.addAll(DATA_ASSETS))
+    ]).then(() => self.skipWaiting())
+  );
+});
+
+// ── Activate ──────────────────────────────────────────────────────────────────
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys
+        .filter(k => k !== STATIC_CACHE && k !== DATA_CACHE)
+        .map(k => caches.delete(k)))
+    ).then(() => self.clients.claim())
+  );
+});
+
+// ── Fetch ─────────────────────────────────────────────────────────────────────
+self.addEventListener('fetch', event => {
+  const { request } = event;
+  const url = new URL(request.url);
+
+  // Don't intercept non-GET, external, or function requests
+  if (request.method !== 'GET') return;
+  if (!url.origin.includes(self.location.origin)) return;
+  if (url.pathname.startsWith('/.netlify/')) return;
+
+  // Data files: network-first (fresh data when available, cache fallback)
+  if (url.pathname.startsWith('/data/')) {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(DATA_CACHE).then(cache => cache.put(request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(request))
+    );
+    return;
+  }
+
+  // Static assets: cache-first
+  event.respondWith(
+    caches.match(request).then(cached => {
+      if (cached) return cached;
+      return fetch(request).then(response => {
+        if (response.ok) {
+          const clone = response.clone();
+          caches.open(STATIC_CACHE).then(cache => cache.put(request, clone));
+        }
+        return response;
+      });
+    })
+  );
+});

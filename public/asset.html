@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asset — uVidNova</title>
+  <meta name="description" content="Asset-level reconstruction finance profile.">
+  <meta name="theme-color" content="#1a3a6b">
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/assets/logo_192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/assets/logo_192.png">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body class="asset-page">
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="wordmark" aria-label="uVidNova home">
+        <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36">
+        <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
+      </a>
+      <p class="tagline">Ukraine Reconstruction Finance Atlas</p>
+      <nav class="site-nav">
+        <a href="/">← Map</a>
+        <a href="/about.html">Methodology</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="asset-main" id="assetMain">
+    <div class="loading-state" id="loadingState">
+      <p>Loading asset…</p>
+    </div>
+    <div class="error-state" id="errorState" hidden>
+      <p id="errorMessage">Asset not found.</p>
+      <a href="/">← Return to map</a>
+    </div>
+    <article class="asset-record" id="assetRecord" hidden></article>
+  </main>
+
+  <script type="module" src="/js/asset-view.js"></script>
+</body>
+</html>

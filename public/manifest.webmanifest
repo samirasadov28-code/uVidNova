@@ -1,0 +1,27 @@
+{
+  "name": "uVidNova — Ukraine Reconstruction Finance Atlas",
+  "short_name": "uVidNova",
+  "description": "Asset-level, project-finance-grade reconstruction opportunities in Ukraine.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a3a6b",
+  "theme_color": "#1a3a6b",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/assets/logo_192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/logo_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "categories": ["finance", "government", "news"],
+  "orientation": "any"
+}
