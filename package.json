@@ -1,0 +1,17 @@
+{
+  "name": "uvidnova",
+  "version": "1.0.0",
+  "description": "uVidNova — the live reconstruction-finance atlas of Ukraine",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate-all.js"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
