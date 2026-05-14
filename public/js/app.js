@@ -108,6 +108,37 @@ let oblastInfoData = null;
 
 // ── Oblast info panel ─────────────────────────────────────────────────────────
 
+// Explicit mapping from GeoJSON feature name → oblasts_info name_en
+// Needed because GeoJSON uses short names; oblasts_info uses "Oblast" suffix
+const OBLAST_INFO_MAP = {
+  'Kyiv':          'Kyiv Oblast',
+  'Kyiv City':     'Kyiv City',
+  'Crimea':        'Crimea (Annexed)',
+  'Donetsk':       'Donetsk Oblast',
+  'Luhansk':       'Luhansk Oblast',
+  'Dnipropetrovsk':'Dnipropetrovsk Oblast',
+  'Zaporizhzhia':  'Zaporizhzhia Oblast',
+  'Kharkiv':       'Kharkiv Oblast',
+  'Lviv':          'Lviv Oblast',
+  'Odesa':         'Odesa Oblast',
+  'Mykolaiv':      'Mykolaiv Oblast',
+  'Kherson':       'Kherson Oblast',
+  'Zakarpattia':   'Zakarpattia Oblast',
+  'Khmelnytskyi':  'Khmelnytskyi Oblast',
+  'Ivano-Frankivsk':'Ivano-Frankivsk Oblast',
+  'Vinnytsia':     'Vinnytsia Oblast',
+  'Chernihiv':     'Chernihiv Oblast',
+  'Chernivtsi':    'Chernivtsi Oblast',
+  'Cherkasy':      'Cherkasy Oblast',
+  'Poltava':       'Poltava Oblast',
+  'Sumy':          'Sumy Oblast',
+  'Zhytomyr':      'Zhytomyr Oblast',
+  'Rivne':         'Rivne Oblast',
+  'Volyn':         'Volyn Oblast',
+  'Ternopil':      'Ternopil Oblast',
+  'Kirovohrad':    'Kirovohrad Oblast',
+};
+
 async function loadOblastInfo() {
   try {
     const res = await fetch('/data/oblasts_info.json');
@@ -117,14 +148,16 @@ async function loadOblastInfo() {
 
 function findOblastInfo(featureName) {
   if (!oblastInfoData) return null;
+  const infoName = OBLAST_INFO_MAP[featureName];
+  if (infoName) {
+    const match = oblastInfoData.oblasts.find(o => o.name_en === infoName);
+    if (match) return match;
+  }
+  // Fuzzy fallback
   const lower = featureName.toLowerCase();
   return oblastInfoData.oblasts.find(o =>
-    o.name_en.toLowerCase().includes(lower) ||
-    lower.includes(o.name_en.toLowerCase().split(' ')[0].toLowerCase()) ||
-    o.name_uk.toLowerCase().includes(lower)
-  ) ?? oblastInfoData.oblasts.find(o =>
-    featureName.toLowerCase().replace(' oblast', '').trim().length > 3 &&
-    o.name_en.toLowerCase().includes(featureName.toLowerCase().replace(' oblast', '').trim())
+    o.name_en.toLowerCase().startsWith(lower) ||
+    o.name_en.toLowerCase().replace(' oblast', '') === lower
   ) ?? null;
 }
 
@@ -176,29 +209,37 @@ function showOblastPanel(info, featureName) {
 
 // ── Oblast boundary layer ─────────────────────────────────────────────────────
 
+function oblastStyle(feature) {
+  const isCrimea = feature.properties?.name === 'Crimea';
+  return {
+    color:       '#4a7fc4',
+    weight:      1.2,
+    fillColor:   isCrimea ? '#162d5a' : '#1e3d7a',
+    fillOpacity: isCrimea ? 0.55 : 0.70,
+    dashArray:   isCrimea ? '5, 4' : null,
+  };
+}
+
 async function addOblastLayer() {
   try {
     const geojson = await loadOblastsGeoJSON();
     oblastLayer = L.geoJSON(geojson, {
-      style: {
-        color:       '#1a3a6b',
-        weight:      1.5,
-        fillColor:   '#cdd9f0',
-        fillOpacity: 0.18
-      },
+      style: oblastStyle,
       onEachFeature(feature, layer) {
         const name = feature.properties?.name ?? '';
-        if (name) layer.bindTooltip(name, { permanent: false, sticky: true, className: 'oblast-tooltip' });
+        const isCrimea = name === 'Crimea';
+        const tooltipText = isCrimea ? 'Crimea (occupied — UA territory)' : name;
+        if (name) layer.bindTooltip(tooltipText, { permanent: false, sticky: true, className: 'oblast-tooltip' });
 
         layer.on('mouseover', function () {
-          this.setStyle({ fillOpacity: 0.38, weight: 2.5 });
+          this.setStyle({ fillOpacity: 0.90, weight: 2 });
         });
         layer.on('mouseout', function () {
           oblastLayer.resetStyle(this);
         });
         layer.on('click', function () {
           oblastLayer.resetStyle();
-          this.setStyle({ fillOpacity: 0.45, weight: 2.5, color: '#0a2a5e' });
+          this.setStyle({ fillOpacity: 0.92, weight: 2.5, color: '#7eb3e8' });
           const info = findOblastInfo(name);
           showOblastPanel(info ?? { name_en: name, name_uk: name }, name);
         });
@@ -506,17 +547,17 @@ async function init() {
   initLangToggle(document.getElementById('langToggle'));
   document.addEventListener('langChanged', applyTranslations);
 
-  // Initialise Leaflet map (inside init so any L.* error stays contained)
+  // Initialise Leaflet map — no tile layer; dark navy background via CSS
   map = L.map('map', {
-    center:           [48.4, 31.5],
-    zoom:             6,
-    zoomControl:      true,
-    attributionControl: true
+    center:             [48.8, 31.5],
+    zoom:               6,
+    minZoom:            5,
+    maxZoom:            12,
+    zoomControl:        true,
+    attributionControl: false,
+    maxBounds:          [[43.5, 21.5], [53.5, 40.5]],
+    maxBoundsViscosity: 0.85,
   });
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    maxZoom: 18
-  }).addTo(map);
 
   try {
     const [assets] = await Promise.all([
