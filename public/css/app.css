@@ -2784,3 +2784,319 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
 .gs-arch-note { font-size: 0.7rem; color: rgba(255,255,255,0.5); }
 .gs-capital-note { font-size: 0.7rem; color: rgba(255,255,255,0.45); margin: 0.5rem 0 0; }
 .gs-arch-prompt { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-style: italic; margin: 1rem 0; text-align: center; }
+
+/* ── Trust page ──────────────────────────────────────────────────────────── */
+.trust-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  width: 100%;
+}
+
+/* Overview section */
+.trust-hero {
+  margin-bottom: 2.5rem;
+}
+.trust-hero-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--colour-navy);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+.trust-hero-sub {
+  font-size: 0.92rem;
+  color: var(--colour-text-muted);
+  max-width: 780px;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+.trust-stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.trust-stat-card {
+  background: var(--colour-surface);
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  box-shadow: var(--shadow-sm);
+}
+.trust-stat-card.highlight {
+  border-color: var(--colour-gold);
+  background: linear-gradient(135deg, #fff9ee 0%, #fff 100%);
+}
+.tsc-value {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--colour-navy);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.tsc-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--colour-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.tsc-note {
+  font-size: 0.72rem;
+  color: var(--colour-text-muted);
+  margin-top: 0.2rem;
+}
+
+/* Section headings */
+.trust-section {
+  background: var(--colour-surface);
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  margin-bottom: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+.trust-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--colour-navy);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--colour-border);
+}
+.trust-section-desc {
+  font-size: 0.85rem;
+  color: var(--colour-text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.55;
+}
+
+/* Portfolio builder layout */
+.trust-builder-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .trust-builder-layout { grid-template-columns: 1fr; }
+}
+
+/* Inputs column */
+.trust-inputs-col { display: flex; flex-direction: column; gap: 1.25rem; }
+.trust-input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.trust-input-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--colour-navy);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.trust-radio-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.trust-radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--colour-border);
+  background: var(--colour-bg);
+  transition: border-color 0.12s, background 0.12s;
+}
+.trust-radio-option:has(input:checked) {
+  border-color: var(--colour-navy);
+  background: #eef2f9;
+}
+.trust-radio-option input { accent-color: var(--colour-navy); }
+.trust-slider-wrap { display: flex; flex-direction: column; gap: 0.4rem; }
+.trust-slider {
+  width: 100%;
+  accent-color: var(--colour-navy);
+  cursor: pointer;
+}
+.trust-slider-val {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--colour-navy);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Comparison table */
+.trust-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.trust-compare-table th {
+  background: #f0f4fb;
+  color: var(--colour-navy);
+  font-weight: 700;
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  border: 1px solid var(--colour-border);
+  font-size: 0.8rem;
+}
+.trust-compare-table th.col-25 { background: #eef5f0; color: #2c7a4e; }
+.trust-compare-table th.col-4  { background: #eef2fb; color: var(--colour-navy); }
+.trust-compare-table th.col-5  { background: #fef6e8; color: #8a5a00; }
+.trust-compare-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--colour-border);
+  vertical-align: top;
+  font-variant-numeric: tabular-nums;
+}
+.trust-compare-table td.perpetual {
+  color: var(--colour-grant);
+  font-weight: 600;
+}
+.trust-compare-table tr:nth-child(even) td { background: #f9fafc; }
+.trust-row-label {
+  font-weight: 600;
+  color: var(--colour-text);
+  white-space: nowrap;
+}
+.trust-highlight-val {
+  font-weight: 700;
+  color: var(--colour-navy);
+}
+
+/* 50-year trajectory chart */
+.trust-chart-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 0.75rem;
+}
+.trust-chart-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.trust-chart-legend {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+}
+.trust-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.trust-legend-swatch {
+  display: inline-block;
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+}
+/* SVG chart animation */
+@keyframes trust-draw {
+  from { stroke-dashoffset: 4000; }
+  to   { stroke-dashoffset: 0; }
+}
+.trust-series {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 4000;
+  animation: trust-draw 0.8s ease-out forwards;
+}
+.trust-series-2  { stroke: #1a3a6b; animation-delay: 0ms; }
+.trust-series-4  { stroke: #f0a500; animation-delay: 80ms; }
+.trust-series-5  { stroke: #e67e22; animation-delay: 160ms; }
+
+/* Trust footnote in asset page */
+.trust-footnote {
+  font-size: 0.78rem;
+  color: var(--colour-text-muted);
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  background: #f8f9fc;
+  border-left: 3px solid var(--colour-navy);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.trust-footnote a { color: var(--colour-navy-light); }
+
+/* BBB+Trust column in financing table */
+.financing-card.bbb-trust {
+  border-top: 3px solid var(--colour-gold);
+}
+.bbb-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #8a5a00;
+  background: #fef6e4;
+  border: 1px solid #f0c060;
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  margin-bottom: 0.5rem;
+}
+.trust-annual-chip {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2c7a4e;
+  background: #eef7f2;
+  border: 1px solid #b8dcc8;
+  border-radius: var(--radius-sm);
+  padding: 0.1rem 0.45rem;
+  margin-left: 0.3rem;
+}
+
+/* Finance wizard Trust toggle */
+.fw-trust-toggle-row {
+  margin-top: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  background: #f8f6fd;
+  border: 1px solid #d8c8f0;
+  border-radius: var(--radius-sm);
+}
+.fw-trust-mode-btns {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--colour-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  width: fit-content;
+  margin-bottom: 0.5rem;
+}
+.fw-trust-mode-btn {
+  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  padding: 0.3rem 0.75rem;
+  border: none;
+  background: var(--colour-bg);
+  color: var(--colour-text-muted);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+  border-right: 1px solid var(--colour-border);
+}
+.fw-trust-mode-btn:last-child { border-right: none; }
+.fw-trust-mode-btn.active {
+  background: var(--colour-navy);
+  color: #fff;
+  font-weight: 600;
+}
+.fw-trust-computed {
+  font-size: 0.82rem;
+  color: var(--colour-text);
+}
+.fw-trust-computed strong { color: var(--colour-navy); }
+.fw-trust-note {
+  font-size: 0.75rem;
+  color: var(--colour-text-muted);
+  margin-top: 0.4rem;
+  font-style: italic;
+}
