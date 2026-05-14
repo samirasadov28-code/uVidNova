@@ -27,7 +27,7 @@ if (!/^[A-Z][A-Z0-9_]*$/.test(assetId)) {
   process.exit(1);
 }
 
-const outPath = join(root, 'data', 'assets', `${assetId}.json`);
+const outPath = join(root, 'public', 'data', 'assets', `${assetId}.json`);
 if (existsSync(outPath)) {
   console.error(`ERROR: ${outPath} already exists. Will not overwrite.`);
   process.exit(1);
@@ -147,7 +147,7 @@ console.log('Disclaimer reminder: every figure must trace to a named source (RDN
 updateAssetsIndex();
 
 function updateAssetsIndex() {
-  const indexPath = join(root, 'data', 'assets', 'index.json');
+  const indexPath = join(root, 'public', 'data', 'assets', 'index.json');
   let index = { assets: [] };
   if (existsSync(indexPath)) {
     try {
@@ -158,6 +158,6 @@ function updateAssetsIndex() {
     index.assets.push(assetId);
     index.assets.sort();
     writeFileSync(indexPath, JSON.stringify(index, null, 2) + '\n', 'utf8');
-    console.log(`Updated: data/assets/index.json`);
+    console.log(`Updated: public/data/assets/index.json`);
   }
 }

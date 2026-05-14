@@ -3,14 +3,14 @@ name: Validate Asset Data
 on:
   push:
     paths:
-      - 'data/assets/**'
-      - 'data/taxonomy.json'
+      - 'public/data/assets/**'
+      - 'public/data/taxonomy.json'
       - 'schemas/**'
       - 'scripts/validate-all.js'
   pull_request:
     paths:
-      - 'data/assets/**'
-      - 'data/taxonomy.json'
+      - 'public/data/assets/**'
+      - 'public/data/taxonomy.json'
       - 'schemas/**'
       - 'scripts/validate-all.js'
 
@@ -37,11 +37,11 @@ jobs:
 
       - name: Validate unit_cost_table.json (if present)
         run: |
-          if [ -f data/unit_cost_table.json ]; then
+          if [ -f public/data/unit_cost_table.json ]; then
             npx ajv validate \
               --spec=draft2020 \
               -s schemas/unit_cost.schema.json \
-              -d data/unit_cost_table.json \
+              -d public/data/unit_cost_table.json \
               --errors=text
             echo "unit_cost_table.json: PASS"
           else
@@ -50,11 +50,11 @@ jobs:
 
       - name: Validate financing_templates.json (if present)
         run: |
-          if [ -f data/financing_templates.json ]; then
+          if [ -f public/data/financing_templates.json ]; then
             npx ajv validate \
               --spec=draft2020 \
               -s schemas/financing_template.schema.json \
-              -d data/financing_templates.json \
+              -d public/data/financing_templates.json \
               --errors=text
             echo "financing_templates.json: PASS"
           else
@@ -63,11 +63,11 @@ jobs:
 
       - name: Validate precedents.json (if present)
         run: |
-          if [ -f data/precedents.json ]; then
+          if [ -f public/data/precedents.json ]; then
             npx ajv validate \
               --spec=draft2020 \
               -s schemas/precedent.schema.json \
-              -d data/precedents.json \
+              -d public/data/precedents.json \
               --errors=text
             echo "precedents.json: PASS"
           else

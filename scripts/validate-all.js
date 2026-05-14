@@ -53,14 +53,14 @@ function checkAssetTypeInTaxonomy(record, taxonomy) {
 }
 
 // ── Load taxonomy ─────────────────────────────────────────────────────────────
-const taxonomyPath = join(root, 'data', 'taxonomy.json');
+const taxonomyPath = join(root, 'public', 'data', 'taxonomy.json');
 let taxonomy = null;
 if (existsSync(taxonomyPath)) {
   taxonomy = JSON.parse(readFileSync(taxonomyPath, 'utf8'));
 }
 
 // ── Scan assets directory ─────────────────────────────────────────────────────
-const assetsDir = join(root, 'data', 'assets');
+const assetsDir = join(root, 'public', 'data', 'assets');
 if (!existsSync(assetsDir)) {
   console.error('ERROR: data/assets/ directory not found.');
   process.exit(1);

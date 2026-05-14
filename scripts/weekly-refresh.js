@@ -197,10 +197,10 @@ async function main() {
   log(`Starting weekly refresh (dry-run: ${DRY_RUN})`);
 
   // Load index
-  const indexData = loadJSON('data/assets/index.json');
+  const indexData = loadJSON('public/data/assets/index.json');
   const assetIds  = indexData.assets ?? [];
   const assets    = assetIds.map(id => {
-    try { return loadJSON(`data/assets/${id}.json`); }
+    try { return loadJSON(`public/data/assets/${id}.json`); }
     catch { return null; }
   }).filter(Boolean);
 

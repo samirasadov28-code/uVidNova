@@ -32,10 +32,10 @@ function loadJson(relPath) {
   return JSON.parse(readFileSync(p, 'utf8'));
 }
 
-const unitCostTable     = loadJson('data/unit_cost_table.json');
-const regionalMultipliers = loadJson('data/regional_multipliers.json');
-const pathMultipliers   = loadJson('data/path_multipliers.json');
-const destructionFactors = loadJson('data/destruction_factors.json');
+const unitCostTable     = loadJson('public/data/unit_cost_table.json');
+const regionalMultipliers = loadJson('public/data/regional_multipliers.json');
+const pathMultipliers   = loadJson('public/data/path_multipliers.json');
+const destructionFactors = loadJson('public/data/destruction_factors.json');
 
 // ── Index unit costs by asset_type ────────────────────────────────────────────
 const unitCostIndex = {};
@@ -95,7 +95,7 @@ function computeTriple(uc, qty, destructionLevel, oblast, path, contingency) {
 }
 
 // ── Process each asset ────────────────────────────────────────────────────────
-const assetsDir = join(root, 'data', 'assets');
+const assetsDir = join(root, 'public', 'data', 'assets');
 let files = readdirSync(assetsDir)
   .filter(f => f.endsWith('.json') && f !== 'index.json')
   .sort();
