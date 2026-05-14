@@ -1,0 +1,8 @@
+{
+  "_source": "CLAUDE.md §6 — Deterministic cost methodology",
+  "_note": "Destruction factor ranges drive the low/high spread of cost_paths. Central = midpoint.",
+  "light":     { "low": 0.10, "high": 0.25 },
+  "moderate":  { "low": 0.30, "high": 0.55 },
+  "severe":    { "low": 0.60, "high": 0.85 },
+  "destroyed": { "low": 0.95, "high": 1.10 }
+}
