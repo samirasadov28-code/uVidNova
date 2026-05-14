@@ -13,6 +13,7 @@ import {
 } from './filters.js';
 import { computeAggregation, renderAggregation } from './aggregation.js';
 import { getLang, getName, initLangToggle, applyTranslations, t } from './lang.js';
+import { openFinanceWizard } from './finance-wizard.js';
 
 // ── Marker configuration ───────────────────────────────────────────────────────
 
@@ -1064,3 +1065,4 @@ init();
 // Expose stubs for inline onclick handlers
 window._appWarToggle   = toggleWarMode;
 window._appSetMapView  = setMapView;
+window._appFinance     = () => openFinanceWizard(allAssets);

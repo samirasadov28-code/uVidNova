@@ -248,6 +248,8 @@
   function uvToggleWarMode() { if (window._appWarToggle) window._appWarToggle(); }
   // Map view switch — stub; app.js overwrites window._appSetMapView after module loads
   function uvSetMapView(view) { if (window._appSetMapView) window._appSetMapView(view); }
+  // Finance wizard — stub; app.js overwrites window._appFinance after module loads
+  function uvOpenFinance() { if (window._appFinance) window._appFinance(); }
   // Force reload (version bar button)
   function uvForceReload() {
     var btn = document.getElementById('forceReloadBtn');
@@ -407,6 +409,15 @@
     </span>
     <button class="war-mode-btn" id="warModeBtn" onclick="uvToggleWarMode()" title="Toggle war view">⚔ War view</button>
   </div>
+
+  <!-- ── Finance It floating button ───────────────────────────────────────── -->
+  <button class="fab fab-finance" id="financeBtn" onclick="uvOpenFinance()" aria-label="Open Finance It wizard" title="Structure financing for reconstruction projects">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line x1="12" y1="1" x2="12" y2="23"/>
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+    </svg>
+    <span>Finance It</span>
+  </button>
 
   <!-- ── Feedback floating button ──────────────────────────────────────────── -->
   <button class="fab fab-feedback" id="feedbackBtn" onclick="uvOpenFeedback()" aria-label="Send feedback" title="Send feedback">
