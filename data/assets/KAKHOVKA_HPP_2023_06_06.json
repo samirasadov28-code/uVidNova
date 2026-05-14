@@ -19,7 +19,11 @@
     "incident_type": "deliberate_demolition",
     "destruction_level": "destroyed",
     "re_damage_count": 0,
-    "verified_by": ["UN_OCHA", "KSE", "BELLINGCAT"],
+    "verified_by": [
+      "UN_OCHA",
+      "KSE",
+      "BELLINGCAT"
+    ],
     "evidence_sources": [
       {
         "title": "UN OCHA Ukraine Flash Update #50 — Kakhovka Dam Breach",
@@ -41,7 +45,10 @@
   "wartime_status": {
     "lifecycle": "assessed",
     "rebuildability": "occupied",
-    "de_risking": ["MIGA_WAR", "EU_FACILITY_FIRST_LOSS"],
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
     "sovereign_risk_band": "severe"
   },
   "physical_specs": {
@@ -71,22 +78,26 @@
     }
   },
   "cost_paths": {
-    "pending_methodology": true,
     "baseline": {
-      "low_usd_m": 580,
-      "central_usd_m": 820,
-      "high_usd_m": 1100
+      "low_usd_m": 525,
+      "central_usd_m": 1032,
+      "high_usd_m": 1538
     },
     "code_compliant": {
-      "low_usd_m": 680,
-      "central_usd_m": 960,
-      "high_usd_m": 1280
+      "low_usd_m": 604,
+      "central_usd_m": 1263,
+      "high_usd_m": 1922
     },
     "build_back_better": {
-      "low_usd_m": 800,
-      "central_usd_m": 1150,
-      "high_usd_m": 1550,
-      "tech_overlays": ["run_of_river_redesign", "fish_passage", "flexible_generation", "smart_grid_integration"]
+      "low_usd_m": 683,
+      "central_usd_m": 1572,
+      "high_usd_m": 2461,
+      "tech_overlays": [
+        "run_of_river_redesign",
+        "fish_passage",
+        "flexible_generation",
+        "smart_grid_integration"
+      ]
     }
   },
   "financing_structures": {
@@ -118,7 +129,15 @@
     "mriya_url": null,
     "vetted_ngos": []
   },
-  "tags": ["energy", "hydropower", "kherson", "dam", "deliberate_demolition", "occupied", "catastrophic"],
+  "tags": [
+    "energy",
+    "hydropower",
+    "kherson",
+    "dam",
+    "deliberate_demolition",
+    "occupied",
+    "catastrophic"
+  ],
   "last_reviewed": "2026-05-14",
   "version": "1.0.0"
 }

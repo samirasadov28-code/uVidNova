@@ -19,7 +19,11 @@
     "incident_type": "ground_combat",
     "destruction_level": "destroyed",
     "re_damage_count": 0,
-    "verified_by": ["UA_GOV", "BELLINGCAT", "KSE"],
+    "verified_by": [
+      "UA_GOV",
+      "BELLINGCAT",
+      "KSE"
+    ],
     "evidence_sources": [
       {
         "title": "Antonov Company statement on An-225 Mriya destruction",
@@ -46,7 +50,10 @@
   "wartime_status": {
     "lifecycle": "assessed",
     "rebuildability": "rebuildable",
-    "de_risking": ["UA_GUARANTEE", "MIGA_WAR"],
+    "de_risking": [
+      "UA_GUARANTEE",
+      "MIGA_WAR"
+    ],
     "sovereign_risk_band": "elevated"
   },
   "physical_specs": {
@@ -70,22 +77,25 @@
     }
   },
   "cost_paths": {
-    "pending_methodology": true,
     "baseline": {
-      "low_usd_m": 300,
-      "central_usd_m": 400,
-      "high_usd_m": 500
+      "low_usd_m": 291,
+      "central_usd_m": 610,
+      "high_usd_m": 930
     },
     "code_compliant": {
-      "low_usd_m": 350,
-      "central_usd_m": 470,
-      "high_usd_m": 600
+      "low_usd_m": 334,
+      "central_usd_m": 748,
+      "high_usd_m": 1162
     },
     "build_back_better": {
-      "low_usd_m": 500,
-      "central_usd_m": 650,
-      "high_usd_m": 850,
-      "tech_overlays": ["hydrogen_propulsion_readiness", "advanced_avionics", "composite_materials"]
+      "low_usd_m": 378,
+      "central_usd_m": 933,
+      "high_usd_m": 1488,
+      "tech_overlays": [
+        "hydrogen_propulsion_readiness",
+        "advanced_avionics",
+        "composite_materials"
+      ]
     }
   },
   "financing_structures": {
@@ -113,11 +123,20 @@
     }
   },
   "donor_pathway": {
-    "united24_url": "https://u24.gov.ua/projects/mriya",
+    "united24_url": null,
     "mriya_url": null,
     "vetted_ngos": []
   },
-  "tags": ["transport", "aircraft", "strategic", "hostomel", "kyiv", "ground_combat", "industrial_heritage", "unique_asset"],
+  "tags": [
+    "transport",
+    "aircraft",
+    "strategic",
+    "hostomel",
+    "kyiv",
+    "ground_combat",
+    "industrial_heritage",
+    "unique_asset"
+  ],
   "last_reviewed": "2026-05-14",
   "version": "1.0.0"
 }

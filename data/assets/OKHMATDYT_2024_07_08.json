@@ -19,7 +19,12 @@
     "incident_type": "missile_strike",
     "destruction_level": "severe",
     "re_damage_count": 0,
-    "verified_by": ["UN_OCHA", "UA_MoH", "KSE", "HUMAN_RIGHTS_WATCH"],
+    "verified_by": [
+      "UN_OCHA",
+      "UA_MoH",
+      "KSE",
+      "HUMAN_RIGHTS_WATCH"
+    ],
     "evidence_sources": [
       {
         "title": "UN OCHA Ukraine Flash Update — 8 July 2024 Mass Casualty Attacks",
@@ -46,7 +51,11 @@
   "wartime_status": {
     "lifecycle": "assessed",
     "rebuildability": "rebuildable",
-    "de_risking": ["MIGA_WAR", "UA_GUARANTEE", "EU_FACILITY_FIRST_LOSS"],
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
     "sovereign_risk_band": "elevated"
   },
   "physical_specs": {
@@ -70,22 +79,27 @@
     }
   },
   "cost_paths": {
-    "pending_methodology": true,
     "baseline": {
-      "low_usd_m": 38,
-      "central_usd_m": 52,
-      "high_usd_m": 68
+      "low_usd_m": 33,
+      "central_usd_m": 57,
+      "high_usd_m": 82
     },
     "code_compliant": {
-      "low_usd_m": 45,
-      "central_usd_m": 62,
-      "high_usd_m": 81
+      "low_usd_m": 38,
+      "central_usd_m": 70,
+      "high_usd_m": 102
     },
     "build_back_better": {
-      "low_usd_m": 58,
-      "central_usd_m": 78,
-      "high_usd_m": 102,
-      "tech_overlays": ["microgrid", "modular_clinical_units", "fibre", "telemedicine", "passive_building_standard"]
+      "low_usd_m": 43,
+      "central_usd_m": 87,
+      "high_usd_m": 131,
+      "tech_overlays": [
+        "microgrid",
+        "modular_clinical_units",
+        "fibre",
+        "telemedicine",
+        "passive_building_standard"
+      ]
     }
   },
   "financing_structures": {
@@ -113,11 +127,22 @@
     }
   },
   "donor_pathway": {
-    "united24_url": "https://u24.gov.ua/projects/okhmatdyt",
+    "united24_url": null,
     "mriya_url": null,
-    "vetted_ngos": ["Doctors Without Borders", "Save the Children", "UNICEF Ukraine"]
+    "vetted_ngos": [
+      "Doctors Without Borders",
+      "Save the Children",
+      "UNICEF Ukraine"
+    ]
   },
-  "tags": ["healthcare", "children", "kyiv", "missile_strike", "tertiary_hospital", "high_priority"],
+  "tags": [
+    "healthcare",
+    "children",
+    "kyiv",
+    "missile_strike",
+    "tertiary_hospital",
+    "high_priority"
+  ],
   "last_reviewed": "2026-05-14",
   "version": "1.0.0"
 }

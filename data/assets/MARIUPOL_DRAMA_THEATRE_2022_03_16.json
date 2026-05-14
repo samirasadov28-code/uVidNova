@@ -19,7 +19,12 @@
     "incident_type": "aerial_bomb",
     "destruction_level": "destroyed",
     "re_damage_count": 0,
-    "verified_by": ["UN_OCHA", "BELLINGCAT", "HUMAN_RIGHTS_WATCH", "AMNESTY"],
+    "verified_by": [
+      "UN_OCHA",
+      "BELLINGCAT",
+      "HUMAN_RIGHTS_WATCH",
+      "AMNESTY"
+    ],
     "evidence_sources": [
       {
         "title": "Amnesty International: Mariupol Theatre Strike — War Crime Investigation",
@@ -46,7 +51,9 @@
   "wartime_status": {
     "lifecycle": "assessed",
     "rebuildability": "occupied",
-    "de_risking": ["MIGA_WAR"],
+    "de_risking": [
+      "MIGA_WAR"
+    ],
     "sovereign_risk_band": "severe"
   },
   "physical_specs": {
@@ -70,22 +77,26 @@
     }
   },
   "cost_paths": {
-    "pending_methodology": true,
     "baseline": {
-      "low_usd_m": 35,
-      "central_usd_m": 52,
-      "high_usd_m": 72
+      "low_usd_m": 55,
+      "central_usd_m": 151,
+      "high_usd_m": 248
     },
     "code_compliant": {
-      "low_usd_m": 45,
-      "central_usd_m": 66,
-      "high_usd_m": 92
+      "low_usd_m": 64,
+      "central_usd_m": 187,
+      "high_usd_m": 310
     },
     "build_back_better": {
-      "low_usd_m": 80,
-      "central_usd_m": 120,
-      "high_usd_m": 170,
-      "tech_overlays": ["passive_building_standard", "cultural_heritage_bim", "fibre", "accessible_design"]
+      "low_usd_m": 72,
+      "central_usd_m": 234,
+      "high_usd_m": 396,
+      "tech_overlays": [
+        "passive_building_standard",
+        "cultural_heritage_bim",
+        "fibre",
+        "accessible_design"
+      ]
     }
   },
   "financing_structures": {
@@ -117,7 +128,15 @@
     "mriya_url": null,
     "vetted_ngos": []
   },
-  "tags": ["heritage", "theatre", "mariupol", "donetsk", "aerial_bomb", "occupied", "war_crime_documented"],
+  "tags": [
+    "heritage",
+    "theatre",
+    "mariupol",
+    "donetsk",
+    "aerial_bomb",
+    "occupied",
+    "war_crime_documented"
+  ],
   "last_reviewed": "2026-05-14",
   "version": "1.0.0"
 }

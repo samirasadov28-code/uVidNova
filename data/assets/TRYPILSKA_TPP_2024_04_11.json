@@ -19,7 +19,12 @@
     "incident_type": "missile_strike",
     "destruction_level": "destroyed",
     "re_damage_count": 0,
-    "verified_by": ["KSE", "UN_OCHA", "UA_GOV", "BELLINGCAT"],
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV",
+      "BELLINGCAT"
+    ],
     "evidence_sources": [
       {
         "title": "DTEK Energy: Trypilska TPP totally destroyed by Russian missile strikes",
@@ -46,7 +51,11 @@
   "wartime_status": {
     "lifecycle": "assessed",
     "rebuildability": "rebuildable",
-    "de_risking": ["MIGA_WAR", "EBRD_RSF", "EU_FACILITY_FIRST_LOSS"],
+    "de_risking": [
+      "MIGA_WAR",
+      "EBRD_RSF",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
     "sovereign_risk_band": "elevated"
   },
   "physical_specs": {
@@ -70,22 +79,27 @@
     }
   },
   "cost_paths": {
-    "pending_methodology": true,
     "baseline": {
-      "low_usd_m": 850,
-      "central_usd_m": 1200,
-      "high_usd_m": 1600
+      "low_usd_m": 747,
+      "central_usd_m": 1330,
+      "high_usd_m": 1913
     },
     "code_compliant": {
-      "low_usd_m": 1000,
-      "central_usd_m": 1420,
-      "high_usd_m": 1900
+      "low_usd_m": 859,
+      "central_usd_m": 1625,
+      "high_usd_m": 2391
     },
     "build_back_better": {
-      "low_usd_m": 1200,
-      "central_usd_m": 1700,
-      "high_usd_m": 2300,
-      "tech_overlays": ["combined_cycle_gas", "carbon_capture_ready", "smart_grid_integration", "grid_scale_storage", "hydrogen_readiness"]
+      "low_usd_m": 971,
+      "central_usd_m": 2016,
+      "high_usd_m": 3060,
+      "tech_overlays": [
+        "combined_cycle_gas",
+        "carbon_capture_ready",
+        "smart_grid_integration",
+        "grid_scale_storage",
+        "hydrogen_readiness"
+      ]
     }
   },
   "financing_structures": {
@@ -117,7 +131,15 @@
     "mriya_url": null,
     "vetted_ngos": []
   },
-  "tags": ["energy", "thermal_power", "dtek", "kyiv_oblast", "missile_strike", "large_scale", "grid_critical"],
+  "tags": [
+    "energy",
+    "thermal_power",
+    "dtek",
+    "kyiv_oblast",
+    "missile_strike",
+    "large_scale",
+    "grid_critical"
+  ],
   "last_reviewed": "2026-05-14",
   "version": "1.0.0"
 }
