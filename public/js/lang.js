@@ -188,11 +188,11 @@ const TRANSLATIONS = {
 };
 
 export function getLang() {
-  return localStorage.getItem('uvidnova_lang') ?? 'en';
+  try { return localStorage.getItem('uvidnova_lang') ?? 'en'; } catch { return 'en'; }
 }
 
 export function setLang(lang) {
-  localStorage.setItem('uvidnova_lang', lang);
+  try { localStorage.setItem('uvidnova_lang', lang); } catch { /* storage unavailable */ }
   document.documentElement.lang = lang;
   document.dispatchEvent(new CustomEvent('langChanged', { detail: { lang } }));
 }

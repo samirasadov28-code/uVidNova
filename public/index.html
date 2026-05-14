@@ -92,7 +92,7 @@
     if (!overlay) return;
 
     function dismiss() {
-      sessionStorage.setItem('uvidnova_landed', '1');
+      try { sessionStorage.setItem('uvidnova_landed', '1'); } catch(e) {}
       overlay.style.transition = 'opacity 0.45s ease';
       overlay.style.opacity    = '0';
       overlay.style.pointerEvents = 'none';
@@ -100,7 +100,9 @@
     }
 
     // Already visited this session — hide immediately without animation
-    if (sessionStorage.getItem('uvidnova_landed')) {
+    var alreadyLanded = false;
+    try { alreadyLanded = !!sessionStorage.getItem('uvidnova_landed'); } catch(e) {}
+    if (alreadyLanded) {
       overlay.style.display = 'none';
       return;
     }

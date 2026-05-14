@@ -364,9 +364,11 @@ if (versionLabel) versionLabel.textContent = `v${APP_VERSION}`;
 function initDisclaimer() {
   const banner = document.getElementById('disclaimerBanner');
   if (!banner) return;
-  if (sessionStorage.getItem('uvidnova_disclaimer')) { banner.remove(); return; }
+  try {
+    if (sessionStorage.getItem('uvidnova_disclaimer')) { banner.remove(); return; }
+  } catch { /* storage unavailable — show banner */ }
   document.getElementById('dismissDisclaimer')?.addEventListener('click', () => {
-    sessionStorage.setItem('uvidnova_disclaimer', '1');
+    try { sessionStorage.setItem('uvidnova_disclaimer', '1'); } catch { /* ignore */ }
     banner.style.transition = 'opacity 0.3s ease';
     banner.style.opacity = '0';
     setTimeout(() => banner.remove(), 320);
