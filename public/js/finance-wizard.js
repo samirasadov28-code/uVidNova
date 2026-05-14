@@ -5,6 +5,7 @@
 
 import { getName } from './lang.js';
 import { SECTOR_LABELS } from './filters.js';
+import { loadGrowthSectors, renderWizardSectorPicker, getGreenfieldsTemplates } from './growth-sectors.js';
 
 // ── Tranche definitions ───────────────────────────────────────────────────────
 
@@ -68,6 +69,7 @@ const TIMING_LABELS = {
 // ── Wizard state ──────────────────────────────────────────────────────────────
 
 let _assets = [];
+let _growthData = null;
 
 let W = {};  // wizard state
 
@@ -84,6 +86,7 @@ function reset(preselected = []) {
       { id: 3, type: 'equity',          pct: 25, ret: 18.0, tenor: null },
     ],
     nextId: 4,
+    greenfield: { sectorId: null, archetypeId: null },
   };
 }
 
@@ -94,6 +97,7 @@ let _onClose = null;
 export function openFinanceWizard(assets, preselectedIds = [], onClose = null) {
   _assets  = assets ?? [];
   _onClose = onClose;
+  loadGrowthSectors().then(d => { _growthData = d; }).catch(() => {});
   reset(preselectedIds);
 
   let overlay = document.getElementById('financeWizard');
@@ -198,9 +202,13 @@ function goBack() {
 }
 
 function validate() {
-  if (W.step === 1 && W.selectedIds.size === 0) {
+  if (W.step === 1 && W.scope !== 'greenfield' && W.selectedIds.size === 0) {
     showError('Select at least one project to continue.');
     return false;
+  }
+  if (W.step === 1 && W.scope === 'greenfield') {
+    if (!W.greenfield.sectorId) { showError('Select a growth sector to continue.'); return false; }
+    if (!W.greenfield.archetypeId) { showError('Select a project archetype to continue.'); return false; }
   }
   if (W.step === 3) {
     const sum = W.tranches.reduce((s, t) => s + (+t.pct || 0), 0);
@@ -231,7 +239,23 @@ function selectedAssets() {
   return _assets.filter(a => W.selectedIds.has(a.asset_id));
 }
 
+function greenfieldArchetype() {
+  if (W.scope !== 'greenfield' || !_growthData) return null;
+  const sector = _growthData.sectors.find(s => s.id === W.greenfield.sectorId);
+  return sector?.archetypes.find(a => a.id === W.greenfield.archetypeId) ?? null;
+}
+
+function greenfieldTemplate() {
+  const arch = greenfieldArchetype();
+  if (!arch || !_growthData) return null;
+  return _growthData.greenfield_templates.find(t => t.template_id === arch.template_id) ?? null;
+}
+
 function portfolioCost(path) {
+  if (W.scope === 'greenfield') {
+    const arch = greenfieldArchetype();
+    return arch?.scale_usd_m ?? 0;
+  }
   return selectedAssets().reduce((s, a) => s + (a.cost_paths?.[path]?.central_usd_m ?? 0), 0);
 }
 
@@ -243,9 +267,10 @@ function step1HTML() {
   return `<div class="fw-step">
     <h3 class="fw-sh">What would you like to finance?</h3>
     <div class="fw-scope-row" id="fwScopeRow">
-      ${scopeCard('single', '🏗', 'One project',            'Finance a specific asset')}
-      ${scopeCard('group',  '🗂', 'Group of projects',      'Select by region or manually')}
-      ${scopeCard('all',    '🇺🇦', 'Entire Ukraine portfolio', `All ${_assets.length} documented assets`)}
+      ${scopeCard('single',     '🏗', 'One project',             'Finance a specific damaged asset')}
+      ${scopeCard('group',      '🗂', 'Group of projects',       'Select by region or manually')}
+      ${scopeCard('all',        '🇺🇦', 'Entire portfolio',        `All ${_assets.length} documented assets`)}
+      ${scopeCard('greenfield', '🌱', 'Growth sector project',   'Model a new greenfield investment')}
     </div>
     <div id="fwScopeDetail"></div>
   </div>`;
@@ -295,6 +320,34 @@ function renderScopeDetail() {
     const inp = document.getElementById('fwSearch');
     inp.addEventListener('input', () => renderSingleList(inp.value));
     renderSingleList('');
+    return;
+  }
+
+  // Greenfield growth sector
+  if (W.scope === 'greenfield') {
+    if (!_growthData) {
+      det.innerHTML = `<p class="fw-scope-summary">Loading growth sector data…</p>`;
+      loadGrowthSectors().then(d => { _growthData = d; renderScopeDetail(); }).catch(() => {
+        det.innerHTML = `<p class="fw-scope-summary">Could not load growth sector data.</p>`;
+      });
+      return;
+    }
+    const peaceState = window._uvScenario?.peace_state ?? 'pre_armistice';
+    det.innerHTML = renderWizardSectorPicker(_growthData, W.greenfield.sectorId, W.greenfield.archetypeId, peaceState);
+    det.querySelectorAll('input[name="gsSector"]').forEach(r => {
+      r.addEventListener('change', e => {
+        W.greenfield.sectorId = e.target.value;
+        W.greenfield.archetypeId = null;
+        renderScopeDetail();
+      });
+    });
+    det.querySelectorAll('input[name="gsArchetype"]').forEach(r => {
+      r.addEventListener('change', e => {
+        W.greenfield.archetypeId = e.target.value;
+        det.querySelectorAll('.gs-arch-card').forEach(c => c.classList.remove('gs-arch-sel'));
+        e.target.closest('.gs-arch-card').classList.add('gs-arch-sel');
+      });
+    });
     return;
   }
 

@@ -7,6 +7,7 @@
 import { loadAsset } from './data-loader.js';
 import { renderCostWorking } from './cost-calculator.js';
 import { getLang, initLangToggle } from './lang.js';
+import { loadGrowthSectors, renderGrowthSectorPanel } from './growth-sectors.js';
 
 const SECTOR_LABELS = {
   energy_and_power: 'Energy and Power',
@@ -408,6 +409,8 @@ function renderAsset(asset) {
   const record = document.getElementById('assetRecord');
   if (!record) return;
 
+  const growthData = await loadGrowthSectors().catch(() => null);
+
   record.innerHTML = [
     renderIdentity(asset),
     renderLocation(asset),
@@ -417,6 +420,7 @@ function renderAsset(asset) {
     renderCostPaths(asset),
     renderFinancing(asset),
     renderDonorPathway(asset),
+    growthData ? renderGrowthSectorPanel(asset, growthData) : '',
     renderMeta(asset)
   ].join('');
 
