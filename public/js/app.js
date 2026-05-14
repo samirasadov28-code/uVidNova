@@ -98,22 +98,9 @@ function makePopupHTML(asset) {
     </div>`;
 }
 
-// ── Map initialisation ────────────────────────────────────────────────────────
-
-const map = L.map('map', {
-  center:           [48.4, 31.5],
-  zoom:             6,
-  zoomControl:      true,
-  attributionControl: true
-});
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  maxZoom: 18
-}).addTo(map);
-
 // ── State ─────────────────────────────────────────────────────────────────────
 
+let map = null;
 let allAssets = [];
 const markerMap = new Map();
 let oblastLayer = null;
@@ -512,13 +499,24 @@ function initChat() {
 // ── Boot ──────────────────────────────────────────────────────────────────────
 
 async function init() {
-  initLanding();
+  // Set up all UI buttons first — these must never depend on the map or data
   initDisclaimer();
   initFeedback();
   initChat();
   initLangToggle(document.getElementById('langToggle'));
-
   document.addEventListener('langChanged', applyTranslations);
+
+  // Initialise Leaflet map (inside init so any L.* error stays contained)
+  map = L.map('map', {
+    center:           [48.4, 31.5],
+    zoom:             6,
+    zoomControl:      true,
+    attributionControl: true
+  });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 18
+  }).addTo(map);
 
   try {
     const [assets] = await Promise.all([
