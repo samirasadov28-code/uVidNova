@@ -1,0 +1,166 @@
+{
+  "asset_id": "KHERSON_OLESHKY_WATER_PLANT_2022_11_01",
+  "name": {
+    "en": "Kherson City Water Treatment Plant (Post-Liberation Damage)",
+    "uk": "Міська станція водопідготовки Херсона (пошкодження після деокупації)"
+  },
+  "location": {
+    "lat": 46.6249,
+    "lon": 32.6147,
+    "oblast": "Kherson",
+    "raion": null,
+    "settlement": "Kherson",
+    "address_en": "Kherson city water treatment plant, Kherson, Kherson Oblast"
+  },
+  "asset_type": "water.treatment",
+  "sector": "water_and_sanitation",
+  "damage": {
+    "incident_date": "2022-11-01",
+    "incident_type": "multiple",
+    "destruction_level": "moderate",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "RDNA3 — Water sector Kherson Oblast damage assessment",
+        "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099021324115085807/ukraine-rdna3",
+        "source_code": "RDNA3"
+      },
+      {
+        "title": "UN OCHA Ukraine Flash Update — Kherson water infrastructure November 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-nov-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "capacity_m3_per_day": {
+      "value": 120000,
+      "unit": "m3/day",
+      "source": "modelled",
+      "ref": "RDNA3 water sector; OCHA Ukraine Flash Update Nov 2022; Kherson Vodokanal pre-war capacity serving ~280,000 residents"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 50,
+      "central_usd_m": 174,
+      "high_usd_m": 298
+    },
+    "code_compliant": {
+      "low_usd_m": 57,
+      "central_usd_m": 215,
+      "high_usd_m": 372
+    },
+    "build_back_better": {
+      "low_usd_m": 65,
+      "central_usd_m": 271,
+      "high_usd_m": 476,
+      "tech_overlays": ["smart_water_metering", "energy_efficient_pumping", "leak_detection"]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "WATER_BASELINE",
+      "grant_pct": 25,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 8,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 17,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "WATER_CODE_COMPLIANT",
+      "grant_pct": 35,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 33,
+      "senior_ifi_pct": 0,
+      "eca_pct": 8,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 14,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "WATER_BBB",
+      "grant_pct": 45,
+      "era_pct": 8,
+      "first_loss_pct": 0,
+      "concessional_pct": 22,
+      "senior_ifi_pct": 0,
+      "eca_pct": 8,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 12,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 5,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "rationale": "EU Facility water sector BBB track; EBRD Green Cities Kherson applicable; smart metering and energy-efficiency overlays unlock maximum grant share; UA guarantee required given Kherson risk environment",
+      "comparable_projects": ["KHERSON_POST_KAKHOVKA_WATER_2023_06_06"]
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2029,
+    "construction_period_years": 3,
+    "coupon_pct": 4.5,
+    "dscr": 1.2,
+    "rationale": "Municipal water treatment; tariffs insufficient for project-finance debt service in post-liberation environment; Trust bridges the gap",
+    "supportable_debt_usd_m": 52.2,
+    "tenor_years": 25
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "water",
+    "water_treatment",
+    "kherson_oblast",
+    "liberated",
+    "multiple"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

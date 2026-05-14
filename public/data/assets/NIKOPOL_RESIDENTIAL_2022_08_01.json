@@ -1,0 +1,172 @@
+{
+  "asset_id": "NIKOPOL_RESIDENTIAL_2022_08_01",
+  "name": {
+    "en": "Nikopol City Residential — Cross-River Shelling from Enerhodar",
+    "uk": "Житловий фонд Нікополя — обстріли з боку Енергодара"
+  },
+  "location": {
+    "lat": 47.5746,
+    "lon": 34.3979,
+    "oblast": "Dnipropetrovsk",
+    "raion": null,
+    "settlement": "Nikopol",
+    "address_en": "Nikopol city, Dnipropetrovsk Oblast"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-08-01",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "moderate",
+    "re_damage_count": 5,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Russia Will Pay — Dnipropetrovsk residential damage database",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine Situation Report — Nikopol shelling from NPP area 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-nikopol-sitrep-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 280000,
+      "unit": "m2",
+      "source": "modelled",
+      "ref": "RDNA3 Dnipropetrovsk residential; KSE database; Nikopol city pre-war population ~105,000; across-river shelling from Enerhodar/Zaporizhzhia NPP area"
+    },
+    "housing_units": {
+      "value": 5500,
+      "unit": "units",
+      "source": "modelled",
+      "ref": "RDNA3 Table 6.2 Dnipropetrovsk oblast residential damage estimates"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 72,
+      "central_usd_m": 182,
+      "high_usd_m": 292
+    },
+    "code_compliant": {
+      "low_usd_m": 83,
+      "central_usd_m": 224,
+      "high_usd_m": 365
+    },
+    "build_back_better": {
+      "low_usd_m": 94,
+      "central_usd_m": 281,
+      "high_usd_m": 468,
+      "tech_overlays": ["passive_house_standard", "modular_construction"]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "RESIDENTIAL_BASELINE",
+      "grant_pct": 25,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "RESIDENTIAL_CODE_COMPLIANT",
+      "grant_pct": 35,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "RESIDENTIAL_BBB",
+      "grant_pct": 45,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 2,
+      "private_equity_pct": 3,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "rationale": "5 re-damage events from NPP-area shelling; EU Housing Pillar; persistent cross-river fire risk requires ongoing MIGA wrap; EU green efficiency standard applicable for BBB",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2029,
+    "construction_period_years": 2,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "rationale": "Repeatedly-shelled residential district; Trust bridges debt-service gap; ongoing re-damage risk factored into commissioning timeline",
+    "supportable_debt_usd_m": 54.6,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "dnipropetrovsk_oblast",
+    "shelling",
+    "re_damaged",
+    "nuclear_adjacent",
+    "apartment_blocks"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

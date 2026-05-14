@@ -1,0 +1,170 @@
+{
+  "asset_id": "CHERNIHIV_POWER_SUBSTATION_2022_03_03",
+  "name": {
+    "en": "Chernihiv Oblast 330kV Transmission Substation",
+    "uk": "Підстанція 330 кВ Чернігівської області"
+  },
+  "location": {
+    "lat": 51.5021,
+    "lon": 31.2885,
+    "oblast": "Chernihiv",
+    "raion": null,
+    "settlement": "Chernihiv",
+    "address_en": "330kV transmission substation, Chernihiv Oblast"
+  },
+  "asset_type": "energy.substation",
+  "sector": "energy_and_power",
+  "damage": {
+    "incident_date": "2022-03-03",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "moderate",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "RDNA3 — Energy sector Chernihiv Oblast damage assessment",
+        "url": "https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099021324115085807/ukraine-rdna3",
+        "source_code": "RDNA3"
+      },
+      {
+        "title": "Ukrenergo damage report — Chernihiv grid infrastructure 2022",
+        "url": "https://ukrenergo.energy.gov.ua/en/news/chernihiv-damage-2022",
+        "source_code": "eRECOVERY"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS",
+      "EBRD_RSF"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "capacity_mva": {
+      "value": 400,
+      "unit": "MVA",
+      "source": "modelled",
+      "ref": "RDNA3 energy sector; Ukrenergo damage report 2022; standard 330kV/110kV autotransformer station configuration serving Chernihiv oblast grid"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 6,
+      "central_usd_m": 18,
+      "high_usd_m": 30
+    },
+    "code_compliant": {
+      "low_usd_m": 7,
+      "central_usd_m": 23,
+      "high_usd_m": 38
+    },
+    "build_back_better": {
+      "low_usd_m": 8,
+      "central_usd_m": 29,
+      "high_usd_m": 49,
+      "tech_overlays": ["smart_grid_automation", "digital_relay_protection"]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "ENERGY_BASELINE",
+      "grant_pct": 10,
+      "era_pct": 5,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 20,
+      "eca_pct": 10,
+      "dfi_equity_pct": 5,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 5,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["a_b_loan"],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "ENERGY_CODE_COMPLIANT",
+      "grant_pct": 20,
+      "era_pct": 5,
+      "first_loss_pct": 5,
+      "concessional_pct": 22,
+      "senior_ifi_pct": 18,
+      "eca_pct": 10,
+      "dfi_equity_pct": 5,
+      "public_equity_pct": 12,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 3,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["a_b_loan", "blending_facility"],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "ENERGY_BBB",
+      "grant_pct": 30,
+      "era_pct": 5,
+      "first_loss_pct": 5,
+      "concessional_pct": 22,
+      "senior_ifi_pct": 15,
+      "eca_pct": 10,
+      "dfi_equity_pct": 5,
+      "public_equity_pct": 5,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 3,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": ["MIGA_WAR", "EU_FACILITY_FIRST_LOSS"]
+      },
+      "structure_patterns": ["a_b_loan", "blending_facility"],
+      "rationale": "EU Facility energy-security grant; EBRD Energy Resilience Fund; Chernihiv oblast is liberated and grid restoration is a priority; smart-grid upgrade qualifies for EU energy conditionality",
+      "comparable_projects": ["UKRENERGO_PIVNICHNA_SUBSTATION_2024_03_22"]
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2027,
+    "construction_period_years": 2,
+    "coupon_pct": 5.5,
+    "dscr": 1.15,
+    "rationale": "Grid substation; partial tariff revenue from Ukrenergo; Trust supports construction-phase debt service",
+    "supportable_debt_usd_m": 5.4,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "energy",
+    "substation",
+    "chernihiv_oblast",
+    "shelling",
+    "grid_critical",
+    "ukrenergo"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

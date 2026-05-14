@@ -1,0 +1,170 @@
+{
+  "asset_id": "KHARKIV_REGIONAL_HOSPITAL_2022_03_01",
+  "name": {
+    "en": "Kharkiv Regional Clinical Hospital",
+    "uk": "Харківська обласна клінічна лікарня"
+  },
+  "location": {
+    "lat": 49.9782,
+    "lon": 36.2376,
+    "oblast": "Kharkiv",
+    "raion": null,
+    "settlement": "Kharkiv",
+    "address_en": "Kharkiv Regional Clinical Hospital, Kharkiv, Kharkiv Oblast"
+  },
+  "asset_type": "healthcare.regional_hospital",
+  "sector": "healthcare",
+  "damage": {
+    "incident_date": "2022-03-01",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "moderate",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_MoH"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Russia Will Pay — Kharkiv healthcare damage assessment",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine Situation Report — Kharkiv health infrastructure",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kharkiv-health-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 42000,
+      "unit": "m2",
+      "source": "modelled",
+      "ref": "KSE damage tracker; OCHA Ukraine Situation Report; oblast-level general hospital floor area modelled from bed count and RDNA3 healthcare sector benchmarks"
+    },
+    "beds": {
+      "value": 580,
+      "unit": "beds",
+      "source": "extracted_from_source",
+      "ref": "UA Ministry of Health 2021 hospital registry; Kharkiv Regional Clinical Hospital capacity"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 67,
+      "central_usd_m": 155,
+      "high_usd_m": 242
+    },
+    "code_compliant": {
+      "low_usd_m": 77,
+      "central_usd_m": 190,
+      "high_usd_m": 302
+    },
+    "build_back_better": {
+      "low_usd_m": 87,
+      "central_usd_m": 237,
+      "high_usd_m": 387,
+      "tech_overlays": ["microgrid", "telemedicine", "modular_clinical_units", "passive_house_standard"]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "HEALTHCARE_BASELINE",
+      "grant_pct": 30,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 35,
+      "senior_ifi_pct": 0,
+      "eca_pct": 5,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "HEALTHCARE_CODE_COMPLIANT",
+      "grant_pct": 40,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 5,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "HEALTHCARE_BBB",
+      "grant_pct": 55,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 20,
+      "senior_ifi_pct": 0,
+      "eca_pct": 5,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "rationale": "EU Facility Pillar I healthcare grants; EBRD Social Infrastructure Fund; Green Economy Transition applicable for microgrid and passive-standard clinical upgrades; precedent: EBRD Kharkiv Regional Hospital rehabilitation financing",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2029,
+    "construction_period_years": 3,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "rationale": "Regional hospital; no monetisable operating cashflow; Trust availability-payment secures senior IFI debt service",
+    "supportable_debt_usd_m": 46.6,
+    "tenor_years": 25
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "healthcare",
+    "regional_hospital",
+    "kharkiv_oblast",
+    "shelling"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

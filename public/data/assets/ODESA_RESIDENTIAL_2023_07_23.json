@@ -1,0 +1,172 @@
+{
+  "asset_id": "ODESA_RESIDENTIAL_2023_07_23",
+  "name": {
+    "en": "Odesa Historic Centre Residential — Transfiguration Cathedral Neighbourhood",
+    "uk": "Житловий фонд Одеського історичного центру — квартал Спасо-Преображенського собору"
+  },
+  "location": {
+    "lat": 46.4825,
+    "lon": 30.7233,
+    "oblast": "Odesa",
+    "raion": null,
+    "settlement": "Odesa",
+    "address_en": "Historic Centre, Odesa, Odesa Oblast (Soborna and adjacent streets)"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2023-07-23",
+    "incident_type": "missile_strike",
+    "destruction_level": "moderate",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update — Odesa missile strike July 2023",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-jul-2023",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "UNESCO Odesa damage report 2023 — historic centre collateral residential damage",
+        "url": "https://whc.unesco.org/en/news/2424",
+        "source_code": "eRECOVERY"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 38000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "OCHA Ukraine Flash Update Jul 2023; UNESCO Odesa damage report 2023; blast-radius residential damage in historic centre surrounding cathedral"
+    },
+    "housing_units": {
+      "value": 450,
+      "unit": "units",
+      "source": "extracted_from_source",
+      "ref": "Odesa City Council damage survey July 2023; UNESCO historic district residential inventory"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 10,
+      "central_usd_m": 26,
+      "high_usd_m": 41
+    },
+    "code_compliant": {
+      "low_usd_m": 11,
+      "central_usd_m": 32,
+      "high_usd_m": 52
+    },
+    "build_back_better": {
+      "low_usd_m": 13,
+      "central_usd_m": 40,
+      "high_usd_m": 66,
+      "tech_overlays": ["heritage_conservation_materials", "energy_efficiency_envelope"]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "RESIDENTIAL_BASELINE",
+      "grant_pct": 25,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "RESIDENTIAL_CODE_COMPLIANT",
+      "grant_pct": 35,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "RESIDENTIAL_BBB",
+      "grant_pct": 45,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 2,
+      "private_equity_pct": 3,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "rationale": "Historic centre residential adjacent to UNESCO World Heritage area; heritage-compatible reconstruction standards; EU Housing Pillar and possible UNESCO supplementary grant; complements ODESA_TRANSFIGURATION_CATHEDRAL asset",
+      "comparable_projects": ["ODESA_TRANSFIGURATION_CATHEDRAL_2023_07_23"]
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2027,
+    "construction_period_years": 2,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "rationale": "Small-scale residential damage in historic district; Trust bridges residual financing gap",
+    "supportable_debt_usd_m": 7.9,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "odesa_oblast",
+    "missile_strike",
+    "historic_centre",
+    "apartment_blocks",
+    "unesco_adjacent"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}
