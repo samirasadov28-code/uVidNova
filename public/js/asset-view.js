@@ -9,6 +9,9 @@ import { renderCostWorking } from './cost-calculator.js';
 import { getLang, initLangToggle } from './lang.js';
 import { loadGrowthSectors, renderGrowthSectorPanel } from './growth-sectors.js';
 
+// ── Trust defaults (mirrors trust_config.json — loaded lazily if needed) ──────
+const TRUST_DEFAULT_DRAWDOWN_PCT = 0.04;  // 4% (UNCC model)
+
 const SECTOR_LABELS = {
   energy_and_power: 'Energy and Power',
   healthcare: 'Healthcare',
@@ -282,6 +285,86 @@ function renderFinancing(a) {
   const paths = ['baseline', 'code_compliant', 'build_back_better'];
   const pathLabels = { baseline: 'Baseline', code_compliant: 'Code-compliant', build_back_better: 'Build-back-better' };
 
+  // ── BBB + Trust helper ──────────────────────────────────────────────────────
+  function buildBbbTrustCard(a) {
+    const bbb = a.financing_structures?.build_back_better;
+    const bbbCost = a.cost_paths?.build_back_better?.central_usd_m;
+    if (!bbb || !bbbCost) return '';
+
+    const eraPct    = bbb.era_pct ?? 0;
+    const eraCorpus = bbbCost * eraPct / 100;                         // USD M as corpus share
+    const eraAnnual = eraCorpus * TRUST_DEFAULT_DRAWDOWN_PCT;         // 4% annual payment
+    const refs      = bbb.comparable_projects ?? [];
+    const pri       = bbb.pri_wrap;
+    const patterns  = bbb.structure_patterns ?? [];
+
+    // Bar segments — same as BBB, but ERA row gets Trust annotation
+    const barSegs = TRANCHE_META
+      .filter(m => (bbb[m.key] ?? 0) > 0)
+      .map(m => {
+        const isEra = m.key === 'era_pct';
+        const label = isEra ? 'ERA/Trust' : m.label.split(' ')[0];
+        return `<span class="stack-seg ${m.css}" style="width:${bbb[m.key]}%"
+                      title="${isEra ? `ERA/Trust availability payment — ${bbb[m.key]}% (USD ${eraAnnual.toFixed(1)}M/yr)` : `${m.label}: ${bbb[m.key]}%`}">
+                  <span class="seg-pct">${bbb[m.key]}%</span>
+                  <span class="seg-label">${label}</span>
+                </span>`;
+      }).join('');
+
+    // Tranche table — ERA row shows annual payment instead of bare %
+    const trancheRows = TRANCHE_META
+      .map(m => {
+        const v = bbb[m.key] ?? 0;
+        const isEra = m.key === 'era_pct';
+        const valCell = v > 0
+          ? (isEra
+              ? `<strong>${v}%</strong> <span class="trust-annual-chip">USD ${eraAnnual.toFixed(1)}M/yr</span>`
+              : `<strong>${v}%</strong>`)
+          : '—';
+        return `<tr class="${v === 0 ? 'tranche-zero' : ''}">
+          <td><span class="tranche-dot ${m.css}"></span>${isEra ? 'ERA / Trust (availability payment)' : m.label}</td>
+          <td class="tranche-pct">${valCell}</td>
+        </tr>`;
+      }).join('');
+
+    const priHtml = pri?.applicable ? `
+      <p class="tranche-note pri-note">
+        <strong>Political risk insurance${pri.required ? ' (required)' : ' (optional)'}:</strong>
+        ${(pri.providers ?? []).map(p => PRI_PROVIDER_LABELS[p] || p).join(', ')}
+      </p>` : '';
+
+    const patternsHtml = patterns.length > 0 ? `
+      <p class="tranche-note structure-note">
+        <strong>Structure:</strong>
+        ${patterns.map(p => PATTERN_LABELS[p] || p).join('; ')}
+      </p>` : '';
+
+    return `
+      <div class="financing-card bbb-trust">
+        <h3>Build-back-better + Trust</h3>
+        <span class="bbb-trust-badge">ERA/Trust model</span>
+        <div class="stack-bar" title="BBB+Trust stack — ERA tranche shown as annual availability payment">${barSegs}</div>
+        ${bbb.rationale ? `<p class="financing-rationale">${escHtml(bbb.rationale)}</p>` : ''}
+        <details class="tranche-details">
+          <summary>Show full capital stack</summary>
+          <div class="tranche-breakdown">
+            <table class="tranche-table">
+              <thead><tr><th>Tranche</th><th>%</th></tr></thead>
+              <tbody>${trancheRows}</tbody>
+            </table>
+            ${priHtml}
+            ${patternsHtml}
+          </div>
+        </details>
+        ${eraPct > 0 ? `
+          <p class="tranche-note" style="margin-top:0.6rem">
+            ERA/Trust: ${eraPct}% = USD ${eraCorpus.toFixed(1)}M corpus share &rarr;
+            <strong>USD ${eraAnnual.toFixed(1)}M/yr</strong> at 4% drawdown.
+          </p>` : ''}
+        ${refs.length > 0 ? `<p class="comparable-refs">Comparables: ${refs.join(', ')}</p>` : ''}
+      </div>`;
+  }
+
   return `
     <section class="asset-section" id="financing">
       <h2>Financing Structures</h2>
@@ -345,7 +428,14 @@ function renderFinancing(a) {
               ${refs.length > 0 ? `<p class="comparable-refs">Comparables: ${refs.join(', ')}</p>` : ''}
             </div>`;
         }).join('')}
+        ${buildBbbTrustCard(a)}
       </div>
+      ${(a.financing_structures?.build_back_better?.era_pct ?? 0) > 0 ? `
+      <p class="trust-footnote">
+        &#8224; BBB+Trust replaces lump-sum ERA with annual availability payments from a Reconstruction Trust.
+        Corpus: USD 286B · Drawdown: 4% · Annual payment: USD ${(286000 * 0.04).toLocaleString()}M/yr (full corpus).
+        <a href="/trust.html">See full Trust model and corpus trajectory &rarr;</a>
+      </p>` : ''}
     </section>`;
 }
 

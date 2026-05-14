@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Reconstruction Trust — uVidNova Ukraine Reconstruction Finance Atlas</title>
+  <meta name="description" content="Explore the Reconstruction Trust: a structured sovereign-wealth-fund alternative to lump-sum reparations, converting frozen Russian assets into a predictable annual availability payment for project financing.">
+  <meta name="theme-color" content="#1a3a6b">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="uVidNova">
+  <meta property="og:title"       content="The Reconstruction Trust — uVidNova">
+  <meta property="og:description" content="USD 286B frozen assets modelled as a sovereign wealth fund. Annual availability payments. Deterministic corpus trajectory.">
+  <meta property="og:url"         content="https://atlasvidnova.org/trust.html">
+  <meta property="og:image"       content="https://atlasvidnova.org/assets/logo_512.png">
+
+  <link rel="manifest"         href="/manifest.webmanifest">
+  <link rel="icon"             href="/assets/logo_192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/assets/logo_192.png">
+  <link rel="canonical"        href="https://atlasvidnova.org/trust.html">
+  <link rel="stylesheet"       href="/css/app.css">
+</head>
+<body>
+
+  <!-- ── Header ──────────────────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="wordmark" aria-label="uVidNova home">
+        <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36" loading="lazy">
+        <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
+      </a>
+      <p class="tagline">Ukraine Reconstruction Finance Atlas</p>
+      <nav class="site-nav">
+        <a href="/">← Map</a>
+        <a href="/finance.html" class="nav-finance-link">Finance It</a>
+        <a href="/about.html">Methodology</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── Main ────────────────────────────────────────────────────────────────── -->
+  <main class="trust-main">
+
+    <!-- ── Section 1: Overview ──────────────────────────────────────────────── -->
+    <div class="trust-hero">
+      <h1 class="trust-hero-title">The Reconstruction Trust — A Structured Alternative to Lump-Sum Reparations</h1>
+      <p class="trust-hero-sub">
+        Ukraine's reparations claim against Russia (est. USD 500–700B) is unlikely to resolve as an immediate lump-sum payment.
+        A more durable mechanism would place Russia's frozen assets (~USD 280–300B principal, generating ~USD 3B/year in ERA proceeds)
+        into a sovereign wealth fund — the Reconstruction Trust. Rather than a single disbursement, the Trust pays an
+        <strong>availability payment</strong> each year: a known, predictable cash-flow stream that project financiers can use
+        to service concessional debt <em>now</em>, without waiting for a final reparations settlement. This page models
+        the Trust under three drawdown policies and two principal scenarios, so institutional financiers can size
+        supportable debt against a credible annual payment.
+      </p>
+
+      <!-- Key stat cards — populated by JS -->
+      <div class="trust-stat-cards" id="trustStatCards">
+        <div class="trust-stat-card">
+          <span class="tsc-value">~USD 286B</span>
+          <span class="tsc-label">Frozen assets corpus</span>
+          <span class="tsc-note">G7-frozen Russian sovereign assets (principal)</span>
+        </div>
+        <div class="trust-stat-card">
+          <span class="tsc-value">~USD 3.0B/yr</span>
+          <span class="tsc-label">Annual ERA proceeds</span>
+          <span class="tsc-note">Proceeds on frozen assets only (currently disbursed to Ukraine)</span>
+        </div>
+        <div class="trust-stat-card highlight" id="trustAvailCard">
+          <span class="tsc-value" id="trustAvailVal">—</span>
+          <span class="tsc-label">Availability payment (5% drawdown)</span>
+          <span class="tsc-note" id="trustAvailNote">Full corpus · 4.5% annual return</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Section 2: Portfolio Builder ─────────────────────────────────────── -->
+    <div class="trust-section">
+      <h2 class="trust-section-title">Portfolio Builder — Scenario Comparison</h2>
+      <p class="trust-section-desc">
+        Adjust the drawdown policy, principal scenario, and return assumption. The table updates automatically,
+        showing how each drawdown rate affects the annual availability payment, the supportable project pipeline,
+        and corpus longevity.
+      </p>
+
+      <div class="trust-builder-layout">
+        <!-- Inputs column -->
+        <div class="trust-inputs-col">
+
+          <div class="trust-input-group">
+            <span class="trust-input-label">Principal scenario</span>
+            <div class="trust-radio-group" id="trustPrincipalGroup">
+              <label class="trust-radio-option">
+                <input type="radio" name="trustPrincipal" value="era" checked>
+                ERA proceeds only (~USD 50B committed)
+              </label>
+              <label class="trust-radio-option">
+                <input type="radio" name="trustPrincipal" value="full">
+                Full frozen assets (~USD 286B)
+              </label>
+            </div>
+          </div>
+
+          <div class="trust-input-group">
+            <span class="trust-input-label">Annual return assumption</span>
+            <div class="trust-slider-wrap">
+              <input type="range" class="trust-slider" id="trustReturnSlider"
+                     min="3" max="6" step="0.25" value="4.5"
+                     aria-label="Annual return assumption">
+              <span class="trust-slider-val"><span id="trustReturnVal">4.50</span>% nominal yield</span>
+              <span style="font-size:0.72rem;color:var(--colour-text-muted)">
+                Source: ECB sovereign yields, AAA-rated euro-area avg · 2026-Q1
+              </span>
+            </div>
+          </div>
+
+          <div class="trust-input-group" style="padding:0.75rem;background:#f4f6f9;border-radius:6px;font-size:0.8rem;color:var(--colour-text-muted);">
+            <strong style="color:var(--colour-navy)">How to read this table</strong><br>
+            "Perpetual" means drawdown &le; return: corpus never depletes.
+            "Concessional debt supportable" uses a 15-year, 2.5% annual constant (~7.66%).
+            "Implied pipeline" assumes 8% debt service ratio on 15-year concessional loans.
+          </div>
+
+        </div>
+
+        <!-- Comparison table column -->
+        <div>
+          <table class="trust-compare-table" id="trustCompareTable">
+            <thead>
+              <tr>
+                <th>Metric</th>
+                <th class="col-25">2.5% drawdown<br><small style="font-weight:400">(Endowment model)</small></th>
+                <th class="col-4">4% drawdown<br><small style="font-weight:400">(UNCC model)</small></th>
+                <th class="col-5">5% drawdown<br><small style="font-weight:400">(Aggressive)</small></th>
+              </tr>
+            </thead>
+            <tbody id="trustCompareBody">
+              <tr><td colspan="4" style="text-align:center;color:var(--colour-text-muted);padding:1.5rem">Loading…</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── Section 3: 50-Year Trajectory Chart ──────────────────────────────── -->
+    <div class="trust-section">
+      <h2 class="trust-section-title">50-Year Corpus Trajectory</h2>
+      <p class="trust-section-desc">
+        Corpus balance under each drawdown policy for the selected principal scenario and return assumption.
+        Lines drawn with the current selection; toggle inputs above to update.
+      </p>
+      <div class="trust-chart-wrap">
+        <svg id="trustChart" class="trust-chart-svg" viewBox="0 0 700 340"
+             xmlns="http://www.w3.org/2000/svg"
+             role="img" aria-label="50-year corpus trajectory chart">
+          <title>50-Year Reconstruction Trust Corpus Trajectory</title>
+          <!-- Populated by JS -->
+        </svg>
+      </div>
+      <div class="trust-chart-legend">
+        <span class="trust-legend-item">
+          <span class="trust-legend-swatch" style="background:#1a3a6b"></span>
+          2.5% drawdown (endowment)
+        </span>
+        <span class="trust-legend-item">
+          <span class="trust-legend-swatch" style="background:#f0a500"></span>
+          4% drawdown (UNCC model)
+        </span>
+        <span class="trust-legend-item">
+          <span class="trust-legend-swatch" style="background:#e67e22"></span>
+          5% drawdown (aggressive)
+        </span>
+      </div>
+    </div>
+
+    <!-- ── Disclaimer ────────────────────────────────────────────────────────── -->
+    <p style="font-size:0.78rem;color:var(--colour-text-muted);margin-top:0.5rem;line-height:1.55">
+      Cost and financing-structure figures are estimates derived from published benchmarks
+      (RDNA3, KSE Institute, ECB yield data). The Trust is a modelled scenario, not a legal instrument.
+      Figures are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence.
+      Sources: ECB AAA euro-area sovereign yields 2026-Q1; KSE Institute "Russia Will Pay" frozen-assets tracker;
+      G7 ERA programme documentation.
+    </p>
+
+  </main>
+
+  <!-- ── Service worker ─────────────────────────────────────────────────────── -->
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').catch(function() {});
+  }
+  </script>
+
+  <script type="module" src="/js/trust-page.js"></script>
+
+</body>
+</html>

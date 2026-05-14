@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Methodology — uVidNova Ukraine Reconstruction Finance Atlas</title>
-  <meta name="description" content="How uVidNova computes reconstruction costs and financing structures: deterministic formula, RDNA3/KSE sources, anti-hallucination architecture, and full source bibliography.">
-  <meta name="theme-color" content="#1a3a6b">
-  <meta name="app-version" content="0.0.3">
+  <title>Methodology — uVidNova</title>
+  <meta name="description" content="Methodology, sources, and disclaimer — uVidNova Ukraine reconstruction atlas.">
+  <meta name="theme-color" content="#0d2248">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="app-version" content="0.2.1">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
@@ -27,6 +29,11 @@
   <link rel="apple-touch-icon" href="/assets/logo_192.png">
   <link rel="canonical"        href="https://atlasvidnova.org/about.html">
   <link rel="stylesheet"       href="/css/app.css">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(function() {});
+    }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -37,7 +44,9 @@
       </a>
       <p class="tagline">Ukraine Reconstruction Finance Atlas</p>
       <nav class="site-nav">
-        <a href="/">← Map</a>
+        <a href="/" class="nav-link" data-page="map">Map</a>
+        <a href="/finance.html" class="nav-link" data-page="finance">Finance</a>
+        <a href="/about.html" class="nav-link" aria-current="page" data-page="about">About</a>
         <button class="lang-toggle" id="langToggle" aria-label="Switch language">🇬🇧 | UK</button>
       </nav>
     </div>

@@ -1,0 +1,173 @@
+{
+  "asset_id": "KHARKIV_SALTIVKA_PHASE2_2022_09_01",
+  "name": {
+    "en": "Kharkiv Saltivka-Adjacent Residential Districts — Pavlove Pole and Nemyshlya",
+    "uk": "Прилеглі до Салтівки житлові масиви Харкова — Павлове Поле та Немишля"
+  },
+  "location": {
+    "lat": 49.9895,
+    "lon": 36.2826,
+    "oblast": "Kharkiv",
+    "raion": null,
+    "settlement": "Kharkiv",
+    "address_en": "Pavlove Pole and Nemyshlya residential districts, Kharkiv city, Kharkiv Oblast"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-09-01",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "moderate",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Russia Will Pay — Kharkiv residential damage tracker 2024",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine Situation Report — Kharkiv Oblast residential",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kharkiv-sitrep-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS",
+      "EBRD_RSF"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 730000,
+      "unit": "m2",
+      "source": "modelled",
+      "ref": "RDNA3 Kharkiv residential sector; KSE damage tracker 2024; Pavlove Pole and Nemyshlya districts extend the Saltivka damage zone"
+    },
+    "housing_units": {
+      "value": 14000,
+      "unit": "units",
+      "source": "modelled",
+      "ref": "RDNA3 Table 6.2 Kharkiv oblast residential; district housing stock estimate"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 217,
+      "central_usd_m": 559,
+      "high_usd_m": 900
+    },
+    "code_compliant": {
+      "low_usd_m": 250,
+      "central_usd_m": 688,
+      "high_usd_m": 1125
+    },
+    "build_back_better": {
+      "low_usd_m": 282,
+      "central_usd_m": 862,
+      "high_usd_m": 1441,
+      "tech_overlays": ["passive_house_standard", "modular_construction", "district_heating_upgrade"]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "RESIDENTIAL_BASELINE",
+      "grant_pct": 25,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "RESIDENTIAL_CODE_COMPLIANT",
+      "grant_pct": 35,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "RESIDENTIAL_BBB",
+      "grant_pct": 45,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 2,
+      "private_equity_pct": 3,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "rationale": "Extends SALTIVKA_DISTRICT_KHARKIV reconstruction programme; complements existing Saltivka anchor asset; EBRD Green Cities Kharkiv programme applicable; passive-house standard",
+      "comparable_projects": ["SALTIVKA_DISTRICT_KHARKIV_2022_02_24"]
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2029,
+    "construction_period_years": 3,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "rationale": "District-scale housing; rental revenue insufficient at wartime income levels; Trust bridges debt-service gap",
+    "supportable_debt_usd_m": 167.9,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "kharkiv_oblast",
+    "shelling",
+    "large_scale",
+    "apartment_blocks",
+    "saltivka_adjacent"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

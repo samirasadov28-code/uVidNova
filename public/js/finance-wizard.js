@@ -44,6 +44,9 @@ function confidenceBadge(type) {
 
 const KSE_CLAIM_USD_M   = 486000;  // $486B KSE total reparations claim
 const FROZEN_USD_M      = 300000;  // ~$300B G7-frozen Russian assets
+const TRUST_CORPUS_USD_M = 286000; // ~$286B full frozen corpus for Trust modelling
+const TRUST_DRAWDOWN_PCT = 0.04;   // Default 4% drawdown (UNCC model)
+const TRUST_RETURN_PCT   = 0.045;  // Default 4.5% annual return (ECB 2026-Q1)
 const WAR_PREMIUM       = 2.0;     // % added to commercial tranches during war
 const COMMERCIAL_TYPES  = new Set(['senior_debt', 'mezzanine', 'equity']);
 const CONCESSIONAL_TYPES = new Set(['eu_concessional', 'ebrd_concessional', 'world_bank', 'eca_guarantee']);
@@ -73,6 +76,9 @@ let _growthData = null;
 
 let W = {};  // wizard state
 
+// Trust mode per-tranche: Map<tranche_id, 'lump_sum'|'trust'>
+let _trustModes = new Map();
+
 function reset(preselected = []) {
   W = {
     step: 1,
@@ -88,6 +94,12 @@ function reset(preselected = []) {
     nextId: 4,
     greenfield: { sectorId: null, archetypeId: null },
   };
+  _trustModes = new Map();
+}
+
+/** Annual availability payment from the Trust at 4% drawdown, USD 286B corpus */
+function trustAnnualPayment_usd_m() {
+  return TRUST_CORPUS_USD_M * TRUST_DRAWDOWN_PCT; // = 11,440 USD M/yr
 }
 
 // ── Public entry point ────────────────────────────────────────────────────────
@@ -542,11 +554,45 @@ function allocBar(total) {
 function trancheRowHTML(t, total) {
   const def = TRANCHE_DEFS[t.type] ?? TRANCHE_DEFS.equity;
   const pct = +t.pct || 0;
-  const amt = total > 0 ? (total * pct / 100).toFixed(1) : '—';
+  const isTrustMode = _trustModes.get(t.id) === 'trust';
+
+  // For Trust-mode reparations tranches, show Annual payment instead of % of project
+  const annualTrust = trustAnnualPayment_usd_m();
+  const trustAmt    = total > 0 ? (total * pct / 100).toFixed(1) : '—';
+  const displayAmt  = isTrustMode
+    ? `Annual: $${annualTrust.toLocaleString()}M/yr`
+    : `$${total > 0 ? (total * pct / 100).toFixed(1) : '—'}M`;
+
   const repNote = t.type === 'reparations' && total > 0 ? (() => {
     const repAmt = total * pct / 100;
     return `<div class="fw-rep-note">= ${(repAmt / KSE_CLAIM_USD_M * 100).toFixed(3)}% of $486B KSE claim · ${(repAmt / FROZEN_USD_M * 100).toFixed(3)}% of $300B frozen assets</div>`;
   })() : '';
+
+  // Trust toggle: only shown when tranche is 'reparations' AND timing allows reparations
+  const showTrustToggle = t.type === 'reparations' && W.timing !== 'during';
+  const trustToggleHTML = showTrustToggle ? `
+    <div class="fw-trust-toggle-row">
+      <div class="fw-trust-mode-btns">
+        <button type="button" class="fw-trust-mode-btn ${!isTrustMode ? 'active' : ''}"
+                data-trust-id="${t.id}" data-trust-mode="lump_sum">
+          Lump-sum reparations
+        </button>
+        <button type="button" class="fw-trust-mode-btn ${isTrustMode ? 'active' : ''}"
+                data-trust-id="${t.id}" data-trust-mode="trust">
+          Trust availability payment
+        </button>
+      </div>
+      ${isTrustMode ? `
+        <div class="fw-trust-computed">
+          Annual payment: <strong>USD ${annualTrust.toLocaleString()}M/yr</strong>
+          <span style="font-size:0.72rem;color:var(--colour-text-muted)">(4% drawdown · USD 286B corpus)</span>
+        </div>
+        <p class="fw-trust-note">
+          This replaces a single capital contribution with an annual cashflow.
+          Useful for debt service rather than equity injection.
+          <a href="/trust.html" target="_blank" rel="noopener">See Trust model ↗</a>
+        </p>` : ''}
+    </div>` : '';
 
   const typeOptions = Object.entries(TRANCHE_DEFS).map(([k, v]) =>
     `<option value="${k}" ${k === t.type ? 'selected' : ''}>${v.label}</option>`).join('');
@@ -576,9 +622,10 @@ function trancheRowHTML(t, total) {
             <span class="fw-tr-unit">yr</span>
           </div>
         </label>` : ''}
-        <span class="fw-tr-amt">$${amt}M</span>
+        <span class="fw-tr-amt">${displayAmt}</span>
       </div>
       ${repNote}
+      ${trustToggleHTML}
     </div>
     <button class="fw-tr-remove" data-id="${t.id}" aria-label="Remove tranche">×</button>
   </div>`;
@@ -633,6 +680,16 @@ function wireStep3() {
       if (barEl) barEl.outerHTML = allocBar(total);
     });
   });
+
+  // Trust mode toggle buttons
+  document.querySelectorAll('[data-trust-id]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const id   = +e.currentTarget.dataset.trustId;
+      const mode = e.currentTarget.dataset.trustMode;
+      _trustModes.set(id, mode);
+      render();
+    });
+  });
 }
 
 // ── Step 4: Results ───────────────────────────────────────────────────────────
@@ -679,10 +736,16 @@ function step4HTML() {
   const trancheRows = r.tranches.map(t => {
     const warTag = COMMERCIAL_TYPES.has(t.type) && (W.timing === 'during' || W.timing === 'phased')
       ? `<span class="fw-war-tag">+${WAR_PREMIUM}% war</span>` : '';
+    const isTrustMode = t.type === 'reparations' && _trustModes.get(t.id) === 'trust';
+    const trustLabel  = isTrustMode
+      ? ` <span class="trust-annual-chip">Annual: USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr †</span>`
+      : '';
+    const displayPct  = isTrustMode ? '—' : `${t.pct.toFixed(0)}%`;
+    const displayAmt  = isTrustMode ? `USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr` : fmtM(t.amt.toFixed(1));
     return `<tr>
-      <td><span class="fw-type-dot" style="background:${t.def.col}"></span>${t.def.label}${confidenceBadge(t.type)}</td>
-      <td>${t.pct.toFixed(0)}%</td>
-      <td>${fmtM(t.amt.toFixed(1))}</td>
+      <td><span class="fw-type-dot" style="background:${t.def.col}"></span>${isTrustMode ? 'ERA/Trust — Availability Payment' : t.def.label}${confidenceBadge(t.type)}${trustLabel}</td>
+      <td>${displayPct}</td>
+      <td>${displayAmt}</td>
       <td>${t.effR.toFixed(1)}% ${warTag}</td>
       <td>${t.tenor ?? '—'}</td>
     </tr>`;
@@ -758,6 +821,14 @@ function step4HTML() {
     </div>
 
     ${repSection}
+
+    ${r.tranches.some(t => t.type === 'reparations' && _trustModes.get(t.id) === 'trust') ? `
+    <div class="fw-disclaimer trust-footnote">
+      † ERA/Trust replaces a lump-sum Russian reparations tranche with annual availability payments
+      from a Reconstruction Trust (4% drawdown · USD 286B corpus · ~USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr).
+      Annual payment services concessional debt rather than acting as an equity injection.
+      <a href="/trust.html" target="_blank" rel="noopener">See full Trust model and corpus trajectory →</a>
+    </div>` : ''}
 
     <div class="fw-disclaimer">
       Cost and financing figures are estimates derived from published benchmarks (RDNA3, KSE Institute). Not guarantees, procurement quotes, or substitutes for transaction-level due diligence.

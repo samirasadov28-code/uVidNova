@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Asset — uVidNova</title>
-  <meta name="description" content="Asset-level reconstruction finance profile — cost estimates, financing structure, de-risking instruments, and source citations.">
-  <meta name="theme-color" content="#1a3a6b">
-  <meta name="app-version" content="0.0.3">
+  <meta name="description" content="Asset-level reconstruction cost and financing data — uVidNova Ukraine reconstruction atlas.">
+  <meta name="theme-color" content="#0d2248">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="app-version" content="0.2.1">
 
   <!-- OG / Twitter updated dynamically by asset-view.js via document.title;
        static fallbacks below serve link-unfurl crawlers that don't run JS. -->
@@ -21,6 +23,11 @@
   <link rel="icon"             href="/assets/logo_192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/logo_192.png">
   <link rel="stylesheet"       href="/css/app.css">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(function() {});
+    }
+  </script>
 </head>
 <body class="asset-page">
 
@@ -32,8 +39,9 @@
       </a>
       <p class="tagline">Ukraine Reconstruction Finance Atlas</p>
       <nav class="site-nav">
-        <a href="/">← Map</a>
-        <a href="/about.html">Methodology</a>
+        <a href="/" class="nav-link" data-page="map">Map</a>
+        <a href="/finance.html" class="nav-link" data-page="finance">Finance</a>
+        <a href="/about.html" class="nav-link" data-page="about">About</a>
         <button class="lang-toggle" id="langToggle" aria-label="Switch language">🇬🇧 | UK</button>
       </nav>
     </div>

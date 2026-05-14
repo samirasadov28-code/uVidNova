@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>uVidNova — Ukraine Reconstruction Finance Atlas</title>
-  <meta name="description" content="Asset-level, project-finance-grade reconstruction opportunities in Ukraine. Deterministic cost estimates against RDNA3 and KSE benchmarks. Defensible financing structures.">
-  <meta name="theme-color" content="#1a3a6b">
+  <meta name="description" content="Ukraine reconstruction atlas — 75+ documented damaged assets with deterministic cost estimates and bankable financing structures.">
+  <meta name="theme-color" content="#0d2248">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="app-version" content="0.2.1">
 
   <!-- Open Graph -->
@@ -26,6 +28,11 @@
   <link rel="icon"             href="/assets/logo_192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/logo_192.png">
   <link rel="canonical"        href="https://atlasvidnova.org/">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(function() {});
+    }
+  </script>
 
   <!-- Preconnect to tile server for faster first map load -->
   <link rel="preconnect" href="https://a.tile.openstreetmap.org">
@@ -278,13 +285,14 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="wordmark" aria-label="uVidNova home">
-        <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36">
+        <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36" loading="lazy">
         <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
       </a>
       <p class="tagline" data-i18n="header.tagline">Ukraine Reconstruction Finance Atlas</p>
       <nav class="site-nav">
-        <a href="/finance.html" class="nav-finance-link">💰 Finance It</a>
-        <a href="/about.html" data-i18n="nav.methodology">Methodology</a>
+        <a href="/" class="nav-link" aria-current="page" data-page="map" data-i18n="nav.map">Map</a>
+        <a href="/finance.html" class="nav-link" data-page="finance" data-i18n="nav.finance">Finance</a>
+        <a href="/about.html" class="nav-link" data-page="about" data-i18n="nav.methodology">About</a>
         <button class="lang-toggle" id="langToggle" aria-label="Switch language">🇺🇦 Українська</button>
       </nav>
     </div>

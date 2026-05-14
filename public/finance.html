@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finance It — uVidNova Ukraine Reconstruction</title>
-  <meta name="description" content="Structure financing for Ukraine reconstruction projects. Model tranches, returns, and public support requirements against the documented asset pipeline.">
-  <meta name="theme-color" content="#1a3a6b">
+  <title>Finance — uVidNova</title>
+  <meta name="description" content="Model financing structures for Ukraine reconstruction projects — uVidNova.">
+  <meta name="theme-color" content="#0d2248">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <link rel="manifest"         href="/manifest.webmanifest">
   <link rel="icon"             href="/assets/logo_192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/logo_192.png">
-
   <link rel="stylesheet" href="/css/vendor/leaflet.css">
   <link rel="stylesheet" href="/css/app.css">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').catch(function() {});
+    }
+  </script>
 </head>
 <body>
 
@@ -20,13 +26,14 @@
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="wordmark" aria-label="uVidNova home">
-        <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36">
+        <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36" loading="lazy">
         <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
       </a>
       <p class="tagline">Finance Ukraine Reconstruction</p>
       <nav class="site-nav">
-        <a href="/" class="fp-back-link">← Back to map</a>
-        <a href="/about.html">Methodology</a>
+        <a href="/" class="nav-link" data-page="map">Map</a>
+        <a href="/finance.html" class="nav-link" aria-current="page" data-page="finance">Finance</a>
+        <a href="/about.html" class="nav-link" data-page="about">About</a>
       </nav>
     </div>
   </header>
@@ -122,12 +129,6 @@
   <script src="/js/vendor/leaflet.js"></script>
   <script type="module" src="/js/finance-page.js"></script>
 
-  <!-- ── Service worker ───────────────────────────────────────────────────── -->
-  <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js').catch(function() {});
-  }
-  </script>
 
 </body>
 </html>

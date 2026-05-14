@@ -1,0 +1,173 @@
+{
+  "asset_id": "SIEVIERODONETSK_RESIDENTIAL_2022_06_24",
+  "name": {
+    "en": "Sievierodonetsk City Residential — Pre-occupation Damage",
+    "uk": "Житловий фонд Сєвєродонецька — пошкодження до окупації"
+  },
+  "location": {
+    "lat": 48.9514,
+    "lon": 38.4762,
+    "oblast": "Luhansk",
+    "raion": null,
+    "settlement": "Sievierodonetsk",
+    "address_en": "Sievierodonetsk, Luhansk Oblast"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-06-24",
+    "incident_type": "multiple",
+    "destruction_level": "destroyed",
+    "re_damage_count": 2,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Russia Will Pay — Luhansk residential sector damage",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat: Sievierodonetsk destruction analysis 2022",
+        "url": "https://www.bellingcat.com/news/2022/07/sievierodonetsk-damage",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "recently_liberated",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 890000,
+      "unit": "m2",
+      "source": "modelled",
+      "ref": "RDNA3 Luhansk residential sector; KSE Russia Will Pay database; pre-war housing stock of Sievierodonetsk city"
+    },
+    "housing_units": {
+      "value": 17000,
+      "unit": "units",
+      "source": "modelled",
+      "ref": "RDNA3 Table 6.2 Luhansk oblast residential damage estimates"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 991,
+      "central_usd_m": 1827,
+      "high_usd_m": 2662
+    },
+    "code_compliant": {
+      "low_usd_m": 1139,
+      "central_usd_m": 2233,
+      "high_usd_m": 3327
+    },
+    "build_back_better": {
+      "low_usd_m": 1288,
+      "central_usd_m": 2774,
+      "high_usd_m": 4259,
+      "tech_overlays": ["passive_house_standard", "modular_construction", "district_heating_upgrade"]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "RESIDENTIAL_BASELINE",
+      "grant_pct": 25,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "RESIDENTIAL_CODE_COMPLIANT",
+      "grant_pct": 35,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "RESIDENTIAL_BBB",
+      "grant_pct": 45,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 2,
+      "private_equity_pct": 3,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "rationale": "Recently-liberated Luhansk territory; severe risk premium; EU Housing Pillar pipeline asset; financing contingent on stable territorial control",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2032,
+    "construction_period_years": 4,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "rationale": "Large-scale destroyed housing; rental revenue insufficient; Trust bridges debt-service gap; long construction programme assumed",
+    "supportable_debt_usd_m": 548.4,
+    "tenor_years": 25
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "luhansk_oblast",
+    "multiple",
+    "recently_liberated",
+    "large_scale",
+    "re_damaged",
+    "apartment_blocks"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

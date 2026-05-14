@@ -1,0 +1,173 @@
+{
+  "asset_id": "CHERNIHIV_RESIDENTIAL_2022_03_10",
+  "name": {
+    "en": "Chernihiv Multi-District Residential Damage",
+    "uk": "Багатоквартальні житлові пошкодження Чернігова"
+  },
+  "location": {
+    "lat": 51.4939,
+    "lon": 31.2947,
+    "oblast": "Chernihiv",
+    "raion": null,
+    "settlement": "Chernihiv",
+    "address_en": "Multiple residential districts, Chernihiv city, Chernihiv Oblast"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-03-10",
+    "incident_type": "aerial_bomb",
+    "destruction_level": "moderate",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Russia Will Pay — Chernihiv residential damage",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat: Chernihiv verified damage map 2022",
+        "url": "https://www.bellingcat.com/news/2022/04/chernihiv-damage-analysis",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 410000,
+      "unit": "m2",
+      "source": "modelled",
+      "ref": "RDNA3 Chernihiv residential sector; Bellingcat verified damage map 2022; city-wide residential survey April 2022"
+    },
+    "housing_units": {
+      "value": 8000,
+      "unit": "units",
+      "source": "modelled",
+      "ref": "RDNA3 Table 6.2 Chernihiv oblast residential damage estimates"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 111,
+      "central_usd_m": 289,
+      "high_usd_m": 467
+    },
+    "code_compliant": {
+      "low_usd_m": 128,
+      "central_usd_m": 356,
+      "high_usd_m": 583
+    },
+    "build_back_better": {
+      "low_usd_m": 145,
+      "central_usd_m": 446,
+      "high_usd_m": 747,
+      "tech_overlays": ["passive_house_standard", "modular_construction", "district_heating_upgrade"]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "RESIDENTIAL_BASELINE",
+      "grant_pct": 25,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "RESIDENTIAL_CODE_COMPLIANT",
+      "grant_pct": 35,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "RESIDENTIAL_BBB",
+      "grant_pct": 45,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 2,
+      "private_equity_pct": 3,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "rationale": "EU Housing Pillar reconstruction; Chernihiv liberated early and has active reconstruction pipeline; passive-house and energy-efficiency overlays qualify for BBB grant uplift",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2028,
+    "construction_period_years": 2,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "rationale": "District-scale housing; rental revenue insufficient at wartime income levels; Trust bridges debt-service gap",
+    "supportable_debt_usd_m": 86.9,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "chernihiv_oblast",
+    "aerial_bomb",
+    "liberated",
+    "large_scale",
+    "apartment_blocks"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

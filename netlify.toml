@@ -17,16 +17,16 @@
     # Groq API is called server-side from Netlify Functions — not from the browser.
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org https://commons.wikimedia.org https://upload.wikimedia.org; connect-src 'self' https://*.tile.openstreetmap.org https://en.wikipedia.org; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
 
-# ── Cache: static JS/CSS — versioned by SW; moderate browser cache ────────────
+# ── Cache: static JS/CSS — long-lived (SW version bump invalidates on deploy) ─
 [[headers]]
   for = "/js/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400, stale-while-revalidate=3600"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 # ── Cache: images and icons — long-lived ──────────────────────────────────────
 [[headers]]
@@ -38,8 +38,14 @@
 [[headers]]
   for = "/data/*"
   [headers.values]
-    Cache-Control = "public, max-age=3600, stale-while-revalidate=600"
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
     Access-Control-Allow-Origin = "*"
+
+# ── Cache: HTML pages — always revalidate ─────────────────────────────────────
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 # ── Cache: service worker — never cache (must re-fetch on every load) ─────────
 [[headers]]
@@ -55,6 +61,11 @@
     Content-Type = "application/manifest+json"
 
 # ── Redirects ─────────────────────────────────────────────────────────────────
+[[redirects]]
+  from = "/trust"
+  to = "/trust.html"
+  status = 200
+
 [[redirects]]
   from = "/asset"
   to = "/asset.html"
