@@ -1,0 +1,142 @@
+{
+  "asset_id": "ANTONOV_AN225_2022_02_27",
+  "name": {
+    "en": "Antonov An-225 Mriya — World's Largest Strategic Transport Aircraft",
+    "uk": "Антонов Ан-225 «Мрія» — найбільший стратегічний транспортний літак світу"
+  },
+  "location": {
+    "lat": 50.5945,
+    "lon": 30.1932,
+    "oblast": "Kyiv",
+    "raion": "Bucha",
+    "settlement": "Hostomel",
+    "address_en": "Antonov Airport (UKKM), Hostomel, Kyiv Oblast"
+  },
+  "asset_type": "transport.aircraft",
+  "sector": "transport_and_ports",
+  "damage": {
+    "incident_date": "2022-02-27",
+    "incident_type": "ground_combat",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UA_GOV",
+      "BELLINGCAT",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "Antonov Company statement on An-225 Mriya destruction",
+        "url": "https://www.antonov.com/en/news/an-225-mriya-has-been-destroyed",
+        "source_code": "eRECOVERY"
+      },
+      {
+        "title": "KSE Institute: An-225 Mriya Damage Assessment",
+        "url": "https://kse.ua/about-the-school/news/kse-russia-will-pay",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat: Hostomel Airport Satellite Imagery — An-225 Hangar Destruction",
+        "url": "https://www.bellingcat.com/news/2022/02/28/hostomel-airport-satellite-imagery-analysis",
+        "source_code": "BELLINGCAT"
+      },
+      {
+        "title": "Reuters: Ukraine says iconic An-225 Mriya plane destroyed at Hostomel airport",
+        "url": "https://www.reuters.com/world/europe/ukraine-says-iconic-an-225-mriya-plane-destroyed-hostomel-airport-2022-04-02/",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "UA_GUARANTEE",
+      "MIGA_WAR"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "aircraft_units": {
+      "value": 1,
+      "unit": "units",
+      "source": "extracted_from_source",
+      "ref": "Antonov Company: sole An-225 airframe; second incomplete airframe exists at Kyiv Sviatoshyn facility"
+    },
+    "max_payload_tonnes": {
+      "value": 250,
+      "unit": "tonnes",
+      "source": "extracted_from_source",
+      "ref": "Antonov Company technical specification; FAI world records"
+    },
+    "hangar_area_m2": {
+      "value": 12000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery analysis (Maxar Technologies, March 2022)"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 291,
+      "central_usd_m": 610,
+      "high_usd_m": 930
+    },
+    "code_compliant": {
+      "low_usd_m": 334,
+      "central_usd_m": 748,
+      "high_usd_m": 1162
+    },
+    "build_back_better": {
+      "low_usd_m": 378,
+      "central_usd_m": 933,
+      "high_usd_m": 1488,
+      "tech_overlays": [
+        "hydrogen_propulsion_readiness",
+        "advanced_avionics",
+        "composite_materials"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 20,
+      "concessional_pct": 30,
+      "public_equity_pct": 30,
+      "private_pct": 20,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 20,
+      "concessional_pct": 35,
+      "public_equity_pct": 30,
+      "private_pct": 15,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 25,
+      "concessional_pct": 35,
+      "public_equity_pct": 25,
+      "private_pct": 15,
+      "rationale": "Strategic industrial asset with significant private commercial viability (Antonov Company charter operations). Reconstruction would involve Antonov Company equity, EBRD/EIB concessional tranche, and EU industrial-reconstruction grant component. MIGA War & Civil Disturbance coverage applicable to private equity tranche. Note: completing second airframe (50–60% complete at Sviatoshyn) is technically distinct and potentially lower cost than full rebuild.",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "transport",
+    "aircraft",
+    "strategic",
+    "hostomel",
+    "kyiv",
+    "ground_combat",
+    "industrial_heritage",
+    "unique_asset"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

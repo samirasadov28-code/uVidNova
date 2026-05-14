@@ -1,0 +1,143 @@
+{
+  "asset_id": "KAKHOVKA_HPP_2023_06_06",
+  "name": {
+    "en": "Kakhovka Hydroelectric Power Plant and Dam",
+    "uk": "Каховська гідроелектростанція та гребля"
+  },
+  "location": {
+    "lat": 46.7667,
+    "lon": 33.3833,
+    "oblast": "Kherson",
+    "raion": "Beryslav",
+    "settlement": "Nova Kakhovka",
+    "address_en": "Kakhovka HPP, Nova Kakhovka, Kherson Oblast"
+  },
+  "asset_type": "energy.hpp",
+  "sector": "energy_and_power",
+  "damage": {
+    "incident_date": "2023-06-06",
+    "incident_type": "deliberate_demolition",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UN_OCHA",
+      "KSE",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update #50 — Kakhovka Dam Breach",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-50-kakhovka-dam-breach-7-june-2023",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Damage Assessment — Kakhovka HPP",
+        "url": "https://kse.ua/about-the-school/news/kse-institute-damage-assessment",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat: Kakhovka Dam Destruction Investigation",
+        "url": "https://www.bellingcat.com/news/2023/06/06/kakhovka-dam-destroyed",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "installed_capacity_mw": {
+      "value": 334,
+      "unit": "MW",
+      "source": "extracted_from_source",
+      "ref": "RDNA3 Table A2.1; Ukrhydroenergo official capacity data"
+    },
+    "dam_length_m": {
+      "value": 3750,
+      "unit": "m",
+      "source": "extracted_from_source",
+      "ref": "Ukrhydroenergo technical specifications, corroborated by satellite imagery (Planet Labs)"
+    },
+    "reservoir_area_km2": {
+      "value": 2155,
+      "unit": "km2",
+      "source": "extracted_from_source",
+      "ref": "RDNA3 Annex — Kakhovka Reservoir pre-breach specifications"
+    },
+    "turbine_units": {
+      "value": 6,
+      "unit": "units",
+      "source": "extracted_from_source",
+      "ref": "Ukrhydroenergo operational data"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 525,
+      "central_usd_m": 1032,
+      "high_usd_m": 1538
+    },
+    "code_compliant": {
+      "low_usd_m": 604,
+      "central_usd_m": 1263,
+      "high_usd_m": 1922
+    },
+    "build_back_better": {
+      "low_usd_m": 683,
+      "central_usd_m": 1572,
+      "high_usd_m": 2461,
+      "tech_overlays": [
+        "run_of_river_redesign",
+        "fish_passage",
+        "flexible_generation",
+        "smart_grid_integration"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 30,
+      "concessional_pct": 45,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 40,
+      "concessional_pct": 40,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "rationale": "Large-scale HPP reconstruction qualifies for EU Green Deal infrastructure grants and EBRD concessional lending. MIGA War & Civil Disturbance coverage likely required given occupied-territory status; reconstruction finance contingent on territorial control reversal.",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "energy",
+    "hydropower",
+    "kherson",
+    "dam",
+    "deliberate_demolition",
+    "occupied",
+    "catastrophic"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

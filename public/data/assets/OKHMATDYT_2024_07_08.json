@@ -1,0 +1,148 @@
+{
+  "asset_id": "OKHMATDYT_2024_07_08",
+  "name": {
+    "en": "Okhmatdyt National Children's Hospital — Toxicology and Dialysis Block",
+    "uk": "Національна дитяча спеціалізована лікарня «Охматдит» — токсикологічний та діалізний корпус"
+  },
+  "location": {
+    "lat": 50.4536,
+    "lon": 30.4549,
+    "oblast": "Kyiv City",
+    "raion": null,
+    "settlement": "Kyiv",
+    "address_en": "28/1 Vyacheslava Chornovola St, Kyiv 01135"
+  },
+  "asset_type": "healthcare.tertiary_hospital",
+  "sector": "healthcare",
+  "damage": {
+    "incident_date": "2024-07-08",
+    "incident_type": "missile_strike",
+    "destruction_level": "severe",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UN_OCHA",
+      "UA_MoH",
+      "KSE",
+      "HUMAN_RIGHTS_WATCH"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update — 8 July 2024 Mass Casualty Attacks",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-8-july-2024",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "Human Rights Watch: Ukraine: Russian Missile Strikes Hit Children's Hospital",
+        "url": "https://www.hrw.org/news/2024/07/08/ukraine-russian-missile-strikes-hit-childrens-hospital",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Damage to Healthcare Infrastructure — July 2024",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Ministry of Health of Ukraine: Okhmatdyt Damage Report",
+        "url": "https://moz.gov.ua/article/news/ohmatdit",
+        "source_code": "eRECOVERY"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 8400,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "Ministry of Health of Ukraine official building register; corroborated by Okhmatdyt Hospital technical passport"
+    },
+    "beds": {
+      "value": 230,
+      "unit": "beds",
+      "source": "extracted_from_source",
+      "ref": "Ministry of Health of Ukraine: Okhmatdyt capacity data, July 2024"
+    },
+    "floors": {
+      "value": 7,
+      "unit": "floors",
+      "source": "extracted_from_source",
+      "ref": "Okhmatdyt Hospital architectural documentation, cited in Ministry of Health damage assessment"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 33,
+      "central_usd_m": 57,
+      "high_usd_m": 82
+    },
+    "code_compliant": {
+      "low_usd_m": 38,
+      "central_usd_m": 70,
+      "high_usd_m": 102
+    },
+    "build_back_better": {
+      "low_usd_m": 43,
+      "central_usd_m": 87,
+      "high_usd_m": 131,
+      "tech_overlays": [
+        "microgrid",
+        "modular_clinical_units",
+        "fibre",
+        "telemedicine",
+        "passive_building_standard"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 55,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "Tertiary children's hospital in Kyiv — highest grant-eligibility profile of any asset class. EU Facility healthcare reconstruction track, UNICEF capital programme, and bilateral donor commitments (UK, Germany, Netherlands) already mobilised post-strike. EU green conditionality unlocks enhanced grant share for build-back-better microgrid and passive-standard components. MIGA War & Civil Disturbance insurance covers contractor risk.",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": [
+      "Doctors Without Borders",
+      "Save the Children",
+      "UNICEF Ukraine"
+    ]
+  },
+  "tags": [
+    "healthcare",
+    "children",
+    "kyiv",
+    "missile_strike",
+    "tertiary_hospital",
+    "high_priority"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

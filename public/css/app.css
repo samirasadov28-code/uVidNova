@@ -458,6 +458,39 @@ body.asset-page { display: flex; flex-direction: column; }
 .landing-title .u    { color: #fff; }
 .landing-title .vid  { color: var(--colour-gold-light); }
 .landing-title .nova { color: #fff; }
+
+/* ── Name etymology breakdown ──────────────────────────────────────────────── */
+.name-etymology {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.35rem 0 1.1rem;
+}
+.etym-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+.etym-glyph {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+.etym-label {
+  font-size: 0.67rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.etym-plus {
+  color: rgba(255,255,255,0.25);
+  font-size: 1.1rem;
+  margin-top: -0.6rem;
+}
+
 .landing-sub {
   font-size: 1rem;
   color: rgba(255,255,255,0.65);
@@ -1359,3 +1392,95 @@ details[open] .agg-summary::before { content: '▼ '; }
   .admin-section { padding: 1.25rem 1rem; }
   .admin-gate-form { flex-direction: column; }
 }
+
+/* ── Oblast info panel ───────────────────────────────────────────────────── */
+.oblast-info-panel {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 340px;
+  max-width: 92vw;
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
+  background: var(--colour-navy);
+  border-left: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0 0 0 var(--radius-md);
+  z-index: 3000;
+  box-shadow: -4px 4px 24px rgba(0,0,0,0.45);
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+.oblast-info-panel[hidden] { display: none; }
+.oblast-info-panel.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.oblast-photo {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+.oblast-panel-body {
+  padding: 1rem 1.1rem 1.25rem;
+}
+.oblast-panel-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.85rem;
+}
+.oblast-panel-close {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.65rem;
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: rgba(255,255,255,0.75);
+  font-size: 1.25rem;
+  line-height: 1;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+.oblast-panel-close:hover { background: rgba(0,0,0,0.7); color: #fff; }
+.oblast-panel-dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 0.75rem;
+  font-size: 0.83rem;
+}
+.oblast-panel-dl dt {
+  color: rgba(255,255,255,0.45);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  padding-top: 0.1rem;
+}
+.oblast-panel-dl dd {
+  color: rgba(255,255,255,0.85);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Lang toggle ─────────────────────────────────────────────────────────── */
+.lang-toggle {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.75);
+  font-size: 0.78rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.lang-toggle:hover { border-color: rgba(255,255,255,0.55); color: #fff; }

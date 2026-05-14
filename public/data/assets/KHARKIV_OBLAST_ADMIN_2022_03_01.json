@@ -1,0 +1,110 @@
+{
+  "asset_id": "KHARKIV_OBLAST_ADMIN_2022_03_01",
+  "name": {
+    "en": "Kharkiv Oblast State Administration Building",
+    "uk": "Харківська обласна державна адміністрація"
+  },
+  "location": {
+    "lat": 49.9935,
+    "lon": 36.2304,
+    "oblast": "Kharkiv",
+    "raion": null,
+    "settlement": "Kharkiv",
+    "address_en": "1 Svobody Square, Kharkiv"
+  },
+  "asset_type": "public_admin.regional",
+  "sector": "public_administration",
+  "damage": {
+    "incident_date": "2022-03-01",
+    "incident_type": "missile_strike",
+    "destruction_level": "severe",
+    "re_damage_count": 1,
+    "verified_by": [
+      "KSE",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Russia Will Pay — Kharkiv administrative buildings",
+        "url": "https://kse.ua/russia-will-pay/",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat Kharkiv city damage documentation",
+        "url": "https://www.bellingcat.com/",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "EU_FACILITY_FIRST_LOSS",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 28000,
+      "unit": "m²",
+      "source": "estimated_from_photo",
+      "ref": "KSE Kharkiv urban damage assessment 2022"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 40,
+      "central_usd_m": 84,
+      "high_usd_m": 128
+    },
+    "code_compliant": {
+      "low_usd_m": 46,
+      "central_usd_m": 103,
+      "high_usd_m": 160
+    },
+    "build_back_better": {
+      "low_usd_m": 52,
+      "central_usd_m": 128,
+      "high_usd_m": 205
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 55,
+      "concessional_pct": 25,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 60,
+      "concessional_pct": 20,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "EU Facility institutional reconstruction track; energy-efficient public buildings qualify for green conditionality",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "public_admin",
+    "kharkiv",
+    "government",
+    "missile_strike"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

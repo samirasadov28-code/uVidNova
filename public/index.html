@@ -6,7 +6,7 @@
   <title>uVidNova — Ukraine Reconstruction Finance Atlas</title>
   <meta name="description" content="Asset-level, project-finance-grade reconstruction opportunities in Ukraine. Deterministic cost estimates against RDNA3 and KSE benchmarks. Defensible financing structures.">
   <meta name="theme-color" content="#1a3a6b">
-  <meta name="app-version" content="0.0.3">
+  <meta name="app-version" content="0.0.7">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
@@ -46,25 +46,39 @@
       <h1 id="landingTitle" class="landing-title">
         <span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span>
       </h1>
-      <p class="landing-sub">Ukraine Reconstruction Finance Atlas</p>
-      <p class="landing-desc">
+
+      <!-- Name etymology -->
+      <div class="name-etymology" aria-label="Name explanation">
+        <div class="etym-part">
+          <span class="etym-glyph u">u</span>
+          <span class="etym-label" data-i18n="name.u.label">Ukraine</span>
+        </div>
+        <span class="etym-plus">+</span>
+        <div class="etym-part">
+          <span class="etym-glyph"><span class="vid">Vid</span><span class="nova">nova</span></span>
+          <span class="etym-label" data-i18n="name.vidnova.label">відновa — restoration</span>
+        </div>
+      </div>
+
+      <p class="landing-sub" data-i18n="landing.sub">Ukraine Reconstruction Finance Atlas</p>
+      <p class="landing-desc" data-i18n="landing.desc">
         An asset-level, project-finance-grade register of wartime damage and reconstruction opportunities.
         Every figure traceable to RDNA3, KSE Institute, and verified open-source intelligence.
       </p>
       <ul class="landing-features" aria-label="Key features">
-        <li>Deterministic cost estimates — three reconstruction paths per asset</li>
-        <li>Defensible financing structures — grant, concessional, equity, private</li>
-        <li>Re-damage tracking and wartime risk classification</li>
+        <li data-i18n="landing.feat1">Deterministic cost estimates — three reconstruction paths per asset</li>
+        <li data-i18n="landing.feat2">Defensible financing structures — grant, concessional, equity, private</li>
+        <li data-i18n="landing.feat3">Re-damage tracking and wartime risk classification</li>
       </ul>
-      <button class="landing-cta" id="enterAtlas">Explore the atlas →</button>
-      <p class="landing-audience">
+      <button class="landing-cta" id="enterAtlas" data-i18n="landing.cta">Explore the atlas →</button>
+      <p class="landing-audience" data-i18n="landing.audience">
         For DFI investment officers · Infrastructure philanthropies · Policy researchers
       </p>
-      <p class="landing-disclaimer-small">
+      <p class="landing-disclaimer-small" data-i18n="landing.disclaimer">
         Not a fundraising platform. No political framing. Every figure independently sourced.
       </p>
       <div class="landing-actions">
-        <span class="landing-version">v0.0.6</span>
+        <span class="landing-version">v0.0.7</span>
       </div>
     </div>
   </div>
@@ -101,10 +115,10 @@
         <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36">
         <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
       </a>
-      <p class="tagline">Ukraine Reconstruction Finance Atlas</p>
+      <p class="tagline" data-i18n="header.tagline">Ukraine Reconstruction Finance Atlas</p>
       <nav class="site-nav">
-        <a href="/about.html">Methodology</a>
-        <button class="lang-toggle" id="langToggle" aria-label="Switch language">🇬🇧 | UK</button>
+        <a href="/about.html" data-i18n="nav.methodology">Methodology</a>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">🇺🇦 Українська</button>
       </nav>
     </div>
   </header>
@@ -115,60 +129,61 @@
 
       <!-- Filter groups ───────────────────────────────────────────────────── -->
       <div class="filter-header">
-        <h2 class="panel-title">Filters</h2>
-        <button class="reset-filters-btn" id="resetFilters" title="Reset all filters">Reset</button>
+        <h2 class="panel-title" data-i18n="filter.title">Filters</h2>
+        <button class="reset-filters-btn" id="resetFilters" data-i18n="filter.reset" title="Reset all filters">Reset</button>
       </div>
 
       <div class="filter-group">
-        <label class="filter-label">Sector</label>
+        <label class="filter-label" data-i18n="filter.sector">Sector</label>
         <div class="chip-group" id="sectorFilter" role="group" aria-label="Filter by sector"></div>
       </div>
 
       <div class="filter-group">
-        <label class="filter-label">Oblast</label>
+        <label class="filter-label" data-i18n="filter.oblast">Oblast</label>
         <div class="chip-group chip-group-scroll" id="oblastFilter" role="group" aria-label="Filter by oblast"></div>
       </div>
 
       <div class="filter-group">
-        <label class="filter-label">Rebuildability</label>
+        <label class="filter-label" data-i18n="filter.rebuildability">Rebuildability</label>
         <div class="chip-group" id="rebuildabilityFilter" role="group" aria-label="Filter by rebuildability">
-          <button class="chip active" data-value="rebuildable">Rebuildable</button>
-          <button class="chip" data-value="recently_liberated">Recently liberated</button>
-          <button class="chip" data-value="frontline_adjacent">Frontline adjacent</button>
-          <button class="chip" data-value="occupied">Occupied</button>
+          <button class="chip active" data-value="rebuildable" data-i18n="filter.chip.rebuildable">Rebuildable</button>
+          <button class="chip" data-value="recently_liberated" data-i18n="filter.chip.recently_liberated">Recently liberated</button>
+          <button class="chip" data-value="frontline_adjacent" data-i18n="filter.chip.frontline_adjacent">Frontline adjacent</button>
+          <button class="chip" data-value="occupied" data-i18n="filter.chip.occupied">Occupied</button>
         </div>
       </div>
 
       <div class="filter-group">
-        <label class="filter-label">Lifecycle</label>
+        <label class="filter-label" data-i18n="filter.lifecycle">Lifecycle</label>
         <div class="chip-group" id="lifecycleFilter" role="group" aria-label="Filter by lifecycle">
-          <button class="chip active" data-value="documented">Documented</button>
-          <button class="chip active" data-value="assessed">Assessed</button>
-          <button class="chip" data-value="in_pipeline">In pipeline</button>
-          <button class="chip" data-value="funded">Funded</button>
-          <button class="chip" data-value="under_reconstruction">Under reconstruction</button>
-          <button class="chip" data-value="complete">Complete</button>
+          <button class="chip active" data-value="documented" data-i18n="filter.chip.documented">Documented</button>
+          <button class="chip active" data-value="assessed" data-i18n="filter.chip.assessed">Assessed</button>
+          <button class="chip" data-value="in_pipeline" data-i18n="filter.chip.in_pipeline">In pipeline</button>
+          <button class="chip" data-value="funded" data-i18n="filter.chip.funded">Funded</button>
+          <button class="chip" data-value="under_reconstruction" data-i18n="filter.chip.under_reconstruction">Under reconstruction</button>
+          <button class="chip" data-value="complete" data-i18n="filter.chip.complete">Complete</button>
         </div>
       </div>
 
       <div class="filter-group">
-        <label class="filter-label">Capital requirement (baseline central)</label>
+        <label class="filter-label" data-i18n="filter.cost_band">Capital requirement (baseline central)</label>
         <div class="chip-group" id="costBandFilter" role="group" aria-label="Filter by capital requirement"></div>
       </div>
 
       <div class="filter-group">
-        <label class="filter-label">Financing class (baseline)</label>
+        <label class="filter-label" data-i18n="filter.financing_class">Financing class (baseline)</label>
         <div class="chip-group" id="financingClassFilter" role="group" aria-label="Filter by financing class"></div>
       </div>
 
       <div class="filter-group filter-group-inline">
-        <label class="filter-label">Re-damaged assets only</label>
-        <button class="chip chip-flag" id="reDamageFilter" data-value="redamaged" aria-pressed="false">
+        <label class="filter-label" data-i18n="filter.redamage_label">Re-damaged assets only</label>
+        <button class="chip chip-flag" id="reDamageFilter" data-value="redamaged" aria-pressed="false"
+                data-i18n="filter.redamage_chip">
           ⚠ Re-damaged ×2+
         </button>
       </div>
 
-      <div class="asset-count" id="assetCount">Loading…</div>
+      <div class="asset-count" id="assetCount" data-i18n="filter.loading">Loading…</div>
 
       <!-- Aggregation panel ──────────────────────────────────────────────── -->
       <div class="agg-panel" id="aggPanel" aria-live="polite" aria-relevant="additions text"></div>
@@ -185,20 +200,20 @@
   <!-- ── Disclaimer banner ─────────────────────────────────────────────────── -->
   <div class="disclaimer-banner" id="disclaimerBanner">
     <p>
-      Cost and financing-structure figures are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and named comparable Ukrainian precedents.
-      They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence.
-      <button class="dismiss-btn" id="dismissDisclaimer" aria-label="Dismiss disclaimer">Understood</button>
+      <span data-i18n="disclaimer.text">Cost and financing-structure figures are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and named comparable Ukrainian precedents.
+      They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence.</span>
+      <button class="dismiss-btn" id="dismissDisclaimer" data-i18n="disclaimer.dismiss" aria-label="Dismiss disclaimer">Understood</button>
     </p>
   </div>
 
   <!-- ── Version bar ───────────────────────────────────────────────────────── -->
   <div class="version-bar" id="versionBar" role="status">
-    <span class="version-label" id="versionLabel">v0.0.6</span>
-    <button class="force-reload-btn" id="forceReloadBtn" title="Clear cache and reload latest version">
-      Force update
-    </button>
+    <span class="version-label" id="versionLabel">v0.0.7</span>
+    <button class="force-reload-btn" id="forceReloadBtn" data-i18n="version.force_update"
+            title="Clear cache and reload latest version">Force update</button>
     <span class="update-prompt" id="updatePrompt" hidden>
-      · New version ready — <button class="update-reload-btn" id="updateReloadBtn">reload</button>
+      <span data-i18n="version.update_msg">· New version ready —</span>
+      <button class="update-reload-btn" id="updateReloadBtn" data-i18n="version.reload">reload</button>
     </span>
   </div>
 
@@ -208,14 +223,14 @@
       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
       <polyline points="22,6 12,13 2,6"/>
     </svg>
-    <span>Feedback</span>
+    <span data-i18n="feedback.btn">Feedback</span>
   </button>
 
   <!-- ── Feedback modal ────────────────────────────────────────────────────── -->
   <div class="modal-overlay" id="feedbackModal" hidden role="dialog" aria-modal="true" aria-labelledby="feedbackModalTitle">
     <div class="modal-box">
       <div class="modal-header">
-        <h3 id="feedbackModalTitle">Send feedback</h3>
+        <h3 id="feedbackModalTitle" data-i18n="feedback.title">Send feedback</h3>
         <button class="modal-close" id="closeFeedbackModal" aria-label="Close feedback form">×</button>
       </div>
       <!-- Netlify Form — configure email notification in Netlify dashboard:
@@ -226,21 +241,28 @@
           <label>Don't fill this out: <input name="bot-field"></label>
         </p>
         <div class="form-group">
-          <label for="fbName" class="form-label">Name</label>
-          <input type="text" id="fbName" name="name" class="form-input" placeholder="Your name" required maxlength="100">
+          <label for="fbName" class="form-label" data-i18n="feedback.name_label">Name</label>
+          <input type="text" id="fbName" name="name" class="form-input"
+                 data-i18n-placeholder="feedback.name_ph"
+                 placeholder="Your name" required maxlength="100">
         </div>
         <div class="form-group">
-          <label for="fbEmail" class="form-label">Email</label>
-          <input type="email" id="fbEmail" name="email" class="form-input" placeholder="your@email.com" required maxlength="200">
+          <label for="fbEmail" class="form-label" data-i18n="feedback.email_label">Email</label>
+          <input type="email" id="fbEmail" name="email" class="form-input"
+                 data-i18n-placeholder="feedback.email_ph"
+                 placeholder="your@email.com" required maxlength="200">
         </div>
         <div class="form-group">
-          <label for="fbMessage" class="form-label">Message</label>
-          <textarea id="fbMessage" name="message" class="form-input form-textarea" placeholder="Your feedback, correction, or question…" required maxlength="2000" rows="5"></textarea>
+          <label for="fbMessage" class="form-label" data-i18n="feedback.message_label">Message</label>
+          <textarea id="fbMessage" name="message" class="form-input form-textarea"
+                    data-i18n-placeholder="feedback.message_ph"
+                    placeholder="Your feedback, correction, or question…"
+                    required maxlength="2000" rows="5"></textarea>
         </div>
         <div class="form-actions">
-          <button type="submit" class="form-submit" id="feedbackSubmit">Send</button>
+          <button type="submit" class="form-submit" id="feedbackSubmit" data-i18n="feedback.submit">Send</button>
         </div>
-        <p class="form-sent" id="feedbackSent" hidden>Thank you — your message has been sent.</p>
+        <p class="form-sent" id="feedbackSent" hidden data-i18n="feedback.sent">Thank you — your message has been sent.</p>
       </form>
     </div>
   </div>
@@ -250,25 +272,25 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
     </svg>
-    <span>Ask AI</span>
+    <span data-i18n="chat.btn">Ask AI</span>
   </button>
 
   <!-- ── AI chat panel ─────────────────────────────────────────────────────── -->
   <div class="chat-panel" id="chatPanel" hidden role="complementary" aria-label="AI assistant">
     <div class="chat-header">
       <div class="chat-header-title">
-        <span class="chat-title">uVidNova AI</span>
-        <span class="chat-powered">Powered by Groq</span>
+        <span class="chat-title" data-i18n="chat.title">uVidNova AI</span>
+        <span class="chat-powered" data-i18n="chat.powered">Powered by Groq</span>
       </div>
       <button class="chat-close" id="closeChatPanel" aria-label="Close AI assistant">×</button>
     </div>
     <div class="chat-messages" id="chatMessages" aria-live="polite" aria-relevant="additions">
       <div class="chat-welcome">
-        <p>Ask me about reconstruction costs, financing structures, or specific assets.</p>
+        <p data-i18n="chat.welcome">Ask me about reconstruction costs, financing structures, or specific assets.</p>
         <div class="chat-suggestions">
-          <button class="chat-suggestion">What is the Kakhovka HPP baseline cost?</button>
-          <button class="chat-suggestion">How does MIGA war insurance work?</button>
-          <button class="chat-suggestion">What is the build-back-better path?</button>
+          <button class="chat-suggestion" data-i18n="chat.suggestion1">What is the Kakhovka HPP baseline cost?</button>
+          <button class="chat-suggestion" data-i18n="chat.suggestion2">How does MIGA war insurance work?</button>
+          <button class="chat-suggestion" data-i18n="chat.suggestion3">What is the build-back-better path?</button>
         </div>
       </div>
     </div>
@@ -277,6 +299,7 @@
         type="text"
         id="chatInput"
         class="chat-input"
+        data-i18n-placeholder="chat.placeholder"
         placeholder="Ask about reconstruction financing…"
         maxlength="500"
         aria-label="Chat message"

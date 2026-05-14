@@ -1,0 +1,145 @@
+{
+  "asset_id": "TRYPILSKA_TPP_2024_04_11",
+  "name": {
+    "en": "Trypilska Thermal Power Plant",
+    "uk": "Трипільська теплова електростанція"
+  },
+  "location": {
+    "lat": 50.1073,
+    "lon": 30.7636,
+    "oblast": "Kyiv",
+    "raion": "Obukhiv",
+    "settlement": "Ukrainka",
+    "address_en": "Trypilska TPP, Ukrainka, Obukhiv Raion, Kyiv Oblast"
+  },
+  "asset_type": "energy.tpp",
+  "sector": "energy_and_power",
+  "damage": {
+    "incident_date": "2024-04-11",
+    "incident_type": "missile_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "DTEK Energy: Trypilska TPP totally destroyed by Russian missile strikes",
+        "url": "https://dtek.com/en/media/news/trypilska-tpp-totally-destroyed-by-russian-missile-strikes/",
+        "source_code": "eRECOVERY"
+      },
+      {
+        "title": "KSE Institute: DTEK Energy Infrastructure Damage — April 2024",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-damage-to-energy",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine Situation Report — Energy Infrastructure Attacks April 2024",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-april-2024",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "Reuters: Ukraine's Trypilska power plant completely destroyed in Russian strikes",
+        "url": "https://www.reuters.com/world/europe/ukraines-trypilska-power-plant-destroyed-russian-missile-strikes-2024-04-11/",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EBRD_RSF",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "installed_capacity_mw": {
+      "value": 1800,
+      "unit": "MW",
+      "source": "extracted_from_source",
+      "ref": "DTEK Energy annual report 2023; Trypilska TPP technical passport (300 MW × 6 units)"
+    },
+    "site_area_ha": {
+      "value": 165,
+      "unit": "ha",
+      "source": "extracted_from_source",
+      "ref": "Satellite imagery analysis (Maxar Technologies); DTEK Energy site documentation"
+    },
+    "construction_year": {
+      "value": 1969,
+      "unit": "year",
+      "source": "extracted_from_source",
+      "ref": "DTEK Energy corporate history; Energoatom records"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 747,
+      "central_usd_m": 1330,
+      "high_usd_m": 1913
+    },
+    "code_compliant": {
+      "low_usd_m": 859,
+      "central_usd_m": 1625,
+      "high_usd_m": 2391
+    },
+    "build_back_better": {
+      "low_usd_m": 971,
+      "central_usd_m": 2016,
+      "high_usd_m": 3060,
+      "tech_overlays": [
+        "combined_cycle_gas",
+        "carbon_capture_ready",
+        "smart_grid_integration",
+        "grid_scale_storage",
+        "hydrogen_readiness"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 25,
+      "concessional_pct": 50,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 30,
+      "concessional_pct": 45,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 15,
+      "private_pct": 10,
+      "rationale": "Large thermal power reconstruction with build-back-better pivot to combined-cycle gas (lower emissions vs. current coal-fired base). EU Facility energy-security track eligible; EBRD Energy Efficiency and Resilience Facility applicable. Private co-investment (DTEK equity) credible given operator's existing portfolio. EU green conditionality requires carbon-transition roadmap — combined-cycle pathway meets this threshold. Note: coal plant baseline rebuild unlikely to receive EU grant support; code-compliant and BBB paths assume fuel-switch to gas or hybrid.",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "energy",
+    "thermal_power",
+    "dtek",
+    "kyiv_oblast",
+    "missile_strike",
+    "large_scale",
+    "grid_critical"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

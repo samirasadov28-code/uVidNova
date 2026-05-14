@@ -1,0 +1,120 @@
+{
+  "asset_id": "ANTONIVSKYI_ROAD_BRIDGE_2022_07_27",
+  "name": {
+    "en": "Antonivskyi Road Bridge over the Dnipro, Kherson Oblast",
+    "uk": "Антонівський автодорожній міст"
+  },
+  "location": {
+    "lat": 46.781,
+    "lon": 32.749,
+    "oblast": "Kherson",
+    "raion": "Kherson",
+    "settlement": "Antonivka",
+    "address_en": "Antonivskyi Road Bridge, Kherson Oblast (crossing at Antonivka)"
+  },
+  "asset_type": "transport.bridge",
+  "sector": "transport_and_ports",
+  "damage": {
+    "incident_date": "2022-07-27",
+    "incident_type": "missile_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 3,
+    "verified_by": [
+      "UA_GOV",
+      "BELLINGCAT",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "Bellingcat: Antonivka Bridge HIMARS Strike Analysis",
+        "url": "https://www.bellingcat.com/news/2022/07/27/antonivka-bridge-himars-strikes",
+        "source_code": "BELLINGCAT"
+      },
+      {
+        "title": "KSE Institute: Kherson Oblast Transport Infrastructure",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-transport-kherson",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "frontline_adjacent",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "deck_area_m2": {
+      "value": 22000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "Ukravtodor technical documentation; bridge length 1,362m × 16m width = 21,792 m² deck area"
+    },
+    "span_length_m": {
+      "value": 1362,
+      "unit": "m",
+      "source": "extracted_from_source",
+      "ref": "Ukravtodor official bridge registry; Antonivka–Kherson crossing"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 470,
+      "central_usd_m": 1188,
+      "high_usd_m": 1906
+    },
+    "code_compliant": {
+      "low_usd_m": 541,
+      "central_usd_m": 1461,
+      "high_usd_m": 2382
+    },
+    "build_back_better": {
+      "low_usd_m": 611,
+      "central_usd_m": 1830,
+      "high_usd_m": 3049
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 30,
+      "concessional_pct": 45,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 40,
+      "concessional_pct": 35,
+      "public_equity_pct": 15,
+      "private_pct": 10,
+      "rationale": "EU Connectivity Fund and TEN-T programme applicable to transport reconstruction; private concession model viable for airport and seaport; MIGA War & Civil Disturbance coverage for private tranche",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "transport",
+    "bridge",
+    "kherson",
+    "missile_strike",
+    "frontline",
+    "strategic",
+    "re_damaged"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

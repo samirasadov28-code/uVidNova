@@ -1,0 +1,242 @@
+[
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 8,
+    "description": "Integration of advanced avionics suites including fly-by-wire upgrades, satellite navigation, and collision-avoidance systems. Raises operational safety margins and aligns with ICAO standards for modern long-haul cargo aircraft.",
+    "label_en": "Advanced Avionics Suite",
+    "overlay_id": "advanced_avionics",
+    "sectors": ["transport_and_ports"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 12,
+    "description": "Permeable paving, retention ponds, green roofs, and bioswales integrated into site design to manage stormwater and reduce urban heat. Reduces flood risk and improves long-term operational resilience for water and residential assets.",
+    "label_en": "Blue-Green Infrastructure",
+    "overlay_id": "blue_green_infrastructure",
+    "sectors": ["water_and_sanitation", "residential"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 18,
+    "description": "Pre-engineered carbon-capture interface points including flue-gas tie-ins and geological storage connectivity, enabling retrofit of full CCS equipment when commercially viable. Preserves asset longevity as carbon regulations tighten.",
+    "label_en": "Carbon Capture-Ready Infrastructure",
+    "overlay_id": "carbon_capture_ready",
+    "sectors": ["energy_and_power"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 10,
+    "description": "Barrier-free access, tactile guidance, and adjustable facilities designed to universal-design standards throughout all public and clinical spaces. Required for EU accessibility regulation compliance and inclusive public use.",
+    "label_en": "Accessible (Universal) Design",
+    "overlay_id": "accessible_design",
+    "sectors": ["heritage_and_culture", "public_administration"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 20,
+    "description": "3D BIM scanning, photogrammetric documentation, and materials-matched restoration protocols to recreate historic fabric accurately. Ensures cultural authenticity and supports UNESCO/ICOMOS compliance for heritage-listed assets.",
+    "label_en": "Cultural Heritage BIM Documentation and Restoration",
+    "overlay_id": "cultural_heritage_bim",
+    "sectors": ["heritage_and_culture"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 35,
+    "description": "High-efficiency combined-cycle gas turbine replacement of subcritical coal or Soviet-era steam plant, improving thermal efficiency from ~32% to ~55%. Substantially reduces fuel costs and CO₂ emissions, aligning with Ukraine's EU integration energy commitments.",
+    "label_en": "Combined-Cycle Gas Turbine Upgrade",
+    "overlay_id": "combined_cycle_gas",
+    "sectors": ["energy_and_power"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 15,
+    "description": "Integration of refrigerated storage, cold-transport linkages, and temperature-monitoring systems into processing and port facilities. Critical for preserving grain quality and reducing post-harvest losses in Ukraine's agricultural export chain.",
+    "label_en": "Cold Chain Integration",
+    "overlay_id": "cold_chain_integration",
+    "sectors": ["industrial_and_agricultural"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 12,
+    "description": "Airframe reconstruction using carbon-fibre and advanced-alloy composites in primary structures, reducing empty weight and increasing payload efficiency. Enables compliance with modern airworthiness standards and extends service life.",
+    "label_en": "Composite Airframe Materials",
+    "overlay_id": "composite_materials",
+    "sectors": ["transport_and_ports"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 18,
+    "description": "Seismic isolation bearings installed at bridge pier and abutment interfaces to dissipate earthquake energy and reduce structural demand during ground motion events. Extends bridge service life and reduces lifecycle maintenance costs.",
+    "label_en": "Bridge Seismic Isolation",
+    "overlay_id": "bridge_seismic_isolation",
+    "sectors": ["transport_and_ports"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 22,
+    "description": "Thermal envelope upgrades, triple glazing, controlled mechanical ventilation with heat recovery, and airtightness measures meeting Passivhaus or equivalent standard. Reduces heating demand by 70–90% and qualifies for EU green-conditionality grant uplift.",
+    "label_en": "Passive Building Standard (Passivhaus-equivalent)",
+    "overlay_id": "passive_building_standard",
+    "sectors": ["healthcare", "education", "heritage_and_culture", "residential", "public_administration"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 28,
+    "description": "District-scale heat pump network drawing from ground-source or water-source loops to replace gas boilers for space heating and hot water. Eliminates gas dependency and substantially cuts operating costs over a 25-year horizon.",
+    "label_en": "District Heat Pump Network",
+    "overlay_id": "district_heat_pump",
+    "sectors": ["residential", "water_and_sanitation"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 14,
+    "description": "Enhanced insulation, window replacement, LED lighting, and HVAC controls applied to existing residential building stock during reconstruction. Reduces annual energy bills by 40–60% and qualifies households for EU energy-poverty support mechanisms.",
+    "label_en": "Energy Efficiency Retrofit Package",
+    "overlay_id": "energy_efficiency_retrofit",
+    "sectors": ["residential", "education"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 6,
+    "description": "Dark-fibre conduit, splice points, and backbone connections installed during civil works to enable gigabit broadband without future road-opening. Low marginal cost when co-deployed with reconstruction; high retrofit cost if deferred.",
+    "label_en": "Dark Fibre Backbone",
+    "overlay_id": "fibre",
+    "sectors": ["healthcare", "education", "heritage_and_culture", "public_administration"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 22,
+    "description": "Variable-speed pump-turbine units replacing fixed-speed generators to provide grid frequency regulation and rapid-response reserve services. Increases revenue potential and grid value of hydropower assets in a high-renewable grid.",
+    "label_en": "Flexible Generation (Variable-Speed Pump-Turbine)",
+    "overlay_id": "flexible_generation",
+    "sectors": ["energy_and_power"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 8,
+    "description": "Fish ladders, bypass channels, and minimum environmental flow controls to restore longitudinal connectivity for migratory species. Required for EU environmental compliance and EBRD environmental and social performance standards.",
+    "label_en": "Fish Passage and Environmental Flow",
+    "overlay_id": "fish_passage",
+    "sectors": ["energy_and_power"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 10,
+    "description": "Dual-fuel or dedicated hydrogen-capable gas turbine packages with H₂-blending manifolds and storage interface points. Preserves thermal generation investment as green hydrogen supply chains mature in Europe.",
+    "label_en": "Hydrogen Readiness (Thermal Plant)",
+    "overlay_id": "hydrogen_readiness",
+    "sectors": ["energy_and_power", "industrial_and_agricultural"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 15,
+    "description": "Liquid-hydrogen fuel system, cryogenic tankage, and compatible propulsion architecture in aircraft reconstruction to enable future zero-emission operations. Positions the asset for next-generation sustainable aviation fuel pathways.",
+    "label_en": "Hydrogen Propulsion Readiness (Aircraft)",
+    "overlay_id": "hydrogen_propulsion_readiness",
+    "sectors": ["transport_and_ports"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 16,
+    "description": "Cross-laminated timber (CLT) or glulam structural frames replacing concrete or steel in mid-rise construction, locking biogenic carbon and reducing embodied-carbon footprint by 40–60%. Supports EU Taxonomy alignment and qualifies for green finance instruments.",
+    "label_en": "Mass Timber Structure (CLT/Glulam)",
+    "overlay_id": "mass_timber",
+    "sectors": ["residential", "education"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 20,
+    "description": "On-site solar PV, battery storage, and islanding switchgear enabling critical loads to operate independently of the grid during outages. Essential for healthcare and public administration continuity under wartime grid instability.",
+    "label_en": "Islanded Microgrid with Battery Storage",
+    "overlay_id": "microgrid",
+    "sectors": ["energy_and_power", "healthcare", "education", "water_and_sanitation", "public_administration"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 18,
+    "description": "Factory-built patient-care modules (ICU bays, operating theatres, diagnostic units) assembled on site, reducing construction time by 30–50% and enabling phased capacity expansion without disrupting active operations.",
+    "label_en": "Modular Clinical Units",
+    "overlay_id": "modular_clinical_units",
+    "sectors": ["healthcare"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 10,
+    "description": "Volumetric or panellised factory-built residential units enabling rapid site assembly, quality control, and significant reduction in skilled-labour demand — critical in a labour-constrained wartime reconstruction environment.",
+    "label_en": "Prefabricated Modular Housing",
+    "overlay_id": "prefab_modular_housing",
+    "sectors": ["residential"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 30,
+    "description": "Overhead catenary or electrified third-rail installation on freight and passenger rail corridors, eliminating diesel traction and enabling integration with Ukraine's expanding renewable generation fleet.",
+    "label_en": "Rail Electrification",
+    "overlay_id": "rail_electrification",
+    "sectors": ["transport_and_ports"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 16,
+    "description": "Low-lying reservoir redesign to maximise run-of-river flow with reduced impoundment, lowering inundation area and methane emissions while maintaining generation capacity. Addresses upstream displacement and ecosystem concerns raised under EBRD environmental standards.",
+    "label_en": "Run-of-River Redesign (Reduced Impoundment)",
+    "overlay_id": "run_of_river_redesign",
+    "sectors": ["energy_and_power"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 14,
+    "description": "Seismic base-isolation or ductile moment-frame systems providing life-safety protection beyond current Ukrainian building code minimums, aligned with Eurocode 8. Reduces risk of total loss and improves insurability in post-conflict risk environments.",
+    "label_en": "Seismic Resilience Upgrade",
+    "overlay_id": "seismic_resilience",
+    "sectors": ["residential", "education"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 9,
+    "description": "Automated meter infrastructure with tamper detection, remote shutoff, and real-time leak localisation across the distribution network. Typically reduces non-revenue water losses from 35–50% (Ukrainian average) to under 15% within five years.",
+    "label_en": "Smart Water Metering and Network Monitoring",
+    "overlay_id": "smart_water_metering",
+    "sectors": ["water_and_sanitation"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 25,
+    "description": "Advanced metering infrastructure, SCADA-based distribution automation, and demand-response capability enabling two-way power flow for distributed renewables. Foundational for EU electricity market integration and ENTSO-E synchronisation.",
+    "label_en": "Smart Grid Integration",
+    "overlay_id": "smart_grid_integration",
+    "sectors": ["energy_and_power"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 20,
+    "description": "Grid-scale lithium-ion or flow-battery installation providing 4–8 hours of storage at point of generation or substation level, supporting renewable integration and grid frequency stabilisation.",
+    "label_en": "Grid-Scale Battery Storage",
+    "overlay_id": "grid_scale_storage",
+    "sectors": ["energy_and_power"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 12,
+    "description": "Redundant gravity-fed or elevated-tank supply lines providing passive water pressure during power outages or pump failures. Provides critical resilience continuity for hospitals, schools, and emergency services.",
+    "label_en": "Gravity-Fed Redundancy Supply",
+    "overlay_id": "gravity_fed_redundancy",
+    "sectors": ["water_and_sanitation"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 8,
+    "description": "Remote diagnostic platforms, video-consultation infrastructure, and electronic health record interoperability enabling care delivery without physical patient travel. High-impact in regions where hospital capacity remains constrained during reconstruction.",
+    "label_en": "Telemedicine Platform",
+    "overlay_id": "telemedicine",
+    "sectors": ["healthcare"]
+  },
+  {
+    "applicable_paths": ["build_back_better"],
+    "cost_premium_pct": 18,
+    "description": "Closed-loop production systems with waste-heat recovery, material recycling, and effluent-minimisation engineering to achieve near-zero solid and liquid waste discharge. Supports EU industrial emissions directive alignment and reduces long-term remediation liability.",
+    "label_en": "Zero-Waste Circular Production",
+    "overlay_id": "zero_waste_circular",
+    "sectors": ["industrial_and_agricultural"]
+  }
+]

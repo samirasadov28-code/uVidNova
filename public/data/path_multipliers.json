@@ -1,0 +1,7 @@
+{
+  "_source": "RDNA3 Table C-5 (path cost relativities); EBRD Ukraine Energy Reconstruction case studies 2023",
+  "_note": "Multipliers applied to baseline unit cost. low/high generate the triple's spread. central = average of low and high-end products.",
+  "baseline":          { "low": 1.00, "high": 1.00 },
+  "code_compliant":    { "low": 1.15, "high": 1.25 },
+  "build_back_better": { "low": 1.30, "high": 1.60 }
+}

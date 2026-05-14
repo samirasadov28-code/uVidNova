@@ -1,0 +1,110 @@
+{
+  "asset_id": "CHERNIHIV_REGIONAL_LIBRARY_2022_03_03",
+  "name": {
+    "en": "Chernihiv Regional Universal Scientific Library",
+    "uk": "Чернігівська обласна універсальна наукова бібліотека"
+  },
+  "location": {
+    "lat": 51.4982,
+    "lon": 31.2893,
+    "oblast": "Chernihiv",
+    "raion": null,
+    "settlement": "Chernihiv",
+    "address_en": "33 Prosp. Miru, Chernihiv"
+  },
+  "asset_type": "public_admin.library",
+  "sector": "public_administration",
+  "damage": {
+    "incident_date": "2022-03-03",
+    "incident_type": "aerial_bomb",
+    "destruction_level": "severe",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Russia Will Pay — Chernihiv cultural buildings",
+        "url": "https://kse.ua/russia-will-pay/",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat Chernihiv city damage documentation",
+        "url": "https://www.bellingcat.com/",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "EU_FACILITY_FIRST_LOSS",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 6500,
+      "unit": "m²",
+      "source": "estimated_from_photo",
+      "ref": "KSE Chernihiv cultural and administrative damage assessment 2022"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 7,
+      "central_usd_m": 16,
+      "high_usd_m": 24
+    },
+    "code_compliant": {
+      "low_usd_m": 8,
+      "central_usd_m": 19,
+      "high_usd_m": 30
+    },
+    "build_back_better": {
+      "low_usd_m": 9,
+      "central_usd_m": 24,
+      "high_usd_m": 39
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 55,
+      "concessional_pct": 25,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 60,
+      "concessional_pct": 20,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "EU Facility institutional reconstruction track; energy-efficient public buildings qualify for green conditionality",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "public_admin",
+    "chernihiv",
+    "library",
+    "air_strike"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

@@ -1,0 +1,120 @@
+{
+  "asset_id": "KRYVORIZKA_TPP_2022_10_18",
+  "name": {
+    "en": "Kryvorizka Thermal Power Plant",
+    "uk": "Криворізька теплова електростанція"
+  },
+  "location": {
+    "lat": 47.91,
+    "lon": 33.34,
+    "oblast": "Dnipropetrovsk",
+    "raion": "Kryvyi Rih",
+    "settlement": "Zelenodolsk",
+    "address_en": "Kryvorizka TPP, Zelenodolsk, Kryvyi Rih Raion, Dnipropetrovsk Oblast"
+  },
+  "asset_type": "energy.tpp",
+  "sector": "energy_and_power",
+  "damage": {
+    "incident_date": "2022-10-18",
+    "incident_type": "missile_strike",
+    "destruction_level": "severe",
+    "re_damage_count": 3,
+    "verified_by": [
+      "KSE",
+      "UA_GOV",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "DTEK Energy: October 2022 infrastructure attack damage report",
+        "url": "https://dtek.com/en/media/news/october-2022-attack/",
+        "source_code": "eRECOVERY"
+      },
+      {
+        "title": "KSE Institute: Ukraine Energy Infrastructure Damage Tracker",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine Flash Update — October 2022 Energy Attacks",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-october-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EBRD_RSF",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "installed_capacity_mw": {
+      "value": 2820,
+      "unit": "MW",
+      "source": "extracted_from_source",
+      "ref": "DTEK Energy annual report 2023; installed capacity 2,820 MW across 9 units"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 778,
+      "central_usd_m": 1602,
+      "high_usd_m": 2426
+    },
+    "code_compliant": {
+      "low_usd_m": 895,
+      "central_usd_m": 1964,
+      "high_usd_m": 3032
+    },
+    "build_back_better": {
+      "low_usd_m": 1012,
+      "central_usd_m": 2447,
+      "high_usd_m": 3881
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 25,
+      "concessional_pct": 50,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 30,
+      "concessional_pct": 45,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 15,
+      "private_pct": 10,
+      "rationale": "EU Facility energy-security track; EBRD Energy Efficiency and Resilience Facility; private co-investment (operator equity) credible for BBB path with carbon-transition roadmap",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "energy",
+    "thermal_power",
+    "dtek",
+    "dnipropetrovsk",
+    "missile_strike",
+    "large_scale",
+    "re_damaged"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

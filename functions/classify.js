@@ -16,13 +16,14 @@ import { chat } from './lib/groq.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
+const dataRoot = join(root, 'public');
 
 function loadText(relPath) {
   return readFileSync(join(root, relPath), 'utf8');
 }
 
-function loadJSON(relPath) {
-  return JSON.parse(loadText(relPath));
+function loadDataJSON(relPath) {
+  return JSON.parse(readFileSync(join(dataRoot, relPath), 'utf8'));
 }
 
 // Cache prompt and taxonomy in module scope (warm starts reuse them)
@@ -35,7 +36,7 @@ function systemPrompt() {
 
 function taxonomyTypes() {
   if (_taxonomyTypes) return _taxonomyTypes;
-  const tax = loadJSON('data/taxonomy.json');
+  const tax = loadDataJSON('data/taxonomy.json');
   const types = new Set();
   for (const sector of Object.values(tax.sectors ?? {})) {
     for (const key of Object.keys(sector.subtypes ?? {})) {

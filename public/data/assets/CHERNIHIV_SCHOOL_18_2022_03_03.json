@@ -1,0 +1,117 @@
+{
+  "asset_id": "CHERNIHIV_SCHOOL_18_2022_03_03",
+  "name": {
+    "en": "Chernihiv Secondary School No. 18",
+    "uk": "Чернігівська загальноосвітня школа №18"
+  },
+  "location": {
+    "lat": 51.4975,
+    "lon": 31.287,
+    "oblast": "Chernihiv",
+    "raion": null,
+    "settlement": "Chernihiv",
+    "address_en": "School No. 18, Chernihiv, Chernihiv Oblast"
+  },
+  "asset_type": "education.secondary_school",
+  "sector": "education",
+  "damage": {
+    "incident_date": "2022-03-03",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "severe",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UN_OCHA",
+      "UA_GOV",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UNICEF Ukraine: School Damage Report — Chernihiv Oblast",
+        "url": "https://www.unicef.org/ukraine/reports/chernihiv-school-damage-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Education Infrastructure Damage — Chernihiv Oblast",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-education-2022",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 4800,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "Chernihiv City Education Department registry; typical 3-storey school building 4,800 m²"
+    },
+    "construction_year": {
+      "value": 1972,
+      "unit": "year",
+      "source": "estimated_from_photo",
+      "ref": "Architectural style and satellite imagery consistent with Soviet-era school construction 1970–1975"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 4,
+      "central_usd_m": 9,
+      "high_usd_m": 14
+    },
+    "code_compliant": {
+      "low_usd_m": 5,
+      "central_usd_m": 11,
+      "high_usd_m": 17
+    },
+    "build_back_better": {
+      "low_usd_m": 5,
+      "central_usd_m": 14,
+      "high_usd_m": 22
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 50,
+      "concessional_pct": 30,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 55,
+      "concessional_pct": 25,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "EU Facility education reconstruction track; passive-building standard and fibre overlays meet EU green conditionality",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "education",
+    "secondary_school",
+    "chernihiv",
+    "shelling"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

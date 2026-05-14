@@ -1,0 +1,125 @@
+{
+  "asset_id": "KHERSON_REGIONAL_HOSPITAL_2022_11_11",
+  "name": {
+    "en": "Kherson Regional Clinical Hospital",
+    "uk": "Херсонська обласна клінічна лікарня"
+  },
+  "location": {
+    "lat": 46.6464,
+    "lon": 32.6251,
+    "oblast": "Kherson",
+    "raion": null,
+    "settlement": "Kherson",
+    "address_en": "Kherson Regional Clinical Hospital, Kherson"
+  },
+  "asset_type": "healthcare.tertiary_hospital",
+  "sector": "healthcare",
+  "damage": {
+    "incident_date": "2022-11-11",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "severe",
+    "re_damage_count": 5,
+    "verified_by": [
+      "UN_OCHA",
+      "UA_GOV",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "Human Rights Watch: Attacks on Kherson Hospital and Medical Facilities",
+        "url": "https://www.hrw.org/news/2023/02/10/ukraine-attacks-kherson-medical-facilities",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "UN OCHA Ukraine Situation Report — Kherson Post-Liberation",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kherson-liberation",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Kherson Oblast Infrastructure Damage",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kherson",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "frontline_adjacent",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 18000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery analysis; Kherson Oblast Health Department records"
+    },
+    "beds": {
+      "value": 700,
+      "unit": "beds",
+      "source": "extracted_from_source",
+      "ref": "Ministry of Health Ukraine: Kherson Regional Hospital capacity data"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 89,
+      "central_usd_m": 162,
+      "high_usd_m": 234
+    },
+    "code_compliant": {
+      "low_usd_m": 103,
+      "central_usd_m": 198,
+      "high_usd_m": 293
+    },
+    "build_back_better": {
+      "low_usd_m": 116,
+      "central_usd_m": 245,
+      "high_usd_m": 374
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 55,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "Tertiary hospital commands high grant-eligibility under EU healthcare reconstruction programmes; EU green conditionality for BBB microgrid/passive-standard components",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "healthcare",
+    "tertiary_hospital",
+    "kherson",
+    "shelling",
+    "frontline",
+    "re_damaged",
+    "high_priority"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

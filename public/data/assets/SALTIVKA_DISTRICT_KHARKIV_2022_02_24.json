@@ -1,0 +1,120 @@
+{
+  "asset_id": "SALTIVKA_DISTRICT_KHARKIV_2022_02_24",
+  "name": {
+    "en": "Saltivka Residential District, Kharkiv",
+    "uk": "Жилий масив Салтівка, Харків"
+  },
+  "location": {
+    "lat": 50.035,
+    "lon": 36.31,
+    "oblast": "Kharkiv",
+    "raion": null,
+    "settlement": "Kharkiv",
+    "address_en": "Saltivka Residential District, Kharkiv (Saltivskyi, Moskovskyi raions)"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-02-24",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "moderate",
+    "re_damage_count": 8,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Kharkiv Residential Damage Assessment — Saltivka District",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-saltivka",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine: Kharkiv Residential Damage Situation Report",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kharkiv-residential-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS",
+      "EBRD_RSF"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 4500000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "KSE Institute: Saltivka damage assessment 2022; ~4.5M m² residential stock across multiple micro-districts"
+    },
+    "housing_units": {
+      "value": 50000,
+      "unit": "units",
+      "source": "extracted_from_source",
+      "ref": "Kharkiv City Council housing registry; Saltivka district approximately 50,000 apartment units"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 1339,
+      "central_usd_m": 3445,
+      "high_usd_m": 5550
+    },
+    "code_compliant": {
+      "low_usd_m": 1540,
+      "central_usd_m": 4239,
+      "high_usd_m": 6938
+    },
+    "build_back_better": {
+      "low_usd_m": 1741,
+      "central_usd_m": 5311,
+      "high_usd_m": 8880
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 40,
+      "concessional_pct": 35,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 45,
+      "concessional_pct": 35,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "rationale": "EU Facility housing reconstruction track; prefab-modular and passive-standard overlays qualify; municipal co-investment required",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "kharkiv_oblast",
+    "shelling",
+    "large_scale",
+    "re_damaged",
+    "apartment_blocks"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

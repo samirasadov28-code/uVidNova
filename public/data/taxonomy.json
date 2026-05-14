@@ -1,0 +1,339 @@
+{
+  "$schema": "https://uvidnova.org/schemas/taxonomy",
+  "_note": "Fixed asset_type taxonomy. Adding a new type requires a separate PR with a corresponding unit_cost row and any new physical_spec fields. Frozen at v1.",
+  "_last_updated": "2026-05-14",
+  "sectors": {
+    "energy_and_power": {
+      "label_en": "Energy and Power",
+      "label_uk": "Енергетика та електроенергетика",
+      "subtypes": {
+        "energy.hpp": {
+          "label_en": "Hydroelectric Power Plant",
+          "label_uk": "Гідроелектростанція",
+          "physical_unit": "MW",
+          "description": "Dam-based hydroelectric generation facility."
+        },
+        "energy.tpp": {
+          "label_en": "Thermal Power Plant",
+          "label_uk": "Теплова електростанція",
+          "physical_unit": "MW",
+          "description": "Coal, gas, or oil-fired electricity generation facility."
+        },
+        "energy.npp": {
+          "label_en": "Nuclear Power Plant",
+          "label_uk": "Атомна електростанція",
+          "physical_unit": "MW",
+          "description": "Nuclear electricity generation facility."
+        },
+        "energy.substation": {
+          "label_en": "Electrical Substation",
+          "label_uk": "Електрична підстанція",
+          "physical_unit": "MVA",
+          "description": "High-voltage transformer and switching station."
+        },
+        "energy.wind_farm": {
+          "label_en": "Wind Farm",
+          "label_uk": "Вітрова електростанція",
+          "physical_unit": "MW",
+          "description": "Utility-scale wind energy generation facility."
+        },
+        "energy.solar_farm": {
+          "label_en": "Solar Farm",
+          "label_uk": "Сонячна електростанція",
+          "physical_unit": "MW",
+          "description": "Utility-scale solar photovoltaic generation facility."
+        },
+        "energy.gas_storage": {
+          "label_en": "Gas Storage Facility",
+          "label_uk": "Газосховище",
+          "physical_unit": "bcm",
+          "description": "Underground or surface natural gas storage."
+        }
+      }
+    },
+    "healthcare": {
+      "label_en": "Healthcare",
+      "label_uk": "Охорона здоров'я",
+      "subtypes": {
+        "healthcare.tertiary_hospital": {
+          "label_en": "Tertiary / Specialist Hospital",
+          "label_uk": "Третинна / спеціалізована лікарня",
+          "physical_unit": "beds",
+          "secondary_unit": "m2",
+          "description": "Large specialist or teaching hospital providing tertiary care."
+        },
+        "healthcare.regional_hospital": {
+          "label_en": "Regional General Hospital",
+          "label_uk": "Регіональна лікарня",
+          "physical_unit": "beds",
+          "secondary_unit": "m2",
+          "description": "Oblast-level general hospital."
+        },
+        "healthcare.district_hospital": {
+          "label_en": "District Hospital",
+          "label_uk": "Районна лікарня",
+          "physical_unit": "beds",
+          "secondary_unit": "m2",
+          "description": "Raion-level hospital serving a district catchment."
+        },
+        "healthcare.maternity_hospital": {
+          "label_en": "Maternity Hospital",
+          "label_uk": "Пологовий будинок",
+          "physical_unit": "beds",
+          "secondary_unit": "m2",
+          "description": "Dedicated obstetric and neonatal facility."
+        },
+        "healthcare.polyclinic": {
+          "label_en": "Polyclinic / Outpatient Centre",
+          "label_uk": "Поліклініка",
+          "physical_unit": "m2",
+          "description": "Outpatient primary and specialist care facility."
+        }
+      }
+    },
+    "education": {
+      "label_en": "Education",
+      "label_uk": "Освіта",
+      "subtypes": {
+        "education.university": {
+          "label_en": "University / Higher Education",
+          "label_uk": "Університет / виш",
+          "physical_unit": "m2",
+          "description": "University campus building or complex."
+        },
+        "education.secondary_school": {
+          "label_en": "Secondary School",
+          "label_uk": "Середня школа",
+          "physical_unit": "m2",
+          "secondary_unit": "student_places",
+          "description": "State secondary school (grades 1–11 or 1–9)."
+        },
+        "education.vocational_school": {
+          "label_en": "Vocational / Technical School",
+          "label_uk": "Профтехучилище",
+          "physical_unit": "m2",
+          "description": "Vocational training and technical education facility."
+        },
+        "education.kindergarten": {
+          "label_en": "Kindergarten / Pre-school",
+          "label_uk": "Дитячий садок",
+          "physical_unit": "m2",
+          "description": "Early childhood education facility."
+        }
+      }
+    },
+    "residential": {
+      "label_en": "Residential (District-scale)",
+      "label_uk": "Житловий фонд (районний масштаб)",
+      "subtypes": {
+        "residential.apartment_block_district": {
+          "label_en": "Apartment Block District",
+          "label_uk": "Житловий масив",
+          "physical_unit": "m2",
+          "secondary_unit": "units",
+          "description": "Multi-block Soviet-era or post-Soviet residential district. Costed at district scale."
+        },
+        "residential.apartment_block_single": {
+          "label_en": "Single Apartment Block",
+          "label_uk": "Окремий житловий будинок",
+          "physical_unit": "m2",
+          "secondary_unit": "units",
+          "description": "Individual multi-storey residential building."
+        },
+        "residential.private_housing_district": {
+          "label_en": "Private Housing District",
+          "label_uk": "Район приватного сектору",
+          "physical_unit": "units",
+          "description": "District of individual private dwellings (suburban / peri-urban)."
+        }
+      }
+    },
+    "heritage_and_culture": {
+      "label_en": "Heritage and Culture",
+      "label_uk": "Спадщина та культура",
+      "subtypes": {
+        "heritage.theatre": {
+          "label_en": "Theatre / Opera House",
+          "label_uk": "Театр / опера",
+          "physical_unit": "m2",
+          "secondary_unit": "seats",
+          "description": "Performing arts venue. Heritage premium applies.",
+          "heritage_premium": true
+        },
+        "heritage.museum": {
+          "label_en": "Museum",
+          "label_uk": "Музей",
+          "physical_unit": "m2",
+          "description": "Public museum or art gallery. Heritage premium applies.",
+          "heritage_premium": true
+        },
+        "heritage.religious": {
+          "label_en": "Religious Monument",
+          "label_uk": "Релігійна пам'ятка",
+          "physical_unit": "m2",
+          "description": "Church, monastery, cathedral, or other place of worship with heritage status. Heritage premium applies.",
+          "heritage_premium": true
+        },
+        "heritage.library": {
+          "label_en": "Heritage Library / Archive",
+          "label_uk": "Бібліотека / архів",
+          "physical_unit": "m2",
+          "description": "Historic or nationally significant library or archive. Heritage premium applies.",
+          "heritage_premium": true
+        },
+        "heritage.memorial": {
+          "label_en": "Memorial / Monument",
+          "label_uk": "Меморіал / пам'ятник",
+          "physical_unit": "m2",
+          "description": "Nationally significant memorial or historic monument.",
+          "heritage_premium": true
+        }
+      }
+    },
+    "transport_and_ports": {
+      "label_en": "Transport and Ports",
+      "label_uk": "Транспорт та порти",
+      "subtypes": {
+        "transport.airport": {
+          "label_en": "Airport",
+          "label_uk": "Аеропорт",
+          "physical_unit": "m2",
+          "description": "Civil or dual-use airport including runways, terminals, and infrastructure."
+        },
+        "transport.aircraft": {
+          "label_en": "Strategic Aircraft",
+          "label_uk": "Стратегічний літак",
+          "physical_unit": "units",
+          "description": "Individual strategic or unique aircraft asset (e.g. An-225 Mriya)."
+        },
+        "transport.bridge": {
+          "label_en": "Road / Rail Bridge",
+          "label_uk": "Міст",
+          "physical_unit": "m2",
+          "secondary_unit": "km",
+          "description": "Road or railway bridge crossing a waterway or valley."
+        },
+        "transport.seaport": {
+          "label_en": "Seaport / River Port",
+          "label_uk": "Морський / річковий порт",
+          "physical_unit": "m2",
+          "description": "Commercial port including quays, terminals, and handling equipment."
+        },
+        "transport.rail_segment": {
+          "label_en": "Railway Segment / Station",
+          "label_uk": "Залізничний перегін / станція",
+          "physical_unit": "km",
+          "description": "Railway track, switching yard, or station complex."
+        },
+        "transport.shipyard": {
+          "label_en": "Shipyard",
+          "label_uk": "Суднобудівний завод",
+          "physical_unit": "m2",
+          "description": "Naval or commercial ship construction and repair facility."
+        }
+      }
+    },
+    "water_and_sanitation": {
+      "label_en": "Water, Sanitation and Public Services",
+      "label_uk": "Водопостачання, санітарія та комунальні послуги",
+      "subtypes": {
+        "water.supply": {
+          "label_en": "Water Supply System",
+          "label_uk": "Система водопостачання",
+          "physical_unit": "m3_per_day",
+          "description": "Water intake, treatment, pumping, and distribution network."
+        },
+        "water.treatment": {
+          "label_en": "Wastewater Treatment Plant",
+          "label_uk": "Очисні споруди",
+          "physical_unit": "m3_per_day",
+          "description": "Sewage collection and wastewater treatment facility."
+        },
+        "water.canal": {
+          "label_en": "Irrigation Canal / Water Infrastructure",
+          "label_uk": "Зрошувальний канал",
+          "physical_unit": "km",
+          "description": "Agricultural irrigation or water conveyance infrastructure."
+        },
+        "water.district_heating": {
+          "label_en": "District Heating Network",
+          "label_uk": "Теплопостачальна мережа",
+          "physical_unit": "km",
+          "description": "Central heating generation and pipe distribution network."
+        }
+      }
+    },
+    "industrial_and_agricultural": {
+      "label_en": "Industrial and Agricultural",
+      "label_uk": "Промисловість та сільське господарство",
+      "subtypes": {
+        "industrial.steelworks": {
+          "label_en": "Integrated Steelworks",
+          "label_uk": "Металургійний комбінат",
+          "physical_unit": "tonnes_per_year",
+          "description": "Integrated iron and steel production complex."
+        },
+        "industrial.coke": {
+          "label_en": "Coke Plant",
+          "label_uk": "Коксохімічний завод",
+          "physical_unit": "tonnes_per_year",
+          "description": "Metallurgical coke production plant."
+        },
+        "industrial.chemical": {
+          "label_en": "Chemical / Fertiliser Plant",
+          "label_uk": "Хімічний / добривний завод",
+          "physical_unit": "tonnes_per_year",
+          "description": "Chemical manufacturing or fertiliser production facility."
+        },
+        "industrial.machinery": {
+          "label_en": "Machinery / Defence Industrial",
+          "label_uk": "Машинобудівний / оборонний завод",
+          "physical_unit": "m2",
+          "description": "Heavy machinery or defence industry manufacturing facility."
+        },
+        "agricultural.grain_terminal": {
+          "label_en": "Grain Terminal / Silo Complex",
+          "label_uk": "Зерновий термінал",
+          "physical_unit": "tonnes",
+          "description": "Port or inland grain storage and handling terminal."
+        },
+        "agricultural.processing": {
+          "label_en": "Agricultural Processing Facility",
+          "label_uk": "Переробний агропідприємство",
+          "physical_unit": "m2",
+          "description": "Food processing, oil extraction, or agri-industrial facility."
+        }
+      }
+    },
+    "public_administration": {
+      "label_en": "Public Administration",
+      "label_uk": "Державне управління",
+      "subtypes": {
+        "public_admin.regional": {
+          "label_en": "Regional / Oblast Administration",
+          "label_uk": "Обласна адміністрація",
+          "physical_unit": "m2",
+          "description": "Oblast-level or raion-level government administration building."
+        },
+        "public_admin.library": {
+          "label_en": "Public Library",
+          "label_uk": "Публічна бібліотека",
+          "physical_unit": "m2",
+          "description": "Municipal or regional public library (non-heritage). For nationally significant heritage libraries, use heritage.library."
+        },
+        "public_admin.court": {
+          "label_en": "Court / Justice Facility",
+          "label_uk": "Суд / правосуддя",
+          "physical_unit": "m2",
+          "description": "Court building or justice administration facility."
+        },
+        "public_admin.emergency_services": {
+          "label_en": "Emergency Services Facility",
+          "label_uk": "Об'єкт екстреної допомоги",
+          "physical_unit": "m2",
+          "description": "Fire station, police station, or civil defence facility."
+        }
+      }
+    }
+  }
+}

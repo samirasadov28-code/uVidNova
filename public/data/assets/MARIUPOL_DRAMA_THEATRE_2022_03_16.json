@@ -1,0 +1,142 @@
+{
+  "asset_id": "MARIUPOL_DRAMA_THEATRE_2022_03_16",
+  "name": {
+    "en": "Mariupol Drama Theatre",
+    "uk": "Маріупольський драматичний театр"
+  },
+  "location": {
+    "lat": 47.0975,
+    "lon": 37.5449,
+    "oblast": "Donetsk",
+    "raion": "Mariupol",
+    "settlement": "Mariupol",
+    "address_en": "Theatre Square, Mariupol, Donetsk Oblast"
+  },
+  "asset_type": "heritage.theatre",
+  "sector": "heritage_and_culture",
+  "damage": {
+    "incident_date": "2022-03-16",
+    "incident_type": "aerial_bomb",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UN_OCHA",
+      "BELLINGCAT",
+      "HUMAN_RIGHTS_WATCH",
+      "AMNESTY"
+    ],
+    "evidence_sources": [
+      {
+        "title": "Amnesty International: Mariupol Theatre Strike — War Crime Investigation",
+        "url": "https://www.amnesty.org/en/latest/news/2022/06/ukraine-theatre-strike-in-mariupol-was-a-deliberate-attack-killing-hundreds-new-investigation/",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "Human Rights Watch: Mariupol Theatre Attack",
+        "url": "https://www.hrw.org/news/2022/03/24/ukraine-russian-strike-mariupol-theater",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "Bellingcat: Mariupol Theatre Satellite Imagery Analysis",
+        "url": "https://www.bellingcat.com/news/2022/03/17/mariupol-theatre-attack",
+        "source_code": "BELLINGCAT"
+      },
+      {
+        "title": "Associated Press: Mariupol Theatre Before and After Satellite Images",
+        "url": "https://apnews.com/article/russia-ukraine-mariupol-theater",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "MIGA_WAR"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 9000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Pre-war satellite imagery (Maxar Technologies); architectural record estimates from Mariupol City documentation"
+    },
+    "seating_capacity": {
+      "value": 1000,
+      "unit": "seats",
+      "source": "extracted_from_source",
+      "ref": "Mariupol Drama Theatre official records, cited in UN OCHA situation reports"
+    },
+    "construction_year": {
+      "value": 1960,
+      "unit": "year",
+      "source": "extracted_from_source",
+      "ref": "ICOMOS Ukraine heritage registration record"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 55,
+      "central_usd_m": 151,
+      "high_usd_m": 248
+    },
+    "code_compliant": {
+      "low_usd_m": 64,
+      "central_usd_m": 187,
+      "high_usd_m": 310
+    },
+    "build_back_better": {
+      "low_usd_m": 72,
+      "central_usd_m": 234,
+      "high_usd_m": 396,
+      "tech_overlays": [
+        "passive_building_standard",
+        "cultural_heritage_bim",
+        "fibre",
+        "accessible_design"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 70,
+      "concessional_pct": 20,
+      "public_equity_pct": 10,
+      "private_pct": 0,
+      "rationale": "Heritage-designated performing arts venues command high grant share under EU cultural-reconstruction programmes. Occupied-territory status and ongoing Russian administration mean reconstruction finance is entirely contingent on territorial reversion. Heritage premium multiplier (1.8x–3.0x) applied over standard performing arts benchmark.",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "heritage",
+    "theatre",
+    "mariupol",
+    "donetsk",
+    "aerial_bomb",
+    "occupied",
+    "war_crime_documented"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

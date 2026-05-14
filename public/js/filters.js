@@ -5,6 +5,8 @@
  * Emits a custom 'filtersChanged' event on the document when state changes.
  */
 
+import { t } from './lang.js';
+
 export const SECTOR_LABELS = {
   energy_and_power:             'Energy & Power',
   healthcare:                   'Healthcare',
@@ -126,8 +128,9 @@ export function initSectorFilter(container, availableSectors) {
   for (const sector of availableSectors) {
     const btn = document.createElement('button');
     btn.className = 'chip';
-    btn.textContent = SECTOR_LABELS[sector] ?? sector;
     btn.dataset.value = sector;
+    btn.dataset.i18n = `sector.${sector}`;
+    btn.textContent = t(`sector.${sector}`) || SECTOR_LABELS[sector] || sector;
     btn.addEventListener('click', () => toggleChip(btn, state.sectors, sector));
     container.appendChild(btn);
   }
@@ -147,11 +150,12 @@ export function initOblastFilter(container, availableOblasts) {
 
 export function initCostBandFilter(container) {
   container.innerHTML = '';
-  for (const [value, label] of Object.entries(COST_BAND_LABELS)) {
+  for (const [value] of Object.entries(COST_BAND_LABELS)) {
     const btn = document.createElement('button');
     btn.className = 'chip chip-sm';
-    btn.textContent = label;
     btn.dataset.value = value;
+    btn.dataset.i18n = `costband.${value}`;
+    btn.textContent = t(`costband.${value}`) || COST_BAND_LABELS[value];
     btn.addEventListener('click', () => toggleChip(btn, state.costBand, value));
     container.appendChild(btn);
   }
@@ -159,11 +163,12 @@ export function initCostBandFilter(container) {
 
 export function initFinancingClassFilter(container) {
   container.innerHTML = '';
-  for (const [value, label] of Object.entries(FINANCING_CLASS_LABELS)) {
+  for (const [value] of Object.entries(FINANCING_CLASS_LABELS)) {
     const btn = document.createElement('button');
     btn.className = 'chip chip-sm';
-    btn.textContent = label;
     btn.dataset.value = value;
+    btn.dataset.i18n = `financing.${value}`;
+    btn.textContent = t(`financing.${value}`) || FINANCING_CLASS_LABELS[value];
     btn.addEventListener('click', () => toggleChip(btn, state.financingClass, value));
     container.appendChild(btn);
   }

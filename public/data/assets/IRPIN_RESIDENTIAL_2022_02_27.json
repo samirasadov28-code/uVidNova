@@ -1,0 +1,117 @@
+{
+  "asset_id": "IRPIN_RESIDENTIAL_2022_02_27",
+  "name": {
+    "en": "Irpin Residential District",
+    "uk": "Жилий масив Ірпінь"
+  },
+  "location": {
+    "lat": 50.5218,
+    "lon": 30.2499,
+    "oblast": "Kyiv",
+    "raion": "Bucha",
+    "settlement": "Irpin",
+    "address_en": "Irpin, Bucha Raion, Kyiv Oblast"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-02-27",
+    "incident_type": "ground_combat",
+    "destruction_level": "severe",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Irpin Residential Damage Assessment",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-irpin",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine: Irpin Post-Liberation Situation Report",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-irpin-assessment-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 280000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "KSE Institute: Irpin damage assessment 2022; Irpin City Council; post-liberation satellite imagery analysis"
+    },
+    "housing_units": {
+      "value": 2800,
+      "unit": "units",
+      "source": "extracted_from_source",
+      "ref": "Irpin City Council housing registry; KSE Institute Irpin assessment 2022"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 138,
+      "central_usd_m": 284,
+      "high_usd_m": 431
+    },
+    "code_compliant": {
+      "low_usd_m": 158,
+      "central_usd_m": 349,
+      "high_usd_m": 539
+    },
+    "build_back_better": {
+      "low_usd_m": 179,
+      "central_usd_m": 434,
+      "high_usd_m": 690
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 40,
+      "concessional_pct": 35,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 45,
+      "concessional_pct": 35,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "rationale": "EU Facility housing reconstruction track; prefab-modular and passive-standard overlays qualify; municipal co-investment required",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "kyiv_oblast",
+    "ground_combat",
+    "liberated"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

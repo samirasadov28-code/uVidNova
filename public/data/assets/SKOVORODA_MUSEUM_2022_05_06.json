@@ -1,0 +1,125 @@
+{
+  "asset_id": "SKOVORODA_MUSEUM_2022_05_06",
+  "name": {
+    "en": "H.S. Skovoroda National Literary-Memorial Museum, Skovorodynivka",
+    "uk": "Національний літературно-меморіальний музей Г.С. Сковороди, Сковородинівка"
+  },
+  "location": {
+    "lat": 49.945,
+    "lon": 36.281,
+    "oblast": "Kharkiv",
+    "raion": "Zolochiv",
+    "settlement": "Skovorodynivka",
+    "address_en": "Skovoroda Literary-Memorial Museum, Skovorodynivka, Kharkiv Oblast"
+  },
+  "asset_type": "heritage.museum",
+  "sector": "heritage_and_culture",
+  "damage": {
+    "incident_date": "2022-05-06",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UN_OCHA",
+      "KSE",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "Ministry of Culture Ukraine: Skovoroda Museum Damage Statement",
+        "url": "https://mkip.gov.ua/news/skovoroda-museum-damage-2022",
+        "source_code": "eRECOVERY"
+      },
+      {
+        "title": "UNESCO: Cultural Heritage Damage in Ukraine — Kharkiv Oblast",
+        "url": "https://www.unesco.org/en/articles/ukraine-cultural-damage-kharkiv",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Heritage Infrastructure Damage — Kharkiv Oblast",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-heritage-kharkiv",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 2800,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Pre-strike satellite imagery (Planet Labs); Ministry of Culture Ukraine museum registry"
+    },
+    "construction_year": {
+      "value": 1790,
+      "unit": "year",
+      "source": "extracted_from_source",
+      "ref": "ICOMOS Ukraine: manor house dating to late 18th century; museum established 1922"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 19,
+      "central_usd_m": 54,
+      "high_usd_m": 90
+    },
+    "code_compliant": {
+      "low_usd_m": 22,
+      "central_usd_m": 67,
+      "high_usd_m": 112
+    },
+    "build_back_better": {
+      "low_usd_m": 25,
+      "central_usd_m": 84,
+      "high_usd_m": 144
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 70,
+      "concessional_pct": 20,
+      "public_equity_pct": 10,
+      "private_pct": 0,
+      "rationale": "Heritage-designated sites command maximum grant share under EU cultural reconstruction programmes; heritage premium multiplier (1.8×–3.0×) applies over standard construction benchmark",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "heritage",
+    "museum",
+    "kharkiv_oblast",
+    "shelling",
+    "destroyed",
+    "unique_asset",
+    "philosopher"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

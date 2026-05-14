@@ -12,7 +12,7 @@ import {
   SECTOR_LABELS, getActiveFilters, state as filterState
 } from './filters.js';
 import { computeAggregation, renderAggregation } from './aggregation.js';
-import { getLang, getName, initLangToggle } from './lang.js';
+import { getLang, getName, initLangToggle, applyTranslations, t } from './lang.js';
 
 // ── Marker configuration ───────────────────────────────────────────────────────
 
@@ -63,14 +63,14 @@ function fmtUSD(m) {
 }
 
 function makePopupHTML(asset) {
-  const name          = getName(asset);
-  const sector        = SECTOR_LABELS[asset.sector] ?? asset.sector;
-  const level         = asset.damage?.destruction_level ?? '—';
-  const lifecycle     = asset.wartime_status?.lifecycle ?? '—';
+  const name           = getName(asset);
+  const sector         = t(`sector.${asset.sector}`) || SECTOR_LABELS[asset.sector] || asset.sector;
+  const level          = asset.damage?.destruction_level ?? '—';
+  const lifecycle      = asset.wartime_status?.lifecycle ?? '—';
   const rebuildability = asset.wartime_status?.rebuildability ?? '—';
-  const central       = asset.cost_paths?.baseline?.central_usd_m;
-  const pending       = asset.cost_paths?.pending_methodology;
-  const reCount       = asset.damage?.re_damage_count ?? 0;
+  const central        = asset.cost_paths?.baseline?.central_usd_m;
+  const pending        = asset.cost_paths?.pending_methodology;
+  const reCount        = asset.damage?.re_damage_count ?? 0;
 
   const costLine = pending
     ? `<span class="popup-pending">Cost estimate pending methodology</span>`
@@ -117,6 +117,75 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 let allAssets = [];
 const markerMap = new Map();
 let oblastLayer = null;
+let oblastInfoData = null;
+
+// ── Oblast info panel ─────────────────────────────────────────────────────────
+
+async function loadOblastInfo() {
+  try {
+    const res = await fetch('/data/oblasts_info.json');
+    if (res.ok) oblastInfoData = await res.json();
+  } catch { /* non-critical */ }
+}
+
+function findOblastInfo(featureName) {
+  if (!oblastInfoData) return null;
+  const lower = featureName.toLowerCase();
+  return oblastInfoData.oblasts.find(o =>
+    o.name_en.toLowerCase().includes(lower) ||
+    lower.includes(o.name_en.toLowerCase().split(' ')[0].toLowerCase()) ||
+    o.name_uk.toLowerCase().includes(lower)
+  ) ?? oblastInfoData.oblasts.find(o =>
+    featureName.toLowerCase().replace(' oblast', '').trim().length > 3 &&
+    o.name_en.toLowerCase().includes(featureName.toLowerCase().replace(' oblast', '').trim())
+  ) ?? null;
+}
+
+function showOblastPanel(info, featureName) {
+  let panel = document.getElementById('oblastInfoPanel');
+  if (!panel) {
+    panel = document.createElement('div');
+    panel.id = 'oblastInfoPanel';
+    panel.className = 'oblast-info-panel';
+    document.body.appendChild(panel);
+  }
+
+  const lang = getLang();
+  const name      = lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName);
+  const capital   = lang === 'uk' ? (info?.capital_uk ?? '—') : (info?.capital_en ?? '—');
+  const famous    = lang === 'uk' ? (info?.famous_for_uk ?? '') : (info?.famous_for_en ?? '');
+  const recon     = lang === 'uk' ? (info?.reconstruction_uk ?? '') : (info?.reconstruction_en ?? '');
+  const closeLabel = t('oblast.close');
+  const capitalLabel = t('oblast.capital');
+  const famousLabel  = t('oblast.famous_for');
+  const reconLabel   = t('oblast.reconstruction');
+
+  const wikiFile = info?.wiki_image;
+  const imgHTML = wikiFile
+    ? `<img src="https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(wikiFile)}?width=480"
+             alt="${name}" class="oblast-photo" loading="lazy" onerror="this.style.display='none'">`
+    : '';
+
+  panel.innerHTML = `
+    <button class="oblast-panel-close" aria-label="${closeLabel}">×</button>
+    ${imgHTML}
+    <div class="oblast-panel-body">
+      <h2 class="oblast-panel-name">${name}</h2>
+      <dl class="oblast-panel-dl">
+        <dt>${capitalLabel}</dt><dd>${capital}</dd>
+        ${famous ? `<dt>${famousLabel}</dt><dd>${famous}</dd>` : ''}
+        ${recon  ? `<dt>${reconLabel}</dt><dd>${recon}</dd>` : ''}
+      </dl>
+    </div>`;
+
+  panel.hidden = false;
+  panel.classList.add('visible');
+  panel.querySelector('.oblast-panel-close').addEventListener('click', () => {
+    panel.classList.remove('visible');
+    setTimeout(() => { panel.hidden = true; }, 280);
+    if (oblastLayer) oblastLayer.resetStyle();
+  });
+}
 
 // ── Oblast boundary layer ─────────────────────────────────────────────────────
 
@@ -126,13 +195,26 @@ async function addOblastLayer() {
     oblastLayer = L.geoJSON(geojson, {
       style: {
         color:       '#1a3a6b',
-        weight:      1,
+        weight:      1.5,
         fillColor:   '#cdd9f0',
-        fillOpacity: 0.15
+        fillOpacity: 0.18
       },
       onEachFeature(feature, layer) {
         const name = feature.properties?.name ?? '';
         if (name) layer.bindTooltip(name, { permanent: false, sticky: true, className: 'oblast-tooltip' });
+
+        layer.on('mouseover', function () {
+          this.setStyle({ fillOpacity: 0.38, weight: 2.5 });
+        });
+        layer.on('mouseout', function () {
+          oblastLayer.resetStyle(this);
+        });
+        layer.on('click', function () {
+          oblastLayer.resetStyle();
+          this.setStyle({ fillOpacity: 0.45, weight: 2.5, color: '#0a2a5e' });
+          const info = findOblastInfo(name);
+          showOblastPanel(info ?? { name_en: name, name_uk: name }, name);
+        });
       }
     }).addTo(map);
     oblastLayer.bringToBack();
@@ -182,7 +264,7 @@ function renderAssetList(assets) {
     item.href     = `/asset.html?id=${encodeURIComponent(asset.asset_id)}`;
 
     const name    = getName(asset);
-    const sector  = SECTOR_LABELS[asset.sector] ?? asset.sector;
+    const sector  = t(`sector.${asset.sector}`) || SECTOR_LABELS[asset.sector] || asset.sector;
     const level   = asset.damage?.destruction_level ?? '—';
     const colour  = SECTOR_COLOURS[asset.sector] ?? '#555';
     const reCount = asset.damage?.re_damage_count ?? 0;
@@ -211,7 +293,17 @@ function renderAssetList(assets) {
 
 function updateAssetCount(n) {
   const el = document.getElementById('assetCount');
-  if (el) el.textContent = `${n} asset${n !== 1 ? 's' : ''} shown`;
+  if (!el) return;
+  const lang = getLang();
+  if (lang === 'uk') {
+    const m10 = n % 10, m100 = n % 100;
+    let form = 'активів';
+    if (m10 === 1 && m100 !== 11) form = 'актив';
+    else if (m10 >= 2 && m10 <= 4 && (m100 < 10 || m100 >= 20)) form = 'активи';
+    el.textContent = `Показано ${n} ${form}`;
+  } else {
+    el.textContent = `${n} asset${n !== 1 ? 's' : ''} shown`;
+  }
 }
 
 // ── Filter UI ─────────────────────────────────────────────────────────────────
@@ -270,12 +362,14 @@ if (versionLabel) versionLabel.textContent = `v${APP_VERSION}`;
 // ── Disclaimer ────────────────────────────────────────────────────────────────
 
 function initDisclaimer() {
-  const dismissed = sessionStorage.getItem('uvidnova_disclaimer');
-  const banner    = document.getElementById('disclaimerBanner');
-  if (dismissed && banner) { banner.hidden = true; return; }
+  const banner = document.getElementById('disclaimerBanner');
+  if (!banner) return;
+  if (sessionStorage.getItem('uvidnova_disclaimer')) { banner.remove(); return; }
   document.getElementById('dismissDisclaimer')?.addEventListener('click', () => {
     sessionStorage.setItem('uvidnova_disclaimer', '1');
-    if (banner) banner.hidden = true;
+    banner.style.transition = 'opacity 0.3s ease';
+    banner.style.opacity = '0';
+    setTimeout(() => banner.remove(), 320);
   });
 }
 
@@ -422,10 +516,13 @@ async function init() {
   initChat();
   initLangToggle(document.getElementById('langToggle'));
 
+  document.addEventListener('langChanged', applyTranslations);
+
   try {
     const [assets] = await Promise.all([
       loadAllAssets(),
-      addOblastLayer()
+      addOblastLayer(),
+      loadOblastInfo()
     ]);
 
     allAssets = assets;

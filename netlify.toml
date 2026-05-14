@@ -15,7 +15,7 @@
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
     # connect-src includes self (API endpoints, data files) + OSM tiles.
     # Groq API is called server-side from Netlify Functions — not from the browser.
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org; connect-src 'self' https://*.tile.openstreetmap.org; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org https://commons.wikimedia.org https://upload.wikimedia.org; connect-src 'self' https://*.tile.openstreetmap.org; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
 
 # ── Cache: static JS/CSS — versioned by SW; moderate browser cache ────────────
 [[headers]]

@@ -1,0 +1,123 @@
+{
+  "asset_id": "MARIUPOL_MATERNITY_HOSPITAL_3_2022_03_09",
+  "name": {
+    "en": "Mariupol City Maternity Hospital No. 3",
+    "uk": "Маріупольський міський пологовий будинок №3"
+  },
+  "location": {
+    "lat": 47.0942,
+    "lon": 37.5516,
+    "oblast": "Donetsk",
+    "raion": "Mariupol",
+    "settlement": "Mariupol",
+    "address_en": "Maternity Hospital No. 3, Mariupol, Donetsk Oblast"
+  },
+  "asset_type": "healthcare.maternity_hospital",
+  "sector": "healthcare",
+  "damage": {
+    "incident_date": "2022-03-09",
+    "incident_type": "aerial_bomb",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UN_OCHA",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "Human Rights Watch: Mariupol Hospital Attack",
+        "url": "https://www.hrw.org/news/2022/03/24/ukraine-russian-strike-mariupol-maternity-hospital",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "Bellingcat: Mariupol Maternity Hospital Bombing Investigation",
+        "url": "https://www.bellingcat.com/news/2022/03/09/mariupol-maternity-hospital-bombing",
+        "source_code": "BELLINGCAT"
+      },
+      {
+        "title": "UN OCHA Ukraine Flash Update #8 — Mariupol Attacks",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-8-march-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "MIGA_WAR"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 4200,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery analysis (Maxar Technologies, March 2022); media documentation of building footprint"
+    },
+    "beds": {
+      "value": 180,
+      "unit": "beds",
+      "source": "extracted_from_source",
+      "ref": "WHO Ukraine health facility database; Mariupol City Health Department pre-war data"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 28,
+      "central_usd_m": 45,
+      "high_usd_m": 63
+    },
+    "code_compliant": {
+      "low_usd_m": 32,
+      "central_usd_m": 55,
+      "high_usd_m": 79
+    },
+    "build_back_better": {
+      "low_usd_m": 36,
+      "central_usd_m": 68,
+      "high_usd_m": 100
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 55,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "Tertiary hospital commands high grant-eligibility under EU healthcare reconstruction programmes; EU green conditionality for BBB microgrid/passive-standard components",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "healthcare",
+    "maternity",
+    "mariupol",
+    "donetsk",
+    "aerial_bomb",
+    "occupied",
+    "war_crime_documented"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

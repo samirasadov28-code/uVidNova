@@ -1,0 +1,119 @@
+{
+  "asset_id": "KUINDZHI_MUSEUM_MARIUPOL_2022_03_25",
+  "name": {
+    "en": "Arkhip Kuindzhi Art Museum, Mariupol",
+    "uk": "Маріупольський художній музей ім. А.І. Куїнджі"
+  },
+  "location": {
+    "lat": 47.099,
+    "lon": 37.547,
+    "oblast": "Donetsk",
+    "raion": "Mariupol",
+    "settlement": "Mariupol",
+    "address_en": "Kuindzhi Art Museum, Mariupol, Donetsk Oblast"
+  },
+  "asset_type": "heritage.museum",
+  "sector": "heritage_and_culture",
+  "damage": {
+    "incident_date": "2022-03-25",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UN_OCHA",
+      "BELLINGCAT",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UNESCO: Kuindzhi Museum Mariupol Damage Report",
+        "url": "https://www.unesco.org/en/articles/kuindzhi-museum-mariupol",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "Bellingcat: Mariupol Cultural Heritage Damage Analysis",
+        "url": "https://www.bellingcat.com/news/2022/04/20/mariupol-cultural-damage",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "MIGA_WAR"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 3200,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Pre-war satellite imagery; Ministry of Culture Ukraine museum registry for Mariupol Kuindzhi Museum"
+    },
+    "construction_year": {
+      "value": 1897,
+      "unit": "year",
+      "source": "extracted_from_source",
+      "ref": "ICOMOS Ukraine; museum founded 1897, housed in historic Mariupol building"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 26,
+      "central_usd_m": 75,
+      "high_usd_m": 124
+    },
+    "code_compliant": {
+      "low_usd_m": 29,
+      "central_usd_m": 93,
+      "high_usd_m": 156
+    },
+    "build_back_better": {
+      "low_usd_m": 33,
+      "central_usd_m": 116,
+      "high_usd_m": 199
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 70,
+      "concessional_pct": 20,
+      "public_equity_pct": 10,
+      "private_pct": 0,
+      "rationale": "Heritage-designated sites command maximum grant share under EU cultural reconstruction programmes; heritage premium multiplier (1.8×–3.0×) applies over standard construction benchmark",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "heritage",
+    "museum",
+    "mariupol",
+    "donetsk",
+    "shelling",
+    "occupied",
+    "art_collection"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

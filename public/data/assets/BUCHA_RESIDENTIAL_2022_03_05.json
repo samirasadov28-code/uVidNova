@@ -1,0 +1,124 @@
+{
+  "asset_id": "BUCHA_RESIDENTIAL_2022_03_05",
+  "name": {
+    "en": "Bucha Residential District",
+    "uk": "Жилий масив Буча"
+  },
+  "location": {
+    "lat": 50.5492,
+    "lon": 30.2245,
+    "oblast": "Kyiv",
+    "raion": "Bucha",
+    "settlement": "Bucha",
+    "address_en": "Bucha, Bucha Raion, Kyiv Oblast"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-03-05",
+    "incident_type": "ground_combat",
+    "destruction_level": "severe",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Bucha Residential and Infrastructure Damage Assessment",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-bucha",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Human Rights Watch: War Crimes in Bucha",
+        "url": "https://www.hrw.org/news/2022/04/03/ukraine-apparent-war-crimes-russia-controlled-areas",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "UN OCHA Ukraine: Bucha Post-Liberation Assessment",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-bucha-assessment-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 350000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "KSE Institute: Bucha damage assessment May 2022; Ukrainian government survey; total damaged residential stock across Bucha city"
+    },
+    "housing_units": {
+      "value": 3500,
+      "unit": "units",
+      "source": "extracted_from_source",
+      "ref": "Bucha City Council housing registry; KSE Institute Bucha assessment 2022"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 172,
+      "central_usd_m": 355,
+      "high_usd_m": 539
+    },
+    "code_compliant": {
+      "low_usd_m": 198,
+      "central_usd_m": 436,
+      "high_usd_m": 674
+    },
+    "build_back_better": {
+      "low_usd_m": 224,
+      "central_usd_m": 543,
+      "high_usd_m": 862
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 40,
+      "concessional_pct": 35,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 45,
+      "concessional_pct": 35,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "rationale": "EU Facility housing reconstruction track; prefab-modular and passive-standard overlays qualify; municipal co-investment required",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "kyiv_oblast",
+    "ground_combat",
+    "liberated",
+    "war_crime_documented"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

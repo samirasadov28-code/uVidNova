@@ -1,0 +1,113 @@
+{
+  "asset_id": "KHERSON_STATE_UNIVERSITY_2022_03_02",
+  "name": {
+    "en": "Kherson State University",
+    "uk": "Херсонський державний університет"
+  },
+  "location": {
+    "lat": 46.6488,
+    "lon": 32.6098,
+    "oblast": "Kherson",
+    "raion": null,
+    "settlement": "Kherson",
+    "address_en": "27 Universytetska St, Kherson"
+  },
+  "asset_type": "education.university",
+  "sector": "education",
+  "damage": {
+    "incident_date": "2022-03-02",
+    "incident_type": "ground_combat",
+    "destruction_level": "moderate",
+    "re_damage_count": 2,
+    "verified_by": [
+      "UN_OCHA",
+      "UA_GOV",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine: Kherson Post-Liberation Education Assessment",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kherson-education-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Kherson Oblast Education Damage",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kherson-education",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "frontline_adjacent",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 35000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery analysis; KhSU campus documentation cited in OCHA reports"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 26,
+      "central_usd_m": 66,
+      "high_usd_m": 105
+    },
+    "code_compliant": {
+      "low_usd_m": 30,
+      "central_usd_m": 81,
+      "high_usd_m": 132
+    },
+    "build_back_better": {
+      "low_usd_m": 34,
+      "central_usd_m": 101,
+      "high_usd_m": 169
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 50,
+      "concessional_pct": 30,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 55,
+      "concessional_pct": 25,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "EU Facility education reconstruction track; passive-building standard and fibre overlays meet EU green conditionality",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "education",
+    "university",
+    "kherson",
+    "ground_combat",
+    "frontline",
+    "re_damaged"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

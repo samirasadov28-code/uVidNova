@@ -1,0 +1,126 @@
+{
+  "asset_id": "HOSTOMEL_AIRPORT_2022_02_24",
+  "name": {
+    "en": "Antonov Airport (Hostomel), Kyiv Oblast",
+    "uk": "Аеропорт Антонов, Гостомель"
+  },
+  "location": {
+    "lat": 50.5945,
+    "lon": 30.1932,
+    "oblast": "Kyiv",
+    "raion": "Bucha",
+    "settlement": "Hostomel",
+    "address_en": "Antonov Airport (UKKM), Hostomel, Bucha Raion, Kyiv Oblast"
+  },
+  "asset_type": "transport.airport",
+  "sector": "transport_and_ports",
+  "damage": {
+    "incident_date": "2022-02-24",
+    "incident_type": "ground_combat",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UA_GOV",
+      "KSE",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "Bellingcat: Hostomel Airport Satellite Imagery Analysis",
+        "url": "https://www.bellingcat.com/news/2022/04/05/hostomel-airport-damage-analysis",
+        "source_code": "BELLINGCAT"
+      },
+      {
+        "title": "KSE Institute: Transport Infrastructure Damage — Kyiv Oblast",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-transport",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "runway_length_m": {
+      "value": 3500,
+      "unit": "m",
+      "source": "extracted_from_source",
+      "ref": "ICAO airport database; Antonov Airport UKKM main runway 3,500m"
+    },
+    "hangar_area_m2": {
+      "value": 45000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery analysis (Maxar Technologies, March 2022); multiple Antonov Company maintenance hangar facilities"
+    },
+    "terminal_area_m2": {
+      "value": 8000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Pre-war satellite imagery; terminal and cargo facilities"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 17,
+      "central_usd_m": 35,
+      "high_usd_m": 53
+    },
+    "code_compliant": {
+      "low_usd_m": 19,
+      "central_usd_m": 43,
+      "high_usd_m": 66
+    },
+    "build_back_better": {
+      "low_usd_m": 22,
+      "central_usd_m": 53,
+      "high_usd_m": 85
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 30,
+      "concessional_pct": 45,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 40,
+      "concessional_pct": 35,
+      "public_equity_pct": 15,
+      "private_pct": 10,
+      "rationale": "EU Connectivity Fund and TEN-T programme applicable to transport reconstruction; private concession model viable for airport and seaport; MIGA War & Civil Disturbance coverage for private tranche",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "transport",
+    "airport",
+    "hostomel",
+    "kyiv_oblast",
+    "ground_combat",
+    "strategic"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

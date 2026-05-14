@@ -1,0 +1,115 @@
+{
+  "asset_id": "LADYZHYNSKA_TPP_2024_04_11",
+  "name": {
+    "en": "Ladyzhynska Thermal Power Plant",
+    "uk": "Ладижинська теплова електростанція"
+  },
+  "location": {
+    "lat": 48.68,
+    "lon": 29.24,
+    "oblast": "Vinnytsia",
+    "raion": "Haisyn",
+    "settlement": "Ladyzhyn",
+    "address_en": "Ladyzhynska TPP, Ladyzhyn, Vinnytsia Oblast"
+  },
+  "asset_type": "energy.tpp",
+  "sector": "energy_and_power",
+  "damage": {
+    "incident_date": "2024-04-11",
+    "incident_type": "missile_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UA_GOV",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "DTEK Energy: Ladyzhynska TPP destroyed by missile strikes April 2024",
+        "url": "https://dtek.com/en/media/news/ladyzhynska-tpp-destroyed/",
+        "source_code": "eRECOVERY"
+      },
+      {
+        "title": "KSE Institute: DTEK Energy Infrastructure Damage — April 2024",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-energy-2024",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EBRD_RSF",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "installed_capacity_mw": {
+      "value": 1800,
+      "unit": "MW",
+      "source": "extracted_from_source",
+      "ref": "DTEK Energy technical passport; RDNA3 Table A2.1"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 747,
+      "central_usd_m": 1330,
+      "high_usd_m": 1913
+    },
+    "code_compliant": {
+      "low_usd_m": 859,
+      "central_usd_m": 1625,
+      "high_usd_m": 2391
+    },
+    "build_back_better": {
+      "low_usd_m": 971,
+      "central_usd_m": 2016,
+      "high_usd_m": 3060
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 25,
+      "concessional_pct": 50,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 30,
+      "concessional_pct": 45,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 15,
+      "private_pct": 10,
+      "rationale": "EU Facility energy-security track; EBRD Energy Efficiency and Resilience Facility; private co-investment (operator equity) credible for BBB path with carbon-transition roadmap",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "energy",
+    "thermal_power",
+    "dtek",
+    "vinnytsia_oblast",
+    "missile_strike",
+    "large_scale",
+    "grid_critical"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

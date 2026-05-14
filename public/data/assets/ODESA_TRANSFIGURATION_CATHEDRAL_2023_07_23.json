@@ -1,0 +1,124 @@
+{
+  "asset_id": "ODESA_TRANSFIGURATION_CATHEDRAL_2023_07_23",
+  "name": {
+    "en": "Holy Transfiguration Cathedral, Odesa",
+    "uk": "Собор Преображення Господнього, Одеса"
+  },
+  "location": {
+    "lat": 46.4878,
+    "lon": 30.7346,
+    "oblast": "Odesa",
+    "raion": null,
+    "settlement": "Odesa",
+    "address_en": "Cathedral of the Transfiguration, Soborna Square, Odesa"
+  },
+  "asset_type": "heritage.religious",
+  "sector": "heritage_and_culture",
+  "damage": {
+    "incident_date": "2023-07-23",
+    "incident_type": "missile_strike",
+    "destruction_level": "severe",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UN_OCHA",
+      "BELLINGCAT",
+      "KSE",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UNESCO: Statement on Attack on Odesa UNESCO World Heritage Site",
+        "url": "https://www.unesco.org/en/articles/odesa-world-heritage-attack-july-2023",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "Bellingcat: Odesa UNESCO World Heritage Attack Analysis",
+        "url": "https://www.bellingcat.com/news/2023/07/23/odesa-cathedral-attack",
+        "source_code": "BELLINGCAT"
+      },
+      {
+        "title": "KSE Institute: Heritage Damage — Odesa Oblast",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-heritage-odesa",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 4500,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Pre-strike satellite imagery analysis; cathedral architectural documentation from Odesa Diocese"
+    },
+    "construction_year": {
+      "value": 1808,
+      "unit": "year",
+      "source": "extracted_from_source",
+      "ref": "ICOMOS Ukraine; original cathedral 1808, reconstructed 1930s after Soviet demolition, restored 2003"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 19,
+      "central_usd_m": 90,
+      "high_usd_m": 162
+    },
+    "code_compliant": {
+      "low_usd_m": 21,
+      "central_usd_m": 112,
+      "high_usd_m": 202
+    },
+    "build_back_better": {
+      "low_usd_m": 24,
+      "central_usd_m": 142,
+      "high_usd_m": 259
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 70,
+      "concessional_pct": 20,
+      "public_equity_pct": 10,
+      "private_pct": 0,
+      "rationale": "Heritage-designated sites command maximum grant share under EU cultural reconstruction programmes; heritage premium multiplier (1.8×–3.0×) applies over standard construction benchmark",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "heritage",
+    "religious",
+    "odesa",
+    "missile_strike",
+    "unesco_world_heritage_city"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

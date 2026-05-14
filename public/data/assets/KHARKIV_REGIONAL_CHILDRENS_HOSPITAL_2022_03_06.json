@@ -1,0 +1,119 @@
+{
+  "asset_id": "KHARKIV_REGIONAL_CHILDRENS_HOSPITAL_2022_03_06",
+  "name": {
+    "en": "Kharkiv Regional Children's Clinical Hospital",
+    "uk": "Харківська обласна дитяча клінічна лікарня"
+  },
+  "location": {
+    "lat": 49.9905,
+    "lon": 36.2421,
+    "oblast": "Kharkiv",
+    "raion": null,
+    "settlement": "Kharkiv",
+    "address_en": "Kharkiv Regional Children's Clinical Hospital, Kharkiv"
+  },
+  "asset_type": "healthcare.tertiary_hospital",
+  "sector": "healthcare",
+  "damage": {
+    "incident_date": "2022-03-06",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "moderate",
+    "re_damage_count": 3,
+    "verified_by": [
+      "UN_OCHA",
+      "UA_GOV",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine: Attacks on Healthcare Facilities 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-attacks-healthcare-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Kharkiv Healthcare Infrastructure Damage",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-health",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS",
+      "EBRD_RSF"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 14000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery analysis; Kharkiv Oblast Health Department"
+    },
+    "beds": {
+      "value": 560,
+      "unit": "beds",
+      "source": "extracted_from_source",
+      "ref": "Ministry of Health Ukraine: Kharkiv Regional Children's Hospital capacity"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 33,
+      "central_usd_m": 71,
+      "high_usd_m": 109
+    },
+    "code_compliant": {
+      "low_usd_m": 38,
+      "central_usd_m": 88,
+      "high_usd_m": 137
+    },
+    "build_back_better": {
+      "low_usd_m": 43,
+      "central_usd_m": 109,
+      "high_usd_m": 175
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 55,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "Tertiary hospital commands high grant-eligibility under EU healthcare reconstruction programmes; EU green conditionality for BBB microgrid/passive-standard components",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "healthcare",
+    "children",
+    "kharkiv_oblast",
+    "shelling",
+    "re_damaged"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

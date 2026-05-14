@@ -1,0 +1,120 @@
+{
+  "asset_id": "ODESA_FINE_ARTS_MUSEUM_2023_07_23",
+  "name": {
+    "en": "Odesa Fine Arts Museum",
+    "uk": "Одеський художній музей"
+  },
+  "location": {
+    "lat": 46.487,
+    "lon": 30.734,
+    "oblast": "Odesa",
+    "raion": null,
+    "settlement": "Odesa",
+    "address_en": "5-A Sofiyivska St, Odesa"
+  },
+  "asset_type": "heritage.museum",
+  "sector": "heritage_and_culture",
+  "damage": {
+    "incident_date": "2023-07-23",
+    "incident_type": "missile_strike",
+    "destruction_level": "moderate",
+    "re_damage_count": 1,
+    "verified_by": [
+      "UN_OCHA",
+      "UA_GOV",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UNESCO: Odesa Cultural Heritage Damage July 2023",
+        "url": "https://www.unesco.org/en/articles/odesa-cultural-damage-july-2023",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "Ministry of Culture Ukraine: Odesa Museum Damage July 2023",
+        "url": "https://mkip.gov.ua/news/odesa-museum-damage-2023",
+        "source_code": "eRECOVERY"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 8500,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "Odesa Fine Arts Museum official records; historic Pashkov house built 1899, expanded 20th century"
+    },
+    "construction_year": {
+      "value": 1899,
+      "unit": "year",
+      "source": "extracted_from_source",
+      "ref": "ICOMOS Ukraine; palace built 1899 by architect Georgy Shanghin"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 16,
+      "central_usd_m": 68,
+      "high_usd_m": 121
+    },
+    "code_compliant": {
+      "low_usd_m": 18,
+      "central_usd_m": 84,
+      "high_usd_m": 151
+    },
+    "build_back_better": {
+      "low_usd_m": 21,
+      "central_usd_m": 107,
+      "high_usd_m": 193
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 70,
+      "concessional_pct": 20,
+      "public_equity_pct": 10,
+      "private_pct": 0,
+      "rationale": "Heritage-designated sites command maximum grant share under EU cultural reconstruction programmes; heritage premium multiplier (1.8×–3.0×) applies over standard construction benchmark",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "heritage",
+    "museum",
+    "odesa",
+    "missile_strike",
+    "re_damaged",
+    "art_collection",
+    "unesco_world_heritage_city"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

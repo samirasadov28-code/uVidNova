@@ -1,0 +1,121 @@
+{
+  "asset_id": "KHARKIV_METRO_2022_03_01",
+  "name": {
+    "en": "Kharkiv Metro System — Infrastructure Damage",
+    "uk": "Харківський метрополітен — пошкодження"
+  },
+  "location": {
+    "lat": 49.9935,
+    "lon": 36.2304,
+    "oblast": "Kharkiv",
+    "raion": null,
+    "settlement": "Kharkiv",
+    "address_en": "Kharkiv Metro System, Kharkiv"
+  },
+  "asset_type": "transport.rail_segment",
+  "sector": "transport_and_ports",
+  "damage": {
+    "incident_date": "2022-02-24",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "moderate",
+    "re_damage_count": 5,
+    "verified_by": [
+      "UA_GOV",
+      "KSE",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Kharkiv Transport Infrastructure Damage",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-transport-kharkiv",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine: Kharkiv Metro as Civilian Shelter and Infrastructure Damage",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kharkiv-metro-shelter",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS",
+      "EBRD_RSF"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "track_length_km": {
+      "value": 38.2,
+      "unit": "km",
+      "source": "extracted_from_source",
+      "ref": "Kharkiv Metro official technical passport; 3 lines, 30 stations, 38.2 km of track"
+    },
+    "stations": {
+      "value": 30,
+      "unit": "units",
+      "source": "extracted_from_source",
+      "ref": "Kharkiv Metro authority; 30 operational stations pre-war, used as civilian shelter 2022"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 23,
+      "central_usd_m": 106,
+      "high_usd_m": 188
+    },
+    "code_compliant": {
+      "low_usd_m": 26,
+      "central_usd_m": 131,
+      "high_usd_m": 236
+    },
+    "build_back_better": {
+      "low_usd_m": 30,
+      "central_usd_m": 166,
+      "high_usd_m": 302
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 30,
+      "concessional_pct": 45,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 40,
+      "concessional_pct": 35,
+      "public_equity_pct": 15,
+      "private_pct": 10,
+      "rationale": "EU Connectivity Fund and TEN-T programme applicable to transport reconstruction; private concession model viable for airport and seaport; MIGA War & Civil Disturbance coverage for private tranche",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "transport",
+    "rail",
+    "metro",
+    "kharkiv_oblast",
+    "shelling",
+    "re_damaged",
+    "civilian_shelter"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

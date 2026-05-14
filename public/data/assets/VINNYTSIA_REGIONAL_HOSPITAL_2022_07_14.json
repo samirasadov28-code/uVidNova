@@ -1,0 +1,119 @@
+{
+  "asset_id": "VINNYTSIA_REGIONAL_HOSPITAL_2022_07_14",
+  "name": {
+    "en": "Vinnytsia Regional Clinical Hospital named after M. Pirogov",
+    "uk": "Вінницька обласна клінічна лікарня ім. М.І.Пирогова"
+  },
+  "location": {
+    "lat": 49.243,
+    "lon": 28.452,
+    "oblast": "Vinnytsia",
+    "raion": null,
+    "settlement": "Vinnytsia",
+    "address_en": "Pirogov Regional Clinical Hospital, 46 Khmelnytske Shose, Vinnytsia"
+  },
+  "asset_type": "healthcare.tertiary_hospital",
+  "sector": "healthcare",
+  "damage": {
+    "incident_date": "2022-07-14",
+    "incident_type": "missile_strike",
+    "destruction_level": "severe",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UN_OCHA",
+      "UA_GOV",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Situation Report — 14 July 2022 Mass Casualty Attack",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-14-july-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "Ministry of Health Ukraine: Vinnytsia attack medical facilities damage",
+        "url": "https://moz.gov.ua/article/news/vinnytsia-attack-july-2022",
+        "source_code": "eRECOVERY"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 24000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "Vinnytsia Oblast Health Department official register; main building complex 24,000 m²"
+    },
+    "beds": {
+      "value": 950,
+      "unit": "beds",
+      "source": "extracted_from_source",
+      "ref": "Ministry of Health of Ukraine facility database 2022"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 94,
+      "central_usd_m": 164,
+      "high_usd_m": 234
+    },
+    "code_compliant": {
+      "low_usd_m": 109,
+      "central_usd_m": 201,
+      "high_usd_m": 293
+    },
+    "build_back_better": {
+      "low_usd_m": 123,
+      "central_usd_m": 249,
+      "high_usd_m": 374
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 55,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "Tertiary hospital commands high grant-eligibility under EU healthcare reconstruction programmes; EU green conditionality for BBB microgrid/passive-standard components",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "healthcare",
+    "tertiary_hospital",
+    "vinnytsia",
+    "missile_strike",
+    "high_priority"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

@@ -1,0 +1,119 @@
+{
+  "asset_id": "IZYUM_DISTRICT_HOSPITAL_2022_04_01",
+  "name": {
+    "en": "Izyum District Central Hospital",
+    "uk": "Ізюмська центральна районна лікарня"
+  },
+  "location": {
+    "lat": 49.201,
+    "lon": 37.278,
+    "oblast": "Kharkiv",
+    "raion": "Izyum",
+    "settlement": "Izyum",
+    "address_en": "Izyum District Central Hospital, Izyum, Kharkiv Oblast"
+  },
+  "asset_type": "healthcare.district_hospital",
+  "sector": "healthcare",
+  "damage": {
+    "incident_date": "2022-04-01",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "severe",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UA_GOV",
+      "UN_OCHA",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine: Izyum Post-Liberation Assessment",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-izyum-assessment-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Kharkiv Oblast Damage Assessment Post-Liberation",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-2022",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "recently_liberated",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 8500,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Post-liberation satellite imagery analysis (Planet Labs, October 2022); Ukrainian government damage survey"
+    },
+    "beds": {
+      "value": 240,
+      "unit": "beds",
+      "source": "extracted_from_source",
+      "ref": "Ministry of Health Ukraine facility registry; Izyum district hospital capacity pre-occupation"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 17,
+      "central_usd_m": 37,
+      "high_usd_m": 56
+    },
+    "code_compliant": {
+      "low_usd_m": 19,
+      "central_usd_m": 45,
+      "high_usd_m": 70
+    },
+    "build_back_better": {
+      "low_usd_m": 22,
+      "central_usd_m": 56,
+      "high_usd_m": 90
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 55,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "Tertiary hospital commands high grant-eligibility under EU healthcare reconstruction programmes; EU green conditionality for BBB microgrid/passive-standard components",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "healthcare",
+    "district_hospital",
+    "izyum",
+    "kharkiv_oblast",
+    "shelling",
+    "liberated"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}
