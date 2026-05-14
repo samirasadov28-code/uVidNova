@@ -116,7 +116,8 @@ let oblastLayer = null;
 let oblastInfoData = null;
 let warMode = false;
 let warLayer = null;
-let mapViewMode = 'damaged'; // 'ukraine' | 'damaged' | 'reconstructed' | 'development'
+let mapViewMode = 'damaged';
+let selectedOblast = null; // GeoJSON feature name of selected oblast in Damaged view
 
 // Oblasts with significant current occupation (as of 2024-2025)
 // Crimea: fully occupied; Donetsk/Luhansk/Zaporizhzhia/Kherson: partially occupied
@@ -242,6 +243,117 @@ function showOblastPanel(info, featureName) {
   }
 }
 
+// ── Damaged-view oblast interaction ──────────────────────────────────────────
+
+function handleDamagedOblastClick(name, leafletThis, layer, info) {
+  // Toggle: clicking the same oblast again clears the selection
+  if (selectedOblast === name) {
+    selectedOblast = null;
+    oblastLayer.setStyle(oblastStyle);
+    closeOblastWarPanel();
+    renderMarkers();
+    return;
+  }
+
+  selectedOblast = name;
+
+  // Dim all oblasts, highlight selected
+  oblastLayer.eachLayer(l => {
+    const lname = l.feature?.properties?.name;
+    if (lname === name) {
+      l.setStyle({ fillOpacity: 0.88, weight: 2.5, color: '#f5c842' });
+      l.bringToFront();
+    } else {
+      l.setStyle({ fillOpacity: 0.25, weight: 1, color: '#c9a227' });
+    }
+  });
+
+  // Zoom to oblast bounds
+  try { map.fitBounds(layer.getBounds().pad(0.12)); } catch { /* no bounds */ }
+
+  // Filter asset markers to this oblast
+  renderMarkers();
+
+  // Show war risk panel
+  showOblastWarPanel(info, name);
+}
+
+function closeOblastWarPanel() {
+  const p = document.getElementById('oblastWarPanel');
+  if (p) { p.classList.remove('visible'); setTimeout(() => p.remove(), 280); }
+}
+
+function showOblastWarPanel(info, featureName) {
+  closeOblastWarPanel();
+
+  const lang   = getLang();
+  const name   = lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName);
+  const risk   = info?.war_risk ?? 'unknown';
+  const prox   = lang === 'uk' ? (info?.front_proximity_uk ?? '') : (info?.front_proximity_en ?? '');
+  const freq   = lang === 'uk' ? (info?.attack_frequency_uk ?? '') : (info?.attack_frequency_en ?? '');
+
+  const RISK_LABEL = {
+    severe:   { en: 'Severe',   uk: 'Критичний', cls: 'risk-severe'   },
+    high:     { en: 'High',     uk: 'Високий',   cls: 'risk-high'     },
+    moderate: { en: 'Moderate', uk: 'Помірний',  cls: 'risk-moderate' },
+    low:      { en: 'Low',      uk: 'Низький',   cls: 'risk-low'      },
+  };
+  const rl = RISK_LABEL[risk] ?? { en: 'Unknown', uk: 'Невідомо', cls: 'risk-low' };
+  const riskLabel = lang === 'uk' ? rl.uk : rl.en;
+
+  // Count assets in this oblast
+  const fullName = OBLAST_INFO_MAP[featureName] ?? featureName;
+  const oblastAssets = allAssets.filter(a => {
+    const loc = a.location?.oblast ?? '';
+    return loc === fullName || loc === featureName || loc.replace(' Oblast', '') === featureName;
+  });
+  const totalCost = oblastAssets.reduce((s, a) => s + (a.cost_paths?.baseline?.central_usd_m ?? 0), 0);
+
+  const panel = document.createElement('div');
+  panel.id = 'oblastWarPanel';
+  panel.className = 'oblast-war-panel';
+  panel.innerHTML = `
+    <div class="owp-header">
+      <div>
+        <div class="owp-name">${name}</div>
+        <span class="owp-risk-badge ${rl.cls}">⚠ ${riskLabel}</span>
+      </div>
+      <button class="owp-close" aria-label="Close">×</button>
+    </div>
+    ${prox ? `<div class="owp-section"><div class="owp-section-label">Frontline proximity</div><p>${prox}</p></div>` : ''}
+    ${freq ? `<div class="owp-section"><div class="owp-section-label">Attack frequency</div><p>${freq}</p></div>` : ''}
+    <div class="owp-stats">
+      <div class="owp-stat"><span class="owp-stat-n">${oblastAssets.length}</span><span class="owp-stat-l">damaged assets</span></div>
+      ${totalCost > 0 ? `<div class="owp-stat"><span class="owp-stat-n">$${totalCost}M</span><span class="owp-stat-l">est. baseline cost</span></div>` : ''}
+    </div>
+    <p class="owp-hint">Click the region again to deselect</p>`;
+
+  panel.querySelector('.owp-close').addEventListener('click', () => {
+    selectedOblast = null;
+    oblastLayer.setStyle(oblastStyle);
+    closeOblastWarPanel();
+    renderMarkers();
+  });
+
+  document.querySelector('.map-layout').appendChild(panel);
+  requestAnimationFrame(() => panel.classList.add('visible'));
+
+  // Load Wikipedia photo
+  const wikiArticle = info?.wiki_article;
+  if (wikiArticle) {
+    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wikiArticle)}`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        const img = data?.thumbnail?.source;
+        if (!img || !document.getElementById('oblastWarPanel')) return;
+        const photo = document.createElement('img');
+        photo.src = img; photo.className = 'owp-photo'; photo.alt = name;
+        panel.querySelector('.owp-header').insertAdjacentElement('afterend', photo);
+      })
+      .catch(() => {});
+  }
+}
+
 // ── Oblast boundary layer ─────────────────────────────────────────────────────
 
 function oblastStyle(feature) {
@@ -299,16 +411,20 @@ async function addOblastLayer() {
         if (name) layer.bindTooltip(tooltipText, { permanent: false, sticky: true, className: 'oblast-tooltip' });
 
         layer.on('mouseover', function () {
-          this.setStyle({ fillOpacity: 0.90, weight: 2 });
+          if (selectedOblast !== name) this.setStyle({ fillOpacity: 0.90, weight: 2 });
         });
         layer.on('mouseout', function () {
-          oblastLayer.resetStyle(this);
+          if (selectedOblast !== name) oblastLayer.resetStyle(this);
         });
         layer.on('click', function () {
-          oblastLayer.resetStyle();
-          this.setStyle({ fillOpacity: 0.92, weight: 2.5, color: '#7eb3e8' });
           const info = findOblastInfo(name);
-          showOblastPanel(info ?? { name_en: name, name_uk: name }, name);
+          if (mapViewMode === 'damaged') {
+            handleDamagedOblastClick(name, this, layer, info);
+          } else {
+            oblastLayer.resetStyle();
+            this.setStyle({ fillOpacity: 0.92, weight: 2.5, color: '#c9a227' });
+            showOblastPanel(info ?? { name_en: name, name_uk: name }, name);
+          }
         });
       }
     }).addTo(map);
@@ -329,6 +445,11 @@ function setMapView(view) {
     btn.classList.toggle('map-view-tab-active', isActive);
     btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
   }
+
+  // Clear any oblast selection when switching views
+  selectedOblast = null;
+  closeOblastWarPanel();
+  if (oblastLayer) oblastLayer.setStyle(oblastStyle);
 
   // Show/hide filter+asset controls (not useful in ukraine/development views)
   const showControls = view === 'damaged' || view === 'reconstructed';
@@ -390,6 +511,16 @@ function renderMarkers() {
   // Reconstructed view: only completed assets, shown in green
   if (mapViewMode === 'reconstructed') {
     candidates = allAssets.filter(a => a.wartime_status?.lifecycle === 'complete');
+  }
+
+  // Damaged view with a selected oblast: filter to that region
+  if (mapViewMode === 'damaged' && selectedOblast) {
+    const fullName = OBLAST_INFO_MAP[selectedOblast] ?? selectedOblast;
+    candidates = candidates.filter(a => {
+      const loc = a.location?.oblast ?? '';
+      return loc === fullName || loc === selectedOblast ||
+             loc.replace(' Oblast', '') === selectedOblast;
+    });
   }
 
   const visible = candidates;

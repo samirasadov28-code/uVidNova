@@ -1688,6 +1688,80 @@ details[open] .agg-summary::before { content: '▼ '; }
   .admin-gate-form { flex-direction: column; }
 }
 
+/* ── Oblast war risk panel (Damaged view) ───────────────────────────────── */
+.oblast-war-panel {
+  position: absolute;
+  bottom: 58px;
+  left: 14px;
+  z-index: 600;
+  width: 300px;
+  max-height: calc(100% - 130px);
+  overflow-y: auto;
+  background: rgba(8,16,36,0.95);
+  border: 1px solid rgba(201,162,39,0.5);
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.45);
+  backdrop-filter: blur(10px);
+  color: rgba(255,255,255,0.88);
+  font-size: 0.82rem;
+  transform: translateY(12px);
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.oblast-war-panel.visible { opacity: 1; transform: translateY(0); }
+.owp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.85rem 0.9rem 0.5rem;
+  border-bottom: 1px solid rgba(201,162,39,0.2);
+}
+.owp-name { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.35rem; }
+.owp-risk-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.risk-severe   { background: rgba(139,0,0,0.55); color: #ff9999; border: 1px solid #b00; }
+.risk-high     { background: rgba(180,80,0,0.45); color: #ffbb77; border: 1px solid #c55; }
+.risk-moderate { background: rgba(180,140,0,0.35); color: #ffe066; border: 1px solid #aa9; }
+.risk-low      { background: rgba(20,100,40,0.4); color: #88ee99; border: 1px solid #396; }
+.owp-photo { width: 100%; height: 140px; object-fit: cover; display: block; }
+.owp-section { padding: 0.65rem 0.9rem 0; }
+.owp-section-label {
+  font-size: 0.67rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #c9a227;
+  margin-bottom: 0.25rem;
+}
+.owp-section p { line-height: 1.5; color: rgba(255,255,255,0.75); margin: 0; font-size: 0.78rem; }
+.owp-stats {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0.9rem;
+  border-top: 1px solid rgba(201,162,39,0.15);
+  margin-top: 0.65rem;
+}
+.owp-stat { display: flex; flex-direction: column; gap: 0.1rem; }
+.owp-stat-n { font-size: 1.15rem; font-weight: 700; color: #f5c842; line-height: 1.1; }
+.owp-stat-l { font-size: 0.68rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.04em; }
+.owp-hint { font-size: 0.68rem; color: rgba(255,255,255,0.35); padding: 0 0.9rem 0.75rem; margin: 0; }
+.owp-close {
+  background: none; border: none; color: rgba(255,255,255,0.4);
+  font-size: 1.2rem; cursor: pointer; padding: 0 0.2rem; line-height: 1; flex-shrink: 0;
+}
+.owp-close:hover { color: #fff; }
+
+@media (max-width: 640px) {
+  .oblast-war-panel { width: calc(100vw - 28px); left: 14px; bottom: 70px; }
+}
+
 /* ── Oblast info panel ───────────────────────────────────────────────────── */
 .oblast-info-panel {
   position: fixed;
