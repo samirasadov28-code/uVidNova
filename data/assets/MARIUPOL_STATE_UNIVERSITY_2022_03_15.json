@@ -1,0 +1,118 @@
+{
+  "asset_id": "MARIUPOL_STATE_UNIVERSITY_2022_03_15",
+  "name": {
+    "en": "Pryazovskyi State Technical University, Mariupol",
+    "uk": "Приазовський державний технічний університет, Маріуполь"
+  },
+  "location": {
+    "lat": 47.108,
+    "lon": 37.549,
+    "oblast": "Donetsk",
+    "raion": "Mariupol",
+    "settlement": "Mariupol",
+    "address_en": "7 Universytetska St, Mariupol, Donetsk Oblast"
+  },
+  "asset_type": "education.university",
+  "sector": "education",
+  "damage": {
+    "incident_date": "2022-03-15",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UN_OCHA",
+      "BELLINGCAT",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "Bellingcat: Mariupol Educational Institutions Satellite Analysis",
+        "url": "https://www.bellingcat.com/news/2022/04/15/mariupol-infrastructure-damage",
+        "source_code": "BELLINGCAT"
+      },
+      {
+        "title": "UN OCHA Ukraine: Mariupol Situation Report",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mariupol-situation-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "MIGA_WAR"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 85000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Pre-war satellite imagery (Planet Labs); PSTU official campus documentation"
+    },
+    "construction_year": {
+      "value": 1930,
+      "unit": "year",
+      "source": "extracted_from_source",
+      "ref": "PSTU institutional history — founded 1930 as Mariupol Metallurgical Institute"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 227,
+      "central_usd_m": 402,
+      "high_usd_m": 576
+    },
+    "code_compliant": {
+      "low_usd_m": 261,
+      "central_usd_m": 491,
+      "high_usd_m": 720
+    },
+    "build_back_better": {
+      "low_usd_m": 295,
+      "central_usd_m": 609,
+      "high_usd_m": 922
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 50,
+      "concessional_pct": 30,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 55,
+      "concessional_pct": 25,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "EU Facility education reconstruction track; passive-building standard and fibre overlays meet EU green conditionality",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "education",
+    "university",
+    "mariupol",
+    "donetsk",
+    "shelling",
+    "occupied"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

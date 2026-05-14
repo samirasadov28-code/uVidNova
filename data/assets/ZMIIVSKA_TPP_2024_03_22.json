@@ -1,0 +1,121 @@
+{
+  "asset_id": "ZMIIVSKA_TPP_2024_03_22",
+  "name": {
+    "en": "Zmiivska Thermal Power Plant",
+    "uk": "Змієвська теплова електростанція"
+  },
+  "location": {
+    "lat": 49.66,
+    "lon": 36.38,
+    "oblast": "Kharkiv",
+    "raion": "Zmiyiv",
+    "settlement": "Zmiiv",
+    "address_en": "Zmiivska TPP, Zmiiv, Kharkiv Oblast"
+  },
+  "asset_type": "energy.tpp",
+  "sector": "energy_and_power",
+  "damage": {
+    "incident_date": "2024-03-22",
+    "incident_type": "missile_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 2,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "Centrenergo: Zmiivska TPP destroyed by Russian strikes",
+        "url": "https://centrenergo.com/en/news/zmiivska-tpp",
+        "source_code": "eRECOVERY"
+      },
+      {
+        "title": "KSE Institute: DTEK and Centrenergo Infrastructure Damage 2024",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-energy-2024",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine Situation Report — Energy Attacks March 2024",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-march-2024",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EBRD_RSF",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "installed_capacity_mw": {
+      "value": 2400,
+      "unit": "MW",
+      "source": "extracted_from_source",
+      "ref": "Centrenergo annual report 2023; RDNA3 Table A2.1 energy sector"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 1206,
+      "central_usd_m": 2182,
+      "high_usd_m": 3157
+    },
+    "code_compliant": {
+      "low_usd_m": 1387,
+      "central_usd_m": 2667,
+      "high_usd_m": 3947
+    },
+    "build_back_better": {
+      "low_usd_m": 1568,
+      "central_usd_m": 3310,
+      "high_usd_m": 5052
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 25,
+      "concessional_pct": 50,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 30,
+      "concessional_pct": 45,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 15,
+      "private_pct": 10,
+      "rationale": "EU Facility energy-security track; EBRD Energy Efficiency and Resilience Facility; private co-investment (operator equity) credible for BBB path with carbon-transition roadmap",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "energy",
+    "thermal_power",
+    "centrenergo",
+    "kharkiv_oblast",
+    "missile_strike",
+    "large_scale",
+    "re_damaged",
+    "grid_critical"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

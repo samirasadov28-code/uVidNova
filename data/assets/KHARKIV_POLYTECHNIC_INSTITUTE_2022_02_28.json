@@ -1,0 +1,113 @@
+{
+  "asset_id": "KHARKIV_POLYTECHNIC_INSTITUTE_2022_02_28",
+  "name": {
+    "en": "National Technical University KhPI — Kharkiv Polytechnic Institute",
+    "uk": "Національний технічний університет «ХПІ»"
+  },
+  "location": {
+    "lat": 49.9947,
+    "lon": 36.2395,
+    "oblast": "Kharkiv",
+    "raion": null,
+    "settlement": "Kharkiv",
+    "address_en": "2 Kyrpychova St, Kharkiv"
+  },
+  "asset_type": "education.university",
+  "sector": "education",
+  "damage": {
+    "incident_date": "2022-02-28",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "moderate",
+    "re_damage_count": 6,
+    "verified_by": [
+      "UN_OCHA",
+      "KSE",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "NTU KhPI: Damage Assessment Reports 2022–2024",
+        "url": "https://www.kpi.kharkov.ua/en/news/damage-assessment",
+        "source_code": "eRECOVERY"
+      },
+      {
+        "title": "KSE Institute: Kharkiv Education Infrastructure",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-education",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 200000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "NTU KhPI official annual report 2022; total campus area across 40+ buildings"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 143,
+      "central_usd_m": 351,
+      "high_usd_m": 559
+    },
+    "code_compliant": {
+      "low_usd_m": 164,
+      "central_usd_m": 432,
+      "high_usd_m": 699
+    },
+    "build_back_better": {
+      "low_usd_m": 186,
+      "central_usd_m": 540,
+      "high_usd_m": 895
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 50,
+      "concessional_pct": 30,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 55,
+      "concessional_pct": 25,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "EU Facility education reconstruction track; passive-building standard and fibre overlays meet EU green conditionality",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "education",
+    "university",
+    "kharkiv_oblast",
+    "shelling",
+    "re_damaged",
+    "technical"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

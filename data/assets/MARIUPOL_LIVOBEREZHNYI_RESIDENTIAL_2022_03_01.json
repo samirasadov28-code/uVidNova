@@ -1,0 +1,123 @@
+{
+  "asset_id": "MARIUPOL_LIVOBEREZHNYI_RESIDENTIAL_2022_03_01",
+  "name": {
+    "en": "Mariupol Livoberezhnyi (East Bank) Residential District",
+    "uk": "Лівобережний житловий масив, Маріуполь"
+  },
+  "location": {
+    "lat": 47.072,
+    "lon": 37.59,
+    "oblast": "Donetsk",
+    "raion": "Mariupol",
+    "settlement": "Mariupol",
+    "address_en": "Livoberezhnyi District, Mariupol, Donetsk Oblast"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-03-01",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Mariupol Total Damage Assessment — Residential",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-mariupol-residential",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN Habitat: Mariupol City Damage Survey",
+        "url": "https://unhabitat.org/ukraine/mariupol",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "Bellingcat: Mariupol Residential District Satellite Analysis",
+        "url": "https://www.bellingcat.com/news/2022/05/15/mariupol-residential-damage",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "MIGA_WAR"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 2800000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "KSE Institute: Mariupol total residential damage assessment 2022; UN Habitat survey; approximately 2.8M m² residential stock destroyed or severely damaged city-wide"
+    },
+    "housing_units": {
+      "value": 28000,
+      "unit": "units",
+      "source": "extracted_from_source",
+      "ref": "KSE Institute: Mariupol housing stock assessment; UN Habitat Mariupol city survey 2022"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 3117,
+      "central_usd_m": 5745,
+      "high_usd_m": 8374
+    },
+    "code_compliant": {
+      "low_usd_m": 3585,
+      "central_usd_m": 7026,
+      "high_usd_m": 10467
+    },
+    "build_back_better": {
+      "low_usd_m": 4052,
+      "central_usd_m": 8725,
+      "high_usd_m": 13398
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 40,
+      "concessional_pct": 35,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 45,
+      "concessional_pct": 35,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "rationale": "EU Facility housing reconstruction track; prefab-modular and passive-standard overlays qualify; municipal co-investment required",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "mariupol",
+    "donetsk",
+    "shelling",
+    "occupied",
+    "large_scale"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

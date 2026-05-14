@@ -1,0 +1,117 @@
+{
+  "asset_id": "CHERNIHIV_NORTH_RESIDENTIAL_2022_03_09",
+  "name": {
+    "en": "Chernihiv North Residential District",
+    "uk": "Північний житловий масив, Чернігів"
+  },
+  "location": {
+    "lat": 51.513,
+    "lon": 31.28,
+    "oblast": "Chernihiv",
+    "raion": null,
+    "settlement": "Chernihiv",
+    "address_en": "Northern Residential District, Chernihiv"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-03-09",
+    "incident_type": "aerial_bomb",
+    "destruction_level": "severe",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Chernihiv Oblast Damage Assessment",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-chernihiv",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine: Chernihiv Situation Report March 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-chernihiv-march-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 420000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "KSE Institute: Chernihiv damage assessment April 2022; northern district apartment blocks heavily damaged"
+    },
+    "housing_units": {
+      "value": 4200,
+      "unit": "units",
+      "source": "extracted_from_source",
+      "ref": "Chernihiv City Council housing registry; KSE Institute Chernihiv assessment"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 228,
+      "central_usd_m": 484,
+      "high_usd_m": 739
+    },
+    "code_compliant": {
+      "low_usd_m": 262,
+      "central_usd_m": 593,
+      "high_usd_m": 924
+    },
+    "build_back_better": {
+      "low_usd_m": 297,
+      "central_usd_m": 740,
+      "high_usd_m": 1182
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 40,
+      "concessional_pct": 35,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 45,
+      "concessional_pct": 35,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "rationale": "EU Facility housing reconstruction track; prefab-modular and passive-standard overlays qualify; municipal co-investment required",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "chernihiv",
+    "aerial_bomb",
+    "liberated"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

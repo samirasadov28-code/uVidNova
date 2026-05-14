@@ -1,0 +1,114 @@
+{
+  "asset_id": "BAKHMUT_WATER_SANITATION_2022_08_01",
+  "name": {
+    "en": "Bakhmut City Water Supply and Wastewater System",
+    "uk": "Система водопостачання та водовідведення міста Бахмут"
+  },
+  "location": {
+    "lat": 48.5953,
+    "lon": 38.0037,
+    "oblast": "Donetsk",
+    "raion": null,
+    "settlement": "Bakhmut",
+    "address_en": "Bakhmut city water infrastructure, Donetsk Oblast"
+  },
+  "asset_type": "water.supply",
+  "sector": "water_and_sanitation",
+  "damage": {
+    "incident_date": "2022-08-01",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Russia Will Pay — Bakhmut damage assessment",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat Bakhmut city destruction documentation",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "in_pipeline",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "NONE"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "service_population": {
+      "value": 73000,
+      "unit": "people",
+      "source": "extracted_from_source",
+      "ref": "Pre-war population KSE"
+    },
+    "pipeline_length_km": {
+      "value": null,
+      "unit": "km",
+      "source": "pending_data",
+      "ref": "To be confirmed post-liberation"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 80,
+      "central_usd_m": 187,
+      "high_usd_m": 295
+    },
+    "code_compliant": {
+      "low_usd_m": 92,
+      "central_usd_m": 230,
+      "high_usd_m": 368
+    },
+    "build_back_better": {
+      "low_usd_m": 104,
+      "central_usd_m": 288,
+      "high_usd_m": 471
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 45,
+      "concessional_pct": 40,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 50,
+      "concessional_pct": 35,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 55,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "EU Facility water sector track; smart metering and leak detection qualify for green conditionality; EBRD RSF applicable",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "water",
+    "donetsk",
+    "bakhmut",
+    "artillery_strike",
+    "occupied"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

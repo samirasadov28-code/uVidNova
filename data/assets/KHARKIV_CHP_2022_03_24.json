@@ -1,0 +1,115 @@
+{
+  "asset_id": "KHARKIV_CHP_2022_03_24",
+  "name": {
+    "en": "Kharkiv CHP-5 Combined Heat and Power Station",
+    "uk": "Харківська теплоелектроцентраль ТЕЦ-5"
+  },
+  "location": {
+    "lat": 49.995,
+    "lon": 36.18,
+    "oblast": "Kharkiv",
+    "raion": null,
+    "settlement": "Kharkiv",
+    "address_en": "CHP-5, Kharkiv, Kharkiv Oblast"
+  },
+  "asset_type": "energy.tpp",
+  "sector": "energy_and_power",
+  "damage": {
+    "incident_date": "2022-03-24",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "severe",
+    "re_damage_count": 4,
+    "verified_by": [
+      "UA_GOV",
+      "KSE",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Kharkiv Energy Infrastructure Damage 2022–2024",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-energy",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine Situation Report — Kharkiv Energy Infrastructure",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kharkiv-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "installed_capacity_mw": {
+      "value": 540,
+      "unit": "MW",
+      "source": "extracted_from_source",
+      "ref": "Kharkivska Teplomerezha annual report; CHP-5 installed electrical capacity 540 MW, thermal 1,200 Gcal/h"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 171,
+      "central_usd_m": 360,
+      "high_usd_m": 549
+    },
+    "code_compliant": {
+      "low_usd_m": 197,
+      "central_usd_m": 442,
+      "high_usd_m": 686
+    },
+    "build_back_better": {
+      "low_usd_m": 223,
+      "central_usd_m": 551,
+      "high_usd_m": 878
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 25,
+      "concessional_pct": 50,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 30,
+      "concessional_pct": 45,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 15,
+      "private_pct": 10,
+      "rationale": "EU Facility energy-security track; EBRD Energy Efficiency and Resilience Facility; private co-investment (operator equity) credible for BBB path with carbon-transition roadmap",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "energy",
+    "thermal_power",
+    "chp",
+    "district_heating",
+    "kharkiv",
+    "shelling",
+    "re_damaged",
+    "municipal"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

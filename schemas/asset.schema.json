@@ -115,7 +115,7 @@
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["title", "url"],
+            "required": ["title"],
             "additionalProperties": false,
             "properties": {
               "title": { "type": "string" },
@@ -220,7 +220,7 @@
       "required": ["value", "source"],
       "additionalProperties": false,
       "properties": {
-        "value": { "type": "number" },
+        "value": { "type": ["number", "null"] },
         "unit": { "type": "string" },
         "source": {
           "type": "string",

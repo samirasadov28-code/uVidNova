@@ -1,0 +1,114 @@
+{
+  "asset_id": "KHERSON_POST_KAKHOVKA_WATER_2023_06_06",
+  "name": {
+    "en": "Kherson City Water and Sanitation System (post-Kakhovka)",
+    "uk": "Система водопостачання та водовідведення Херсона (після руйнування Каховської ГЕС)"
+  },
+  "location": {
+    "lat": 46.6354,
+    "lon": 32.6169,
+    "oblast": "Kherson",
+    "raion": null,
+    "settlement": "Kherson",
+    "address_en": "Kherson city water infrastructure, Kherson Oblast"
+  },
+  "asset_type": "water.supply",
+  "sector": "water_and_sanitation",
+  "damage": {
+    "incident_date": "2023-06-06",
+    "incident_type": "sabotage",
+    "destruction_level": "severe",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update #49 — Kakhovka dam collapse",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE damage assessment — Kherson water infrastructure post-dam collapse",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "frontline_adjacent",
+    "de_risking": [
+      "EBRD_RSF",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "service_population": {
+      "value": 290000,
+      "unit": "people",
+      "source": "extracted_from_source",
+      "ref": "OCHA Ukraine Flash Update #49 June 2023"
+    },
+    "treatment_capacity_m3_per_day": {
+      "value": null,
+      "unit": "m³/day",
+      "source": "pending_data",
+      "ref": "To be confirmed"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 192,
+      "central_usd_m": 533,
+      "high_usd_m": 873
+    },
+    "code_compliant": {
+      "low_usd_m": 221,
+      "central_usd_m": 656,
+      "high_usd_m": 1091
+    },
+    "build_back_better": {
+      "low_usd_m": 250,
+      "central_usd_m": 823,
+      "high_usd_m": 1397
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 45,
+      "concessional_pct": 40,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 50,
+      "concessional_pct": 35,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 55,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "EU Facility water sector track; smart metering and leak detection qualify for green conditionality; EBRD RSF applicable",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "water",
+    "kherson",
+    "kakhovka",
+    "sabotage"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

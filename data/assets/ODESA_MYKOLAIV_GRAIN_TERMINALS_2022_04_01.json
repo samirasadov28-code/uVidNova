@@ -1,0 +1,122 @@
+{
+  "asset_id": "ODESA_MYKOLAIV_GRAIN_TERMINALS_2022_04_01",
+  "name": {
+    "en": "Odesa and Mykolaiv Grain Export Terminals",
+    "uk": "Зернові експортні термінали Одеси та Миколаєва"
+  },
+  "location": {
+    "lat": 46.4825,
+    "lon": 30.7233,
+    "oblast": "Odesa",
+    "raion": null,
+    "settlement": "Odesa",
+    "address_en": "Odesa and Mykolaiv port grain terminals, Black Sea coast"
+  },
+  "asset_type": "agricultural.grain_terminal",
+  "sector": "industrial_and_agricultural",
+  "damage": {
+    "incident_date": "2022-04-01",
+    "incident_type": "missile_strike",
+    "destruction_level": "moderate",
+    "re_damage_count": 4,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Russia Will Pay — Odesa port infrastructure",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine — Black Sea grain corridor impact",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EBRD_RSF",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "throughput_mt_per_year": {
+      "value": 25,
+      "unit": "million tonnes/year",
+      "source": "extracted_from_source",
+      "ref": "Ukraine Grain Association; KSE infrastructure damage assessment"
+    },
+    "storage_capacity_mt": {
+      "value": null,
+      "unit": "million tonnes",
+      "source": "pending_data",
+      "ref": "To be confirmed from port authority"
+    },
+    "storage_capacity_tonnes": {
+      "value": 3500000,
+      "unit": "tonnes",
+      "source": "modelled",
+      "ref": "Ukraine Grain Association terminal capacity estimates 2021; USDA attaché report Kyiv 2022. Modelled: combined Odesa port and Mykolaiv grain terminal storage at 1.7 months throughput coverage."
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 181,
+      "central_usd_m": 574,
+      "high_usd_m": 967
+    },
+    "code_compliant": {
+      "low_usd_m": 208,
+      "central_usd_m": 709,
+      "high_usd_m": 1209
+    },
+    "build_back_better": {
+      "low_usd_m": 235,
+      "central_usd_m": 892,
+      "high_usd_m": 1548
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 15,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 40,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 20,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 35,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 25,
+      "concessional_pct": 25,
+      "public_equity_pct": 10,
+      "private_pct": 40,
+      "rationale": "Green steel / decarbonisation pathway unlocks EU industrial recovery grants; private equity anchor expected from strategic investor",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "industrial",
+    "grain",
+    "odesa",
+    "port",
+    "missile_strike"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

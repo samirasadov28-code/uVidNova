@@ -1,0 +1,124 @@
+{
+  "asset_id": "SVIATOHIRSK_LAVRA_2022_05_30",
+  "name": {
+    "en": "Sviatohirsk Holy Dormition Lavra",
+    "uk": "Свято-Успенська Святогірська лавра"
+  },
+  "location": {
+    "lat": 49.0572,
+    "lon": 37.5503,
+    "oblast": "Donetsk",
+    "raion": "Kramatorsk",
+    "settlement": "Sviatohirsk",
+    "address_en": "Holy Dormition Lavra, Sviatohirsk, Donetsk Oblast"
+  },
+  "asset_type": "heritage.religious",
+  "sector": "heritage_and_culture",
+  "damage": {
+    "incident_date": "2022-05-30",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "severe",
+    "re_damage_count": 2,
+    "verified_by": [
+      "UN_OCHA",
+      "BELLINGCAT",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UNESCO: Statement on Damage to Sviatohirsk Lavra",
+        "url": "https://www.unesco.org/en/articles/sviatohirsk-lavra-damage",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "Bellingcat: Sviatohirsk Lavra Satellite Damage Analysis",
+        "url": "https://www.bellingcat.com/news/2022/06/01/sviatohirsk-lavra-damage",
+        "source_code": "BELLINGCAT"
+      },
+      {
+        "title": "KSE Institute: Heritage Damage — Donetsk Oblast",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-heritage",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "frontline_adjacent",
+    "de_risking": [
+      "MIGA_WAR"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 35000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "ICOMOS Ukraine heritage registration; Sviatohirsk Lavra official monastery records — total built area across historic and modern structures"
+    },
+    "construction_year": {
+      "value": 1526,
+      "unit": "year",
+      "source": "extracted_from_source",
+      "ref": "ICOMOS Ukraine: monastery established 1526; main cathedral 1850s"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 181,
+      "central_usd_m": 884,
+      "high_usd_m": 1587
+    },
+    "code_compliant": {
+      "low_usd_m": 208,
+      "central_usd_m": 1096,
+      "high_usd_m": 1984
+    },
+    "build_back_better": {
+      "low_usd_m": 235,
+      "central_usd_m": 1388,
+      "high_usd_m": 2540
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 70,
+      "concessional_pct": 20,
+      "public_equity_pct": 10,
+      "private_pct": 0,
+      "rationale": "Heritage-designated sites command maximum grant share under EU cultural reconstruction programmes; heritage premium multiplier (1.8×–3.0×) applies over standard construction benchmark",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "heritage",
+    "religious",
+    "donetsk",
+    "shelling",
+    "frontline",
+    "re_damaged",
+    "unesco_candidate"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

@@ -1,0 +1,114 @@
+{
+  "asset_id": "AVDIIVKA_COKE_PLANT_2022_02_24",
+  "name": {
+    "en": "Avdiivka Coke Plant",
+    "uk": "Авдіївський коксохімічний завод"
+  },
+  "location": {
+    "lat": 48.1394,
+    "lon": 37.7487,
+    "oblast": "Donetsk",
+    "raion": null,
+    "settlement": "Avdiivka",
+    "address_en": "Avdiivka Coke Plant, Avdiivka, Donetsk Oblast"
+  },
+  "asset_type": "industrial.coke",
+  "sector": "industrial_and_agricultural",
+  "damage": {
+    "incident_date": "2022-02-24",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "destroyed",
+    "re_damage_count": 3,
+    "verified_by": [
+      "KSE",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Russia Will Pay — Avdiivka Coke Plant",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat Avdiivka destruction documentation",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "in_pipeline",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "NONE"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "production_capacity_mt_per_year": {
+      "value": 4.6,
+      "unit": "million tonnes/year",
+      "source": "extracted_from_source",
+      "ref": "DTEK/Metinvest production data; KSE industrial assessment"
+    },
+    "annual_capacity_tonnes": {
+      "value": 4600000,
+      "unit": "tonnes/year",
+      "source": "extracted_from_source",
+      "ref": "DTEK/ArcelorMittal Avdiivka Coke production data; KSE industrial assessment 2023"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 942,
+      "central_usd_m": 2074,
+      "high_usd_m": 3206
+    },
+    "code_compliant": {
+      "low_usd_m": 1084,
+      "central_usd_m": 2546,
+      "high_usd_m": 4008
+    },
+    "build_back_better": {
+      "low_usd_m": 1225,
+      "central_usd_m": 3177,
+      "high_usd_m": 5130
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 15,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 40,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 20,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 35,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 25,
+      "concessional_pct": 25,
+      "public_equity_pct": 10,
+      "private_pct": 40,
+      "rationale": "Green steel / decarbonisation pathway unlocks EU industrial recovery grants; private equity anchor expected from strategic investor",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "industrial",
+    "coke",
+    "donetsk",
+    "avdiivka",
+    "occupied"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

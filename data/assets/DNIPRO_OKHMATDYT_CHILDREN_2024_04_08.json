@@ -1,0 +1,118 @@
+{
+  "asset_id": "DNIPRO_OKHMATDYT_CHILDREN_2024_04_08",
+  "name": {
+    "en": "Dnipro Children's Regional Clinical Hospital",
+    "uk": "Дніпропетровська обласна дитяча клінічна лікарня"
+  },
+  "location": {
+    "lat": 48.478,
+    "lon": 35.062,
+    "oblast": "Dnipropetrovsk",
+    "raion": null,
+    "settlement": "Dnipro",
+    "address_en": "Dnipro Children's Regional Clinical Hospital, Dnipro"
+  },
+  "asset_type": "healthcare.tertiary_hospital",
+  "sector": "healthcare",
+  "damage": {
+    "incident_date": "2024-04-08",
+    "incident_type": "missile_strike",
+    "destruction_level": "moderate",
+    "re_damage_count": 1,
+    "verified_by": [
+      "UA_GOV",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "Ministry of Health Ukraine: Dnipro Oblast Medical Facilities Damage",
+        "url": "https://moz.gov.ua/article/news/dnipro-oblast-medical-facilities",
+        "source_code": "eRECOVERY"
+      },
+      {
+        "title": "UN OCHA Ukraine Situation Report — April 2024",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-april-2024",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 12000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery; Dnipropetrovsk Oblast Health Department"
+    },
+    "beds": {
+      "value": 400,
+      "unit": "beds",
+      "source": "extracted_from_source",
+      "ref": "Ministry of Health Ukraine facility database"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 25,
+      "central_usd_m": 52,
+      "high_usd_m": 79
+    },
+    "code_compliant": {
+      "low_usd_m": 29,
+      "central_usd_m": 64,
+      "high_usd_m": 99
+    },
+    "build_back_better": {
+      "low_usd_m": 32,
+      "central_usd_m": 80,
+      "high_usd_m": 127
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 55,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 65,
+      "concessional_pct": 20,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "Tertiary hospital commands high grant-eligibility under EU healthcare reconstruction programmes; EU green conditionality for BBB microgrid/passive-standard components",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "healthcare",
+    "children",
+    "dnipropetrovsk",
+    "missile_strike",
+    "re_damaged"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

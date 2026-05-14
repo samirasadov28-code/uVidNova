@@ -1,0 +1,125 @@
+{
+  "asset_id": "MARIUPOL_SEA_PORT_2022_03_01",
+  "name": {
+    "en": "Mariupol Sea Trade Port",
+    "uk": "Маріупольський морський торговельний порт"
+  },
+  "location": {
+    "lat": 47.066,
+    "lon": 37.575,
+    "oblast": "Donetsk",
+    "raion": "Mariupol",
+    "settlement": "Mariupol",
+    "address_en": "Mariupol Sea Trade Port, Mariupol, Donetsk Oblast"
+  },
+  "asset_type": "transport.seaport",
+  "sector": "transport_and_ports",
+  "damage": {
+    "incident_date": "2022-03-01",
+    "incident_type": "ground_combat",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "UN_OCHA",
+      "KSE",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Mariupol Port and Industrial Damage Assessment",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-mariupol-port",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine: Mariupol Maritime Infrastructure",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mariupol-port-situation",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "MIGA_WAR"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "berth_length_m": {
+      "value": 4200,
+      "unit": "m",
+      "source": "extracted_from_source",
+      "ref": "Port of Mariupol official technical documentation; total berthing length 4,200 m across 27 berths"
+    },
+    "annual_throughput_tonnes": {
+      "value": 14000000,
+      "unit": "tonnes/year",
+      "source": "extracted_from_source",
+      "ref": "Mariupol Port Authority annual report 2021; pre-war throughput 14 million tonnes/year"
+    },
+    "storage_area_m2": {
+      "value": 180000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery analysis (Planet Labs); port storage and logistics area"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 12,
+      "central_usd_m": 29,
+      "high_usd_m": 46
+    },
+    "code_compliant": {
+      "low_usd_m": 14,
+      "central_usd_m": 36,
+      "high_usd_m": 58
+    },
+    "build_back_better": {
+      "low_usd_m": 16,
+      "central_usd_m": 45,
+      "high_usd_m": 74
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 30,
+      "concessional_pct": 45,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 40,
+      "concessional_pct": 35,
+      "public_equity_pct": 15,
+      "private_pct": 10,
+      "rationale": "EU Connectivity Fund and TEN-T programme applicable to transport reconstruction; private concession model viable for airport and seaport; MIGA War & Civil Disturbance coverage for private tranche",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "transport",
+    "seaport",
+    "mariupol",
+    "donetsk",
+    "ground_combat",
+    "occupied",
+    "strategic"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

@@ -1,0 +1,118 @@
+{
+  "asset_id": "KUPYANSK_RESIDENTIAL_2022_02_28",
+  "name": {
+    "en": "Kupyansk Residential District",
+    "uk": "Жилий масив Куп'янськ"
+  },
+  "location": {
+    "lat": 49.7098,
+    "lon": 37.5998,
+    "oblast": "Kharkiv",
+    "raion": "Kupyansk",
+    "settlement": "Kupyansk",
+    "address_en": "Kupyansk, Kharkiv Oblast"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-02-28",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "severe",
+    "re_damage_count": 2,
+    "verified_by": [
+      "UN_OCHA",
+      "KSE",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine: Kupyansk Post-Liberation Assessment",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kupyansk-assessment",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Kharkiv Oblast Residential Damage",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "frontline_adjacent",
+    "de_risking": [
+      "MIGA_WAR"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 180000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery analysis; Ukrainian government post-liberation survey estimates for Kupyansk residential stock"
+    },
+    "housing_units": {
+      "value": 1800,
+      "unit": "units",
+      "source": "estimated_from_photo",
+      "ref": "Kharkiv Oblast Housing Department; post-liberation satellite damage assessment"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 107,
+      "central_usd_m": 225,
+      "high_usd_m": 343
+    },
+    "code_compliant": {
+      "low_usd_m": 123,
+      "central_usd_m": 276,
+      "high_usd_m": 429
+    },
+    "build_back_better": {
+      "low_usd_m": 139,
+      "central_usd_m": 344,
+      "high_usd_m": 549
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 40,
+      "concessional_pct": 35,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 45,
+      "concessional_pct": 35,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "rationale": "EU Facility housing reconstruction track; prefab-modular and passive-standard overlays qualify; municipal co-investment required",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "kharkiv_oblast",
+    "kupyansk",
+    "shelling",
+    "frontline",
+    "re_damaged"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

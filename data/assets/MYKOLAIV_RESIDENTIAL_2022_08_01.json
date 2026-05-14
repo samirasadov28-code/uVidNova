@@ -1,0 +1,117 @@
+{
+  "asset_id": "MYKOLAIV_RESIDENTIAL_2022_08_01",
+  "name": {
+    "en": "Mykolaiv Central Residential District",
+    "uk": "Центральний житловий масив, Миколаїв"
+  },
+  "location": {
+    "lat": 46.975,
+    "lon": 31.994,
+    "oblast": "Mykolaiv",
+    "raion": null,
+    "settlement": "Mykolaiv",
+    "address_en": "Central Residential District, Mykolaiv"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-08-01",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "moderate",
+    "re_damage_count": 6,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Mykolaiv Oblast Residential Damage",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-mykolaiv",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine: Mykolaiv Situation Report",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mykolaiv-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 650000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "KSE Institute: Mykolaiv residential damage assessment 2022; satellite imagery analysis of damaged apartment blocks"
+    },
+    "housing_units": {
+      "value": 6500,
+      "unit": "units",
+      "source": "estimated_from_photo",
+      "ref": "Mykolaiv City Council housing registry; post-2022 damage survey"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 185,
+      "central_usd_m": 478,
+      "high_usd_m": 771
+    },
+    "code_compliant": {
+      "low_usd_m": 213,
+      "central_usd_m": 588,
+      "high_usd_m": 964
+    },
+    "build_back_better": {
+      "low_usd_m": 241,
+      "central_usd_m": 737,
+      "high_usd_m": 1233
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 40,
+      "concessional_pct": 35,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 45,
+      "concessional_pct": 35,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "rationale": "EU Facility housing reconstruction track; prefab-modular and passive-standard overlays qualify; municipal co-investment required",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "mykolaiv",
+    "shelling",
+    "re_damaged"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

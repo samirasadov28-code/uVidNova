@@ -1,0 +1,124 @@
+{
+  "asset_id": "BORODYANKA_RESIDENTIAL_2022_03_27",
+  "name": {
+    "en": "Borodyanka Residential District",
+    "uk": "Жилий масив Бородянка"
+  },
+  "location": {
+    "lat": 50.648,
+    "lon": 29.931,
+    "oblast": "Kyiv",
+    "raion": "Bucha",
+    "settlement": "Borodyanka",
+    "address_en": "Borodyanka, Bucha Raion, Kyiv Oblast"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-03-27",
+    "incident_type": "aerial_bomb",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Borodyanka Residential Damage Assessment",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-borodyanka",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat: Borodyanka Satellite Analysis",
+        "url": "https://www.bellingcat.com/news/2022/04/05/borodyanka-satellite-imagery",
+        "source_code": "BELLINGCAT"
+      },
+      {
+        "title": "UN OCHA Ukraine: Kyiv Oblast Liberation Assessment",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kyiv-oblast-liberation-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 120000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "KSE Institute: Borodyanka damage assessment April 2022; satellite imagery; Ukrainian government survey"
+    },
+    "housing_units": {
+      "value": 1200,
+      "unit": "units",
+      "source": "extracted_from_source",
+      "ref": "KSE Institute Borodyanka survey; Bucha Raion housing registry"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 93,
+      "central_usd_m": 166,
+      "high_usd_m": 239
+    },
+    "code_compliant": {
+      "low_usd_m": 107,
+      "central_usd_m": 203,
+      "high_usd_m": 299
+    },
+    "build_back_better": {
+      "low_usd_m": 121,
+      "central_usd_m": 252,
+      "high_usd_m": 383
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 35,
+      "concessional_pct": 40,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 40,
+      "concessional_pct": 35,
+      "public_equity_pct": 25,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 45,
+      "concessional_pct": 35,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "rationale": "EU Facility housing reconstruction track; prefab-modular and passive-standard overlays qualify; municipal co-investment required",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "kyiv_oblast",
+    "aerial_bomb",
+    "liberated",
+    "large_scale"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

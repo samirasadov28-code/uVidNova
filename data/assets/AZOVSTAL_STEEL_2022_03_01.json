@@ -1,0 +1,120 @@
+{
+  "asset_id": "AZOVSTAL_STEEL_2022_03_01",
+  "name": {
+    "en": "Azovstal Iron and Steel Works, Mariupol",
+    "uk": "Металургійний комбінат «Азовсталь», Маріуполь"
+  },
+  "location": {
+    "lat": 47.0665,
+    "lon": 37.6003,
+    "oblast": "Donetsk",
+    "raion": null,
+    "settlement": "Mariupol",
+    "address_en": "Azovstal Iron and Steel Works, southern Mariupol, Donetsk Oblast"
+  },
+  "asset_type": "industrial.steelworks",
+  "sector": "industrial_and_agricultural",
+  "damage": {
+    "incident_date": "2022-03-01",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Russia Will Pay — Azovstal industrial damage",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat Mariupol siege documentation",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "in_pipeline",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "NONE"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "production_capacity_mt_per_year": {
+      "value": 6.5,
+      "unit": "million tonnes/year",
+      "source": "extracted_from_source",
+      "ref": "Metinvest annual reports; KSE industrial damage assessment"
+    },
+    "floor_area_m2": {
+      "value": null,
+      "unit": "m²",
+      "source": "pending_data",
+      "ref": "To be confirmed"
+    },
+    "annual_capacity_tonnes": {
+      "value": 6500000,
+      "unit": "tonnes/year",
+      "source": "extracted_from_source",
+      "ref": "Metinvest annual reports 2021; KSE industrial damage assessment 2022"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 3551,
+      "central_usd_m": 7439,
+      "high_usd_m": 11326
+    },
+    "code_compliant": {
+      "low_usd_m": 4083,
+      "central_usd_m": 9121,
+      "high_usd_m": 14158
+    },
+    "build_back_better": {
+      "low_usd_m": 4616,
+      "central_usd_m": 11369,
+      "high_usd_m": 18122
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 15,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 40,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 20,
+      "concessional_pct": 30,
+      "public_equity_pct": 15,
+      "private_pct": 35,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 25,
+      "concessional_pct": 25,
+      "public_equity_pct": 10,
+      "private_pct": 40,
+      "rationale": "Green steel / decarbonisation pathway unlocks EU industrial recovery grants; private equity anchor expected from strategic investor",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "industrial",
+    "steel",
+    "donetsk",
+    "mariupol",
+    "occupied"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

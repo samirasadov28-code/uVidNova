@@ -1,0 +1,113 @@
+{
+  "asset_id": "KUPYANSK_SCHOOL_COMPLEX_2022_09_10",
+  "name": {
+    "en": "Kupyansk Secondary School Complex",
+    "uk": "Школи м. Куп'янськ — зведений комплекс"
+  },
+  "location": {
+    "lat": 49.7098,
+    "lon": 37.5998,
+    "oblast": "Kharkiv",
+    "raion": "Kupyansk",
+    "settlement": "Kupyansk",
+    "address_en": "Kupyansk School Complex, Kupyansk, Kharkiv Oblast"
+  },
+  "asset_type": "education.secondary_school",
+  "sector": "education",
+  "damage": {
+    "incident_date": "2022-09-10",
+    "incident_type": "artillery_shelling",
+    "destruction_level": "severe",
+    "re_damage_count": 1,
+    "verified_by": [
+      "UN_OCHA",
+      "UA_GOV",
+      "KSE"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine: Kupyansk Post-Liberation Assessment",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kupyansk-assessment-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Kharkiv Oblast Education Infrastructure",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-education",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "frontline_adjacent",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 12000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery of multiple school buildings in Kupyansk; Ukrainian government post-liberation survey estimates"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 11,
+      "central_usd_m": 24,
+      "high_usd_m": 37
+    },
+    "code_compliant": {
+      "low_usd_m": 13,
+      "central_usd_m": 29,
+      "high_usd_m": 46
+    },
+    "build_back_better": {
+      "low_usd_m": 15,
+      "central_usd_m": 37,
+      "high_usd_m": 59
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "grant_pct": 50,
+      "concessional_pct": 30,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "grant_pct": 55,
+      "concessional_pct": 25,
+      "public_equity_pct": 20,
+      "private_pct": 0,
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "grant_pct": 60,
+      "concessional_pct": 25,
+      "public_equity_pct": 15,
+      "private_pct": 0,
+      "rationale": "EU Facility education reconstruction track; passive-building standard and fibre overlays meet EU green conditionality",
+      "comparable_projects": []
+    }
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "education",
+    "secondary_school",
+    "kharkiv_oblast",
+    "kupyansk",
+    "shelling",
+    "frontline"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}
