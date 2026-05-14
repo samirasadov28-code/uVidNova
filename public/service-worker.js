@@ -4,7 +4,7 @@
  * Strategy: cache-first for static assets; network-first for data files.
  */
 
-const CACHE_VERSION = 'uvidnova-v4';
+const CACHE_VERSION = 'uvidnova-v5';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const DATA_CACHE    = `${CACHE_VERSION}-data`;
 
@@ -29,6 +29,11 @@ const DATA_ASSETS = [
   '/data/assets/index.json',
   '/data/geo/ua_oblasts.geojson'
 ];
+
+// ── Message (SKIP_WAITING from page) ─────────────────────────────────────────
+self.addEventListener('message', event => {
+  if (event.data?.type === 'SKIP_WAITING') self.skipWaiting();
+});
 
 // ── Install ────────────────────────────────────────────────────────────────────
 self.addEventListener('install', event => {

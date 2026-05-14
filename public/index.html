@@ -65,7 +65,7 @@
       </p>
       <!-- Version strip -->
       <div class="landing-actions">
-        <span class="landing-version" id="landingVersion">v0.0.3</span>
+        <span class="landing-version" id="landingVersion">v0.0.5</span>
         <span class="landing-update-prompt" id="landingUpdatePrompt" hidden>
           · Update available — <button class="landing-update-btn" id="landingUpdateBtn">reload now</button>
         </span>
@@ -172,10 +172,10 @@
 
   <!-- ── Version bar ───────────────────────────────────────────────────────── -->
   <div class="version-bar" id="versionBar" role="status">
-    <span class="version-label" id="versionLabel">v0.0.3</span>
+    <span class="version-label" id="versionLabel">v0.0.5</span>
+    <button class="check-update-btn" id="checkUpdateBtn" title="Check for updates" aria-label="Check for updates">↻</button>
     <span class="update-prompt" id="updatePrompt" hidden>
-      Update available —
-      <button class="update-reload-btn" id="updateReloadBtn">reload</button>
+      · Update available — <button class="update-reload-btn" id="updateReloadBtn">reload now</button>
     </span>
   </div>
 
@@ -273,23 +273,59 @@
 
   <script type="module" src="/js/app.js"></script>
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(reg => {
-          reg.addEventListener('updatefound', () => {
-            const newSW = reg.installing;
-            newSW?.addEventListener('statechange', () => {
-              if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
-                const prompt = document.getElementById('updatePrompt');
-                const reloadBtn = document.getElementById('updateReloadBtn');
-                if (prompt) prompt.hidden = false;
-                reloadBtn?.addEventListener('click', () => window.location.reload());
-              }
-            });
-          });
-        })
-        .catch(() => {});
-    }
+  (function () {
+    if (!('serviceWorker' in navigator)) return;
+
+    const showUpdatePrompt = () => {
+      const p = document.getElementById('updatePrompt');
+      if (p) p.hidden = false;
+    };
+
+    const wireReload = () => {
+      document.getElementById('updateReloadBtn')
+        ?.addEventListener('click', () => window.location.reload(), { once: true });
+    };
+
+    // When a new SW takes control, reload automatically so users see fresh content.
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      window.location.reload();
+    });
+
+    navigator.serviceWorker.register('/service-worker.js').then(reg => {
+
+      // Case 1: a new SW is already waiting when the page loads.
+      if (reg.waiting) { showUpdatePrompt(); wireReload(); }
+
+      // Case 2: a new SW starts installing while the page is open.
+      reg.addEventListener('updatefound', () => {
+        const sw = reg.installing;
+        sw?.addEventListener('statechange', () => {
+          if (sw.state === 'installed' && navigator.serviceWorker.controller) {
+            showUpdatePrompt(); wireReload();
+          }
+        });
+      });
+
+      // Case 3: manual ↻ check.
+      const checkBtn = document.getElementById('checkUpdateBtn');
+      if (checkBtn) {
+        checkBtn.addEventListener('click', () => {
+          checkBtn.style.opacity = '0.4';
+          reg.update().finally(() => { checkBtn.style.opacity = ''; });
+        });
+      }
+
+      // Case 4: check for updates when the tab regains focus (throttled to 1 min).
+      let lastCheck = 0;
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && Date.now() - lastCheck > 60_000) {
+          lastCheck = Date.now();
+          reg.update();
+        }
+      });
+
+    }).catch(() => {});
+  })();
   </script>
 </body>
 </html>

@@ -569,6 +569,17 @@ body.asset-page { display: flex; flex-direction: column; }
   gap: 1rem;
 }
 .version-label { font-family: var(--font-mono); }
+.check-update-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.40);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0 0.1rem;
+  line-height: 1;
+  transition: color 0.15s, opacity 0.15s;
+}
+.check-update-btn:hover { color: rgba(255,255,255,0.80); }
 .update-prompt { color: rgba(255,255,255,0.8); }
 .update-reload-btn {
   background: none;
