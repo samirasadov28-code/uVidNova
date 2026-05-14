@@ -20,6 +20,27 @@ const TRANCHE_DEFS = {
   reparations:       { label: 'Russian Reparations',        ret: 0,    tenor: null, col: '#9b59b6' },
 };
 
+// Confidence levels derived from funding_envelope.json — keyed by tranche type.
+// 'high' renders no badge; 'medium' = "~" prefix; 'low' = amber warning.
+const TRANCHE_CONFIDENCE = {
+  grant:             { level: 'high',   note: 'EU Facility Pillar I and named bilateral envelopes explicit in source documents.' },
+  eu_concessional:   { level: 'medium', note: 'Medium confidence — inferred from aggregate pledges' },
+  ebrd_concessional: { level: 'medium', note: 'Medium confidence — inferred from aggregate pledges' },
+  world_bank:        { level: 'medium', note: 'Medium confidence — World Bank / EBRD / EIB cumulative envelopes inferred from aggregate pledges.' },
+  eca_guarantee:     { level: 'high',   note: 'Named ECA envelopes explicit in programme documents.' },
+  senior_debt:       { level: 'low',    note: 'Low confidence — estimated from analogues. Verify before citing.' },
+  mezzanine:         { level: 'low',    note: 'Low confidence — estimated from analogues. Verify before citing.' },
+  equity:            { level: 'low',    note: 'Low confidence — estimated from fund-manager soundings and analogues.' },
+  reparations:       { level: 'medium', note: 'Medium confidence — G7 ERA envelope explicit; principal-seizure scenario is low-confidence additive.' },
+};
+
+function confidenceBadge(type) {
+  const c = TRANCHE_CONFIDENCE[type];
+  if (!c || c.level === 'high') return '';
+  if (c.level === 'medium') return `<span class="conf-badge-medium" title="${c.note}">~</span>`;
+  return `<span class="conf-badge-low" title="${c.note}">⚠</span>`;
+}
+
 const KSE_CLAIM_USD_M   = 486000;  // $486B KSE total reparations claim
 const FROZEN_USD_M      = 300000;  // ~$300B G7-frozen Russian assets
 const WAR_PREMIUM       = 2.0;     // % added to commercial tranches during war
@@ -480,7 +501,9 @@ function trancheRowHTML(t, total) {
   return `<div class="fw-tranche-row" data-id="${t.id}">
     <div class="fw-tr-dot" style="background:${def.col}"></div>
     <div class="fw-tr-fields">
-      <select class="fw-select fw-tr-type" data-id="${t.id}">${typeOptions}</select>
+      <div style="display:flex;align-items:center;gap:0.3rem">
+        <select class="fw-select fw-tr-type" data-id="${t.id}">${typeOptions}</select>${confidenceBadge(t.type)}
+      </div>
       <div class="fw-tr-nums">
         <label class="fw-tr-lbl">Allocation
           <div class="fw-tr-input-wrap">
@@ -604,7 +627,7 @@ function step4HTML() {
     const warTag = COMMERCIAL_TYPES.has(t.type) && (W.timing === 'during' || W.timing === 'phased')
       ? `<span class="fw-war-tag">+${WAR_PREMIUM}% war</span>` : '';
     return `<tr>
-      <td><span class="fw-type-dot" style="background:${t.def.col}"></span>${t.def.label}</td>
+      <td><span class="fw-type-dot" style="background:${t.def.col}"></span>${t.def.label}${confidenceBadge(t.type)}</td>
       <td>${t.pct.toFixed(0)}%</td>
       <td>${fmtM(t.amt.toFixed(1))}</td>
       <td>${t.effR.toFixed(1)}% ${warTag}</td>

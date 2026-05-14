@@ -180,7 +180,7 @@
       "type": "object",
       "required": ["baseline", "code_compliant", "build_back_better"],
       "additionalProperties": false,
-      "description": "Ten-tranche capital stacks for each reconstruction path. All *_pct fields must sum to 100 (enforced by validate-all.js). Each path carries a template_id reference to data/financing_templates.json.",
+      "description": "Twelve-tranche capital stacks for each reconstruction path. All *_pct fields must sum to 100 (enforced by validate-all.js). Each path carries a template_id reference to data/financing_templates.json.",
       "properties": {
         "baseline": { "$ref": "#/$defs/financing_stack" },
         "code_compliant": { "$ref": "#/$defs/financing_stack" },
@@ -273,7 +273,7 @@
       "type": "object",
       "required": ["comparable_projects"],
       "additionalProperties": false,
-      "description": "Capital stack for a reconstruction path. Core ten *_pct fields plus optional reparations_availability_pct must sum to 100 (enforced by validate-all.js). pri_wrap is a credit enhancement, not part of the sum.",
+      "description": "Capital stack for a reconstruction path. Twelve *_pct tranche fields plus optional reparations_availability_pct must sum to 100 (enforced by validate-all.js). pri_wrap is a credit enhancement, not part of the sum.",
       "properties": {
         "template_id": {
           "type": "string",
@@ -284,13 +284,18 @@
         "first_loss_pct":               { "type": "integer", "minimum": 0, "maximum": 100 },
         "concessional_pct":             { "type": "integer", "minimum": 0, "maximum": 100 },
         "senior_ifi_pct":               { "type": "integer", "minimum": 0, "maximum": 100 },
+        "eca_pct":                      { "type": "integer", "minimum": 0, "maximum": 100,
+          "description": "Layer 6 — ECA buyer credit and direct lending." },
         "dfi_equity_pct":               { "type": "integer", "minimum": 0, "maximum": 100 },
         "public_equity_pct":            { "type": "integer", "minimum": 0, "maximum": 100 },
         "diaspora_pct":                 { "type": "integer", "minimum": 0, "maximum": 100 },
-        "commercial_debt_pct":          { "type": "integer", "minimum": 0, "maximum": 100 },
+        "commercial_bank_debt_pct":     { "type": "integer", "minimum": 0, "maximum": 100,
+          "description": "Layer 11 — syndicated bank loans." },
+        "institutional_debt_pct":       { "type": "integer", "minimum": 0, "maximum": 100,
+          "description": "Layer 12 — life insurers, pension funds, infrastructure debt funds." },
         "private_equity_pct":           { "type": "integer", "minimum": 0, "maximum": 100 },
         "reparations_availability_pct": { "type": "integer", "minimum": 0, "maximum": 100,
-          "description": "Trust availability-payment stream as a percentage of project cost. Participates in the sum-to-100 check alongside the nine capital tranches." },
+          "description": "Trust availability-payment stream as a percentage of project cost. Participates in the sum-to-100 check alongside the twelve capital tranches." },
         "pri_wrap": {
           "type": "object",
           "additionalProperties": false,

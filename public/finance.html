@@ -31,9 +31,61 @@
     </div>
   </header>
 
+  <!-- ── Scenario toggles ────────────────────────────────────────────────── -->
+  <div class="scenario-bar" id="scenarioBar" aria-label="Scenario controls">
+    <div class="scenario-group">
+      <span class="scenario-group-label">Peace State</span>
+      <div class="scenario-pills" role="group" aria-label="Peace state">
+        <button class="scenario-pill active" data-group="peace_state" data-value="pre_armistice">Pre-Armistice</button>
+        <button class="scenario-pill" data-group="peace_state" data-value="post_armistice_fragile">Fragile Peace</button>
+        <button class="scenario-pill" data-group="peace_state" data-value="post_armistice_durable">Durable Peace</button>
+      </div>
+    </div>
+    <div class="scenario-group">
+      <span class="scenario-group-label">EU Accession</span>
+      <div class="scenario-pills" role="group" aria-label="EU accession">
+        <button class="scenario-pill active" data-group="eu_accession" data-value="stalled">Stalled</button>
+        <button class="scenario-pill" data-group="eu_accession" data-value="on_track">On Track</button>
+        <button class="scenario-pill" data-group="eu_accession" data-value="accelerated">Accelerated</button>
+      </div>
+    </div>
+    <div class="scenario-group">
+      <span class="scenario-group-label">Frozen Assets</span>
+      <div class="scenario-pills" role="group" aria-label="Frozen assets">
+        <button class="scenario-pill active" data-group="frozen_assets" data-value="proceeds_only">Proceeds Only (~USD 50bn ERA)</button>
+        <button class="scenario-pill" data-group="frozen_assets" data-value="principal_seized">Principal Seized (~USD 280–300bn)</button>
+      </div>
+    </div>
+    <button class="scenario-reset" id="scenarioReset" title="Reset to conservative defaults">Reset to conservative</button>
+  </div>
+
   <!-- ── Map layout ────────────────────────────────────────────────────────── -->
   <main class="map-layout">
     <div id="map" role="main" aria-label="Ukraine map"></div>
+
+    <!-- ── Finance page tabs ─────────────────────────────────────────────── -->
+    <div class="fp-tabs" id="fpTabs">
+      <button class="fp-tab active" data-tab="wizard">Finance It</button>
+      <button class="fp-tab" data-tab="gap">Capital Gap</button>
+    </div>
+
+    <!-- ── Capital Gap panel ─────────────────────────────────────────────── -->
+    <div class="fp-gap-panel" id="fpGapPanel" hidden>
+      <div class="gap-header">
+        <h2 class="gap-title">Capital Gap Analysis — Build Back Better Path</h2>
+        <div class="gap-sub-tabs">
+          <button class="gap-sub-tab active" data-subtab="oblast">Per Oblast</button>
+          <button class="gap-sub-tab" data-subtab="sector">Per Sector</button>
+        </div>
+      </div>
+      <p class="gap-interpretation" id="gapInterpretation">Loading…</p>
+      <div class="gap-legend">
+        <span><span class="gap-legend-dot" style="background:#2980b9"></span>Required (BBB central)</span>
+        <span><span class="gap-legend-dot" style="background:#27ae60"></span>Addressable under scenario</span>
+        <span><span class="gap-legend-dot" style="background:#e67e22; opacity:0.6"></span>Gap</span>
+      </div>
+      <div class="gap-chart-wrap" id="gapChartWrap"></div>
+    </div>
 
     <!-- ── Finance hero card (centred over the map) ──────────────────────── -->
     <div class="fp-hero" id="financeHero" hidden>

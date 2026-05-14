@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://uvidnova.org/schemas/financing_template.schema.json",
   "title": "uVidNova Financing Template",
-  "description": "Array of standard capital-stack templates keyed by sector_group × reconstruction path. Eleven tranche layers per the Ukraine post-war financing taxonomy. Sum of tranches.*.central must equal 100 (enforced by validate-all.js). pri_wrap is a credit enhancement, not part of the sum.",
+  "description": "Array of standard capital-stack templates keyed by sector_group × reconstruction path. Twelve tranche layers per the Ukraine post-war 13-tranche financing taxonomy (reparations_availability_pct is asset-level only). Sum of tranches.*.central must equal 100 (enforced by validate-all.js). pri_wrap is a credit enhancement, not part of the sum.",
   "type": "array",
   "minItems": 1,
   "items": {
@@ -26,8 +26,11 @@
       "sector_group": {
         "type": "string",
         "enum": [
-          "social_infrastructure",
-          "housing",
+          "healthcare",
+          "education",
+          "heritage_and_culture",
+          "water_and_sanitation",
+          "residential",
           "energy",
           "transport_revenue",
           "transport_non_revenue",
@@ -52,24 +55,28 @@
           "first_loss_pct",
           "concessional_pct",
           "senior_ifi_pct",
+          "eca_pct",
           "dfi_equity_pct",
           "public_equity_pct",
           "diaspora_pct",
-          "commercial_debt_pct",
+          "commercial_bank_debt_pct",
+          "institutional_debt_pct",
           "private_equity_pct"
         ],
         "additionalProperties": false,
         "properties": {
-          "grant_pct":          { "$ref": "#/$defs/tranche_range" },
-          "era_pct":            { "$ref": "#/$defs/tranche_range" },
-          "first_loss_pct":     { "$ref": "#/$defs/tranche_range" },
-          "concessional_pct":   { "$ref": "#/$defs/tranche_range" },
-          "senior_ifi_pct":     { "$ref": "#/$defs/tranche_range" },
-          "dfi_equity_pct":     { "$ref": "#/$defs/tranche_range" },
-          "public_equity_pct":  { "$ref": "#/$defs/tranche_range" },
-          "diaspora_pct":       { "$ref": "#/$defs/tranche_range" },
-          "commercial_debt_pct":{ "$ref": "#/$defs/tranche_range" },
-          "private_equity_pct": { "$ref": "#/$defs/tranche_range" }
+          "grant_pct":                { "$ref": "#/$defs/tranche_range" },
+          "era_pct":                  { "$ref": "#/$defs/tranche_range" },
+          "first_loss_pct":           { "$ref": "#/$defs/tranche_range" },
+          "concessional_pct":         { "$ref": "#/$defs/tranche_range" },
+          "senior_ifi_pct":           { "$ref": "#/$defs/tranche_range" },
+          "eca_pct":                  { "$ref": "#/$defs/tranche_range", "description": "Layer 6 — ECA buyer credit and direct lending." },
+          "dfi_equity_pct":           { "$ref": "#/$defs/tranche_range" },
+          "public_equity_pct":        { "$ref": "#/$defs/tranche_range" },
+          "diaspora_pct":             { "$ref": "#/$defs/tranche_range" },
+          "commercial_bank_debt_pct": { "$ref": "#/$defs/tranche_range", "description": "Layer 11 — syndicated bank loans." },
+          "institutional_debt_pct":   { "$ref": "#/$defs/tranche_range", "description": "Layer 12 — life insurers, pension funds, infrastructure debt funds." },
+          "private_equity_pct":       { "$ref": "#/$defs/tranche_range" }
         }
       },
       "pri_wrap": {
@@ -88,12 +95,34 @@
           }
         }
       },
+      "procurement_origin": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "tranches_tied": {
+            "type": "array",
+            "description": "Tranche field names whose disbursement is tied to source-country procurement requirements.",
+            "items": { "type": "string" }
+          }
+        }
+      },
       "structure_patterns": {
         "type": "array",
         "items": {
           "type": "string",
-          "enum": ["a_b_loan", "blending_facility", "donor_interest_rate_subsidy", "mezzanine", "ppp_concession"]
+          "enum": [
+            "a_b_loan",
+            "blending_facility",
+            "donor_interest_rate_subsidy",
+            "mini_perm_with_institutional_takeout",
+            "mezzanine_layer",
+            "mezzanine"
+          ]
         }
+      },
+      "wartime_adjustment_rule": {
+        "type": "string",
+        "description": "Reference to the wartime adjustment rule applied to this template."
       },
       "rationale": { "type": "string" },
       "comparable_projects": {

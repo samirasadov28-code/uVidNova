@@ -1,0 +1,504 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-05-14",
+  "source": "growth_sectors.md — unique-positioning theses authored 2026-05-14",
+  "sectors": [
+    {
+      "id": "defense_technology",
+      "label": "Defense Technology & Dual-Use Systems",
+      "short_label": "Defense Tech",
+      "icon": "🛡",
+      "thesis_one_line": "The only jurisdiction with continuous large-scale combat validation of drone, EW, and autonomous-system technology since 2022.",
+      "thesis": "Ukraine has fielded hundreds of indigenous UAV, loitering munition, EW, and unmanned ground/maritime systems under continuous adversarial pressure — a feedback loop no Western defense prime has access to. The Brave1 cluster aggregates several hundred operational startups. NATO armies train on Ukrainian doctrine. The transition from wartime production to peacetime NATO-export industry has direct precedent in Israel.",
+      "unique_positioning": "Combat experience cannot be simulated. The ecosystem now spans airframe manufacturing, target-recognition software, swarming, EW signal libraries, motors/optics/autopilots, test ranges, and NATO C2 integration. The barrier to entry for competitors is the absence of operational data.",
+      "capital_structure_description": "Primarily sovereign and strategic capital — domestic and allied government procurement, NATO interoperability programs, defense-prime joint ventures (Rheinmetall, BAE, Anduril, Helsing). Venture capital active but constrained by ESG screens.",
+      "dfi_role": "limited",
+      "peace_state_availability": "pre_armistice",
+      "relevant_oblasts": ["Kyiv City", "Kyiv", "Kharkiv", "Dnipropetrovsk", "Lviv"],
+      "key_risks": [
+        "Export controls (ITAR-equivalent restrictions on dual-use technology)",
+        "LP exclusions on weapons exposure for institutional pools",
+        "Dependence on continued allied procurement appetite",
+        "Peace settlement reduces urgency before commercial export footing achieved"
+      ],
+      "archetypes": [
+        {
+          "id": "defense_tech_startup",
+          "label": "Defense Tech Startup — Seed/Series A",
+          "scale_usd_m": 15,
+          "scale_note": "Seed to Series A venture round for drone/EW/autonomy startup",
+          "template_id": "DEFENSE_TECH_VENTURE",
+          "peace_state_gate": "pre_armistice"
+        },
+        {
+          "id": "defense_tech_scale",
+          "label": "Defense Tech Scale-Up — Strategic Round",
+          "scale_usd_m": 250,
+          "scale_note": "Strategic / Series B-C for production-scale UAV or EW systems manufacturer",
+          "template_id": "DEFENSE_TECH_STRATEGIC",
+          "peace_state_gate": "pre_armistice"
+        }
+      ]
+    },
+    {
+      "id": "critical_minerals",
+      "label": "Critical Minerals",
+      "short_label": "Critical Minerals",
+      "icon": "⛏",
+      "thesis_one_line": "Ukraine holds the EU's most complete domestic source of CRMA-priority minerals — lithium, titanium, graphite, rare earths — inside its emerging security perimeter.",
+      "thesis": "Ukraine's geological endowment spans lithium at Polokhivske/Shevchenkivske/Kruta Balka, 7% of global titanium reserves (Irshansk, Vilnohirsk), the Zavalyivskyi graphite deposit (world-class), the Nikopol manganese basin, and rare-earth-bearing formations in the Azov massif. The unique positioning is geology + EU geographic adjacency + post-accession regulatory alignment. The CRMA explicitly favors EU-territory supply.",
+      "unique_positioning": "No competitor combines geological scale, geographic adjacency to the EU, and post-accession integration into a single regulatory and security perimeter. Australia and Canada have deposits but not the proximity; African jurisdictions lack regulatory convergence.",
+      "capital_structure_description": "Sovereign-backed (Ukrainian state retains mineral ownership), commercial mining majors as operating partners, offtake-backed project finance with EU industrial customers underwriting prepayment, EBRD/EIB/DFC active in critical-mineral structured finance.",
+      "dfi_role": "anchoring",
+      "peace_state_availability": "mixed",
+      "relevant_oblasts": ["Dnipropetrovsk", "Zaporizhzhia", "Zhytomyr", "Kirovohrad", "Donetsk", "Zakarpattia"],
+      "key_risks": [
+        "Several deposits sit in frontline or recently-liberated regions",
+        "Mining code and concession framework still evolving toward EU standards",
+        "IFC Performance Standards compliance constrains timeline",
+        "Russia retains control of minor deposits"
+      ],
+      "archetypes": [
+        {
+          "id": "lithium_mine",
+          "label": "Lithium Mine — Battery-Grade Processing",
+          "scale_usd_m": 400,
+          "scale_note": "Greenfield lithium mine + battery-grade processing plant",
+          "template_id": "CRITICAL_MINERALS_MINE",
+          "peace_state_gate": "post_armistice_fragile"
+        },
+        {
+          "id": "titanium_plant",
+          "label": "Titanium Processing Plant",
+          "scale_usd_m": 250,
+          "scale_note": "Titanium ore processing to sponge or pigment grade",
+          "template_id": "CRITICAL_MINERALS_MINE",
+          "peace_state_gate": "pre_armistice"
+        },
+        {
+          "id": "graphite_mine",
+          "label": "Graphite Mine + Processing",
+          "scale_usd_m": 300,
+          "scale_note": "Natural graphite anode material for battery supply chain",
+          "template_id": "CRITICAL_MINERALS_MINE",
+          "peace_state_gate": "pre_armistice"
+        }
+      ]
+    },
+    {
+      "id": "green_steel",
+      "label": "Green Steel (Kryvyi Rih Cluster)",
+      "short_label": "Green Steel",
+      "icon": "🏗",
+      "thesis_one_line": "The only site on Europe's near-perimeter combining large iron ore reserves, renewable/nuclear baseload, metallurgical workforce, and CBAM-paying EU customers.",
+      "thesis": "The Kryvyi Rih basin holds ~10 billion tonnes proven reserves. Pre-war steel employment exceeded 300,000. Southern Ukraine has Europe's best-in-class onshore wind east of Iberia. CBAM from 2026 makes EU buyers pay carbon costs on imports; Ukraine's DRI-EAF pathway is the nearest competitive green alternative to EU domestic capacity being built in Sweden, Spain, Germany.",
+      "unique_positioning": "No competitor has the combination: iron ore at scale + renewable power footprint + metallurgical workforce + EU proximity. Nordic competitors lack the ore; African/Middle Eastern competitors lack the workforce and proximity.",
+      "capital_structure_description": "EBRD, EIB, EU Innovation Fund grants for hydrogen/DRI infrastructure; ArcelorMittal and Metinvest as industrial JV partners; green bonds with offtake-backed structuring; sovereign equity for strategic stakes.",
+      "dfi_role": "anchoring",
+      "peace_state_availability": "post_armistice_fragile",
+      "relevant_oblasts": ["Dnipropetrovsk", "Zaporizhzhia", "Donetsk"],
+      "key_risks": [
+        "Capital intensity: single DRI-EAF plant runs USD 2–4 billion",
+        "Green hydrogen pathway economics unsettled — electrolyzer cost curves",
+        "Frontline distance for Azovstal/Illich until political resolution",
+        "CBAM softening of free allocation phase-out would weaken premium"
+      ],
+      "archetypes": [
+        {
+          "id": "dri_eaf_greenfield",
+          "label": "DRI-EAF Plant — Greenfield",
+          "scale_usd_m": 2500,
+          "scale_note": "Greenfield direct-reduced iron / electric arc furnace green steel plant",
+          "template_id": "GREEN_STEEL_GREENFIELD",
+          "peace_state_gate": "post_armistice_fragile"
+        },
+        {
+          "id": "dri_eaf_brownfield",
+          "label": "DRI-EAF Conversion — Brownfield",
+          "scale_usd_m": 1200,
+          "scale_note": "Conversion of existing blast furnace site to DRI-EAF pathway",
+          "template_id": "GREEN_STEEL_GREENFIELD",
+          "peace_state_gate": "post_armistice_fragile"
+        }
+      ]
+    },
+    {
+      "id": "renewables",
+      "label": "Renewables (EU Eastern Power Exporter)",
+      "short_label": "Renewables",
+      "icon": "⚡",
+      "thesis_one_line": "Ukraine becomes the EU's eastern renewable energy exporter, enabled by ENTSO-E synchronization in March 2022 and wholesale grid reconstruction to EU specifications.",
+      "thesis": "Ukraine's grid is being rebuilt anyway — building it as a renewable-export-capable grid with HVDC interconnection west is incremental cost relative to baseline reconstruction. Ukraine has land area to host renewable buildouts at GW scale without EU planning constraints. Combined with nuclear baseload, Ukraine can plausibly export firm low-carbon power into a structurally short EU market through the 2030s.",
+      "unique_positioning": "The unique positioning is structural, not resource-based. ENTSO-E synchronization (completed March 2022) means Ukrainian power can physically flow into the EU market. No competitor jurisdiction (Belarus, Russia, Moldova) is available.",
+      "capital_structure_description": "EBRD and EIB as anchor lenders, EU Facility grants for transmission, commercial sponsors (European utilities, IPPs) for generation assets, green bonds, offtake-backed project finance, ECA support for equipment supply.",
+      "dfi_role": "anchoring",
+      "peace_state_availability": "pre_armistice",
+      "relevant_oblasts": ["Mykolaiv", "Kherson", "Zaporizhzhia", "Odesa", "Kharkiv", "Poltava", "Vinnytsia", "Zhytomyr"],
+      "key_risks": [
+        "Grid reconstruction sequencing — generation cannot connect ahead of transmission",
+        "Frontline proximity for southern wind sites",
+        "Storage integration economics",
+        "Cross-border tariff and capacity-allocation rules still in negotiation"
+      ],
+      "archetypes": [
+        {
+          "id": "onshore_wind_200mw",
+          "label": "Onshore Wind Farm — 200 MW",
+          "scale_usd_m": 280,
+          "scale_note": "200 MW onshore wind with grid connection",
+          "template_id": "RENEWABLES_WIND",
+          "peace_state_gate": "pre_armistice"
+        },
+        {
+          "id": "solar_100mw",
+          "label": "Solar Park — 100 MW",
+          "scale_usd_m": 90,
+          "scale_note": "100 MW ground-mounted solar PV with grid connection",
+          "template_id": "RENEWABLES_SOLAR",
+          "peace_state_gate": "pre_armistice"
+        },
+        {
+          "id": "hvdc_interconnector",
+          "label": "HVDC Interconnector (UA–EU)",
+          "scale_usd_m": 800,
+          "scale_note": "High-voltage DC link to European grid, sovereign + EU Facility",
+          "template_id": "ENERGY_BBB",
+          "peace_state_gate": "post_armistice_fragile"
+        }
+      ]
+    },
+    {
+      "id": "nuclear",
+      "label": "Nuclear (Operating Fleet & SMR Deployment)",
+      "short_label": "Nuclear",
+      "icon": "⚛",
+      "thesis_one_line": "Europe's largest nuclear fleet, deep Western fuel-cycle experience, and one of the few jurisdictions globally ready to host first-of-a-kind SMR deployments.",
+      "thesis": "Energoatom operates 15 reactors at four sites. Westinghouse fuel transition is complete for all operating units. Khmelnytskyi units 3–4 under contract for AP1000 deployment. Energoatom-Holtec SMR-300 agreement is one of the most advanced SMR frameworks anywhere. Ukraine has domestic demand-pull for replacement nuclear capacity (6 GW lost at occupied Zaporizhzhia) before electrification growth is added.",
+      "unique_positioning": "Fewer than ten jurisdictions globally combine the regulatory will, technical workforce, grid integration, and customer base for new nuclear at scale. Ukraine is one of them — and uniquely has demand-pull from the occupied-plant replacement.",
+      "capital_structure_description": "Sovereign equity (Energoatom), ECA-backed financing (US Exim, UKEF, Korea Exim, French/Canadian ECAs depending on technology mix), utility offtake-backed project finance, IAEA-aligned regulatory grants for licensing capacity.",
+      "dfi_role": "limited",
+      "peace_state_availability": "post_armistice_fragile",
+      "relevant_oblasts": ["Khmelnytskyi", "Rivne", "Mykolaiv", "Zaporizhzhia"],
+      "key_risks": [
+        "Long construction timelines: 10+ years large reactor, 6–8 years SMR",
+        "Political tail risk around nuclear in some EU member states",
+        "Security during construction",
+        "SMR designs not yet operationally proven — FOAK cost overrun risk",
+        "Zaporizhzhia plant status resolution uncertain"
+      ],
+      "archetypes": [
+        {
+          "id": "ap1000_unit",
+          "label": "AP1000 Reactor Unit",
+          "scale_usd_m": 8000,
+          "scale_note": "Single Westinghouse AP1000 unit at Khmelnytskyi site",
+          "template_id": "NUCLEAR_LARGE",
+          "peace_state_gate": "post_armistice_fragile"
+        },
+        {
+          "id": "smr_300",
+          "label": "Holtec SMR-300 Module",
+          "scale_usd_m": 1500,
+          "scale_note": "300 MWe small modular reactor — first-of-a-kind Ukraine deployment",
+          "template_id": "NUCLEAR_SMR",
+          "peace_state_gate": "post_armistice_fragile"
+        }
+      ]
+    },
+    {
+      "id": "it_services",
+      "label": "IT Services & Software",
+      "short_label": "IT & Software",
+      "icon": "💻",
+      "thesis_one_line": "A USD 7–8B pre-war IT export industry, 280,000+ engineers, and EU-accession normalization of data-residency rules makes Ukraine the natural EU near-shoring destination.",
+      "thesis": "Pre-war IT employment: 280,000–300,000 engineers with English proficiency and strong technical education (KPI Kyiv, Lviv Polytechnic, Kharkiv Polytechnic). Wartime acceleration of cyber defense, distributed systems, fintech (Diia is globally best-in-class). EU accession removes cross-border data-flow frictions. Ukraine's differentiation: largest single talent pool in the region, pricing below Polish/Romanian rates, depth in cyber/fintech/gaming/defense software.",
+      "unique_positioning": "Scale is the primary differentiation — meaningfully larger talent pool than Poland, Romania, or Western Balkans. Cyber and fintech verticals have wartime depth no competitor can claim.",
+      "capital_structure_description": "Predominantly commercial — venture capital for product companies, corporate JVs with EU and US tech buyers, private equity for services consolidation. Limited DFI role except talent-development grants and SME financing.",
+      "dfi_role": "minimal",
+      "peace_state_availability": "pre_armistice",
+      "relevant_oblasts": ["Kyiv City", "Kyiv", "Lviv", "Kharkiv", "Dnipropetrovsk", "Odesa"],
+      "key_risks": [
+        "Talent migration — meaningful share of engineers now resident in EU",
+        "Competition from Poland, Romania, India, Latin America intensifying",
+        "AI may compress labor-arbitrage value proposition",
+        "FDI repatriation framework needs maturation"
+      ],
+      "archetypes": [
+        {
+          "id": "tech_campus",
+          "label": "Technology Park / Campus",
+          "scale_usd_m": 50,
+          "scale_note": "Purpose-built tech campus with co-working, labs, fiber, data center",
+          "template_id": "IT_CAMPUS",
+          "peace_state_gate": "pre_armistice"
+        },
+        {
+          "id": "data_center_cluster",
+          "label": "Data Center + Fiber Cluster",
+          "scale_usd_m": 150,
+          "scale_note": "Carrier-neutral data center with dark fiber ring — Kyiv or Lviv",
+          "template_id": "IT_CAMPUS",
+          "peace_state_gate": "pre_armistice"
+        }
+      ]
+    },
+    {
+      "id": "modular_construction",
+      "label": "Modular & Prefabricated Construction",
+      "short_label": "Modular Construction",
+      "icon": "🏘",
+      "thesis_one_line": "A USD 300–500B captive domestic reconstruction market builds a regional prefab manufacturing industry at scale competitive with Estonian, Polish, and Nordic players.",
+      "thesis": "250,000+ damaged/destroyed housing units plus millions of damaged dwellings. The reconstruction timeline (10–15 years) and labor-supply constraints mean prefab is the only physically achievable pathway at required throughput. Building the supply chain at domestic scale creates export competitiveness into CEE affordable housing, NATO frontline-state infrastructure, and global rapid-deployment markets.",
+      "unique_positioning": "Demand-pull is uniquely Ukrainian and uniquely large. Estonia/Poland/Finland already have prefab industries — Ukraine's domestic demand allows building a competitor at greater scale and lower cost basis.",
+      "capital_structure_description": "DFI (EBRD, EIB, IFC) for manufacturing facility construction with offtake-backed structuring, EU Facility grants for affordable housing components, commercial industrial sponsors (existing European prefab players seeking expanded capacity), reconstruction agency procurement as anchor offtake.",
+      "dfi_role": "anchoring",
+      "peace_state_availability": "pre_armistice",
+      "relevant_oblasts": ["Kyiv", "Kyiv City", "Kharkiv", "Lviv", "Dnipropetrovsk", "Poltava", "Vinnytsia"],
+      "key_risks": [
+        "Quality control and design standards must meet EU norms from outset",
+        "Land assembly and permitting for large manufacturing facilities",
+        "Displacement of traditional construction labor is a political sensitivity",
+        "Transportation costs constrain effective export radius"
+      ],
+      "archetypes": [
+        {
+          "id": "prefab_plant",
+          "label": "Prefab Manufacturing Plant",
+          "scale_usd_m": 120,
+          "scale_note": "Industrial prefab plant — 5,000–10,000 housing units/year capacity",
+          "template_id": "MODULAR_CONSTRUCTION",
+          "peace_state_gate": "pre_armistice"
+        },
+        {
+          "id": "modular_housing_factory",
+          "label": "Volumetric Modular Housing Factory",
+          "scale_usd_m": 80,
+          "scale_note": "Volumetric module factory for rapid social housing deployment",
+          "template_id": "MODULAR_CONSTRUCTION",
+          "peace_state_gate": "pre_armistice"
+        }
+      ]
+    },
+    {
+      "id": "eu_logistics",
+      "label": "EU Logistics Integration & Eastern Frontier",
+      "short_label": "EU Logistics",
+      "icon": "🚢",
+      "thesis_one_line": "Ukraine becomes the EU's eastern logistics frontier — multimodal gateway to the Black Sea, Caucasus, and Central Asia — through rail gauge conversion, port reconstruction, and TEN-T Solidarity Lanes formalization.",
+      "thesis": "Geography is the primary asset: Ukraine between the EU's eastern border and the Black Sea, with onward connectivity via the Middle Corridor (Trans-Caspian International Transport Route). Rail gauge conversion from Russian 1520mm to European 1435mm is active on key corridors. Post-accession TEN-T integration formalizes the Solidarity Lanes as permanent EU trade infrastructure.",
+      "unique_positioning": "No competitor jurisdiction (Belarus, Russia, Moldova) is available. Rail gauge conversion is a one-time change that locks in EU-orientation for generations. Ukraine post-accession sits at the crossover between EU internal market and strategic resource flows.",
+      "capital_structure_description": "EU Facility and TEN-T grants for cross-border infrastructure, EBRD and EIB for rail and port reconstruction, sovereign for strategic infrastructure ownership, commercial concessions for port and logistics terminal operation (DP World, Hutchison Ports, Maersk APM as potential operators).",
+      "dfi_role": "anchoring",
+      "peace_state_availability": "mixed",
+      "relevant_oblasts": ["Odesa", "Mykolaiv", "Lviv", "Zakarpattia", "Volyn", "Kharkiv"],
+      "key_risks": [
+        "Black Sea security — port operations depend on geopolitical settlement",
+        "Russian-territory transit alternatives compete on cost",
+        "Customs and inspection capacity must scale for sustained volume",
+        "Rail gauge conversion creates short-term capacity disruption"
+      ],
+      "archetypes": [
+        {
+          "id": "rail_gauge_corridor",
+          "label": "Rail Gauge Conversion — 100km Corridor",
+          "scale_usd_m": 600,
+          "scale_note": "100km rail gauge conversion from 1520mm to EU 1435mm standard",
+          "template_id": "TRANSPORT_NONREV_BBB",
+          "peace_state_gate": "pre_armistice"
+        },
+        {
+          "id": "container_terminal",
+          "label": "Container Terminal — Black Sea",
+          "scale_usd_m": 400,
+          "scale_note": "Greenfield or reconstructed Black Sea container terminal with concession",
+          "template_id": "TRANSPORT_REV_BBB",
+          "peace_state_gate": "post_armistice_fragile"
+        },
+        {
+          "id": "intermodal_hub",
+          "label": "Intermodal Logistics Hub",
+          "scale_usd_m": 200,
+          "scale_note": "Rail-road-warehouse intermodal hub on TEN-T corridor",
+          "template_id": "TRANSPORT_REV_BASELINE",
+          "peace_state_gate": "pre_armistice"
+        }
+      ]
+    },
+    {
+      "id": "carbon_credits",
+      "label": "Carbon Credits & Ecosystem Restoration",
+      "short_label": "Carbon Credits",
+      "icon": "🌿",
+      "thesis_one_line": "USD 56B+ in documented wartime environmental damage generates a uniquely large pipeline of temperate-zone, EU-adjacent nature-based-solutions carbon credits with high methodology credibility.",
+      "thesis": "UNEP estimates wartime environmental damage at over USD 56 billion. Ukraine offers a different carbon-credit profile from tropical NBS: temperate-zone ecosystems with mature Verra VCS / ART-TREES methodologies, EU-convergent governance, unambiguous additionality (damage is documented and recent), and EU ETS integration potential post-accession. The pipeline spans contaminated soils, burned forests, Kakhovka wetland collapse, and Black Sea coastal degradation.",
+      "unique_positioning": "Temperate-zone, EU-adjacent, EU-regulatory-convergent, with unambiguous additionality and a combined pipeline plausibly several gigatonnes CO2e over 30 years. Buyers skeptical of tropical NBS find a credible alternative.",
+      "capital_structure_description": "Voluntary carbon market buyers (corporate net-zero portfolios), conservation finance funds, EU LULUCF compliance demand post-EU ETS integration, philanthropic capital for project development, EBRD/IFC blended finance for pre-financing.",
+      "dfi_role": "catalytic",
+      "peace_state_availability": "mixed",
+      "relevant_oblasts": ["Kherson", "Mykolaiv", "Zaporizhzhia", "Donetsk", "Luhansk", "Chernihiv", "Sumy", "Kharkiv"],
+      "key_risks": [
+        "Voluntary carbon market integrity concerns — tighter buyer due diligence, depressed prices",
+        "Additionality, leakage, and permanence claims must be legally defensible",
+        "Soil carbon methodologies contested",
+        "Land tenure and ecological baseline data require investment before projects"
+      ],
+      "archetypes": [
+        {
+          "id": "reforestation_50k",
+          "label": "Reforestation Project — 50,000 ha",
+          "scale_usd_m": 15,
+          "scale_note": "Reforestation of burned/abandoned forest areas with Verra VCS verification",
+          "template_id": "CARBON_CREDITS",
+          "peace_state_gate": "post_armistice_fragile"
+        },
+        {
+          "id": "wetland_kakhovka",
+          "label": "Wetland Restoration — Kakhovka Basin",
+          "scale_usd_m": 30,
+          "scale_note": "Freshwater wetland restoration post-dam collapse, blue carbon + biodiversity",
+          "template_id": "CARBON_CREDITS",
+          "peace_state_gate": "post_armistice_durable"
+        },
+        {
+          "id": "soil_carbon_program",
+          "label": "Agricultural Soil Carbon Program",
+          "scale_usd_m": 25,
+          "scale_note": "Soil carbon sequestration across rehabilitated former combat-zone agricultural land",
+          "template_id": "CARBON_CREDITS",
+          "peace_state_gate": "post_armistice_fragile"
+        }
+      ]
+    },
+    {
+      "id": "real_estate",
+      "label": "Real Estate (Reconstruction-Era Repricing)",
+      "short_label": "Real Estate",
+      "icon": "🏙",
+      "thesis_one_line": "Ukrainian real estate at peace trades at a structural EU-accession revaluation premium layered on demographic snap-back and reconstruction-funded development — an unusual entry point where public capital absorbs development risk.",
+      "thesis": "Demographic snap-back (several million Ukrainians displaced abroad represent latent demand), EU accession revaluation (Polish, Czech, Baltic markets re-rated meaningfully on EU entry), and reconstruction-funded development (EU/DFI grants fund construction; completed assets yield to private capital). Kyiv repositions as EU-capital-adjacent city of 3M; Lviv as major EU border city; Odesa as EU's Black Sea capital.",
+      "unique_positioning": "The combination is unique: Kyiv becoming an EU capital of approximately 3 million is without direct precedent in scale. Urban repositioning effects of Kyiv, Lviv, and Odesa compound the investment case.",
+      "capital_structure_description": "Private capital and family offices for direct asset acquisition, REIT structures for diversified exposure once secondary markets mature, sovereign/quasi-sovereign for trophy assets, EBRD/IFC for development equity in mixed-use and affordable housing.",
+      "dfi_role": "development_equity",
+      "peace_state_availability": "mixed",
+      "relevant_oblasts": ["Kyiv City", "Kyiv", "Lviv", "Odesa", "Dnipropetrovsk", "Kharkiv"],
+      "key_risks": [
+        "Demographic recovery uncertain — diaspora repatriation depends on quality-of-life recovery",
+        "FX risk and capital-controls history",
+        "Land titling and property law need EU harmonization",
+        "Security tail-risk on renewed conflict scenario",
+        "Pre-war oligarch ownership structures require restructuring"
+      ],
+      "archetypes": [
+        {
+          "id": "mixed_use_kyiv",
+          "label": "Mixed-Use Residential Development — Kyiv",
+          "scale_usd_m": 100,
+          "scale_note": "Mixed-use residential/retail development in reconstructed Kyiv district",
+          "template_id": "REAL_ESTATE_RESIDENTIAL",
+          "peace_state_gate": "post_armistice_fragile"
+        },
+        {
+          "id": "logistics_park",
+          "label": "Logistics Park — Western Ukraine",
+          "scale_usd_m": 80,
+          "scale_note": "Grade-A logistics park near Polish/Slovak border on TEN-T corridor",
+          "template_id": "REAL_ESTATE_LOGISTICS",
+          "peace_state_gate": "pre_armistice"
+        }
+      ]
+    }
+  ],
+  "greenfield_templates": [
+    {
+      "template_id": "DEFENSE_TECH_VENTURE",
+      "label": "Defense Tech — Venture",
+      "grant_pct": 0, "era_pct": 0, "first_loss_pct": 0, "concessional_pct": 0,
+      "senior_ifi_pct": 0, "eca_pct": 0, "dfi_equity_pct": 0, "public_equity_pct": 10,
+      "diaspora_pct": 5, "commercial_bank_debt_pct": 0, "institutional_debt_pct": 0, "private_equity_pct": 85
+    },
+    {
+      "template_id": "DEFENSE_TECH_STRATEGIC",
+      "label": "Defense Tech — Strategic",
+      "grant_pct": 0, "era_pct": 0, "first_loss_pct": 0, "concessional_pct": 0,
+      "senior_ifi_pct": 10, "eca_pct": 20, "dfi_equity_pct": 10, "public_equity_pct": 20,
+      "diaspora_pct": 0, "commercial_bank_debt_pct": 0, "institutional_debt_pct": 0, "private_equity_pct": 40
+    },
+    {
+      "template_id": "CRITICAL_MINERALS_MINE",
+      "label": "Critical Minerals — Mine + Processing",
+      "grant_pct": 5, "era_pct": 5, "first_loss_pct": 5, "concessional_pct": 15,
+      "senior_ifi_pct": 20, "eca_pct": 15, "dfi_equity_pct": 10, "public_equity_pct": 10,
+      "diaspora_pct": 0, "commercial_bank_debt_pct": 5, "institutional_debt_pct": 0, "private_equity_pct": 10
+    },
+    {
+      "template_id": "GREEN_STEEL_GREENFIELD",
+      "label": "Green Steel — DRI-EAF",
+      "grant_pct": 10, "era_pct": 5, "first_loss_pct": 5, "concessional_pct": 20,
+      "senior_ifi_pct": 15, "eca_pct": 15, "dfi_equity_pct": 10, "public_equity_pct": 5,
+      "diaspora_pct": 0, "commercial_bank_debt_pct": 5, "institutional_debt_pct": 5, "private_equity_pct": 5
+    },
+    {
+      "template_id": "RENEWABLES_WIND",
+      "label": "Renewables — Onshore Wind",
+      "grant_pct": 10, "era_pct": 5, "first_loss_pct": 5, "concessional_pct": 25,
+      "senior_ifi_pct": 20, "eca_pct": 10, "dfi_equity_pct": 5, "public_equity_pct": 5,
+      "diaspora_pct": 0, "commercial_bank_debt_pct": 10, "institutional_debt_pct": 5, "private_equity_pct": 0
+    },
+    {
+      "template_id": "RENEWABLES_SOLAR",
+      "label": "Renewables — Solar PV",
+      "grant_pct": 10, "era_pct": 5, "first_loss_pct": 5, "concessional_pct": 25,
+      "senior_ifi_pct": 20, "eca_pct": 10, "dfi_equity_pct": 5, "public_equity_pct": 5,
+      "diaspora_pct": 0, "commercial_bank_debt_pct": 10, "institutional_debt_pct": 5, "private_equity_pct": 0
+    },
+    {
+      "template_id": "NUCLEAR_LARGE",
+      "label": "Nuclear — Large Reactor (AP1000)",
+      "grant_pct": 5, "era_pct": 5, "first_loss_pct": 0, "concessional_pct": 10,
+      "senior_ifi_pct": 10, "eca_pct": 35, "dfi_equity_pct": 0, "public_equity_pct": 30,
+      "diaspora_pct": 0, "commercial_bank_debt_pct": 5, "institutional_debt_pct": 0, "private_equity_pct": 0
+    },
+    {
+      "template_id": "NUCLEAR_SMR",
+      "label": "Nuclear — Small Modular Reactor",
+      "grant_pct": 10, "era_pct": 5, "first_loss_pct": 5, "concessional_pct": 10,
+      "senior_ifi_pct": 10, "eca_pct": 35, "dfi_equity_pct": 0, "public_equity_pct": 25,
+      "diaspora_pct": 0, "commercial_bank_debt_pct": 0, "institutional_debt_pct": 0, "private_equity_pct": 0
+    },
+    {
+      "template_id": "IT_CAMPUS",
+      "label": "IT / Technology Campus",
+      "grant_pct": 5, "era_pct": 0, "first_loss_pct": 0, "concessional_pct": 10,
+      "senior_ifi_pct": 10, "eca_pct": 0, "dfi_equity_pct": 10, "public_equity_pct": 5,
+      "diaspora_pct": 5, "commercial_bank_debt_pct": 10, "institutional_debt_pct": 0, "private_equity_pct": 45
+    },
+    {
+      "template_id": "MODULAR_CONSTRUCTION",
+      "label": "Modular / Prefab Manufacturing",
+      "grant_pct": 10, "era_pct": 5, "first_loss_pct": 5, "concessional_pct": 30,
+      "senior_ifi_pct": 10, "eca_pct": 5, "dfi_equity_pct": 10, "public_equity_pct": 5,
+      "diaspora_pct": 0, "commercial_bank_debt_pct": 10, "institutional_debt_pct": 0, "private_equity_pct": 10
+    },
+    {
+      "template_id": "CARBON_CREDITS",
+      "label": "Carbon Credits / Ecosystem Restoration",
+      "grant_pct": 20, "era_pct": 0, "first_loss_pct": 0, "concessional_pct": 10,
+      "senior_ifi_pct": 0, "eca_pct": 0, "dfi_equity_pct": 20, "public_equity_pct": 10,
+      "diaspora_pct": 5, "commercial_bank_debt_pct": 0, "institutional_debt_pct": 0, "private_equity_pct": 35
+    },
+    {
+      "template_id": "REAL_ESTATE_RESIDENTIAL",
+      "label": "Real Estate — Mixed-Use Residential",
+      "grant_pct": 10, "era_pct": 5, "first_loss_pct": 0, "concessional_pct": 10,
+      "senior_ifi_pct": 5, "eca_pct": 0, "dfi_equity_pct": 10, "public_equity_pct": 5,
+      "diaspora_pct": 5, "commercial_bank_debt_pct": 20, "institutional_debt_pct": 5, "private_equity_pct": 25
+    },
+    {
+      "template_id": "REAL_ESTATE_LOGISTICS",
+      "label": "Real Estate — Logistics / Industrial",
+      "grant_pct": 0, "era_pct": 0, "first_loss_pct": 5, "concessional_pct": 10,
+      "senior_ifi_pct": 10, "eca_pct": 0, "dfi_equity_pct": 10, "public_equity_pct": 5,
+      "diaspora_pct": 0, "commercial_bank_debt_pct": 25, "institutional_debt_pct": 10, "private_equity_pct": 25
+    }
+  ]
+}

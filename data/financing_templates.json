@@ -1,1960 +1,883 @@
 [
   {
-    "template_id": "SOCIAL_INFRA_BASELINE",
-    "sector_group": "social_infrastructure",
-    "asset_type_match": [
-      "healthcare.*",
-      "education.*",
-      "heritage.*",
-      "water.*"
-    ],
+    "template_id": "HEALTHCARE_BASELINE",
+    "sector_group": "healthcare",
+    "asset_type_match": ["healthcare.*"],
     "path": "baseline",
     "tranches": {
-      "grant_pct": {
-        "central": 30,
-        "low": 25,
-        "high": 40
-      },
-      "era_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "first_loss_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "concessional_pct": {
-        "central": 40,
-        "low": 30,
-        "high": 50
-      },
-      "senior_ifi_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "dfi_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "public_equity_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "commercial_debt_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "private_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      }
+      "grant_pct":                { "central": 30, "low": 25, "high": 35 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 35, "low": 30, "high": 40 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  5, "low":  0, "high": 10 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 20, "low": 15, "high": 25 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "providers": [
-        "MIGA_WAR"
-      ]
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
-    "rationale": "Social infrastructure at baseline draws primarily on concessional IFI debt (EBRD/EIB/World Bank) and EU Facility Pillar I grants. ERA proceeds (frozen Russian assets via G7 ERA loan) provide a politically salient co-financing layer. Public counterpart equity is mandatory for IFI disbursement.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "Healthcare at baseline draws on EU Facility Pillar I grants and concessional IFI debt. ERA co-financing provides a politically salient layer. ECA buyer credit de-risks equipment procurement. Public counterpart equity is mandatory for IFI disbursement.",
     "sources": [
-      {
-        "code": "RDNA3",
-        "ref": "§Social Sector Financing, Table A4.1"
-      },
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan Pillar I non-repayable component"
-      },
-      {
-        "code": "EBRD_CASE",
-        "ref": "Ukraine Solidarity Package healthcare and education precedents"
-      }
+      { "code": "RDNA3", "ref": "§Social Sector Financing, Table A4.1" },
+      { "code": "EU_FACILITY", "ref": "EU Ukraine Facility Pillar I" },
+      { "code": "EBRD_CASE", "ref": "EBRD Ukraine reconstruction portfolio" }
     ]
   },
   {
-    "template_id": "SOCIAL_INFRA_CODE_COMPLIANT",
-    "sector_group": "social_infrastructure",
-    "asset_type_match": [
-      "healthcare.*",
-      "education.*",
-      "heritage.*",
-      "water.*"
-    ],
+    "template_id": "HEALTHCARE_CODE_COMPLIANT",
+    "sector_group": "healthcare",
+    "asset_type_match": ["healthcare.*"],
     "path": "code_compliant",
     "tranches": {
-      "grant_pct": {
-        "central": 40,
-        "low": 30,
-        "high": 50
-      },
-      "era_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "first_loss_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "concessional_pct": {
-        "central": 35,
-        "low": 25,
-        "high": 45
-      },
-      "senior_ifi_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "dfi_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "public_equity_pct": {
-        "central": 15,
-        "low": 5,
-        "high": 25
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "commercial_debt_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "private_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      }
+      "grant_pct":                { "central": 40, "low": 35, "high": 45 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 30, "low": 25, "high": 35 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  5, "low":  0, "high": 10 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 15, "low": 10, "high": 20 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "providers": [
-        "MIGA_WAR"
-      ]
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
     "rationale": "EU building-code and accessibility conditionalities unlock a higher grant share under Pillar I. Concessional debt remains the workhorse; reduced public-equity requirement reflects the increased grant coverage of the upgrade premium.",
-    "comparable_projects": [
-      "KHARKIV_REGIONAL_HOSPITAL_REBUILD_2024"
-    ],
     "sources": [
-      {
-        "code": "RDNA3",
-        "ref": "§Social Sector Financing"
-      },
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan Pillar I conditionality framework"
-      },
-      {
-        "code": "EBRD_CASE",
-        "ref": "Kharkiv Regional Hospital rehabilitation financing"
-      }
+      { "code": "RDNA3", "ref": "§Social Sector Financing" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan Pillar I conditionality framework" },
+      { "code": "EBRD_CASE", "ref": "Kharkiv Regional Hospital rehabilitation financing" }
     ]
   },
   {
-    "template_id": "SOCIAL_INFRA_BBB",
-    "sector_group": "social_infrastructure",
-    "asset_type_match": [
-      "healthcare.*",
-      "education.*",
-      "heritage.*",
-      "water.*"
-    ],
+    "template_id": "HEALTHCARE_BBB",
+    "sector_group": "healthcare",
+    "asset_type_match": ["healthcare.*"],
     "path": "build_back_better",
     "tranches": {
-      "grant_pct": {
-        "central": 55,
-        "low": 45,
-        "high": 65
-      },
-      "era_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "first_loss_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "concessional_pct": {
-        "central": 25,
-        "low": 15,
-        "high": 35
-      },
-      "senior_ifi_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 10
-      },
-      "dfi_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "public_equity_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 15
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "commercial_debt_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "private_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      }
+      "grant_pct":                { "central": 55, "low": 50, "high": 65 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 20, "low": 15, "high": 25 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  5, "low":  0, "high": 10 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 10, "low":  5, "high": 15 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF"
-      ]
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
-    "rationale": "EU green/energy-efficiency conditionalities and UNESCO/Creative Europe heritage programmes push the grant share to 55%+ for BBB. ERA co-financing provides political legitimacy. Reduced public-equity requirement reflects the larger grant envelope absorbing the upgrade premium.",
-    "comparable_projects": [
-      "KHARKIV_REGIONAL_HOSPITAL_REBUILD_2024"
-    ],
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU green/energy-efficiency conditionalities and medical-technology grants push the grant share to 55%+ for BBB. ERA co-financing provides political legitimacy.",
     "sources": [
-      {
-        "code": "RDNA3",
-        "ref": "§Social Sector Financing, BBB scenario"
-      },
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan Pillar I BBB conditionality and green standards"
-      },
-      {
-        "code": "EBRD_CASE",
-        "ref": "Green Economy Transition framework for social assets"
-      }
+      { "code": "RDNA3", "ref": "§Social Sector Financing, BBB scenario" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan Pillar I BBB conditionality and green standards" },
+      { "code": "EBRD_CASE", "ref": "Green Economy Transition framework for social assets" }
     ]
   },
   {
-    "template_id": "HOUSING_BASELINE",
-    "sector_group": "housing",
-    "asset_type_match": [
-      "residential.*"
-    ],
+    "template_id": "EDUCATION_BASELINE",
+    "sector_group": "education",
+    "asset_type_match": ["education.*"],
     "path": "baseline",
     "tranches": {
-      "grant_pct": {
-        "central": 25,
-        "low": 15,
-        "high": 35
-      },
-      "era_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "first_loss_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "concessional_pct": {
-        "central": 40,
-        "low": 30,
-        "high": 50
-      },
-      "senior_ifi_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "dfi_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "public_equity_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "commercial_debt_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "private_equity_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      }
+      "grant_pct":                { "central": 30, "low": 25, "high": 35 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 36, "low": 31, "high": 41 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  4, "low":  0, "high":  8 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 20, "low": 15, "high": 25 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "providers": [
-        "MIGA_WAR"
-      ]
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
-    "rationale": "District-scale residential reconstruction at baseline. EU Housing Pillar and EBRD concessional lending dominate; small private equity wedge represents premium-segment infill and developer co-investment in mixed-tenure schemes.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "Education at baseline draws on EU Facility Pillar I grants and concessional IFI debt. ERA co-financing provides a politically salient layer. ECA cover applies to equipment and furnishings procurement.",
     "sources": [
-      {
-        "code": "RDNA3",
-        "ref": "§Housing Sector Reconstruction Financing"
-      },
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan housing reconstruction milestones"
-      }
+      { "code": "RDNA3", "ref": "§Social Sector Financing, Table A4.1" },
+      { "code": "EU_FACILITY", "ref": "EU Ukraine Facility Pillar I" },
+      { "code": "EBRD_CASE", "ref": "EBRD Ukraine Solidarity Package education precedents" }
     ]
   },
   {
-    "template_id": "HOUSING_CODE_COMPLIANT",
-    "sector_group": "housing",
-    "asset_type_match": [
-      "residential.*"
-    ],
+    "template_id": "EDUCATION_CODE_COMPLIANT",
+    "sector_group": "education",
+    "asset_type_match": ["education.*"],
     "path": "code_compliant",
     "tranches": {
-      "grant_pct": {
-        "central": 35,
-        "low": 25,
-        "high": 45
-      },
-      "era_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "first_loss_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "concessional_pct": {
-        "central": 30,
-        "low": 20,
-        "high": 40
-      },
-      "senior_ifi_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "dfi_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "public_equity_pct": {
-        "central": 15,
-        "low": 5,
-        "high": 25
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "commercial_debt_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "private_equity_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      }
+      "grant_pct":                { "central": 40, "low": 35, "high": 45 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 31, "low": 26, "high": 36 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  4, "low":  0, "high":  8 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 15, "low": 10, "high": 20 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "providers": [
-        "MIGA_WAR"
-      ]
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
-    "rationale": "First-loss sleeve introduced at code-compliant path to de-risk the energy-efficiency and seismic-standard upgrade premium. EU Housing Pillar grant share rises with green conditionality.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU building-code and energy-efficiency conditionalities unlock a higher grant share. Concessional debt absorbs the compliance cost; public equity reduced correspondingly.",
     "sources": [
-      {
-        "code": "RDNA3",
-        "ref": "§Housing Sector code-compliant scenario"
-      },
-      {
-        "code": "EBRD_CASE",
-        "ref": "EBRD Green Cities Ukraine — residential retrofit precedents"
-      }
+      { "code": "RDNA3", "ref": "§Social Sector Financing" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan Pillar I conditionality framework" },
+      { "code": "EBRD_CASE", "ref": "EBRD Ukraine education rehabilitation precedents" }
     ]
   },
   {
-    "template_id": "HOUSING_BBB",
-    "sector_group": "housing",
-    "asset_type_match": [
-      "residential.*"
-    ],
+    "template_id": "EDUCATION_BBB",
+    "sector_group": "education",
+    "asset_type_match": ["education.*"],
     "path": "build_back_better",
     "tranches": {
-      "grant_pct": {
-        "central": 45,
-        "low": 35,
-        "high": 55
-      },
-      "era_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "first_loss_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "concessional_pct": {
-        "central": 25,
-        "low": 15,
-        "high": 35
-      },
-      "senior_ifi_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "dfi_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "public_equity_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 20
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "commercial_debt_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "private_equity_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      }
+      "grant_pct":                { "central": 55, "low": 50, "high": 65 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 21, "low": 16, "high": 26 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  4, "low":  0, "high":  8 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 10, "low":  5, "high": 15 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "providers": [
-        "MIGA_WAR"
-      ]
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
-    "rationale": "EU Housing Pillar + EBRD Green Cities concessional unlocks the BBB premium for near-passive-house or mass-timber construction. First-loss sleeve de-risks private developer participation in BBB mixed-tenure districts.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU green standards and digital-education conditionality unlock the maximum grant share. ERA co-financing provides political legitimacy for the BBB premium.",
     "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan housing BBB conditionality"
-      },
-      {
-        "code": "EBRD_CASE",
-        "ref": "EBRD Green Cities — BBB residential district precedents"
-      }
+      { "code": "RDNA3", "ref": "§Social Sector Financing, BBB scenario" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan Pillar I BBB conditionality and green standards" },
+      { "code": "EBRD_CASE", "ref": "Green Economy Transition framework for social assets" }
+    ]
+  },
+  {
+    "template_id": "HERITAGE_BASELINE",
+    "sector_group": "heritage_and_culture",
+    "asset_type_match": ["heritage.*", "culture.*"],
+    "path": "baseline",
+    "tranches": {
+      "grant_pct":                { "central": 50, "low": 45, "high": 55 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 25, "low": 20, "high": 30 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  2, "low":  0, "high":  5 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 13, "low":  8, "high": 18 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
+    },
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "Heritage assets attract UNESCO, Creative Europe, and EU Cultural Heritage programmes on top of Facility Pillar I, pushing the grant share above social infrastructure norms. ECA cover applies to specialist conservation materials and equipment.",
+    "sources": [
+      { "code": "RDNA3", "ref": "§Culture and Heritage Sector Financing" },
+      { "code": "EU_FACILITY", "ref": "EU Ukraine Facility Pillar I" },
+      { "code": "EBRD_CASE", "ref": "EBRD Ukraine cultural heritage rehabilitation precedents" }
+    ]
+  },
+  {
+    "template_id": "HERITAGE_CODE_COMPLIANT",
+    "sector_group": "heritage_and_culture",
+    "asset_type_match": ["heritage.*", "culture.*"],
+    "path": "code_compliant",
+    "tranches": {
+      "grant_pct":                { "central": 58, "low": 53, "high": 63 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 20, "low": 15, "high": 25 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  2, "low":  0, "high":  5 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 10, "low":  5, "high": 15 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
+    },
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "Seismic and energy-performance standards for historic buildings attract additional heritage-specific EU funding. Specialist conservation techniques increase costs but are largely grant-covered.",
+    "sources": [
+      { "code": "RDNA3", "ref": "§Culture and Heritage Sector Financing" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan Pillar I conditionality framework" }
+    ]
+  },
+  {
+    "template_id": "HERITAGE_BBB",
+    "sector_group": "heritage_and_culture",
+    "asset_type_match": ["heritage.*", "culture.*"],
+    "path": "build_back_better",
+    "tranches": {
+      "grant_pct":                { "central": 65, "low": 60, "high": 75 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 15, "low": 10, "high": 20 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  2, "low":  0, "high":  5 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central":  8, "low":  3, "high": 13 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
+    },
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "UNESCO World Heritage and Creative Europe BBB programmes alongside EU Facility green standards push heritage grant share to maximum. Conservation premium fully grant-funded; minimal public equity residual.",
+    "sources": [
+      { "code": "RDNA3", "ref": "§Culture and Heritage Sector Financing, BBB scenario" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan Pillar I BBB conditionality" }
+    ]
+  },
+  {
+    "template_id": "WATER_BASELINE",
+    "sector_group": "water_and_sanitation",
+    "asset_type_match": ["water.*"],
+    "path": "baseline",
+    "tranches": {
+      "grant_pct":                { "central": 25, "low": 20, "high": 30 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 40, "low": 35, "high": 45 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  8, "low":  3, "high": 13 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 17, "low": 12, "high": 22 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
+    },
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "Water and sanitation at baseline relies heavily on concessional IFI debt (EBRD/EIB/World Bank) plus EU Facility grants. ECA cover de-risks equipment imports. Public equity counterpart mandatory for IFI participation.",
+    "sources": [
+      { "code": "RDNA3", "ref": "§Water and Sanitation Sector Financing" },
+      { "code": "EU_FACILITY", "ref": "EU Ukraine Facility Pillar I" },
+      { "code": "EBRD_CASE", "ref": "EBRD Ukraine water sector precedents" }
+    ]
+  },
+  {
+    "template_id": "WATER_CODE_COMPLIANT",
+    "sector_group": "water_and_sanitation",
+    "asset_type_match": ["water.*"],
+    "path": "code_compliant",
+    "tranches": {
+      "grant_pct":                { "central": 35, "low": 30, "high": 40 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 33, "low": 28, "high": 38 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  8, "low":  3, "high": 13 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 14, "low":  9, "high": 19 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
+    },
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU water quality and environmental standards conditionality unlocks higher grant share. Concessional debt absorbs the standards-upgrade cost; public equity reduced accordingly.",
+    "sources": [
+      { "code": "RDNA3", "ref": "§Water and Sanitation Sector Financing" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan Pillar I conditionality framework" },
+      { "code": "EBRD_CASE", "ref": "EBRD Ukraine water sector code-compliant precedents" }
+    ]
+  },
+  {
+    "template_id": "WATER_BBB",
+    "sector_group": "water_and_sanitation",
+    "asset_type_match": ["water.*"],
+    "path": "build_back_better",
+    "tranches": {
+      "grant_pct":                { "central": 45, "low": 40, "high": 50 },
+      "era_pct":                  { "central":  8, "low":  3, "high": 13 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 22, "low": 17, "high": 27 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  8, "low":  3, "high": 13 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 12, "low":  7, "high": 17 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  5, "low":  0, "high": 10 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
+    },
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility", "mini_perm_with_institutional_takeout"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU Green Deal and circular-economy conditionality for water BBB unlocks maximum grant. Institutional debt (pension/insurer takeout) enters at BBB due to the infrastructure-bond characteristics of long-duration water assets.",
+    "sources": [
+      { "code": "RDNA3", "ref": "§Water and Sanitation Sector Financing, BBB scenario" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan Pillar I BBB conditionality" },
+      { "code": "EBRD_CASE", "ref": "EBRD Green Cities Ukraine — water BBB precedents" }
+    ]
+  },
+  {
+    "template_id": "RESIDENTIAL_BASELINE",
+    "sector_group": "residential",
+    "asset_type_match": ["residential.*"],
+    "path": "baseline",
+    "tranches": {
+      "grant_pct":                { "central": 25, "low": 20, "high": 30 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 40, "low": 35, "high": 45 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  0 },
+      "eca_pct":                  { "central":  0, "low":  0, "high":  5 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  0 },
+      "public_equity_pct":        { "central": 20, "low": 15, "high": 25 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  5, "low":  0, "high": 10 }
+    },
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": [] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "District-scale residential reconstruction at baseline. EU Housing Pillar and EBRD concessional lending dominate; small private equity wedge represents premium-segment infill and developer co-investment in mixed-tenure schemes.",
+    "sources": [
+      { "code": "RDNA3", "ref": "§Housing Sector Reconstruction Financing" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan housing reconstruction milestones" }
+    ]
+  },
+  {
+    "template_id": "RESIDENTIAL_CODE_COMPLIANT",
+    "sector_group": "residential",
+    "asset_type_match": ["residential.*"],
+    "path": "code_compliant",
+    "tranches": {
+      "grant_pct":                { "central": 35, "low": 30, "high": 40 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  5, "low":  0, "high": 10 },
+      "concessional_pct":         { "central": 28, "low": 23, "high": 33 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  0 },
+      "eca_pct":                  { "central":  2, "low":  0, "high":  5 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  0 },
+      "public_equity_pct":        { "central": 15, "low": 10, "high": 20 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  5, "low":  0, "high": 10 }
+    },
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "First-loss sleeve introduced at code-compliant path to de-risk the energy-efficiency and seismic-standard upgrade premium. EU Housing Pillar grant share rises with green conditionality.",
+    "sources": [
+      { "code": "RDNA3", "ref": "§Housing Sector code-compliant scenario" },
+      { "code": "EBRD_CASE", "ref": "EBRD Green Cities Ukraine — residential retrofit precedents" }
+    ]
+  },
+  {
+    "template_id": "RESIDENTIAL_BBB",
+    "sector_group": "residential",
+    "asset_type_match": ["residential.*"],
+    "path": "build_back_better",
+    "tranches": {
+      "grant_pct":                { "central": 45, "low": 40, "high": 50 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  5, "low":  0, "high": 10 },
+      "concessional_pct":         { "central": 22, "low": 17, "high": 27 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  0 },
+      "eca_pct":                  { "central":  3, "low":  0, "high":  6 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  0 },
+      "public_equity_pct":        { "central": 10, "low":  5, "high": 15 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  5 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  2, "low":  0, "high":  5 },
+      "private_equity_pct":       { "central":  3, "low":  0, "high":  6 }
+    },
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU Housing Pillar + EBRD Green Cities concessional unlocks the BBB premium for near-passive-house or mass-timber construction. Institutional debt enters at BBB for long-duration housing bonds; first-loss sleeve de-risks private developer participation.",
+    "sources": [
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan housing BBB conditionality" },
+      { "code": "EBRD_CASE", "ref": "EBRD Green Cities — BBB residential district precedents" }
     ]
   },
   {
     "template_id": "ENERGY_BASELINE",
     "sector_group": "energy",
-    "asset_type_match": [
-      "energy.*"
-    ],
+    "asset_type_match": ["energy.*"],
     "path": "baseline",
     "tranches": {
-      "grant_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 20
-      },
-      "era_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "first_loss_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "concessional_pct": {
-        "central": 25,
-        "low": 15,
-        "high": 35
-      },
-      "senior_ifi_pct": {
-        "central": 25,
-        "low": 15,
-        "high": 35
-      },
-      "dfi_equity_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "public_equity_pct": {
-        "central": 15,
-        "low": 10,
-        "high": 20
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 15
-      },
-      "private_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      }
+      "grant_pct":                { "central": 10, "low":  5, "high": 15 },
+      "era_pct":                  { "central":  5, "low":  0, "high": 10 },
+      "first_loss_pct":           { "central":  5, "low":  0, "high": 10 },
+      "concessional_pct":         { "central": 25, "low": 20, "high": 30 },
+      "senior_ifi_pct":           { "central": 20, "low": 15, "high": 25 },
+      "eca_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "dfi_equity_pct":           { "central":  5, "low":  0, "high": 10 },
+      "public_equity_pct":        { "central": 15, "low": 10, "high": 20 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  3, "low":  0, "high":  8 },
+      "institutional_debt_pct":   { "central":  2, "low":  0, "high":  5 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  5 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "required": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF",
-        "BPIFRANCE_AE"
-      ]
-    },
-    "structure_patterns": [
-      "a_b_loan"
-    ],
-    "rationale": "Energy generation and grid at baseline — like-for-like reinstatement. Senior IFI (EBRD/EIB) debt is the primary instrument; commercial debt enters only via IFI A/B loan. MIGA war-risk wrap is structurally required. First-loss sleeve (EU Facility Pillar II guarantee) de-risks the commercial tranche.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": true, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["a_b_loan", "mini_perm_with_institutional_takeout"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "Energy generation and grid at baseline. Senior IFI (EBRD/EIB) debt is the primary instrument; commercial debt enters only via IFI A/B loan. MIGA war-risk wrap is structurally required. First-loss sleeve (EU Facility Pillar II guarantee) de-risks the commercial tranche. ECA cover applies to equipment import.",
     "sources": [
-      {
-        "code": "RDNA3",
-        "ref": "§Energy Sector Reconstruction Financing, Table A2.1"
-      },
-      {
-        "code": "EBRD_CASE",
-        "ref": "EBRD Ukraine Energy Resilience financing precedents"
-      },
-      {
-        "code": "MIGA",
-        "ref": "MIGA War & Civil Disturbance — Ukraine energy portfolio"
-      }
+      { "code": "RDNA3", "ref": "§Energy Sector Reconstruction Financing, Table A2.1" },
+      { "code": "EBRD_CASE", "ref": "EBRD Ukraine Energy Resilience financing precedents" },
+      { "code": "MIGA", "ref": "MIGA War & Civil Disturbance — Ukraine energy portfolio" }
     ]
   },
   {
     "template_id": "ENERGY_CODE_COMPLIANT",
     "sector_group": "energy",
-    "asset_type_match": [
-      "energy.*"
-    ],
+    "asset_type_match": ["energy.*"],
     "path": "code_compliant",
     "tranches": {
-      "grant_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "era_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "first_loss_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "concessional_pct": {
-        "central": 25,
-        "low": 15,
-        "high": 35
-      },
-      "senior_ifi_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "dfi_equity_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "public_equity_pct": {
-        "central": 15,
-        "low": 10,
-        "high": 20
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "private_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      }
+      "grant_pct":                { "central": 20, "low": 15, "high": 25 },
+      "era_pct":                  { "central":  5, "low":  0, "high": 10 },
+      "first_loss_pct":           { "central":  5, "low":  0, "high": 10 },
+      "concessional_pct":         { "central": 22, "low": 17, "high": 27 },
+      "senior_ifi_pct":           { "central": 18, "low": 13, "high": 23 },
+      "eca_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "dfi_equity_pct":           { "central":  5, "low":  0, "high": 10 },
+      "public_equity_pct":        { "central": 12, "low":  7, "high": 17 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  2, "low":  0, "high":  5 },
+      "institutional_debt_pct":   { "central":  1, "low":  0, "high":  3 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  5 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "required": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF",
-        "BPIFRANCE_AE"
-      ]
-    },
-    "structure_patterns": [
-      "a_b_loan",
-      "blending_facility"
-    ],
-    "rationale": "EU energy conditionality (grid modernisation, smart metering, efficiency standards) unlocks a larger grant envelope. Senior IFI share decreases as higher grant coverage reduces the financing gap.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": true, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["a_b_loan", "mini_perm_with_institutional_takeout"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU energy conditionality (grid modernisation, smart metering, efficiency standards) unlocks a larger grant envelope. Senior IFI share decreases as higher grant coverage reduces the financing gap. ECA cover mandatory for equipment import.",
     "sources": [
-      {
-        "code": "RDNA3",
-        "ref": "§Energy Sector code-compliant scenario"
-      },
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan energy reform conditionality"
-      }
+      { "code": "RDNA3", "ref": "§Energy Sector code-compliant scenario" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan energy reform conditionality" },
+      { "code": "EBRD_CASE", "ref": "EBRD Ukraine energy sector code-compliant precedents" }
     ]
   },
   {
     "template_id": "ENERGY_BBB",
     "sector_group": "energy",
-    "asset_type_match": [
-      "energy.*"
-    ],
+    "asset_type_match": ["energy.*"],
     "path": "build_back_better",
     "tranches": {
-      "grant_pct": {
-        "central": 30,
-        "low": 20,
-        "high": 40
-      },
-      "era_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "first_loss_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "concessional_pct": {
-        "central": 25,
-        "low": 15,
-        "high": 35
-      },
-      "senior_ifi_pct": {
-        "central": 15,
-        "low": 5,
-        "high": 25
-      },
-      "dfi_equity_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "public_equity_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 15
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "private_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      }
+      "grant_pct":                { "central": 30, "low": 25, "high": 35 },
+      "era_pct":                  { "central":  5, "low":  0, "high": 10 },
+      "first_loss_pct":           { "central":  5, "low":  0, "high": 10 },
+      "concessional_pct":         { "central": 22, "low": 17, "high": 27 },
+      "senior_ifi_pct":           { "central": 15, "low": 10, "high": 20 },
+      "eca_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "dfi_equity_pct":           { "central":  5, "low":  0, "high": 10 },
+      "public_equity_pct":        { "central":  5, "low":  0, "high": 10 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  2, "low":  0, "high":  5 },
+      "institutional_debt_pct":   { "central":  1, "low":  0, "high":  3 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  5 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "required": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF",
-        "BPIFRANCE_AE"
-      ]
-    },
-    "structure_patterns": [
-      "a_b_loan",
-      "blending_facility"
-    ],
-    "rationale": "EU Green Deal grants (renewable conversion, grid flexibility) and EBRD GET concessional debt dominate the BBB stack. Fuel-switch premium financed primarily by grant + concessional. DFI equity essential for the restructured SOE equity stub.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": true, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["a_b_loan", "mini_perm_with_institutional_takeout"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU Green Deal grants (renewable conversion, grid flexibility) and EBRD GET concessional debt dominate the BBB stack. ECA cover mandatory. DFI equity essential for the restructured SOE equity stub. Institutional debt via mini-perm takeout for long-duration infrastructure bonds.",
     "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan energy BBB conditionality and renewable targets"
-      },
-      {
-        "code": "EBRD_CASE",
-        "ref": "EBRD GET Ukraine energy — fuel switch precedents"
-      }
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan energy BBB conditionality and renewable targets" },
+      { "code": "EBRD_CASE", "ref": "EBRD GET Ukraine energy — fuel switch precedents" },
+      { "code": "MIGA", "ref": "MIGA War & Civil Disturbance — Ukraine energy portfolio" }
     ]
   },
   {
-    "template_id": "TRANSPORT_REVENUE_BASELINE",
+    "template_id": "TRANSPORT_REV_BASELINE",
     "sector_group": "transport_revenue",
-    "asset_type_match": [
-      "transport.seaport",
-      "transport.airport"
-    ],
+    "asset_type_match": ["transport.seaport", "transport.airport", "transport.metro", "transport.shipyard", "transport.aircraft"],
     "path": "baseline",
     "tranches": {
-      "grant_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 20
-      },
-      "era_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "first_loss_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "concessional_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "senior_ifi_pct": {
-        "central": 25,
-        "low": 15,
-        "high": 35
-      },
-      "dfi_equity_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 15
-      },
-      "public_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 10
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 15,
-        "low": 5,
-        "high": 25
-      },
-      "private_equity_pct": {
-        "central": 15,
-        "low": 5,
-        "high": 25
-      }
+      "grant_pct":                { "central": 10, "low":  5, "high": 15 },
+      "era_pct":                  { "central":  0, "low":  0, "high":  5 },
+      "first_loss_pct":           { "central":  5, "low":  0, "high": 10 },
+      "concessional_pct":         { "central": 20, "low": 15, "high": 25 },
+      "senior_ifi_pct":           { "central": 22, "low": 17, "high": 27 },
+      "eca_pct":                  { "central":  8, "low":  3, "high": 13 },
+      "dfi_equity_pct":           { "central": 10, "low":  5, "high": 15 },
+      "public_equity_pct":        { "central": 12, "low":  7, "high": 17 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  5, "low":  0, "high": 10 },
+      "institutional_debt_pct":   { "central":  5, "low":  0, "high": 10 },
+      "private_equity_pct":       { "central":  3, "low":  0, "high":  8 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "required": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF",
-        "ECA"
-      ]
-    },
-    "structure_patterns": [
-      "a_b_loan",
-      "ppp_concession"
-    ],
-    "rationale": "Revenue-generating transport (ports, airports) attracts commercial debt and private equity. Typically structured as A/B loan + PPP concession. ECA cover critical for the commercial tranche in Ukraine's risk environment.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": true, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["a_b_loan", "mini_perm_with_institutional_takeout"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "Revenue-generating transport (ports, airports, metro, shipyards) attracts commercial and institutional debt via A/B loan structure. Senior IFI debt anchors the stack. MIGA and ECA cover essential for the commercial tranche in Ukraine's risk environment.",
     "sources": [
-      {
-        "code": "EBRD_CASE",
-        "ref": "EBRD transport concession financing precedents"
-      },
-      {
-        "code": "MIGA",
-        "ref": "MIGA War & Civil Disturbance — transport portfolio"
-      }
+      { "code": "EBRD_CASE", "ref": "EBRD transport concession financing precedents" },
+      { "code": "MIGA", "ref": "MIGA War & Civil Disturbance — transport portfolio" }
     ]
   },
   {
-    "template_id": "TRANSPORT_REVENUE_CODE_COMPLIANT",
+    "template_id": "TRANSPORT_REV_CODE_COMPLIANT",
     "sector_group": "transport_revenue",
-    "asset_type_match": [
-      "transport.seaport",
-      "transport.airport"
-    ],
+    "asset_type_match": ["transport.seaport", "transport.airport", "transport.metro", "transport.shipyard", "transport.aircraft"],
     "path": "code_compliant",
     "tranches": {
-      "grant_pct": {
-        "central": 15,
-        "low": 5,
-        "high": 25
-      },
-      "era_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "first_loss_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "concessional_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "senior_ifi_pct": {
-        "central": 25,
-        "low": 15,
-        "high": 35
-      },
-      "dfi_equity_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 15
-      },
-      "public_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 10
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 15,
-        "low": 5,
-        "high": 25
-      },
-      "private_equity_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 20
-      }
+      "grant_pct":                { "central": 15, "low": 10, "high": 20 },
+      "era_pct":                  { "central":  0, "low":  0, "high":  5 },
+      "first_loss_pct":           { "central":  5, "low":  0, "high": 10 },
+      "concessional_pct":         { "central": 18, "low": 13, "high": 23 },
+      "senior_ifi_pct":           { "central": 22, "low": 17, "high": 27 },
+      "eca_pct":                  { "central":  8, "low":  3, "high": 13 },
+      "dfi_equity_pct":           { "central": 10, "low":  5, "high": 15 },
+      "public_equity_pct":        { "central": 10, "low":  5, "high": 15 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  4, "low":  0, "high":  8 },
+      "institutional_debt_pct":   { "central":  5, "low":  0, "high": 10 },
+      "private_equity_pct":       { "central":  3, "low":  0, "high":  8 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "required": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF",
-        "ECA"
-      ]
-    },
-    "structure_patterns": [
-      "a_b_loan",
-      "ppp_concession"
-    ],
+    "pri_wrap": { "applicable": true, "required": true, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["a_b_loan", "mini_perm_with_institutional_takeout"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
     "rationale": "EU TEN-T compliance and green port/airport standards increase grant share marginally. Private equity reduces slightly as compliance cost is partially grant-covered.",
-    "comparable_projects": [],
     "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan transport connectivity milestones"
-      }
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan transport connectivity milestones" },
+      { "code": "EBRD_CASE", "ref": "EBRD transport code-compliant precedents" }
     ]
   },
   {
-    "template_id": "TRANSPORT_REVENUE_BBB",
+    "template_id": "TRANSPORT_REV_BBB",
     "sector_group": "transport_revenue",
-    "asset_type_match": [
-      "transport.seaport",
-      "transport.airport"
-    ],
+    "asset_type_match": ["transport.seaport", "transport.airport", "transport.metro", "transport.shipyard", "transport.aircraft"],
     "path": "build_back_better",
     "tranches": {
-      "grant_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "era_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "first_loss_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "concessional_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "senior_ifi_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "dfi_equity_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 15
-      },
-      "public_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 10
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 15,
-        "low": 5,
-        "high": 25
-      },
-      "private_equity_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 20
-      }
+      "grant_pct":                { "central": 20, "low": 15, "high": 25 },
+      "era_pct":                  { "central":  0, "low":  0, "high":  5 },
+      "first_loss_pct":           { "central":  5, "low":  0, "high": 10 },
+      "concessional_pct":         { "central": 18, "low": 13, "high": 23 },
+      "senior_ifi_pct":           { "central": 18, "low": 13, "high": 23 },
+      "eca_pct":                  { "central":  8, "low":  3, "high": 13 },
+      "dfi_equity_pct":           { "central": 10, "low":  5, "high": 15 },
+      "public_equity_pct":        { "central":  8, "low":  3, "high": 13 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  4, "low":  0, "high":  8 },
+      "institutional_debt_pct":   { "central":  6, "low":  1, "high": 11 },
+      "private_equity_pct":       { "central":  3, "low":  0, "high":  8 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "required": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF",
-        "ECA"
-      ]
-    },
-    "structure_patterns": [
-      "a_b_loan",
-      "ppp_concession"
-    ],
-    "rationale": "BBB green port or smart airport upgrades attract EU Connecting Europe Facility grants and EBRD GET concessional. Commercial and private equity maintained — upgraded asset generates sufficient revenue to service market-rate debt post-stabilisation.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": true, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["a_b_loan", "mini_perm_with_institutional_takeout"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "BBB green port or smart airport upgrades attract EU Connecting Europe Facility grants and EBRD GET concessional. Institutional debt tranche increases at BBB as upgraded asset generates bond-eligible long-duration cash flows.",
     "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan Connecting Europe Facility integration"
-      }
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan Connecting Europe Facility integration" },
+      { "code": "EBRD_CASE", "ref": "EBRD transport BBB precedents" }
     ]
   },
   {
-    "template_id": "TRANSPORT_NON_REVENUE_BASELINE",
+    "template_id": "TRANSPORT_NONREV_BASELINE",
     "sector_group": "transport_non_revenue",
-    "asset_type_match": [
-      "transport.bridge",
-      "transport.rail_corridor",
-      "transport.rail_segment",
-      "transport.aircraft",
-      "transport.shipyard"
-    ],
+    "asset_type_match": ["transport.bridge", "transport.rail_corridor", "transport.rail_segment"],
     "path": "baseline",
     "tranches": {
-      "grant_pct": {
-        "central": 30,
-        "low": 20,
-        "high": 40
-      },
-      "era_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "first_loss_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "concessional_pct": {
-        "central": 40,
-        "low": 30,
-        "high": 50
-      },
-      "senior_ifi_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "dfi_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "public_equity_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "private_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      }
+      "grant_pct":                { "central": 30, "low": 25, "high": 35 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 40, "low": 35, "high": 45 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  5, "low":  0, "high": 10 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 15, "low": 10, "high": 20 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "providers": [
-        "MIGA_WAR"
-      ]
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
-    "rationale": "Non-revenue transport (bridges, rail, urban metro) mirrors the social infrastructure stack. Primarily grants and concessional IFI debt with public-sector equity counterpart. No commercial or private-equity tranche viable for non-revenue infrastructure.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "Non-revenue transport (bridges, rail) mirrors the social infrastructure stack. Primarily grants and concessional IFI debt with public-sector equity counterpart. ECA cover for equipment/materials import. No commercial or private-equity tranche viable.",
     "sources": [
-      {
-        "code": "RDNA3",
-        "ref": "§Transport Sector non-revenue infrastructure"
-      },
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan transport connectivity milestones"
-      }
+      { "code": "RDNA3", "ref": "§Transport Sector non-revenue infrastructure" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan transport connectivity milestones" }
     ]
   },
   {
-    "template_id": "TRANSPORT_NON_REVENUE_CODE_COMPLIANT",
+    "template_id": "TRANSPORT_NONREV_CODE_COMPLIANT",
     "sector_group": "transport_non_revenue",
-    "asset_type_match": [
-      "transport.bridge",
-      "transport.rail_corridor",
-      "transport.rail_segment",
-      "transport.aircraft",
-      "transport.shipyard"
-    ],
+    "asset_type_match": ["transport.bridge", "transport.rail_corridor", "transport.rail_segment"],
     "path": "code_compliant",
     "tranches": {
-      "grant_pct": {
-        "central": 35,
-        "low": 25,
-        "high": 45
-      },
-      "era_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "first_loss_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "concessional_pct": {
-        "central": 40,
-        "low": 30,
-        "high": 50
-      },
-      "senior_ifi_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "dfi_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "public_equity_pct": {
-        "central": 15,
-        "low": 5,
-        "high": 25
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "private_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      }
+      "grant_pct":                { "central": 35, "low": 30, "high": 40 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 35, "low": 30, "high": 40 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central":  8, "low":  3, "high": 13 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 12, "low":  7, "high": 17 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "providers": [
-        "MIGA_WAR"
-      ]
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
-    "rationale": "EU TEN-T and safety standards conditionality increases grant share. Concessional debt absorbs the standard-upgrade cost; public equity reduced correspondingly.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU TEN-T and safety standards conditionality increases grant share. Concessional debt absorbs the standard-upgrade cost; public equity reduced correspondingly. Increased ECA tranche for higher-specification equipment.",
     "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan TEN-T integration milestones"
-      }
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan TEN-T integration milestones" },
+      { "code": "RDNA3", "ref": "§Transport Sector code-compliant scenario" }
     ]
   },
   {
-    "template_id": "TRANSPORT_NON_REVENUE_BBB",
+    "template_id": "TRANSPORT_NONREV_BBB",
     "sector_group": "transport_non_revenue",
-    "asset_type_match": [
-      "transport.bridge",
-      "transport.rail_corridor",
-      "transport.rail_segment",
-      "transport.aircraft",
-      "transport.shipyard"
-    ],
+    "asset_type_match": ["transport.bridge", "transport.rail_corridor", "transport.rail_segment"],
     "path": "build_back_better",
     "tranches": {
-      "grant_pct": {
-        "central": 40,
-        "low": 30,
-        "high": 50
-      },
-      "era_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "first_loss_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "concessional_pct": {
-        "central": 40,
-        "low": 30,
-        "high": 50
-      },
-      "senior_ifi_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "dfi_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "public_equity_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 20
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "private_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      }
+      "grant_pct":                { "central": 40, "low": 35, "high": 45 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  5 },
+      "concessional_pct":         { "central": 30, "low": 25, "high": 35 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  5 },
+      "eca_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  5 },
+      "public_equity_pct":        { "central": 10, "low":  5, "high": 15 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "providers": [
-        "MIGA_WAR"
-      ]
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
-    "rationale": "EU Connecting Europe Facility and TEN-T grants cover the full BBB premium (rail electrification, ETCS signalling, bridge resilience standards). Concessional tranche constant; public equity shrinks as grant expansion absorbs the BBB uplift.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": false, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU Connecting Europe Facility and TEN-T grants cover the BBB premium (rail electrification, ETCS signalling, bridge resilience standards). Concessional tranche maintained; public equity shrinks as grant expansion absorbs the BBB uplift.",
     "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan BBB transport milestones"
-      }
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan BBB transport milestones" },
+      { "code": "RDNA3", "ref": "§Transport Sector non-revenue infrastructure" }
     ]
   },
   {
     "template_id": "INDUSTRIAL_BASELINE",
     "sector_group": "industrial",
-    "asset_type_match": [
-      "industrial.*",
-      "agricultural.*"
-    ],
+    "asset_type_match": ["industrial.*", "agricultural.*"],
     "path": "baseline",
     "tranches": {
-      "grant_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "era_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "first_loss_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "concessional_pct": {
-        "central": 15,
-        "low": 10,
-        "high": 25
-      },
-      "senior_ifi_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "dfi_equity_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 15
-      },
-      "public_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 20
-      },
-      "private_equity_pct": {
-        "central": 35,
-        "low": 20,
-        "high": 50
-      }
+      "grant_pct":                { "central":  0, "low":  0, "high":  5 },
+      "era_pct":                  { "central":  0, "low":  0, "high":  5 },
+      "first_loss_pct":           { "central":  5, "low":  0, "high": 10 },
+      "concessional_pct":         { "central": 15, "low": 10, "high": 20 },
+      "senior_ifi_pct":           { "central": 20, "low": 15, "high": 25 },
+      "eca_pct":                  { "central": 15, "low": 10, "high": 20 },
+      "dfi_equity_pct":           { "central": 10, "low":  5, "high": 15 },
+      "public_equity_pct":        { "central":  0, "low":  0, "high":  5 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  5, "low":  0, "high": 10 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  5 },
+      "private_equity_pct":       { "central": 30, "low": 20, "high": 40 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "required": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF",
-        "ECA"
-      ]
-    },
-    "structure_patterns": [
-      "a_b_loan",
-      "mezzanine"
-    ],
-    "rationale": "Industrial assets (steel, coke, agri-processing) are commercially driven — private equity is the dominant tranche. IFI senior debt and DFI equity play a catalytic role. Grant contributions minimal (environmental remediation only). ECA and MIGA wrap essential for commercial debt.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": true, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["a_b_loan", "mezzanine_layer"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "Industrial assets (steel, coke, agri-processing) are commercially driven — private equity is the dominant tranche. IFI senior debt and DFI equity play a catalytic role. Large ECA tranche for capital equipment. MIGA wrap essential for commercial participation.",
     "sources": [
-      {
-        "code": "RDNA3",
-        "ref": "§Industry and Agriculture Sector Financing"
-      },
-      {
-        "code": "EBRD_CASE",
-        "ref": "EBRD Ukraine industrial recovery — Metinvest and agri-business precedents"
-      }
+      { "code": "RDNA3", "ref": "§Industry and Agriculture Sector Financing" },
+      { "code": "EBRD_CASE", "ref": "EBRD Ukraine industrial recovery — Metinvest and agri-business precedents" }
     ]
   },
   {
     "template_id": "INDUSTRIAL_CODE_COMPLIANT",
     "sector_group": "industrial",
-    "asset_type_match": [
-      "industrial.*",
-      "agricultural.*"
-    ],
+    "asset_type_match": ["industrial.*", "agricultural.*"],
     "path": "code_compliant",
     "tranches": {
-      "grant_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "era_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "first_loss_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "concessional_pct": {
-        "central": 15,
-        "low": 10,
-        "high": 25
-      },
-      "senior_ifi_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "dfi_equity_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 15
-      },
-      "public_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 20
-      },
-      "private_equity_pct": {
-        "central": 30,
-        "low": 15,
-        "high": 45
-      }
+      "grant_pct":                { "central":  0, "low":  0, "high":  5 },
+      "era_pct":                  { "central":  0, "low":  0, "high":  5 },
+      "first_loss_pct":           { "central":  5, "low":  0, "high": 10 },
+      "concessional_pct":         { "central": 15, "low": 10, "high": 20 },
+      "senior_ifi_pct":           { "central": 20, "low": 15, "high": 25 },
+      "eca_pct":                  { "central": 15, "low": 10, "high": 20 },
+      "dfi_equity_pct":           { "central": 10, "low":  5, "high": 15 },
+      "public_equity_pct":        { "central":  0, "low":  0, "high":  5 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  5, "low":  0, "high": 10 },
+      "institutional_debt_pct":   { "central":  5, "low":  0, "high": 10 },
+      "private_equity_pct":       { "central": 25, "low": 15, "high": 35 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "required": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF",
-        "ECA"
-      ]
-    },
-    "structure_patterns": [
-      "a_b_loan",
-      "mezzanine"
-    ],
-    "rationale": "EU environmental standards (Best Available Techniques for steel/coke) attract a small environmental grant supplement. Private equity reduces slightly as compliance cost is partially grant-covered.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": true, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["a_b_loan", "mezzanine_layer"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU environmental standards (Best Available Techniques for steel/coke) attract limited environmental grant supplement. Private equity reduces as compliance cost is partially covered. Institutional debt enters for longer-duration component.",
     "sources": [
-      {
-        "code": "RDNA3",
-        "ref": "§Industrial code-compliant scenario"
-      },
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan industrial decarbonisation milestones"
-      }
+      { "code": "RDNA3", "ref": "§Industrial code-compliant scenario" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan industrial decarbonisation milestones" }
     ]
   },
   {
     "template_id": "INDUSTRIAL_BBB",
     "sector_group": "industrial",
-    "asset_type_match": [
-      "industrial.*",
-      "agricultural.*"
-    ],
+    "asset_type_match": ["industrial.*", "agricultural.*"],
     "path": "build_back_better",
     "tranches": {
-      "grant_pct": {
-        "central": 15,
-        "low": 5,
-        "high": 25
-      },
-      "era_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "first_loss_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "concessional_pct": {
-        "central": 15,
-        "low": 10,
-        "high": 25
-      },
-      "senior_ifi_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "dfi_equity_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 15
-      },
-      "public_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 5
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 10,
-        "low": 5,
-        "high": 20
-      },
-      "private_equity_pct": {
-        "central": 25,
-        "low": 10,
-        "high": 40
-      }
+      "grant_pct":                { "central":  0, "low":  0, "high":  5 },
+      "era_pct":                  { "central":  0, "low":  0, "high":  5 },
+      "first_loss_pct":           { "central":  5, "low":  0, "high": 10 },
+      "concessional_pct":         { "central": 15, "low": 10, "high": 20 },
+      "senior_ifi_pct":           { "central": 20, "low": 15, "high": 25 },
+      "eca_pct":                  { "central": 15, "low": 10, "high": 20 },
+      "dfi_equity_pct":           { "central": 10, "low":  5, "high": 15 },
+      "public_equity_pct":        { "central":  0, "low":  0, "high":  5 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  5, "low":  0, "high": 10 },
+      "institutional_debt_pct":   { "central": 10, "low":  5, "high": 15 },
+      "private_equity_pct":       { "central": 20, "low": 10, "high": 30 }
     },
-    "pri_wrap": {
-      "applicable": true,
-      "required": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF",
-        "ECA"
-      ]
-    },
-    "structure_patterns": [
-      "a_b_loan",
-      "mezzanine"
-    ],
-    "rationale": "EU Innovation Fund and green hydrogen grants increase the grant share at BBB for low-carbon industrial transitions (DRI steel, low-carbon agri-processing). Private equity shrinks as green conditionality requires higher grant/concessional to make the capital cost economics viable.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": true, "required": true, "providers": ["MIGA_WAR"] },
+    "procurement_origin": { "tranches_tied": ["eca_pct"] },
+    "structure_patterns": ["a_b_loan", "mezzanine_layer"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU Innovation Fund and green hydrogen grants increase the grant share at BBB for low-carbon industrial transitions. Private equity shrinks as green conditionality requires higher grant/concessional; institutional debt grows to fill gap with long-duration infrastructure characteristics.",
     "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan industrial green transition"
-      }
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan industrial green transition" },
+      { "code": "EBRD_CASE", "ref": "EBRD Ukraine industrial recovery — green transition precedents" }
     ]
   },
   {
     "template_id": "PUBLIC_ADMIN_BASELINE",
     "sector_group": "public_administration",
-    "asset_type_match": [
-      "public_admin.*"
-    ],
+    "asset_type_match": ["public_admin.*"],
     "path": "baseline",
     "tranches": {
-      "grant_pct": {
-        "central": 55,
-        "low": 45,
-        "high": 65
-      },
-      "era_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "first_loss_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "concessional_pct": {
-        "central": 30,
-        "low": 20,
-        "high": 40
-      },
-      "senior_ifi_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "dfi_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "public_equity_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "private_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      }
+      "grant_pct":                { "central": 55, "low": 50, "high": 60 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  0 },
+      "concessional_pct":         { "central": 30, "low": 25, "high": 35 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  0 },
+      "eca_pct":                  { "central":  0, "low":  0, "high":  0 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  0 },
+      "public_equity_pct":        { "central":  5, "low":  0, "high": 10 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
     },
-    "pri_wrap": {
-      "applicable": false
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
+    "pri_wrap": { "applicable": false },
+    "procurement_origin": { "tranches_tied": [] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
     "rationale": "Government buildings exclusively grant/concessional-financed. High grant share reflects rule-of-law and governance conditionality in EU Facility Pillar I. No commercial or private tranche applicable.",
-    "comparable_projects": [],
     "sources": [
-      {
-        "code": "RDNA3",
-        "ref": "§Public Administration and Governance Sector"
-      },
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan governance and rule-of-law milestones"
-      }
+      { "code": "RDNA3", "ref": "§Public Administration and Governance Sector" },
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan governance and rule-of-law milestones" }
     ]
   },
   {
     "template_id": "PUBLIC_ADMIN_CODE_COMPLIANT",
     "sector_group": "public_administration",
-    "asset_type_match": [
-      "public_admin.*"
-    ],
+    "asset_type_match": ["public_admin.*"],
     "path": "code_compliant",
     "tranches": {
-      "grant_pct": {
-        "central": 60,
-        "low": 50,
-        "high": 70
-      },
-      "era_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "first_loss_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "concessional_pct": {
-        "central": 25,
-        "low": 15,
-        "high": 35
-      },
-      "senior_ifi_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "dfi_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "public_equity_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "private_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      }
+      "grant_pct":                { "central": 60, "low": 55, "high": 65 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  0 },
+      "concessional_pct":         { "central": 25, "low": 20, "high": 30 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  0 },
+      "eca_pct":                  { "central":  0, "low":  0, "high":  0 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  0 },
+      "public_equity_pct":        { "central":  5, "low":  0, "high": 10 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
     },
-    "pri_wrap": {
-      "applicable": false
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
-    "rationale": "EU building-code conditionality (energy performance, accessibility) increases grant share further. Concessional tranche reduced as the grant envelope absorbs the compliance cost uplift.",
-    "comparable_projects": [],
+    "pri_wrap": { "applicable": false },
+    "procurement_origin": { "tranches_tied": [] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
+    "rationale": "EU building-code conditionality (energy performance, accessibility) increases grant share. Concessional tranche reduced as the grant envelope absorbs the compliance cost uplift.",
     "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan governance reform and public building standards"
-      }
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan governance reform and public building standards" }
     ]
   },
   {
     "template_id": "PUBLIC_ADMIN_BBB",
     "sector_group": "public_administration",
-    "asset_type_match": [
-      "public_admin.*"
-    ],
+    "asset_type_match": ["public_admin.*"],
     "path": "build_back_better",
     "tranches": {
-      "grant_pct": {
-        "central": 65,
-        "low": 55,
-        "high": 75
-      },
-      "era_pct": {
-        "central": 10,
-        "low": 0,
-        "high": 15
-      },
-      "first_loss_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "concessional_pct": {
-        "central": 20,
-        "low": 10,
-        "high": 30
-      },
-      "senior_ifi_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "dfi_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "public_equity_pct": {
-        "central": 5,
-        "low": 0,
-        "high": 10
-      },
-      "diaspora_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "commercial_debt_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      },
-      "private_equity_pct": {
-        "central": 0,
-        "low": 0,
-        "high": 0
-      }
+      "grant_pct":                { "central": 65, "low": 60, "high": 70 },
+      "era_pct":                  { "central": 10, "low":  5, "high": 15 },
+      "first_loss_pct":           { "central":  0, "low":  0, "high":  0 },
+      "concessional_pct":         { "central": 20, "low": 15, "high": 25 },
+      "senior_ifi_pct":           { "central":  0, "low":  0, "high":  0 },
+      "eca_pct":                  { "central":  0, "low":  0, "high":  0 },
+      "dfi_equity_pct":           { "central":  0, "low":  0, "high":  0 },
+      "public_equity_pct":        { "central":  5, "low":  0, "high": 10 },
+      "diaspora_pct":             { "central":  0, "low":  0, "high":  0 },
+      "commercial_bank_debt_pct": { "central":  0, "low":  0, "high":  0 },
+      "institutional_debt_pct":   { "central":  0, "low":  0, "high":  0 },
+      "private_equity_pct":       { "central":  0, "low":  0, "high":  0 }
     },
-    "pri_wrap": {
-      "applicable": false
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
+    "pri_wrap": { "applicable": false },
+    "procurement_origin": { "tranches_tied": [] },
+    "structure_patterns": ["blending_facility"],
+    "wartime_adjustment_rule": "FOUNDATIONAL_WARTIME_RULE_A",
     "rationale": "Near-passive or BREEAM Excellent standard qualifies for EU Green New Deal grant support in addition to standard governance grants. Maximum grant concentration — concessional debt covers only the residual financing gap.",
-    "comparable_projects": [],
     "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan BBB public buildings conditionality"
-      }
-    ]
-  },
-  {
-    "template_id": "SOCIAL_INFRA_BBB_TRUST",
-    "sector_group": "social_infrastructure",
-    "asset_type_match": [
-      "healthcare.*",
-      "education.*",
-      "heritage.*",
-      "water.*",
-      "public_admin.*"
-    ],
-    "path": "build_back_better_plus_trust",
-    "tranches": {
-      "grant_pct": 35,
-      "era_pct": 5,
-      "first_loss_pct": 5,
-      "concessional_pct": 25,
-      "reparations_availability_pct": 22,
-      "public_equity_pct": 8
-    },
-    "tranche_note": "reparations_availability_pct is a Trust availability-payment stream sized against the supportable debt, not a capital-equity tranche. Together with the five capital tranches it sums to 100.",
-    "pri_wrap": {
-      "applicable": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF"
-      ]
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
-    "rationale": "Ukraine Reconstruction Trust availability payment secures the concessional IFI senior debt tranche against payment interruption risk, enabling capital-market placement of the bond. Precedents: Dawes Plan (1924) annuity stream secured German infrastructure debt; Marshall Plan counterpart-fund mechanic (1948–52) recycled grant receipts into sovereign debt service. EU green conditionality and ERA co-financing maintain the grant floor. Trust payment replaces the public-equity wedge that would otherwise be required from a fiscally constrained sovereign.",
-    "comparable_projects": [],
-    "sources": [
-      {
-        "code": "RDNA3",
-        "ref": "§Social Sector Financing, BBB scenario"
-      },
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan Pillar I BBB conditionality and green standards"
-      },
-      {
-        "code": "EBRD_CASE",
-        "ref": "Green Economy Transition framework for social assets"
-      }
-    ]
-  },
-  {
-    "template_id": "ENERGY_BBB_TRUST",
-    "sector_group": "energy",
-    "asset_type_match": [
-      "energy.*"
-    ],
-    "path": "build_back_better_plus_trust",
-    "tranches": {
-      "grant_pct": 20,
-      "era_pct": 5,
-      "concessional_pct": 30,
-      "reparations_availability_pct": 15,
-      "public_equity_pct": 15,
-      "private_equity_pct": 15
-    },
-    "tranche_note": "reparations_availability_pct is a Trust availability-payment stream, not a capital-equity tranche. All six fields sum to 100.",
-    "pri_wrap": {
-      "applicable": true,
-      "required": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF",
-        "BPIFRANCE_AE"
-      ]
-    },
-    "structure_patterns": [
-      "a_b_loan",
-      "blending_facility"
-    ],
-    "rationale": "Trust availability payment bridges the construction-phase revenue gap for power generation and grid assets before post-war tariff normalisation. Partial revenue recovery expected post-stabilisation, reducing long-run Trust exposure. Precedent: Marshall Plan energy sector counterpart funds supported European power-station reconstruction (1948–51). MIGA war-risk wrap structurally required throughout.",
-    "comparable_projects": [],
-    "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan energy BBB conditionality and renewable targets"
-      },
-      {
-        "code": "EBRD_CASE",
-        "ref": "EBRD GET Ukraine energy — fuel switch precedents"
-      }
-    ]
-  },
-  {
-    "template_id": "TRANSPORT_BBB_TRUST",
-    "sector_group": "transport_non_revenue",
-    "asset_type_match": [
-      "transport.bridge",
-      "transport.rail_corridor",
-      "transport.rail_segment",
-      "transport.aircraft",
-      "transport.shipyard"
-    ],
-    "path": "build_back_better_plus_trust",
-    "tranches": {
-      "grant_pct": 25,
-      "era_pct": 5,
-      "concessional_pct": 25,
-      "reparations_availability_pct": 18,
-      "public_equity_pct": 15,
-      "private_equity_pct": 12
-    },
-    "tranche_note": "reparations_availability_pct is a Trust availability-payment stream, not a capital-equity tranche. All six fields sum to 100.",
-    "pri_wrap": {
-      "applicable": true,
-      "providers": [
-        "MIGA_WAR"
-      ]
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
-    "rationale": "Trust availability payment underwrites debt service during the reconstruction and early-operation phase for transport infrastructure. Concessional revenue model assumed; Trust payment reduces once user-fee revenues normalise. Precedent: Dawes Plan (1924) ring-fenced German railway revenues as security for reparations bonds — analogous Trust ring-fencing applied here in the opposite direction to support reconstruction finance.",
-    "comparable_projects": [],
-    "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan BBB transport milestones"
-      },
-      {
-        "code": "RDNA3",
-        "ref": "§Transport Sector non-revenue infrastructure"
-      }
-    ]
-  },
-  {
-    "template_id": "HOUSING_BBB_TRUST",
-    "sector_group": "housing",
-    "asset_type_match": [
-      "residential.*"
-    ],
-    "path": "build_back_better_plus_trust",
-    "tranches": {
-      "grant_pct": 30,
-      "era_pct": 10,
-      "concessional_pct": 20,
-      "reparations_availability_pct": 20,
-      "public_equity_pct": 20
-    },
-    "tranche_note": "reparations_availability_pct is a Trust availability-payment stream, not a capital-equity tranche. All five fields sum to 100.",
-    "pri_wrap": {
-      "applicable": true,
-      "providers": [
-        "MIGA_WAR"
-      ]
-    },
-    "structure_patterns": [
-      "blending_facility"
-    ],
-    "rationale": "Trust payment bridges the gap between wartime rental revenues (suppressed by displacement and income collapse) and debt-service requirements on the IFI concessional tranche. Comparable to Marshall Plan housing counterpart funds that recycled ERP grant receipts into social-housing mortgage programmes across West Germany and the Netherlands (1949–54).",
-    "comparable_projects": [],
-    "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan housing BBB conditionality"
-      },
-      {
-        "code": "EBRD_CASE",
-        "ref": "EBRD Green Cities — BBB residential district precedents"
-      }
-    ]
-  },
-  {
-    "template_id": "INDUSTRIAL_BBB_TRUST",
-    "sector_group": "industrial",
-    "asset_type_match": [
-      "industrial.*",
-      "agricultural.*"
-    ],
-    "path": "build_back_better_plus_trust",
-    "tranches": {
-      "grant_pct": 15,
-      "era_pct": 5,
-      "concessional_pct": 20,
-      "reparations_availability_pct": 15,
-      "public_equity_pct": 15,
-      "private_equity_pct": 30
-    },
-    "tranche_note": "reparations_availability_pct is a Trust availability-payment stream, not a capital-equity tranche. All six fields sum to 100.",
-    "pri_wrap": {
-      "applicable": true,
-      "required": true,
-      "providers": [
-        "MIGA_WAR",
-        "UKEF",
-        "ECA"
-      ]
-    },
-    "structure_patterns": [
-      "a_b_loan",
-      "mezzanine"
-    ],
-    "rationale": "Trust payment supports transition-period financing while partial privatisation revenue is ramping up. Once commercial revenue stabilises post-war, Trust payments taper and private equity distribution commences. Precedent: Dawes Plan (1924) structured German industrial-bond issuance backed by Reichsbahn and customs revenues — the Trust here plays an analogous role until Ukrainian industrial revenues normalise.",
-    "comparable_projects": [],
-    "sources": [
-      {
-        "code": "EU_FACILITY",
-        "ref": "Ukraine Plan industrial green transition"
-      },
-      {
-        "code": "EBRD_CASE",
-        "ref": "EBRD Ukraine industrial recovery — Metinvest and agri-business precedents"
-      }
+      { "code": "EU_FACILITY", "ref": "Ukraine Plan BBB public buildings conditionality" }
     ]
   }
 ]

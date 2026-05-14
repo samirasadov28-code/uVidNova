@@ -78,10 +78,12 @@
       "first_loss_pct": 0,
       "concessional_pct": 30,
       "senior_ifi_pct": 0,
+      "eca_pct": 0,
       "dfi_equity_pct": 0,
       "public_equity_pct": 5,
       "diaspora_pct": 0,
-      "commercial_debt_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
       "private_equity_pct": 0,
       "pri_wrap": {
         "applicable": false
@@ -98,10 +100,12 @@
       "first_loss_pct": 0,
       "concessional_pct": 25,
       "senior_ifi_pct": 0,
+      "eca_pct": 0,
       "dfi_equity_pct": 0,
       "public_equity_pct": 5,
       "diaspora_pct": 0,
-      "commercial_debt_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
       "private_equity_pct": 0,
       "pri_wrap": {
         "applicable": false
@@ -118,10 +122,12 @@
       "first_loss_pct": 0,
       "concessional_pct": 20,
       "senior_ifi_pct": 0,
+      "eca_pct": 0,
       "dfi_equity_pct": 0,
       "public_equity_pct": 5,
       "diaspora_pct": 0,
-      "commercial_debt_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
       "private_equity_pct": 0,
       "pri_wrap": {
         "applicable": false

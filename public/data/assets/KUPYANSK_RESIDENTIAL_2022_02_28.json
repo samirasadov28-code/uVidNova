@@ -78,16 +78,18 @@
   },
   "financing_structures": {
     "baseline": {
-      "template_id": "HOUSING_BASELINE",
+      "template_id": "RESIDENTIAL_BASELINE",
       "grant_pct": 25,
       "era_pct": 10,
       "first_loss_pct": 0,
       "concessional_pct": 40,
       "senior_ifi_pct": 0,
+      "eca_pct": 0,
       "dfi_equity_pct": 0,
       "public_equity_pct": 20,
       "diaspora_pct": 0,
-      "commercial_debt_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
@@ -101,16 +103,18 @@
       "comparable_projects": []
     },
     "code_compliant": {
-      "template_id": "HOUSING_CODE_COMPLIANT",
+      "template_id": "RESIDENTIAL_CODE_COMPLIANT",
       "grant_pct": 35,
       "era_pct": 10,
       "first_loss_pct": 5,
       "concessional_pct": 30,
       "senior_ifi_pct": 0,
+      "eca_pct": 0,
       "dfi_equity_pct": 0,
       "public_equity_pct": 15,
       "diaspora_pct": 0,
-      "commercial_debt_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
@@ -124,16 +128,18 @@
       "comparable_projects": []
     },
     "build_back_better": {
-      "template_id": "HOUSING_BBB",
+      "template_id": "RESIDENTIAL_BBB",
       "grant_pct": 45,
       "era_pct": 10,
       "first_loss_pct": 5,
       "concessional_pct": 25,
       "senior_ifi_pct": 0,
+      "eca_pct": 0,
       "dfi_equity_pct": 0,
       "public_equity_pct": 10,
       "diaspora_pct": 0,
-      "commercial_debt_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,

@@ -33,13 +33,13 @@ function checkFinancingSum(record, path, filePath) {
   if (!stack) return [];
   const TRANCHE_KEYS = [
     'grant_pct', 'era_pct', 'first_loss_pct', 'concessional_pct',
-    'senior_ifi_pct', 'dfi_equity_pct', 'public_equity_pct',
-    'diaspora_pct', 'commercial_debt_pct', 'private_equity_pct',
-    'reparations_availability_pct'
+    'senior_ifi_pct', 'eca_pct', 'dfi_equity_pct', 'public_equity_pct',
+    'diaspora_pct', 'commercial_bank_debt_pct', 'institutional_debt_pct',
+    'private_equity_pct', 'reparations_availability_pct'
   ];
   const sum = TRANCHE_KEYS.reduce((acc, k) => acc + (stack[k] ?? 0), 0);
   if (sum !== 100) {
-    return [`financing_structures.${path}: ten tranches sum to ${sum}, must equal 100`];
+    return [`financing_structures.${path}: twelve tranches sum to ${sum}, must equal 100`];
   }
   return [];
 }
