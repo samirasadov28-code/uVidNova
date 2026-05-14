@@ -283,6 +283,86 @@ function closeOblastWarPanel() {
   if (p) { p.classList.remove('visible'); setTimeout(() => p.remove(), 280); }
 }
 
+// ── Risk visual helpers ───────────────────────────────────────────────────────
+
+function riskColor(val) {
+  if (val <= 2) return '#27ae60';
+  if (val <= 4) return '#c9a227';
+  if (val <= 7) return '#e07020';
+  return '#cc2222';
+}
+
+function makeGaugeSVG(risk) {
+  const cx = 100, cy = 102, r = 78, sw = 15;
+  const SEGS = [
+    { key: 'low',      col: '#27ae60', a0:   1.5, a1:  43.5 },
+    { key: 'moderate', col: '#c9a227', a0:  46.5, a1:  88.5 },
+    { key: 'high',     col: '#e07020', a0:  91.5, a1: 133.5 },
+    { key: 'severe',   col: '#cc2222', a0: 136.5, a1: 178.5 },
+  ];
+  const ORDER = { low: 0, moderate: 1, high: 2, severe: 3 };
+  const cur = ORDER[risk] ?? 0;
+
+  function pt(f) {
+    const rad = (180 - f) * Math.PI / 180;
+    return [cx + r * Math.cos(rad), cy - r * Math.sin(rad)];
+  }
+  function arc(a0, a1) {
+    const [x1, y1] = pt(a0), [x2, y2] = pt(a1);
+    return `M ${x1.toFixed(2)},${y1.toFixed(2)} A ${r},${r} 0 0,1 ${x2.toFixed(2)},${y2.toFixed(2)}`;
+  }
+
+  const segSVG = SEGS.map((s, i) =>
+    `<path d="${arc(s.a0, s.a1)}" fill="none" stroke="${s.col}"
+      stroke-width="${sw}" stroke-linecap="${i === 0 ? 'round' : i === 3 ? 'round' : 'butt'}"
+      opacity="${i <= cur ? '1' : '0.15'}"/>`
+  ).join('');
+
+  const LABELS = { severe:'SEVERE', high:'HIGH', moderate:'MODERATE', low:'LOW' };
+  const COLS   = { severe:'#ff6666', high:'#ffaa44', moderate:'#f5c842', low:'#55dd77' };
+  const label  = LABELS[risk] ?? risk.toUpperCase();
+  const col    = COLS[risk] ?? '#fff';
+
+  // Scale labels
+  const scaleTicks = ['LOW','MOD','HIGH','SEV'].map((t, i) => {
+    const [tx, ty] = pt(i * 45 + 22.5);
+    const nx = tx + (cx - tx) * 0.22, ny = ty + (cy - ty) * 0.22;
+    return `<text x="${nx.toFixed(1)}" y="${ny.toFixed(1)}" text-anchor="middle"
+      font-size="6.5" fill="rgba(255,255,255,0.35)" font-family="sans-serif">${t}</text>`;
+  }).join('');
+
+  return `<svg viewBox="0 0 200 115" xmlns="http://www.w3.org/2000/svg" class="owp-gauge-svg">
+    <path d="${arc(0, 180)}" fill="none" stroke="#1a2a4a" stroke-width="${sw}" stroke-linecap="round"/>
+    ${segSVG}
+    ${scaleTicks}
+    <text x="${cx}" y="${cy - 12}" text-anchor="middle" font-size="22" font-weight="800"
+          fill="${col}" font-family="sans-serif" letter-spacing="1">${label}</text>
+    <text x="${cx}" y="${cy + 4}" text-anchor="middle" font-size="9"
+          fill="rgba(255,255,255,0.38)" font-family="sans-serif">WAR RISK</text>
+  </svg>`;
+}
+
+function makeRiskBars(scores) {
+  const metrics = [
+    { label: 'Frontline proximity', val: scores?.frontline  ?? 0, inv: false },
+    { label: 'Strike frequency',    val: scores?.strikes    ?? 0, inv: false },
+    { label: 'Infrastructure damage',val: scores?.damage    ?? 0, inv: false },
+    { label: 'Reconstruction readiness', val: scores?.readiness ?? 0, inv: true },
+  ];
+  return `<div class="owp-bars">${metrics.map(m => {
+    const col = m.inv
+      ? (m.val >= 8 ? '#27ae60' : m.val >= 6 ? '#c9a227' : m.val >= 4 ? '#e07020' : '#cc2222')
+      : riskColor(m.val);
+    return `<div class="owp-bar-row">
+      <span class="owp-bar-lbl">${m.label}</span>
+      <div class="owp-bar-track">
+        <div class="owp-bar-fill" style="width:${m.val * 10}%;background:${col}"></div>
+      </div>
+      <span class="owp-bar-num" style="color:${col}">${m.val}</span>
+    </div>`;
+  }).join('')}</div>`;
+}
+
 function showOblastWarPanel(info, featureName) {
   closeOblastWarPanel();
 
@@ -319,6 +399,10 @@ function showOblastWarPanel(info, featureName) {
         <span class="owp-risk-badge ${rl.cls}">⚠ ${riskLabel}</span>
       </div>
       <button class="owp-close" aria-label="Close">×</button>
+    </div>
+    <div class="owp-visual">
+      ${makeGaugeSVG(risk)}
+      ${makeRiskBars(info?.risk_scores)}
     </div>
     ${prox ? `<div class="owp-section"><div class="owp-section-label">Frontline proximity</div><p>${prox}</p></div>` : ''}
     ${freq ? `<div class="owp-section"><div class="owp-section-label">Attack frequency</div><p>${freq}</p></div>` : ''}

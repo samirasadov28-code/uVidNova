@@ -16,7 +16,13 @@
       "front_proximity_en": "Central Ukraine, on the Dnipro River. Generally shielded by distance from frontline. Energy infrastructure present.",
       "front_proximity_uk": "Центральна Україна, на Дніпрі. Захищена відстанню від фронту. Наявна енергетична інфраструктура.",
       "attack_frequency_en": "Rare missile attacks on energy and logistics infrastructure. Cherkasy thermal power plant has been targeted. Generally low frequency.",
-      "attack_frequency_uk": "Рідкісні ракетні удари по енергетиці та логістиці. Черкаська ТЕС атакувалась. Загалом низька частота."
+      "attack_frequency_uk": "Рідкісні ракетні удари по енергетиці та логістиці. Черкаська ТЕС атакувалась. Загалом низька частота.",
+      "risk_scores": {
+        "frontline": 0,
+        "strikes": 2,
+        "damage": 2,
+        "readiness": 8
+      }
     },
     {
       "name_en": "Chernihiv Oblast",
@@ -34,7 +40,13 @@
       "front_proximity_en": "Borders Russia and Belarus. City of Chernihiv besieged and shelled in early 2022 before Russian withdrawal. Border region subject to occasional cross-border incidents.",
       "front_proximity_uk": "Межує з Росією та Білоруссю. Місто облягали та обстрілювали на початку 2022 р. Прикордонний регіон з ризиком транскордонних інцидентів.",
       "attack_frequency_en": "Missile strikes targeting energy and logistics infrastructure continue. City suffered significant civilian casualties and damage in early 2022.",
-      "attack_frequency_uk": "Ракетні удари по енергетиці та логістиці тривають. Місто зазнало значних жертв і руйнувань на початку 2022 р."
+      "attack_frequency_uk": "Ракетні удари по енергетиці та логістиці тривають. Місто зазнало значних жертв і руйнувань на початку 2022 р.",
+      "risk_scores": {
+        "frontline": 3,
+        "strikes": 5,
+        "damage": 5,
+        "readiness": 6
+      }
     },
     {
       "name_en": "Chernivtsi Oblast",
@@ -52,7 +64,13 @@
       "front_proximity_en": "Southwestern Ukraine bordering Romania and Moldova. Furthest from frontline among non-western oblasts. Historically stable region.",
       "front_proximity_uk": "Південно-захід, межує з Румунією та Молдовою. Далеко від фронту серед незахідних областей. Історично стабільний регіон.",
       "attack_frequency_en": "No significant attacks. Very low risk profile. Viable base for logistics and reconstruction staging.",
-      "attack_frequency_uk": "Значних атак немає. Дуже низький ризик. Придатна база для логістики та підготовки до відбудови."
+      "attack_frequency_uk": "Значних атак немає. Дуже низький ризик. Придатна база для логістики та підготовки до відбудови.",
+      "risk_scores": {
+        "frontline": 0,
+        "strikes": 1,
+        "damage": 1,
+        "readiness": 10
+      }
     },
     {
       "name_en": "Crimea (Temporarily Occupied)",
@@ -70,7 +88,13 @@
       "front_proximity_en": "Temporarily occupied by Russia since 2014. Used as a major military base for strikes against mainland Ukraine. Kerch Bridge attacked multiple times.",
       "front_proximity_uk": "Тимчасово окупована Росією з 2014 р. Використовується як основна військова база для ударів по материковій Україні.",
       "attack_frequency_en": "Ukrainian strikes on military infrastructure, Black Sea Fleet, and logistics hubs have increased since 2022. Kerch Bridge partially destroyed.",
-      "attack_frequency_uk": "Удари по військовій інфраструктурі, Чорноморському флоту та логістичних вузлах. Кримський міст частково зруйновано."
+      "attack_frequency_uk": "Удари по військовій інфраструктурі, Чорноморському флоту та логістичних вузлах. Кримський міст частково зруйновано.",
+      "risk_scores": {
+        "frontline": 7,
+        "strikes": 6,
+        "damage": 5,
+        "readiness": 1
+      }
     },
     {
       "name_en": "Dnipropetrovsk Oblast",
@@ -88,7 +112,13 @@
       "front_proximity_en": "Major industrial and logistics hub 100–200 km from frontline. Regular target for long-range missile strikes on energy and industrial infrastructure.",
       "front_proximity_uk": "Великий промисловий і логістичний хаб за 100–200 км від фронту. Регулярні ракетні удари по енергетиці та промисловості.",
       "attack_frequency_en": "Multiple significant missile salvos have targeted power plants, water infrastructure, and steel mills. City of Dnipro struck with ballistic missiles causing mass casualties.",
-      "attack_frequency_uk": "Ракетні удари по електростанціях, водопостачанні та металургійних заводах. Дніпро обстрілювали балістичними ракетами з масовими жертвами."
+      "attack_frequency_uk": "Ракетні удари по електростанціях, водопостачанні та металургійних заводах. Дніпро обстрілювали балістичними ракетами з масовими жертвами.",
+      "risk_scores": {
+        "frontline": 4,
+        "strikes": 8,
+        "damage": 7,
+        "readiness": 6
+      }
     },
     {
       "name_en": "Donetsk Oblast",
@@ -106,7 +136,13 @@
       "front_proximity_en": "Active frontline running through the oblast. Significant areas under occupation since 2014 and 2022. Fighting ongoing across multiple sectors.",
       "front_proximity_uk": "Активна лінія фронту проходить через область. Значні території окуповані з 2014 та 2022 рр.",
       "attack_frequency_en": "Near-daily artillery, air strikes, and drone attacks across the region. Civilian infrastructure systematically targeted.",
-      "attack_frequency_uk": "Майже щоденні артилерійські, авіаційні удари та атаки дронів. Цивільна інфраструктура систематично руйнується."
+      "attack_frequency_uk": "Майже щоденні артилерійські, авіаційні удари та атаки дронів. Цивільна інфраструктура систематично руйнується.",
+      "risk_scores": {
+        "frontline": 10,
+        "strikes": 10,
+        "damage": 10,
+        "readiness": 1
+      }
     },
     {
       "name_en": "Ivano-Frankivsk Oblast",
@@ -124,7 +160,13 @@
       "front_proximity_en": "Western Carpathian region, 600+ km from frontline. Energy infrastructure (gas transit, power plants) has been targeted on occasion.",
       "front_proximity_uk": "Карпатський регіон на заході, понад 600 км від фронту. Енергетична інфраструктура (газовий транзит, електростанції) інколи атакувалась.",
       "attack_frequency_en": "Very low attack frequency. Occasional strikes on energy infrastructure. Considered a low-risk zone for reconstruction and development investment.",
-      "attack_frequency_uk": "Дуже низька частота атак. Рідкісні удари по енергетиці. Низькоризикова зона для відбудови та інвестицій."
+      "attack_frequency_uk": "Дуже низька частота атак. Рідкісні удари по енергетиці. Низькоризикова зона для відбудови та інвестицій.",
+      "risk_scores": {
+        "frontline": 0,
+        "strikes": 2,
+        "damage": 2,
+        "readiness": 9
+      }
     },
     {
       "name_en": "Kharkiv Oblast",
@@ -142,7 +184,13 @@
       "front_proximity_en": "City of Kharkiv 30–40 km from Russian border. Northeastern districts occupied in early 2022, then liberated. Frontline remains close in the north.",
       "front_proximity_uk": "Місто Харків за 30–40 км від кордону з Росією. Північно-східні райони були окуповані у 2022 р., потім звільнені.",
       "attack_frequency_en": "Regular missile and glide-bomb strikes on the city and energy infrastructure. Among the most-struck Ukrainian cities by volume of attacks.",
-      "attack_frequency_uk": "Регулярні ракетні удари та КАБи по місту й енергетичній інфраструктурі. Одне з найбільш обстрілюваних міст України."
+      "attack_frequency_uk": "Регулярні ракетні удари та КАБи по місту й енергетичній інфраструктурі. Одне з найбільш обстрілюваних міст України.",
+      "risk_scores": {
+        "frontline": 8,
+        "strikes": 9,
+        "damage": 8,
+        "readiness": 5
+      }
     },
     {
       "name_en": "Kherson Oblast",
@@ -160,7 +208,13 @@
       "front_proximity_en": "Active frontline along the Dnipro River following liberation of the right bank in November 2022. City of Kherson under near-daily shelling.",
       "front_proximity_uk": "Активний фронт по Дніпру після звільнення правого берега в листопаді 2022 р. Місто Херсон під щоденними обстрілами.",
       "attack_frequency_en": "Kherson city receives multiple artillery strikes daily. Kakhovka dam destruction (June 2023) caused catastrophic flooding affecting reconstruction timelines.",
-      "attack_frequency_uk": "Херсон отримує кілька артилерійських ударів на день. Підрив Каховської ГЕС (червень 2023) спричинив катастрофічні повені."
+      "attack_frequency_uk": "Херсон отримує кілька артилерійських ударів на день. Підрив Каховської ГЕС (червень 2023) спричинив катастрофічні повені.",
+      "risk_scores": {
+        "frontline": 9,
+        "strikes": 10,
+        "damage": 8,
+        "readiness": 3
+      }
     },
     {
       "name_en": "Khmelnytskyi Oblast",
@@ -178,7 +232,13 @@
       "front_proximity_en": "West-central Ukraine. Military facilities in the region have been targeted. Some of the largest arms depots were struck in early 2022.",
       "front_proximity_uk": "Захід-центр України. Військові об'єкти в регіоні були під ударами. Значні склади боєприпасів уражені на початку 2022 р.",
       "attack_frequency_en": "Periodic strikes on military and energy targets. Lower baseline risk but significant military infrastructure presence elevates profile.",
-      "attack_frequency_uk": "Періодичні удари по військових та енергетичних об'єктах. Нижчий базовий ризик, але наявність військової інфраструктури підвищує загрозу."
+      "attack_frequency_uk": "Періодичні удари по військових та енергетичних об'єктах. Нижчий базовий ризик, але наявність військової інфраструктури підвищує загрозу.",
+      "risk_scores": {
+        "frontline": 1,
+        "strikes": 4,
+        "damage": 3,
+        "readiness": 7
+      }
     },
     {
       "name_en": "Kirovohrad Oblast",
@@ -196,7 +256,13 @@
       "front_proximity_en": "Central Ukraine, away from immediate frontline. Energy infrastructure is a priority target given the region's role in Ukraine's power grid.",
       "front_proximity_uk": "Центральна Україна, далеко від безпосереднього фронту. Енергетична інфраструктура — пріоритетна ціль з огляду на роль регіону в енергосистемі.",
       "attack_frequency_en": "Periodic missile strikes on power generation and transmission infrastructure. Part of systematic Russian campaign against Ukraine's energy system.",
-      "attack_frequency_uk": "Періодичні ракетні удари по електростанціях і мережах передачі. Частина систематичної кампанії проти енергосистеми України."
+      "attack_frequency_uk": "Періодичні ракетні удари по електростанціях і мережах передачі. Частина систематичної кампанії проти енергосистеми України.",
+      "risk_scores": {
+        "frontline": 1,
+        "strikes": 4,
+        "damage": 3,
+        "readiness": 7
+      }
     },
     {
       "name_en": "Kyiv City",
@@ -214,7 +280,13 @@
       "front_proximity_en": "Capital city, 300+ km from active frontline. Significant military pressure in early 2022; Russian forces withdrew from Kyiv Oblast by April 2022.",
       "front_proximity_uk": "Столиця, понад 300 км від активного фронту. Під значним тиском на початку 2022 р.; росіяни відійшли з Київщини у квітні 2022 р.",
       "attack_frequency_en": "Regular missile and Shahed drone attacks, primarily targeting energy infrastructure and industrial zones. Strong layered air-defense network intercepts most threats.",
-      "attack_frequency_uk": "Регулярні ракетні та дронові атаки переважно по енергетиці. Розвинена ешелонована ППО перехоплює більшість загроз."
+      "attack_frequency_uk": "Регулярні ракетні та дронові атаки переважно по енергетиці. Розвинена ешелонована ППО перехоплює більшість загроз.",
+      "risk_scores": {
+        "frontline": 1,
+        "strikes": 6,
+        "damage": 4,
+        "readiness": 8
+      }
     },
     {
       "name_en": "Kyiv Oblast",
@@ -232,7 +304,13 @@
       "front_proximity_en": "Occupied in early 2022 (Bucha, Irpin, Hostomel, Borodyanka). Liberated April 2022. Significant reconstruction underway but ongoing missile attack risk.",
       "front_proximity_uk": "Окупована на початку 2022 р. (Буча, Ірпінь, Гостомель, Бородянка). Звільнена у квітні 2022 р. Активно відбудовується, але ризик ракетних атак зберігається.",
       "attack_frequency_en": "Long-range missile and drone attacks target logistics corridors and energy installations. Missile intercept debris causes secondary damage in populated areas.",
-      "attack_frequency_uk": "Ракетні та дронові удари по логістичних коридорах і енергетиці. Уламки від перехоплення завдають вторинних збитків."
+      "attack_frequency_uk": "Ракетні та дронові удари по логістичних коридорах і енергетиці. Уламки від перехоплення завдають вторинних збитків.",
+      "risk_scores": {
+        "frontline": 1,
+        "strikes": 5,
+        "damage": 5,
+        "readiness": 7
+      }
     },
     {
       "name_en": "Luhansk Oblast",
@@ -250,7 +328,13 @@
       "front_proximity_en": "Largely under occupation. Active frontline along western boundary. Limited Ukrainian-held territory under constant pressure.",
       "front_proximity_uk": "Переважно окупована. Активний фронт вздовж західного кордону. Українські позиції під постійним тиском.",
       "attack_frequency_en": "Constant military activity in frontline zones. Occupied areas subject to Russian military administration.",
-      "attack_frequency_uk": "Постійна військова активність у прифронтових зонах. Окуповані райони перебувають під російською адміністрацією."
+      "attack_frequency_uk": "Постійна військова активність у прифронтових зонах. Окуповані райони перебувають під російською адміністрацією.",
+      "risk_scores": {
+        "frontline": 10,
+        "strikes": 9,
+        "damage": 10,
+        "readiness": 1
+      }
     },
     {
       "name_en": "Lviv Oblast",
@@ -268,7 +352,13 @@
       "front_proximity_en": "Westernmost oblast, bordering Poland. Serves as a major hub for humanitarian aid, weapons supply, and refugee transit. 700+ km from active frontline.",
       "front_proximity_uk": "Найзахідніша область, межує з Польщею. Великий хаб для гуманітарної допомоги, поставок зброї та транзиту біженців. Понад 700 км від фронту.",
       "attack_frequency_en": "Occasional long-range strikes on fuel depots and energy infrastructure. Air defense active. Considered among the safest regions for reconstruction investment.",
-      "attack_frequency_uk": "Рідкісні далекобійні удари по паливних базах і енергетиці. Активна ППО. Вважається одним із найбезпечніших регіонів для інвестицій у відбудову."
+      "attack_frequency_uk": "Рідкісні далекобійні удари по паливних базах і енергетиці. Активна ППО. Вважається одним із найбезпечніших регіонів для інвестицій у відбудову.",
+      "risk_scores": {
+        "frontline": 0,
+        "strikes": 2,
+        "damage": 2,
+        "readiness": 9
+      }
     },
     {
       "name_en": "Mykolaiv Oblast",
@@ -286,7 +376,13 @@
       "front_proximity_en": "City of Mykolaiv heavily shelled throughout 2022 until liberation of right-bank Kherson. Frontline now in adjacent Kherson Oblast but region remains a target.",
       "front_proximity_uk": "Миколаїв зазнав значних обстрілів у 2022 р. Фронт перемістився до Херсонщини, але регіон залишається під ударами.",
       "attack_frequency_en": "Missile and drone attacks on port infrastructure, shipyards, and energy installations continue. Critical Black Sea logistics node.",
-      "attack_frequency_uk": "Ракетні та дронові атаки на портову інфраструктуру, суднобудівні заводи та енергетику тривають."
+      "attack_frequency_uk": "Ракетні та дронові атаки на портову інфраструктуру, суднобудівні заводи та енергетику тривають.",
+      "risk_scores": {
+        "frontline": 5,
+        "strikes": 7,
+        "damage": 7,
+        "readiness": 5
+      }
     },
     {
       "name_en": "Odesa Oblast",
@@ -304,7 +400,13 @@
       "front_proximity_en": "No land frontline but Black Sea coast exposed to naval and air threats. Strategic importance as Ukraine's main remaining port region.",
       "front_proximity_uk": "Немає сухопутного фронту, але узбережжя Чорного моря вразливе до морських та повітряних загроз.",
       "attack_frequency_en": "Regular missile and Shahed drone attacks on grain terminals, port infrastructure, and historic city center. UNESCO World Heritage sites damaged.",
-      "attack_frequency_uk": "Регулярні ракетні удари та атаки «Шахедів» по зерновим терміналам, порту та Одесі, якій ЮНЕСКО надало статус всесвітньої спадщини."
+      "attack_frequency_uk": "Регулярні ракетні удари та атаки «Шахедів» по зерновим терміналам, порту та Одесі, якій ЮНЕСКО надало статус всесвітньої спадщини.",
+      "risk_scores": {
+        "frontline": 3,
+        "strikes": 7,
+        "damage": 6,
+        "readiness": 6
+      }
     },
     {
       "name_en": "Poltava Oblast",
@@ -322,7 +424,13 @@
       "front_proximity_en": "Central rear region, 200–300 km from frontline. Significant military and communications infrastructure makes it a priority long-range target.",
       "front_proximity_uk": "Тилова область за 200–300 км від фронту. Наявність військової та комунікаційної інфраструктури робить її пріоритетною ціллю.",
       "attack_frequency_en": "Major ballistic missile strike in September 2024 on a military institute killed over 50 people. Energy and communications infrastructure repeatedly struck.",
-      "attack_frequency_uk": "Масований ракетний удар у вересні 2024 р. по військовому інституту забрав понад 50 життів. Енергетика та зв'язок неодноразово атаковані."
+      "attack_frequency_uk": "Масований ракетний удар у вересні 2024 р. по військовому інституту забрав понад 50 життів. Енергетика та зв'язок неодноразово атаковані.",
+      "risk_scores": {
+        "frontline": 2,
+        "strikes": 7,
+        "damage": 5,
+        "readiness": 6
+      }
     },
     {
       "name_en": "Rivne Oblast",
@@ -340,7 +448,13 @@
       "front_proximity_en": "Western Ukraine, nuclear power plant (Rivne NPP) present. Considered a stable rear zone with low ongoing risk profile.",
       "front_proximity_uk": "Захід України, є АЕС (Рівненська). Стабільний тиловий регіон з низьким поточним ризиком.",
       "attack_frequency_en": "Occasional long-range missile strikes on military and energy targets. Rivne NPP has heightened security protocols. Generally low frequency.",
-      "attack_frequency_uk": "Рідкісні далекобійні ракетні удари по військових та енергетичних об'єктах. Рівненська АЕС з підвищеними протоколами безпеки."
+      "attack_frequency_uk": "Рідкісні далекобійні ракетні удари по військових та енергетичних об'єктах. Рівненська АЕС з підвищеними протоколами безпеки.",
+      "risk_scores": {
+        "frontline": 0,
+        "strikes": 2,
+        "damage": 2,
+        "readiness": 9
+      }
     },
     {
       "name_en": "Sumy Oblast",
@@ -358,7 +472,13 @@
       "front_proximity_en": "Shares a long border with Russia (Bryansk and Kursk regions). Cross-border shelling of border towns ongoing. Kursk incursion (August 2024) affected border districts.",
       "front_proximity_uk": "Довгий кордон з Росією. Регулярні транскордонні обстріли. Операція в Курській області (серпень 2024) зачепила прикордонні райони.",
       "attack_frequency_en": "Frequent cross-border artillery fire and drone attacks. Border communities repeatedly struck. Infrastructure and residential areas targeted.",
-      "attack_frequency_uk": "Часті транскордонні артилерійські обстріли та дронові атаки. Прикордонні громади регулярно під ударами."
+      "attack_frequency_uk": "Часті транскордонні артилерійські обстріли та дронові атаки. Прикордонні громади регулярно під ударами.",
+      "risk_scores": {
+        "frontline": 7,
+        "strikes": 7,
+        "damage": 6,
+        "readiness": 4
+      }
     },
     {
       "name_en": "Ternopil Oblast",
@@ -376,7 +496,13 @@
       "front_proximity_en": "Central-western Ukraine. Minimal military infrastructure reduces target profile. Receives internally displaced persons from eastern regions.",
       "front_proximity_uk": "Центрально-захід України. Мінімальна військова інфраструктура знижує привабливість як цілі. Приймає внутрішньо переміщених осіб зі сходу.",
       "attack_frequency_en": "Very rare incidents. Considered among the lowest-risk oblasts for investment and reconstruction activities.",
-      "attack_frequency_uk": "Надзвичайно рідкісні інциденти. Одна з найнижчоризикових областей для інвестицій та відбудови."
+      "attack_frequency_uk": "Надзвичайно рідкісні інциденти. Одна з найнижчоризикових областей для інвестицій та відбудови.",
+      "risk_scores": {
+        "frontline": 0,
+        "strikes": 1,
+        "damage": 1,
+        "readiness": 9
+      }
     },
     {
       "name_en": "Vinnytsia Oblast",
@@ -394,7 +520,13 @@
       "front_proximity_en": "Deep rear region. Strike risk from long-range Russian missile systems targeting military and logistics infrastructure throughout Ukraine.",
       "front_proximity_uk": "Глибокий тил. Ризик від далекобійних ракет, спрямованих на військову та логістичну інфраструктуру.",
       "attack_frequency_en": "July 2022 missile strike on Vinnytsia city centre killed 27 civilians including children. Subsequent strikes on military and energy infrastructure.",
-      "attack_frequency_uk": "Ракетний удар у липні 2022 р. по центру Вінниці забрав 27 цивільних, у т.ч. дітей. Подальші удари по військовій та енергетичній інфраструктурі."
+      "attack_frequency_uk": "Ракетний удар у липні 2022 р. по центру Вінниці забрав 27 цивільних, у т.ч. дітей. Подальші удари по військовій та енергетичній інфраструктурі.",
+      "risk_scores": {
+        "frontline": 1,
+        "strikes": 4,
+        "damage": 3,
+        "readiness": 7
+      }
     },
     {
       "name_en": "Volyn Oblast",
@@ -412,7 +544,13 @@
       "front_proximity_en": "Northwestern oblast bordering Belarus and Poland. Served as an invasion route in early 2022; Russian forces withdrew without occupying. Now a stable rear zone.",
       "front_proximity_uk": "Північно-захід, межує з Білоруссю та Польщею. Слугував шляхом вторгнення у 2022 р.; росіяни відступили без окупації. Нині стабільний тиловий регіон.",
       "attack_frequency_en": "Very low ongoing risk. Rare long-range missile transits. Strong reconstruction candidate given infrastructure and border access.",
-      "attack_frequency_uk": "Дуже низький поточний ризик. Рідкісний транзит ракет на великій висоті. Сильний кандидат для відбудови з огляду на інфраструктуру та доступ до кордону."
+      "attack_frequency_uk": "Дуже низький поточний ризик. Рідкісний транзит ракет на великій висоті. Сильний кандидат для відбудови з огляду на інфраструктуру та доступ до кордону.",
+      "risk_scores": {
+        "frontline": 0,
+        "strikes": 2,
+        "damage": 2,
+        "readiness": 9
+      }
     },
     {
       "name_en": "Zakarpattia Oblast",
@@ -430,7 +568,13 @@
       "front_proximity_en": "Southwestern corner of Ukraine, bordering Hungary, Slovakia, and Romania. Furthest from frontline. Key entry point for aid and equipment.",
       "front_proximity_uk": "Південно-захід України, межує з Угорщиною, Словаччиною та Румунією. Найдальше від фронту. Ключовий пункт в'їзду допомоги та техніки.",
       "attack_frequency_en": "No significant attacks recorded. Lowest-risk oblast in Ukraine. Attracts displaced industry and population from eastern regions.",
-      "attack_frequency_uk": "Значних атак не зафіксовано. Область з найнижчим ризиком в Україні. Приймає переміщені підприємства та населення зі сходу."
+      "attack_frequency_uk": "Значних атак не зафіксовано. Область з найнижчим ризиком в Україні. Приймає переміщені підприємства та населення зі сходу.",
+      "risk_scores": {
+        "frontline": 0,
+        "strikes": 1,
+        "damage": 1,
+        "readiness": 10
+      }
     },
     {
       "name_en": "Zaporizhzhia Oblast",
@@ -448,7 +592,13 @@
       "front_proximity_en": "Active frontline bisects the oblast. Southern and eastern areas under occupation including the Zaporizhzhia Nuclear Power Plant site.",
       "front_proximity_uk": "Активний фронт ділить область навпіл. Південь і схід окуповані, включно з ЗАЕС.",
       "attack_frequency_en": "Daily shelling along frontline. City of Zaporizhzhia subject to frequent missile and drone attacks on energy and industrial infrastructure.",
-      "attack_frequency_uk": "Щоденні обстріли вздовж фронту. Місто Запоріжжя регулярно атакують ракетами та дронами."
+      "attack_frequency_uk": "Щоденні обстріли вздовж фронту. Місто Запоріжжя регулярно атакують ракетами та дронами.",
+      "risk_scores": {
+        "frontline": 9,
+        "strikes": 9,
+        "damage": 8,
+        "readiness": 2
+      }
     },
     {
       "name_en": "Zhytomyr Oblast",
@@ -466,7 +616,13 @@
       "front_proximity_en": "Western rear region. Military airfields and logistics infrastructure present. Transit corridor for supplies from western partners.",
       "front_proximity_uk": "Тиловий регіон на заході. Наявність військових аеродромів та логістичної інфраструктури. Транзитний коридор для поставок від партнерів.",
       "attack_frequency_en": "Missile strikes on military infrastructure, airfields, and arms storage. Generally lower frequency than eastern regions.",
-      "attack_frequency_uk": "Ракетні удари по військовій інфраструктурі, аеродромах та складах. Загалом нижча частота, ніж на сході."
+      "attack_frequency_uk": "Ракетні удари по військовій інфраструктурі, аеродромах та складах. Загалом нижча частота, ніж на сході.",
+      "risk_scores": {
+        "frontline": 1,
+        "strikes": 3,
+        "damage": 3,
+        "readiness": 7
+      }
     }
   ]
 }

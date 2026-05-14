@@ -1709,6 +1709,32 @@ details[open] .agg-summary::before { content: '▼ '; }
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 .oblast-war-panel.visible { opacity: 1; transform: translateY(0); }
+/* Visual block — gauge + bars */
+.owp-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem 0.9rem 0.5rem;
+  border-bottom: 1px solid rgba(201,162,39,0.12);
+}
+.owp-gauge-svg { width: 100%; max-width: 200px; }
+.owp-bars { width: 100%; display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.6rem; }
+.owp-bar-row { display: flex; align-items: center; gap: 0.5rem; }
+.owp-bar-lbl { font-size: 0.68rem; color: rgba(255,255,255,0.5); width: 120px; flex-shrink: 0; }
+.owp-bar-track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.owp-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+.owp-bar-num { font-size: 0.68rem; font-weight: 700; width: 16px; text-align: right; }
+
 .owp-header {
   display: flex;
   align-items: flex-start;
