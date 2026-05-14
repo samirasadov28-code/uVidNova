@@ -5,7 +5,7 @@
  */
 
 import { loadAsset } from './data-loader.js';
-import { renderCostCalculator } from './cost-calculator.js';
+import { renderCostWorking } from './cost-calculator.js';
 
 const SECTOR_LABELS = {
   energy_and_power: 'Energy and Power',
@@ -316,9 +316,18 @@ function renderAsset(asset) {
   // Update page title
   document.title = `${asset.name?.en ?? asset.asset_id} — uVidNova`;
 
-  // Wire "Show working" calculator
+  // Lazy-load the formula working when the <details> is first opened
+  const calcDetails = document.querySelector('.calc-details');
   const calcEl = document.getElementById('calcWorking');
-  if (calcEl) renderCostCalculator(asset, calcEl);
+  if (calcDetails && calcEl) {
+    let loaded = false;
+    calcDetails.addEventListener('toggle', () => {
+      if (calcDetails.open && !loaded) {
+        loaded = true;
+        renderCostWorking(asset, calcEl);
+      }
+    });
+  }
 
   document.getElementById('loadingState').hidden = true;
   record.hidden = false;
