@@ -17,7 +17,7 @@
 import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { getClient } from './lib/anthropic.js';
+import { chat } from './lib/groq.js';
 import {
   getUnitCost,
   computeCostTriple,
@@ -152,17 +152,12 @@ export const handler = async (event) => {
   // Step 5: LLM narration
   let rawResponse;
   try {
-    const client = getClient();
-    const message = await client.messages.create({
-      model: 'claude-opus-4-7',
-      max_tokens: 2048,
-      temperature: 0.4,
-      system: systemPrompt(),
-      messages: [{ role: 'user', content: JSON.stringify(payload, null, 2) }],
-    });
-    rawResponse = message.content[0]?.text ?? '';
+    rawResponse = await chat(
+      [{ role: 'user', content: JSON.stringify(payload, null, 2) }],
+      { system: systemPrompt(), temperature: 0.4, max_tokens: 2048 },
+    );
   } catch (err) {
-    console.error('Anthropic API error (narrate):', err.message);
+    console.error('Groq API error (narrate):', err.message);
     return {
       statusCode: 502,
       body: JSON.stringify({ error: 'Upstream API error. Please retry.' }),

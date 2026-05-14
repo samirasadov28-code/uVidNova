@@ -8,9 +8,6 @@
     "validate": "node scripts/validate-all.js",
     "test:gate": "node tests/test-validation-gate.js"
   },
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.39.0"
-  },
   "devDependencies": {
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1"

@@ -6,6 +6,7 @@
 
 import { loadAsset } from './data-loader.js';
 import { renderCostWorking } from './cost-calculator.js';
+import { getLang, initLangToggle } from './lang.js';
 
 const SECTOR_LABELS = {
   energy_and_power: 'Energy and Power',
@@ -92,10 +93,15 @@ function field(label, value, note) {
 
 function renderIdentity(a) {
   const reCount = a.damage?.re_damage_count ?? 0;
+  const isUk = getLang() === 'uk' && a.name?.uk;
+  const h1Name  = isUk ? a.name.uk : (a.name?.en ?? a.asset_id);
+  const subName = isUk
+    ? (a.name?.en ? `<p class="asset-name-sub">${escHtml(a.name.en)}</p>` : '')
+    : (a.name?.uk ? `<p class="asset-name-uk">${escHtml(a.name.uk)}</p>` : '');
   return `
     <section class="asset-section" id="identity">
-      <h1 class="asset-name">${escHtml(a.name?.en ?? a.asset_id)}</h1>
-      ${a.name?.uk ? `<p class="asset-name-uk">${escHtml(a.name.uk)}</p>` : ''}
+      <h1 class="asset-name">${escHtml(h1Name)}</h1>
+      ${subName}
       ${reCount >= 2 ? `<div class="redamage-alert">⚠ Re-damaged ${reCount} time(s) — material investor-information field</div>` : ''}
       <div class="asset-badges">
         <span class="badge badge-sector">${escHtml(SECTOR_LABELS[a.sector] ?? a.sector)}</span>
@@ -364,6 +370,8 @@ function renderAsset(asset) {
 // ── Boot ──────────────────────────────────────────────────────────────────────
 
 async function init() {
+  initLangToggle(document.getElementById('langToggle'));
+
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
 
@@ -377,6 +385,12 @@ async function init() {
   try {
     const asset = await loadAsset(id);
     renderAsset(asset);
+    // Re-render the identity section when the language changes
+    document.addEventListener('langChanged', () => {
+      const identity = document.getElementById('identity');
+      if (identity) identity.outerHTML = renderIdentity(asset);
+      document.title = `${getLang() === 'uk' && asset.name?.uk ? asset.name.uk : (asset.name?.en ?? asset.asset_id)} — uVidNova`;
+    });
   } catch (err) {
     document.getElementById('loadingState').hidden = true;
     document.getElementById('errorMessage').textContent = `Could not load asset "${id}": ${err.message}`;

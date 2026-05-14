@@ -12,7 +12,7 @@
 import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { getClient } from './lib/anthropic.js';
+import { chat } from './lib/groq.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -96,17 +96,12 @@ export const handler = async (event) => {
 
   let rawResponse;
   try {
-    const client = getClient();
-    const message = await client.messages.create({
-      model: 'claude-opus-4-7',
-      max_tokens: 2048,
-      temperature: 0.2,
-      system: systemPrompt(),
-      messages: [{ role: 'user', content: userMessage }],
-    });
-    rawResponse = message.content[0]?.text ?? '';
+    rawResponse = await chat(
+      [{ role: 'user', content: userMessage }],
+      { system: systemPrompt(), temperature: 0.2, max_tokens: 2048 },
+    );
   } catch (err) {
-    console.error('Anthropic API error (classify):', err.message);
+    console.error('Groq API error (classify):', err.message);
     return {
       statusCode: 502,
       body: JSON.stringify({ error: 'Upstream API error. Please retry.' }),

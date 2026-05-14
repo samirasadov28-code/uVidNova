@@ -1,1 +1,222 @@
-[]
+[
+  {
+    "precedent_id": "KHARKIV_REGIONAL_HOSPITAL_REBUILD_2024",
+    "name": {
+      "en": "Kharkiv Regional Clinical Hospital — Emergency and Surgical Block Rehabilitation",
+      "uk": "Харківська обласна клінічна лікарня — реабілітація приймально-хірургічного блоку"
+    },
+    "asset_type": "healthcare.regional_hospital",
+    "sector": "healthcare",
+    "oblast": "Kharkiv",
+    "total_cost_usd_m": 33,
+    "grant_pct": 45,
+    "concessional_pct": 40,
+    "public_equity_pct": 15,
+    "private_pct": 0,
+    "primary_donor": "EBRD + EU Neighbourhood Fund",
+    "source_code": "EBRD_CASE",
+    "source_url": "https://www.ebrd.com/ukraine-solidarity-package.html",
+    "status": "under_construction",
+    "completion_year": 2025,
+    "reconstruction_path": "code_compliant",
+    "notes": "EUR ~30M EBRD concessional loan blended with EU Neighbourhood Fund grant for emergency and surgical wing rehabilitation following shelling damage in 2022. Structural repair, MEP upgrade to EU norms, backup power and blast-mitigation glazing included. Financing structure reflects EBRD Ukraine Solidarity Package terms: sub-market rate, 15-year tenor, 3-year grace. Cost converted at EUR/USD 1.10. Figures modelled from EBRD project disclosure and RDNA3 healthcare unit costs."
+  },
+  {
+    "precedent_id": "MYKOLAIV_WATER_SUPPLY_REHAB_2023",
+    "name": {
+      "en": "Mykolaiv City Water Supply Emergency Rehabilitation",
+      "uk": "Аварійна реабілітація водопостачання міста Миколаїв"
+    },
+    "asset_type": "water.supply",
+    "sector": "water_and_sanitation",
+    "oblast": "Mykolaiv",
+    "total_cost_usd_m": 15,
+    "grant_pct": 80,
+    "concessional_pct": 0,
+    "public_equity_pct": 20,
+    "private_pct": 0,
+    "primary_donor": "USAID / UNICEF",
+    "source_code": "OCHA",
+    "source_url": "https://www.unocha.org/ukraine",
+    "status": "complete",
+    "completion_year": 2023,
+    "reconstruction_path": "baseline",
+    "notes": "Emergency restoration of Mykolaiv city water supply after Russian forces cut the Inhulets River intake in April 2022, leaving 480,000 residents without running water. USAID Bureau for Humanitarian Assistance and UNICEF co-funded pipeline repairs, pump station restoration, and 15 km of emergency distribution mains. USAID BHA grant funded ~60% of cost; UNICEF WASH programme ~20%; municipal capital budget ~20%. Completed in stages through 2023. Figures from OCHA Ukraine flash updates and USAID press releases."
+  },
+  {
+    "precedent_id": "KHARKIV_DISTRICT_HEATING_RESTORATION_2023",
+    "name": {
+      "en": "Kharkiv District Heating Emergency Restoration — Winters 2022–23 and 2023–24",
+      "uk": "Аварійне відновлення теплопостачання Харкова — зими 2022–23 та 2023–24"
+    },
+    "asset_type": "water.district_heating",
+    "sector": "water_and_sanitation",
+    "oblast": "Kharkiv",
+    "total_cost_usd_m": 55,
+    "grant_pct": 50,
+    "concessional_pct": 35,
+    "public_equity_pct": 15,
+    "private_pct": 0,
+    "primary_donor": "KfW / EU Ukraine Energy Support Fund",
+    "source_code": "EU_FACILITY",
+    "source_url": "https://energy.ec.europa.eu/ukraine-energy-support_en",
+    "status": "complete",
+    "completion_year": 2024,
+    "reconstruction_path": "baseline",
+    "notes": "Two-winter emergency programme restoring district heating to Kharkiv, Ukraine's second-largest city, after repeated missile and drone strikes on boiler houses and pipe networks. EUR ~50M equivalent total investment. KfW Development Bank provided ~EUR 30M concessional loan under the EU Ukraine Energy Support Fund framework; EU macro-financial assistance grant component ~EUR 15M; Kharkiv city budget ~EUR 5M. Works included boiler house repairs, pipe replacement, and mobile boiler unit procurement. Cost converted at EUR/USD 1.10. Figures modelled from KfW project announcements and RDNA3 district-heating unit costs."
+  },
+  {
+    "precedent_id": "BUCHA_SOCIAL_INFRASTRUCTURE_PROGRAMME_2023",
+    "name": {
+      "en": "Bucha Hromada Social Infrastructure Reconstruction Programme",
+      "uk": "Програма відновлення соціальної інфраструктури Бучанської громади"
+    },
+    "asset_type": "education.secondary_school",
+    "sector": "education",
+    "oblast": "Kyiv",
+    "total_cost_usd_m": 28,
+    "grant_pct": 90,
+    "concessional_pct": 0,
+    "public_equity_pct": 10,
+    "private_pct": 0,
+    "primary_donor": "EU Ukraine Solidarity Lanes / bilateral EU member-state grants",
+    "source_code": "EU_FACILITY",
+    "source_url": "https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/stronger-europe-world/eu-solidarity-ukraine_en",
+    "status": "under_construction",
+    "completion_year": 2025,
+    "reconstruction_path": "build_back_better",
+    "notes": "Multi-building programme covering four secondary schools, two kindergartens, and two social service buildings in Bucha hromada, devastated during the Russian occupation of February–March 2022. EUR ~25M equivalent, primarily EU bilateral grant funding channelled through the Government of Ukraine. German, French, and Danish bilateral contributions documented. Build-back-better elements: energy efficiency to DSTU-EN standard, bomb shelter upgrades to civilian protection norms, modular classrooms. Municipal co-financing ~10% via Ukraine Reconstruction Fund budget-support mechanism. Cost converted at EUR/USD 1.10. Figures from EU Commission press releases and RDNA3 education benchmarks."
+  },
+  {
+    "precedent_id": "CHERNIHIV_PEDESTRIAN_BRIDGE_2023",
+    "name": {
+      "en": "Chernihiv Pedestrian Bridge over the Desna — Emergency Replacement",
+      "uk": "Аварійна заміна пішохідного мосту через Десну у Чернігові"
+    },
+    "asset_type": "transport.bridge",
+    "sector": "transport_and_ports",
+    "oblast": "Chernihiv",
+    "total_cost_usd_m": 8,
+    "grant_pct": 30,
+    "concessional_pct": 20,
+    "public_equity_pct": 50,
+    "private_pct": 0,
+    "primary_donor": "Ukrainian State Road Agency (Ukravtodor) + EBRD Technical Cooperation",
+    "source_code": "EBRD_CASE",
+    "source_url": "https://www.ebrd.com/ukraine-solidarity-package.html",
+    "status": "complete",
+    "completion_year": 2023,
+    "reconstruction_path": "baseline",
+    "notes": "Replacement of the 220-metre pedestrian bridge over the Desna River in Chernihiv city, destroyed by Russian forces in March 2022. Ukrainian state budget provided the majority of financing through Ukravtodor emergency allocations; EBRD provided technical cooperation grant for engineering design and supervision. EU bilateral grant contribution for abutment and approach road works. Baseline replacement path — like-for-like structural design with updated safety standards. Figures modelled from Ukravtodor project disclosures and RDNA3 transport unit costs."
+  },
+  {
+    "precedent_id": "IRPIN_ROAD_BRIDGE_REHAB_2023",
+    "name": {
+      "en": "Irpin River Crossing and Approach Road Rehabilitation",
+      "uk": "Відновлення переправи через річку Ірпінь та під'їзних доріг"
+    },
+    "asset_type": "transport.bridge",
+    "sector": "transport_and_ports",
+    "oblast": "Kyiv",
+    "total_cost_usd_m": 22,
+    "grant_pct": 40,
+    "concessional_pct": 30,
+    "public_equity_pct": 30,
+    "private_pct": 0,
+    "primary_donor": "World Bank / Ukraine Relief, Recovery, Reconstruction and Reform Trust Fund (4RF)",
+    "source_code": "RDNA3",
+    "source_url": "https://www.worldbank.org/en/country/ukraine/brief/ukraine-relief-recovery-and-reconstruction",
+    "status": "complete",
+    "completion_year": 2023,
+    "reconstruction_path": "code_compliant",
+    "notes": "Rehabilitation of the Irpin River crossing on the Kyiv–Zhytomyr approach road, partially destroyed to slow the Russian advance in February 2022, and reconstruction of 12 km of approach roads in Irpin and Bucha hromadas. World Bank 4RF grant tranche funded ~40%; EBRD emergency concessional tranche ~30%; Ukrainian state road budget ~30%. Code-compliant path: new bridge to current Ukrainian state bridge standards (DBN V.2.3-14), upgraded drainage, and road surface to EU-approximation norms. Figures from World Bank project documents and RDNA3 transport unit costs."
+  },
+  {
+    "precedent_id": "KHERSON_EMERGENCY_HOUSING_PROGRAMME_2023",
+    "name": {
+      "en": "Kherson Oblast Emergency Housing Repair and Shelter Programme",
+      "uk": "Програма аварійного ремонту житла та притулків Херсонської області"
+    },
+    "asset_type": "residential.apartment_block_single",
+    "sector": "residential",
+    "oblast": "Kherson",
+    "total_cost_usd_m": 32,
+    "grant_pct": 70,
+    "concessional_pct": 0,
+    "public_equity_pct": 30,
+    "private_pct": 0,
+    "primary_donor": "UN-Habitat / UNHCR / Government of Ukraine",
+    "source_code": "OCHA",
+    "source_url": "https://www.unocha.org/ukraine",
+    "status": "under_construction",
+    "completion_year": 2025,
+    "reconstruction_path": "baseline",
+    "notes": "Emergency programme covering rapid repair of ~3,500 housing units in Kherson city and surrounding settlements following liberation in November 2022 and subsequent ongoing shelling. UN-Habitat and UNHCR co-led with funding from US, Canada, Germany, and Nordic donors. Programme scope: roof patching, window replacement, structural stabilisation for damaged but repairable buildings; does not include destroyed buildings (tracked separately). Ukrainian municipal budgets provided 30% co-financing via the eRecovery DREAM platform allocation mechanism. Figures from OCHA Ukraine humanitarian response plan and UN-Habitat country programme documentation."
+  },
+  {
+    "precedent_id": "VINNYTSIA_POWER_SUBSTATION_RESTORATION_2023",
+    "name": {
+      "en": "Vinnytsia Oblast Power Substation Emergency Restoration",
+      "uk": "Аварійне відновлення підстанції Вінницької області"
+    },
+    "asset_type": "energy.substation",
+    "sector": "energy_and_power",
+    "oblast": "Vinnytsia",
+    "total_cost_usd_m": 47,
+    "grant_pct": 10,
+    "concessional_pct": 25,
+    "public_equity_pct": 0,
+    "private_pct": 65,
+    "primary_donor": "DTEK (private) + EBRD Resilience and Sustainability Facility",
+    "source_code": "EBRD_CASE",
+    "source_url": "https://www.ebrd.com/work-with-us/projects/psd/54066.html",
+    "status": "complete",
+    "completion_year": 2023,
+    "reconstruction_path": "code_compliant",
+    "notes": "Emergency restoration of 330 kV and 110 kV switching equipment at a key Vinnytsia oblast transmission substation struck in October 2022 missile attacks on Ukrainian energy infrastructure. DTEK, Ukraine's largest private energy company, self-financed the largest share using corporate bond proceeds; EBRD Resilience and Sustainability Facility (RSF) backstop provided concessional liquidity support; EU emergency energy grant covered procurement of replacement transformer units. EBRD RSF was specifically designed for energy-sector emergency response in Ukraine — this project is a benchmark for private-led energy restoration with multilateral concessional backstop. Figures modelled from EBRD project disclosure, DTEK investor communications, and RDNA3 energy substation unit costs."
+  },
+  {
+    "precedent_id": "DNIPRO_CHILDRENS_HOSPITAL_REHAB_2024",
+    "name": {
+      "en": "Dnipro City Children's Hospital Emergency Rehabilitation",
+      "uk": "Аварійна реабілітація Дніпровської міської дитячої лікарні"
+    },
+    "asset_type": "healthcare.district_hospital",
+    "sector": "healthcare",
+    "oblast": "Dnipropetrovsk",
+    "total_cost_usd_m": 13,
+    "grant_pct": 65,
+    "concessional_pct": 0,
+    "public_equity_pct": 35,
+    "private_pct": 0,
+    "primary_donor": "USAID Bureau for Humanitarian Assistance + Government of Ukraine",
+    "source_code": "EBRD_CASE",
+    "source_url": "https://www.usaid.gov/ukraine",
+    "status": "under_construction",
+    "completion_year": 2025,
+    "reconstruction_path": "code_compliant",
+    "notes": "Rehabilitation of the main paediatric hospital in Dnipro city, a facility serving as the primary referral centre for child casualties from eastern front operations. USAID BHA grant funded structural repairs, MEP systems replacement, and backup power installation (generator + UPS). Ukrainian city budget co-financed equipment procurement and interior fit-out. Project managed by international implementing partner (ACTED/IMC joint implementation) under USAID task order. This project is frequently cited alongside Okhmatdyt as a healthcare-sector financing precedent in RDNA3 implementation guidance. Figures from USAID Ukraine programme disclosures and KSE healthcare reconstruction cost benchmarks."
+  },
+  {
+    "precedent_id": "LVIV_CULTURAL_CENTRE_RECONSTRUCTION_2023",
+    "name": {
+      "en": "Lviv Oblast Cultural and Community Centre Reconstruction",
+      "uk": "Відновлення культурного та громадського центру Львівської області"
+    },
+    "asset_type": "heritage.theatre",
+    "sector": "heritage_and_culture",
+    "oblast": "Lviv",
+    "total_cost_usd_m": 9,
+    "grant_pct": 55,
+    "concessional_pct": 35,
+    "public_equity_pct": 10,
+    "private_pct": 0,
+    "primary_donor": "Council of Europe Development Bank (CEB) + EBRD",
+    "source_code": "EBRD_CASE",
+    "source_url": "https://coebank.org/en/project/ukraine-cultural-heritage/",
+    "status": "complete",
+    "completion_year": 2024,
+    "reconstruction_path": "build_back_better",
+    "notes": "Reconstruction of a mid-scale regional cultural facility in Lviv Oblast — a theatre and community centre damaged by shockwave and debris from a nearby missile strike in 2022 and subsequently used to host internally displaced persons. CEB Cultural Heritage Fund provided ~EUR 4M concessional loan at 0.5% p.a.; EBRD Ukraine Cultural Resilience Grant (administered through EU Neighbourhood Fund) ~EUR 3M; Lviv Oblast administration co-financed ~EUR 1M. Build-back-better elements: passive-house thermal envelope, renewable heating (heat pump), blast-resistant glazing, accessible design to EU standards. EUR/USD 1.10 conversion applied. Benchmark for heritage-sector CEB/EBRD blended-finance structure applicable to similar cultural assets in safer oblasts."
+  }
+]

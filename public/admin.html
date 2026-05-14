@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — uVidNova Asset Orchestrator</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1a3a6b">
+
+  <link rel="icon"             href="/assets/logo_192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/assets/logo_192.png">
+  <link rel="stylesheet"       href="/css/app.css">
+</head>
+<body class="asset-page">
+
+  <!-- ── Site header ───────────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="wordmark" aria-label="uVidNova home">
+        <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36" loading="lazy">
+        <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
+      </a>
+      <p class="tagline">Asset Orchestrator — Owner Only</p>
+      <nav class="site-nav">
+        <a href="/">← Map</a>
+        <a href="/about.html">Methodology</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── Password gate ─────────────────────────────────────────────────────── -->
+  <div class="admin-gate" id="adminGate">
+    <div class="admin-gate-box">
+      <div class="admin-gate-logo">
+        <img src="/assets/logo_192.png" alt="uVidNova" width="48" height="48">
+      </div>
+      <h1 class="admin-gate-title">Admin access</h1>
+      <p class="admin-gate-desc">Owner-only tool. Not for public use.</p>
+      <div class="admin-gate-form" id="adminGateForm">
+        <input
+          type="password"
+          id="adminPassword"
+          class="form-input admin-gate-input"
+          placeholder="Enter admin password"
+          aria-label="Admin password"
+          autocomplete="current-password"
+          autofocus
+        >
+        <button type="button" id="adminEnterBtn" class="admin-btn admin-btn-primary">Enter →</button>
+      </div>
+      <p class="admin-gate-error" id="adminGateError" hidden>Incorrect password.</p>
+    </div>
+  </div>
+
+  <!-- ── Admin UI (hidden until authenticated) ─────────────────────────────── -->
+  <main class="admin-main" id="adminUI" hidden>
+
+    <div class="admin-header-bar">
+      <h1 class="admin-page-title">Asset Orchestrator</h1>
+      <p class="admin-page-sub">
+        Two-stage pipeline: classify OSINT input → generate narration + cost payload.
+        Numbers come from deterministic lookups only — the LLM classifies and narrates, never estimates.
+      </p>
+    </div>
+
+    <!-- ── Stage 1: Classify ─────────────────────────────────────────────── -->
+    <section class="admin-section" id="stage1Section">
+      <h2 class="admin-section-title">Stage 1 — Classify</h2>
+      <p class="admin-section-desc">
+        Submit raw OSINT input. The classifier extracts structured fields: asset type, physical specs,
+        damage level, and wartime status. No numbers are invented — unknown specs are flagged as
+        <code>pending_data</code>.
+      </p>
+
+      <div class="admin-form">
+        <div class="admin-form-group">
+          <label class="form-label" for="inputDescription">Asset description</label>
+          <textarea
+            id="inputDescription"
+            class="form-input form-textarea admin-textarea-lg"
+            placeholder="Describe the asset: what it is, what happened, approximate size, verified damage level, location details…"
+            rows="6"
+          ></textarea>
+        </div>
+
+        <div class="admin-form-group">
+          <label class="form-label" for="inputSources">Sources (one per line)</label>
+          <textarea
+            id="inputSources"
+            class="form-input form-textarea"
+            placeholder="https://example.com/report-1&#10;https://example.com/report-2&#10;KSE damage assessment, April 2024"
+            rows="4"
+          ></textarea>
+        </div>
+
+        <div class="admin-form-row">
+          <div class="admin-form-group admin-form-group-half">
+            <label class="form-label" for="inputLocation">Location hint</label>
+            <input
+              type="text"
+              id="inputLocation"
+              class="form-input"
+              placeholder="e.g. Kharkiv, Slobidskyi raion"
+            >
+          </div>
+        </div>
+
+        <div class="admin-form-group">
+          <label class="form-label" for="inputPhoto">Photo / visual description</label>
+          <textarea
+            id="inputPhoto"
+            class="form-input form-textarea"
+            placeholder="Describe what is visible in any available imagery: structural damage, wing collapsed, roof intact, perimeter wall destroyed…"
+            rows="3"
+          ></textarea>
+        </div>
+
+        <div class="admin-form-actions">
+          <button type="button" id="classifyBtn" class="admin-btn admin-btn-primary">
+            Classify →
+          </button>
+          <span class="admin-spinner" id="classifySpinner" hidden aria-live="polite">Classifying…</span>
+        </div>
+      </div>
+
+      <!-- Stage 1 error -->
+      <div class="admin-error" id="stage1Error" hidden>
+        <strong>Classification error:</strong>
+        <span id="stage1ErrorMsg"></span>
+      </div>
+
+      <!-- Stage 1 output -->
+      <div class="admin-output" id="stage1Output" hidden>
+        <div class="admin-output-header">
+          <span class="admin-output-label">Classification result</span>
+          <button type="button" class="admin-btn-sm" id="copyClassification">Copy JSON</button>
+        </div>
+        <pre class="admin-pre" id="stage1Pre"></pre>
+      </div>
+    </section>
+
+    <!-- ── Stage 2: Narrate ───────────────────────────────────────────────── -->
+    <section class="admin-section admin-section-locked" id="stage2Section" aria-disabled="true">
+      <h2 class="admin-section-title">
+        Stage 2 — Narrate
+        <span class="admin-locked-badge" id="stage2LockedBadge">Complete Stage 1 first</span>
+      </h2>
+      <p class="admin-section-desc">
+        Server performs deterministic cost lookups, selects financing templates, retrieves comparable
+        precedents, then narrates the complete structured payload. Every number in the narration is
+        traced back to the payload — unmatched tokens abort publication.
+      </p>
+
+      <div class="admin-form-actions">
+        <button type="button" id="narrateBtn" class="admin-btn admin-btn-primary" disabled>
+          Narrate →
+        </button>
+        <span class="admin-spinner" id="narrateSpinner" hidden aria-live="polite">Narrating…</span>
+      </div>
+
+      <!-- Stage 2 error -->
+      <div class="admin-error" id="stage2Error" hidden>
+        <strong>Narration error:</strong>
+        <span id="stage2ErrorMsg"></span>
+        <!-- Human review block, shown only when humanReview: true -->
+        <div class="admin-review-block" id="humanReviewBlock" hidden>
+          <p class="admin-review-title">Unmatched numeric tokens — human review required</p>
+          <pre class="admin-pre admin-pre-sm" id="unmatchedTokensPre"></pre>
+        </div>
+      </div>
+
+      <!-- Stage 2 output -->
+      <div class="admin-output" id="stage2Output" hidden>
+        <!-- Narration prose -->
+        <div class="admin-output-header">
+          <span class="admin-output-label">Narration</span>
+        </div>
+        <div class="admin-narration" id="narrativeText"></div>
+
+        <!-- Cost payload JSON -->
+        <div class="admin-output-header admin-output-header-mt">
+          <span class="admin-output-label">Structured payload</span>
+          <div class="admin-output-actions">
+            <button type="button" class="admin-btn-sm" id="copyAssetJson">Copy JSON</button>
+            <button type="button" class="admin-btn-sm admin-btn-sm-primary" id="downloadAssetJson">Download JSON</button>
+          </div>
+        </div>
+        <pre class="admin-pre" id="stage2Pre"></pre>
+
+        <p class="admin-output-note">
+          Review the generated record carefully before committing it to
+          <code>data/assets/</code>. Run <code>scripts/validate-all.js</code> to confirm schema
+          compliance. Every figure must trace to a named published source.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Version bar ───────────────────────────────────────────────────────── -->
+  <div class="version-bar" role="status">
+    <span class="version-label">v0.0.2 — admin</span>
+    <span style="margin-left:auto; color: rgba(255,255,255,0.4); font-size:0.68rem;">
+      Owner-only tool · not linked from public UI
+    </span>
+  </div>
+
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>

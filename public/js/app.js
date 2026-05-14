@@ -12,6 +12,7 @@ import {
   SECTOR_LABELS, getActiveFilters, state as filterState
 } from './filters.js';
 import { computeAggregation, renderAggregation } from './aggregation.js';
+import { getLang, getName, initLangToggle } from './lang.js';
 
 // ── Marker configuration ───────────────────────────────────────────────────────
 
@@ -62,7 +63,7 @@ function fmtUSD(m) {
 }
 
 function makePopupHTML(asset) {
-  const name          = asset.name?.en ?? asset.asset_id;
+  const name          = getName(asset);
   const sector        = SECTOR_LABELS[asset.sector] ?? asset.sector;
   const level         = asset.damage?.destruction_level ?? '—';
   const lifecycle     = asset.wartime_status?.lifecycle ?? '—';
@@ -180,7 +181,7 @@ function renderAssetList(assets) {
     item.className = 'asset-list-item';
     item.href     = `/asset.html?id=${encodeURIComponent(asset.asset_id)}`;
 
-    const name    = asset.name?.en ?? asset.asset_id;
+    const name    = getName(asset);
     const sector  = SECTOR_LABELS[asset.sector] ?? asset.sector;
     const level   = asset.damage?.destruction_level ?? '—';
     const colour  = SECTOR_COLOURS[asset.sector] ?? '#555';
@@ -257,6 +258,7 @@ function initFilters() {
   });
 
   document.addEventListener('filtersChanged', renderMarkers);
+  document.addEventListener('langChanged', renderMarkers);
 }
 
 // ── App version ───────────────────────────────────────────────────────────────
@@ -428,6 +430,7 @@ async function init() {
   initDisclaimer();
   initFeedback();
   initChat();
+  initLangToggle(document.getElementById('langToggle'));
 
   try {
     const [assets] = await Promise.all([
