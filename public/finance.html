@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance It — uVidNova Ukraine Reconstruction</title>
+  <meta name="description" content="Structure financing for Ukraine reconstruction projects. Model tranches, returns, and public support requirements against the documented asset pipeline.">
+  <meta name="theme-color" content="#1a3a6b">
+
+  <link rel="manifest"         href="/manifest.webmanifest">
+  <link rel="icon"             href="/assets/logo_192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/assets/logo_192.png">
+
+  <link rel="stylesheet" href="/css/vendor/leaflet.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+
+  <!-- ── Header ──────────────────────────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="wordmark" aria-label="uVidNova home">
+        <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36">
+        <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
+      </a>
+      <p class="tagline">Finance Ukraine Reconstruction</p>
+      <nav class="site-nav">
+        <a href="/" class="fp-back-link">← Back to map</a>
+        <a href="/about.html">Methodology</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── Map layout ────────────────────────────────────────────────────────── -->
+  <main class="map-layout">
+    <div id="map" role="main" aria-label="Ukraine map"></div>
+
+    <!-- ── Finance hero card (centred over the map) ──────────────────────── -->
+    <div class="fp-hero" id="financeHero" hidden>
+      <div class="fp-hero-badge">💰 Finance It</div>
+      <h1 class="fp-hero-title">Structure Financing for<br>Ukraine Reconstruction</h1>
+      <p class="fp-hero-desc">
+        Build a deterministic financing model for one project, a group, or the entire Ukraine portfolio.
+        Model grant, concessional, and commercial tranches. Quantify public support needed during and after the war.
+        Generate an institutional financing memo.
+      </p>
+      <div class="fp-hero-stats" id="fpAssetCount">Loading pipeline…</div>
+      <div class="fp-hero-features">
+        <span>✓ Three cost paths</span>
+        <span>✓ Up to 5 tranches</span>
+        <span>✓ Wartime premium model</span>
+        <span>✓ Russian reparations backsolver</span>
+        <span>✓ Downloadable brief</span>
+        <span>✓ AI financing memo</span>
+      </div>
+      <button class="fp-begin-btn" id="fpBeginBtn">Begin Analysis →</button>
+      <p class="fp-disclaimer">
+        All cost figures derived from published benchmarks (RDNA3, KSE Institute).
+        Not a guarantee or procurement quote.
+      </p>
+    </div>
+  </main>
+
+  <!-- ── Version bar ─────────────────────────────────────────────────────── -->
+  <div class="version-bar" id="versionBar" role="status">
+    <span class="version-label">v0.2.1</span>
+  </div>
+
+  <!-- ── Leaflet + app JS ─────────────────────────────────────────────────── -->
+  <script src="/js/vendor/leaflet.js"></script>
+  <script type="module" src="/js/finance-page.js"></script>
+
+  <!-- ── Service worker ───────────────────────────────────────────────────── -->
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').catch(function() {});
+  }
+  </script>
+
+</body>
+</html>

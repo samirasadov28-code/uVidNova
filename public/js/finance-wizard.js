@@ -68,8 +68,11 @@ function reset(preselected = []) {
 
 // ── Public entry point ────────────────────────────────────────────────────────
 
-export function openFinanceWizard(assets, preselectedIds = []) {
-  _assets = assets ?? [];
+let _onClose = null;
+
+export function openFinanceWizard(assets, preselectedIds = [], onClose = null) {
+  _assets  = assets ?? [];
+  _onClose = onClose;
   reset(preselectedIds);
 
   let overlay = document.getElementById('financeWizard');
@@ -95,6 +98,7 @@ function close() {
   if (o) o.hidden = true;
   document.body.style.overflow = '';
   document.removeEventListener('keydown', escClose);
+  if (_onClose) { _onClose(); _onClose = null; }
 }
 
 function escClose(e) { if (e.key === 'Escape') close(); }
@@ -130,7 +134,7 @@ function render() {
     case 1: body.innerHTML = step1HTML(); wireStep1(); break;
     case 2: body.innerHTML = step2HTML(); wireStep2(); break;
     case 3: body.innerHTML = step3HTML(); wireStep3(); break;
-    case 4: body.innerHTML = step4HTML(); break;
+    case 4: body.innerHTML = step4HTML(); generateMemo(); break;
   }
 }
 
@@ -682,7 +686,91 @@ function step4HTML() {
     <div class="fw-disclaimer">
       Cost and financing figures are estimates derived from published benchmarks (RDNA3, KSE Institute). Not guarantees, procurement quotes, or substitutes for transaction-level due diligence.
     </div>
+
+    <!-- AI memo (loaded asynchronously after render) -->
+    <div class="fw-results-sect" id="fwMemoSection">
+      <h4 class="fw-results-h4">Financing memo</h4>
+      <div id="fwMemoContent" class="fw-memo-loading">
+        <span class="fw-memo-spinner"></span> Generating institutional financing memo…
+      </div>
+    </div>
+
+    <div class="fw-results-sect fw-growth-placeholder">
+      <h4 class="fw-results-h4">Growth restoration</h4>
+      <p class="fw-growth-note">
+        Pre-war GDP by sector data not yet loaded. Once added to <code>data/sector_gdp_prewar.json</code>,
+        this section will show investment required to restore each sector to its pre-2022 growth trajectory.
+      </p>
+    </div>
   </div>`;
+}
+
+// ── AI memo generation ────────────────────────────────────────────────────────
+
+async function generateMemo() {
+  const r = computeResults();
+  const memoEl = document.getElementById('fwMemoContent');
+  if (!memoEl) return;
+
+  const payload = {
+    portfolio: r.sel.map(a => a.name?.en ?? a.asset_id).join(', '),
+    path: PATH_LABELS[W.path],
+    timing: TIMING_LABELS[W.timing],
+    total_cost_central_usd_m: r.total,
+    cost_range_low_usd_m: r.low,
+    cost_range_high_usd_m: r.high,
+    tranches: r.tranches.map(t => ({
+      type: t.def.label,
+      allocation_pct: t.pct,
+      amount_usd_m: +t.amt.toFixed(1),
+      required_return_pct: t.effR,
+      tenor_yr: t.tenor ?? null,
+    })),
+    blended_coc_pct: +r.blended.toFixed(2),
+    public_support_usd_m: +r.pubTotal.toFixed(0),
+    grant_requirement_usd_m: +r.grantAmt.toFixed(0),
+    annual_debt_service_usd_m: +r.debtSvc.toFixed(1),
+    private_mobilisation_ratio: r.mobRatio ? +r.mobRatio : null,
+    support_during_war_usd_m: +r.duringSupport.toFixed(0),
+    support_post_war_usd_m: +r.postSupport.toFixed(0),
+    reparations_usd_m: r.repAmt > 0 ? +r.repAmt.toFixed(0) : null,
+    reparations_pct_kse_claim: r.repAmt > 0 ? +r.repPctClaim.toFixed(3) : null,
+    reparations_pct_frozen: r.repAmt > 0 ? +r.repPctFrozen.toFixed(3) : null,
+  };
+
+  const prompt = `You are a development finance analyst writing for an institutional investment committee.
+
+Generate a concise 3-paragraph financing memo based ONLY on the figures below. Do NOT invent any numbers or assumptions not in this payload. If a metric is null, omit it.
+
+FINANCING PAYLOAD:
+${JSON.stringify(payload, null, 2)}
+
+Structure:
+1. Investment thesis — one sentence stating the project/portfolio and its strategic rationale.
+2. Financing structure — describe the capital stack, blended cost of capital, public support requirement, and what the private mobilisation ratio implies.
+3. Key risks and timing — address wartime execution risk, the during-war vs post-war public support split, and any reparations dependency. Close with a sentence on the next step for a prospective financier.
+
+Write in formal, economical prose. No bullet points. No markdown formatting.`;
+
+  try {
+    const res  = await fetch('/api/chat', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ messages: [{ role: 'user', content: prompt }] }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.message) throw new Error(data.error ?? 'No response');
+    const text = data.message.content ?? data.message;
+    if (memoEl) {
+      memoEl.className = 'fw-memo-text';
+      memoEl.textContent = text;
+    }
+  } catch (err) {
+    if (memoEl) {
+      memoEl.className = 'fw-memo-error';
+      memoEl.textContent = `Memo unavailable: ${err.message}. You can still download the numeric brief above.`;
+    }
+  }
 }
 
 // ── Export ────────────────────────────────────────────────────────────────────

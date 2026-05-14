@@ -92,6 +92,10 @@ img { max-width: 100%; height: auto; }
 .site-nav { display: flex; gap: 1.25rem; align-items: center; }
 .site-nav a { color: rgba(255,255,255,0.85); font-size: 0.875rem; }
 .site-nav a:hover { color: #fff; text-decoration: none; }
+.nav-finance-link {
+  color: var(--colour-gold-light) !important;
+  font-weight: 600;
+}
 .lang-toggle {
   font-size: 0.75rem;
   font-family: var(--font-sans);
@@ -2305,6 +2309,101 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
   .fw-body { padding: 0.9rem; }
   body:has(#disclaimerBanner) .fab-finance { bottom: 72px; }
 }
+/* ── Wizard AI memo ──────────────────────────────────────────────────────── */
+.fw-memo-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--colour-text-muted);
+  padding: 0.5rem 0;
+}
+.fw-memo-spinner {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid var(--colour-border);
+  border-top-color: var(--colour-navy-light);
+  border-radius: 50%;
+  animation: fwSpin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes fwSpin { to { transform: rotate(360deg); } }
+.fw-memo-text {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--colour-text);
+  white-space: pre-wrap;
+  background: #f8faff;
+  border-left: 3px solid var(--colour-navy-light);
+  padding: 0.85rem 1rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.fw-memo-error { font-size: 0.8rem; color: var(--colour-text-muted); font-style: italic; }
+.fw-growth-placeholder { background: var(--colour-bg); border-radius: var(--radius-sm); }
+.fw-growth-note { font-size: 0.8rem; color: var(--colour-text-muted); line-height: 1.55; }
+.fw-growth-note code { font-family: var(--font-mono); font-size: 0.75rem; }
+
+/* ── Finance page hero card ──────────────────────────────────────────────── */
+.fp-hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 600;
+  width: 100%;
+  max-width: 520px;
+  background: rgba(4,12,40,0.92);
+  border: 1px solid rgba(201,162,39,0.45);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2.5rem 2rem;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 48px rgba(0,0,0,0.55);
+  text-align: center;
+  color: #fff;
+}
+.fp-hero-badge {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  background: rgba(201,162,39,0.25); color: #f5c842;
+  border: 1px solid rgba(201,162,39,0.45);
+  border-radius: 999px; padding: 0.25rem 0.8rem; margin-bottom: 1rem;
+}
+.fp-hero-title {
+  font-size: 1.65rem; font-weight: 800; line-height: 1.25;
+  color: #fff; margin-bottom: 0.85rem; letter-spacing: -0.01em;
+}
+.fp-hero-desc {
+  font-size: 0.875rem; color: rgba(255,255,255,0.72);
+  line-height: 1.65; margin-bottom: 1rem;
+}
+.fp-hero-stats { font-size: 0.78rem; color: #f5c842; font-weight: 600; margin-bottom: 1rem; }
+.fp-hero-features {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 0.4rem 0.75rem; margin-bottom: 1.5rem;
+}
+.fp-hero-features span { font-size: 0.75rem; color: rgba(255,255,255,0.6); }
+.fp-begin-btn {
+  display: inline-block;
+  background: var(--colour-gold); color: #1a1d23;
+  font-size: 1rem; font-weight: 700; font-family: var(--font-sans);
+  padding: 0.7rem 2.25rem; border: none; border-radius: var(--radius-md);
+  cursor: pointer; transition: background 0.15s, transform 0.1s;
+  margin-bottom: 0.85rem; letter-spacing: 0.01em;
+}
+.fp-begin-btn:hover { background: var(--colour-gold-light); transform: translateY(-1px); }
+.fp-begin-btn:active { transform: translateY(0); }
+.fp-disclaimer { font-size: 0.7rem; color: rgba(255,255,255,0.3); line-height: 1.5; margin: 0; }
+.fp-back-link { color: rgba(255,255,255,0.75) !important; font-size: 0.875rem; font-weight: 600; }
+.fp-back-link:hover { color: #fff !important; text-decoration: none !important; }
+
+@media (max-width: 640px) {
+  .fp-hero { max-width: calc(100vw - 28px); padding: 1.5rem 1.25rem 1.25rem; top: 48%; }
+  .fp-hero-title { font-size: 1.25rem; }
+  .fp-hero-desc  { font-size: 0.8rem; }
+}
+
+/* ── Lang toggle ─────────────────────────────────────────────────────────── */
 .lang-toggle {
   background: none;
   border: 1px solid rgba(255,255,255,0.2);

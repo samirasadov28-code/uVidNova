@@ -66,6 +66,11 @@
   status = 200
 
 [[redirects]]
+  from = "/finance"
+  to = "/finance.html"
+  status = 200
+
+[[redirects]]
   from = "/api/classify"
   to = "/.netlify/functions/classify"
   status = 200
