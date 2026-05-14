@@ -788,8 +788,10 @@ body.asset-page { display: flex; flex-direction: column; }
   font-family: var(--font-sans);
   font-weight: 600;
   box-shadow: var(--shadow-md);
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: transform 0.15s, box-shadow 0.15s, bottom 0.3s ease;
 }
+/* Raise FABs above the disclaimer banner while it is in the DOM */
+body:has(#disclaimerBanner) .fab { bottom: 100px; }
 .fab:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
 .fab:active { transform: translateY(0); }
 .fab-feedback {
