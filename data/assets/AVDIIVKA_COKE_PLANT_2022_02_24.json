@@ -25,12 +25,13 @@
     ],
     "evidence_sources": [
       {
-        "title": "KSE Russia Will Pay — Avdiivka Coke Plant",
-        "source_code": "KSE"
+        "title": "Examples of environmental harm in Ukraine: Avdiivka coke and chemical plant",
+        "url": "https://ceobs.org/ukraine-damage-map-avdiivka-coke-and-chemical-plant/",
+        "source_code": "BELLINGCAT"
       },
       {
-        "title": "Bellingcat Avdiivka destruction documentation",
-        "source_code": "BELLINGCAT"
+        "title": "Russians destroyed Avdiivka coke plant, it is impossible to restore it, says Metinvest CEO",
+        "url": "https://english.nv.ua/nation/russians-destroyed-avdiivka-coke-plant-it-is-impossible-to-restore-it-says-metinvest-ceo-50377445.html"
       }
     ]
   },

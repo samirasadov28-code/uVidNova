@@ -25,12 +25,12 @@
     ],
     "evidence_sources": [
       {
-        "title": "KSE Ukraine damage assessment — Mykolaiv water crisis",
-        "source_code": "KSE"
+        "title": "After Russia destroyed water supply, Mykolaiv is struggling to get clean water — NPR (October 2022)",
+        "url": "https://www.npr.org/2022/10/11/1128197788/after-russia-destroyed-water-supply-mykolaiv-is-struggling-to-get-clean-water"
       },
       {
-        "title": "UN OCHA Ukraine Situation Report — Mykolaiv water access",
-        "source_code": "OCHA"
+        "title": "UNICEF repairs a water supply system in Mykolaiv",
+        "url": "https://www.unicef.org/ukraine/en/stories/repair-of-water-supply-system-in-mykolaiv"
       }
     ]
   },

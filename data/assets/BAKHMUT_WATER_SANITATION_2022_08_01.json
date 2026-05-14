@@ -25,12 +25,14 @@
     ],
     "evidence_sources": [
       {
-        "title": "KSE Russia Will Pay — Bakhmut damage assessment",
-        "source_code": "KSE"
+        "title": "Ukraine: Deterioration of the humanitarian situation in Donetska oblast — Flash Update #1: Bakhmut (21 Mar 2023)",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-deterioration-humanitarian-situation-donetska-oblast-flash-update-1-bakhmut-21-mar-2023-enruuk",
+        "source_code": "OCHA"
       },
       {
-        "title": "Bellingcat Bakhmut city destruction documentation",
-        "source_code": "BELLINGCAT"
+        "title": "1.4 million people without running water across war-affected eastern Ukraine (April 2022)",
+        "url": "https://reliefweb.int/report/ukraine/14-million-people-without-running-water-across-war-affected-eastern-ukraine-15-april",
+        "source_code": "OCHA"
       }
     ]
   },

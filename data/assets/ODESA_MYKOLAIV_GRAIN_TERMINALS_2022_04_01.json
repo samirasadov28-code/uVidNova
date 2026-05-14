@@ -25,11 +25,13 @@
     ],
     "evidence_sources": [
       {
-        "title": "KSE Russia Will Pay — Odesa port infrastructure",
-        "source_code": "KSE"
+        "title": "Attacks on Odesa Port, Grain-Storage Facilities — UN Security Council (2023)",
+        "url": "https://press.un.org/en/2023/sc15367.doc.htm",
+        "source_code": "OCHA"
       },
       {
-        "title": "UN OCHA Ukraine — Black Sea grain corridor impact",
+        "title": "Black Sea Grain Initiative Joint Coordination Centre Operational Update (11 August 2022) — OCHA",
+        "url": "https://www.unocha.org/publications/report/ukraine/black-sea-grain-initiative-joint-coordination-centre-operational-update-11-august-2022",
         "source_code": "OCHA"
       }
     ]

@@ -25,12 +25,14 @@
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update #49 — Kakhovka dam collapse",
+        "title": "Ukraine — Humanitarian Impact and Response Flash Update #3: Destruction of Kakhovka Dam (8 Jun 2023)",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-impact-and-response-flash-update-3-destruction-kakhovka-dam-8-jun-2023-enuk",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE damage assessment — Kherson water infrastructure post-dam collapse",
-        "source_code": "KSE"
+        "title": "Kakhovka Dam destruction, one year on — OCHA",
+        "url": "https://www.unocha.org/publications/report/ukraine/kakhovka-dam-destruction-one-year-enuk",
+        "source_code": "OCHA"
       }
     ]
   },

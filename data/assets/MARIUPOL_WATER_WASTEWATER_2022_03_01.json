@@ -26,11 +26,13 @@
     ],
     "evidence_sources": [
       {
-        "title": "KSE Russia Will Pay — Mariupol infrastructure",
-        "source_code": "KSE"
+        "title": "WASH Cluster: Flash Update on WASH situation in Donetsk Oblast (27 Feb 2022)",
+        "url": "https://reliefweb.int/report/ukraine/wash-cluster-flash-update-wash-situation-donetsk-oblast-27022022",
+        "source_code": "OCHA"
       },
       {
-        "title": "UN OCHA Ukraine Situation Reports — Mariupol siege",
+        "title": "Ukraine: Mariupol Residents Trapped by Russian Assault — OCHA/ReliefWeb",
+        "url": "https://reliefweb.int/report/ukraine/ukraine-mariupol-residents-trapped-russian-assault-enuk",
         "source_code": "OCHA"
       }
     ]

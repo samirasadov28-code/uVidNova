@@ -25,12 +25,14 @@
     ],
     "evidence_sources": [
       {
-        "title": "KSE Russia Will Pay — Illich industrial damage",
-        "source_code": "KSE"
+        "title": "Examples of environmental harm in Ukraine: Ilyich Iron and Steel Works",
+        "url": "https://ceobs.org/ukraine-damage-map-ilyich-iron-and-steel-works/",
+        "source_code": "BELLINGCAT"
       },
       {
-        "title": "Bellingcat Mariupol siege documentation",
-        "source_code": "BELLINGCAT"
+        "title": "KSE Institute Report on Damages to Infrastructure Caused by Russia's War against Ukraine (March 2023)",
+        "url": "https://kse.ua/wp-content/uploads/2023/03/ENG_FINAL_Damages-Report_.pdf",
+        "source_code": "KSE"
       }
     ]
   },
