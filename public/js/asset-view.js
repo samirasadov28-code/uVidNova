@@ -139,7 +139,12 @@ function renderDamage(a) {
       ${sources.length > 0 ? `
         <h3>Evidence sources</h3>
         <ul class="source-list">
-          ${sources.map(s => `<li><a href="${escHtml(s.url)}" target="_blank" rel="noopener">${escHtml(s.title)}</a>${s.source_code ? ` <span class="source-chip">${escHtml(s.source_code)}</span>` : ''}</li>`).join('')}
+          ${sources.map(s => {
+            const link = s.url
+              ? `<a href="${escHtml(s.url)}" target="_blank" rel="noopener">${escHtml(s.title)}</a>`
+              : `<span>${escHtml(s.title)}</span>`;
+            return `<li>${link}${s.source_code ? ` <span class="source-chip">${escHtml(s.source_code)}</span>` : ''}</li>`;
+          }).join('')}
         </ul>` : ''}
     </section>`;
 }
@@ -265,18 +270,41 @@ function renderFinancing(a) {
 }
 
 function renderDonorPathway(a) {
-  const dp = a.donor_pathway;
-  if (!dp) return '';
+  const dp  = a.donor_pathway ?? {};
+  const reb = a.wartime_status?.rebuildability ?? '';
+  const isPipeline = (reb === 'occupied' || reb === 'frontline_adjacent');
+
   const { united24_url, mriya_url, vetted_ngos } = dp;
-  if (!united24_url && !mriya_url && (!vetted_ngos || vetted_ngos.length === 0)) return '';
+
+  // Fallback channel URLs for assets without specific project pages
+  const u24Link   = united24_url ?? 'https://u24.gov.ua/';
+  const mriyaLink = mriya_url ?? 'https://mriya.in.ua/';
+
+  const pipelineNote = isPipeline
+    ? `<div class="donor-pipeline-note">
+        ⚠ This asset is currently in ${reb === 'occupied' ? 'occupied territory' : 'a frontline-adjacent zone'}.
+        Donor channels are documented for pipeline planning but active funding commitments should await improved access conditions.
+       </div>`
+    : '';
 
   return `
     <section class="asset-section" id="donor-pathway">
       <h2>Institutional Donor Pathway</h2>
       <p class="section-note">Direct links to verified government and vetted-NGO channels. uVidNova is not a fundraising platform and earns nothing from these links.</p>
+      ${pipelineNote}
       <ul class="donor-list">
-        ${united24_url ? `<li><a href="${escHtml(united24_url)}" target="_blank" rel="noopener">UNITED24 project page ↗</a></li>` : ''}
-        ${mriya_url ? `<li><a href="${escHtml(mriya_url)}" target="_blank" rel="noopener">Mriya State Application ↗</a></li>` : ''}
+        <li>
+          <a href="${escHtml(u24Link)}" target="_blank" rel="noopener">
+            UNITED24 ${united24_url ? 'project page' : 'reconstruction portal'} ↗
+          </a>
+          ${!united24_url ? '<span class="donor-note">No dedicated project page — links to general reconstruction portal</span>' : ''}
+        </li>
+        <li>
+          <a href="${escHtml(mriyaLink)}" target="_blank" rel="noopener">
+            Mriya State Application ${mriya_url ? '' : '— Ukraine reconstruction investment platform'} ↗
+          </a>
+          ${!mriya_url ? '<span class="donor-note">No dedicated project entry — links to general platform</span>' : ''}
+        </li>
         ${(vetted_ngos ?? []).map(ngo => `<li>${escHtml(ngo)}</li>`).join('')}
       </ul>
     </section>`;
