@@ -121,6 +121,57 @@ img { max-width: 100%; height: auto; }
   background: #0d1b36;
 }
 
+/* ── Map view tab bar ─────────────────────────────────────────────────────── */
+.map-view-tabs {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 700;
+  display: flex;
+  gap: 0;
+  background: rgba(10,20,45,0.90);
+  border: 1px solid rgba(201,162,39,0.4);
+  border-radius: 8px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+}
+.map-view-tab {
+  background: none;
+  border: none;
+  border-right: 1px solid rgba(201,162,39,0.2);
+  color: rgba(255,255,255,0.55);
+  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.map-view-tab:last-child { border-right: none; }
+.map-view-tab:hover { background: rgba(201,162,39,0.12); color: rgba(255,255,255,0.85); }
+.map-view-tab-active {
+  background: rgba(201,162,39,0.18);
+  color: #f5c842;
+}
+.map-view-hint {
+  position: absolute;
+  bottom: 58px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 600;
+  background: rgba(10,20,45,0.82);
+  border: 1px solid rgba(201,162,39,0.35);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.76rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+}
+
 /* Map overlay toggle buttons */
 .map-toggle-btn {
   position: absolute;
@@ -151,8 +202,8 @@ img { max-width: 100%; height: auto; }
   border-color: #4a7fc4;
   color: #fff;
 }
-.map-toggle-left  { left: 14px; }
-.map-toggle-right { right: 14px; }
+.map-toggle-left  { left: 14px; top: 54px; }
+.map-toggle-right { right: 14px; top: 54px; }
 
 /* Panel close button (inside panel header) */
 .panel-close-btn {
@@ -1116,11 +1167,15 @@ body:has(#disclaimerBanner) .fab { bottom: 100px; }
   .etym-label { font-size: 0.62rem; }
   .etym-plus { font-size: 0.8rem; }
 
-  /* Map toggle buttons — smaller, stay accessible */
+  /* Map view tabs — compact on mobile */
+  .map-view-tabs { top: 8px; max-width: calc(100vw - 20px); }
+  .map-view-tab { font-size: 0.66rem; padding: 0.35rem 0.55rem; }
+
+  /* Map toggle buttons — pushed below tabs on mobile */
   .map-toggle-btn {
     font-size: 0.7rem;
     padding: 0.32rem 0.55rem;
-    top: 10px;
+    top: 48px;
   }
   .map-toggle-left  { left: 10px; }
   .map-toggle-right { right: 10px; }

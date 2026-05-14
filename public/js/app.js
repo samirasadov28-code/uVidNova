@@ -55,6 +55,15 @@ function makeIcon(asset) {
   });
 }
 
+function makeCompletedIcon() {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36" width="24" height="36">
+    <path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24C24 5.4 18.6 0 12 0z"
+          fill="#27ae60" stroke="#fff" stroke-width="1.5"/>
+    <text x="12" y="16" text-anchor="middle" font-size="10" fill="#fff" font-family="sans-serif">✓</text>
+  </svg>`;
+  return L.divIcon({ html: svg, className: '', iconSize: [24, 36], iconAnchor: [12, 36], popupAnchor: [0, -36] });
+}
+
 // ── Popup content ─────────────────────────────────────────────────────────────
 
 function fmtUSD(m) {
@@ -107,6 +116,7 @@ let oblastLayer = null;
 let oblastInfoData = null;
 let warMode = false;
 let warLayer = null;
+let mapViewMode = 'damaged'; // 'ukraine' | 'damaged' | 'reconstructed' | 'development'
 
 // Oblasts with significant current occupation (as of 2024-2025)
 // Crimea: fully occupied; Donetsk/Luhansk/Zaporizhzhia/Kherson: partially occupied
@@ -308,19 +318,88 @@ async function addOblastLayer() {
   }
 }
 
+// ── Map view switching ────────────────────────────────────────────────────────
+
+function setMapView(view) {
+  mapViewMode = view;
+
+  // Update tab active state
+  for (const btn of document.querySelectorAll('.map-view-tab')) {
+    const isActive = btn.id === `tab-${view}`;
+    btn.classList.toggle('map-view-tab-active', isActive);
+    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+  }
+
+  // Show/hide filter+asset controls (not useful in ukraine/development views)
+  const showControls = view === 'damaged' || view === 'reconstructed';
+  const filterBtn = document.getElementById('toggleFilterBtn');
+  const assetsBtn = document.getElementById('toggleAssetsBtn');
+  if (filterBtn) filterBtn.style.display = showControls ? '' : 'none';
+  if (assetsBtn) assetsBtn.style.display = showControls ? '' : 'none';
+
+  // Close open panels when switching away from views that use them
+  if (!showControls) {
+    const fp = document.getElementById('filterPanel');
+    const ap = document.getElementById('assetListPanel');
+    if (fp?.classList.contains('panel-open'))  window.uvTogglePanel?.('filterPanel', 'toggleFilterBtn');
+    if (ap?.classList.contains('panel-open'))  window.uvTogglePanel?.('assetListPanel', 'toggleAssetsBtn');
+  }
+
+  // Show/hide view hint overlay
+  let hint = document.getElementById('mapViewHint');
+  if (!hint) {
+    hint = document.createElement('div');
+    hint.id = 'mapViewHint';
+    hint.className = 'map-view-hint';
+    document.querySelector('.map-layout').appendChild(hint);
+  }
+  const hints = {
+    ukraine:       'Click any region to explore',
+    damaged:       '',
+    reconstructed: 'Showing completed reconstruction projects',
+    development:   'Development opportunities — coming soon',
+  };
+  hint.textContent = hints[view] || '';
+  hint.hidden = !hints[view];
+
+  renderMarkers();
+}
+
 // ── Marker layer ──────────────────────────────────────────────────────────────
 
 function renderMarkers() {
   for (const [, marker] of markerMap) map.removeLayer(marker);
   markerMap.clear();
 
-  const visible = allAssets.filter(matchesFilters);
+  // Ukraine view: no pins, just the oblast layer
+  if (mapViewMode === 'ukraine') {
+    updateAssetCount(0);
+    renderAssetList([]);
+    return;
+  }
+
+  // Development view: placeholder, no pins yet
+  if (mapViewMode === 'development') {
+    updateAssetCount(0);
+    renderAssetList([]);
+    return;
+  }
+
+  let candidates = allAssets.filter(matchesFilters);
+
+  // Reconstructed view: only completed assets, shown in green
+  if (mapViewMode === 'reconstructed') {
+    candidates = allAssets.filter(a => a.wartime_status?.lifecycle === 'complete');
+  }
+
+  const visible = candidates;
 
   for (const asset of visible) {
     const { lat, lon } = asset.location;
     if (!lat || !lon) continue;
 
-    const marker = L.marker([lat, lon], { icon: makeIcon(asset) })
+    const icon = mapViewMode === 'reconstructed' ? makeCompletedIcon() : makeIcon(asset);
+    const marker = L.marker([lat, lon], { icon })
       .bindPopup(makePopupHTML(asset), { maxWidth: 280, className: 'asset-popup' });
 
     marker.on('click', () => {
@@ -625,7 +704,7 @@ async function init() {
 
     allAssets = assets;
     initFilters();
-    renderMarkers();
+    setMapView('damaged');
 
     if (assets.length > 0) {
       const latlngs = assets
@@ -642,5 +721,6 @@ async function init() {
 
 init();
 
-// Expose war mode toggle for inline onclick stub
-window._appWarToggle = toggleWarMode;
+// Expose stubs for inline onclick handlers
+window._appWarToggle   = toggleWarMode;
+window._appSetMapView  = setMapView;

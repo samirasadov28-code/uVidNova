@@ -244,8 +244,10 @@
       if (submit) submit.disabled = false;
     });
   }
-  // War mode toggle — stub; app.js overwrites window.uvToggleWarMode after module loads
+  // War mode toggle — stub; app.js overwrites window._appWarToggle after module loads
   function uvToggleWarMode() { if (window._appWarToggle) window._appWarToggle(); }
+  // Map view switch — stub; app.js overwrites window._appSetMapView after module loads
+  function uvSetMapView(view) { if (window._appSetMapView) window._appSetMapView(view); }
   // Force reload (version bar button)
   function uvForceReload() {
     var btn = document.getElementById('forceReloadBtn');
@@ -285,6 +287,18 @@
 
     <!-- Map (always full-size, never pushed) -->
     <div id="map" role="main" aria-label="Ukraine reconstruction asset map"></div>
+
+    <!-- ── Map view tabs ───────────────────────────────────────────────────── -->
+    <div class="map-view-tabs" id="mapViewTabs" role="tablist">
+      <button class="map-view-tab" id="tab-ukraine" role="tab" aria-selected="false"
+              onclick="uvSetMapView('ukraine')">🇺🇦 Ukraine</button>
+      <button class="map-view-tab map-view-tab-active" id="tab-damaged" role="tab" aria-selected="true"
+              onclick="uvSetMapView('damaged')">⚡ Damaged</button>
+      <button class="map-view-tab" id="tab-reconstructed" role="tab" aria-selected="false"
+              onclick="uvSetMapView('reconstructed')">✅ Reconstructed</button>
+      <button class="map-view-tab" id="tab-development" role="tab" aria-selected="false"
+              onclick="uvSetMapView('development')">🔮 Development</button>
+    </div>
 
     <!-- Map overlay toggle buttons -->
     <button class="map-toggle-btn map-toggle-left" id="toggleFilterBtn"
