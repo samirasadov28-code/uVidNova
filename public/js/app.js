@@ -315,20 +315,6 @@ function initLanding() {
   }
   landingUpdateBtn?.addEventListener('click', () => window.location.reload());
 
-  // Feedback trigger from landing
-  document.getElementById('landingFeedbackBtn')?.addEventListener('click', () => {
-    document.getElementById('feedbackModal')?.removeAttribute('hidden');
-    document.getElementById('fbName')?.focus();
-  });
-
-  // AI chat trigger from landing
-  document.getElementById('landingChatBtn')?.addEventListener('click', () => {
-    const panel = document.getElementById('chatPanel');
-    if (panel) {
-      panel.removeAttribute('hidden');
-      document.getElementById('chatInput')?.focus();
-    }
-  });
 }
 
 // ── Feedback modal ────────────────────────────────────────────────────────────
