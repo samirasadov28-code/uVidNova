@@ -210,10 +210,11 @@ function renderCostPaths(a) {
     <section class="asset-section" id="cost-paths">
       <h2>Reconstruction Cost Estimates</h2>
       ${pending ? `<p class="pending-note">⏳ Cost methodology pending. Figures are illustrative placeholders; unit-cost table (Weekend 2) not yet populated.</p>` : ''}
-      <div class="disclaimer-inline">
+      <div class="disclaimer-inline" id="costDisclaimer">
         Cost figures are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and named comparable Ukrainian precedents.
         They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence.
         All amounts in USD millions.
+        <button class="disclaimer-inline-dismiss" onclick="this.closest('#costDisclaimer').remove()" aria-label="Dismiss">Understood</button>
       </div>
       <div class="cost-path-grid">
         ${paths.map(path => {
