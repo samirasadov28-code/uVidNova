@@ -244,6 +244,8 @@
       if (submit) submit.disabled = false;
     });
   }
+  // War mode toggle — stub; app.js overwrites window.uvToggleWarMode after module loads
+  function uvToggleWarMode() { if (window._appWarToggle) window._appWarToggle(); }
   // Force reload (version bar button)
   function uvForceReload() {
     var btn = document.getElementById('forceReloadBtn');
@@ -389,6 +391,7 @@
       <span data-i18n="version.update_msg">· New version ready —</span>
       <button class="update-reload-btn" id="updateReloadBtn" data-i18n="version.reload">reload</button>
     </span>
+    <button class="war-mode-btn" id="warModeBtn" onclick="uvToggleWarMode()" title="Toggle war view">⚔ War view</button>
   </div>
 
   <!-- ── Feedback floating button ──────────────────────────────────────────── -->

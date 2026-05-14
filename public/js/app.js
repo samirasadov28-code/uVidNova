@@ -105,6 +105,13 @@ let allAssets = [];
 const markerMap = new Map();
 let oblastLayer = null;
 let oblastInfoData = null;
+let warMode = false;
+let warLayer = null;
+
+// Oblasts with significant current occupation (as of 2024-2025)
+// Crimea: fully occupied; Donetsk/Luhansk/Zaporizhzhia/Kherson: partially occupied
+const OCCUPIED_OBLASTS = new Set(['Crimea', 'Luhansk']);
+const PARTIALLY_OCCUPIED_OBLASTS = new Set(['Donetsk', 'Zaporizhzhia', 'Kherson']);
 
 // ── Oblast info panel ─────────────────────────────────────────────────────────
 
@@ -113,7 +120,7 @@ let oblastInfoData = null;
 const OBLAST_INFO_MAP = {
   'Kyiv':          'Kyiv Oblast',
   'Kyiv City':     'Kyiv City',
-  'Crimea':        'Crimea (Annexed)',
+  'Crimea':        'Crimea (Temporarily Occupied)',  // UA territory, temporarily occupied
   'Donetsk':       'Donetsk Oblast',
   'Luhansk':       'Luhansk Oblast',
   'Dnipropetrovsk':'Dnipropetrovsk Oblast',
@@ -180,10 +187,9 @@ function showOblastPanel(info, featureName) {
   const famousLabel  = t('oblast.famous_for');
   const reconLabel   = t('oblast.reconstruction');
 
-  const wikiFile = info?.wiki_image;
-  const imgHTML = wikiFile
-    ? `<img src="https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(wikiFile)}?width=480"
-             alt="${name}" class="oblast-photo" loading="lazy" onerror="this.style.display='none'">`
+  const wikiArticle = info?.wiki_article;
+  const imgHTML = wikiArticle
+    ? `<div class="oblast-photo-wrap" id="oblastPhotoWrap"><div class="oblast-photo-loading"></div></div>`
     : '';
 
   panel.innerHTML = `
@@ -205,19 +211,70 @@ function showOblastPanel(info, featureName) {
     setTimeout(() => { panel.hidden = true; }, 280);
     if (oblastLayer) oblastLayer.resetStyle();
   });
+
+  // Load photo via Wikipedia REST API (avoids guessing Commons filenames)
+  if (wikiArticle) {
+    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wikiArticle)}`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        const wrap = document.getElementById('oblastPhotoWrap');
+        if (!wrap) return;
+        if (data?.thumbnail?.source) {
+          wrap.innerHTML = `<img src="${data.thumbnail.source}" alt="${name}" class="oblast-photo">`;
+        } else {
+          wrap.remove();
+        }
+      })
+      .catch(() => {
+        const wrap = document.getElementById('oblastPhotoWrap');
+        if (wrap) wrap.remove();
+      });
+  }
 }
 
 // ── Oblast boundary layer ─────────────────────────────────────────────────────
 
 function oblastStyle(feature) {
-  const isCrimea = feature.properties?.name === 'Crimea';
+  const name = feature.properties?.name ?? '';
+  const isCrimea = name === 'Crimea';
+  const isOccupied = OCCUPIED_OBLASTS.has(name);
+  const isPartial  = PARTIALLY_OCCUPIED_OBLASTS.has(name);
+
+  if (warMode && (isOccupied || isCrimea)) {
+    return {
+      color:       '#c9a227',
+      weight:      1.5,
+      fillColor:   '#6b0000',
+      fillOpacity: 0.72,
+      dashArray:   '7, 5',
+    };
+  }
+  if (warMode && isPartial) {
+    return {
+      color:       '#c9a227',
+      weight:      1.5,
+      fillColor:   '#8b1a1a',
+      fillOpacity: 0.50,
+      dashArray:   '5, 6',
+    };
+  }
   return {
-    color:       '#4a7fc4',
-    weight:      1.2,
+    color:       '#c9a227',
+    weight:      1.5,
     fillColor:   isCrimea ? '#162d5a' : '#1e3d7a',
     fillOpacity: isCrimea ? 0.55 : 0.70,
-    dashArray:   isCrimea ? '5, 4' : null,
+    dashArray:   isCrimea ? '6, 4' : null,
   };
+}
+
+function toggleWarMode() {
+  warMode = !warMode;
+  if (oblastLayer) oblastLayer.setStyle(oblastStyle);
+  const btn = document.getElementById('warModeBtn');
+  if (btn) {
+    btn.classList.toggle('war-active', warMode);
+    btn.textContent = warMode ? '🗺 Normal view' : '⚔ War view';
+  }
 }
 
 async function addOblastLayer() {
@@ -228,7 +285,7 @@ async function addOblastLayer() {
       onEachFeature(feature, layer) {
         const name = feature.properties?.name ?? '';
         const isCrimea = name === 'Crimea';
-        const tooltipText = isCrimea ? 'Crimea (occupied — UA territory)' : name;
+        const tooltipText = isCrimea ? 'Crimea (temporarily occupied — UA territory)' : name;
         if (name) layer.bindTooltip(tooltipText, { permanent: false, sticky: true, className: 'oblast-tooltip' });
 
         layer.on('mouseover', function () {
@@ -584,3 +641,6 @@ async function init() {
 }
 
 init();
+
+// Expose war mode toggle for inline onclick stub
+window._appWarToggle = toggleWarMode;

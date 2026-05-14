@@ -10,7 +10,8 @@
       "reconstruction_en": "Civilian infrastructure, agricultural facilities",
       "reconstruction_uk": "Цивільна інфраструктура, сільськогосподарські об'єкти",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Cherkasy_aerial.jpg"
+      "wiki_image": "Cherkasy_aerial.jpg",
+      "wiki_article": "Cherkasy"
     },
     {
       "name_en": "Chernihiv Oblast",
@@ -22,7 +23,8 @@
       "reconstruction_en": "Residential housing, school infrastructure, regional library, bridges",
       "reconstruction_uk": "Житловий фонд, шкільна інфраструктура, регіональна бібліотека, мости",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Chernihiv_Dytynets.jpg"
+      "wiki_image": "Chernihiv_Dytynets.jpg",
+      "wiki_article": "Chernihiv"
     },
     {
       "name_en": "Chernivtsi Oblast",
@@ -34,10 +36,11 @@
       "reconstruction_en": "Minimal direct damage; hosting large displaced population",
       "reconstruction_uk": "Мінімальні прямі пошкодження; прийом великої кількості переселенців",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Chernivtsi_university.jpg"
+      "wiki_image": "Chernivtsi_university.jpg",
+      "wiki_article": "Chernivtsi"
     },
     {
-      "name_en": "Crimea (Annexed)",
+      "name_en": "Crimea (Temporarily Occupied)",
       "name_uk": "Крим (окупований)",
       "capital_en": "Simferopol",
       "capital_uk": "Сімферополь",
@@ -46,7 +49,8 @@
       "reconstruction_en": "Annexed in 2014 — full reconstruction planning pending liberation",
       "reconstruction_uk": "Анексований у 2014 р. — повне планування відбудови після звільнення",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Crimea_Swallows_Nest.jpg"
+      "wiki_image": "Crimea_Swallows_Nest.jpg",
+      "wiki_article": "Crimea"
     },
     {
       "name_en": "Dnipropetrovsk Oblast",
@@ -58,7 +62,8 @@
       "reconstruction_en": "Critical industrial facilities, children's hospital, energy infrastructure",
       "reconstruction_uk": "Критичні промислові об'єкти, дитяча лікарня, енергетична інфраструктура",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Dnipro_panorama.jpg"
+      "wiki_image": "Dnipro_panorama.jpg",
+      "wiki_article": "Dnipro, Ukraine"
     },
     {
       "name_en": "Donetsk Oblast",
@@ -70,7 +75,8 @@
       "reconstruction_en": "Azovstal, Mariupol port, Mariupol Drama Theatre, water/sanitation, mass housing",
       "reconstruction_uk": "Азовсталь, Маріупольський порт, Драматичний театр, водопостачання, масовий житловий фонд",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Mariupol_Drama_Theatre.jpg"
+      "wiki_image": "Mariupol_Drama_Theatre.jpg",
+      "wiki_article": "Donetsk"
     },
     {
       "name_en": "Ivano-Frankivsk Oblast",
@@ -82,7 +88,8 @@
       "reconstruction_en": "Hosting displaced population; energy infrastructure support",
       "reconstruction_uk": "Прийом переселенців; підтримка енергетичної інфраструктури",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Bukovel_ski_resort.jpg"
+      "wiki_image": "Bukovel_ski_resort.jpg",
+      "wiki_article": "Ivano-Frankivsk"
     },
     {
       "name_en": "Kharkiv Oblast",
@@ -94,7 +101,8 @@
       "reconstruction_en": "University, district heating, regional hospital, substation, residential housing",
       "reconstruction_uk": "Університет, централізоване теплопостачання, обласна лікарня, підстанція, житловий фонд",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Kharkiv_Freedom_Square.jpg"
+      "wiki_image": "Kharkiv_Freedom_Square.jpg",
+      "wiki_article": "Kharkiv"
     },
     {
       "name_en": "Kherson Oblast",
@@ -106,7 +114,8 @@
       "reconstruction_en": "Kakhovka HPP, water supply systems, post-flood housing and infrastructure",
       "reconstruction_uk": "Каховська ГЕС, системи водопостачання, житло та інфраструктура після затоплення",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Kherson_city.jpg"
+      "wiki_image": "Kherson_city.jpg",
+      "wiki_article": "Kherson"
     },
     {
       "name_en": "Khmelnytskyi Oblast",
@@ -118,7 +127,8 @@
       "reconstruction_en": "Limited direct damage; energy and civilian infrastructure",
       "reconstruction_uk": "Незначні прямі пошкодження; енергетична та цивільна інфраструктура",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Kamianets-Podilskyi_fortress.jpg"
+      "wiki_image": "Kamianets-Podilskyi_fortress.jpg",
+      "wiki_article": "Khmelnytskyi"
     },
     {
       "name_en": "Kirovohrad Oblast",
@@ -130,7 +140,8 @@
       "reconstruction_en": "Agricultural facilities, energy infrastructure",
       "reconstruction_uk": "Сільськогосподарські об'єкти, енергетична інфраструктура",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Kropyvnytskyi_city.jpg"
+      "wiki_image": "Kropyvnytskyi_city.jpg",
+      "wiki_article": "Kropyvnytskyi"
     },
     {
       "name_en": "Kyiv City",
@@ -142,7 +153,8 @@
       "reconstruction_en": "Okhmatdyt Children's Hospital, energy substations",
       "reconstruction_uk": "Дитяча лікарня «Охматдит», енергетичні підстанції",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Kyiv_Pechersk_Lavra.jpg"
+      "wiki_image": "Kyiv_Pechersk_Lavra.jpg",
+      "wiki_article": "Kyiv"
     },
     {
       "name_en": "Kyiv Oblast",
@@ -154,7 +166,8 @@
       "reconstruction_en": "Bucha and Borodyanka residential, Hostomel airport (An-225 Mriya), Irpin and Bucha bridges",
       "reconstruction_uk": "Житловий фонд Бучі та Бородянки, аеропорт Гостомель (Ан-225 «Мрія»), мости Ірпеня та Бучі",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Bucha_liberation.jpg"
+      "wiki_image": "Bucha_liberation.jpg",
+      "wiki_article": "Kyiv Oblast"
     },
     {
       "name_en": "Luhansk Oblast",
@@ -166,7 +179,8 @@
       "reconstruction_en": "Majority under occupation — full planning pending liberation",
       "reconstruction_uk": "Більшість під окупацією — повне планування після звільнення",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Severodonetsk_city.jpg"
+      "wiki_image": "Severodonetsk_city.jpg",
+      "wiki_article": "Luhansk"
     },
     {
       "name_en": "Lviv Oblast",
@@ -178,7 +192,8 @@
       "reconstruction_en": "Cultural centre reconstruction, energy infrastructure, hosting 200,000+ displaced",
       "reconstruction_uk": "Відбудова культурного центру, енергетична інфраструктура, прийом 200 000+ переселенців",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Lviv_Rynok_Square.jpg"
+      "wiki_image": "Lviv_Rynok_Square.jpg",
+      "wiki_article": "Lviv"
     },
     {
       "name_en": "Mykolaiv Oblast",
@@ -190,7 +205,8 @@
       "reconstruction_en": "Water supply system, shipyards, grain terminals, residential",
       "reconstruction_uk": "Водопостачання, суднобудівні заводи, зернові термінали, житловий фонд",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Mykolaiv_shipyard.jpg"
+      "wiki_image": "Mykolaiv_shipyard.jpg",
+      "wiki_article": "Mykolaiv"
     },
     {
       "name_en": "Odesa Oblast",
@@ -202,7 +218,8 @@
       "reconstruction_en": "Transfiguration Cathedral, grain terminals, port infrastructure",
       "reconstruction_uk": "Спасо-Преображенський собор, зернові термінали, портова інфраструктура",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Odesa_Potemkin_Stairs.jpg"
+      "wiki_image": "Odesa_Potemkin_Stairs.jpg",
+      "wiki_article": "Odessa"
     },
     {
       "name_en": "Poltava Oblast",
@@ -214,7 +231,8 @@
       "reconstruction_en": "Energy infrastructure (Kremenchuk area), agricultural storage",
       "reconstruction_uk": "Енергетична інфраструктура (Кременчук), зерносховища",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Poltava_Uspenska_Church.jpg"
+      "wiki_image": "Poltava_Uspenska_Church.jpg",
+      "wiki_article": "Poltava"
     },
     {
       "name_en": "Rivne Oblast",
@@ -226,7 +244,8 @@
       "reconstruction_en": "Energy supply infrastructure, civilian facilities",
       "reconstruction_uk": "Енергопостачання, цивільні об'єкти",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Klevan_tunnel_of_love.jpg"
+      "wiki_image": "Klevan_tunnel_of_love.jpg",
+      "wiki_article": "Rivne"
     },
     {
       "name_en": "Sumy Oblast",
@@ -238,7 +257,8 @@
       "reconstruction_en": "Border-area infrastructure, residential, healthcare",
       "reconstruction_uk": "Прикордонна інфраструктура, житловий фонд, охорона здоров'я",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Sumy_Transfiguration_Cathedral.jpg"
+      "wiki_image": "Sumy_Transfiguration_Cathedral.jpg",
+      "wiki_article": "Sumy"
     },
     {
       "name_en": "Ternopil Oblast",
@@ -250,7 +270,8 @@
       "reconstruction_en": "Minimal direct damage; supporting displaced population",
       "reconstruction_uk": "Мінімальні прямі пошкодження; підтримка переселенців",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Pochayiv_Lavra.jpg"
+      "wiki_image": "Pochayiv_Lavra.jpg",
+      "wiki_article": "Ternopil"
     },
     {
       "name_en": "Vinnytsia Oblast",
@@ -262,7 +283,8 @@
       "reconstruction_en": "Power substation (struck 2022), regional hospital",
       "reconstruction_uk": "Силова підстанція (удар 2022 р.), обласна лікарня",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Vinnytsia_Roshen_fountain.jpg"
+      "wiki_image": "Vinnytsia_Roshen_fountain.jpg",
+      "wiki_article": "Vinnytsia"
     },
     {
       "name_en": "Volyn Oblast",
@@ -274,7 +296,8 @@
       "reconstruction_en": "Minimal direct damage; hosting displaced population",
       "reconstruction_uk": "Мінімальні прямі пошкодження; прийом переселенців",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Lutsk_castle.jpg"
+      "wiki_image": "Lutsk_castle.jpg",
+      "wiki_article": "Lutsk"
     },
     {
       "name_en": "Zakarpattia Oblast",
@@ -286,7 +309,8 @@
       "reconstruction_en": "Transit infrastructure for humanitarian aid; limited direct damage",
       "reconstruction_uk": "Транзитна інфраструктура гуманітарної допомоги; незначні прямі пошкодження",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Uzhhorod_sakura.jpg"
+      "wiki_image": "Uzhhorod_sakura.jpg",
+      "wiki_article": "Uzhhorod"
     },
     {
       "name_en": "Zaporizhzhia Oblast",
@@ -298,7 +322,8 @@
       "reconstruction_en": "Partially occupied; power plant risk mitigation, Mariupol industrial",
       "reconstruction_uk": "Частково окупована; зменшення ризиків АЕС, маріупольська промисловість",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Khortytsia_island.jpg"
+      "wiki_image": "Khortytsia_island.jpg",
+      "wiki_article": "Zaporizhzhia"
     },
     {
       "name_en": "Zhytomyr Oblast",
@@ -310,7 +335,8 @@
       "reconstruction_en": "Energy infrastructure, residential (border-region impacts)",
       "reconstruction_uk": "Енергетична інфраструктура, житловий фонд",
       "photo_credit": "Wikimedia Commons",
-      "wiki_image": "Zhytomyr_city.jpg"
+      "wiki_image": "Zhytomyr_city.jpg",
+      "wiki_article": "Zhytomyr"
     }
   ]
 }
