@@ -73,7 +73,7 @@ img { max-width: 100%; height: auto; }
   text-decoration: none;
   flex-shrink: 0;
 }
-.logo-img { border-radius: 50%; }
+.logo-img { border-radius: 4px; }
 .wordmark-text {
   font-size: 1.35rem;
   font-weight: 700;
@@ -400,27 +400,54 @@ body.asset-page { display: flex; flex-direction: column; }
   position: fixed;
   inset: 0;
   z-index: 4000;
-  background: var(--colour-navy);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  transition: opacity 0.4s ease, visibility 0.4s;
+  transition: opacity 0.5s ease, visibility 0.5s;
+  overflow: hidden;
+  background-image: url('/assets/ukraine-bg.svg');
+  background-size: cover;
+  background-position: center bottom;
+}
+/* Readability overlay (pseudo, non-interactive) */
+.landing-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(2,8,28,0.72) 0%,
+    rgba(4,12,40,0.58) 50%,
+    rgba(2,8,28,0.78) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 .landing-overlay.dismissed {
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
+  /* pointer-events stays auto until fully invisible so click-through isn't jarring */
 }
+.landing-overlay.dismissed * { pointer-events: none; }
 .landing-content {
-  max-width: 520px;
+  position: relative;
+  z-index: 1;
+  max-width: 540px;
+  width: 100%;
   text-align: center;
   color: #fff;
+  background: rgba(4,12,40,0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2.5rem 1.75rem;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.55);
 }
 .landing-logo {
-  border-radius: 50%;
+  border-radius: 6px;
   margin-bottom: 1rem;
-  border: 3px solid rgba(255,255,255,0.2);
 }
 .landing-title {
   font-size: 2.5rem;
@@ -492,6 +519,58 @@ body.asset-page { display: flex; flex-direction: column; }
 .landing-disclaimer-small {
   font-size: 0.75rem;
   color: rgba(255,255,255,0.35);
+}
+.landing-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+.landing-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.landing-action-btn:hover {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.30);
+  color: #fff;
+}
+.landing-version {
+  margin-left: auto;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.30);
+  letter-spacing: 0.04em;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+.landing-update-prompt {
+  color: var(--colour-gold-light);
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+}
+.landing-update-btn {
+  background: none;
+  border: none;
+  color: var(--colour-gold-light);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  padding: 0;
 }
 
 /* ── Version bar ─────────────────────────────────────────────────────────── */
@@ -586,7 +665,7 @@ body.asset-page { display: flex; flex-direction: column; }
 .modal-overlay {
   position: fixed;
   inset: 0;
-  z-index: 3000;
+  z-index: 5000;
   background: rgba(0,0,0,0.55);
   display: flex;
   align-items: center;
@@ -677,7 +756,7 @@ body.asset-page { display: flex; flex-direction: column; }
   position: fixed;
   bottom: 26px;
   right: 0;
-  z-index: 2500;
+  z-index: 5000;
   width: 360px;
   height: 520px;
   background: var(--colour-surface);

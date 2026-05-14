@@ -1,0 +1,321 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#030c22"/>
+      <stop offset="20%"  stop-color="#071b52"/>
+      <stop offset="42%"  stop-color="#1045a8"/>
+      <stop offset="58%"  stop-color="#2e70d4"/>
+      <stop offset="66%"  stop-color="#c09018"/>
+      <stop offset="74%"  stop-color="#d4a820"/>
+      <stop offset="85%"  stop-color="#9a6c10"/>
+      <stop offset="100%" stop-color="#3d2204"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#c89018"/>
+      <stop offset="55%"  stop-color="#a07010"/>
+      <stop offset="100%" stop-color="#4a2c04"/>
+    </linearGradient>
+    <!-- Reusable: single onion dome + cross, base at y=0, rises to y=-90 -->
+    <g id="dome">
+      <path d="M-10,-40 Q-16,-68 0,-80 Q16,-68 10,-40Z"/>
+      <rect x="-1.5" y="-88" width="3" height="10"/>
+      <rect x="-6"   y="-82" width="12" height="2.5"/>
+      <rect x="-3.5" y="-76" width="7"  height="2"/>
+    </g>
+    <!-- Reusable: sunflower, base at y=0, head at y=-H -->
+    <g id="sf-lg">
+      <rect x="-2.5" y="-160" width="5" height="160" fill="#1c3d0a"/>
+      <path d="M2.5,-95 Q28,-82 20,-65 Q8,-76 2.5,-88Z" fill="#1c3d0a"/>
+      <path d="M-2.5,-115 Q-28,-100 -20,-83 Q-8,-92 -2.5,-105Z" fill="#1c3d0a"/>
+      <circle cx="0" cy="-163" r="20" fill="#7a5200"/>
+      <circle cx="0" cy="-163" r="12" fill="#2c1800"/>
+      <ellipse cx="0" cy="-186" rx="5" ry="10" fill="#d4a820"/>
+      <ellipse cx="0" cy="-186" rx="5" ry="10" fill="#d4a820" transform="rotate(45  0 -163)"/>
+      <ellipse cx="0" cy="-186" rx="5" ry="10" fill="#d4a820" transform="rotate(90  0 -163)"/>
+      <ellipse cx="0" cy="-186" rx="5" ry="10" fill="#d4a820" transform="rotate(135 0 -163)"/>
+      <ellipse cx="0" cy="-186" rx="5" ry="10" fill="#d4a820" transform="rotate(180 0 -163)"/>
+      <ellipse cx="0" cy="-186" rx="5" ry="10" fill="#d4a820" transform="rotate(225 0 -163)"/>
+      <ellipse cx="0" cy="-186" rx="5" ry="10" fill="#d4a820" transform="rotate(270 0 -163)"/>
+      <ellipse cx="0" cy="-186" rx="5" ry="10" fill="#d4a820" transform="rotate(315 0 -163)"/>
+    </g>
+    <g id="sf-sm">
+      <rect x="-2" y="-120" width="4" height="120" fill="#1c3d0a"/>
+      <path d="M2,-70 Q22,-60 15,-46 Q5,-55 2,-65Z" fill="#1c3d0a"/>
+      <circle cx="0" cy="-122" r="15" fill="#7a5200"/>
+      <circle cx="0" cy="-122" r="9"  fill="#2c1800"/>
+      <ellipse cx="0" cy="-140" rx="4" ry="8" fill="#d4a820"/>
+      <ellipse cx="0" cy="-140" rx="4" ry="8" fill="#d4a820" transform="rotate(45  0 -122)"/>
+      <ellipse cx="0" cy="-140" rx="4" ry="8" fill="#d4a820" transform="rotate(90  0 -122)"/>
+      <ellipse cx="0" cy="-140" rx="4" ry="8" fill="#d4a820" transform="rotate(135 0 -122)"/>
+      <ellipse cx="0" cy="-140" rx="4" ry="8" fill="#d4a820" transform="rotate(180 0 -122)"/>
+      <ellipse cx="0" cy="-140" rx="4" ry="8" fill="#d4a820" transform="rotate(225 0 -122)"/>
+      <ellipse cx="0" cy="-140" rx="4" ry="8" fill="#d4a820" transform="rotate(270 0 -122)"/>
+      <ellipse cx="0" cy="-140" rx="4" ry="8" fill="#d4a820" transform="rotate(315 0 -122)"/>
+    </g>
+  </defs>
+
+  <!-- ── Sky gradient ─────────────────────────────────────────────────── -->
+  <rect width="1440" height="900" fill="url(#sky)"/>
+
+  <!-- ── Stars ──────────────────────────────────────────────────────────── -->
+  <g fill="white">
+    <circle cx="88"  cy="52"  r="1.4" opacity=".75"/>
+    <circle cx="204" cy="30"  r=".9"  opacity=".55"/>
+    <circle cx="318" cy="68"  r="1.6" opacity=".80"/>
+    <circle cx="436" cy="38"  r="1.0" opacity=".60"/>
+    <circle cx="555" cy="20"  r="1.2" opacity=".70"/>
+    <circle cx="682" cy="58"  r=".7"  opacity=".45"/>
+    <circle cx="802" cy="26"  r="1.5" opacity=".75"/>
+    <circle cx="924" cy="48"  r=".9"  opacity=".55"/>
+    <circle cx="1046" cy="16" r="1.4" opacity=".80"/>
+    <circle cx="1158" cy="62" r="1.0" opacity=".55"/>
+    <circle cx="1284" cy="36" r="1.3" opacity=".70"/>
+    <circle cx="1390" cy="52" r=".8"  opacity=".45"/>
+    <circle cx="148"  cy="110" r=".8" opacity=".40"/>
+    <circle cx="455"  cy="128" r="1.1" opacity=".50"/>
+    <circle cx="748"  cy="105" r=".9" opacity=".50"/>
+    <circle cx="1068" cy="122" r=".8" opacity=".45"/>
+    <circle cx="1322" cy="98" r="1.1" opacity=".55"/>
+    <circle cx="260"  cy="88"  r="1.0" opacity=".50"/>
+    <circle cx="1180" cy="102" r="1.0" opacity=".50"/>
+  </g>
+
+  <!-- ── Crescent moon ──────────────────────────────────────────────────── -->
+  <g transform="translate(1310,72)">
+    <circle cx="0" cy="0" r="24" fill="rgba(255,235,140,0.30)"/>
+    <circle cx="9" cy="-5" r="19" fill="#030c22"/>
+  </g>
+
+  <!-- ── Carpathian mountains ───────────────────────────────────────────── -->
+  <path fill="#06112a" opacity=".92"
+    d="M0,450 L80,395 L170,425 L270,355 L380,398 L490,318
+       L600,362 L710,288 L820,332 L920,365 L1030,298
+       L1140,342 L1250,312 L1360,358 L1440,332 L1440,510 L0,510Z"/>
+
+  <!-- ── Mid rolling hills ─────────────────────────────────────────────── -->
+  <path fill="#091e3a"
+    d="M0,518 Q240,492 480,516 Q720,540 960,510 Q1200,480 1440,516 L1440,900 L0,900Z"/>
+
+  <!-- ── Near rolling hills ────────────────────────────────────────────── -->
+  <path fill="#0e2c48"
+    d="M0,585 Q180,562 360,582 Q540,602 720,572 Q900,542 1080,575 Q1260,605 1440,568 L1440,900 L0,900Z"/>
+
+  <!-- ── Sunflower field ────────────────────────────────────────────────── -->
+  <path fill="url(#field)"
+    d="M0,680 Q360,666 720,678 Q1080,690 1440,668 L1440,900 L0,900Z"/>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+       Kyiv Pechersk Lavra complex — seated on mid hill, centred ~x=680
+  ════════════════════════════════════════════════════════════════════════ -->
+  <g fill="#04091e" transform="translate(580,514)">
+
+    <!-- Great Bell Tower (tallest, far right of cluster) -->
+    <g transform="translate(200,0)">
+      <rect x="-14" y="-180" width="28" height="180"/>
+      <!-- Decorative tier -->
+      <rect x="-18" y="-100" width="36" height="8"/>
+      <!-- Pyramidal top -->
+      <polygon points="-14,-180 0,-215 14,-180"/>
+      <!-- Dome -->
+      <path d="M-12,-215 Q-18,-252 0,-268 Q18,-252 12,-215Z"/>
+      <!-- Cross -->
+      <rect x="-2"  y="-278" width="4"  height="14"/>
+      <rect x="-8"  y="-270" width="16" height="3"/>
+      <rect x="-5"  y="-264" width="10" height="2.5"/>
+    </g>
+
+    <!-- Cathedral of the Dormition — wide body, 5 domes -->
+    <g transform="translate(0,0)">
+      <rect x="-80" y="-105" width="160" height="105"/>
+      <!-- Side wings -->
+      <rect x="-110" y="-75" width="32" height="75"/>
+      <rect x="78"   y="-75" width="32" height="75"/>
+      <!-- Central dome (tallest) -->
+      <g transform="translate(0,-105)">
+        <rect x="-10" y="-38" width="20" height="38"/>
+        <path d="M-12,-38 Q-18,-72 0,-84 Q18,-72 12,-38Z"/>
+        <rect x="-2"  y="-93" width="4"  height="12"/>
+        <rect x="-7"  y="-86" width="14" height="2.5"/>
+      </g>
+      <!-- Left dome 1 -->
+      <g transform="translate(-42,-105)">
+        <rect x="-8" y="-28" width="16" height="28"/>
+        <path d="M-10,-28 Q-14,-55 0,-65 Q14,-55 10,-28Z"/>
+        <rect x="-1.5" y="-73" width="3" height="10"/>
+        <rect x="-5"   y="-67" width="10" height="2"/>
+      </g>
+      <!-- Right dome 1 -->
+      <g transform="translate(42,-105)">
+        <rect x="-8" y="-28" width="16" height="28"/>
+        <path d="M-10,-28 Q-14,-55 0,-65 Q14,-55 10,-28Z"/>
+        <rect x="-1.5" y="-73" width="3" height="10"/>
+        <rect x="-5"   y="-67" width="10" height="2"/>
+      </g>
+      <!-- Left dome 2 (smaller, outer) -->
+      <g transform="translate(-90,-75)">
+        <rect x="-7" y="-22" width="14" height="22"/>
+        <path d="M-9,-22 Q-13,-44 0,-52 Q13,-44 9,-22Z"/>
+        <rect x="-1.5" y="-59" width="3" height="9"/>
+        <rect x="-5"   y="-54" width="10" height="2"/>
+      </g>
+      <!-- Right dome 2 (smaller, outer) -->
+      <g transform="translate(90,-75)">
+        <rect x="-7" y="-22" width="14" height="22"/>
+        <path d="M-9,-22 Q-13,-44 0,-52 Q13,-44 9,-22Z"/>
+        <rect x="-1.5" y="-59" width="3" height="9"/>
+        <rect x="-5"   y="-54" width="10" height="2"/>
+      </g>
+    </g>
+
+    <!-- Refectory church (left) -->
+    <g transform="translate(-145,0)">
+      <rect x="-22" y="-70" width="44" height="70"/>
+      <g transform="translate(0,-70)">
+        <rect x="-8"  y="-25" width="16" height="25"/>
+        <path d="M-10,-25 Q-14,-50 0,-60 Q14,-50 10,-25Z"/>
+        <rect x="-1.5" y="-68" width="3" height="10"/>
+        <rect x="-5"   y="-62" width="10" height="2"/>
+      </g>
+    </g>
+
+    <!-- Connecting rampart wall -->
+    <rect x="-175" y="-8" width="380" height="8"/>
+    <rect x="-185" y="-20" width="12" height="20"/>
+    <rect x="173"  y="-20" width="12" height="20"/>
+  </g>
+
+  <!-- ── Left small church ──────────────────────────────────────────────── -->
+  <g fill="#04091e" opacity=".82" transform="translate(185,516)">
+    <rect x="-14" y="-60" width="28" height="60"/>
+    <rect x="-8"  y="-78" width="16" height="20"/>
+    <path d="M-10,-78 Q-15,-106 0,-118 Q15,-106 10,-78Z"/>
+    <rect x="-1.5" y="-126" width="3"  height="11"/>
+    <rect x="-5"   y="-120" width="10" height="2.5"/>
+    <!-- Small side dome -->
+    <rect x="-22" y="-40" width="10" height="40"/>
+    <rect x="-24" y="-52" width="14" height="14"/>
+    <path d="M-24,-52 Q-27,-68 -17,-74 Q-7,-68 -10,-52Z"/>
+    <rect x="-18.5" y="-81" width="3" height="9"/>
+    <rect x="-22"   y="-76" width="10" height="2"/>
+  </g>
+
+  <!-- ── Right small church ─────────────────────────────────────────────── -->
+  <g fill="#04091e" opacity=".78" transform="translate(1220,528)">
+    <rect x="-16" y="-55" width="32" height="55"/>
+    <rect x="-9"  y="-73" width="18" height="20"/>
+    <path d="M-11,-73 Q-16,-98 0,-108 Q16,-98 11,-73Z"/>
+    <rect x="-2"   y="-116" width="4"  height="10"/>
+    <rect x="-6"   y="-110" width="12" height="2.5"/>
+    <rect x="17"   y="-38"  width="10" height="38"/>
+    <rect x="15"   y="-50"  width="14" height="14"/>
+    <path d="M15,-50 Q12,-65 22,-72 Q32,-65 29,-50Z"/>
+    <rect x="20.5" y="-80" width="3"  height="9"/>
+    <rect x="17"   y="-75" width="10" height="2"/>
+  </g>
+
+  <!-- ── Left windmill ─────────────────────────────────────────────────── -->
+  <g fill="#04091e" opacity=".72" transform="translate(295,490)">
+    <polygon points="-10,0 0,-95 10,0"/>
+    <!-- Blades -->
+    <line x1="0" y1="-65" x2="-38" y2="-42" stroke="#04091e" stroke-width="6" stroke-linecap="round"/>
+    <line x1="0" y1="-65" x2="38"  y2="-42" stroke="#04091e" stroke-width="6" stroke-linecap="round"/>
+    <line x1="0" y1="-65" x2="-26" y2="-90" stroke="#04091e" stroke-width="6" stroke-linecap="round"/>
+    <line x1="0" y1="-65" x2="26"  y2="-90" stroke="#04091e" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="0" cy="-65" r="7" fill="#04091e"/>
+  </g>
+
+  <!-- ── Right windmill ────────────────────────────────────────────────── -->
+  <g fill="#04091e" opacity=".65" transform="translate(1118,502)">
+    <polygon points="-9,0 0,-84 9,0"/>
+    <line x1="0" y1="-58" x2="-34" y2="-38" stroke="#04091e" stroke-width="5" stroke-linecap="round"/>
+    <line x1="0" y1="-58" x2="34"  y2="-38" stroke="#04091e" stroke-width="5" stroke-linecap="round"/>
+    <line x1="0" y1="-58" x2="-23" y2="-80" stroke="#04091e" stroke-width="5" stroke-linecap="round"/>
+    <line x1="0" y1="-58" x2="23"  y2="-80" stroke="#04091e" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="0" cy="-58" r="6" fill="#04091e"/>
+  </g>
+
+  <!-- ══════════════════════════════════════════════════════════════════════
+       People on the near hilltop — joyful silhouettes
+  ════════════════════════════════════════════════════════════════════════ -->
+  <g fill="#04091e" opacity=".70">
+    <!-- Person 1: arms wide, triumphant -->
+    <circle cx="388" cy="566" r="7"/>
+    <rect x="385" y="573" width="6" height="20"/>
+    <line x1="391" y1="579" x2="408" y2="570" stroke="#04091e" stroke-width="4.5" stroke-linecap="round"/>
+    <line x1="385" y1="579" x2="368" y2="570" stroke="#04091e" stroke-width="4.5" stroke-linecap="round"/>
+    <line x1="388" y1="593" x2="382" y2="610" stroke="#04091e" stroke-width="4.5" stroke-linecap="round"/>
+    <line x1="388" y1="593" x2="394" y2="610" stroke="#04091e" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- Person 2: arms raised overhead -->
+    <circle cx="424" cy="560" r="6.5"/>
+    <rect x="421" y="566" width="6" height="20"/>
+    <line x1="427" y1="571" x2="440" y2="556" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="421" y1="571" x2="408" y2="556" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="424" y1="586" x2="418" y2="602" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="424" y1="586" x2="430" y2="602" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <!-- Person 3: child, jumping, mid-air -->
+    <circle cx="455" cy="570" r="5.5"/>
+    <rect x="452" y="576" width="6" height="17"/>
+    <line x1="458" y1="580" x2="469" y2="571" stroke="#04091e" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="452" y1="580" x2="441" y2="571" stroke="#04091e" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="455" y1="593" x2="448" y2="606" stroke="#04091e" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="455" y1="593" x2="462" y2="606" stroke="#04091e" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Couple far right, holding hands -->
+    <circle cx="1010" cy="575" r="6.5"/>
+    <rect x="1007" y="581" width="6" height="20"/>
+    <line x1="1013" y1="586" x2="1025" y2="583" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="1007" y1="586" x2="994"  y2="583" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="1010" y1="601" x2="1004" y2="616" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="1010" y1="601" x2="1016" y2="616" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="1045" cy="570" r="6.5"/>
+    <rect x="1042" y="576" width="6" height="20"/>
+    <line x1="1048" y1="581" x2="1025" y2="583" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="1042" y1="581" x2="1060" y2="578" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="1045" y1="596" x2="1039" y2="612" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="1045" y1="596" x2="1051" y2="612" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <!-- Elder raising hand in greeting -->
+    <circle cx="1082" cy="578" r="6"/>
+    <rect x="1079" y="584" width="6" height="18"/>
+    <line x1="1085" y1="588" x2="1096" y2="576" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="1079" y1="588" x2="1070" y2="584" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="1082" y1="602" x2="1076" y2="616" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="1082" y1="602" x2="1088" y2="616" stroke="#04091e" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- ── Sunflowers — left edge ─────────────────────────────────────────── -->
+  <use href="#sf-lg" transform="translate(35,900)"/>
+  <use href="#sf-sm" transform="translate(85,900)"/>
+  <use href="#sf-lg" transform="translate(128,900) scale(0.92)"/>
+  <use href="#sf-sm" transform="translate(172,900) scale(1.05)"/>
+  <use href="#sf-lg" transform="translate(215,900) scale(0.80)"/>
+  <use href="#sf-sm" transform="translate(252,900) scale(0.88)"/>
+
+  <!-- ── Sunflowers — right edge ───────────────────────────────────────── -->
+  <use href="#sf-sm" transform="translate(1192,900) scale(0.85)"/>
+  <use href="#sf-lg" transform="translate(1235,900) scale(0.90)"/>
+  <use href="#sf-sm" transform="translate(1278,900) scale(1.02)"/>
+  <use href="#sf-lg" transform="translate(1322,900)"/>
+  <use href="#sf-sm" transform="translate(1368,900) scale(0.88)"/>
+  <use href="#sf-lg" transform="translate(1408,900) scale(0.82)"/>
+
+  <!-- ── Wheat stalks in field (middle area) ───────────────────────────── -->
+  <g stroke="#c89018" stroke-width="2" stroke-linecap="round" opacity=".55">
+    <line x1="500" y1="900" x2="498" y2="775"/>
+    <line x1="498" y1="775" x2="490" y2="760"/>
+    <line x1="498" y1="775" x2="506" y2="758"/>
+    <line x1="540" y1="900" x2="538" y2="790"/>
+    <line x1="538" y1="790" x2="530" y2="775"/>
+    <line x1="538" y1="790" x2="546" y2="773"/>
+    <line x1="580" y1="900" x2="578" y2="770"/>
+    <line x1="578" y1="770" x2="570" y2="755"/>
+    <line x1="578" y1="770" x2="586" y2="753"/>
+    <line x1="860" y1="900" x2="858" y2="780"/>
+    <line x1="858" y1="780" x2="850" y2="765"/>
+    <line x1="858" y1="780" x2="866" y2="763"/>
+    <line x1="900" y1="900" x2="898" y2="795"/>
+    <line x1="898" y1="795" x2="890" y2="780"/>
+    <line x1="898" y1="795" x2="906" y2="778"/>
+    <line x1="940" y1="900" x2="938" y2="772"/>
+    <line x1="938" y1="772" x2="930" y2="757"/>
+    <line x1="938" y1="772" x2="946" y2="755"/>
+  </g>
+</svg>

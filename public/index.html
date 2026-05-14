@@ -6,7 +6,7 @@
   <title>uVidNova — Ukraine Reconstruction Finance Atlas</title>
   <meta name="description" content="Asset-level, project-finance-grade reconstruction opportunities in Ukraine. Deterministic cost estimates against RDNA3 and KSE benchmarks. Defensible financing structures.">
   <meta name="theme-color" content="#1a3a6b">
-  <meta name="app-version" content="0.0.2">
+  <meta name="app-version" content="0.0.3">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
@@ -63,6 +63,21 @@
       <p class="landing-disclaimer-small">
         Not a fundraising platform. No political framing. Every figure independently sourced.
       </p>
+      <!-- Action bar: feedback, AI chat, version -->
+      <div class="landing-actions">
+        <button class="landing-action-btn" id="landingFeedbackBtn" aria-label="Send feedback">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Feedback
+        </button>
+        <button class="landing-action-btn" id="landingChatBtn" aria-label="Ask AI">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Ask AI
+        </button>
+        <span class="landing-version" id="landingVersion">v0.0.3</span>
+        <span class="landing-update-prompt" id="landingUpdatePrompt" hidden>
+          Update — <button class="landing-update-btn" id="landingUpdateBtn">reload</button>
+        </span>
+      </div>
     </div>
   </div>
 
@@ -165,7 +180,7 @@
 
   <!-- ── Version bar ───────────────────────────────────────────────────────── -->
   <div class="version-bar" id="versionBar" role="status">
-    <span class="version-label" id="versionLabel">v0.0.2</span>
+    <span class="version-label" id="versionLabel">v0.0.3</span>
     <span class="update-prompt" id="updatePrompt" hidden>
       Update available —
       <button class="update-reload-btn" id="updateReloadBtn">reload</button>
