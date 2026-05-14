@@ -369,6 +369,18 @@ body.asset-page { display: flex; flex-direction: column; }
 .about-main th, .about-main td { padding: 0.4rem 0.6rem; border: 1px solid var(--colour-border); }
 .about-main th { background: var(--colour-bg); font-weight: 600; }
 .sources-table code { font-size: 0.8rem; }
+.about-lead { font-size: 1rem; line-height: 1.75; color: var(--colour-navy); font-weight: 500; border-left: 3px solid var(--colour-gold); padding-left: 1rem; margin-bottom: 1.5rem; }
+.about-blockquote {
+  margin: 1rem 0;
+  padding: 0.85rem 1.1rem;
+  border-left: 3px solid var(--colour-navy-light);
+  background: var(--colour-bg);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.9rem;
+  color: var(--colour-navy);
+  font-style: italic;
+  line-height: 1.65;
+}
 
 /* ── Landing overlay ─────────────────────────────────────────────────────── */
 .landing-overlay {

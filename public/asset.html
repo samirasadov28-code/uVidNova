@@ -4,20 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Asset — uVidNova</title>
-  <meta name="description" content="Asset-level reconstruction finance profile.">
+  <meta name="description" content="Asset-level reconstruction finance profile — cost estimates, financing structure, de-risking instruments, and source citations.">
   <meta name="theme-color" content="#1a3a6b">
+  <meta name="app-version" content="0.0.2">
 
-  <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="icon" href="/assets/logo_192.png" sizes="192x192">
+  <!-- OG / Twitter updated dynamically by asset-view.js via document.title;
+       static fallbacks below serve link-unfurl crawlers that don't run JS. -->
+  <meta property="og:type"        content="article">
+  <meta property="og:site_name"   content="uVidNova">
+  <meta property="og:title"       content="Asset profile — uVidNova">
+  <meta property="og:description" content="Reconstruction cost estimates, financing structure, and de-risking instruments for a Ukrainian infrastructure asset.">
+  <meta property="og:image"       content="https://atlasvidnova.org/assets/logo_512.png">
+  <meta name="twitter:card"       content="summary">
+
+  <link rel="manifest"         href="/manifest.webmanifest">
+  <link rel="icon"             href="/assets/logo_192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/logo_192.png">
-  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet"       href="/css/app.css">
 </head>
 <body class="asset-page">
 
   <header class="site-header">
     <div class="header-inner">
       <a href="/" class="wordmark" aria-label="uVidNova home">
-        <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36">
+        <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36" loading="lazy">
         <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
       </a>
       <p class="tagline">Ukraine Reconstruction Finance Atlas</p>
@@ -38,6 +48,11 @@
     </div>
     <article class="asset-record" id="assetRecord" hidden></article>
   </main>
+
+  <!-- ── Version bar ─────────────────────────────────────────────────────── -->
+  <div class="version-bar" role="status">
+    <span class="version-label" id="versionLabel">v0.0.2</span>
+  </div>
 
   <script type="module" src="/js/asset-view.js"></script>
 </body>

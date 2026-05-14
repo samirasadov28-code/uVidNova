@@ -5,23 +5,64 @@
   directory = "functions"
   node_bundler = "esbuild"
 
+# ── Security headers (all pages) ──────────────────────────────────────────────
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org; connect-src 'self' https://*.tile.openstreetmap.org;"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    # connect-src includes self (API endpoints, data files) + OSM tiles.
+    # Groq API is called server-side from Netlify Functions — not from the browser.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org; connect-src 'self' https://*.tile.openstreetmap.org; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
 
+# ── Cache: static JS/CSS — versioned by SW; moderate browser cache ────────────
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=3600"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=3600"
+
+# ── Cache: images and icons — long-lived ──────────────────────────────────────
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, immutable"
+
+# ── Cache: data files — 1 hour, publicly cacheable ────────────────────────────
 [[headers]]
   for = "/data/*"
   [headers.values]
-    Cache-Control = "public, max-age=3600"
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=600"
     Access-Control-Allow-Origin = "*"
 
+# ── Cache: service worker — never cache (must re-fetch on every load) ─────────
+[[headers]]
+  for = "/service-worker.js"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+# ── Cache: manifest — short cache ─────────────────────────────────────────────
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Type = "application/manifest+json"
+
+# ── Redirects ─────────────────────────────────────────────────────────────────
 [[redirects]]
   from = "/asset"
   to = "/asset.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
   status = 200
 
 [[redirects]]

@@ -4,9 +4,9 @@
  * Strategy: cache-first for static assets; network-first for data files.
  */
 
-const CACHE_VERSION = 'uvidnova-v1';
-const STATIC_CACHE = `${CACHE_VERSION}-static`;
-const DATA_CACHE = `${CACHE_VERSION}-data`;
+const CACHE_VERSION = 'uvidnova-v2';
+const STATIC_CACHE  = `${CACHE_VERSION}-static`;
+const DATA_CACHE    = `${CACHE_VERSION}-data`;
 
 const STATIC_ASSETS = [
   '/',
@@ -19,6 +19,7 @@ const STATIC_ASSETS = [
   '/js/data-loader.js',
   '/js/filters.js',
   '/js/cost-calculator.js',
+  '/js/aggregation.js',
   '/manifest.webmanifest'
 ];
 
@@ -53,10 +54,10 @@ self.addEventListener('fetch', event => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Don't intercept non-GET, external, or function requests
+  // Only intercept same-origin GET requests; skip Netlify function calls
   if (request.method !== 'GET') return;
-  if (!url.origin.includes(self.location.origin)) return;
-  if (url.pathname.startsWith('/.netlify/')) return;
+  if (url.origin !== self.location.origin) return;
+  if (url.pathname.startsWith('/.netlify/') || url.pathname.startsWith('/api/')) return;
 
   // Data files: network-first (fresh data when available, cache fallback)
   if (url.pathname.startsWith('/data/')) {
@@ -64,8 +65,7 @@ self.addEventListener('fetch', event => {
       fetch(request)
         .then(response => {
           if (response.ok) {
-            const clone = response.clone();
-            caches.open(DATA_CACHE).then(cache => cache.put(request, clone));
+            caches.open(DATA_CACHE).then(c => c.put(request, response.clone()));
           }
           return response;
         })
@@ -74,14 +74,13 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Static assets: cache-first
+  // Static assets: cache-first, network fallback
   event.respondWith(
     caches.match(request).then(cached => {
       if (cached) return cached;
       return fetch(request).then(response => {
         if (response.ok) {
-          const clone = response.clone();
-          caches.open(STATIC_CACHE).then(cache => cache.put(request, clone));
+          caches.open(STATIC_CACHE).then(c => c.put(request, response.clone()));
         }
         return response;
       });
