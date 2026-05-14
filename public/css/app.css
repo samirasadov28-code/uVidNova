@@ -1882,6 +1882,124 @@ details[open] .agg-summary::before { content: '▼ '; }
   margin: 0;
 }
 
+/* ── Oblast reconstructed panel (Reconstructed view) ────────────────────── */
+.oblast-recon-panel {
+  position: absolute;
+  bottom: 58px;
+  left: 14px;
+  z-index: 600;
+  width: 300px;
+  max-height: calc(100% - 130px);
+  overflow-y: auto;
+  background: rgba(4,14,36,0.96);
+  border: 1px solid rgba(201,162,39,0.55);
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  color: rgba(255,255,255,0.88);
+  font-size: 0.82rem;
+  transform: translateY(12px);
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.oblast-recon-panel.visible { opacity: 1; transform: translateY(0); }
+
+.orp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.85rem 0.9rem 0.6rem;
+  border-bottom: 1px solid rgba(201,162,39,0.25);
+}
+.orp-name { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.2rem; }
+.orp-subtitle { font-size: 0.72rem; color: #c9a227; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.orp-close {
+  background: none; border: none; color: rgba(255,255,255,0.4);
+  font-size: 1.2rem; cursor: pointer; padding: 0 0.2rem; line-height: 1; flex-shrink: 0;
+}
+.orp-close:hover { color: #fff; }
+.orp-photo { width: 100%; height: 120px; object-fit: cover; display: block; }
+
+.orp-projects { padding: 0.5rem 0; }
+
+.orp-project {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(201,162,39,0.1);
+  transition: background 0.12s;
+}
+.orp-project:hover { background: rgba(255,255,255,0.04); text-decoration: none; }
+.orp-project:last-child { border-bottom: none; }
+
+.orp-project-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.35rem 0.9rem 0.35rem 0.75rem;
+}
+.orp-project-sector {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.orp-project-cost {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #f5c842;
+}
+
+.orp-project-body {
+  padding: 0.4rem 0.9rem 0.55rem;
+}
+.orp-project-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.35;
+  margin-bottom: 0.3rem;
+}
+.orp-cost-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.orp-cost-item {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.65);
+  white-space: nowrap;
+}
+.orp-cost-lbl {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.38);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 0.2rem;
+}
+
+.orp-empty {
+  padding: 1rem 0.9rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.orp-stats {
+  padding: 0.6rem 0.9rem;
+  border-top: 1px solid rgba(201,162,39,0.18);
+  font-size: 0.82rem;
+}
+.orp-stat-n { font-weight: 700; color: #f5c842; }
+.orp-stat-l { color: rgba(255,255,255,0.5); }
+
+.orp-hint { font-size: 0.68rem; color: rgba(255,255,255,0.3); padding: 0 0.9rem 0.7rem; margin: 0; }
+
+@media (max-width: 640px) {
+  .oblast-recon-panel { width: calc(100vw - 28px); left: 14px; bottom: 70px; }
+}
+
 /* ── Lang toggle ─────────────────────────────────────────────────────────── */
 .lang-toggle {
   background: none;

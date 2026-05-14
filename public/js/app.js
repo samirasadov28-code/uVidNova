@@ -283,6 +283,11 @@ function closeOblastWarPanel() {
   if (p) { p.classList.remove('visible'); setTimeout(() => p.remove(), 280); }
 }
 
+function closeReconstructedPanel() {
+  const p = document.getElementById('oblastReconPanel');
+  if (p) { p.classList.remove('visible'); setTimeout(() => p.remove(), 280); }
+}
+
 // ── Risk visual helpers ───────────────────────────────────────────────────────
 
 function riskColor(val) {
@@ -438,6 +443,114 @@ function showOblastWarPanel(info, featureName) {
   }
 }
 
+// ── Reconstructed-view oblast interaction ─────────────────────────────────────
+
+function handleReconstructedOblastClick(name, leafletThis, layer, info) {
+  if (selectedOblast === name) {
+    selectedOblast = null;
+    oblastLayer.setStyle(oblastStyle);
+    closeReconstructedPanel();
+    renderMarkers();
+    return;
+  }
+
+  selectedOblast = name;
+
+  oblastLayer.eachLayer(l => {
+    const lname = l.feature?.properties?.name;
+    if (lname === name) {
+      l.setStyle({ fillOpacity: 0.90, weight: 3, color: '#f5c842' });
+      l.bringToFront();
+    } else {
+      l.setStyle({ fillOpacity: 0.20, weight: 1, color: '#c9a227' });
+    }
+  });
+
+  try { map.fitBounds(layer.getBounds().pad(0.12)); } catch { /* no bounds */ }
+
+  renderMarkers();
+  showReconstructedPanel(info, name);
+}
+
+function showReconstructedPanel(info, featureName) {
+  closeReconstructedPanel();
+
+  const lang = getLang();
+  const name = lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName);
+
+  const fullName = OBLAST_INFO_MAP[featureName] ?? featureName;
+  const completed = allAssets.filter(a => {
+    if (a.wartime_status?.lifecycle !== 'complete') return false;
+    const loc = a.location?.oblast ?? '';
+    return loc === fullName || loc === featureName || loc.replace(' Oblast', '') === featureName;
+  });
+
+  const projectsHTML = completed.length === 0
+    ? `<div class="orp-empty">No completed reconstruction projects recorded in this region yet.</div>`
+    : completed.map(a => {
+        const aName = getName(a);
+        const colour = SECTOR_COLOURS[a.sector] ?? '#555';
+        const baseline = a.cost_paths?.baseline?.central_usd_m;
+        const codeComp = a.cost_paths?.code_compliant?.central_usd_m;
+        const bbb      = a.cost_paths?.build_back_better?.central_usd_m;
+        const totalCost = bbb ?? codeComp ?? baseline;
+        return `
+          <a class="orp-project" href="/asset.html?id=${encodeURIComponent(a.asset_id)}">
+            <div class="orp-project-banner" style="background:${colour}22;border-left:3px solid ${colour}">
+              <span class="orp-project-sector" style="color:${colour}">${SECTOR_LABELS[a.sector] ?? a.sector}</span>
+              ${totalCost != null ? `<span class="orp-project-cost">$${totalCost}M</span>` : ''}
+            </div>
+            <div class="orp-project-body">
+              <div class="orp-project-name">${aName}</div>
+              <div class="orp-cost-row">
+                ${baseline != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">Baseline</span> $${baseline}M</span>` : ''}
+                ${codeComp != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">Code+</span> $${codeComp}M</span>` : ''}
+                ${bbb      != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">BBB</span> $${bbb}M</span>` : ''}
+              </div>
+            </div>
+          </a>`;
+      }).join('');
+
+  const panel = document.createElement('div');
+  panel.id = 'oblastReconPanel';
+  panel.className = 'oblast-recon-panel';
+  panel.innerHTML = `
+    <div class="orp-header">
+      <div>
+        <div class="orp-name">${name}</div>
+        <div class="orp-subtitle">✅ Reconstruction projects</div>
+      </div>
+      <button class="orp-close" aria-label="Close">×</button>
+    </div>
+    <div class="orp-projects">${projectsHTML}</div>
+    ${completed.length > 0 ? `<div class="orp-stats"><span class="orp-stat-n">${completed.length}</span><span class="orp-stat-l"> completed project${completed.length !== 1 ? 's' : ''}</span></div>` : ''}
+    <p class="orp-hint">Click the region again to deselect</p>`;
+
+  panel.querySelector('.orp-close').addEventListener('click', () => {
+    selectedOblast = null;
+    oblastLayer.setStyle(oblastStyle);
+    closeReconstructedPanel();
+    renderMarkers();
+  });
+
+  document.querySelector('.map-layout').appendChild(panel);
+  requestAnimationFrame(() => panel.classList.add('visible'));
+
+  const wikiArticle = info?.wiki_article;
+  if (wikiArticle) {
+    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wikiArticle)}`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        const img = data?.thumbnail?.source;
+        if (!img || !document.getElementById('oblastReconPanel')) return;
+        const photo = document.createElement('img');
+        photo.src = img; photo.className = 'orp-photo'; photo.alt = name;
+        panel.querySelector('.orp-header').insertAdjacentElement('afterend', photo);
+      })
+      .catch(() => {});
+  }
+}
+
 // ── Oblast boundary layer ─────────────────────────────────────────────────────
 
 // Per-view colour palette  [border, normalFill, crimeaFill, mapBg]
@@ -503,6 +616,8 @@ async function addOblastLayer() {
           const info = findOblastInfo(name);
           if (mapViewMode === 'damaged') {
             handleDamagedOblastClick(name, this, layer, info);
+          } else if (mapViewMode === 'reconstructed') {
+            handleReconstructedOblastClick(name, this, layer, info);
           } else {
             oblastLayer.resetStyle();
             this.setStyle({ fillOpacity: 0.92, weight: 2.5, color: '#c9a227' });
@@ -535,6 +650,7 @@ function setMapView(view) {
   // Clear any oblast selection when switching views
   selectedOblast = null;
   closeOblastWarPanel();
+  closeReconstructedPanel();
   if (oblastLayer) oblastLayer.setStyle(oblastStyle);
 
   // Swap map background colour to match view palette
@@ -606,8 +722,8 @@ function renderMarkers() {
     candidates = allAssets.filter(a => a.wartime_status?.lifecycle === 'complete');
   }
 
-  // Damaged view with a selected oblast: filter to that region
-  if (mapViewMode === 'damaged' && selectedOblast) {
+  // With a selected oblast: filter markers to that region
+  if (selectedOblast && (mapViewMode === 'damaged' || mapViewMode === 'reconstructed')) {
     const fullName = OBLAST_INFO_MAP[selectedOblast] ?? selectedOblast;
     candidates = candidates.filter(a => {
       const loc = a.location?.oblast ?? '';
