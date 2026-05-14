@@ -1,0 +1,163 @@
+{
+  "asset_id": "IZMAIL_GRAIN_TERMINAL_2023_07_26",
+  "name": {
+    "en": "Izmail Danube Grain Terminal (July 2023 Drone Strike)",
+    "uk": "Ізмаїльський зерновий термінал на Дунаї (атака дронів, липень 2023)"
+  },
+  "location": {
+    "lat": 45.3447,
+    "lon": 28.8459,
+    "oblast": "Odesa",
+    "raion": null,
+    "settlement": "Izmail",
+    "address_en": "Izmail Danube grain terminal, Izmail, Odesa Oblast"
+  },
+  "asset_type": "agricultural.grain_terminal",
+  "sector": "industrial_and_agricultural",
+  "damage": {
+    "incident_date": "2023-07-26",
+    "incident_type": "drone_strike",
+    "destruction_level": "moderate",
+    "re_damage_count": 2,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UA Ministry of Agrarian Policy report — Izmail grain terminal drone strike July 2023",
+        "url": "https://minagro.gov.ua/en/news/izmail-grain-terminal-july-2023",
+        "source_code": "eRECOVERY"
+      },
+      {
+        "title": "UN OCHA Ukraine Flash Update — Izmail Danube port attack 2023",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-jul-2023",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "storage_capacity_tonnes": {
+      "value": 150000,
+      "unit": "tonnes",
+      "source": "extracted_from_source",
+      "ref": "UA Agri Ministry report Jul 2023; OCHA Flash Update 2023; Izmail Danube terminal rated storage capacity"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 8,
+      "central_usd_m": 25,
+      "high_usd_m": 41
+    },
+    "code_compliant": {
+      "low_usd_m": 9,
+      "central_usd_m": 31,
+      "high_usd_m": 52
+    },
+    "build_back_better": {
+      "low_usd_m": 10,
+      "central_usd_m": 38,
+      "high_usd_m": 66,
+      "tech_overlays": ["automated_handling", "dust_suppression", "smart_logistics"]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "INDUSTRIAL_BASELINE",
+      "grant_pct": 0,
+      "era_pct": 0,
+      "first_loss_pct": 5,
+      "concessional_pct": 15,
+      "senior_ifi_pct": 20,
+      "eca_pct": 15,
+      "dfi_equity_pct": 10,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 5,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 30,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["a_b_loan", "mezzanine"],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "INDUSTRIAL_CODE_COMPLIANT",
+      "grant_pct": 0,
+      "era_pct": 0,
+      "first_loss_pct": 5,
+      "concessional_pct": 15,
+      "senior_ifi_pct": 20,
+      "eca_pct": 15,
+      "dfi_equity_pct": 10,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 5,
+      "institutional_debt_pct": 5,
+      "private_equity_pct": 25,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["a_b_loan", "mezzanine"],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "INDUSTRIAL_BBB",
+      "grant_pct": 0,
+      "era_pct": 0,
+      "first_loss_pct": 5,
+      "concessional_pct": 15,
+      "senior_ifi_pct": 20,
+      "eca_pct": 15,
+      "dfi_equity_pct": 10,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 5,
+      "institutional_debt_pct": 10,
+      "private_equity_pct": 20,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["a_b_loan", "mezzanine"],
+      "rationale": "Danube corridor grain terminal; strategically important for Black Sea Grain Initiative alternative routing; MIGA war-risk wrap essential for any commercial financing; private operator equity dominant; re-damage risk (2 events) priced into MIGA premium",
+      "comparable_projects": ["ODESA_MYKOLAIV_GRAIN_TERMINALS_2022_04_01"]
+    }
+  },
+  "reparations_layer": {
+    "applies": false
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "agricultural",
+    "grain_terminal",
+    "odesa_oblast",
+    "danube",
+    "drone_strike",
+    "re_damaged",
+    "food_security"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

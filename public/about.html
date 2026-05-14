@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Methodology — uVidNova</title>
-  <meta name="description" content="Methodology, sources, and disclaimer — uVidNova Ukraine reconstruction atlas.">
-  <meta name="theme-color" content="#0d2248">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="app-version" content="0.2.1">
+  <title>Methodology and Sources — uVidNova Ukraine Reconstruction Finance Atlas</title>
+  <meta name="description" content="How uVidNova computes reconstruction costs and financing structures: deterministic formula, RDNA3/KSE sources, anti-hallucination architecture, Reconstruction Trust methodology, and full source bibliography.">
+  <meta name="theme-color" content="#1a3a6b">
+  <meta name="app-version" content="0.0.3">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="uVidNova">
-  <meta property="og:title"       content="Methodology — uVidNova Ukraine Reconstruction Finance Atlas">
+  <meta property="og:title"       content="Methodology and Sources — uVidNova Ukraine Reconstruction Finance Atlas">
   <meta property="og:description" content="Deterministic cost estimation against RDNA3 and KSE benchmarks. Every number traces to a named published source. No figures invented by AI.">
   <meta property="og:url"         content="https://atlasvidnova.org/about.html">
   <meta property="og:image"       content="https://atlasvidnova.org/assets/logo_512.png">
@@ -21,7 +19,7 @@
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary">
   <meta name="twitter:title"       content="Methodology — uVidNova">
-  <meta name="twitter:description" content="How uVidNova computes Ukraine reconstruction costs: deterministic formula, RDNA3/KSE sources, anti-hallucination gate.">
+  <meta name="twitter:description" content="How uVidNova computes Ukraine reconstruction costs: deterministic formula, RDNA3/KSE sources, anti-hallucination gate, Reconstruction Trust model.">
   <meta name="twitter:image"       content="https://atlasvidnova.org/assets/logo_512.png">
 
   <link rel="manifest"         href="/manifest.webmanifest">
@@ -29,11 +27,116 @@
   <link rel="apple-touch-icon" href="/assets/logo_192.png">
   <link rel="canonical"        href="https://atlasvidnova.org/about.html">
   <link rel="stylesheet"       href="/css/app.css">
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js').catch(function() {});
+
+  <style>
+    /* ── About page supplemental styles ─────────────────────────────── */
+    .about-toc {
+      background: var(--colour-bg);
+      border: 1px solid var(--colour-border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.875rem;
     }
-  </script>
+    .about-toc-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--colour-text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .about-toc ol { margin: 0; padding-left: 1.25rem; }
+    .about-toc li { margin-bottom: 0.25rem; }
+    .about-toc a  { color: var(--colour-navy-light); }
+    .about-section { padding-top: 1rem; }
+    .about-section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--colour-navy);
+      border-bottom: 2px solid var(--colour-gold);
+      padding-bottom: 0.4rem;
+      margin: 2.5rem 0 1rem;
+    }
+    .about-subsection { margin: 1.5rem 0; }
+    .about-subsection h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--colour-navy);
+      margin-bottom: 0.5rem;
+    }
+    .about-subsection h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--colour-text);
+      margin: 1rem 0 0.35rem;
+    }
+    .formula-block {
+      background: var(--colour-bg);
+      border: 1px solid var(--colour-border);
+      border-left: 3px solid var(--colour-navy);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 0.85rem 1.1rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--colour-navy);
+      margin: 0.75rem 0;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .confidence-high   { color: var(--colour-grant);        font-weight: 600; }
+    .confidence-medium { color: var(--colour-concessional);  font-weight: 600; }
+    .confidence-low    { color: var(--colour-warning);       font-weight: 600; }
+    .disclaimer-box {
+      background: #fffbf0;
+      border: 1px solid #f0d080;
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: var(--colour-text);
+      margin-top: 0.75rem;
+    }
+    .disclaimer-box p { margin-bottom: 0.75rem; }
+    .disclaimer-box p:last-child { margin-bottom: 0; }
+    .disclaimer-box strong { color: var(--colour-navy); }
+    .trust-precedent {
+      background: var(--colour-surface);
+      border: 1px solid var(--colour-border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .trust-precedent-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--colour-navy);
+      margin-bottom: 0.5rem;
+    }
+    .trust-precedent p { margin-bottom: 0.4rem; }
+    .trust-precedent p:last-child { margin-bottom: 0; }
+    .about-back-to-top {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--colour-text-muted);
+      text-align: right;
+      margin-top: 1.5rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--colour-border);
+    }
+    .about-back-to-top:hover { color: var(--colour-navy-light); text-decoration: none; }
+    .source-code-cell {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+      vertical-align: top;
+    }
+    @media (max-width: 600px) {
+      .about-main { padding: 0 1rem; }
+      .formula-block { font-size: 0.75rem; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -44,199 +147,568 @@
       </a>
       <p class="tagline">Ukraine Reconstruction Finance Atlas</p>
       <nav class="site-nav">
-        <a href="/" class="nav-link" data-page="map">Map</a>
-        <a href="/finance.html" class="nav-link" data-page="finance">Finance</a>
-        <a href="/about.html" class="nav-link" aria-current="page" data-page="about">About</a>
-        <button class="lang-toggle" id="langToggle" aria-label="Switch language">🇬🇧 | UK</button>
+        <a href="/">&#8592; Map</a>
+        <a href="/finance.html" class="nav-finance-link">Finance It</a>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN | UK</button>
       </nav>
     </div>
   </header>
 
-  <main class="about-main">
+  <main class="about-main" id="top">
 
     <h1>Methodology and Sources</h1>
     <p class="about-lead">
-      uVidNova is a project-finance-grade atlas, not a humanitarian tracker.
-      Everything on this platform is built around one principle:
-      <strong>every number traces to a named published source.</strong>
-      No figures are invented by AI.
+      uVidNova is a project-finance-grade atlas. Every number on this platform traces
+      to a named published source. No figures are produced by AI. The platform's value
+      is integration of authoritative external data, not invention.
     </p>
 
-    <!-- ── What is in the register ─────────────────────────────────────────── -->
-    <h2>The register at a glance</h2>
-    <p>Version 0.0.3 documents <strong>50 anchor assets</strong> across nine sectors,
-      representing a sample of documented wartime damage across Ukraine.
-      Baseline reconstruction cost totals approximately <strong>USD 41 billion</strong>
-      across the visible (rebuildable + recently liberated) portion of the register.</p>
+    <!-- ── Table of contents ─────────────────────────────────────────────── -->
+    <nav class="about-toc" aria-label="Page sections">
+      <p class="about-toc-title">Contents</p>
+      <ol>
+        <li><a href="#methodology">Cost and financing methodology</a></li>
+        <li><a href="#sources">Authoritative reference sources</a></li>
+        <li><a href="#financing">Financing structure methodology</a></li>
+        <li><a href="#trust">Reconstruction Trust methodology</a></li>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+      </ol>
+    </nav>
 
-    <table>
-      <thead><tr><th>Sector</th><th>Assets</th><th>Example</th></tr></thead>
-      <tbody>
-        <tr><td>Energy and Power</td><td>7</td><td>Kakhovka HPP, Trypilska TPP, Zmiivska TPP</td></tr>
-        <tr><td>Healthcare</td><td>7</td><td>Okhmatdyt, Mariupol Maternity #3, Vinnytsia Regional</td></tr>
-        <tr><td>Education</td><td>6</td><td>Karazin University, KhPI, Chernihiv School #18</td></tr>
-        <tr><td>Residential</td><td>8</td><td>Saltivka, Borodyanka, Bucha, Mariupol Livoberezhnyi</td></tr>
-        <tr><td>Heritage and Culture</td><td>6</td><td>Mariupol Drama Theatre, Sviatohirsk Lavra, Skovoroda Museum</td></tr>
-        <tr><td>Transport and Ports</td><td>6</td><td>An-225 Mriya, Hostomel Airport, Antonivskyi Bridge</td></tr>
-        <tr><td>Water and Sanitation</td><td>4</td><td>Kherson post-Kakhovka, Inhulets/Mykolaiv supply</td></tr>
-        <tr><td>Industrial and Agricultural</td><td>4</td><td>Azovstal, Illich Steel, Avdiivka Coke, Odesa grain terminals</td></tr>
-        <tr><td>Public Administration</td><td>2</td><td>Kharkiv Oblast Admin, Chernihiv Regional Library</td></tr>
-      </tbody>
-    </table>
+    <!-- ════════════════════════════════════════════════════════════════════
+         1. COST AND FINANCING METHODOLOGY
+    ═════════════════════════════════════════════════════════════════════════ -->
+    <section class="about-section" id="methodology" aria-labelledby="methodology-title">
+      <h2 class="about-section-title" id="methodology-title">1. Cost and financing methodology</h2>
 
-    <p>Assets in occupied territory and frontline-adjacent zones are documented as
-      <em>pipeline only</em> and hidden from the default map view.
-      Use the Rebuildability filter to expose them.</p>
+      <!-- 1.1 Deterministic formula -->
+      <div class="about-subsection">
+        <h3>1.1 The deterministic cost formula</h3>
+        <p>All reconstruction cost estimates are computed deterministically by formula. The AI orchestrator used on this platform (which classifies damage records and generates narrative summaries) <strong>never produces numeric output</strong>. Every number in every cost field derives from lookups against published benchmark tables, computed in <code>scripts/compute-costs.js</code>.</p>
+        <div class="formula-block">cost = unit_cost
+     × physical_quantity
+     × destruction_factor
+     × regional_multiplier
+     × path_multiplier
+     × contingency</div>
 
-    <!-- ── What makes it different ────────────────────────────────────────── -->
-    <h2>What uVidNova does differently</h2>
-    <p>Existing damage trackers (KSE "Russia Will Pay," eRecovery/DREAM, Bellingcat, ACLED, UN OCHA) stop at <em>"X was destroyed."</em> uVidNova continues into the financing layer:</p>
-    <blockquote class="about-blockquote">
-      "Rebuilding X is a USD 52M project at the baseline path, USD 68M at build-back-better, structured as 55% EU grant / 25% EBRD concessional / 20% municipal equity, MIGA war insurance applies, the asset has been re-damaged twice since 2022, currently in a rebuildable zone — and here is the precedent in Lviv Oblast."
-    </blockquote>
-    <p>The build is <strong>integration of authoritative sources, not invention.</strong></p>
+        <table>
+          <thead>
+            <tr><th>Variable</th><th>Range / values</th><th>Source</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>unit_cost</strong></td>
+              <td>USD per m², MW, km, bed, or unit — varies by <code>asset_type</code></td>
+              <td>
+                <code>data/unit_cost_table.json</code>. Every row carries a source code
+                and a <code>vintage_year</code>. Primary sources:
+                [<code>RDNA3</code>] [<code>KSE</code>] [<code>EBRD_CASE</code>]
+              </td>
+            </tr>
+            <tr>
+              <td><strong>physical_quantity</strong></td>
+              <td>m², MW, km, beds, tonnes — depends on <code>asset_type</code></td>
+              <td>
+                Per-asset <code>physical_specs</code> field. Every value wrapped
+                <code>{ value, source, ref }</code> where
+                <code>source</code> &#8712; <em>extracted_from_source, estimated_from_photo,
+                pending_data, modelled</em>. Assets with <code>pending_data</code> specs
+                return only a low/high range, marked preliminary.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>destruction_factor</strong></td>
+              <td>
+                light: 0.10&#8211;0.25 &#183;
+                moderate: 0.30&#8211;0.55 &#183;
+                severe: 0.60&#8211;0.85 &#183;
+                destroyed: 0.95&#8211;1.10
+              </td>
+              <td>
+                <code>data/destruction_factors.json</code>. Ranges calibrated against
+                RDNA3 damage-level definitions and EBRD case-study repair cost ratios.
+                [<code>RDNA3</code>] [<code>EBRD_CASE</code>]
+              </td>
+            </tr>
+            <tr>
+              <td><strong>regional_multiplier</strong></td>
+              <td>Varies by oblast. Frontline regions: higher logistics premium. Western regions: at or below 1.00×.</td>
+              <td>
+                <code>data/regional_multipliers.json</code>. Derived from RDNA3 regional
+                cost variation analysis and EBRD Ukraine programme procurement premiums.
+                [<code>RDNA3</code>] [<code>EBRD_CASE</code>]
+              </td>
+            </tr>
+            <tr>
+              <td><strong>path_multiplier</strong></td>
+              <td>Baseline: 1.00× &#183; Code-compliant: 1.15&#8211;1.25× &#183; Build-back-better: 1.30&#8211;1.60×</td>
+              <td>
+                <code>data/path_multipliers.json</code>. Derived from EU energy efficiency
+                and accessibility conditionality cost data and RDNA3 build-back-better
+                scenario analysis. [<code>RDNA3</code>] [<code>EU_FACILITY</code>]
+              </td>
+            </tr>
+            <tr>
+              <td><strong>contingency</strong></td>
+              <td>1.15 (15%) for <em>assessed</em> assets &#183; 1.25 (25%) for <em>documented-only</em> assets</td>
+              <td>
+                Standard project-finance contingency for post-conflict environments,
+                consistent with World Bank procurement guidance for Ukraine.
+                [<code>RDNA3</code>]
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-    <!-- ── Cost methodology ───────────────────────────────────────────────── -->
-    <h2>Cost methodology</h2>
-    <p>All cost estimates are computed deterministically by the following formula. The AI orchestrator (used for classification and narrative generation) <strong>never produces numeric output</strong>.</p>
-    <pre>cost = unit_cost × physical_quantity × destruction_factor
-       × regional_multiplier × path_multiplier × contingency</pre>
+        <p>The <code>{low, central, high}</code> triple is generated by walking the low and high ends of each multiplier range simultaneously — not by applying the formula at the central value of each input individually:</p>
+        <ul>
+          <li><strong>low</strong> = formula(all low-end inputs simultaneously)</li>
+          <li><strong>high</strong> = formula(all high-end inputs simultaneously)</li>
+          <li><strong>central</strong> = arithmetic mean of low and high</li>
+        </ul>
+        <p>This is consistent with the RDNA3 uncertainty-range methodology and avoids artificially narrowing the range by mixing low-end and high-end assumptions across different inputs. [<code>RDNA3</code>]</p>
+      </div>
 
-    <table>
-      <thead><tr><th>Variable</th><th>Source</th></tr></thead>
-      <tbody>
-        <tr>
-          <td><strong>unit_cost</strong></td>
-          <td><code>data/unit_cost_table.json</code> — sourced from RDNA3, KSE Institute, and EBRD case studies. Every row carries a source code and vintage year.</td>
-        </tr>
-        <tr>
-          <td><strong>physical_quantity</strong></td>
-          <td><code>physical_specs</code> field (m², beds, MW, km, tonnes). Every value is flagged: <code>extracted_from_source</code>, <code>estimated_from_photo</code>, <code>pending_data</code>, or <code>modelled</code>.</td>
-        </tr>
-        <tr>
-          <td><strong>destruction_factor</strong></td>
-          <td>By damage level — light: 0.10–0.25 · moderate: 0.30–0.55 · severe: 0.60–0.85 · destroyed: 0.95–1.10</td>
-        </tr>
-        <tr>
-          <td><strong>regional_multiplier</strong></td>
-          <td><code>data/regional_multipliers.json</code> by oblast. Frontline regions carry higher logistics premium; western regions can be lower.</td>
-        </tr>
-        <tr>
-          <td><strong>path_multiplier</strong></td>
-          <td>Baseline 1.00× · Code-compliant 1.15–1.25× · Build-back-better 1.30–1.60×</td>
-        </tr>
-        <tr>
-          <td><strong>contingency</strong></td>
-          <td>1.15 (15%) for assessed assets · 1.25 for documented-only</td>
-        </tr>
-      </tbody>
-    </table>
+      <!-- 1.2 Heritage premium -->
+      <div class="about-subsection">
+        <h3>1.2 Heritage and cultural asset premium</h3>
+        <p>Assets classified under <code>heritage.*</code> carry a separate conservation-premium multiplier applied after the standard formula. This multiplier reflects the cost of traditional materials, specialist craftsmanship, archaeological monitoring, and UNESCO and Council of Europe conservation standards that are not captured in standard unit costs.</p>
+        <table>
+          <thead><tr><th>Heritage condition</th><th>Premium multiplier</th></tr></thead>
+          <tbody>
+            <tr><td>Largely intact (light&#8211;moderate damage, recoverable fabric)</td><td>1.8&#215;&#8211;2.2&#215;</td></tr>
+            <tr><td>Substantially destroyed, documented record survives</td><td>2.2&#215;&#8211;2.6&#215;</td></tr>
+            <tr><td>Destroyed, contested historical record, exceptional significance</td><td>2.6&#215;&#8211;3.0&#215;</td></tr>
+          </tbody>
+        </table>
+        <p>The heritage premium is held in a separate table in <code>data/unit_cost_table.json</code> and is <strong>not folded into the general regional multiplier</strong>. Any asset receiving the premium displays it explicitly in the "show cost formula" panel on the asset detail page.</p>
+      </div>
 
-    <p>The <code>{low, central, high}</code> triple walks the low and high ends of each multiplier range. Central is the midpoint.
-    <strong>Heritage assets</strong> carry a separate 1.8×–3.0× conservation-premium multiplier applied in a distinct table.</p>
+      <!-- 1.3 Three paths -->
+      <div class="about-subsection">
+        <h3>1.3 Three reconstruction paths</h3>
+        <p>Every asset is costed across three paths. The path multiplier adjusts the unit cost and unlocks different technology overlays and financing structures.</p>
+        <table>
+          <thead><tr><th>Path</th><th>Definition</th><th>Multiplier</th><th>Financing logic</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Baseline</strong></td>
+              <td>Repair or rebuild to pre-war condition and pre-war technical standard.</td>
+              <td>1.00&#215;</td>
+              <td>Lower grant share; fewer EU conditionality levers to activate.</td>
+            </tr>
+            <tr>
+              <td><strong>Code-compliant</strong></td>
+              <td>Rebuild to current EU and Ukrainian building codes: structural, energy, accessibility, and fire safety standards.</td>
+              <td>1.15&#8211;1.25&#215;</td>
+              <td>EU Facility conditionality partially unlocked; standard concessional mix.</td>
+            </tr>
+            <tr>
+              <td><strong>Build-back-better</strong></td>
+              <td>Code-compliant plus named technology overlays — microgrids, passive energy standard, mass timber, fibre connectivity, telemedicine, green steel, modular clinical units. Full catalogue in <code>data/tech_overlays.json</code>.</td>
+              <td>1.30&#8211;1.60&#215;</td>
+              <td>Maximum EU grant share via Pillar I green and accessibility conditionalities; EBRD Green Economy concessional; higher first-loss guarantee leverage.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>The build-back-better path costs more in absolute terms but typically attracts a higher grant percentage, compressing the concessional and equity burden on Ukraine's own balance sheet. All three paths are presented side-by-side so users can evaluate the trade-off directly. [<code>EU_FACILITY</code>] [<code>RDNA3</code>]</p>
+      </div>
 
-    <p>On every asset detail page, a <em>"Show cost formula and working"</em> panel exposes every input value and the computed result so any reader can trace the arithmetic.</p>
+      <!-- 1.4 Anti-hallucination -->
+      <div class="about-subsection">
+        <h3>1.4 Anti-hallucination architecture</h3>
+        <p>A hallucinated reconstruction cost cited in a publication by EBRD, EIB, or a policy team would represent a reputational failure. The architecture eliminates that risk structurally rather than through prompt instruction alone.</p>
+        <ol>
+          <li><strong>Stage 1 — Classification.</strong> The LLM extracts structured fields from OSINT input: <code>asset_type</code>, <code>physical_specs.*</code>, <code>damage.destruction_level</code>, <code>wartime_status.*</code>. All numeric specs are flagged with source provenance. Uncertain values default to <code>pending_data</code>. Temperature: 0.2.</li>
+          <li><strong>Stage 2 — Retrieval and narration.</strong> The server performs all deterministic lookups and computes the cost formula. The LLM receives the complete structured payload and narrates it. It may rephrase; it may not introduce numbers absent from the payload. Temperature: 0.4.</li>
+          <li><strong>Validation gate.</strong> Every numeric token in the narration is extracted via regex and matched against the payload (with formatting tolerance). Any unmatched numeric token aborts publication and routes the entry to human review. Dates are whitelisted; financial and physical-quantity tokens are not. Implemented in <code>functions/lib/validation-gate.js</code>.</li>
+        </ol>
+        <p>System prompts are version-controlled in <code>functions/_shared/prompts/</code> as Markdown files. No prompts are hardcoded in JS string literals.</p>
+      </div>
 
-    <!-- ── Reconstruction paths ───────────────────────────────────────────── -->
-    <h2>Reconstruction paths</h2>
-    <table>
-      <thead><tr><th>Path</th><th>Definition</th><th>Multiplier</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Baseline</strong></td><td>Repair to pre-war condition and standard</td><td>1.00×</td></tr>
-        <tr><td><strong>Code-compliant</strong></td><td>Rebuild to current EU/UA building codes and energy standards</td><td>1.15–1.25×</td></tr>
-        <tr><td><strong>Build-back-better</strong></td><td>Code-compliant plus named technology overlays (microgrid, passive standard, fibre, telemedicine, mass timber, green steel, etc.)</td><td>1.30–1.60×</td></tr>
-      </tbody>
-    </table>
+      <a href="#top" class="about-back-to-top">Back to top &#8593;</a>
+    </section>
 
-    <!-- ── Financing structures ───────────────────────────────────────────── -->
-    <h2>Financing structure templates</h2>
-    <p>Capital-stack templates are sourced from EBRD Ukraine case studies, EU Facility programme documents, and the RDNA3 financing annex. Templates are keyed by sector × reconstruction path. Grant, concessional, public equity, and private percentages always sum to 100%.</p>
+    <!-- ════════════════════════════════════════════════════════════════════
+         2. AUTHORITATIVE REFERENCE SOURCES
+    ═════════════════════════════════════════════════════════════════════════ -->
+    <section class="about-section" id="sources" aria-labelledby="sources-title">
+      <h2 class="about-section-title" id="sources-title">2. Authoritative reference sources</h2>
 
-    <table>
-      <thead><tr><th>Sector</th><th>Baseline grant %</th><th>Rationale</th></tr></thead>
-      <tbody>
-        <tr><td>Energy and power</td><td>30%</td><td>High private-sector appetite for energy assets; EBRD concessional dominant</td></tr>
-        <tr><td>Healthcare</td><td>45%</td><td>Public goods character; UA government co-equity expected</td></tr>
-        <tr><td>Education</td><td>50%</td><td>EU Facility education track; no private equity at baseline</td></tr>
-        <tr><td>Residential</td><td>35%</td><td>Municipal equity co-investment; EU cohesion funding</td></tr>
-        <tr><td>Heritage</td><td>60%</td><td>Maximum grant share; UNESCO / Council of Europe channels</td></tr>
-        <tr><td>Transport</td><td>30%</td><td>EU Connectivity Fund; EBRD concessional; limited private at BBB</td></tr>
-        <tr><td>Water and sanitation</td><td>45%</td><td>EU Facility water track; EBRD RSF applicable</td></tr>
-        <tr><td>Industrial / agricultural</td><td>15%</td><td>Private-anchored; strategic investor anchor expected</td></tr>
-        <tr><td>Public administration</td><td>55%</td><td>EU Facility institutional track</td></tr>
-      </tbody>
-    </table>
+      <p>Every figure in the register must cite at least one of these sources by the short code shown. New sources require a pull request to <code>docs/sources.md</code>. Full bibliography including EBRD project identifiers and working paper references is maintained in that file.</p>
 
-    <!-- ── De-risking instruments ─────────────────────────────────────────── -->
-    <h2>De-risking instruments</h2>
-    <table>
-      <thead><tr><th>Code</th><th>Instrument</th></tr></thead>
-      <tbody>
-        <tr><td><code>MIGA_WAR</code></td><td>MIGA War &amp; Civil Disturbance insurance — covers equity investors and lenders against war damage, expropriation, and breach of contract in conflict-affected countries.</td></tr>
-        <tr><td><code>UA_GUARANTEE</code></td><td>Ukrainian Government sovereign guarantee — backstops project-level obligations.</td></tr>
-        <tr><td><code>UKEF</code></td><td>UK Export Finance — political risk cover for UK-linked contractors and investors.</td></tr>
-        <tr><td><code>BPIFRANCE_AE</code></td><td>Bpifrance Assurance Export — French export credit political risk insurance.</td></tr>
-        <tr><td><code>ALLIANZ_TRADE</code></td><td>Allianz Trade political risk insurance (private market).</td></tr>
-        <tr><td><code>EU_FACILITY_FIRST_LOSS</code></td><td>EU Ukraine Facility first-loss guarantee — credit enhancement under the EUR 50bn EU-Ukraine support framework (2024–27).</td></tr>
-        <tr><td><code>EBRD_RSF</code></td><td>EBRD Risk Sharing Facility — partial credit guarantee reducing perceived default risk for co-financiers.</td></tr>
-      </tbody>
-    </table>
+      <table class="sources-table">
+        <thead>
+          <tr><th>Code</th><th>Full reference</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="source-code-cell"><code>RDNA3</code></td>
+            <td>World Bank, Government of Ukraine, European Commission, United Nations. <em>Ukraine Rapid Damage and Needs Assessment, Third Edition.</em> February 2024. The canonical benchmark for sector-level unit costs, damage quantification methodology, and reconstruction path multipliers. Central finding: total recovery needs USD 486bn as of Q4 2023.</td>
+          </tr>
+          <tr>
+            <td class="source-code-cell"><code>KSE</code></td>
+            <td>Kyiv School of Economics Institute. <em>"Russia Will Pay" damage tracker and methodology.</em> Updated periodically. Primary source for asset-level damage records, oblast-level cost totals, and sector damage aggregates. uVidNova cross-checks central cost values against KSE figures where asset-level data is available; divergences greater than &#177;15% are flagged in <code>docs/methodology.md</code>.</td>
+          </tr>
+          <tr>
+            <td class="source-code-cell"><code>EBRD_CASE</code></td>
+            <td>European Bank for Reconstruction and Development. Ukraine reconstruction case studies, various dates. Source for financing-structure precedents, concessional loan terms, regional cost variation parameters, and capital-stack templates. EBRD is the largest single IFI lender to Ukraine and provides the primary comparables for deal structures.</td>
+          </tr>
+          <tr>
+            <td class="source-code-cell"><code>EU_FACILITY</code></td>
+            <td>European Union. <em>Ukraine Facility Programme Documents</em> (EUR 50bn, 2024&#8211;27). Ukraine Plan reform and reconstruction milestones; Pillar I non-repayable grants; Pillar II guarantee window terms. Source for grant-eligibility conditionalities that drive the build-back-better financing uplift and for the ERA loan framework.</td>
+          </tr>
+          <tr>
+            <td class="source-code-cell"><code>EIB_UA</code></td>
+            <td>European Investment Bank. EU4Ukraine investment platform documentation. Source for EIB concessional lending terms, co-financing structures, and the EUR 1.5bn+ emergency lending portfolio extended to Ukraine since February 2022.</td>
+          </tr>
+          <tr>
+            <td class="source-code-cell"><code>MIGA</code></td>
+            <td>Multilateral Investment Guarantee Agency. War &amp; Civil Disturbance insurance product documentation, Ukraine portfolio. Coverage scope (equity investments, lenders, contractors), pricing parameters, eligible transactions, and Ukraine-specific portfolio target announced at the Ukraine Recovery Conference 2023.</td>
+          </tr>
+          <tr>
+            <td class="source-code-cell"><code>OCHA</code></td>
+            <td>United Nations Office for the Coordination of Humanitarian Affairs. Ukraine flash updates and humanitarian needs overviews. Used for damage verification, population displacement figures, and access-constraint data informing <code>rebuildability</code> classification.</td>
+          </tr>
+          <tr>
+            <td class="source-code-cell"><code>BELLINGCAT</code></td>
+            <td>Bellingcat / Centre for Information Resilience. Verified-incident mapping and open-source intelligence analysis, Ukraine. Used for independent corroboration of damage incidents, particularly for assets in occupied territory where official sources are unavailable.</td>
+          </tr>
+          <tr>
+            <td class="source-code-cell"><code>ACLED</code></td>
+            <td>Armed Conflict Location &amp; Event Data Project. Ukraine conflict event data, updated weekly. Used for incident-type and location verification and as a secondary cross-check on <code>damage.incident_date</code> and <code>damage.incident_type</code> fields.</td>
+          </tr>
+          <tr>
+            <td class="source-code-cell"><code>eRECOVERY</code></td>
+            <td>Government of Ukraine. eRecovery / DREAM (Diia.Recovery for Economic Assistance in Municipalities) platform. Official Government of Ukraine damage registry and reconstruction project tracker. Used for lifecycle status updates, official project identifiers, and government-approved cost assessments.</td>
+          </tr>
+        </tbody>
+      </table>
 
-    <!-- ── Rebuildability categories ──────────────────────────────────────── -->
-    <h2>Rebuildability categories</h2>
-    <table>
-      <thead><tr><th>Category</th><th>Definition</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Rebuildable</strong></td><td>Ukrainian-controlled territory, no frontline within 30 km. Reconstruction finance applicable now.</td></tr>
-        <tr><td><strong>Recently liberated</strong></td><td>Liberated within the past 18 months. Reconstruction planning underway; active engagement viable with appropriate de-risking.</td></tr>
-        <tr><td><strong>Frontline adjacent</strong></td><td>Within 30 km of active front line. Pipeline only; reconstruction finance contingent on stabilisation.</td></tr>
-        <tr><td><strong>Occupied</strong></td><td>Currently under Russian occupation. Documented for future pipeline planning. No reconstruction finance applicable in current status.</td></tr>
-      </tbody>
-    </table>
-    <p>The default map view shows <strong>Rebuildable</strong> assets in the <strong>Documented</strong> and <strong>Assessed</strong> lifecycle stages only. Use filter chips to expose other categories.</p>
+      <a href="#top" class="about-back-to-top">Back to top &#8593;</a>
+    </section>
 
-    <!-- ── Re-damage tracking ─────────────────────────────────────────────── -->
-    <h2>Re-damage tracking</h2>
-    <p>Assets struck more than once are flagged with <code>re_damage_count ≥ 2</code>. This is a material investor-information field, not a weakness to conceal: it affects insurance pricing, schedule risk, and the case for hardened build-back-better designs. Assets with two or more re-damage events are shown with a red indicator on the map and an amber ⚠ flag in the asset list.</p>
+    <!-- ════════════════════════════════════════════════════════════════════
+         3. FINANCING STRUCTURE METHODOLOGY
+    ═════════════════════════════════════════════════════════════════════════ -->
+    <section class="about-section" id="financing" aria-labelledby="financing-title">
+      <h2 class="about-section-title" id="financing-title">3. Financing structure methodology</h2>
 
-    <!-- ── Anti-hallucination architecture ───────────────────────────────── -->
-    <h2>Anti-hallucination architecture</h2>
-    <p>The single largest reputational risk to a platform like this is a hallucinated number cited in a serious publication. uVidNova addresses this by treating the LLM as a <strong>classifier and narrator, never as an estimator</strong>.</p>
-    <ol>
-      <li><strong>Stage 1 — Classification</strong>: the LLM extracts structured fields (asset type, physical specs, damage level) from OSINT input. All numeric specs are flagged with source provenance. Any uncertain value defaults to <code>pending_data</code>.</li>
-      <li><strong>Stage 2 — Retrieval and narration</strong>: the server performs all deterministic lookups and computations. The LLM receives the complete structured payload and is instructed to narrate it. It may rephrase but may not introduce numbers absent from the payload.</li>
-      <li><strong>Validation gate</strong>: every numeric token in the generated narrative is extracted via regex and matched against the payload with ±1% tolerance. Any unmatched number aborts publication and routes the entry to human review.</li>
-    </ol>
-    <p>The validation gate has been adversarially tested against 27 hallucination-injection cases across three categories (tokeniser edge cases, narrative injection, scale manipulation). All 27 are caught before publication.</p>
+      <!-- 3.1 Tranche taxonomy -->
+      <div class="about-subsection">
+        <h3>3.1 Tranche taxonomy</h3>
+        <p>Ukraine's reconstruction capital stack is more granular than a simple grant/debt split. The platform uses a 12-layer taxonomy ordered from most concessional to most commercial. Every reconstruction deal can be expressed as a combination of these tranches; percentage allocations within a deal must sum to 100. Political-risk insurance (PRI) is modelled as a credit enhancement — a boolean flag with named providers — not as a capital tranche percentage.</p>
 
-    <!-- ── Sources ────────────────────────────────────────────────────────── -->
-    <h2>Authoritative sources</h2>
-    <table class="sources-table">
-      <thead><tr><th>Code</th><th>Full reference</th></tr></thead>
-      <tbody>
-        <tr><td><code>RDNA3</code></td><td>World Bank, Government of Ukraine, European Commission, UN — Ukraine Rapid Damage and Needs Assessment, Third Edition (February 2024). The canonical benchmark for sector-level unit costs and damage quantification methodology.</td></tr>
-        <tr><td><code>KSE</code></td><td>Kyiv School of Economics Institute, "Russia Will Pay" damage tracker and methodology, updated periodically. Primary source for asset-level damage records and oblast-level totals.</td></tr>
-        <tr><td><code>EBRD_CASE</code></td><td>EBRD Ukraine reconstruction case studies — financing-structure precedents and concessional loan terms.</td></tr>
-        <tr><td><code>EU_FACILITY</code></td><td>EU Ukraine Facility programme documents (EUR 50bn, 2024–27). Source for grant eligibility criteria and first-loss guarantee terms.</td></tr>
-        <tr><td><code>EIB_UA</code></td><td>EIB EU4Ukraine investment platform documentation — concessional lending terms and co-financing structures.</td></tr>
-        <tr><td><code>MIGA</code></td><td>MIGA War &amp; Civil Disturbance insurance product documentation, Ukraine portfolio — coverage scope, pricing parameters, and eligible transactions.</td></tr>
-        <tr><td><code>OCHA</code></td><td>UN OCHA Ukraine flash updates and humanitarian needs overviews — damage verification and population displacement figures.</td></tr>
-        <tr><td><code>BELLINGCAT</code></td><td>Bellingcat / Centre for Information Resilience verified-incident mapping — open-source damage verification.</td></tr>
-        <tr><td><code>ACLED</code></td><td>ACLED Ukraine conflict event data — incident type and location verification.</td></tr>
-        <tr><td><code>eRECOVERY</code></td><td>Government of Ukraine eRecovery / DREAM platform — official damage registry and reconstruction project tracking.</td></tr>
-      </tbody>
-    </table>
+        <h4>Public-sector and grant tranches</h4>
+        <table>
+          <thead><tr><th>Tranche</th><th>Code</th><th>Definition and typical range</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Pure grants</strong></td>
+              <td><code>grant_pct</code></td>
+              <td>Non-repayable. EU Ukraine Facility Pillar I, bilateral grants (KfW/BMZ, USAID legacy, FCDO, JICA), UN agency grants, UNESCO/EU Creative Europe for heritage. 40&#8211;70% for social infrastructure; near-zero for revenue-generating assets. [<code>EU_FACILITY</code>] [<code>RDNA3</code>]</td>
+            </tr>
+            <tr>
+              <td><strong>ERA / frozen-asset proceeds</strong></td>
+              <td><code>era_pct</code></td>
+              <td>Proceeds from the G7 Extraordinary Revenue Acceleration loan backed by interest on immobilised Russian sovereign reserves (~USD 50bn total envelope). Repayment contingent on Russian reparations — functionally grant-equivalent from Ukraine's balance-sheet perspective. Carried as a distinct tranche because the political conditionality differs from EU Facility grants. [<code>EU_FACILITY</code>]</td>
+            </tr>
+            <tr>
+              <td><strong>First-loss / guarantee capital</strong></td>
+              <td><code>first_loss_pct</code></td>
+              <td>Donor-funded subordinated layers absorbing initial impairment so commercial capital can sit above them. EU Facility Pillar II guarantee window, EBRD RSF first-loss sleeves, DFC first-loss. Typically 5&#8211;15% of stack by size, but does disproportionate leverage work. [<code>EU_FACILITY</code>] [<code>EBRD_CASE</code>]</td>
+            </tr>
+          </tbody>
+        </table>
 
-    <!-- ── Disclaimer ─────────────────────────────────────────────────────── -->
-    <h2>Disclaimer</h2>
-    <p>Cost and financing-structure figures are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and named comparable Ukrainian precedents. They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence. Actual project costs will depend on scope, procurement, timing, site conditions, and the political and security environment at the time of execution.</p>
-    <p>uVidNova is a not-for-profit platform. It does not receive fees from any financing institution, donor, or government body. It has no affiliation with the Ukrainian government, the World Bank, EBRD, or any other institution whose data it cites. Citations do not imply endorsement by those institutions.</p>
-    <p>Figures are updated periodically. They reflect conditions and published benchmarks as of the <code>last_reviewed</code> date on each asset record. No real-time damage feeds are used.</p>
+        <h4>DFI and IFI tranches</h4>
+        <table>
+          <thead><tr><th>Tranche</th><th>Code</th><th>Definition and typical range</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Concessional IFI debt</strong></td>
+              <td><code>concessional_pct</code></td>
+              <td>Long-tenor debt (20&#8211;40 years) with grace periods at sub-market pricing. World Bank, EBRD concessional window, EIB EU4Ukraine, AIIB, NIB; bilateral: KfW Entwicklungsbank, AFD, JICA. Typically 25&#8211;45% in mixed-finance social and municipal infrastructure. The workhorse layer. [<code>EBRD_CASE</code>] [<code>EIB_UA</code>]</td>
+            </tr>
+            <tr>
+              <td><strong>Senior IFI debt (near-market)</strong></td>
+              <td><code>senior_ifi_pct</code></td>
+              <td>EBRD, EIB, IFC senior loans to revenue-generating assets: generation capacity, telecoms, port concessions, agri-export logistics. Priced just below commercial. Carries policy conditionality (governance, procurement, ESG). Primarily post-armistice or for assets with clear offtake structures. [<code>EBRD_CASE</code>] [<code>EIB_UA</code>]</td>
+            </tr>
+            <tr>
+              <td><strong>DFI equity and quasi-equity</strong></td>
+              <td><code>dfi_equity_pct</code></td>
+              <td>IFC equity, EBRD direct equity, DFC equity, EU4Ukraine equity sleeve. Subordinated debt, convertible notes, preference shares sit here. Used for restructured SOEs, PPP concessionaires, anchor private sponsors. [<code>EBRD_CASE</code>]</td>
+            </tr>
+            <tr>
+              <td><strong>ECA buyer credit / direct lending</strong></td>
+              <td><code>eca_pct</code></td>
+              <td>Export credit agency instruments: UKEF, Bpifrance, Euler Hermes/SACE, EKF. Pre-armistice: 30&#8211;50% of announced capacity. Expands substantially post-armistice as bank syndication deepens. [<code>MIGA</code>]</td>
+            </tr>
+          </tbody>
+        </table>
 
-    <!-- ── Contact ────────────────────────────────────────────────────────── -->
-    <h2>Contact and corrections</h2>
-    <p>uVidNova is built and maintained by <strong>Samir Asadov, CFA</strong>. If you find a factual error, a missing source citation, or an asset that should be in the register, use the <strong>Feedback</strong> button on the map page, or email directly. Corrections are reviewed and committed as verified pull requests.</p>
-    <p>If you are a KSE analyst, EBRD investment officer, or policy researcher and would like to contribute data or partner on methodology validation, please get in touch via the feedback form.</p>
+        <h4>Sovereign and private-sector tranches</h4>
+        <table>
+          <thead><tr><th>Tranche</th><th>Code</th><th>Definition and typical range</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Sovereign / municipal counterpart equity</strong></td>
+              <td><code>public_equity_pct</code></td>
+              <td>Ukrainian government and oblast/municipal contribution. Often partly in-kind (land, existing structure, regulatory approvals at appraised value), partly budgetary. IFIs typically require 10&#8211;30%. [<code>RDNA3</code>] [<code>EBRD_CASE</code>]</td>
+            </tr>
+            <tr>
+              <td><strong>Diaspora capital and patriotic bonds</strong></td>
+              <td><code>diaspora_pct</code></td>
+              <td>Ukrainian war bonds (UAH and FX), diaspora bond issuances modelled on Israel and Ireland precedents. 2&#8211;5% pre-armistice; grows materially post-armistice. Confidence: low. [<code>EBRD_CASE</code>]</td>
+            </tr>
+            <tr>
+              <td><strong>Commercial bank senior debt</strong></td>
+              <td><code>commercial_debt_pct</code></td>
+              <td>Pre-armistice: almost exclusively via IFI A/B structures where the IFI is lender of record and preferred-creditor status passes to B-loan banks. Standalone bank syndicates return post-armistice. Confidence: low pre-armistice. [<code>EBRD_CASE</code>]</td>
+            </tr>
+            <tr>
+              <td><strong>Institutional / capital markets debt</strong></td>
+              <td><code>institutional_debt_pct</code></td>
+              <td>EU insurers and pension funds (Solvency II/matching adjustment), UK bulk annuity books, North American pension funds, sovereign wealth funds, global infrastructure debt funds. Most policy-contingent tranche: EU accession stall compresses capacity 40&#8211;60%; acceleration multiplies 1.5&#215;. Confidence: low. [<code>EU_FACILITY</code>]</td>
+            </tr>
+            <tr>
+              <td><strong>Private equity / infrastructure funds</strong></td>
+              <td><code>private_equity_pct</code></td>
+              <td>Ukraine-dedicated funds (Horizon Capital, Dragon Capital), regional EM infrastructure, impact-mandate global infrastructure. Mostly post-armistice or for narrow asset classes (telecoms, logistics) where revenue visibility justifies risk today. Confidence: low. [<code>EBRD_CASE</code>]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 3.2 Template assignment -->
+      <div class="about-subsection">
+        <h3>3.2 Template assignment — sector × path matrix</h3>
+        <p>Capital-stack templates in <code>data/financing_templates.json</code> are keyed by <code>sector</code> &#215; <code>path</code>. When an asset record specifies both, the platform selects the matching template as the <em>standard stack</em>, with per-asset overrides permitted where named comparable projects justify deviation. Central-tendency grant percentages across the matrix:</p>
+        <table>
+          <thead>
+            <tr><th>Sector group</th><th>Baseline grant %</th><th>Code-compliant grant %</th><th>BBB grant %</th><th>BBB rationale</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Healthcare, education, heritage, water &amp; sanitation</td>
+              <td>30%</td><td>40%</td><td>55%</td>
+              <td>EU Pillar I green and accessibility conditionality [<code>EU_FACILITY</code>]</td>
+            </tr>
+            <tr>
+              <td>Residential (district-scale)</td>
+              <td>25%</td><td>35%</td><td>45%</td>
+              <td>EU Housing Pillar + EBRD Green Cities concessional [<code>EBRD_CASE</code>]</td>
+            </tr>
+            <tr>
+              <td>Energy — generation and grid</td>
+              <td>10%</td><td>20%</td><td>30%</td>
+              <td>EU grant for renewables conversion + EBRD Green Economy [<code>EU_FACILITY</code>]</td>
+            </tr>
+            <tr>
+              <td>Transport — revenue-generating (ports, toll roads)</td>
+              <td>10%</td><td>15%</td><td>20%</td>
+              <td>PPP concession structure limits grant share [<code>EBRD_CASE</code>]</td>
+            </tr>
+            <tr>
+              <td>Transport — non-revenue (rail, bridges)</td>
+              <td>30%</td><td>35%</td><td>40%</td>
+              <td>EU Connectivity Fund; public goods character [<code>EU_FACILITY</code>]</td>
+            </tr>
+            <tr>
+              <td>Industrial (steel, coke, agri-processing)</td>
+              <td>5%</td><td>10%</td><td>15%</td>
+              <td>Private-anchored; strategic investor required [<code>EBRD_CASE</code>]</td>
+            </tr>
+            <tr>
+              <td>Public administration</td>
+              <td>55%</td><td>60%</td><td>65%</td>
+              <td>EU Facility institutional reform track [<code>EU_FACILITY</code>]</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Full templates including all 12 tranche allocations, PRI wrap flags, and structure patterns are in <code>data/financing_templates.json</code>. Template rationale for each sector is documented in <code>docs/financing_tranches.md</code>.</p>
+      </div>
+
+      <!-- 3.3 Wartime compression -->
+      <div class="about-subsection">
+        <h3>3.3 Wartime adjustment rules</h3>
+        <p>In pre-armistice conditions, commercial capital tranches are materially compressed relative to a peacetime template. Rules from <code>data/wartime_adjustment_rules.json</code>:</p>
+        <table>
+          <thead><tr><th>Tranche</th><th>Pre-armistice retain fraction</th><th>Remainder redirected to</th></tr></thead>
+          <tbody>
+            <tr><td>Commercial bank debt</td><td>30%</td><td>Concessional IFI debt</td></tr>
+            <tr><td>Institutional debt</td><td>20%</td><td>50% ERA proceeds, 50% concessional IFI debt</td></tr>
+            <tr><td>Private equity</td><td>30%</td><td>60% DFI equity, 40% grant</td></tr>
+          </tbody>
+        </table>
+        <p>PRI wrap is required on all retained commercial bank debt, institutional debt, and private equity in the pre-armistice state. The rationale is risk pricing: in active conflict, commercial lenders face loss scenarios that are not insurable at standard premiums without IFI first-loss and guarantee layering. Adjustments are informed by EBRD Ukraine portfolio deal structures and bilateral ECA utilisation rates. [<code>EBRD_CASE</code>] [<code>MIGA</code>]</p>
+        <p>In post-armistice fragile conditions, compression eases to 60% retention for commercial debt and private equity. Full drawback to peacetime templates requires durable peace and a sovereign-risk band of <em>low</em> or <em>elevated</em>.</p>
+      </div>
+
+      <!-- 3.4 Confidence levels -->
+      <div class="about-subsection">
+        <h3>3.4 Confidence levels</h3>
+        <table>
+          <thead><tr><th>Level</th><th>Tranches</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="confidence-high">High</span></td>
+              <td>Pure grants, ERA proceeds, PRI wrap, ECA buyer credit</td>
+              <td>Capacity figures explicit in named source programme documents. Confirmed in published policy commitments.</td>
+            </tr>
+            <tr>
+              <td><span class="confidence-medium">Medium</span></td>
+              <td>First-loss capital, concessional IFI debt, senior IFI debt, DFI equity, public equity</td>
+              <td>Aggregate commitments announced; deployment ratios and project-level splits inferred from comparable deal structures.</td>
+            </tr>
+            <tr>
+              <td><span class="confidence-low">Low</span></td>
+              <td>Diaspora bonds, commercial bank debt, institutional debt, private equity</td>
+              <td>Estimated from analogues and fund-manager soundings. Post-armistice figures are theoretical capacity modelling, not confirmed commitments.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p><span class="confidence-low">Low-confidence</span> tranches carry the widest uncertainty bands and are most sensitive to EU accession trajectory and peace-state scenario. The Finance It tool exposes scenario toggles for these variables.</p>
+      </div>
+
+      <a href="#top" class="about-back-to-top">Back to top &#8593;</a>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         4. RECONSTRUCTION TRUST METHODOLOGY
+    ═════════════════════════════════════════════════════════════════════════ -->
+    <section class="about-section" id="trust" aria-labelledby="trust-title">
+      <h2 class="about-section-title" id="trust-title">4. Reconstruction Trust methodology</h2>
+
+      <p class="about-lead">
+        The Reconstruction Trust is a modelling construct: a financing mechanism that
+        would allow reconstruction to begin now against a future stream of reparations
+        proceeds, rather than waiting for a lump-sum political settlement. This section
+        explains the mechanism, its historical precedents, and how it is parametrised
+        on this platform.
+      </p>
+
+      <!-- 4.1 Historical precedents -->
+      <div class="about-subsection">
+        <h3>4.1 Historical precedents</h3>
+
+        <div class="trust-precedent">
+          <p class="trust-precedent-title">Dawes Plan (1924) and Young Plan (1929) — annuity-backed reconstruction finance</p>
+          <p>Following Germany's default on WWI reparations in 1923, the Dawes Committee restructured the obligation into long-term annuities backed by German railway receipts, industrial bonds, and a first-charge on the national budget. A Reparations Agent (S. Parker Gilbert) was given access to German revenue streams and authority to issue bonds on international capital markets backed by those streams. Germany raised approximately USD 800m in foreign loans in 1924&#8211;29 on this basis — funds that financed industrial reconstruction — while the reparations annuity was paid from operating revenues rather than from a lump sum Germany could never have assembled.</p>
+          <p>The Young Plan (1929) commercialised the structure further: Germany issued bonds on international markets directly, and the Bank for International Settlements — established simultaneously — acted as trustee. The BIS's existence is itself a legacy of this annuity-backed structure.</p>
+          <p><strong>Key lesson:</strong> annuity-based structures allow reconstruction to proceed before the underlying liability is politically resolved. The creditor receives a flow; the debtor finances reconstruction from the same asset that generates the flow. Lump-sum settlement is not a prerequisite for productive use of the liability.</p>
+        </div>
+
+        <div class="trust-precedent">
+          <p class="trust-precedent-title">Marshall Plan (1948&#8211;51) — conditioned multi-year disbursement</p>
+          <p>The European Recovery Program disbursed USD 13.3bn (approximately USD 160bn in 2024 terms) across 16 European countries in four annual tranches from 1948 to 1952. Critically, it was not a lump-sum transfer but a multi-year availability commitment: recipient countries knew the quantum and schedule of disbursements in advance, which allowed investment planning, procurement pipelines, and counterpart budget allocations to be established years ahead of actual receipt.</p>
+          <p>The programme was conditioned on two things: economic policy reform (the OEEC coordination mechanism, predecessor to the OECD) and trade liberalisation among recipients. The combination of conditioned disbursement and multi-year commitment is the structural feature that distinguished the Marshall Plan from both the unconditional reparations transfers that preceded WWII and the debt rescheduling that followed it.</p>
+          <p><strong>Key lesson:</strong> a known, committed, multi-year disbursement schedule is more useful to reconstruction planners than either a large uncertain lump sum or a series of ad hoc tranches. The EU Facility for Ukraine reproduces this structure with its EUR 50bn seven-year envelope and annual milestone-based tranches. [<code>EU_FACILITY</code>]</p>
+        </div>
+
+        <div class="trust-precedent">
+          <p class="trust-precedent-title">UN Compensation Commission (1991&#8211;2022) — flow-based levy mechanism</p>
+          <p>The UNCC administered Iraq's reparations to Kuwait and other claimants through a levy on Iraqi oil export revenues, initially set at 30% of proceeds under the UN Oil-for-Food Programme. Over 31 years the Commission adjudicated 2.68 million claims and disbursed approximately USD 52.4bn. The final Iraqi payment was made in February 2022.</p>
+          <p>The UNCC mechanism demonstrated three things directly relevant to Ukraine. First, a percentage-of-revenue levy is more practically recoverable over time than a demand for immediate lump-sum payment: Iraq could not have paid USD 52bn in 1991, but it could sustain a 25&#8211;30% levy across three decades. Second, a multilateral trustee with independent adjudication authority sitting under the UN Security Council provided sufficient legitimacy that claimants accepted the process rather than pursuing parallel tracks. Third, flow-based structures could in principle support front-loaded financing: annual levy receipts could have backed bonds issued against the projected 30-year revenue stream, had the political will existed.</p>
+          <p><strong>Key lesson:</strong> a flow-based mechanism — a percentage of a predictable revenue stream — proved more practically recoverable over time than a lump-sum demand. For Ukraine, the analogous stream is the interest accruing on frozen Russian sovereign reserves, with principal seizure as a step-up scenario.</p>
+        </div>
+      </div>
+
+      <!-- 4.2 GPFG parallel -->
+      <div class="about-subsection">
+        <h3>4.2 The sovereign wealth fund parallel — Norway's Government Pension Fund Global</h3>
+        <p>Norway's GPFG is the closest structural analogue to a Ukraine Reconstruction Trust. The Fund holds approximately USD 1.6 trillion in assets (2024) derived from North Sea oil revenues, governed under a rule that limits annual drawdowns to the expected real return — initially 4%, revised to approximately 3% of fund market value. Annual parliamentary appropriations may not exceed this limit except in extraordinary circumstances. The rule creates a fund that can deliver a predictable annual disbursement without depleting the corpus.</p>
+        <p>The structural parallel: a corpus derived from a windfall asset (frozen Russian reserves in place of oil revenues), governed under a drawdown rule (2.5%&#8211;5.0% depending on political will), converting the corpus into an annual availability payment that is known, predictable, and schedulable. This is precisely the feature that Marshall Plan experience shows is most valuable to reconstruction planners: not the size of the transfer, but its predictability.</p>
+        <p>The GPFG parallel also illustrates the governance requirement. Norway's rule works because it is legislated, administered by an independent manager (Norges Bank Investment Management), and subject to annual parliamentary scrutiny. A Ukraine Trust would require analogous governance — multilateral trusteeship, independent management, and regular public reporting — to provide the credibility on which institutional investors would rely when financing reconstruction projects against anticipated Trust disbursements.</p>
+      </div>
+
+      <!-- 4.3 Mechanism as modelled -->
+      <div class="about-subsection">
+        <h3>4.3 The Trust mechanism as modelled on uVidNova</h3>
+
+        <table>
+          <thead><tr><th>Parameter</th><th>Value / assumption</th><th>Source / basis</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Corpus</strong></td>
+              <td>Frozen Russian sovereign reserves placed under international trusteeship. Central estimate: USD 280&#8211;300bn principal. Platform default scenario: USD 50bn ERA proceeds only (G7 ERA loan on accrued interest).</td>
+              <td>G7 ERA agreement; public reporting on immobilised Euroclear holdings. [<code>EU_FACILITY</code>]</td>
+            </tr>
+            <tr>
+              <td><strong>Drawdown rate</strong></td>
+              <td>2.5%&#8211;5.0% of corpus per annum. Default: 4.0%.</td>
+              <td>Calibrated against GPFG drawdown rule and UNCC levy precedent.</td>
+            </tr>
+            <tr>
+              <td><strong>Annual availability payment</strong></td>
+              <td><code>corpus &#215; drawdown_pct &#215; (1 &#8722; operating_cost_pct)</code>. At USD 286bn corpus, 4.0% drawdown, 0.1% operating cost: approximately USD 11.4bn/year.</td>
+              <td>Modelling construct. Formula in <code>data/trust/trust_config.json</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>Nominal yield on corpus</strong></td>
+              <td>4.0% (ECB AAA-rated euro-area sovereign average, 5-year duration, 2026-Q1 vintage).</td>
+              <td><code>data/trust/trust_config.json</code>. Source: ECB yield curve data.</td>
+            </tr>
+            <tr>
+              <td><strong>Use of availability payments</strong></td>
+              <td>Annual Trust payments service concessional debt drawn to fund reconstruction projects in the current period, rather than waiting for political resolution of the lump-sum reparations claim.</td>
+              <td>Mechanism design; informed by UNCC and Dawes Plan precedents.</td>
+            </tr>
+            <tr>
+              <td><strong>Financing multiplier</strong></td>
+              <td>USD 1 of annual Trust availability supports approximately USD 5 of upfront project financing via concessional debt (at 5.0% coupon over 25 years with 1.25 DSCR). Sector-specific parameters in <code>data/availability_payment_params.json</code>.</td>
+              <td>Standard project-finance sizing at sector-specific coupon rates. [<code>EBRD_CASE</code>]</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The annuity arithmetic illustrates why the Trust structure matters. A 4% drawdown on USD 286bn equals approximately USD 11.4bn per year — a contracted annual stream, unlike the uncertain and politically fraught prospect of a lump-sum settlement. At a 5&#215; financing multiplier, that stream supports approximately USD 57bn in reconstruction investment per year without requiring any political agreement on the total reparations amount.</p>
+        <p>In the current platform default (proceeds only, pre-armistice), the ERA envelope is approximately USD 50bn total — a one-time financing against accrued interest, not an annual stream. The principal-seizure scenario (USD 280&#8211;300bn corpus) is what unlocks the annuity logic and its financing multiplier. Users can toggle between these scenarios in the Finance It tool.</p>
+      </div>
+
+      <!-- 4.4 Trust disclaimer -->
+      <div class="about-subsection">
+        <h3>4.4 Disclaimer — Trust mechanism</h3>
+        <div class="disclaimer-box">
+          <p>The Reconstruction Trust mechanism described on this platform is a <strong>modelling construct based on historical precedents and current legal proposals</strong>. It does not reflect confirmed government policy, a concluded international agreement, or any specific legislative or judicial outcome regarding frozen Russian sovereign assets.</p>
+          <p>The legality, enforceability, and quantum of any reparations claim by Ukraine against the Russian Federation remain contested in international law. The platform takes no position on these legal questions. Trust corpus and availability-payment figures are scenario assumptions for financing-structure modelling, not forecasts or legal assessments.</p>
+          <p>Users incorporating Trust mechanism assumptions into transaction models, investment memoranda, or public communications should make clear the conditional and illustrative nature of these figures.</p>
+        </div>
+      </div>
+
+      <a href="#top" class="about-back-to-top">Back to top &#8593;</a>
+    </section>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         5. DISCLAIMER
+    ═════════════════════════════════════════════════════════════════════════ -->
+    <section class="about-section" id="disclaimer" aria-labelledby="disclaimer-title">
+      <h2 class="about-section-title" id="disclaimer-title">5. Disclaimer</h2>
+
+      <div class="disclaimer-box">
+        <p><strong>Cost and financing-structure estimates.</strong> Cost and financing-structure figures on this platform are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and named comparable Ukrainian precedents. They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence. Actual project costs will depend on scope, procurement, timing, site conditions, contractor market conditions, and the political and security environment at the time of execution.</p>
+
+        <p><strong>Re-damaged assets.</strong> Assets with <code>re_damage_count &#8805; 2</code> are flagged with a warning indicator on the map and in the asset detail page. This is a <strong>material investor-information field</strong>: re-damage events affect insurance pricing, schedule risk, and the case for hardened build-back-better designs. Re-damaged assets are not hidden or downweighted — they are documented with full transparency because suppressing this information would undermine the platform's purpose.</p>
+
+        <p><strong>Occupied and frontline-adjacent assets.</strong> Assets classified as <em>occupied</em> or <em>frontline-adjacent</em> are documented in the register as pipeline only. They are excluded from the default map view and from aggregate cost and financing-capacity figures. The Rebuildability filter exposes them for planning purposes. No reconstruction finance deployment is modelled for these assets in current conditions.</p>
+
+        <p><strong>Data vintage.</strong> RDNA3 is the February 2024 third edition; subsequent damage has not been incorporated into the unit-cost or regional-multiplier tables. The KSE "Russia Will Pay" tracker is updated periodically; figures cited reflect the version current at each asset record's <code>last_reviewed</code> date. No real-time damage feeds are used. This is a register, not a wire service.</p>
+
+        <p><strong>Independence.</strong> uVidNova is a not-for-profit platform. It does not receive fees from any financing institution, donor, or government body. It has no affiliation with the Ukrainian government, the World Bank, EBRD, EIB, or any other institution whose data it cites. Citations do not imply endorsement by those institutions.</p>
+
+        <p><strong>Corrections.</strong> If you identify a factual error, a missing source citation, a figure inconsistent with a named reference, or an asset that should be in the register, use the Feedback button on the map page. Corrections are reviewed and committed as verified pull requests. All data is version-controlled and publicly auditable.</p>
+      </div>
+
+      <p style="margin-top:1.25rem;font-size:0.85rem;color:var(--colour-text-muted);">
+        uVidNova is built and maintained by <strong>Samir Asadov, CFA</strong>.
+        For partnership enquiries from KSE analysts, EBRD investment officers, or policy researchers,
+        please use the feedback form on the map page.
+      </p>
+
+      <a href="#top" class="about-back-to-top">Back to top &#8593;</a>
+    </section>
 
   </main>
 
