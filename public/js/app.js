@@ -440,35 +440,34 @@ function showOblastWarPanel(info, featureName) {
 
 // ── Oblast boundary layer ─────────────────────────────────────────────────────
 
+// Per-view colour palette  [border, normalFill, crimeaFill, mapBg]
+const VIEW_PALETTE = {
+  ukraine:       { border: '#ffd500', fill: '#4a90d9', crimeaFill: '#2a6fa8', bg: '#0e2a5a' },
+  damaged:       { border: '#27ae60', fill: '#b03030', crimeaFill: '#6b0000', bg: '#1a0808' },
+  reconstructed: { border: '#c9a227', fill: '#0d2b5e', crimeaFill: '#060e22', bg: '#040e24' },
+  development:   { border: '#1a7a2e', fill: '#2d7a3a', crimeaFill: '#1a3a1a', bg: '#071208' },
+};
+
 function oblastStyle(feature) {
-  const name = feature.properties?.name ?? '';
-  const isCrimea = name === 'Crimea';
+  const name      = feature.properties?.name ?? '';
+  const isCrimea  = name === 'Crimea';
   const isOccupied = OCCUPIED_OBLASTS.has(name);
   const isPartial  = PARTIALLY_OCCUPIED_OBLASTS.has(name);
+  const pal = VIEW_PALETTE[mapViewMode] ?? VIEW_PALETTE.damaged;
 
+  // War mode overlays (occupation stripes) — respect current palette border
   if (warMode && (isOccupied || isCrimea)) {
-    return {
-      color:       '#c9a227',
-      weight:      1.5,
-      fillColor:   '#6b0000',
-      fillOpacity: 0.72,
-      dashArray:   '7, 5',
-    };
+    return { color: pal.border, weight: 1.5, fillColor: '#6b0000', fillOpacity: 0.72, dashArray: '7, 5' };
   }
   if (warMode && isPartial) {
-    return {
-      color:       '#c9a227',
-      weight:      1.5,
-      fillColor:   '#8b1a1a',
-      fillOpacity: 0.50,
-      dashArray:   '5, 6',
-    };
+    return { color: pal.border, weight: 1.5, fillColor: '#8b1a1a', fillOpacity: 0.50, dashArray: '5, 6' };
   }
+
   return {
-    color:       '#c9a227',
+    color:       pal.border,
     weight:      1.5,
-    fillColor:   isCrimea ? '#162d5a' : '#1e3d7a',
-    fillOpacity: isCrimea ? 0.55 : 0.70,
+    fillColor:   isCrimea ? pal.crimeaFill : pal.fill,
+    fillOpacity: isCrimea ? 0.55 : 0.68,
     dashArray:   isCrimea ? '6, 4' : null,
   };
 }
@@ -523,17 +522,27 @@ async function addOblastLayer() {
 function setMapView(view) {
   mapViewMode = view;
 
-  // Update tab active state
+  // Update tab active state and tint with view accent colour
+  const accent = VIEW_PALETTE[view]?.border ?? '#c9a227';
   for (const btn of document.querySelectorAll('.map-view-tab')) {
     const isActive = btn.id === `tab-${view}`;
     btn.classList.toggle('map-view-tab-active', isActive);
     btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    btn.style.color = isActive ? accent : '';
+    btn.style.background = isActive ? `${accent}22` : '';
   }
 
   // Clear any oblast selection when switching views
   selectedOblast = null;
   closeOblastWarPanel();
   if (oblastLayer) oblastLayer.setStyle(oblastStyle);
+
+  // Swap map background colour to match view palette
+  const pal = VIEW_PALETTE[view] ?? VIEW_PALETTE.damaged;
+  const mapEl = document.getElementById('map');
+  const layoutEl = document.querySelector('.map-layout');
+  if (mapEl)    mapEl.style.background    = pal.bg;
+  if (layoutEl) layoutEl.style.background = pal.bg;
 
   // Show/hide filter+asset controls (not useful in ukraine/development views)
   const showControls = view === 'damaged' || view === 'reconstructed';

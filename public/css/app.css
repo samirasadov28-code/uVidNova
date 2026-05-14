@@ -112,13 +112,15 @@ img { max-width: 100%; height: auto; }
   flex: 1;
   height: calc(100vh - 60px);
   overflow: hidden;
-  background: #0d1b36;
+  background: #1a0808; /* damaged view default — JS overrides on view switch */
+  transition: background 0.4s ease;
 }
 #map {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: #0d1b36;
+  background: #1a0808;
+  transition: background 0.4s ease;
 }
 
 /* ── Map view tab bar ─────────────────────────────────────────────────────── */
@@ -151,11 +153,9 @@ img { max-width: 100%; height: auto; }
   transition: background 0.15s, color 0.15s;
 }
 .map-view-tab:last-child { border-right: none; }
-.map-view-tab:hover { background: rgba(201,162,39,0.12); color: rgba(255,255,255,0.85); }
-.map-view-tab-active {
-  background: rgba(201,162,39,0.18);
-  color: #f5c842;
-}
+.map-view-tab:hover { color: rgba(255,255,255,0.9) !important; filter: brightness(1.15); }
+/* active colour is set via inline style by JS (matches view palette) */
+.map-view-tab-active { font-weight: 700; }
 .map-view-hint {
   position: absolute;
   bottom: 58px;
