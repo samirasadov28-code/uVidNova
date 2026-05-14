@@ -1,0 +1,171 @@
+{
+  "asset_id": "DNIPRO_RESIDENTIAL_2023_01_14",
+  "name": {
+    "en": "Dnipro Residential Apartment Block — Chechelivskiy District (January 2023 Missile Strike)",
+    "uk": "Житловий будинок у Чечелівському районі Дніпра (ракетний удар, січень 2023)"
+  },
+  "location": {
+    "lat": 48.4647,
+    "lon": 35.0462,
+    "oblast": "Dnipropetrovsk",
+    "raion": null,
+    "settlement": "Dnipro",
+    "address_en": "Chechelivskiy district, Dnipro, Dnipropetrovsk Oblast"
+  },
+  "asset_type": "residential.apartment_block_single",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2023-01-14",
+    "incident_type": "missile_strike",
+    "destruction_level": "severe",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UA Ministry of Communities and Territories damage report — Dnipro January 2023",
+        "url": "https://www.minregion.gov.ua/napryamki-diyalnosti/dnipro-damage-jan-2023",
+        "source_code": "eRECOVERY"
+      },
+      {
+        "title": "UN OCHA Ukraine Flash Update — Dnipro residential strike January 2023",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-jan-2023",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 42000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "UA Ministry of Communities damage report Jan 2023; OCHA Flash Update Jan 2023; nine-storey residential block, approximately 700 apartments"
+    },
+    "housing_units": {
+      "value": 700,
+      "unit": "units",
+      "source": "extracted_from_source",
+      "ref": "UA Ministry of Communities damage report Jan 2023"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 22,
+      "central_usd_m": 45,
+      "high_usd_m": 68
+    },
+    "code_compliant": {
+      "low_usd_m": 25,
+      "central_usd_m": 55,
+      "high_usd_m": 85
+    },
+    "build_back_better": {
+      "low_usd_m": 28,
+      "central_usd_m": 68,
+      "high_usd_m": 108,
+      "tech_overlays": ["passive_house_standard", "energy_efficiency_envelope"]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "RESIDENTIAL_BASELINE",
+      "grant_pct": 25,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "RESIDENTIAL_CODE_COMPLIANT",
+      "grant_pct": 35,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "RESIDENTIAL_BBB",
+      "grant_pct": 45,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 2,
+      "private_equity_pct": 3,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "rationale": "Single high-rise building; eRecovery grant programme applicable for individual building; EU standard energy-efficiency upgrade qualifies for BBB track",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2027,
+    "construction_period_years": 2,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "rationale": "Single residential building; Trust bridges residual financing gap; relatively quick reconstruction programme",
+    "supportable_debt_usd_m": 13.6,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "dnipropetrovsk_oblast",
+    "missile_strike",
+    "apartment_blocks",
+    "single_building"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

@@ -1,0 +1,172 @@
+{
+  "asset_id": "AVDIIVKA_RESIDENTIAL_2023_10_01",
+  "name": {
+    "en": "Avdiivka Town Residential — Donetsk Oblast",
+    "uk": "Житловий фонд Авдіївки — Донецька область"
+  },
+  "location": {
+    "lat": 48.1366,
+    "lon": 37.7575,
+    "oblast": "Donetsk",
+    "raion": null,
+    "settlement": "Avdiivka",
+    "address_en": "Avdiivka, Donetsk Oblast"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2023-10-01",
+    "incident_type": "multiple",
+    "destruction_level": "destroyed",
+    "re_damage_count": 2,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Russia Will Pay — Donetsk residential damage database",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "source_code": "KSE"
+      },
+      {
+        "title": "UN OCHA Ukraine Flash Update — Avdiivka October 2023",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-oct-2023",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "recently_liberated",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 165000,
+      "unit": "m2",
+      "source": "modelled",
+      "ref": "RDNA3 Donetsk residential; OCHA Ukraine Flash Update Oct 2023; Avdiivka pre-war population ~32,000"
+    },
+    "housing_units": {
+      "value": 3200,
+      "unit": "units",
+      "source": "modelled",
+      "ref": "RDNA3 Table 6.2 Donetsk oblast residential; Avdiivka city housing registry pre-war"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 184,
+      "central_usd_m": 339,
+      "high_usd_m": 493
+    },
+    "code_compliant": {
+      "low_usd_m": 211,
+      "central_usd_m": 414,
+      "high_usd_m": 617
+    },
+    "build_back_better": {
+      "low_usd_m": 239,
+      "central_usd_m": 515,
+      "high_usd_m": 790,
+      "tech_overlays": ["passive_house_standard", "modular_construction", "bomb_shelter_upgrade"]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "RESIDENTIAL_BASELINE",
+      "grant_pct": 25,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "RESIDENTIAL_CODE_COMPLIANT",
+      "grant_pct": 35,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "RESIDENTIAL_BBB",
+      "grant_pct": 45,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 2,
+      "private_equity_pct": 3,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "rationale": "Recently-liberated Donetsk territory; 2 re-damage events; financing pipeline-only until territorial stabilisation confirmed; EU Housing Pillar applicable post-liberation",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2032,
+    "construction_period_years": 3,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "rationale": "Destroyed housing in recently-liberated Donetsk; Trust availability-payment bridges construction-phase financing gap",
+    "supportable_debt_usd_m": 101.8,
+    "tenor_years": 25
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "donetsk_oblast",
+    "multiple",
+    "recently_liberated",
+    "re_damaged",
+    "apartment_blocks"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}

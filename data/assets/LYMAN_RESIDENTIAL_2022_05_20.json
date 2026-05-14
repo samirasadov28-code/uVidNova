@@ -1,0 +1,172 @@
+{
+  "asset_id": "LYMAN_RESIDENTIAL_2022_05_20",
+  "name": {
+    "en": "Lyman Town Residential — Donetsk Oblast",
+    "uk": "Житловий фонд Лимана — Донецька область"
+  },
+  "location": {
+    "lat": 48.9803,
+    "lon": 37.8131,
+    "oblast": "Donetsk",
+    "raion": null,
+    "settlement": "Lyman",
+    "address_en": "Lyman (formerly Krasny Lyman), Donetsk Oblast"
+  },
+  "asset_type": "residential.apartment_block_district",
+  "sector": "residential",
+  "damage": {
+    "incident_date": "2022-05-20",
+    "incident_type": "multiple",
+    "destruction_level": "severe",
+    "re_damage_count": 1,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "KSE Institute: Russia Will Pay — Donetsk residential database",
+        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat: Lyman damage analysis 2022",
+        "url": "https://www.bellingcat.com/news/2022/10/lyman-ukraine-damage",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "recently_liberated",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "total_floor_area_m2": {
+      "value": 210000,
+      "unit": "m2",
+      "source": "modelled",
+      "ref": "RDNA3 Donetsk residential; KSE database; Bellingcat damage analysis; Lyman pre-war population ~20,000"
+    },
+    "housing_units": {
+      "value": 4000,
+      "unit": "units",
+      "source": "modelled",
+      "ref": "RDNA3 Table 6.2 Donetsk oblast residential damage estimates"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 136,
+      "central_usd_m": 291,
+      "high_usd_m": 446
+    },
+    "code_compliant": {
+      "low_usd_m": 156,
+      "central_usd_m": 357,
+      "high_usd_m": 558
+    },
+    "build_back_better": {
+      "low_usd_m": 177,
+      "central_usd_m": 446,
+      "high_usd_m": 714,
+      "tech_overlays": ["passive_house_standard", "modular_construction", "bomb_shelter_upgrade"]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "RESIDENTIAL_BASELINE",
+      "grant_pct": 25,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "RESIDENTIAL_CODE_COMPLIANT",
+      "grant_pct": 35,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 5,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "RESIDENTIAL_BBB",
+      "grant_pct": 45,
+      "era_pct": 10,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 2,
+      "private_equity_pct": 3,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": ["MIGA_WAR"]
+      },
+      "structure_patterns": ["blending_facility"],
+      "rationale": "Recently-liberated Donetsk territory; EU Housing Pillar pipeline; 1 re-damage event indicates ongoing exposure; UA guarantee required for any IFI concessional disbursement",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2031,
+    "construction_period_years": 2,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "rationale": "Recently-liberated community housing; Trust bridges debt-service gap through reconstruction",
+    "supportable_debt_usd_m": 87.3,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "donetsk_oblast",
+    "multiple",
+    "recently_liberated",
+    "re_damaged",
+    "apartment_blocks"
+  ],
+  "last_reviewed": "2026-05-14",
+  "version": "1.0.0"
+}
