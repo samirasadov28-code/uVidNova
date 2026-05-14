@@ -282,39 +282,8 @@ function initDisclaimer() {
 // ── Landing overlay ───────────────────────────────────────────────────────────
 
 function initLanding() {
-  const overlay = document.getElementById('landing');
-  if (!overlay) return;
-
-  if (sessionStorage.getItem('uvidnova_landed')) {
-    // Already visited this session — remove instantly, no animation (avoids unclickable fade)
-    overlay.remove();
-    return;
-  }
-
-  const enterBtn = document.getElementById('enterAtlas');
-  enterBtn?.addEventListener('click', () => {
-    sessionStorage.setItem('uvidnova_landed', '1');
-    overlay.classList.add('dismissed');
-    overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
-  });
-
-  // Version display in landing
-  const vLabel = document.getElementById('landingVersion');
-  const mainVLabel = document.getElementById('versionLabel');
-  if (vLabel && mainVLabel) vLabel.textContent = mainVLabel.textContent;
-
-  // Update prompt mirror in landing
-  const swPrompt = document.getElementById('updatePrompt');
-  const landingPrompt = document.getElementById('landingUpdatePrompt');
-  const landingUpdateBtn = document.getElementById('landingUpdateBtn');
-  if (swPrompt && landingPrompt) {
-    const observer = new MutationObserver(() => {
-      if (!swPrompt.hidden) landingPrompt.hidden = false;
-    });
-    observer.observe(swPrompt, { attributes: true, attributeFilter: ['hidden'] });
-  }
-  landingUpdateBtn?.addEventListener('click', () => window.location.reload());
-
+  // Landing dismiss is handled by the inline <script> immediately after the
+  // landing div in index.html — never SW-cached, always runs fresh.
 }
 
 // ── Feedback modal ────────────────────────────────────────────────────────────

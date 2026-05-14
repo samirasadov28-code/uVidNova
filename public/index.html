@@ -63,15 +63,36 @@
       <p class="landing-disclaimer-small">
         Not a fundraising platform. No political framing. Every figure independently sourced.
       </p>
-      <!-- Version strip -->
       <div class="landing-actions">
-        <span class="landing-version" id="landingVersion">v0.0.5</span>
-        <span class="landing-update-prompt" id="landingUpdatePrompt" hidden>
-          · Update available — <button class="landing-update-btn" id="landingUpdateBtn">reload now</button>
-        </span>
+        <span class="landing-version">v0.0.6</span>
       </div>
     </div>
   </div>
+
+  <!-- ── Landing dismiss — inline script, never SW-cached ──────────────────── -->
+  <script>
+  (function () {
+    var overlay = document.getElementById('landing');
+    var btn     = document.getElementById('enterAtlas');
+    if (!overlay) return;
+
+    function dismiss() {
+      sessionStorage.setItem('uvidnova_landed', '1');
+      overlay.style.transition = 'opacity 0.45s ease';
+      overlay.style.opacity    = '0';
+      overlay.style.pointerEvents = 'none';
+      setTimeout(function () { overlay.style.display = 'none'; }, 480);
+    }
+
+    // Already visited this session — hide immediately without animation
+    if (sessionStorage.getItem('uvidnova_landed')) {
+      overlay.style.display = 'none';
+      return;
+    }
+
+    btn && btn.addEventListener('click', dismiss);
+  })();
+  </script>
 
   <!-- ── Site header ───────────────────────────────────────────────────────── -->
   <header class="site-header">
@@ -172,10 +193,12 @@
 
   <!-- ── Version bar ───────────────────────────────────────────────────────── -->
   <div class="version-bar" id="versionBar" role="status">
-    <span class="version-label" id="versionLabel">v0.0.5</span>
-    <button class="check-update-btn" id="checkUpdateBtn" title="Check for updates" aria-label="Check for updates">↻</button>
+    <span class="version-label" id="versionLabel">v0.0.6</span>
+    <button class="force-reload-btn" id="forceReloadBtn" title="Clear cache and reload latest version">
+      Force update
+    </button>
     <span class="update-prompt" id="updatePrompt" hidden>
-      · Update available — <button class="update-reload-btn" id="updateReloadBtn">reload now</button>
+      · New version ready — <button class="update-reload-btn" id="updateReloadBtn">reload</button>
     </span>
   </div>
 
@@ -273,58 +296,70 @@
 
   <script type="module" src="/js/app.js"></script>
   <script>
+  /* ── Force-reload button — clears ALL caches + SW, always gets fresh content ── */
+  (function () {
+    var btn = document.getElementById('forceReloadBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      btn.textContent = 'Clearing…';
+      btn.disabled = true;
+      var tasks = [];
+      if ('serviceWorker' in navigator) {
+        tasks.push(
+          navigator.serviceWorker.getRegistrations().then(function (regs) {
+            return Promise.all(regs.map(function (r) { return r.unregister(); }));
+          })
+        );
+      }
+      if ('caches' in window) {
+        tasks.push(
+          caches.keys().then(function (names) {
+            return Promise.all(names.map(function (n) { return caches.delete(n); }));
+          })
+        );
+      }
+      Promise.all(tasks).finally(function () { window.location.reload(); });
+    });
+  })();
+
+  /* ── Service-worker update detection ─────────────────────────────────────── */
   (function () {
     if (!('serviceWorker' in navigator)) return;
 
-    const showUpdatePrompt = () => {
-      const p = document.getElementById('updatePrompt');
+    function showUpdatePrompt() {
+      var p = document.getElementById('updatePrompt');
       if (p) p.hidden = false;
-    };
+    }
+    function wireReload() {
+      var rb = document.getElementById('updateReloadBtn');
+      if (rb) rb.addEventListener('click', function () { window.location.reload(); }, { once: true });
+    }
 
-    const wireReload = () => {
-      document.getElementById('updateReloadBtn')
-        ?.addEventListener('click', () => window.location.reload(), { once: true });
-    };
-
-    // When a new SW takes control, reload automatically so users see fresh content.
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
       window.location.reload();
     });
 
-    navigator.serviceWorker.register('/service-worker.js').then(reg => {
-
-      // Case 1: a new SW is already waiting when the page loads.
+    navigator.serviceWorker.register('/service-worker.js').then(function (reg) {
       if (reg.waiting) { showUpdatePrompt(); wireReload(); }
 
-      // Case 2: a new SW starts installing while the page is open.
-      reg.addEventListener('updatefound', () => {
-        const sw = reg.installing;
-        sw?.addEventListener('statechange', () => {
+      reg.addEventListener('updatefound', function () {
+        var sw = reg.installing;
+        if (!sw) return;
+        sw.addEventListener('statechange', function () {
           if (sw.state === 'installed' && navigator.serviceWorker.controller) {
             showUpdatePrompt(); wireReload();
           }
         });
       });
 
-      // Case 3: manual ↻ check.
-      const checkBtn = document.getElementById('checkUpdateBtn');
-      if (checkBtn) {
-        checkBtn.addEventListener('click', () => {
-          checkBtn.style.opacity = '0.4';
-          reg.update().finally(() => { checkBtn.style.opacity = ''; });
-        });
-      }
-
-      // Case 4: check for updates when the tab regains focus (throttled to 1 min).
-      let lastCheck = 0;
-      document.addEventListener('visibilitychange', () => {
-        if (!document.hidden && Date.now() - lastCheck > 60_000) {
+      var lastCheck = 0;
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden && Date.now() - lastCheck > 60000) {
           lastCheck = Date.now();
           reg.update();
         }
       });
-
-    }).catch(() => {});
+    }).catch(function () {});
   })();
   </script>
 </body>
