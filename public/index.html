@@ -6,7 +6,7 @@
   <title>uVidNova — Ukraine Reconstruction Finance Atlas</title>
   <meta name="description" content="Asset-level, project-finance-grade reconstruction opportunities in Ukraine. Deterministic cost estimates against RDNA3 and KSE benchmarks. Defensible financing structures.">
   <meta name="theme-color" content="#1a3a6b">
-  <meta name="app-version" content="0.1.0">
+  <meta name="app-version" content="0.1.1">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
@@ -97,7 +97,7 @@
         Not a fundraising platform. No political framing. Every figure independently sourced.
       </p>
       <div class="landing-actions">
-        <span class="landing-version">v0.1.0</span>
+        <span class="landing-version">v0.1.1</span>
         <button class="landing-force-reload" id="landingForceReload" title="Clear cache and reload latest version">↻ Force update</button>
       </div>
     </div>
@@ -149,6 +149,65 @@
       });
     }
   })();
+  </script>
+
+  <!-- ── Global UI helpers — plain script, never SW-cached, always fresh ─────
+       These inline functions are the authoritative handlers for every critical
+       button. They work even if the app.js ES module fails to load.           -->
+  <script>
+  // Disclaimer dismiss
+  function uvDismissDisclaimer() {
+    var b = document.getElementById('disclaimerBanner');
+    if (!b) return;
+    try { sessionStorage.setItem('uvidnova_disclaimer', '1'); } catch(e) {}
+    b.style.transition = 'opacity 0.3s ease';
+    b.style.opacity = '0';
+    setTimeout(function() { if (b.parentNode) b.parentNode.removeChild(b); }, 320);
+  }
+  // Feedback modal
+  function uvOpenFeedback() {
+    var m = document.getElementById('feedbackModal');
+    if (!m) return;
+    m.removeAttribute('hidden');
+    m.style.display = 'flex';
+    var f = document.getElementById('fbName');
+    if (f) setTimeout(function() { f.focus(); }, 50);
+  }
+  function uvCloseFeedback() {
+    var m = document.getElementById('feedbackModal');
+    if (!m) return;
+    m.setAttribute('hidden', '');
+    m.style.display = '';
+  }
+  // Close feedback modal on backdrop click
+  document.addEventListener('click', function(e) {
+    var m = document.getElementById('feedbackModal');
+    if (m && !m.hasAttribute('hidden') && e.target === m) uvCloseFeedback();
+  });
+  // Close feedback modal on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      var m = document.getElementById('feedbackModal');
+      if (m && !m.hasAttribute('hidden')) uvCloseFeedback();
+    }
+  });
+  // Force reload (version bar button)
+  function uvForceReload() {
+    var btn = document.getElementById('forceReloadBtn');
+    if (btn) { btn.disabled = true; btn.textContent = 'Clearing…'; }
+    var tasks = [];
+    if ('serviceWorker' in navigator) {
+      tasks.push(navigator.serviceWorker.getRegistrations().then(function(regs) {
+        return Promise.all(regs.map(function(r) { return r.unregister(); }));
+      }));
+    }
+    if ('caches' in window) {
+      tasks.push(caches.keys().then(function(names) {
+        return Promise.all(names.map(function(n) { return caches.delete(n); }));
+      }));
+    }
+    Promise.all(tasks).finally(function() { window.location.reload(); });
+  }
   </script>
 
   <!-- ── Site header ───────────────────────────────────────────────────────── -->
@@ -245,14 +304,14 @@
     <p>
       <span data-i18n="disclaimer.text">Cost and financing-structure figures are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and named comparable Ukrainian precedents.
       They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence.</span>
-      <button class="dismiss-btn" id="dismissDisclaimer" data-i18n="disclaimer.dismiss" aria-label="Dismiss disclaimer">Understood</button>
+      <button class="dismiss-btn" id="dismissDisclaimer" onclick="uvDismissDisclaimer()" data-i18n="disclaimer.dismiss" aria-label="Dismiss disclaimer">Understood</button>
     </p>
   </div>
 
   <!-- ── Version bar ───────────────────────────────────────────────────────── -->
   <div class="version-bar" id="versionBar" role="status">
     <span class="version-label" id="versionLabel">v0.0.9</span>
-    <button class="force-reload-btn" id="forceReloadBtn" data-i18n="version.force_update"
+    <button class="force-reload-btn" id="forceReloadBtn" onclick="uvForceReload()" data-i18n="version.force_update"
             title="Clear cache and reload latest version">Force update</button>
     <span class="update-prompt" id="updatePrompt" hidden>
       <span data-i18n="version.update_msg">· New version ready —</span>
@@ -261,7 +320,7 @@
   </div>
 
   <!-- ── Feedback floating button ──────────────────────────────────────────── -->
-  <button class="fab fab-feedback" id="feedbackBtn" aria-label="Send feedback" title="Send feedback">
+  <button class="fab fab-feedback" id="feedbackBtn" onclick="uvOpenFeedback()" aria-label="Send feedback" title="Send feedback">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
       <polyline points="22,6 12,13 2,6"/>
@@ -274,7 +333,7 @@
     <div class="modal-box">
       <div class="modal-header">
         <h3 id="feedbackModalTitle" data-i18n="feedback.title">Send feedback</h3>
-        <button class="modal-close" id="closeFeedbackModal" aria-label="Close feedback form">×</button>
+        <button class="modal-close" id="closeFeedbackModal" onclick="uvCloseFeedback()" aria-label="Close feedback form">×</button>
       </div>
       <!-- Netlify Form — configure email notification in Netlify dashboard:
            Forms → feedback → Notifications → Email notification → samir.asadov.28@gmail.com -->
