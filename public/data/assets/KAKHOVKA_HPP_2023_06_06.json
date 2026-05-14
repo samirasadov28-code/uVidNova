@@ -102,24 +102,83 @@
   },
   "financing_structures": {
     "baseline": {
-      "grant_pct": 30,
-      "concessional_pct": 45,
-      "public_equity_pct": 25,
-      "private_pct": 0,
+      "template_id": "ENERGY_BASELINE",
+      "grant_pct": 10,
+      "era_pct": 5,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 25,
+      "dfi_equity_pct": 5,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 10,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF",
+          "BPIFRANCE_AE"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
-      "grant_pct": 35,
-      "concessional_pct": 40,
-      "public_equity_pct": 25,
-      "private_pct": 0,
+      "template_id": "ENERGY_CODE_COMPLIANT",
+      "grant_pct": 20,
+      "era_pct": 5,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 20,
+      "dfi_equity_pct": 5,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 5,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF",
+          "BPIFRANCE_AE"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
-      "grant_pct": 40,
-      "concessional_pct": 40,
-      "public_equity_pct": 20,
-      "private_pct": 0,
+      "template_id": "ENERGY_BBB",
+      "grant_pct": 30,
+      "era_pct": 5,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 15,
+      "dfi_equity_pct": 5,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 5,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF",
+          "BPIFRANCE_AE"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "blending_facility"
+      ],
       "rationale": "Large-scale HPP reconstruction qualifies for EU Green Deal infrastructure grants and EBRD concessional lending. MIGA War & Civil Disturbance coverage likely required given occupied-territory status; reconstruction finance contingent on territorial control reversal.",
       "comparable_projects": []
     }

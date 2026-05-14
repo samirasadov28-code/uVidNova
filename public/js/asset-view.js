@@ -245,6 +245,37 @@ function renderCostPaths(a) {
     </section>`;
 }
 
+const TRANCHE_META = [
+  { key: 'grant_pct',           label: 'Grant (Pillar I)',        css: 'grant',           group: 'concessional' },
+  { key: 'era_pct',             label: 'ERA / Frozen Assets',     css: 'era',             group: 'concessional' },
+  { key: 'first_loss_pct',      label: 'First-loss / Guarantee',  css: 'first-loss',      group: 'concessional' },
+  { key: 'concessional_pct',    label: 'Concessional IFI Debt',   css: 'concessional',    group: 'concessional' },
+  { key: 'senior_ifi_pct',      label: 'Senior IFI (near-mkt)',   css: 'senior-ifi',      group: 'market' },
+  { key: 'dfi_equity_pct',      label: 'DFI Equity / Quasi-eq.',  css: 'dfi-equity',      group: 'market' },
+  { key: 'public_equity_pct',   label: 'Public / Municipal Eq.',  css: 'public-equity',   group: 'public' },
+  { key: 'diaspora_pct',        label: 'Diaspora / Patriotic Bd', css: 'diaspora',        group: 'market' },
+  { key: 'commercial_debt_pct', label: 'Commercial Senior Debt',  css: 'commercial-debt', group: 'market' },
+  { key: 'private_equity_pct',  label: 'Private Equity / Infra',  css: 'private-equity',  group: 'market' }
+];
+
+const PRI_PROVIDER_LABELS = {
+  MIGA_WAR:            'MIGA War & Civil Disturbance',
+  UKEF:                'UKEF Export Finance',
+  BPIFRANCE_AE:        'BPIFrance Assurance Export',
+  ALLIANZ_TRADE:       'Allianz Trade',
+  EU_FACILITY_FIRST_LOSS: 'EU Facility First-Loss',
+  EBRD_RSF:            'EBRD Resilience & Sustainability Framework',
+  ECA:                 'Export Credit Agency'
+};
+
+const PATTERN_LABELS = {
+  a_b_loan:                    'A/B loan structure (IFI lender-of-record + commercial syndicate)',
+  blending_facility:           'Blending facility (EU grant used to write down IFI debt cost)',
+  donor_interest_rate_subsidy: 'Donor interest-rate subsidy',
+  mezzanine:                   'Mezzanine / quasi-equity instrument',
+  ppp_concession:              'PPP concession structure'
+};
+
 function renderFinancing(a) {
   const fs = a.financing_structures;
   const paths = ['baseline', 'code_compliant', 'build_back_better'];
@@ -253,22 +284,63 @@ function renderFinancing(a) {
   return `
     <section class="asset-section" id="financing">
       <h2>Financing Structures</h2>
-      <p class="section-note">Grant + concessional + public equity + private = 100% in each path.</p>
+      <p class="section-note">Ten-tranche capital stack derived from sector × path templates (RDNA3, EU Facility, EBRD). All tranches sum to 100%.</p>
       <div class="financing-grid">
         ${paths.map(path => {
           const s = fs?.[path];
           if (!s) return '';
           const refs = s.comparable_projects ?? [];
+          const pri = s.pri_wrap;
+          const patterns = s.structure_patterns ?? [];
+
+          // Full 10-segment bar
+          const barSegs = TRANCHE_META
+            .filter(m => (s[m.key] ?? 0) > 0)
+            .map(m => `<span class="stack-seg ${m.css}" style="width:${s[m.key]}%" title="${m.label}: ${s[m.key]}%">
+                          <span class="seg-pct">${s[m.key]}%</span>
+                          <span class="seg-label">${m.label.split(' ')[0]}</span>
+                        </span>`)
+            .join('');
+
+          // Full tranche breakdown table (inside <details>)
+          const trancheRows = TRANCHE_META
+            .map(m => {
+              const v = s[m.key] ?? 0;
+              return `<tr class="${v === 0 ? 'tranche-zero' : ''}">
+                <td><span class="tranche-dot ${m.css}"></span>${m.label}</td>
+                <td class="tranche-pct">${v > 0 ? `<strong>${v}%</strong>` : '—'}</td>
+              </tr>`;
+            }).join('');
+
+          const priHtml = pri?.applicable ? `
+            <p class="tranche-note pri-note">
+              <strong>Political risk insurance${pri.required ? ' (required)' : ' (optional)'}:</strong>
+              ${(pri.providers ?? []).map(p => PRI_PROVIDER_LABELS[p] || p).join(', ')}
+            </p>` : '';
+
+          const patternsHtml = patterns.length > 0 ? `
+            <p class="tranche-note structure-note">
+              <strong>Structure:</strong>
+              ${patterns.map(p => PATTERN_LABELS[p] || p).join('; ')}
+            </p>` : '';
+
           return `
             <div class="financing-card">
               <h3>${pathLabels[path]}</h3>
-              <div class="stack-bar" title="Financing stack">
-                ${s.grant_pct > 0 ? `<span class="stack-seg grant" style="width:${s.grant_pct}%">${s.grant_pct}%<span class="seg-label">Grant</span></span>` : ''}
-                ${s.concessional_pct > 0 ? `<span class="stack-seg concessional" style="width:${s.concessional_pct}%">${s.concessional_pct}%<span class="seg-label">Concess.</span></span>` : ''}
-                ${s.public_equity_pct > 0 ? `<span class="stack-seg public-equity" style="width:${s.public_equity_pct}%">${s.public_equity_pct}%<span class="seg-label">Pub. equity</span></span>` : ''}
-                ${s.private_pct > 0 ? `<span class="stack-seg private" style="width:${s.private_pct}%">${s.private_pct}%<span class="seg-label">Private</span></span>` : ''}
-              </div>
+              <div class="stack-bar" title="Financing stack — hover segments for detail">${barSegs}</div>
               ${s.rationale ? `<p class="financing-rationale">${escHtml(s.rationale)}</p>` : ''}
+              <details class="tranche-details">
+                <summary>Show full capital stack</summary>
+                <div class="tranche-breakdown">
+                  <table class="tranche-table">
+                    <thead><tr><th>Tranche</th><th>%</th></tr></thead>
+                    <tbody>${trancheRows}</tbody>
+                  </table>
+                  ${priHtml}
+                  ${patternsHtml}
+                  ${s.template_id ? `<p class="tranche-note template-ref">Template: <code>${s.template_id}</code></p>` : ''}
+                </div>
+              </details>
               ${refs.length > 0 ? `<p class="comparable-refs">Comparables: ${refs.join(', ')}</p>` : ''}
             </div>`;
         }).join('')}

@@ -2,72 +2,130 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://uvidnova.org/schemas/financing_template.schema.json",
   "title": "uVidNova Financing Template",
-  "description": "Array of standard capital-stack templates keyed by sector × reconstruction path. grant_pct + concessional_pct + public_equity_pct + private_pct must equal 100.",
+  "description": "Array of standard capital-stack templates keyed by sector_group × reconstruction path. Eleven tranche layers per the Ukraine post-war financing taxonomy. Sum of tranches.*.central must equal 100 (enforced by validate-all.js). pri_wrap is a credit enhancement, not part of the sum.",
   "type": "array",
   "minItems": 1,
   "items": {
     "type": "object",
     "required": [
-      "sector",
+      "template_id",
+      "sector_group",
       "path",
-      "grant_pct",
-      "concessional_pct",
-      "public_equity_pct",
-      "private_pct",
+      "tranches",
+      "pri_wrap",
       "rationale",
-      "key_instruments"
+      "sources"
     ],
     "additionalProperties": false,
     "properties": {
-      "sector": {
+      "template_id": {
+        "type": "string",
+        "pattern": "^[A-Z][A-Z0-9_]*$",
+        "description": "Unique stable ID referenced by asset financing_structures.*.template_id."
+      },
+      "sector_group": {
         "type": "string",
         "enum": [
-          "energy_and_power",
-          "healthcare",
-          "education",
-          "residential",
-          "heritage_and_culture",
-          "transport_and_ports",
-          "water_and_sanitation",
-          "industrial_and_agricultural",
+          "social_infrastructure",
+          "housing",
+          "energy",
+          "transport_revenue",
+          "transport_non_revenue",
+          "industrial",
           "public_administration"
         ]
+      },
+      "asset_type_match": {
+        "type": "array",
+        "description": "Glob-style patterns matching asset_type values this template applies to.",
+        "items": { "type": "string" }
       },
       "path": {
         "type": "string",
         "enum": ["baseline", "code_compliant", "build_back_better"]
       },
-      "grant_pct": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 100
+      "tranches": {
+        "type": "object",
+        "required": [
+          "grant_pct",
+          "era_pct",
+          "first_loss_pct",
+          "concessional_pct",
+          "senior_ifi_pct",
+          "dfi_equity_pct",
+          "public_equity_pct",
+          "diaspora_pct",
+          "commercial_debt_pct",
+          "private_equity_pct"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "grant_pct":          { "$ref": "#/$defs/tranche_range" },
+          "era_pct":            { "$ref": "#/$defs/tranche_range" },
+          "first_loss_pct":     { "$ref": "#/$defs/tranche_range" },
+          "concessional_pct":   { "$ref": "#/$defs/tranche_range" },
+          "senior_ifi_pct":     { "$ref": "#/$defs/tranche_range" },
+          "dfi_equity_pct":     { "$ref": "#/$defs/tranche_range" },
+          "public_equity_pct":  { "$ref": "#/$defs/tranche_range" },
+          "diaspora_pct":       { "$ref": "#/$defs/tranche_range" },
+          "commercial_debt_pct":{ "$ref": "#/$defs/tranche_range" },
+          "private_equity_pct": { "$ref": "#/$defs/tranche_range" }
+        }
       },
-      "concessional_pct": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 100
+      "pri_wrap": {
+        "type": "object",
+        "required": ["applicable"],
+        "additionalProperties": false,
+        "properties": {
+          "applicable": { "type": "boolean" },
+          "required": { "type": "boolean", "description": "true if PRI wrap is structurally necessary (not just optional)." },
+          "providers": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["MIGA_WAR", "UKEF", "BPIFRANCE_AE", "ALLIANZ_TRADE", "EU_FACILITY_FIRST_LOSS", "EBRD_RSF", "ECA"]
+            }
+          }
+        }
       },
-      "public_equity_pct": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 100
-      },
-      "private_pct": {
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 100
-      },
-      "rationale": {
-        "type": "string",
-        "description": "Brief explanation of why this stack is appropriate for this sector × path combination."
-      },
-      "key_instruments": {
+      "structure_patterns": {
         "type": "array",
-        "description": "Named financing instruments applicable (EU Facility, EBRD, EIB, MIGA, etc.).",
+        "items": {
+          "type": "string",
+          "enum": ["a_b_loan", "blending_facility", "donor_interest_rate_subsidy", "mezzanine", "ppp_concession"]
+        }
+      },
+      "rationale": { "type": "string" },
+      "comparable_projects": {
+        "type": "array",
         "items": { "type": "string" }
       },
-      "notes": {
-        "type": "string"
+      "sources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["code"],
+          "additionalProperties": false,
+          "properties": {
+            "code": {
+              "type": "string",
+              "enum": ["RDNA3", "KSE", "EBRD_CASE", "EU_FACILITY", "EIB_UA", "MIGA", "OCHA", "BELLINGCAT", "ACLED", "eRECOVERY"]
+            },
+            "ref": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "tranche_range": {
+      "type": "object",
+      "required": ["central", "low", "high"],
+      "additionalProperties": false,
+      "properties": {
+        "central": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "low":     { "type": "integer", "minimum": 0, "maximum": 100 },
+        "high":    { "type": "integer", "minimum": 0, "maximum": 100 }
       }
     }
   }

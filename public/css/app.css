@@ -17,8 +17,14 @@
   --colour-warning:     #e67e22;
   --colour-pending:     #8e44ad;
   --colour-grant:       #27ae60;
+  --colour-era:         #1e8449;
+  --colour-first-loss:  #52be80;
   --colour-concessional:#2980b9;
+  --colour-senior-ifi:  #1a6fa8;
+  --colour-dfi-equity:  #5dade2;
   --colour-pub-equity:  #7f8c8d;
+  --colour-diaspora:    #a9cce3;
+  --colour-commercial:  #884ea0;
   --colour-private:     #2c3e50;
 
   --radius-sm: 4px;
@@ -511,13 +517,45 @@ body.asset-page { display: flex; flex-direction: column; }
   overflow: hidden;
   transition: opacity 0.1s;
 }
-.stack-seg .seg-label { position: absolute; bottom: 1px; left: 0; right: 0; text-align: center; font-size: 0.6rem; font-weight: 400; opacity: 0.85; }
+.stack-seg .seg-pct   { font-size: 0.7rem; font-weight: 700; line-height: 1; }
+.stack-seg .seg-label { position: absolute; bottom: 1px; left: 0; right: 0; text-align: center; font-size: 0.55rem; font-weight: 400; opacity: 0.85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .stack-seg.grant          { background: var(--colour-grant); }
+.stack-seg.era            { background: var(--colour-era); }
+.stack-seg.first-loss     { background: var(--colour-first-loss); }
 .stack-seg.concessional   { background: var(--colour-concessional); }
+.stack-seg.senior-ifi     { background: var(--colour-senior-ifi); }
+.stack-seg.dfi-equity     { background: var(--colour-dfi-equity); }
 .stack-seg.public-equity  { background: var(--colour-pub-equity); }
-.stack-seg.private        { background: var(--colour-private); }
+.stack-seg.diaspora       { background: var(--colour-diaspora); }
+.stack-seg.commercial-debt{ background: var(--colour-commercial); }
+.stack-seg.private-equity { background: var(--colour-private); }
 .financing-rationale { font-size: 0.8rem; color: var(--colour-text-muted); margin-top: 0.5rem; line-height: 1.4; }
 .comparable-refs { font-size: 0.75rem; color: var(--colour-text-muted); margin-top: 0.35rem; }
+
+/* ── Tranche detail expander ─────────────────────────────────────────────────── */
+.tranche-details { margin-top: 0.5rem; }
+.tranche-details summary { font-size: 0.78rem; color: var(--colour-navy-light); cursor: pointer; user-select: none; }
+.tranche-details summary:hover { text-decoration: underline; }
+.tranche-breakdown { margin-top: 0.5rem; }
+.tranche-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+.tranche-table th { background: var(--colour-bg); font-weight: 600; padding: 0.25rem 0.4rem; border-bottom: 1px solid var(--colour-border); text-align: left; }
+.tranche-table td { padding: 0.2rem 0.4rem; border-bottom: 1px solid var(--colour-border); }
+.tranche-table tr.tranche-zero { opacity: 0.4; }
+.tranche-table td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.tranche-dot { display: inline-block; width: 0.55rem; height: 0.55rem; border-radius: 50%; margin-right: 0.35rem; vertical-align: middle; }
+.tranche-dot.grant          { background: var(--colour-grant); }
+.tranche-dot.era            { background: var(--colour-era); }
+.tranche-dot.first-loss     { background: var(--colour-first-loss); }
+.tranche-dot.concessional   { background: var(--colour-concessional); }
+.tranche-dot.senior-ifi     { background: var(--colour-senior-ifi); }
+.tranche-dot.dfi-equity     { background: var(--colour-dfi-equity); }
+.tranche-dot.public-equity  { background: var(--colour-pub-equity); }
+.tranche-dot.diaspora       { background: var(--colour-diaspora); }
+.tranche-dot.commercial-debt{ background: var(--colour-commercial); }
+.tranche-dot.private-equity { background: var(--colour-private); }
+.tranche-note { font-size: 0.75rem; color: var(--colour-text-muted); margin-top: 0.35rem; line-height: 1.45; }
+.pri-note strong, .structure-note strong { color: var(--colour-navy); }
+.template-ref code { font-size: 0.7rem; }
 
 /* ── Donor pathway ───────────────────────────────────────────────────────────── */
 .donor-list { list-style: none; padding: 0; }

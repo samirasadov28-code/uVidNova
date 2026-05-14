@@ -31,10 +31,14 @@ const validate = ajv.compile(schema);
 function checkFinancingSum(record, path, filePath) {
   const stack = record.financing_structures?.[path];
   if (!stack) return [];
-  const sum = (stack.grant_pct ?? 0) + (stack.concessional_pct ?? 0) +
-              (stack.public_equity_pct ?? 0) + (stack.private_pct ?? 0);
+  const TRANCHE_KEYS = [
+    'grant_pct', 'era_pct', 'first_loss_pct', 'concessional_pct',
+    'senior_ifi_pct', 'dfi_equity_pct', 'public_equity_pct',
+    'diaspora_pct', 'commercial_debt_pct', 'private_equity_pct'
+  ];
+  const sum = TRANCHE_KEYS.reduce((acc, k) => acc + (stack[k] ?? 0), 0);
   if (sum !== 100) {
-    return [`financing_structures.${path}: percentages sum to ${sum}, must equal 100`];
+    return [`financing_structures.${path}: ten tranches sum to ${sum}, must equal 100`];
   }
   return [];
 }

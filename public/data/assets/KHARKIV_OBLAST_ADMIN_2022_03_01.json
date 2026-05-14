@@ -72,24 +72,63 @@
   },
   "financing_structures": {
     "baseline": {
+      "template_id": "PUBLIC_ADMIN_BASELINE",
       "grant_pct": 55,
-      "concessional_pct": 25,
-      "public_equity_pct": 20,
-      "private_pct": 0,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 5,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": false
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
+      "template_id": "PUBLIC_ADMIN_CODE_COMPLIANT",
       "grant_pct": 60,
-      "concessional_pct": 20,
-      "public_equity_pct": 20,
-      "private_pct": 0,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 5,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": false
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
+      "template_id": "PUBLIC_ADMIN_BBB",
       "grant_pct": 65,
+      "era_pct": 10,
+      "first_loss_pct": 0,
       "concessional_pct": 20,
-      "public_equity_pct": 15,
-      "private_pct": 0,
+      "senior_ifi_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 5,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": false
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "EU Facility institutional reconstruction track; energy-efficient public buildings qualify for green conditionality",
       "comparable_projects": []
     }

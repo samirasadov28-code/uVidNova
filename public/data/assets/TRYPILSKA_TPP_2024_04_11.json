@@ -104,24 +104,83 @@
   },
   "financing_structures": {
     "baseline": {
-      "grant_pct": 25,
-      "concessional_pct": 50,
-      "public_equity_pct": 25,
-      "private_pct": 0,
+      "template_id": "ENERGY_BASELINE",
+      "grant_pct": 10,
+      "era_pct": 5,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 25,
+      "dfi_equity_pct": 5,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 10,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF",
+          "BPIFRANCE_AE"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
-      "grant_pct": 30,
-      "concessional_pct": 45,
-      "public_equity_pct": 25,
-      "private_pct": 0,
+      "template_id": "ENERGY_CODE_COMPLIANT",
+      "grant_pct": 20,
+      "era_pct": 5,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 20,
+      "dfi_equity_pct": 5,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 5,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF",
+          "BPIFRANCE_AE"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
-      "grant_pct": 35,
-      "concessional_pct": 40,
-      "public_equity_pct": 15,
-      "private_pct": 10,
+      "template_id": "ENERGY_BBB",
+      "grant_pct": 30,
+      "era_pct": 5,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 15,
+      "dfi_equity_pct": 5,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 5,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF",
+          "BPIFRANCE_AE"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "blending_facility"
+      ],
       "rationale": "Large thermal power reconstruction with build-back-better pivot to combined-cycle gas (lower emissions vs. current coal-fired base). EU Facility energy-security track eligible; EBRD Energy Efficiency and Resilience Facility applicable. Private co-investment (DTEK equity) credible given operator's existing portfolio. EU green conditionality requires carbon-transition roadmap — combined-cycle pathway meets this threshold. Note: coal plant baseline rebuild unlikely to receive EU grant support; code-compliant and BBB paths assume fuel-switch to gas or hybrid.",
       "comparable_projects": []
     }

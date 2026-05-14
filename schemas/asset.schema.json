@@ -180,7 +180,7 @@
       "type": "object",
       "required": ["baseline", "code_compliant", "build_back_better"],
       "additionalProperties": false,
-      "description": "Capital-stack templates. grant_pct + concessional_pct + public_equity_pct + private_pct must equal 100 (enforced by validate-all.js).",
+      "description": "Ten-tranche capital stacks for each reconstruction path. All *_pct fields must sum to 100 (enforced by validate-all.js). Each path carries a template_id reference to data/financing_templates.json.",
       "properties": {
         "baseline": { "$ref": "#/$defs/financing_stack" },
         "code_compliant": { "$ref": "#/$defs/financing_stack" },
@@ -255,13 +255,46 @@
     },
     "financing_stack": {
       "type": "object",
-      "required": ["grant_pct", "concessional_pct", "public_equity_pct", "private_pct", "comparable_projects"],
+      "required": ["comparable_projects"],
       "additionalProperties": false,
+      "description": "Ten-tranche capital stack. Sum of all *_pct fields must equal 100 (enforced by validate-all.js). pri_wrap is a credit enhancement, not part of the sum.",
       "properties": {
-        "grant_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
-        "concessional_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
-        "public_equity_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
-        "private_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "template_id": {
+          "type": "string",
+          "description": "References the matching entry in data/financing_templates.json."
+        },
+        "grant_pct":           { "type": "integer", "minimum": 0, "maximum": 100 },
+        "era_pct":             { "type": "integer", "minimum": 0, "maximum": 100 },
+        "first_loss_pct":      { "type": "integer", "minimum": 0, "maximum": 100 },
+        "concessional_pct":    { "type": "integer", "minimum": 0, "maximum": 100 },
+        "senior_ifi_pct":      { "type": "integer", "minimum": 0, "maximum": 100 },
+        "dfi_equity_pct":      { "type": "integer", "minimum": 0, "maximum": 100 },
+        "public_equity_pct":   { "type": "integer", "minimum": 0, "maximum": 100 },
+        "diaspora_pct":        { "type": "integer", "minimum": 0, "maximum": 100 },
+        "commercial_debt_pct": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "private_equity_pct":  { "type": "integer", "minimum": 0, "maximum": 100 },
+        "pri_wrap": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "applicable": { "type": "boolean" },
+            "required": { "type": "boolean", "description": "true if PRI wrap is structurally necessary, not just optional." },
+            "providers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["MIGA_WAR", "UKEF", "BPIFRANCE_AE", "ALLIANZ_TRADE", "EU_FACILITY_FIRST_LOSS", "EBRD_RSF", "ECA"]
+              }
+            }
+          }
+        },
+        "structure_patterns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["a_b_loan", "blending_facility", "donor_interest_rate_subsidy", "mezzanine", "ppp_concession"]
+          }
+        },
         "rationale": { "type": "string" },
         "comparable_projects": {
           "type": "array",

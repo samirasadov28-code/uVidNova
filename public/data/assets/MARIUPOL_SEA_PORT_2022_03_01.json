@@ -84,24 +84,84 @@
   },
   "financing_structures": {
     "baseline": {
-      "grant_pct": 30,
-      "concessional_pct": 45,
-      "public_equity_pct": 25,
-      "private_pct": 0,
+      "template_id": "TRANSPORT_REVENUE_BASELINE",
+      "grant_pct": 10,
+      "era_pct": 0,
+      "first_loss_pct": 5,
+      "concessional_pct": 20,
+      "senior_ifi_pct": 25,
+      "dfi_equity_pct": 10,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 15,
+      "private_equity_pct": 15,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF",
+          "ECA"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "ppp_concession"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
-      "grant_pct": 35,
-      "concessional_pct": 40,
-      "public_equity_pct": 25,
-      "private_pct": 0,
+      "template_id": "TRANSPORT_REVENUE_CODE_COMPLIANT",
+      "grant_pct": 15,
+      "era_pct": 0,
+      "first_loss_pct": 5,
+      "concessional_pct": 20,
+      "senior_ifi_pct": 25,
+      "dfi_equity_pct": 10,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 15,
+      "private_equity_pct": 10,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF",
+          "ECA"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "ppp_concession"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
-      "grant_pct": 40,
-      "concessional_pct": 35,
-      "public_equity_pct": 15,
-      "private_pct": 10,
+      "template_id": "TRANSPORT_REVENUE_BBB",
+      "grant_pct": 20,
+      "era_pct": 0,
+      "first_loss_pct": 5,
+      "concessional_pct": 20,
+      "senior_ifi_pct": 20,
+      "dfi_equity_pct": 10,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 15,
+      "private_equity_pct": 10,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF",
+          "ECA"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "ppp_concession"
+      ],
       "rationale": "EU Connectivity Fund and TEN-T programme applicable to transport reconstruction; private concession model viable for airport and seaport; MIGA War & Civil Disturbance coverage for private tranche",
       "comparable_projects": []
     }

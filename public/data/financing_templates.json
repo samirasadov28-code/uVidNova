@@ -1,299 +1,1749 @@
 [
   {
-    "sector": "energy_and_power",
+    "template_id": "SOCIAL_INFRA_BASELINE",
+    "sector_group": "social_infrastructure",
+    "asset_type_match": [
+      "healthcare.*",
+      "education.*",
+      "heritage.*",
+      "water.*"
+    ],
     "path": "baseline",
-    "grant_pct": 25,
-    "concessional_pct": 50,
-    "public_equity_pct": 25,
-    "private_pct": 0,
-    "rationale": "Energy infrastructure reconstruction at baseline standard typically draws on concessional EBRD/EIB lending (primary tranche) and EU Facility grant support, with public-utility equity contribution. Private commercial finance rarely available at baseline in conflict-adjacent environment.",
-    "key_instruments": ["EBRD Energy Resilience", "EU Ukraine Facility (energy track)", "EIB EU4Ukraine", "MIGA War & Civil Disturbance"],
-    "notes": "RDNA3 §4 energy financing analysis; EBRD Ukraine Energy Sector Assessment 2023"
+    "tranches": {
+      "grant_pct": {
+        "central": 30,
+        "low": 25,
+        "high": 40
+      },
+      "era_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "first_loss_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "concessional_pct": {
+        "central": 40,
+        "low": 30,
+        "high": 50
+      },
+      "senior_ifi_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "dfi_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "public_equity_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "commercial_debt_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "private_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "providers": [
+        "MIGA_WAR"
+      ]
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "Social infrastructure at baseline draws primarily on concessional IFI debt (EBRD/EIB/World Bank) and EU Facility Pillar I grants. ERA proceeds (frozen Russian assets via G7 ERA loan) provide a politically salient co-financing layer. Public counterpart equity is mandatory for IFI disbursement.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "RDNA3",
+        "ref": "§Social Sector Financing, Table A4.1"
+      },
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan Pillar I non-repayable component"
+      },
+      {
+        "code": "EBRD_CASE",
+        "ref": "Ukraine Solidarity Package healthcare and education precedents"
+      }
+    ]
   },
   {
-    "sector": "energy_and_power",
+    "template_id": "SOCIAL_INFRA_CODE_COMPLIANT",
+    "sector_group": "social_infrastructure",
+    "asset_type_match": [
+      "healthcare.*",
+      "education.*",
+      "heritage.*",
+      "water.*"
+    ],
     "path": "code_compliant",
-    "grant_pct": 30,
-    "concessional_pct": 45,
-    "public_equity_pct": 25,
-    "private_pct": 0,
-    "rationale": "Code-compliant energy reconstruction unlocks higher EU grant share (energy efficiency reform milestones in Ukraine Plan). Concessional tranche remains primary for large capital requirements.",
-    "key_instruments": ["EBRD Energy Efficiency and Resilience", "EU Ukraine Facility", "EIB InvestEU", "UKEF"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 40,
+        "low": 30,
+        "high": 50
+      },
+      "era_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "first_loss_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "concessional_pct": {
+        "central": 35,
+        "low": 25,
+        "high": 45
+      },
+      "senior_ifi_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "dfi_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "public_equity_pct": {
+        "central": 15,
+        "low": 5,
+        "high": 25
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "commercial_debt_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "private_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "providers": [
+        "MIGA_WAR"
+      ]
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "EU building-code and accessibility conditionalities unlock a higher grant share under Pillar I. Concessional debt remains the workhorse; reduced public-equity requirement reflects the increased grant coverage of the upgrade premium.",
+    "comparable_projects": [
+      "KHARKIV_REGIONAL_HOSPITAL_REBUILD_2024"
+    ],
+    "sources": [
+      {
+        "code": "RDNA3",
+        "ref": "§Social Sector Financing"
+      },
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan Pillar I conditionality framework"
+      },
+      {
+        "code": "EBRD_CASE",
+        "ref": "Kharkiv Regional Hospital rehabilitation financing"
+      }
+    ]
   },
   {
-    "sector": "energy_and_power",
+    "template_id": "SOCIAL_INFRA_BBB",
+    "sector_group": "social_infrastructure",
+    "asset_type_match": [
+      "healthcare.*",
+      "education.*",
+      "heritage.*",
+      "water.*"
+    ],
     "path": "build_back_better",
-    "grant_pct": 35,
-    "concessional_pct": 40,
-    "public_equity_pct": 15,
-    "private_pct": 10,
-    "rationale": "Build-back-better energy projects (combined-cycle gas, renewables integration, grid modernisation) attract EU green-conditionality grants at premium rate. Private equity viable for commercially operating assets (e.g. DTEK wind/solar). MIGA War & Civil Disturbance covers private equity risk.",
-    "key_instruments": ["EU Ukraine Facility (green track)", "EBRD Green Economy Financing", "EIB Climate Bank", "MIGA War & Civil Disturbance", "EBRD RSF"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 55,
+        "low": 45,
+        "high": 65
+      },
+      "era_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "first_loss_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "concessional_pct": {
+        "central": 25,
+        "low": 15,
+        "high": 35
+      },
+      "senior_ifi_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 10
+      },
+      "dfi_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "public_equity_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 15
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "commercial_debt_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "private_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF"
+      ]
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "EU green/energy-efficiency conditionalities and UNESCO/Creative Europe heritage programmes push the grant share to 55%+ for BBB. ERA co-financing provides political legitimacy. Reduced public-equity requirement reflects the larger grant envelope absorbing the upgrade premium.",
+    "comparable_projects": [
+      "KHARKIV_REGIONAL_HOSPITAL_REBUILD_2024"
+    ],
+    "sources": [
+      {
+        "code": "RDNA3",
+        "ref": "§Social Sector Financing, BBB scenario"
+      },
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan Pillar I BBB conditionality and green standards"
+      },
+      {
+        "code": "EBRD_CASE",
+        "ref": "Green Economy Transition framework for social assets"
+      }
+    ]
   },
   {
-    "sector": "healthcare",
+    "template_id": "HOUSING_BASELINE",
+    "sector_group": "housing",
+    "asset_type_match": [
+      "residential.*"
+    ],
     "path": "baseline",
-    "grant_pct": 55,
-    "concessional_pct": 30,
-    "public_equity_pct": 15,
-    "private_pct": 0,
-    "rationale": "Healthcare reconstruction carries the highest grant-eligibility profile of any sector. EU Facility (Pillar IV social infrastructure), WHO, UNICEF, bilateral donors (UK, Germany, Netherlands) all prioritise healthcare. Concessional lending (EBRD Social Infrastructure, EIB Health) fills the gap.",
-    "key_instruments": ["EU Ukraine Facility (social infrastructure)", "WHO", "UNICEF", "EBRD Social Sector", "EIB Health Lending", "UA Government budget"],
-    "notes": "RDNA3 §6 social sector financing; bilateral donor commitments post-Okhmatdyt 2024"
+    "tranches": {
+      "grant_pct": {
+        "central": 25,
+        "low": 15,
+        "high": 35
+      },
+      "era_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "first_loss_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "concessional_pct": {
+        "central": 40,
+        "low": 30,
+        "high": 50
+      },
+      "senior_ifi_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "dfi_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "public_equity_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "commercial_debt_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "private_equity_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "providers": [
+        "MIGA_WAR"
+      ]
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "District-scale residential reconstruction at baseline. EU Housing Pillar and EBRD concessional lending dominate; small private equity wedge represents premium-segment infill and developer co-investment in mixed-tenure schemes.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "RDNA3",
+        "ref": "§Housing Sector Reconstruction Financing"
+      },
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan housing reconstruction milestones"
+      }
+    ]
   },
   {
-    "sector": "healthcare",
+    "template_id": "HOUSING_CODE_COMPLIANT",
+    "sector_group": "housing",
+    "asset_type_match": [
+      "residential.*"
+    ],
     "path": "code_compliant",
-    "grant_pct": 60,
-    "concessional_pct": 25,
-    "public_equity_pct": 15,
-    "private_pct": 0,
-    "rationale": "Code-compliant healthcare (energy efficiency, accessibility, seismic) unlocks EU structural-fund style grant streams. Higher grant share reflects regulatory mandate.",
-    "key_instruments": ["EU Ukraine Facility", "EBRD Social Infrastructure", "UNICEF", "bilateral donors"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 35,
+        "low": 25,
+        "high": 45
+      },
+      "era_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "first_loss_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "concessional_pct": {
+        "central": 30,
+        "low": 20,
+        "high": 40
+      },
+      "senior_ifi_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "dfi_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "public_equity_pct": {
+        "central": 15,
+        "low": 5,
+        "high": 25
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "commercial_debt_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "private_equity_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "providers": [
+        "MIGA_WAR"
+      ]
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "First-loss sleeve introduced at code-compliant path to de-risk the energy-efficiency and seismic-standard upgrade premium. EU Housing Pillar grant share rises with green conditionality.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "RDNA3",
+        "ref": "§Housing Sector code-compliant scenario"
+      },
+      {
+        "code": "EBRD_CASE",
+        "ref": "EBRD Green Cities Ukraine — residential retrofit precedents"
+      }
+    ]
   },
   {
-    "sector": "healthcare",
+    "template_id": "HOUSING_BBB",
+    "sector_group": "housing",
+    "asset_type_match": [
+      "residential.*"
+    ],
     "path": "build_back_better",
-    "grant_pct": 65,
-    "concessional_pct": 20,
-    "public_equity_pct": 15,
-    "private_pct": 0,
-    "rationale": "Build-back-better healthcare (microgrid, telemedicine, passive standard, modular clinical) commands highest grant share under EU green-conditionality. WHO Health Emergency Preparedness grants applicable. Private sector not applicable for public hospitals.",
-    "key_instruments": ["EU Ukraine Facility (green + social)", "WHO Health Emergency", "UNICEF", "EBRD", "EIB"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 45,
+        "low": 35,
+        "high": 55
+      },
+      "era_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "first_loss_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "concessional_pct": {
+        "central": 25,
+        "low": 15,
+        "high": 35
+      },
+      "senior_ifi_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "dfi_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "public_equity_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 20
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "commercial_debt_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "private_equity_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "providers": [
+        "MIGA_WAR"
+      ]
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "EU Housing Pillar + EBRD Green Cities concessional unlocks the BBB premium for near-passive-house or mass-timber construction. First-loss sleeve de-risks private developer participation in BBB mixed-tenure districts.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan housing BBB conditionality"
+      },
+      {
+        "code": "EBRD_CASE",
+        "ref": "EBRD Green Cities — BBB residential district precedents"
+      }
+    ]
   },
   {
-    "sector": "education",
+    "template_id": "ENERGY_BASELINE",
+    "sector_group": "energy",
+    "asset_type_match": [
+      "energy.*"
+    ],
     "path": "baseline",
-    "grant_pct": 50,
-    "concessional_pct": 30,
-    "public_equity_pct": 20,
-    "private_pct": 0,
-    "rationale": "Education reconstruction primarily grant-funded (EU Facility Pillar IV, bilateral donors, UNICEF). Ministry of Education budget contributes public equity. Concessional World Bank or EBRD Social Sector lending fills remaining gap.",
-    "key_instruments": ["EU Ukraine Facility", "World Bank Education", "UNICEF", "bilateral donors (UK, Germany)", "UA State Budget"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 20
+      },
+      "era_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "first_loss_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "concessional_pct": {
+        "central": 25,
+        "low": 15,
+        "high": 35
+      },
+      "senior_ifi_pct": {
+        "central": 25,
+        "low": 15,
+        "high": 35
+      },
+      "dfi_equity_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "public_equity_pct": {
+        "central": 15,
+        "low": 10,
+        "high": 20
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 15
+      },
+      "private_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "required": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF",
+        "BPIFRANCE_AE"
+      ]
+    },
+    "structure_patterns": [
+      "a_b_loan"
+    ],
+    "rationale": "Energy generation and grid at baseline — like-for-like reinstatement. Senior IFI (EBRD/EIB) debt is the primary instrument; commercial debt enters only via IFI A/B loan. MIGA war-risk wrap is structurally required. First-loss sleeve (EU Facility Pillar II guarantee) de-risks the commercial tranche.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "RDNA3",
+        "ref": "§Energy Sector Reconstruction Financing, Table A2.1"
+      },
+      {
+        "code": "EBRD_CASE",
+        "ref": "EBRD Ukraine Energy Resilience financing precedents"
+      },
+      {
+        "code": "MIGA",
+        "ref": "MIGA War & Civil Disturbance — Ukraine energy portfolio"
+      }
+    ]
   },
   {
-    "sector": "education",
+    "template_id": "ENERGY_CODE_COMPLIANT",
+    "sector_group": "energy",
+    "asset_type_match": [
+      "energy.*"
+    ],
     "path": "code_compliant",
-    "grant_pct": 55,
-    "concessional_pct": 25,
-    "public_equity_pct": 20,
-    "private_pct": 0,
-    "rationale": "Code-compliant education (bomb shelter, energy efficiency, accessibility) qualifies for enhanced EU grant tranche.",
-    "key_instruments": ["EU Ukraine Facility", "UNICEF", "World Bank", "bilateral donors"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "era_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "first_loss_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "concessional_pct": {
+        "central": 25,
+        "low": 15,
+        "high": 35
+      },
+      "senior_ifi_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "dfi_equity_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "public_equity_pct": {
+        "central": 15,
+        "low": 10,
+        "high": 20
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "private_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "required": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF",
+        "BPIFRANCE_AE"
+      ]
+    },
+    "structure_patterns": [
+      "a_b_loan",
+      "blending_facility"
+    ],
+    "rationale": "EU energy conditionality (grid modernisation, smart metering, efficiency standards) unlocks a larger grant envelope. Senior IFI share decreases as higher grant coverage reduces the financing gap.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "RDNA3",
+        "ref": "§Energy Sector code-compliant scenario"
+      },
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan energy reform conditionality"
+      }
+    ]
   },
   {
-    "sector": "education",
+    "template_id": "ENERGY_BBB",
+    "sector_group": "energy",
+    "asset_type_match": [
+      "energy.*"
+    ],
     "path": "build_back_better",
-    "grant_pct": 60,
-    "concessional_pct": 20,
-    "public_equity_pct": 20,
-    "private_pct": 0,
-    "rationale": "Digital classroom, green building, and community learning hub add-ons unlock EU green grants and EdTech donor contributions.",
-    "key_instruments": ["EU Ukraine Facility (green)", "UNICEF", "World Bank Digital", "bilateral donors"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 30,
+        "low": 20,
+        "high": 40
+      },
+      "era_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "first_loss_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "concessional_pct": {
+        "central": 25,
+        "low": 15,
+        "high": 35
+      },
+      "senior_ifi_pct": {
+        "central": 15,
+        "low": 5,
+        "high": 25
+      },
+      "dfi_equity_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "public_equity_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 15
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "private_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "required": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF",
+        "BPIFRANCE_AE"
+      ]
+    },
+    "structure_patterns": [
+      "a_b_loan",
+      "blending_facility"
+    ],
+    "rationale": "EU Green Deal grants (renewable conversion, grid flexibility) and EBRD GET concessional debt dominate the BBB stack. Fuel-switch premium financed primarily by grant + concessional. DFI equity essential for the restructured SOE equity stub.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan energy BBB conditionality and renewable targets"
+      },
+      {
+        "code": "EBRD_CASE",
+        "ref": "EBRD GET Ukraine energy — fuel switch precedents"
+      }
+    ]
   },
   {
-    "sector": "residential",
+    "template_id": "TRANSPORT_REVENUE_BASELINE",
+    "sector_group": "transport_revenue",
+    "asset_type_match": [
+      "transport.seaport",
+      "transport.airport"
+    ],
     "path": "baseline",
-    "grant_pct": 40,
-    "concessional_pct": 20,
-    "public_equity_pct": 30,
-    "private_pct": 10,
-    "rationale": "Residential reconstruction involves largest ticket (8 districts targeted in 50-asset pipeline). EU Facility (Pillar III economic recovery) and bilateral housing grants anchor the stack. Municipal equity (land, existing foundations) large. Some private co-investment from returning resident/diaspora possible.",
-    "key_instruments": ["EU Ukraine Facility (housing track)", "KfW Housing Reconstruction", "EBRD Housing Finance", "Mriya State Application", "UA municipal budget"],
-    "notes": "RDNA3 §Housing; KfW Ukraine Housing Programme 2023"
+    "tranches": {
+      "grant_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 20
+      },
+      "era_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "first_loss_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "concessional_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "senior_ifi_pct": {
+        "central": 25,
+        "low": 15,
+        "high": 35
+      },
+      "dfi_equity_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 15
+      },
+      "public_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 10
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 15,
+        "low": 5,
+        "high": 25
+      },
+      "private_equity_pct": {
+        "central": 15,
+        "low": 5,
+        "high": 25
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "required": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF",
+        "ECA"
+      ]
+    },
+    "structure_patterns": [
+      "a_b_loan",
+      "ppp_concession"
+    ],
+    "rationale": "Revenue-generating transport (ports, airports) attracts commercial debt and private equity. Typically structured as A/B loan + PPP concession. ECA cover critical for the commercial tranche in Ukraine's risk environment.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EBRD_CASE",
+        "ref": "EBRD transport concession financing precedents"
+      },
+      {
+        "code": "MIGA",
+        "ref": "MIGA War & Civil Disturbance — transport portfolio"
+      }
+    ]
   },
   {
-    "sector": "residential",
+    "template_id": "TRANSPORT_REVENUE_CODE_COMPLIANT",
+    "sector_group": "transport_revenue",
+    "asset_type_match": [
+      "transport.seaport",
+      "transport.airport"
+    ],
     "path": "code_compliant",
-    "grant_pct": 45,
-    "concessional_pct": 20,
-    "public_equity_pct": 25,
-    "private_pct": 10,
-    "rationale": "Energy-efficient housing reconstruction (passive house standard, heat pump) unlocks EU green grants. EBRD Green Cities applicable for district-scale projects.",
-    "key_instruments": ["EU Ukraine Facility", "EBRD Green Cities", "KfW", "bilateral donors"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 15,
+        "low": 5,
+        "high": 25
+      },
+      "era_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "first_loss_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "concessional_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "senior_ifi_pct": {
+        "central": 25,
+        "low": 15,
+        "high": 35
+      },
+      "dfi_equity_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 15
+      },
+      "public_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 10
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 15,
+        "low": 5,
+        "high": 25
+      },
+      "private_equity_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 20
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "required": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF",
+        "ECA"
+      ]
+    },
+    "structure_patterns": [
+      "a_b_loan",
+      "ppp_concession"
+    ],
+    "rationale": "EU TEN-T compliance and green port/airport standards increase grant share marginally. Private equity reduces slightly as compliance cost is partially grant-covered.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan transport connectivity milestones"
+      }
+    ]
   },
   {
-    "sector": "residential",
+    "template_id": "TRANSPORT_REVENUE_BBB",
+    "sector_group": "transport_revenue",
+    "asset_type_match": [
+      "transport.seaport",
+      "transport.airport"
+    ],
     "path": "build_back_better",
-    "grant_pct": 50,
-    "concessional_pct": 20,
-    "public_equity_pct": 20,
-    "private_pct": 10,
-    "rationale": "Build-back-better housing (mass timber, passive standard, EV charging, district heating upgrade) attracts EU green-conditionality grants at higher rate. Some private co-investment for mixed-tenure development.",
-    "key_instruments": ["EU Ukraine Facility (green housing)", "EBRD Green Cities", "KfW Climate", "EIB", "bilateral"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "era_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "first_loss_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "concessional_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "senior_ifi_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "dfi_equity_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 15
+      },
+      "public_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 10
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 15,
+        "low": 5,
+        "high": 25
+      },
+      "private_equity_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 20
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "required": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF",
+        "ECA"
+      ]
+    },
+    "structure_patterns": [
+      "a_b_loan",
+      "ppp_concession"
+    ],
+    "rationale": "BBB green port or smart airport upgrades attract EU Connecting Europe Facility grants and EBRD GET concessional. Commercial and private equity maintained — upgraded asset generates sufficient revenue to service market-rate debt post-stabilisation.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan Connecting Europe Facility integration"
+      }
+    ]
   },
   {
-    "sector": "heritage_and_culture",
+    "template_id": "TRANSPORT_NON_REVENUE_BASELINE",
+    "sector_group": "transport_non_revenue",
+    "asset_type_match": [
+      "transport.bridge",
+      "transport.rail_corridor",
+      "transport.rail_segment",
+      "transport.aircraft",
+      "transport.shipyard"
+    ],
     "path": "baseline",
-    "grant_pct": 60,
-    "concessional_pct": 25,
-    "public_equity_pct": 15,
-    "private_pct": 0,
-    "rationale": "Heritage reconstruction is almost entirely grant-funded. EU Culture Reconstruction fund, Council of Europe, UNESCO, bilateral cultural donors (France, Italy, Germany, Poland) and national budget. Very limited scope for commercial finance in heritage assets.",
-    "key_instruments": ["EU Culture Emergency Aid", "Council of Europe Heritage Fund", "UNESCO", "bilateral cultural donors", "UA Ministry of Culture budget"],
-    "notes": "RDNA3 §Cultural Heritage; Council of Europe Kyiv Initiative"
+    "tranches": {
+      "grant_pct": {
+        "central": 30,
+        "low": 20,
+        "high": 40
+      },
+      "era_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "first_loss_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "concessional_pct": {
+        "central": 40,
+        "low": 30,
+        "high": 50
+      },
+      "senior_ifi_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "dfi_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "public_equity_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "private_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "providers": [
+        "MIGA_WAR"
+      ]
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "Non-revenue transport (bridges, rail, urban metro) mirrors the social infrastructure stack. Primarily grants and concessional IFI debt with public-sector equity counterpart. No commercial or private-equity tranche viable for non-revenue infrastructure.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "RDNA3",
+        "ref": "§Transport Sector non-revenue infrastructure"
+      },
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan transport connectivity milestones"
+      }
+    ]
   },
   {
-    "sector": "heritage_and_culture",
+    "template_id": "TRANSPORT_NON_REVENUE_CODE_COMPLIANT",
+    "sector_group": "transport_non_revenue",
+    "asset_type_match": [
+      "transport.bridge",
+      "transport.rail_corridor",
+      "transport.rail_segment",
+      "transport.aircraft",
+      "transport.shipyard"
+    ],
     "path": "code_compliant",
-    "grant_pct": 65,
-    "concessional_pct": 20,
-    "public_equity_pct": 15,
-    "private_pct": 0,
-    "rationale": "Code-compliant heritage (seismic, fire, accessibility improvements within conservation constraints) attracts enhanced EU grant. ICOMOS-compliant specification required.",
-    "key_instruments": ["EU Culture Emergency Aid", "Council of Europe", "UNESCO", "EBRD Cultural Heritage", "bilateral"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 35,
+        "low": 25,
+        "high": 45
+      },
+      "era_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "first_loss_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "concessional_pct": {
+        "central": 40,
+        "low": 30,
+        "high": 50
+      },
+      "senior_ifi_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "dfi_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "public_equity_pct": {
+        "central": 15,
+        "low": 5,
+        "high": 25
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "private_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "providers": [
+        "MIGA_WAR"
+      ]
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "EU TEN-T and safety standards conditionality increases grant share. Concessional debt absorbs the standard-upgrade cost; public equity reduced correspondingly.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan TEN-T integration milestones"
+      }
+    ]
   },
   {
-    "sector": "heritage_and_culture",
+    "template_id": "TRANSPORT_NON_REVENUE_BBB",
+    "sector_group": "transport_non_revenue",
+    "asset_type_match": [
+      "transport.bridge",
+      "transport.rail_corridor",
+      "transport.rail_segment",
+      "transport.aircraft",
+      "transport.shipyard"
+    ],
     "path": "build_back_better",
-    "grant_pct": 70,
-    "concessional_pct": 20,
-    "public_equity_pct": 10,
-    "private_pct": 0,
-    "rationale": "Build-back-better heritage (sustainable energy systems within conservation envelope, digital interpretation, universal access) unlocks EU green-cultural intersection grants. Occupied-territory assets: all finance contingent on liberation; pipeline documentation only.",
-    "key_instruments": ["EU Culture + Green intersection", "Council of Europe", "UNESCO", "bilateral cultural donors"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 40,
+        "low": 30,
+        "high": 50
+      },
+      "era_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "first_loss_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "concessional_pct": {
+        "central": 40,
+        "low": 30,
+        "high": 50
+      },
+      "senior_ifi_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "dfi_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "public_equity_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 20
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "private_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "providers": [
+        "MIGA_WAR"
+      ]
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "EU Connecting Europe Facility and TEN-T grants cover the full BBB premium (rail electrification, ETCS signalling, bridge resilience standards). Concessional tranche constant; public equity shrinks as grant expansion absorbs the BBB uplift.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan BBB transport milestones"
+      }
+    ]
   },
   {
-    "sector": "transport_and_ports",
+    "template_id": "INDUSTRIAL_BASELINE",
+    "sector_group": "industrial",
+    "asset_type_match": [
+      "industrial.*",
+      "agricultural.*"
+    ],
     "path": "baseline",
-    "grant_pct": 30,
-    "concessional_pct": 45,
-    "public_equity_pct": 25,
-    "private_pct": 0,
-    "rationale": "Transport infrastructure at baseline draws heavily on concessional EBRD/EIB lending (EBRD is the largest transport lender in Ukraine). EU TEN-T extension grants applicable to strategic corridors. Public equity from state transport enterprises (Ukrzaliznytsia, Ukravtodor, USPA).",
-    "key_instruments": ["EBRD Transport Corridor", "EIB TEN-T Ukraine", "EU Ukraine Facility (transport)", "Ukrzaliznytsia equity", "USPA equity"],
-    "notes": "RDNA3 §Transport; EBRD Ukraine Transport Assessment 2023"
+    "tranches": {
+      "grant_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "era_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "first_loss_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "concessional_pct": {
+        "central": 15,
+        "low": 10,
+        "high": 25
+      },
+      "senior_ifi_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "dfi_equity_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 15
+      },
+      "public_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 20
+      },
+      "private_equity_pct": {
+        "central": 35,
+        "low": 20,
+        "high": 50
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "required": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF",
+        "ECA"
+      ]
+    },
+    "structure_patterns": [
+      "a_b_loan",
+      "mezzanine"
+    ],
+    "rationale": "Industrial assets (steel, coke, agri-processing) are commercially driven — private equity is the dominant tranche. IFI senior debt and DFI equity play a catalytic role. Grant contributions minimal (environmental remediation only). ECA and MIGA wrap essential for commercial debt.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "RDNA3",
+        "ref": "§Industry and Agriculture Sector Financing"
+      },
+      {
+        "code": "EBRD_CASE",
+        "ref": "EBRD Ukraine industrial recovery — Metinvest and agri-business precedents"
+      }
+    ]
   },
   {
-    "sector": "transport_and_ports",
+    "template_id": "INDUSTRIAL_CODE_COMPLIANT",
+    "sector_group": "industrial",
+    "asset_type_match": [
+      "industrial.*",
+      "agricultural.*"
+    ],
     "path": "code_compliant",
-    "grant_pct": 35,
-    "concessional_pct": 40,
-    "public_equity_pct": 25,
-    "private_pct": 0,
-    "rationale": "Code-compliant transport (EU road safety standards, electrification-ready rail, green port requirements) unlocks higher EU grant under TEN-T.",
-    "key_instruments": ["EIB TEN-T", "EU Ukraine Facility", "EBRD", "bilateral donors (Japan, Korea)"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "era_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "first_loss_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "concessional_pct": {
+        "central": 15,
+        "low": 10,
+        "high": 25
+      },
+      "senior_ifi_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "dfi_equity_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 15
+      },
+      "public_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 20
+      },
+      "private_equity_pct": {
+        "central": 30,
+        "low": 15,
+        "high": 45
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "required": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF",
+        "ECA"
+      ]
+    },
+    "structure_patterns": [
+      "a_b_loan",
+      "mezzanine"
+    ],
+    "rationale": "EU environmental standards (Best Available Techniques for steel/coke) attract a small environmental grant supplement. Private equity reduces slightly as compliance cost is partially grant-covered.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "RDNA3",
+        "ref": "§Industrial code-compliant scenario"
+      },
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan industrial decarbonisation milestones"
+      }
+    ]
   },
   {
-    "sector": "transport_and_ports",
+    "template_id": "INDUSTRIAL_BBB",
+    "sector_group": "industrial",
+    "asset_type_match": [
+      "industrial.*",
+      "agricultural.*"
+    ],
     "path": "build_back_better",
-    "grant_pct": 35,
-    "concessional_pct": 35,
-    "public_equity_pct": 20,
-    "private_pct": 10,
-    "rationale": "Build-back-better transport (electrification, green port, hydrogen-ready logistics) attracts EU green-transport grants and some private PPP equity (port logistics, rail freight). MIGA covers private tranche against war risk.",
-    "key_instruments": ["EU Ukraine Facility (green transport)", "EBRD Green", "EIB Climate", "MIGA War & Civil Disturbance", "private port operators"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 15,
+        "low": 5,
+        "high": 25
+      },
+      "era_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "first_loss_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "concessional_pct": {
+        "central": 15,
+        "low": 10,
+        "high": 25
+      },
+      "senior_ifi_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "dfi_equity_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 15
+      },
+      "public_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 5
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 10,
+        "low": 5,
+        "high": 20
+      },
+      "private_equity_pct": {
+        "central": 25,
+        "low": 10,
+        "high": 40
+      }
+    },
+    "pri_wrap": {
+      "applicable": true,
+      "required": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF",
+        "ECA"
+      ]
+    },
+    "structure_patterns": [
+      "a_b_loan",
+      "mezzanine"
+    ],
+    "rationale": "EU Innovation Fund and green hydrogen grants increase the grant share at BBB for low-carbon industrial transitions (DRI steel, low-carbon agri-processing). Private equity shrinks as green conditionality requires higher grant/concessional to make the capital cost economics viable.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan industrial green transition"
+      }
+    ]
   },
   {
-    "sector": "water_and_sanitation",
+    "template_id": "PUBLIC_ADMIN_BASELINE",
+    "sector_group": "public_administration",
+    "asset_type_match": [
+      "public_admin.*"
+    ],
     "path": "baseline",
-    "grant_pct": 45,
-    "concessional_pct": 35,
-    "public_equity_pct": 20,
-    "private_pct": 0,
-    "rationale": "Water and sanitation infrastructure reconstruction draws on EU Facility (WASH track), UNICEF, USAID, bilateral donors (Germany, Netherlands). Concessional EBRD and World Bank municipal infrastructure lending fills mid-tranche. Municipal Vodokanal equity.",
-    "key_instruments": ["EU Ukraine Facility (WASH)", "UNICEF WASH", "USAID", "EBRD Municipal Infrastructure", "World Bank Urban", "KfW"],
-    "notes": "RDNA3 §Water; OCHA WASH cluster Ukraine 2023"
+    "tranches": {
+      "grant_pct": {
+        "central": 55,
+        "low": 45,
+        "high": 65
+      },
+      "era_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "first_loss_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "concessional_pct": {
+        "central": 30,
+        "low": 20,
+        "high": 40
+      },
+      "senior_ifi_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "dfi_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "public_equity_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "private_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      }
+    },
+    "pri_wrap": {
+      "applicable": false
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "Government buildings exclusively grant/concessional-financed. High grant share reflects rule-of-law and governance conditionality in EU Facility Pillar I. No commercial or private tranche applicable.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "RDNA3",
+        "ref": "§Public Administration and Governance Sector"
+      },
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan governance and rule-of-law milestones"
+      }
+    ]
   },
   {
-    "sector": "water_and_sanitation",
+    "template_id": "PUBLIC_ADMIN_CODE_COMPLIANT",
+    "sector_group": "public_administration",
+    "asset_type_match": [
+      "public_admin.*"
+    ],
     "path": "code_compliant",
-    "grant_pct": 50,
-    "concessional_pct": 30,
-    "public_equity_pct": 20,
-    "private_pct": 0,
-    "rationale": "Code-compliant water (EU drinking water directive standards, energy-efficient pumping) qualifies for enhanced EU grant and EBRD Green Cities facilities.",
-    "key_instruments": ["EU Ukraine Facility", "EBRD Green Cities", "World Bank", "bilateral donors"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 60,
+        "low": 50,
+        "high": 70
+      },
+      "era_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "first_loss_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "concessional_pct": {
+        "central": 25,
+        "low": 15,
+        "high": 35
+      },
+      "senior_ifi_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "dfi_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "public_equity_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "private_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      }
+    },
+    "pri_wrap": {
+      "applicable": false
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "EU building-code conditionality (energy performance, accessibility) increases grant share further. Concessional tranche reduced as the grant envelope absorbs the compliance cost uplift.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan governance reform and public building standards"
+      }
+    ]
   },
   {
-    "sector": "water_and_sanitation",
+    "template_id": "PUBLIC_ADMIN_BBB",
+    "sector_group": "public_administration",
+    "asset_type_match": [
+      "public_admin.*"
+    ],
     "path": "build_back_better",
-    "grant_pct": 55,
-    "concessional_pct": 25,
-    "public_equity_pct": 20,
-    "private_pct": 0,
-    "rationale": "Build-back-better water (smart metering, energy recovery, circular biosolids) attracts EU green grants and EBRD Green Cities. No private sector applicable for public utilities.",
-    "key_instruments": ["EU Ukraine Facility (green)", "EBRD Green Cities", "EIB Climate", "bilateral"],
-    "notes": null
-  },
-  {
-    "sector": "industrial_and_agricultural",
-    "path": "baseline",
-    "grant_pct": 15,
-    "concessional_pct": 30,
-    "public_equity_pct": 20,
-    "private_pct": 35,
-    "rationale": "Industrial reconstruction is primarily a commercial activity. State-owned enterprises (e.g. Metinvest, state steelworks) contribute equity; private operators (DTEK, agricultural holdings) bring private capital. Concessional EBRD/IFC lending bridges the risk gap. Grant share limited to strategic national-security assets only.",
-    "key_instruments": ["EBRD Industrial Resilience", "IFC", "MIGA War & Civil Disturbance", "Ukrainian Development Fund", "commercial bank"],
-    "notes": "RDNA3 §Industry; IFC Ukraine Private Sector Assessment 2023"
-  },
-  {
-    "sector": "industrial_and_agricultural",
-    "path": "code_compliant",
-    "grant_pct": 20,
-    "concessional_pct": 30,
-    "public_equity_pct": 15,
-    "private_pct": 35,
-    "rationale": "Environmental compliance upgrade (EU taxonomy-aligned) attracts limited EU grant component. Private equity remains primary; MIGA covers against war risk.",
-    "key_instruments": ["EBRD", "IFC", "EU sustainability grants", "MIGA", "private equity"],
-    "notes": null
-  },
-  {
-    "sector": "industrial_and_agricultural",
-    "path": "build_back_better",
-    "grant_pct": 25,
-    "concessional_pct": 30,
-    "public_equity_pct": 10,
-    "private_pct": 35,
-    "rationale": "Industrial decarbonisation (EAF steelmaking, green hydrogen DRI) qualifies for EU Just Transition and Innovation Fund grants. EBRD Green Economy Financing. Private equity viability depends on carbon price trajectory.",
-    "key_instruments": ["EU Just Transition / Innovation Fund", "EBRD Green Economy", "IFC Climate", "MIGA", "strategic private equity"],
-    "notes": null
-  },
-  {
-    "sector": "public_administration",
-    "path": "baseline",
-    "grant_pct": 50,
-    "concessional_pct": 20,
-    "public_equity_pct": 30,
-    "private_pct": 0,
-    "rationale": "Public administration building reconstruction is primarily government-funded (UA State Budget, EU budget support) with EU Facility grant component (governance reform milestones).",
-    "key_instruments": ["EU Ukraine Facility (governance)", "UA State Budget", "bilateral donors (EU member states)", "UNDP governance"],
-    "notes": null
-  },
-  {
-    "sector": "public_administration",
-    "path": "code_compliant",
-    "grant_pct": 55,
-    "concessional_pct": 15,
-    "public_equity_pct": 30,
-    "private_pct": 0,
-    "rationale": "Code-compliant government buildings (energy efficiency, accessibility, digital infrastructure) attract EU green-governance grants.",
-    "key_instruments": ["EU Ukraine Facility", "UA State Budget", "bilateral donors"],
-    "notes": null
-  },
-  {
-    "sector": "public_administration",
-    "path": "build_back_better",
-    "grant_pct": 60,
-    "concessional_pct": 10,
-    "public_equity_pct": 30,
-    "private_pct": 0,
-    "rationale": "Build-back-better government buildings (passive standard, heat pump, digital services infrastructure) attract maximum EU green grant share.",
-    "key_instruments": ["EU Ukraine Facility (green governance)", "UA State Budget", "bilateral donors"],
-    "notes": null
+    "tranches": {
+      "grant_pct": {
+        "central": 65,
+        "low": 55,
+        "high": 75
+      },
+      "era_pct": {
+        "central": 10,
+        "low": 0,
+        "high": 15
+      },
+      "first_loss_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "concessional_pct": {
+        "central": 20,
+        "low": 10,
+        "high": 30
+      },
+      "senior_ifi_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "dfi_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "public_equity_pct": {
+        "central": 5,
+        "low": 0,
+        "high": 10
+      },
+      "diaspora_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "commercial_debt_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      },
+      "private_equity_pct": {
+        "central": 0,
+        "low": 0,
+        "high": 0
+      }
+    },
+    "pri_wrap": {
+      "applicable": false
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "Near-passive or BREEAM Excellent standard qualifies for EU Green New Deal grant support in addition to standard governance grants. Maximum grant concentration — concessional debt covers only the residual financing gap.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan BBB public buildings conditionality"
+      }
+    ]
   }
 ]

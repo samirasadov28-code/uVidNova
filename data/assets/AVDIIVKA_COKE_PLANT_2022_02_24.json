@@ -25,13 +25,12 @@
     ],
     "evidence_sources": [
       {
-        "title": "Examples of environmental harm in Ukraine: Avdiivka coke and chemical plant",
-        "url": "https://ceobs.org/ukraine-damage-map-avdiivka-coke-and-chemical-plant/",
-        "source_code": "BELLINGCAT"
+        "title": "KSE Russia Will Pay — Avdiivka Coke Plant",
+        "source_code": "KSE"
       },
       {
-        "title": "Russians destroyed Avdiivka coke plant, it is impossible to restore it, says Metinvest CEO",
-        "url": "https://english.nv.ua/nation/russians-destroyed-avdiivka-coke-plant-it-is-impossible-to-restore-it-says-metinvest-ceo-50377445.html"
+        "title": "Bellingcat Avdiivka destruction documentation",
+        "source_code": "BELLINGCAT"
       }
     ]
   },
@@ -76,24 +75,84 @@
   },
   "financing_structures": {
     "baseline": {
-      "grant_pct": 15,
-      "concessional_pct": 30,
-      "public_equity_pct": 15,
-      "private_pct": 40,
+      "template_id": "INDUSTRIAL_BASELINE",
+      "grant_pct": 5,
+      "era_pct": 0,
+      "first_loss_pct": 5,
+      "concessional_pct": 15,
+      "senior_ifi_pct": 20,
+      "dfi_equity_pct": 10,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 10,
+      "private_equity_pct": 35,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF",
+          "ECA"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "mezzanine"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
-      "grant_pct": 20,
-      "concessional_pct": 30,
-      "public_equity_pct": 15,
-      "private_pct": 35,
+      "template_id": "INDUSTRIAL_CODE_COMPLIANT",
+      "grant_pct": 10,
+      "era_pct": 0,
+      "first_loss_pct": 5,
+      "concessional_pct": 15,
+      "senior_ifi_pct": 20,
+      "dfi_equity_pct": 10,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 10,
+      "private_equity_pct": 30,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF",
+          "ECA"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "mezzanine"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
-      "grant_pct": 25,
-      "concessional_pct": 25,
-      "public_equity_pct": 10,
-      "private_pct": 40,
+      "template_id": "INDUSTRIAL_BBB",
+      "grant_pct": 15,
+      "era_pct": 0,
+      "first_loss_pct": 5,
+      "concessional_pct": 15,
+      "senior_ifi_pct": 20,
+      "dfi_equity_pct": 10,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 10,
+      "private_equity_pct": 25,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF",
+          "ECA"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "mezzanine"
+      ],
       "rationale": "Green steel / decarbonisation pathway unlocks EU industrial recovery grants; private equity anchor expected from strategic investor",
       "comparable_projects": []
     }

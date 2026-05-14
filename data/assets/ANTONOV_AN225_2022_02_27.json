@@ -100,24 +100,72 @@
   },
   "financing_structures": {
     "baseline": {
-      "grant_pct": 20,
-      "concessional_pct": 30,
-      "public_equity_pct": 30,
-      "private_pct": 20,
+      "template_id": "TRANSPORT_NON_REVENUE_BASELINE",
+      "grant_pct": 30,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
-      "grant_pct": 20,
-      "concessional_pct": 35,
-      "public_equity_pct": 30,
-      "private_pct": 15,
+      "template_id": "TRANSPORT_NON_REVENUE_CODE_COMPLIANT",
+      "grant_pct": 35,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
-      "grant_pct": 25,
-      "concessional_pct": 35,
-      "public_equity_pct": 25,
-      "private_pct": 15,
+      "template_id": "TRANSPORT_NON_REVENUE_BBB",
+      "grant_pct": 40,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "Strategic industrial asset with significant private commercial viability (Antonov Company charter operations). Reconstruction would involve Antonov Company equity, EBRD/EIB concessional tranche, and EU industrial-reconstruction grant component. MIGA War & Civil Disturbance coverage applicable to private equity tranche. Note: completing second airframe (50–60% complete at Sviatoshyn) is technically distinct and potentially lower cost than full rebuild.",
       "comparable_projects": []
     }

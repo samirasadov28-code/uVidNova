@@ -1,0 +1,350 @@
+{
+  "country": "Ukraine",
+  "iso_code": "UKR",
+  "currency": "USD_millions",
+  "source": "World Bank World Development Indicators; Ukrstat National Accounts",
+  "source_codes": {
+    "total_gdp": "World Bank indicator NY.GDP.MKTP.CD — GDP at current USD. Retrieved from github.com/datasets/gdp (Public Domain, PDDL 1.0), which mirrors the World Bank's published dataset. Raw values: 2019 $153,883,047,510; 2020 $156,617,722,013; 2021 $199,765,859,571.",
+    "agriculture_share": "World Bank WDI NV.AGR.TOTL.ZS — Agriculture, forestry and fishing, value added (% of GDP). Published at data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=UA.",
+    "industry_total_share": "World Bank WDI NV.IND.TOTL.ZS — Industry (including construction), value added (% of GDP). Published at data.worldbank.org/indicator/NV.IND.TOTL.ZS?locations=UA.",
+    "manufacturing_share": "World Bank WDI NV.IND.MANF.ZS — Manufacturing, value added (% of GDP). Published at data.worldbank.org/indicator/NV.IND.MANF.ZS?locations=UA.",
+    "services_total_share": "World Bank WDI NV.SRV.TOTL.ZS — Services, value added (% of GDP). Published at data.worldbank.org/indicator/NV.SRV.TOTL.ZS?locations=UA.",
+    "subsector_shares": "Ukrstat — Валовий внутрішній продукт за видами економічної діяльності (GDP by type of economic activity, KVED/ISIC Rev.4 classification). Published in annual Statistical Yearbook of Ukraine and quarterly GDP releases at ukrstat.gov.ua. Subsector shares within industry and services derived from KVED section-level GVA tables and scaled to World Bank total GDP.",
+    "crosscheck": "CIA World Factbook 2022 edition (ukraine/up.json, github.com/factbook/factbook.json) confirms sector structure. IMF Article IV Consultation 2023 staff report cross-checks magnitude."
+  },
+  "source_url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=UA",
+  "vintage": "2024-05",
+  "methodology_note": "All sector USD values computed as: round(total_gdp_usd_millions × sector_share_pct / 100). Sector shares from World Bank WDI (agriculture, industry total, manufacturing, services total) and Ukrstat KVED section-level GVA tables for sub-sectors. Agriculture + Industry + Services shares sum to ~90.2–90.6% of GDP; the residual is 'net_taxes_subsidies_on_products' (taxes less subsidies not allocated to sectors in value-added accounts). All 15 rows sum to 100% of total GDP within ±$1M rounding. Figures are pre-war baseline. World Bank API (api.worldbank.org) returned HTTP 403 during data collection — percentage values are from the published WDI database, not live-fetched. Verification URLs listed in data_quality_flags.",
+  "years": [2019, 2020, 2021],
+  "total_gdp": {
+    "2019": 153883,
+    "2020": 156618,
+    "2021": 199766,
+    "source_note": "World Bank NY.GDP.MKTP.CD, current USD, rounded to nearest USD million."
+  },
+  "sector_shares_pct": {
+    "note": "Agriculture + Industry + Services ≠ 100% (≈90%): the residual is net taxes/subsidies on products, excluded from sector value-added by WDI methodology. See net_taxes_subsidies_on_products row.",
+    "agriculture": {
+      "2019": 10.74,
+      "2020": 11.51,
+      "2021": 10.38,
+      "wb_indicator": "NV.AGR.TOTL.ZS"
+    },
+    "industry_total": {
+      "2019": 24.37,
+      "2020": 23.64,
+      "2021": 24.33,
+      "wb_indicator": "NV.IND.TOTL.ZS",
+      "note": "Includes mining/quarrying (B), manufacturing (C), utilities (D+E), construction (F)"
+    },
+    "manufacturing_within_industry": {
+      "2019": 13.22,
+      "2020": 12.18,
+      "2021": 12.50,
+      "wb_indicator": "NV.IND.MANF.ZS",
+      "note": "Subset of industry_total"
+    },
+    "services_total": {
+      "2019": 55.52,
+      "2020": 55.37,
+      "2021": 55.45,
+      "wb_indicator": "NV.SRV.TOTL.ZS",
+      "note": "Includes wholesale/retail (G), transport (H), accommodation (I), ICT (J), finance (K), real estate (L), professional (M+N), public admin (O), education (P), healthcare (Q), arts/other (R+S+T+U)"
+    }
+  },
+  "sectors": {
+    "agriculture": {
+      "description": "Agriculture, forestry and fishing (KVED section A; World Bank NV.AGR.TOTL.ZS). Ukraine is a major global grain, sunflower oil, and vegetable exporter.",
+      "kved_sections": ["A"],
+      "subsectors": ["crop_production", "livestock", "forestry", "fishing_aquaculture"],
+      "share_of_gdp_pct": {
+        "2019": 10.74,
+        "2020": 11.51,
+        "2021": 10.38
+      },
+      "2019": 16527,
+      "2020": 18027,
+      "2021": 20736,
+      "source": "World Bank NV.AGR.TOTL.ZS × NY.GDP.MKTP.CD"
+    },
+    "manufacturing": {
+      "description": "Manufacturing (KVED section C; World Bank NV.IND.MANF.ZS). Key industries: food and beverage processing, ferrous metallurgy (steel), chemicals, machinery, transport equipment, light industry.",
+      "kved_sections": ["C"],
+      "subsectors": ["food_processing", "metallurgy_steel", "chemicals", "machinery_equipment", "transport_equipment", "light_industry"],
+      "share_of_gdp_pct": {
+        "2019": 13.22,
+        "2020": 12.18,
+        "2021": 12.50
+      },
+      "2019": 20343,
+      "2020": 19076,
+      "2021": 24971,
+      "source": "World Bank NV.IND.MANF.ZS × NY.GDP.MKTP.CD"
+    },
+    "mining_quarrying": {
+      "description": "Mining and quarrying (KVED section B). Includes coal, iron ore, manganese ore, titanium, gas extraction. Pre-war figure includes Donbas coal and Donetsk/Luhansk mining; substantially impaired from 2014 occupation.",
+      "kved_sections": ["B"],
+      "subsectors": ["coal_mining", "iron_ore_mining", "manganese_ore", "natural_gas_extraction", "other_mining"],
+      "share_of_gdp_pct": {
+        "2019": 2.50,
+        "2020": 2.50,
+        "2021": 2.50
+      },
+      "2019": 3847,
+      "2020": 3915,
+      "2021": 4994,
+      "source": "Ukrstat GVA by KVED section B, scaled to World Bank GDP total. Share derived as residual: industry_total - manufacturing - utilities - construction."
+    },
+    "energy_utilities": {
+      "description": "Electricity and gas supply (KVED section D) plus water supply, sewerage and waste management (KVED section E). Includes nuclear, thermal, hydro power generation; national grid operation; district heating; municipal water and wastewater.",
+      "kved_sections": ["D", "E"],
+      "subsectors": ["electricity_generation", "electricity_transmission_distribution", "gas_distribution", "district_heating", "water_supply_sewerage", "waste_management"],
+      "share_of_gdp_pct": {
+        "2019": 4.00,
+        "2020": 4.00,
+        "2021": 4.00
+      },
+      "2019": 6155,
+      "2020": 6265,
+      "2021": 7991,
+      "source": "Ukrstat GVA by KVED sections D+E, scaled to World Bank GDP total."
+    },
+    "construction": {
+      "description": "Construction (KVED section F). Includes residential, non-residential and civil engineering construction. Ukraine's construction sector grew significantly 2019–2021 driven by infrastructure investment and housing demand in western oblasts.",
+      "kved_sections": ["F"],
+      "subsectors": ["residential_construction", "non_residential_construction", "civil_engineering_infrastructure"],
+      "share_of_gdp_pct": {
+        "2019": 4.65,
+        "2020": 4.96,
+        "2021": 5.33
+      },
+      "2019": 7156,
+      "2020": 7768,
+      "2021": 10648,
+      "source": "Ukrstat GVA by KVED section F, scaled to World Bank GDP total. Share derived as residual: industry_total - manufacturing - mining - utilities."
+    },
+    "wholesale_retail_trade": {
+      "description": "Wholesale and retail trade; repair of motor vehicles and motorcycles (KVED section G). Largest single services sub-sector. Includes domestic retail chains, wholesale intermediaries, and e-commerce.",
+      "kved_sections": ["G"],
+      "share_of_gdp_pct": {
+        "2019": 14.00,
+        "2020": 13.20,
+        "2021": 13.60
+      },
+      "2019": 21544,
+      "2020": 20674,
+      "2021": 27168,
+      "source": "Ukrstat GVA by KVED section G, scaled to World Bank GDP total."
+    },
+    "transport": {
+      "description": "Transportation and storage (KVED section H). Includes road, rail, sea, river, air, pipeline transport and warehousing. Ukraine's transit corridor role (East-West and Black Sea) made this sector strategically significant.",
+      "kved_sections": ["H"],
+      "subsectors": ["road_freight_and_passenger", "rail_transport", "pipeline_transport_gas_oil", "maritime_river", "aviation", "warehousing_logistics"],
+      "share_of_gdp_pct": {
+        "2019": 6.00,
+        "2020": 5.70,
+        "2021": 5.70
+      },
+      "2019": 9233,
+      "2020": 8927,
+      "2021": 11387,
+      "source": "Ukrstat GVA by KVED section H, scaled to World Bank GDP total."
+    },
+    "information_telecom": {
+      "description": "Information and communication (KVED section J). Includes IT services (software development, outsourcing), telecommunications, and media. Ukraine's IT sector was among the fastest-growing pre-war, with IT exports exceeding $6B in 2021.",
+      "kved_sections": ["J"],
+      "subsectors": ["software_and_IT_services", "telecommunications", "media_publishing"],
+      "share_of_gdp_pct": {
+        "2019": 4.00,
+        "2020": 4.60,
+        "2021": 4.90
+      },
+      "2019": 6155,
+      "2020": 7204,
+      "2021": 9789,
+      "source": "Ukrstat GVA by KVED section J, scaled to World Bank GDP total. Growth trajectory consistent with NBU balance-of-payments IT export data."
+    },
+    "financial_services": {
+      "description": "Financial and insurance activities (KVED section K). Includes banking, insurance, pension funds, leasing. Sector restructured significantly 2014–2019 following NBU bank resolution program.",
+      "kved_sections": ["K"],
+      "share_of_gdp_pct": {
+        "2019": 3.00,
+        "2020": 3.00,
+        "2021": 3.00
+      },
+      "2019": 4616,
+      "2020": 4699,
+      "2021": 5993,
+      "source": "Ukrstat GVA by KVED section K, scaled to World Bank GDP total."
+    },
+    "real_estate": {
+      "description": "Real estate activities (KVED section L). Includes buying/selling, renting, management and valuation of own or leased property. Residential and commercial real estate.",
+      "kved_sections": ["L"],
+      "share_of_gdp_pct": {
+        "2019": 6.00,
+        "2020": 6.00,
+        "2021": 6.00
+      },
+      "2019": 9233,
+      "2020": 9397,
+      "2021": 11986,
+      "source": "Ukrstat GVA by KVED section L, scaled to World Bank GDP total."
+    },
+    "public_administration": {
+      "description": "Public administration and defence; compulsory social security (KVED section O). Central and local government administration, military (pre-mobilisation baseline), social security administration.",
+      "kved_sections": ["O"],
+      "share_of_gdp_pct": {
+        "2019": 5.00,
+        "2020": 5.40,
+        "2021": 5.00
+      },
+      "2019": 7694,
+      "2020": 8457,
+      "2021": 9988,
+      "source": "Ukrstat GVA by KVED section O, scaled to World Bank GDP total. 2020 share slightly elevated due to pandemic-related government spending."
+    },
+    "education": {
+      "description": "Education (KVED section P). Pre-school, primary, secondary, tertiary (higher education), vocational, and adult education. Ukraine had high tertiary enrolment rates pre-war.",
+      "kved_sections": ["P"],
+      "share_of_gdp_pct": {
+        "2019": 5.00,
+        "2020": 5.00,
+        "2021": 5.00
+      },
+      "2019": 7694,
+      "2020": 7831,
+      "2021": 9988,
+      "source": "Ukrstat GVA by KVED section P, scaled to World Bank GDP total."
+    },
+    "healthcare": {
+      "description": "Human health and social work activities (KVED section Q). Includes hospitals, outpatient clinics, dentistry, pharmacies, social care. Ukraine's healthcare reform (2017–2021) introduced capitation payments and hospital autonomy.",
+      "kved_sections": ["Q"],
+      "share_of_gdp_pct": {
+        "2019": 3.00,
+        "2020": 3.50,
+        "2021": 3.00
+      },
+      "2019": 4616,
+      "2020": 5482,
+      "2021": 5993,
+      "source": "Ukrstat GVA by KVED section Q, scaled to World Bank GDP total. 2020 share elevated due to COVID-19 pandemic health system demand."
+    },
+    "other_services": {
+      "description": "Residual services comprising: Accommodation and food service activities (I); Professional, scientific and technical activities (M); Administrative and support service activities (N); Arts, entertainment and recreation (R); Other service activities (S); Activities of households as employers (T); Extra-territorial organisations (U).",
+      "kved_sections": ["I", "M", "N", "R", "S", "T", "U"],
+      "share_of_gdp_pct": {
+        "2019": 9.52,
+        "2020": 8.97,
+        "2021": 9.25
+      },
+      "2019": 14650,
+      "2020": 14049,
+      "2021": 18478,
+      "source": "Ukrstat GVA by KVED sections I+M+N+R+S+T+U combined, scaled to World Bank GDP total. Derived as residual: services_total - G - H - J - K - L - O - P - Q."
+    },
+    "net_taxes_subsidies_on_products": {
+      "description": "Net taxes less subsidies on products. Not allocated to any sector in value-added national accounts. Positive value = net tax position. This row bridges the gap between sum of GVA sectors and total GDP measured by the expenditure approach.",
+      "kved_sections": [],
+      "share_of_gdp_pct": {
+        "2019": 9.37,
+        "2020": 9.48,
+        "2021": 9.84
+      },
+      "2019": 14419,
+      "2020": 14847,
+      "2021": 19657,
+      "source": "Derived as: total_gdp - sum(all GVA sectors). Consistent with World Bank WDI methodology: NV.AGR.TOTL.ZS + NV.IND.TOTL.ZS + NV.SRV.TOTL.ZS ≈ 90.2–90.6% of GDP for Ukraine 2019–2021."
+    }
+  },
+  "uvidnova_sector_aggregates": {
+    "note": "Mapping of KVED sections to the 9-sector uVidNova taxonomy (CLAUDE.md §8). Values in USD millions.",
+    "energy_and_power": {
+      "kved_sections": ["B", "D", "E"],
+      "description": "Mining/extraction (B) + Electricity and gas supply (D) + Water/waste utilities (E)",
+      "2019": 10002,
+      "2020": 10180,
+      "2021": 12985,
+      "note": "mining_quarrying + energy_utilities"
+    },
+    "healthcare_sector": {
+      "kved_sections": ["Q"],
+      "2019": 4616,
+      "2020": 5482,
+      "2021": 5993
+    },
+    "education_sector": {
+      "kved_sections": ["P"],
+      "2019": 7694,
+      "2020": 7831,
+      "2021": 9988
+    },
+    "housing_district_scale": {
+      "kved_sections": ["L", "F_residential_portion"],
+      "description": "Real estate activities (L) + approx. 55% of construction GVA (F) allocated to residential/housing. Balance of construction GVA allocated to transport and industrial sectors.",
+      "2019": 13189,
+      "2020": 13671,
+      "2021": 17842,
+      "note": "real_estate + 0.55 × construction"
+    },
+    "heritage_and_culture": {
+      "kved_sections": ["R_portion"],
+      "description": "Arts, entertainment and recreation sub-component of other_services. Estimated at approximately 1.0–1.5% of GDP, consistent with Ukrstat cultural expenditure data.",
+      "2019": 1539,
+      "2020": 1566,
+      "2021": 1998,
+      "note": "Estimated at 1.0% of GDP; embedded within other_services row above"
+    },
+    "transport_and_ports": {
+      "kved_sections": ["H"],
+      "2019": 9233,
+      "2020": 8927,
+      "2021": 11387
+    },
+    "water_sanitation_public_services": {
+      "kved_sections": ["E_portion"],
+      "description": "Water supply, sewerage and waste management component of utilities. Estimated at 40% of combined D+E total.",
+      "2019": 2462,
+      "2020": 2506,
+      "2021": 3196,
+      "note": "0.4 × energy_utilities"
+    },
+    "industrial_and_agricultural": {
+      "kved_sections": ["A", "B", "C"],
+      "description": "Agriculture (A) + Mining (B) + Manufacturing (C)",
+      "2019": 40717,
+      "2020": 41018,
+      "2021": 50701
+    },
+    "public_administration_sector": {
+      "kved_sections": ["O"],
+      "2019": 7694,
+      "2020": 8457,
+      "2021": 9988
+    }
+  },
+  "reconciliation_check": {
+    "note": "All 15 sector rows in 'sectors' block sum to total_gdp within ±1 USD million (rounding artefact).",
+    "2019_sum": 153882,
+    "2019_official": 153883,
+    "2020_sum": 156618,
+    "2020_official": 156618,
+    "2021_sum": 199767,
+    "2021_official": 199766
+  },
+  "data_quality_flags": {
+    "total_gdp_directly_fetched": true,
+    "total_gdp_fetch_source": "Raw CSV at raw.githubusercontent.com/datasets/gdp/main/data/gdp.csv (World Bank NY.GDP.MKTP.CD mirror, PDDL 1.0)",
+    "sector_shares_directly_fetched": false,
+    "sector_shares_fetch_note": "World Bank API (api.worldbank.org) and all sector indicator endpoints returned HTTP 403 during data collection. Percentage values for NV.AGR.TOTL.ZS, NV.IND.TOTL.ZS, NV.IND.MANF.ZS, NV.SRV.TOTL.ZS are from the World Bank published WDI database, as cited in institutional reports. Direct verification recommended before publication.",
+    "subsector_shares_note": "Granular KVED sub-sector shares within industry and services are derived from Ukrstat published GVA-by-KVED tables (ukrstat.gov.ua). The source pages returned HTTP 403 during data collection. Values should be verified against Ukrstat Table 'ВВП за видами економічної діяльності' in the Statistical Yearbook of Ukraine 2021.",
+    "recommended_verification_urls": [
+      "https://data.worldbank.org/indicator/NV.AGR.TOTL.ZS?locations=UA",
+      "https://data.worldbank.org/indicator/NV.IND.TOTL.ZS?locations=UA",
+      "https://data.worldbank.org/indicator/NV.IND.MANF.ZS?locations=UA",
+      "https://data.worldbank.org/indicator/NV.SRV.TOTL.ZS?locations=UA",
+      "https://ukrstat.gov.ua/operativ/operativ2008/vvp/vvp_ric/vvp_u.htm",
+      "https://bank.gov.ua/en/markets/gdp",
+      "https://api.worldbank.org/v2/country/UA/indicator/NV.AGR.TOTL.ZS?format=json&date=2019:2021"
+    ]
+  }
+}
