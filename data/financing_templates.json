@@ -1745,5 +1745,216 @@
         "ref": "Ukraine Plan BBB public buildings conditionality"
       }
     ]
+  },
+  {
+    "template_id": "SOCIAL_INFRA_BBB_TRUST",
+    "sector_group": "social_infrastructure",
+    "asset_type_match": [
+      "healthcare.*",
+      "education.*",
+      "heritage.*",
+      "water.*",
+      "public_admin.*"
+    ],
+    "path": "build_back_better_plus_trust",
+    "tranches": {
+      "grant_pct": 35,
+      "era_pct": 5,
+      "first_loss_pct": 5,
+      "concessional_pct": 25,
+      "reparations_availability_pct": 22,
+      "public_equity_pct": 8
+    },
+    "tranche_note": "reparations_availability_pct is a Trust availability-payment stream sized against the supportable debt, not a capital-equity tranche. Together with the five capital tranches it sums to 100.",
+    "pri_wrap": {
+      "applicable": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF"
+      ]
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "Ukraine Reconstruction Trust availability payment secures the concessional IFI senior debt tranche against payment interruption risk, enabling capital-market placement of the bond. Precedents: Dawes Plan (1924) annuity stream secured German infrastructure debt; Marshall Plan counterpart-fund mechanic (1948–52) recycled grant receipts into sovereign debt service. EU green conditionality and ERA co-financing maintain the grant floor. Trust payment replaces the public-equity wedge that would otherwise be required from a fiscally constrained sovereign.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "RDNA3",
+        "ref": "§Social Sector Financing, BBB scenario"
+      },
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan Pillar I BBB conditionality and green standards"
+      },
+      {
+        "code": "EBRD_CASE",
+        "ref": "Green Economy Transition framework for social assets"
+      }
+    ]
+  },
+  {
+    "template_id": "ENERGY_BBB_TRUST",
+    "sector_group": "energy",
+    "asset_type_match": [
+      "energy.*"
+    ],
+    "path": "build_back_better_plus_trust",
+    "tranches": {
+      "grant_pct": 20,
+      "era_pct": 5,
+      "concessional_pct": 30,
+      "reparations_availability_pct": 15,
+      "public_equity_pct": 15,
+      "private_equity_pct": 15
+    },
+    "tranche_note": "reparations_availability_pct is a Trust availability-payment stream, not a capital-equity tranche. All six fields sum to 100.",
+    "pri_wrap": {
+      "applicable": true,
+      "required": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF",
+        "BPIFRANCE_AE"
+      ]
+    },
+    "structure_patterns": [
+      "a_b_loan",
+      "blending_facility"
+    ],
+    "rationale": "Trust availability payment bridges the construction-phase revenue gap for power generation and grid assets before post-war tariff normalisation. Partial revenue recovery expected post-stabilisation, reducing long-run Trust exposure. Precedent: Marshall Plan energy sector counterpart funds supported European power-station reconstruction (1948–51). MIGA war-risk wrap structurally required throughout.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan energy BBB conditionality and renewable targets"
+      },
+      {
+        "code": "EBRD_CASE",
+        "ref": "EBRD GET Ukraine energy — fuel switch precedents"
+      }
+    ]
+  },
+  {
+    "template_id": "TRANSPORT_BBB_TRUST",
+    "sector_group": "transport_non_revenue",
+    "asset_type_match": [
+      "transport.bridge",
+      "transport.rail_corridor",
+      "transport.rail_segment",
+      "transport.aircraft",
+      "transport.shipyard"
+    ],
+    "path": "build_back_better_plus_trust",
+    "tranches": {
+      "grant_pct": 25,
+      "era_pct": 5,
+      "concessional_pct": 25,
+      "reparations_availability_pct": 18,
+      "public_equity_pct": 15,
+      "private_equity_pct": 12
+    },
+    "tranche_note": "reparations_availability_pct is a Trust availability-payment stream, not a capital-equity tranche. All six fields sum to 100.",
+    "pri_wrap": {
+      "applicable": true,
+      "providers": [
+        "MIGA_WAR"
+      ]
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "Trust availability payment underwrites debt service during the reconstruction and early-operation phase for transport infrastructure. Concessional revenue model assumed; Trust payment reduces once user-fee revenues normalise. Precedent: Dawes Plan (1924) ring-fenced German railway revenues as security for reparations bonds — analogous Trust ring-fencing applied here in the opposite direction to support reconstruction finance.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan BBB transport milestones"
+      },
+      {
+        "code": "RDNA3",
+        "ref": "§Transport Sector non-revenue infrastructure"
+      }
+    ]
+  },
+  {
+    "template_id": "HOUSING_BBB_TRUST",
+    "sector_group": "housing",
+    "asset_type_match": [
+      "residential.*"
+    ],
+    "path": "build_back_better_plus_trust",
+    "tranches": {
+      "grant_pct": 30,
+      "era_pct": 10,
+      "concessional_pct": 20,
+      "reparations_availability_pct": 20,
+      "public_equity_pct": 20
+    },
+    "tranche_note": "reparations_availability_pct is a Trust availability-payment stream, not a capital-equity tranche. All five fields sum to 100.",
+    "pri_wrap": {
+      "applicable": true,
+      "providers": [
+        "MIGA_WAR"
+      ]
+    },
+    "structure_patterns": [
+      "blending_facility"
+    ],
+    "rationale": "Trust payment bridges the gap between wartime rental revenues (suppressed by displacement and income collapse) and debt-service requirements on the IFI concessional tranche. Comparable to Marshall Plan housing counterpart funds that recycled ERP grant receipts into social-housing mortgage programmes across West Germany and the Netherlands (1949–54).",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan housing BBB conditionality"
+      },
+      {
+        "code": "EBRD_CASE",
+        "ref": "EBRD Green Cities — BBB residential district precedents"
+      }
+    ]
+  },
+  {
+    "template_id": "INDUSTRIAL_BBB_TRUST",
+    "sector_group": "industrial",
+    "asset_type_match": [
+      "industrial.*",
+      "agricultural.*"
+    ],
+    "path": "build_back_better_plus_trust",
+    "tranches": {
+      "grant_pct": 15,
+      "era_pct": 5,
+      "concessional_pct": 20,
+      "reparations_availability_pct": 15,
+      "public_equity_pct": 15,
+      "private_equity_pct": 30
+    },
+    "tranche_note": "reparations_availability_pct is a Trust availability-payment stream, not a capital-equity tranche. All six fields sum to 100.",
+    "pri_wrap": {
+      "applicable": true,
+      "required": true,
+      "providers": [
+        "MIGA_WAR",
+        "UKEF",
+        "ECA"
+      ]
+    },
+    "structure_patterns": [
+      "a_b_loan",
+      "mezzanine"
+    ],
+    "rationale": "Trust payment supports transition-period financing while partial privatisation revenue is ramping up. Once commercial revenue stabilises post-war, Trust payments taper and private equity distribution commences. Precedent: Dawes Plan (1924) structured German industrial-bond issuance backed by Reichsbahn and customs revenues — the Trust here plays an analogous role until Ukrainian industrial revenues normalise.",
+    "comparable_projects": [],
+    "sources": [
+      {
+        "code": "EU_FACILITY",
+        "ref": "Ukraine Plan industrial green transition"
+      },
+      {
+        "code": "EBRD_CASE",
+        "ref": "EBRD Ukraine industrial recovery — Metinvest and agri-business precedents"
+      }
+    ]
   }
 ]

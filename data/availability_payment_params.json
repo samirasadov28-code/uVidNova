@@ -1,0 +1,65 @@
+{
+  "education": {
+    "construction_period_years": 2,
+    "coupon_pct": 4.5,
+    "dscr": 1.20,
+    "reparations_availability_pct": 20,
+    "tenor_years": 20
+  },
+  "energy_and_power": {
+    "construction_period_years": 3,
+    "coupon_pct": 5.5,
+    "dscr": 1.15,
+    "reparations_availability_pct": 15,
+    "tenor_years": 20
+  },
+  "healthcare": {
+    "construction_period_years": 3,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "reparations_availability_pct": 22,
+    "tenor_years": 25
+  },
+  "heritage_and_culture": {
+    "construction_period_years": 4,
+    "coupon_pct": 4.0,
+    "dscr": 1.30,
+    "reparations_availability_pct": 20,
+    "tenor_years": 30
+  },
+  "industrial_and_agricultural": {
+    "construction_period_years": 3,
+    "coupon_pct": 6.0,
+    "dscr": 1.10,
+    "reparations_availability_pct": 15,
+    "tenor_years": 15
+  },
+  "public_administration": {
+    "construction_period_years": 2,
+    "coupon_pct": 4.5,
+    "dscr": 1.20,
+    "reparations_availability_pct": 18,
+    "tenor_years": 20
+  },
+  "residential": {
+    "construction_period_years": 2,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "reparations_availability_pct": 20,
+    "tenor_years": 20
+  },
+  "transport_and_ports": {
+    "construction_period_years": 3,
+    "coupon_pct": 5.0,
+    "dscr": 1.20,
+    "reparations_availability_pct": 18,
+    "tenor_years": 20
+  },
+  "water_and_sanitation": {
+    "construction_period_years": 3,
+    "coupon_pct": 4.5,
+    "dscr": 1.20,
+    "reparations_availability_pct": 22,
+    "tenor_years": 25
+  }
+}

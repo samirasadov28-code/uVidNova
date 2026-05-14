@@ -148,6 +148,16 @@
       "comparable_projects": []
     }
   },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2029,
+    "construction_period_years": 3,
+    "coupon_pct": 4.5,
+    "dscr": 1.2,
+    "rationale": "Municipal water/sanitation; tariffs insufficient for project-finance debt service; Trust bridges the gap",
+    "supportable_debt_usd_m": 179.1,
+    "tenor_years": 25
+  },
   "donor_pathway": {
     "united24_url": null,
     "mriya_url": null,

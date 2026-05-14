@@ -1,0 +1,211 @@
+{
+  "version": "1.0.0",
+  "vintage": "2025",
+  "source": "funding_envelope.md — anchored to 2025 Ukraine Recovery Conference cycle. Re-verify before public rendering.",
+  "rdna_need_usd_bn": {
+    "rdna3_2024": 486,
+    "rdna4_2024_dec": 524,
+    "source": "RDNA3"
+  },
+  "tranches": [
+    {
+      "id": 1,
+      "code": "grnt",
+      "field": "grant_pct",
+      "label": "Pure grants",
+      "confidence": "high",
+      "confidence_note": "EU Facility Pillar I and named bilateral envelopes explicit in source documents.",
+      "pre_armistice":  { "low_usd_bn": 50,  "central_usd_bn": 65,  "high_usd_bn": 80  },
+      "post_armistice": { "low_usd_bn": 40,  "central_usd_bn": 55,  "high_usd_bn": 70  },
+      "direction": "flat",
+      "direction_note": "EU Facility Pillar I tapers post-2027; accession-linked top-ups partially offset."
+    },
+    {
+      "id": 2,
+      "code": "era",
+      "field": "era_pct",
+      "label": "ERA / frozen-asset proceeds",
+      "confidence": "high",
+      "confidence_note": "G7 ERA envelope explicit. Principal-seizure scenario is low-confidence additive.",
+      "pre_armistice":  { "low_usd_bn": 50,  "central_usd_bn": 50,  "high_usd_bn": 50  },
+      "post_armistice": {
+        "proceeds_only":     { "low_usd_bn": 0,   "central_usd_bn": 10,  "high_usd_bn": 30  },
+        "principal_seized":  { "low_usd_bn": 280, "central_usd_bn": 290, "high_usd_bn": 300 }
+      },
+      "direction": "step_up_contingent",
+      "direction_note": "Principal seizure is G7 political decision; carries asymmetric tail. Default scenario: proceeds_only."
+    },
+    {
+      "id": 3,
+      "code": "flos",
+      "field": "first_loss_pct",
+      "label": "First-loss / guarantee capital",
+      "confidence": "medium",
+      "confidence_note": "Aggregate guarantee envelope announced; deployment ratio inferred.",
+      "pre_armistice":  { "low_usd_bn": 10,  "central_usd_bn": 12,  "high_usd_bn": 15  },
+      "post_armistice": { "low_usd_bn": 8,   "central_usd_bn": 10,  "high_usd_bn": 12  },
+      "direction": "slight_decline",
+      "direction_note": "Absolute capacity stable but declines in relative weight as commercial tranches grow."
+    },
+    {
+      "id": 4,
+      "code": "conc",
+      "field": "concessional_pct",
+      "label": "Concessional IFI debt",
+      "confidence": "medium",
+      "confidence_note": "World Bank / EBRD / EIB cumulative envelopes inferred from aggregate pledges.",
+      "pre_armistice":  { "low_usd_bn": 80,  "central_usd_bn": 95,  "high_usd_bn": 110 },
+      "post_armistice": { "low_usd_bn": 100, "central_usd_bn": 120, "high_usd_bn": 140 },
+      "direction": "up",
+      "direction_note": "IFI Boards reconfirm post-war envelopes; EU Facility successor programme likely."
+    },
+    {
+      "id": 5,
+      "code": "sifi",
+      "field": "senior_ifi_pct",
+      "label": "Senior IFI debt (near-market)",
+      "confidence": "medium",
+      "confidence_note": "Inferred from EBRD / EIB near-market portfolio capacity.",
+      "pre_armistice":  { "low_usd_bn": 15,  "central_usd_bn": 20,  "high_usd_bn": 25  },
+      "post_armistice": { "low_usd_bn": 30,  "central_usd_bn": 40,  "high_usd_bn": 50  },
+      "direction": "up_materially",
+      "direction_note": "Revenue-generating assets become viable at scale post-armistice."
+    },
+    {
+      "id": 6,
+      "code": "eca",
+      "field": "eca_pct",
+      "label": "ECA buyer credit / direct lending",
+      "confidence": "high",
+      "confidence_note": "Named ECA envelopes explicit in programme documents.",
+      "pre_armistice":  { "low_usd_bn": 8,   "central_usd_bn": 10,  "high_usd_bn": 12  },
+      "post_armistice": { "low_usd_bn": 30,  "central_usd_bn": 40,  "high_usd_bn": 50  },
+      "direction": "up_materially",
+      "direction_note": "Pre-armistice: 30–50% utilisation of announced capacity. Post: caps lifted, bank syndication deepens."
+    },
+    {
+      "id": 7,
+      "code": "pri",
+      "field": "pri_wrap",
+      "label": "PRI / war-risk wrap",
+      "is_multiplier": true,
+      "confidence": "high",
+      "confidence_note": "MIGA Ukraine portfolio target explicit.",
+      "pre_armistice":  { "capacity_usd_bn": 12, "debt_unlock_multiplier": 3.5, "debt_unlock_usd_bn_low": 30, "debt_unlock_usd_bn_high": 60 },
+      "post_armistice": { "capacity_usd_bn": 7,  "debt_unlock_multiplier": 2.0, "debt_unlock_usd_bn_low": 10, "debt_unlock_usd_bn_high": 20 },
+      "direction": "down_in_absolute",
+      "direction_note": "War premium falls; sovereign-risk residual remains. Less needed as commercial layers normalise."
+    },
+    {
+      "id": 8,
+      "code": "dfie",
+      "field": "dfi_equity_pct",
+      "label": "DFI equity / quasi-equity",
+      "confidence": "medium",
+      "confidence_note": "DFI equity allocations inferred from fund mandates.",
+      "pre_armistice":  { "low_usd_bn": 5,   "central_usd_bn": 6,   "high_usd_bn": 8   },
+      "post_armistice": { "low_usd_bn": 10,  "central_usd_bn": 12,  "high_usd_bn": 15  },
+      "direction": "up",
+      "direction_note": "SOE restructurings and PPP concessions become viable post-armistice."
+    },
+    {
+      "id": 9,
+      "code": "pubq",
+      "field": "public_equity_pct",
+      "label": "Sovereign / municipal counterpart equity",
+      "confidence": "medium",
+      "confidence_note": "Wartime fiscal constraint limits pre-armistice contribution.",
+      "pre_armistice":  { "low_usd_bn": 8,   "central_usd_bn": 11,  "high_usd_bn": 15  },
+      "post_armistice": { "low_usd_bn": 30,  "central_usd_bn": 40,  "high_usd_bn": 50  },
+      "direction": "up_materially",
+      "direction_note": "Tax base rebuilds; oblast budgets expand as population returns."
+    },
+    {
+      "id": 10,
+      "code": "dias",
+      "field": "diaspora_pct",
+      "label": "Diaspora / patriotic bonds",
+      "confidence": "low",
+      "confidence_note": "Estimated from Israel/Ireland analogues and fund-manager soundings.",
+      "pre_armistice":  { "low_usd_bn": 2,   "central_usd_bn": 3,   "high_usd_bn": 5   },
+      "post_armistice": { "low_usd_bn": 8,   "central_usd_bn": 11,  "high_usd_bn": 15  },
+      "direction": "up",
+      "direction_note": "Israel-style sustained diaspora bond programme becomes viable post-armistice."
+    },
+    {
+      "id": 11,
+      "code": "bnkd",
+      "field": "commercial_bank_debt_pct",
+      "label": "Commercial bank senior debt",
+      "confidence": "low",
+      "confidence_note": "Estimated from A/B loan precedents; post-armistice is theoretical capacity.",
+      "pre_armistice":  { "low_usd_bn": 5,   "central_usd_bn": 7,   "high_usd_bn": 10  },
+      "post_armistice": { "low_usd_bn": 30,  "central_usd_bn": 40,  "high_usd_bn": 50  },
+      "direction": "step_change",
+      "direction_note": "Pre-armistice: almost exclusively via IFI A/B structures. Post: standalone bank syndicates return."
+    },
+    {
+      "id": 12,
+      "code": "insd",
+      "field": "institutional_debt_pct",
+      "label": "Institutional / capital markets debt",
+      "confidence": "low",
+      "confidence_note": "Most policy-contingent tranche. EU accession stall compresses by 40–60%.",
+      "pre_armistice":  { "low_usd_bn": 3,   "central_usd_bn": 4,   "high_usd_bn": 6   },
+      "post_armistice": { "low_usd_bn": 50,  "central_usd_bn": 80,  "high_usd_bn": 115 },
+      "direction": "step_change",
+      "direction_note": "Solvency II / matching-adjustment regimes activate as Ukraine sovereign rating crosses thresholds.",
+      "institutional_pools": [
+        { "pool": "EU insurers + pension funds",              "pre_usd_bn": 1.5, "post_usd_bn_low": 15, "post_usd_bn_high": 30 },
+        { "pool": "UK insurers + bulk annuity",               "pre_usd_bn": 0.7, "post_usd_bn_low": 5,  "post_usd_bn_high": 15 },
+        { "pool": "North American pension funds",             "pre_usd_bn": 0.7, "post_usd_bn_low": 10, "post_usd_bn_high": 25 },
+        { "pool": "Asian institutional",                      "pre_usd_bn": 0.1, "post_usd_bn_low": 5,  "post_usd_bn_high": 10 },
+        { "pool": "Sovereign wealth funds",                   "pre_usd_bn": 0.7, "post_usd_bn_low": 5,  "post_usd_bn_high": 15 },
+        { "pool": "Global infra debt funds",                  "pre_usd_bn": 0.7, "post_usd_bn_low": 10, "post_usd_bn_high": 20 }
+      ]
+    },
+    {
+      "id": 13,
+      "code": "peq",
+      "field": "private_equity_pct",
+      "label": "Private equity / infra equity funds",
+      "confidence": "low",
+      "confidence_note": "Estimated from fund-manager soundings and analogues.",
+      "pre_armistice":  { "low_usd_bn": 3,   "central_usd_bn": 4,   "high_usd_bn": 5   },
+      "post_armistice": { "low_usd_bn": 20,  "central_usd_bn": 30,  "high_usd_bn": 40  },
+      "direction": "step_change",
+      "direction_note": "Global infra mandates, EM secondary, distressed/value funds mostly post-armistice."
+    }
+  ],
+  "scenario_defaults": {
+    "peace_state": "pre_armistice",
+    "eu_accession": "stalled",
+    "frozen_assets": "proceeds_only"
+  },
+  "concentration_finding": {
+    "near_fully_financeable": [
+      "Healthcare (rebuildable zones, all paths)",
+      "Education (rebuildable zones, all paths)",
+      "Transport non-revenue rail/bridges (rebuildable zones)",
+      "Public administration (grant-dominant)"
+    ],
+    "conditionally_financeable": [
+      "Energy BBB (depends on MIGA wrap + offtake structures)",
+      "Transport revenue-generating (depends on PPP concession standardisation)",
+      "Housing BBB (depends on EU Housing Pillar envelope)",
+      "Water/sanitation BBB (depends on PPP municipal capacity)"
+    ],
+    "capacity_constrained": [
+      "Industrial assets (steel, coke, agri-processing) — pre-armistice gap ~USD 50–60bn",
+      "Heritage in formerly-occupied areas — absorptive-capacity constraint",
+      "Frontline-adjacent residential — rebuildability filter excludes most deployment",
+      "Industrial in re-damaged zones (Mariupol, Avdiivka) — capacity collapses",
+      "Smaller-scale municipal infrastructure — transaction-cost economics fail"
+    ]
+  },
+  "eu_accession_adjustments": {
+    "stalled":     { "grant_multiplier": 0.85, "senior_ifi_multiplier": 0.80, "institutional_debt_multiplier": 0.40 },
+    "on_track":    { "grant_multiplier": 1.00, "senior_ifi_multiplier": 1.00, "institutional_debt_multiplier": 1.00 },
+    "accelerated": { "grant_multiplier": 1.15, "senior_ifi_multiplier": 1.20, "institutional_debt_multiplier": 1.50 }
+  }
+}

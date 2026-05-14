@@ -157,6 +157,16 @@
       "comparable_projects": []
     }
   },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2029,
+    "construction_period_years": 3,
+    "coupon_pct": 6.0,
+    "dscr": 1.1,
+    "rationale": "Industrial asset; partial privatisation revenue anticipated; Trust supports transition-period financing",
+    "supportable_debt_usd_m": 476.6,
+    "tenor_years": 15
+  },
   "donor_pathway": {
     "united24_url": null,
     "mriya_url": null,

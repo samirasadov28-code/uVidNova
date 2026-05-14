@@ -1,0 +1,22 @@
+{
+  "FOUNDATIONAL_WARTIME_RULE_A": {
+    "description": "Compress private capital, reallocate to concessional/ERA/grant, require PRI wrap on remaining commercial.",
+    "applies_to_peace_states": ["pre_armistice", "post_armistice_fragile"],
+    "transformations_pre_armistice": [
+      { "from": "commercial_bank_debt_pct", "retain_fraction": 0.30, "remainder_to": "concessional_pct", "remainder_fraction": 1.0 },
+      { "from": "institutional_debt_pct",   "retain_fraction": 0.20, "remainder_to_a": "era_pct",        "remainder_fraction_a": 0.5,
+                                                                       "remainder_to_b": "concessional_pct","remainder_fraction_b": 0.5 },
+      { "from": "private_equity_pct",       "retain_fraction": 0.30, "remainder_to_a": "dfi_equity_pct", "remainder_fraction_a": 0.6,
+                                                                       "remainder_to_b": "grant_pct",      "remainder_fraction_b": 0.4 }
+    ],
+    "transformations_post_armistice_fragile": [
+      { "from": "commercial_bank_debt_pct", "retain_fraction": 0.60, "remainder_to": "concessional_pct", "remainder_fraction": 1.0 },
+      { "from": "institutional_debt_pct",   "retain_fraction": 0.40, "remainder_to_a": "era_pct",        "remainder_fraction_a": 0.5,
+                                                                       "remainder_to_b": "concessional_pct","remainder_fraction_b": 0.5 },
+      { "from": "private_equity_pct",       "retain_fraction": 0.60, "remainder_to_a": "dfi_equity_pct", "remainder_fraction_a": 0.6,
+                                                                       "remainder_to_b": "grant_pct",      "remainder_fraction_b": 0.4 }
+    ],
+    "force_pri_wrap_on": ["commercial_bank_debt_pct", "institutional_debt_pct", "private_equity_pct"],
+    "source": "funding_envelope.md §4; financing_tranches.md §4.3"
+  }
+}

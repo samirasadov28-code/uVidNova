@@ -160,6 +160,16 @@
       "comparable_projects": []
     }
   },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2029,
+    "construction_period_years": 3,
+    "coupon_pct": 5.5,
+    "dscr": 1.15,
+    "rationale": "Power generation/distribution; partial revenue recovery expected post-war; Trust supports ramp-up period",
+    "supportable_debt_usd_m": 367.1,
+    "tenor_years": 20
+  },
   "donor_pathway": {
     "united24_url": null,
     "mriya_url": null,

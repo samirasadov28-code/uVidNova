@@ -172,6 +172,16 @@
       "comparable_projects": []
     }
   },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2030,
+    "construction_period_years": 4,
+    "coupon_pct": 4.0,
+    "dscr": 1.3,
+    "rationale": "Cultural heritage; zero commercial cashflow; extended 30-year tenor reflects conservation-grade asset life",
+    "supportable_debt_usd_m": 46.8,
+    "tenor_years": 30
+  },
   "donor_pathway": {
     "united24_url": null,
     "mriya_url": null,

@@ -155,6 +155,16 @@
       "comparable_projects": []
     }
   },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2029,
+    "construction_period_years": 3,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "rationale": "Tertiary/district healthcare; no monetisable operating cashflow; Trust availability payment secures senior IFI debt",
+    "supportable_debt_usd_m": 53.9,
+    "tenor_years": 25
+  },
   "donor_pathway": {
     "united24_url": null,
     "mriya_url": null,

@@ -1,0 +1,13 @@
+{
+  "default_coupon_pct": 5.0,
+  "default_dscr": 1.25,
+  "default_drawdown_policy": "terminal_residual",
+  "default_horizon_years": 25,
+  "default_inflation_pct": 2.5,
+  "default_nominal_yield_pct": 4.0,
+  "default_residual_fraction": 0.50,
+  "default_tenor_years": 25,
+  "version": "1.0.0",
+  "yield_curve_source": "ECB sovereign yields, AAA-rated euro-area average, 5y duration",
+  "yield_curve_vintage": "2026-Q1"
+}
