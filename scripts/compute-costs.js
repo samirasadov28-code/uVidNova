@@ -2,12 +2,15 @@
 /**
  * Regenerates cost_paths for all assets in data/assets/ using the deterministic formula:
  *
- *   cost = unit_cost × physical_quantity × destruction_factor × regional_multiplier × path_multiplier × contingency
+ *   cost = unit_cost × heritage_premium × physical_quantity
+ *          × destruction_factor × regional_multiplier × path_multiplier × contingency
  *
- * This is a dev tool. Run after updating unit_cost_table.json or multiplier tables.
- * Outputs updated JSON files in-place. Always review diffs before committing.
+ * heritage_premium = 1 for non-heritage assets.
+ * All multiplier ranges produce {low, central, high}: low walks the low end of each range,
+ * high walks the high end, central = midpoint.
  *
- * Usage: node scripts/compute-costs.js [--dry-run]
+ * Run after updating any lookup table. Always review diffs before committing.
+ * Usage: node scripts/compute-costs.js [--dry-run] [--asset=ASSET_ID]
  */
 
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'fs';
@@ -17,26 +20,22 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 const dryRun = process.argv.includes('--dry-run');
+const targetAsset = process.argv.find(a => a.startsWith('--asset='))?.split('=')[1];
 
 // ── Load lookup tables ────────────────────────────────────────────────────────
 function loadJson(relPath) {
   const p = join(root, relPath);
   if (!existsSync(p)) {
-    console.warn(`WARN: ${relPath} not found — skipping.`);
-    return null;
+    console.error(`FATAL: ${relPath} not found.`);
+    process.exit(1);
   }
   return JSON.parse(readFileSync(p, 'utf8'));
 }
 
-const unitCostTable = loadJson('data/unit_cost_table.json');
+const unitCostTable     = loadJson('data/unit_cost_table.json');
 const regionalMultipliers = loadJson('data/regional_multipliers.json');
-const pathMultipliers = loadJson('data/path_multipliers.json');
+const pathMultipliers   = loadJson('data/path_multipliers.json');
 const destructionFactors = loadJson('data/destruction_factors.json');
-
-if (!unitCostTable || !regionalMultipliers || !pathMultipliers || !destructionFactors) {
-  console.error('ERROR: One or more lookup tables missing. Run after Weekend 2 data population.');
-  process.exit(1);
-}
 
 // ── Index unit costs by asset_type ────────────────────────────────────────────
 const unitCostIndex = {};
@@ -44,37 +43,74 @@ for (const row of unitCostTable) {
   unitCostIndex[row.asset_type] = row;
 }
 
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function getPhysicalQty(asset, unitCostEntry) {
+  const specs = asset.physical_specs ?? {};
+  const primaryField = unitCostEntry.primary_spec_field;
+
+  // Try the declared primary field first
+  if (primaryField && specs[primaryField]?.value > 0) {
+    return specs[primaryField].value;
+  }
+
+  // Fallback: first spec with a usable numeric value
+  for (const s of Object.values(specs)) {
+    if (typeof s?.value === 'number' && s.value > 0 && s.source !== 'pending_data') {
+      return s.value;
+    }
+  }
+  return null;
+}
+
+function getMultiplier(table, key) {
+  return table[key] ?? table['default'] ?? null;
+}
+
 // ── Cost formula ──────────────────────────────────────────────────────────────
-function computeTriple(unitCost, physicalQty, destructionLevel, oblast, path) {
+/**
+ * Returns {low_usd_m, central_usd_m, high_usd_m} rounded to whole millions.
+ * Low walks the low end of every range; high walks the high end.
+ */
+function computeTriple(uc, qty, destructionLevel, oblast, path, contingency) {
   const df = destructionFactors[destructionLevel];
-  const rm = regionalMultipliers[oblast] ?? regionalMultipliers['default'];
+  const rm = getMultiplier(regionalMultipliers, oblast);
   const pm = pathMultipliers[path];
 
   if (!df || !rm || !pm) {
     return null;
   }
 
-  const contingency = path === 'baseline' ? 1.15 : 1.25;
+  const hpLow  = uc.heritage_premium_multiplier_low  ?? 1;
+  const hpHigh = uc.heritage_premium_multiplier_high ?? 1;
 
-  const low = (unitCost.usd_per_unit_low * physicalQty * df.low * rm.low * pm.low * contingency) / 1_000_000;
-  const high = (unitCost.usd_per_unit_high * physicalQty * df.high * rm.high * pm.high * contingency) / 1_000_000;
+  const low = (uc.usd_per_unit_low  * qty * hpLow  * df.low  * rm.low  * pm.low  * contingency) / 1_000_000;
+  const high = (uc.usd_per_unit_high * qty * hpHigh * df.high * rm.high * pm.high * contingency) / 1_000_000;
   const central = (low + high) / 2;
 
   return {
-    low_usd_m: Math.round(low),
+    low_usd_m:     Math.round(low),
     central_usd_m: Math.round(central),
-    high_usd_m: Math.round(high)
+    high_usd_m:    Math.round(high)
   };
 }
 
 // ── Process each asset ────────────────────────────────────────────────────────
 const assetsDir = join(root, 'data', 'assets');
-const files = readdirSync(assetsDir)
+let files = readdirSync(assetsDir)
   .filter(f => f.endsWith('.json') && f !== 'index.json')
   .sort();
 
+if (targetAsset) {
+  files = files.filter(f => f === `${targetAsset}.json`);
+  if (files.length === 0) {
+    console.error(`Asset not found: ${targetAsset}`);
+    process.exit(1);
+  }
+}
+
 let updated = 0;
 let skipped = 0;
+let errors = 0;
 
 for (const file of files) {
   const filePath = join(assetsDir, file);
@@ -87,60 +123,63 @@ for (const file of files) {
     continue;
   }
 
-  // Determine primary physical quantity
-  const specValues = Object.values(asset.physical_specs ?? {});
-  if (specValues.length === 0) {
-    console.warn(`SKIP ${file}: no physical_specs`);
+  const qty = getPhysicalQty(asset, uc);
+  if (!qty || qty <= 0) {
+    console.warn(`SKIP ${file}: no usable physical_spec value for primary field "${uc.primary_spec_field}"`);
     skipped++;
     continue;
   }
 
-  const primarySpec = specValues.find(s => s.source !== 'pending_data' && s.value > 0)
-    ?? specValues[0];
-
-  if (!primarySpec || primarySpec.value <= 0) {
-    console.warn(`SKIP ${file}: primary physical_spec has no usable value`);
-    skipped++;
-    continue;
-  }
-
-  const qty = primarySpec.value;
   const oblast = asset.location?.oblast;
   const destructionLevel = asset.damage?.destruction_level;
+  const lifecycle = asset.wartime_status?.lifecycle;
+
+  // Contingency: 1.15 for assessed/in_pipeline/funded/etc; 1.25 for documented-only
+  const contingency = (lifecycle === 'documented') ? 1.25 : 1.15;
 
   const paths = ['baseline', 'code_compliant', 'build_back_better'];
   const newCostPaths = {};
   let anyNull = false;
 
   for (const path of paths) {
-    const triple = computeTriple(uc, qty, destructionLevel, oblast, path);
-    if (!triple) { anyNull = true; break; }
+    const triple = computeTriple(uc, qty, destructionLevel, oblast, path, contingency);
+    if (!triple) {
+      console.warn(`SKIP ${file}: could not compute ${path} (missing multiplier for level="${destructionLevel}" oblast="${oblast}")`);
+      anyNull = true;
+      break;
+    }
+
     newCostPaths[path] = triple;
+
+    // Preserve any existing tech_overlays on build_back_better
     if (path === 'build_back_better') {
-      newCostPaths[path].tech_overlays = asset.cost_paths?.build_back_better?.tech_overlays ?? [];
+      const existingOverlays = asset.cost_paths?.build_back_better?.tech_overlays ?? [];
+      if (existingOverlays.length > 0) {
+        newCostPaths[path].tech_overlays = existingOverlays;
+      }
     }
   }
 
   if (anyNull) {
-    console.warn(`SKIP ${file}: could not compute costs (missing multiplier data)`);
-    skipped++;
+    errors++;
     continue;
   }
 
-  const updatedAsset = {
-    ...asset,
-    cost_paths: newCostPaths
-  };
-  delete updatedAsset.cost_paths.pending_methodology;
+  const updatedAsset = { ...asset, cost_paths: newCostPaths };
 
   if (dryRun) {
-    console.log(`DRY-RUN ${file}: baseline central = $${newCostPaths.baseline.central_usd_m}M`);
+    console.log(`DRY-RUN ${file}`);
+    console.log(`  Qty: ${qty} ${uc.physical_unit} | Destruction: ${destructionLevel} | Oblast: ${oblast} | Contingency: ${contingency}`);
+    console.log(`  baseline:          $${newCostPaths.baseline.low_usd_m}–$${newCostPaths.baseline.high_usd_m}M (central $${newCostPaths.baseline.central_usd_m}M)`);
+    console.log(`  code_compliant:    $${newCostPaths.code_compliant.low_usd_m}–$${newCostPaths.code_compliant.high_usd_m}M (central $${newCostPaths.code_compliant.central_usd_m}M)`);
+    console.log(`  build_back_better: $${newCostPaths.build_back_better.low_usd_m}–$${newCostPaths.build_back_better.high_usd_m}M (central $${newCostPaths.build_back_better.central_usd_m}M)`);
   } else {
     writeFileSync(filePath, JSON.stringify(updatedAsset, null, 2) + '\n', 'utf8');
-    console.log(`UPDATED ${file}: baseline $${newCostPaths.baseline.low_usd_m}–$${newCostPaths.baseline.high_usd_m}M`);
+    console.log(`UPDATED ${file}: baseline $${newCostPaths.baseline.low_usd_m}–$${newCostPaths.baseline.high_usd_m}M (central $${newCostPaths.baseline.central_usd_m}M)`);
   }
   updated++;
 }
 
-console.log(`\nDone: ${updated} updated, ${skipped} skipped.`);
-if (dryRun) console.log('Dry-run mode: no files written.');
+console.log(`\nDone: ${updated} updated, ${skipped} skipped, ${errors} error(s).`);
+if (dryRun) console.log('Dry-run mode — no files written.');
+if (errors > 0) process.exit(1);
