@@ -587,18 +587,18 @@ body.asset-page { display: flex; flex-direction: column; }
   white-space: nowrap;
 }
 .landing-force-reload {
-  background: none;
-  border: 1px solid rgba(255,255,255,0.18);
-  color: rgba(255,255,255,0.45);
+  background: rgba(10,30,80,0.55);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.38);
   font-size: 0.7rem;
   font-family: var(--font-mono);
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: color 0.15s, border-color 0.15s;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
   white-space: nowrap;
 }
-.landing-force-reload:hover { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.45); }
+.landing-force-reload:hover { color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.25); background: rgba(10,30,80,0.75); }
 .landing-force-reload:disabled { opacity: 0.4; cursor: default; }
 .landing-update-prompt {
   color: var(--colour-gold-light);
@@ -694,7 +694,7 @@ body.asset-page { display: flex; flex-direction: column; }
 .fab {
   position: fixed;
   bottom: 38px;
-  z-index: 6000;
+  z-index: 5100;
   display: flex;
   align-items: center;
   gap: 0.4rem;
