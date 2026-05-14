@@ -7,8 +7,8 @@
 const TRANSLATIONS = {
   en: {
     // Name etymology
-    'name.u.label':       'Ukraine',
-    'name.vidnova.label': 'відновa — restoration',
+    'name.u.label':       'Ukraine · you',
+    'name.vidnova.label': 'відновa — restoration · Nova, new star',
     // Landing
     'landing.sub':        'Ukraine Reconstruction Finance Atlas',
     'landing.desc':       'An asset-level, project-finance-grade register of wartime damage and reconstruction opportunities. Every figure traceable to RDNA3, KSE Institute, and verified open-source intelligence.',
@@ -97,8 +97,8 @@ const TRANSLATIONS = {
   },
   uk: {
     // Name etymology
-    'name.u.label':       'Україна',
-    'name.vidnova.label': 'відновa — відновлення',
+    'name.u.label':       'Україна · ти',
+    'name.vidnova.label': 'відновa — відновлення · Nova — нова зоря',
     // Landing
     'landing.sub':        'Атлас фінансування відбудови України',
     'landing.desc':       'Реєстр воєнних пошкоджень та можливостей відбудови на рівні активів — з проєктно-фінансовою точністю. Кожна цифра простежується до RDNA3, Інституту KSE та верифікованих відкритих джерел.',

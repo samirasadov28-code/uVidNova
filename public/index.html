@@ -6,7 +6,7 @@
   <title>uVidNova — Ukraine Reconstruction Finance Atlas</title>
   <meta name="description" content="Asset-level, project-finance-grade reconstruction opportunities in Ukraine. Deterministic cost estimates against RDNA3 and KSE benchmarks. Defensible financing structures.">
   <meta name="theme-color" content="#1a3a6b">
-  <meta name="app-version" content="0.1.1">
+  <meta name="app-version" content="0.1.2">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
@@ -70,12 +70,12 @@
       <div class="name-etymology" aria-label="Name explanation">
         <div class="etym-part">
           <span class="etym-glyph u">u</span>
-          <span class="etym-label" data-i18n="name.u.label">Ukraine</span>
+          <span class="etym-label" data-i18n="name.u.label">Ukraine · you</span>
         </div>
         <span class="etym-plus">+</span>
         <div class="etym-part">
           <span class="etym-glyph"><span class="vid">Vid</span><span class="nova">nova</span></span>
-          <span class="etym-label" data-i18n="name.vidnova.label">відновa — restoration</span>
+          <span class="etym-label" data-i18n="name.vidnova.label">відновa — restoration · Nova, new star</span>
         </div>
       </div>
 
@@ -97,7 +97,7 @@
         Not a fundraising platform. No political framing. Every figure independently sourced.
       </p>
       <div class="landing-actions">
-        <span class="landing-version">v0.1.1</span>
+        <span class="landing-version">v0.1.2</span>
         <button class="landing-force-reload" id="landingForceReload" title="Clear cache and reload latest version">↻ Force update</button>
       </div>
     </div>
@@ -191,6 +191,50 @@
       if (m && !m.hasAttribute('hidden')) uvCloseFeedback();
     }
   });
+  // Chat panel
+  function uvOpenChat() {
+    var p = document.getElementById('chatPanel');
+    if (!p) return;
+    p.removeAttribute('hidden');
+    p.style.display = 'flex';
+    var i = document.getElementById('chatInput');
+    if (i) setTimeout(function() { i.focus(); }, 50);
+  }
+  function uvCloseChat() {
+    var p = document.getElementById('chatPanel');
+    if (!p) return;
+    p.setAttribute('hidden', '');
+    p.style.display = '';
+  }
+  // Close chat panel on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      var p = document.getElementById('chatPanel');
+      if (p && !p.hasAttribute('hidden')) uvCloseChat();
+    }
+  });
+  // Feedback form — AJAX submit (prevents browser navigation)
+  function uvSubmitFeedback(e) {
+    e.preventDefault();
+    var form = document.getElementById('feedbackForm');
+    var submit = document.getElementById('feedbackSubmit');
+    var sent = document.getElementById('feedbackSent');
+    if (submit) submit.disabled = true;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    }).then(function() {
+      if (sent) { sent.removeAttribute('hidden'); sent.style.display = ''; }
+      form.reset();
+      setTimeout(uvCloseFeedback, 2200);
+    }).catch(function() {
+      if (sent) { sent.removeAttribute('hidden'); sent.style.display = ''; }
+      setTimeout(uvCloseFeedback, 2200);
+    }).finally(function() {
+      if (submit) submit.disabled = false;
+    });
+  }
   // Force reload (version bar button)
   function uvForceReload() {
     var btn = document.getElementById('forceReloadBtn');
@@ -337,7 +381,7 @@
       </div>
       <!-- Netlify Form — configure email notification in Netlify dashboard:
            Forms → feedback → Notifications → Email notification → samir.asadov.28@gmail.com -->
-      <form name="feedback" method="POST" netlify netlify-honeypot="bot-field" id="feedbackForm">
+      <form name="feedback" method="POST" netlify netlify-honeypot="bot-field" id="feedbackForm" onsubmit="uvSubmitFeedback(event)">
         <input type="hidden" name="form-name" value="feedback">
         <p class="visually-hidden">
           <label>Don't fill this out: <input name="bot-field"></label>
@@ -370,7 +414,7 @@
   </div>
 
   <!-- ── AI chat floating button ───────────────────────────────────────────── -->
-  <button class="fab fab-chat" id="chatBtn" aria-label="Open AI assistant" title="Ask AI about reconstruction">
+  <button class="fab fab-chat" id="chatBtn" onclick="uvOpenChat()" aria-label="Open AI assistant" title="Ask AI about reconstruction">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
     </svg>
@@ -384,7 +428,7 @@
         <span class="chat-title" data-i18n="chat.title">uVidNova AI</span>
         <span class="chat-powered" data-i18n="chat.powered">Powered by Groq</span>
       </div>
-      <button class="chat-close" id="closeChatPanel" aria-label="Close AI assistant">×</button>
+      <button class="chat-close" id="closeChatPanel" onclick="uvCloseChat()" aria-label="Close AI assistant">×</button>
     </div>
     <div class="chat-messages" id="chatMessages" aria-live="polite" aria-relevant="additions">
       <div class="chat-welcome">
