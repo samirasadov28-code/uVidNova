@@ -23,3 +23,18 @@
   from = "/asset"
   to = "/asset.html"
   status = 200
+
+[[redirects]]
+  from = "/api/classify"
+  to = "/.netlify/functions/classify"
+  status = 200
+
+[[redirects]]
+  from = "/api/narrate"
+  to = "/.netlify/functions/narrate"
+  status = 200
+
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200

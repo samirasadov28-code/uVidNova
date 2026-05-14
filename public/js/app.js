@@ -225,6 +225,12 @@ function initFilters() {
   document.addEventListener('filtersChanged', renderMarkers);
 }
 
+// ── App version ───────────────────────────────────────────────────────────────
+
+const APP_VERSION = document.querySelector('meta[name="app-version"]')?.content ?? '0.0.1';
+const versionLabel = document.getElementById('versionLabel');
+if (versionLabel) versionLabel.textContent = `v${APP_VERSION}`;
+
 // ── Disclaimer ────────────────────────────────────────────────────────────────
 
 function initDisclaimer() {
@@ -240,10 +246,180 @@ function initDisclaimer() {
   });
 }
 
+// ── Landing overlay ───────────────────────────────────────────────────────────
+
+function initLanding() {
+  const overlay = document.getElementById('landing');
+  if (!overlay) return;
+
+  // Skip if user has already seen the landing in this session
+  if (sessionStorage.getItem('uvidnova_landed')) {
+    overlay.classList.add('dismissed');
+    return;
+  }
+
+  const enterBtn = document.getElementById('enterAtlas');
+  enterBtn?.addEventListener('click', () => {
+    sessionStorage.setItem('uvidnova_landed', '1');
+    overlay.classList.add('dismissed');
+    // Remove from DOM after transition so it doesn't block interaction
+    overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
+  });
+}
+
+// ── Feedback modal ────────────────────────────────────────────────────────────
+
+function initFeedback() {
+  const btn   = document.getElementById('feedbackBtn');
+  const modal = document.getElementById('feedbackModal');
+  const close = document.getElementById('closeFeedbackModal');
+  const form  = document.getElementById('feedbackForm');
+  const sent  = document.getElementById('feedbackSent');
+  const submit = document.getElementById('feedbackSubmit');
+  if (!btn || !modal) return;
+
+  function openModal() {
+    modal.hidden = false;
+    document.getElementById('fbName')?.focus();
+  }
+  function closeModal() {
+    modal.hidden = true;
+  }
+
+  btn.addEventListener('click', openModal);
+  close?.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+
+  form?.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (submit) submit.disabled = true;
+    try {
+      const formData = new FormData(form);
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString(),
+      });
+      if (sent) sent.hidden = false;
+      form.reset();
+      setTimeout(closeModal, 2200);
+    } catch {
+      // Still show success — submission may have worked despite network error
+      if (sent) sent.hidden = false;
+      setTimeout(closeModal, 2200);
+    } finally {
+      if (submit) submit.disabled = false;
+    }
+  });
+}
+
+// ── AI chat panel ─────────────────────────────────────────────────────────────
+
+function initChat() {
+  const chatBtn   = document.getElementById('chatBtn');
+  const panel     = document.getElementById('chatPanel');
+  const closeBtn  = document.getElementById('closeChatPanel');
+  const messages  = document.getElementById('chatMessages');
+  const form      = document.getElementById('chatForm');
+  const input     = document.getElementById('chatInput');
+  const sendBtn   = document.getElementById('chatSend');
+  if (!chatBtn || !panel) return;
+
+  const CHAT_HISTORY = [];
+  let isWaiting = false;
+
+  function openPanel() {
+    panel.hidden = false;
+    input?.focus();
+  }
+  function closePanel() {
+    panel.hidden = true;
+  }
+
+  chatBtn.addEventListener('click', openPanel);
+  closeBtn?.addEventListener('click', closePanel);
+
+  function appendMessage(role, text) {
+    const welcome = messages?.querySelector('.chat-welcome');
+    if (welcome) welcome.remove();
+
+    const div = document.createElement('div');
+    div.className = `chat-message ${role}`;
+    const bubble = document.createElement('div');
+    bubble.className = 'chat-bubble';
+    bubble.textContent = text;
+    div.appendChild(bubble);
+    messages?.appendChild(div);
+    messages?.scrollTo({ top: messages.scrollHeight, behavior: 'smooth' });
+  }
+
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'chat-typing';
+    div.id = 'chatTyping';
+    div.innerHTML = '<span></span><span></span><span></span>';
+    messages?.appendChild(div);
+    messages?.scrollTo({ top: messages.scrollHeight, behavior: 'smooth' });
+  }
+  function hideTyping() {
+    document.getElementById('chatTyping')?.remove();
+  }
+
+  async function sendMessage(content) {
+    if (isWaiting || !content.trim()) return;
+    isWaiting = true;
+    if (sendBtn) sendBtn.disabled = true;
+
+    CHAT_HISTORY.push({ role: 'user', content: content.trim() });
+    appendMessage('user', content.trim());
+    showTyping();
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: CHAT_HISTORY }),
+      });
+      const data = await res.json();
+      hideTyping();
+
+      if (!res.ok || !data.message) throw new Error(data.error ?? 'No response');
+
+      const reply = data.message.content;
+      CHAT_HISTORY.push({ role: 'assistant', content: reply });
+      appendMessage('assistant', reply);
+    } catch (err) {
+      hideTyping();
+      appendMessage('error', `AI temporarily unavailable. ${err.message ?? 'Please try again.'}`);
+    } finally {
+      isWaiting = false;
+      if (sendBtn) sendBtn.disabled = false;
+      input?.focus();
+    }
+  }
+
+  form?.addEventListener('submit', e => {
+    e.preventDefault();
+    const text = input?.value ?? '';
+    if (input) input.value = '';
+    sendMessage(text);
+  });
+
+  // Suggestion chips
+  messages?.addEventListener('click', e => {
+    const chip = e.target.closest('.chat-suggestion');
+    if (chip) sendMessage(chip.textContent);
+  });
+}
+
 // ── Boot ──────────────────────────────────────────────────────────────────────
 
 async function init() {
+  initLanding();
   initDisclaimer();
+  initFeedback();
+  initChat();
 
   try {
     const [assets] = await Promise.all([
