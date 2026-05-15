@@ -4,6 +4,7 @@
 
 /* ── Variables ───────────────────────────────────────────────────────────────── */
 :root {
+  --header-h: 56px;
   --colour-navy:        #1a3a6b;
   --colour-navy-light:  #2a5298;
   --colour-gold:        #f0a500;
@@ -48,6 +49,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 a { color: var(--colour-navy-light); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -58,19 +62,23 @@ img { max-width: 100%; height: auto; }
   background: var(--colour-navy);
   color: #fff;
   padding: 0 1rem;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  height: var(--header-h);
   box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
 }
 .header-inner {
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 0.6rem 0;
-  flex-wrap: wrap;
 }
 .wordmark {
   display: flex;
@@ -95,6 +103,31 @@ img { max-width: 100%; height: auto; }
   flex: 1;
   min-width: 0;
 }
+/* ── Header centre: view tabs + Finance It button ── */
+.header-centre {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  justify-content: center;
+}
+.header-finance-btn {
+  background: #c9a227;
+  color: #0a1628;
+  border: none;
+  border-radius: 20px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(201,162,39,0.35);
+}
+.header-finance-btn:hover { background: #d4aa30; transform: translateY(-1px); }
+.header-finance-btn:active { transform: translateY(0); }
 .site-nav { display: flex; gap: 1.25rem; align-items: center; }
 .site-nav a { color: rgba(255,255,255,0.85); font-size: 0.875rem; }
 .site-nav a:hover { color: #fff; text-decoration: none; }
@@ -118,9 +151,9 @@ img { max-width: 100%; height: auto; }
 
 /* ── Map layout — map always fills the frame; panels slide over as overlays ─── */
 .map-layout {
-  position: relative;
-  flex: 1;
-  height: calc(100vh - 60px);
+  position: fixed;
+  inset: 0;
+  top: var(--header-h);
   overflow: hidden;
   background: #1a0808; /* damaged view default — JS overrides on view switch */
   transition: background 0.4s ease;
@@ -128,44 +161,41 @@ img { max-width: 100%; height: auto; }
 #map {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   background: #1a0808;
   transition: background 0.4s ease;
 }
 
-/* ── Map view tab bar ─────────────────────────────────────────────────────── */
+/* ── Map view tab bar (now lives in header-centre) ─────────────────────────── */
 .map-view-tabs {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 700;
   display: flex;
-  gap: 0;
-  background: rgba(10,20,45,0.90);
-  border: 1px solid rgba(201,162,39,0.4);
+  gap: 0.25rem;
+  background: rgba(255,255,255,0.08);
   border-radius: 8px;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  padding: 0.2rem;
 }
 .map-view-tab {
   background: none;
   border: none;
-  border-right: 1px solid rgba(201,162,39,0.2);
-  color: rgba(255,255,255,0.55);
-  font-size: 0.78rem;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.75rem;
   font-family: var(--font-sans);
-  font-weight: 600;
-  padding: 0.45rem 1rem;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.15s, color 0.15s;
 }
-.map-view-tab:last-child { border-right: none; }
-.map-view-tab:hover { color: rgba(255,255,255,0.9) !important; filter: brightness(1.15); }
+.map-view-tab:hover { background: rgba(255,255,255,0.1); color: #fff; }
 /* active colour is set via inline style by JS (matches view palette) */
-.map-view-tab-active { font-weight: 700; }
+.map-view-tab-active {
+  background: rgba(201,162,39,0.25);
+  color: #c9a227;
+  font-weight: 700;
+}
 .map-view-hint {
   position: absolute;
   bottom: 58px;
@@ -182,38 +212,36 @@ img { max-width: 100%; height: auto; }
   backdrop-filter: blur(6px);
 }
 
-/* Map overlay toggle buttons */
+/* Map overlay toggle buttons — fixed pills just below the header */
 .map-toggle-btn {
-  position: absolute;
-  top: 14px;
-  z-index: 600;
+  position: fixed;
+  top: calc(var(--header-h) + 0.75rem);
+  z-index: 500;
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.4rem 0.75rem;
-  background: rgba(13,27,54,0.88);
-  border: 1px solid rgba(74,127,196,0.45);
-  color: rgba(255,255,255,0.82);
-  font-size: 0.78rem;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(13,34,72,0.88);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.75rem;
   font-family: var(--font-sans);
   font-weight: 600;
-  border-radius: var(--radius-sm);
+  border-radius: 20px;
   cursor: pointer;
-  backdrop-filter: blur(6px);
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  transition: background 0.15s, border-color 0.15s;
 }
 .map-toggle-btn:hover {
-  background: rgba(30,61,122,0.95);
-  border-color: rgba(126,179,232,0.7);
-  color: #fff;
+  background: rgba(13,34,72,0.95);
+  border-color: rgba(255,255,255,0.3);
 }
 .map-toggle-btn.active {
-  background: var(--colour-navy);
-  border-color: #4a7fc4;
-  color: #fff;
+  border-color: #c9a227;
+  color: #c9a227;
 }
-.map-toggle-left  { left: 14px; top: 54px; }
-.map-toggle-right { right: 14px; top: 54px; }
+.map-toggle-left  { left: 0.75rem; }
+.map-toggle-right { right: 0.75rem; }
 
 /* Panel close button (inside panel header) */
 .panel-close-btn {
@@ -1258,18 +1286,17 @@ body:has(#disclaimerBanner) .fab { bottom: 100px; }
   .etym-source, .etym-meaning { font-size: 0.54rem; }
   .etym-plus { font-size: 0.85rem; }
 
-  /* Map view tabs — compact on mobile */
-  .map-view-tabs { top: 8px; max-width: calc(100vw - 20px); }
-  .map-view-tab { font-size: 0.66rem; padding: 0.35rem 0.55rem; }
+  /* Map view tabs — compact on mobile (in header) */
+  .map-view-tabs { max-width: calc(100vw - 160px); overflow-x: auto; }
+  .map-view-tab { font-size: 0.62rem; padding: 0.28rem 0.45rem; }
 
-  /* Map toggle buttons — pushed below tabs on mobile */
+  /* Map toggle buttons — smaller on mobile */
   .map-toggle-btn {
     font-size: 0.7rem;
-    padding: 0.32rem 0.55rem;
-    top: 48px;
+    padding: 0.32rem 0.65rem;
   }
-  .map-toggle-left  { left: 10px; }
-  .map-toggle-right { right: 10px; }
+  .map-toggle-left  { left: 0.5rem; }
+  .map-toggle-right { right: 0.5rem; }
 
   /* Panels — full-width drawers on mobile */
   .filter-panel,
@@ -2787,9 +2814,9 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
 
 /* ── Trust page ──────────────────────────────────────────────────────────── */
 .trust-main {
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
+  padding: 1.5rem 1rem 4rem;
   width: 100%;
 }
 
@@ -2805,10 +2832,10 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
   margin-bottom: 0.75rem;
 }
 .trust-hero-sub {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--colour-text-muted);
   max-width: 780px;
-  line-height: 1.65;
+  line-height: 1.7;
   margin-bottom: 1.75rem;
 }
 .trust-stat-cards {
@@ -2821,7 +2848,7 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
   background: var(--colour-surface);
   border: 1px solid var(--colour-border);
   border-radius: var(--radius-md);
-  padding: 1.25rem 1.5rem;
+  padding: 0.75rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -2832,7 +2859,7 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
   background: linear-gradient(135deg, #fff9ee 0%, #fff 100%);
 }
 .tsc-value {
-  font-size: 1.85rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--colour-navy);
   line-height: 1;
@@ -2861,20 +2888,19 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
   box-shadow: var(--shadow-sm);
 }
 .trust-section-title {
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: var(--colour-navy);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.35rem;
+  color: #c9a227;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.75rem;
   padding-bottom: 0.6rem;
   border-bottom: 2px solid var(--colour-border);
 }
 .trust-section-desc {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--colour-text-muted);
   margin-bottom: 1.25rem;
-  line-height: 1.55;
+  line-height: 1.7;
 }
 
 /* Portfolio builder layout */
@@ -2933,25 +2959,27 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
 .trust-compare-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
 }
 .trust-compare-table th {
   background: #f0f4fb;
   color: var(--colour-navy);
   font-weight: 700;
-  padding: 0.55rem 0.75rem;
+  padding: 0.35rem 0.5rem;
   text-align: left;
   border: 1px solid var(--colour-border);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
 }
 .trust-compare-table th.col-25 { background: #eef5f0; color: #2c7a4e; }
 .trust-compare-table th.col-4  { background: #eef2fb; color: var(--colour-navy); }
 .trust-compare-table th.col-5  { background: #fef6e8; color: #8a5a00; }
 .trust-compare-table td {
-  padding: 0.5rem 0.75rem;
+  padding: 0.35rem 0.5rem;
   border: 1px solid var(--colour-border);
   vertical-align: top;
   font-variant-numeric: tabular-nums;
+  line-height: 1.5;
 }
 .trust-compare-table td.perpetual {
   color: var(--colour-grant);
@@ -2974,6 +3002,7 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
   overflow-x: auto;
   margin-top: 0.75rem;
 }
+.trust-chart-wrap svg { max-height: 260px; }
 .trust-chart-svg {
   width: 100%;
   height: auto;
@@ -2984,7 +3013,7 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
   gap: 1.5rem;
   flex-wrap: wrap;
   margin-top: 0.75rem;
-  font-size: 0.82rem;
+  font-size: 0.75rem;
 }
 .trust-legend-item {
   display: flex;

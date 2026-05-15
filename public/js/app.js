@@ -556,7 +556,7 @@ function showReconstructedPanel(info, featureName) {
 
 // Per-view colour palette  [border, normalFill, crimeaFill, mapBg]
 const VIEW_PALETTE = {
-  ukraine:       { border: '#ffd500', fill: '#4a90d9', crimeaFill: '#2a6fa8', bg: '#0e2a5a' },
+  ukraine:       { border: '#4a90d9', fill: '#e8f4fd', crimeaFill: '#b8d4ef', bg: '#eaf2fb' },
   damaged:       { border: '#27ae60', fill: '#b03030', crimeaFill: '#6b0000', bg: '#1a0808' },
   reconstructed: { border: '#c9a227', fill: '#0d2b5e', crimeaFill: '#060e22', bg: '#040e24' },
   development:   { border: '#1a7a2e', fill: '#2d7a3a', crimeaFill: '#1a3a1a', bg: '#071208' },
@@ -564,8 +564,8 @@ const VIEW_PALETTE = {
 
 function oblastStyle(feature) {
   const name      = feature.properties?.name ?? '';
-  const isCrimea  = name === 'Crimea';
-  const isOccupied = OCCUPIED_OBLASTS.has(name);
+  const isCrimea  = name === 'Crimea' || name.includes('Crimea') || feature.properties?.status === 'occupied';
+  const isOccupied = OCCUPIED_OBLASTS.has(name) || isCrimea;
   const isPartial  = PARTIALLY_OCCUPIED_OBLASTS.has(name);
   const pal = VIEW_PALETTE[mapViewMode] ?? VIEW_PALETTE.damaged;
 
@@ -575,6 +575,18 @@ function oblastStyle(feature) {
   }
   if (warMode && isPartial) {
     return { color: pal.border, weight: 1.5, fillColor: '#8b1a1a', fillOpacity: 0.50, dashArray: '5, 6' };
+  }
+
+  // Ukraine view uses light-map styling (lighter fill, thinner border)
+  if (mapViewMode === 'ukraine') {
+    return {
+      color:       pal.border,
+      weight:      1,
+      opacity:     0.6,
+      fillColor:   isCrimea ? pal.crimeaFill : pal.fill,
+      fillOpacity: 0.25,
+      dashArray:   isCrimea ? '6, 4' : null,
+    };
   }
 
   return {
@@ -603,12 +615,18 @@ async function addOblastLayer() {
       style: oblastStyle,
       onEachFeature(feature, layer) {
         const name = feature.properties?.name ?? '';
-        const isCrimea = name === 'Crimea';
-        const tooltipText = isCrimea ? 'Crimea (temporarily occupied — UA territory)' : name;
+        const isCrimea = name.includes('Crimea') || feature.properties?.status === 'occupied';
+        const tooltipText = isCrimea ? 'Autonomous Republic of Crimea (temporarily occupied — UA territory)' : name;
         if (name) layer.bindTooltip(tooltipText, { permanent: false, sticky: true, className: 'oblast-tooltip' });
 
         layer.on('mouseover', function () {
-          if (selectedOblast !== name) this.setStyle({ fillOpacity: 0.90, weight: 2 });
+          if (selectedOblast !== name) {
+            if (mapViewMode === 'ukraine') {
+              this.setStyle({ fillColor: '#fff9c4', fillOpacity: 0.55, color: '#c9a227', weight: 2 });
+            } else {
+              this.setStyle({ fillOpacity: 0.90, weight: 2 });
+            }
+          }
         });
         layer.on('mouseout', function () {
           if (selectedOblast !== name) oblastLayer.resetStyle(this);
@@ -1024,17 +1042,23 @@ async function init() {
   initLangToggle(document.getElementById('langToggle'));
   document.addEventListener('langChanged', applyTranslations);
 
-  // Initialise Leaflet map — no tile layer; dark navy background via CSS
+  // Initialise Leaflet map — CartoDB Positron light tiles
   map = L.map('map', {
     center:             [48.8, 31.5],
     zoom:               6,
     minZoom:            5,
     maxZoom:            12,
     zoomControl:        true,
-    attributionControl: false,
+    attributionControl: true,
     maxBounds:          [[43.5, 21.5], [53.5, 40.5]],
     maxBoundsViscosity: 0.85,
   });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© <a href="https://carto.com/">CARTO</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
 
   try {
     const [assets] = await Promise.all([

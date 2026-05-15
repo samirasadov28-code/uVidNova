@@ -179,8 +179,8 @@ function renderCompareTable() {
 // ── Render: SVG chart ─────────────────────────────────────────────────────────
 
 const CHART_W  = 700;
-const CHART_H  = 340;
-const PAD      = { top: 20, right: 30, bottom: 50, left: 75 };
+const CHART_H  = 260;
+const PAD      = { top: 16, right: 30, bottom: 44, left: 68 };
 const PLOT_W   = CHART_W - PAD.left - PAD.right;
 const PLOT_H   = CHART_H - PAD.top  - PAD.bottom;
 const YEARS    = 50;
@@ -216,7 +216,7 @@ function renderChart() {
       <line x1="${PAD.left}" y1="${y}" x2="${PAD.left + PLOT_W}" y2="${y}"
             stroke="#e0e5ef" stroke-width="1" ${i === 0 ? '' : 'stroke-dasharray="4,3"'}/>
       <text x="${PAD.left - 8}" y="${y + 4}" text-anchor="end"
-            font-size="11" fill="#888">${label}</text>`;
+            font-size="10" fill="#888">${label}</text>`;
   }).join('');
 
   // X-axis ticks: every 10 years
@@ -225,16 +225,16 @@ function renderChart() {
     return `
       <line x1="${x}" y1="${PAD.top + PLOT_H}" x2="${x}" y2="${PAD.top + PLOT_H + 5}"
             stroke="#aaa" stroke-width="1"/>
-      <text x="${x}" y="${PAD.top + PLOT_H + 18}" text-anchor="middle"
-            font-size="11" fill="#888">Year ${yr}</text>`;
+      <text x="${x}" y="${PAD.top + PLOT_H + 16}" text-anchor="middle"
+            font-size="10" fill="#888">Year ${yr}</text>`;
   }).join('');
 
   // Axis labels
-  const xLabel = `<text x="${PAD.left + PLOT_W / 2}" y="${CHART_H - 4}"
-    text-anchor="middle" font-size="12" fill="#666">Years from Trust establishment</text>`;
-  const yLabel = `<text x="14" y="${PAD.top + PLOT_H / 2}"
-    text-anchor="middle" font-size="12" fill="#666"
-    transform="rotate(-90, 14, ${PAD.top + PLOT_H / 2})">Corpus (USD)</text>`;
+  const xLabel = `<text x="${PAD.left + PLOT_W / 2}" y="${CHART_H - 3}"
+    text-anchor="middle" font-size="11" fill="#666">Years from Trust establishment</text>`;
+  const yLabel = `<text x="11" y="${PAD.top + PLOT_H / 2}"
+    text-anchor="middle" font-size="11" fill="#666"
+    transform="rotate(-90, 11, ${PAD.top + PLOT_H / 2})">Corpus (USD)</text>`;
 
   // Polylines for each series — rebuilt each render to force CSS re-animation
   const polylines = trajectories.map((traj, i) => {
