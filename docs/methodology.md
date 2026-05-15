@@ -1,68 +1,155 @@
 # uVidNova Cost and Financing Methodology
 
-Full methodology write-up for the platform. See also `public/about.html` for the user-facing version.
+Canonical technical reference. See also `public/about.html` for the user-facing narrative version, and `docs/financing_tranches.md` for the capital-stack taxonomy.
 
-## Cost formula
+---
+
+## 1. Deterministic cost formula
 
 ```
-cost = unit_cost × physical_quantity × destruction_factor × regional_multiplier × path_multiplier × contingency
+cost = unit_cost × physical_quantity × destruction_factor
+       × regional_multiplier × path_multiplier × contingency
 ```
 
-All inputs sourced from published benchmarks. AI never produces numeric output. See `scripts/compute-costs.js` for canonical implementation.
+**Every number comes from a deterministic lookup. The LLM never produces numeric output.**
 
-## Destruction factors
+| Variable | Source | Range / notes |
+|---|---|---|
+| `unit_cost` | `data/unit_cost_table.json` | USD/m² or USD/unit by `asset_type`; every row cites RDNA3, KSE, or EBRD case study |
+| `physical_quantity` | `physical_specs` field in each asset record | m², beds, MW, km, m³/day, etc. |
+| `destruction_factor` | `data/destruction_factors.json` | see §2 |
+| `regional_multiplier` | `data/regional_multipliers.json` | by oblast; see §3 |
+| `path_multiplier` | `data/path_multipliers.json` | by reconstruction path; see §4 |
+| `contingency` | hardcoded in `scripts/compute-costs.js` | 1.15 for assessed, 1.25 for documented-only |
 
-| Level     | Range       |
-|-----------|-------------|
-| Light     | 0.10 – 0.25 |
-| Moderate  | 0.30 – 0.55 |
-| Severe    | 0.60 – 0.85 |
-| Destroyed | 0.95 – 1.10 |
+The `{low, central, high}` triple is produced by walking the low/high ends of each multiplier range; `central_usd_m` is the midpoint.
 
-## Path multipliers
+Canonical implementation: `scripts/compute-costs.js`. Frontend mirror: `public/js/cost-calculator.js` (same arithmetic, same lookups — displays formula breakdown on "show working" click).
 
-| Path              | Multiplier    |
-|-------------------|---------------|
-| Baseline          | 1.00×         |
-| Code-compliant    | 1.15 – 1.25×  |
-| Build-back-better | 1.30 – 1.60×  |
+---
 
-## Heritage premium
+## 2. Destruction factors
 
-Heritage assets carry an additional 1.8×–3.0× conservation-premium multiplier applied after the standard formula. Stored in a separate heritage premium table in `data/unit_cost_table.json`. Not folded into the general regional multiplier.
+Sourced from RDNA3 Annex C and KSE methodology. Factor represents share of replacement cost required.
 
-## Contingency
+| Destruction level | Factor range | Notes |
+|---|---|---|
+| `light` | 0.10 – 0.25 | Partial damage; structural integrity intact |
+| `moderate` | 0.30 – 0.55 | Significant damage; major repair required |
+| `severe` | 0.60 – 0.85 | Near-total loss; partial demolition and rebuild |
+| `destroyed` | 0.95 – 1.10 | Full replacement; >1.00 accounts for site clearance |
 
-- Assessed assets: 1.15 (15%)
-- Documented-only assets: 1.25 (25%)
+---
 
-## KSE calibration — anchor asset central values (Weekend 2)
+## 3. Regional multipliers
 
-Central values are computed as the arithmetic mean of the low-end and high-end formula outputs. The KSE "Russia Will Pay" tracker and RDNA3 Annex provide cross-checks at asset or sector level. Divergences > ±15% are flagged here.
+By oblast, from RDNA3 regional cost variation analysis and EBRD case-study logistics premia. Frontline and recently-liberated regions carry higher multipliers (logistics, security, workforce availability). Western oblasts often sub-1.00 (lower logistics cost, established supply chains).
 
-| Asset ID | Asset type | Physical qty | Destruction | Oblast | uVidNova central (USD M) | KSE / published reference | Delta | Status |
-|---|---|---|---|---|---|---|---|---|
-| KAKHOVKA_HPP_2023_06_06 | energy.hpp | 334 MW | destroyed | Kherson | 1,032 | RDNA3 Vol. II, energy sector: HPP damage 900 M – 1.5 B USD for Kakhovka; KSE cites ≈ USD 1.0–1.5 B | +3% | Within ±15% |
-| TRYPILSKA_TPP_2024_04_11 | energy.tpp | 1,800 MW | destroyed | Kyiv | 1,330 | DTEK/KSE: total replacement 1.0–1.5 B USD (DTEK press) | –4% | Within ±15% |
-| OKHMATDYT_2024_07_08 | healthcare.tertiary_hospital | 8,400 m² | severe | Kyiv City | 57 | KSE healthcare damage tracker, July 2024: Okhmatdyt block damage estimated USD 40–80 M | +3% | Within ±15% |
-| MARIUPOL_DRAMA_THEATRE_2022_03_16 | heritage.theatre | 9,000 m² | destroyed | Donetsk | 151 | No direct KSE asset-level figure; RDNA3 heritage sector cites USD 100–300 M per large heritage structure under occupied-territory compound premium | within range | No directly comparable published figure; range consistent |
-| ANTONOV_AN225_2022_02_27 | transport.aircraft | 1 unit | destroyed | Kyiv | 610 | Antonov Company / KSE: rebuild cost cited at USD 500 M – 700 M (completing second airframe: USD 400–600 M; full rebuild higher) | +3% | Within ±15%; note second-airframe scenario slightly lower |
+Source: `data/regional_multipliers.json`. Every entry cites RDNA3 Chapter 3 regional estimates.
 
-**Notes on heritage divergence:** The Mariupol Drama Theatre carries a 1.8×–3.0× heritage premium multiplier plus the Donetsk regional multiplier (1.25–1.45×), compounding to a large high-end value. KSE does not publish per-structure figures for occupied heritage assets; the RDNA3 heritage chapter provides only sector-wide aggregates for Donetsk. The uVidNova range of USD 55 M – 248 M is consistent with the RDNA3 cultural-infrastructure loss band. No ±15% check is feasible without an asset-level KSE reference.
+---
 
-**Formula cross-check expression (Kakhovka HPP, baseline central):**
-```
-unit_cost_central = USD 1,800,000 / MW
-qty               = 334 MW
-destruction_factor (destroyed, central) = (0.95 + 1.10) / 2 = 1.025
-regional_multiplier (Kherson, central)  = (1.20 + 1.40) / 2 = 1.30
-path_multiplier (baseline)              = 1.00
-contingency (assessed)                  = 1.15
+## 4. Path multipliers
 
-central = 1,800,000 × 334 × 1.025 × 1.30 × 1.00 × 1.15 / 1,000,000 ≈ 920 M
+| Path | Multiplier | What it covers |
+|---|---|---|
+| `baseline` | 1.00× | Restore to pre-war condition and function |
+| `code_compliant` | 1.15 – 1.25× | Meets current EU/Ukrainian building codes; energy efficiency baseline |
+| `build_back_better` | 1.30 – 1.60× | Modern systems, energy resilience, climate adaptation, EU-standard specifications |
 
-[low/high midpoint used in actual output = 1,032 M because low and high walk
-opposite ends of each range simultaneously, not the central of each factor.]
-```
+BBB multiplier upper end applies to assets with multiple technology overlays from `data/tech_overlays.json` (e.g. microgrid + modular construction + fibre + telemedicine for a hospital).
 
-The `{low, central, high}` triple is NOT computed as `formula(central_inputs)`. It is `(formula(all_lows) + formula(all_highs)) / 2`. This is consistent with RDNA3 methodology for uncertainty ranges and is the canonical approach in `scripts/compute-costs.js`.
+---
+
+## 5. Heritage premium
+
+Assets with `asset_type` in the `heritage_and_culture` sector carry a separate conservation-premium multiplier applied on top of the standard formula, because unit-cost benchmarks do not capture the cost of conserving historic fabric, specialist craftsmanship, or archaeological survey requirements.
+
+| Heritage tier | Premium multiplier |
+|---|---|
+| Regional significance | 1.8× |
+| National significance | 2.2× |
+| UNESCO / exceptional | 3.0× |
+
+Tier assigned at the asset level. Source: ICOMOS costing methodology; UNESCO post-conflict recovery precedents. Stored in `data/unit_cost_table.json` heritage rows.
+
+---
+
+## 6. Contingency
+
+- **15% (×1.15):** assets at `lifecycle: assessed` — physical specifications partially sourced, engineering access possible
+- **25% (×1.25):** assets at `lifecycle: documented` — damage documented from OSINT/remote sensing only; physical access not confirmed
+
+Contingency is applied last, after all other multipliers.
+
+---
+
+## 7. Anti-hallucination architecture
+
+The single largest reputational risk to uVidNova is a hallucinated number cited in a serious publication. The AI orchestrator treats the LLM as a **classifier and narrator, never as an estimator**.
+
+### Stage 1 — Classification (`functions/classify.js`)
+- Input: asset description, OSINT sources, photos, geolocation
+- Output: structured fields — `asset_type`, `physical_specs.*` (each flagged with `source`), `damage.destruction_level`, `wartime_status.*`
+- Validation: `asset_type` must match `data/taxonomy.json`; any spec without a flagged source defaults to `"pending_data"` and central cost calculation is skipped
+
+### Stage 2 — Retrieval and narration (`functions/narrate.js`)
+1. Server performs deterministic lookups for all cost inputs
+2. Server computes `{low, central, high}` via the formula above
+3. Server retrieves comparable precedents from `data/precedents.json`
+4. Server selects financing templates from `data/financing_templates.json`
+5. LLM receives the complete structured payload and narrates it
+6. Every number in the narration must already exist in the payload
+
+### Validation gate (`functions/lib/validation-gate.js`)
+Runs server-side before any narration is returned:
+1. Regex-extracts every numeric token from the generated narrative
+2. Attempts to match each token against the retrieval payload
+3. **Any unmatched number aborts publication** and routes to human review
+4. Date tokens (e.g. "2024") are whitelisted; financial/physical-quantity tokens are not
+
+---
+
+## 8. Financing structure methodology
+
+See `docs/financing_tranches.md` for the full 12-tranche taxonomy, sector × path template matrix, wartime compression rules, and confidence levels.
+
+See `docs/funding_envelope.md` for the six donor/instrument pools, confirmed commitment envelopes, and capacity aggregation against RDNA3 need.
+
+---
+
+## 9. Reconstruction Trust methodology
+
+See `public/about.html#trust` for the full narrative including Dawes/Marshall/UNCC/GPFG historical precedents.
+
+Key parameters (from `data/trust/trust_config.json` and `data/availability_payment_params.json`):
+- Corpus: ~USD 286B (frozen Russian sovereign assets under multilateral trusteeship)
+- Default drawdown: 4% (UNCC model)
+- Annual return assumption: 4.5% (ECB 2026-Q1 benchmark)
+- Annual availability payment at 4% drawdown: ~USD 11.4B/year
+- Concessional debt supportable at 15yr/2.5% coupon: ~USD 149B (using 0.07665 DSC constant)
+
+The Trust is a modelling construct based on historical precedents and current legal proposals. It does not reflect confirmed government policy.
+
+---
+
+## 10. Source codes
+
+| Code | Full reference |
+|---|---|
+| `RDNA3` | World Bank / Government of Ukraine / European Commission / UN — Ukraine Rapid Damage and Needs Assessment, Third Edition (February 2024) |
+| `KSE` | Kyiv School of Economics Institute — "Russia Will Pay" damage tracker and methodology |
+| `EBRD_CASE` | EBRD Ukraine reconstruction case studies — financing-structure precedents |
+| `EU_FACILITY` | EU Ukraine Facility programme documents (EUR 50bn, 2024–27) |
+| `EIB_UA` | EIB EU4Ukraine investment platform documentation |
+| `MIGA` | MIGA War & Civil Disturbance insurance — Ukraine portfolio |
+| `OCHA` | UN OCHA Ukraine flash updates and humanitarian needs overviews |
+| `BELLINGCAT` | Bellingcat / Centre for Information Resilience — verified incident mapping |
+| `ACLED` | ACLED Ukraine conflict event data |
+| `eRECOVERY` | Government of Ukraine eRecovery / DREAM platform |
+
+Full bibliography: `docs/sources.md`.
+
+---
+
+*Last updated: 2026-05-15. Companion documents: `docs/financing_tranches.md`, `docs/funding_envelope.md`, `public/about.html`.*
