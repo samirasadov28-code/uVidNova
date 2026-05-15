@@ -455,6 +455,8 @@ function renderGroupList(oblast) {
 // ── Step 2: Scenario ──────────────────────────────────────────────────────────
 
 function step2HTML() {
+  if (W.scope === 'greenfield') return step2GreenfieldHTML();
+
   const sel = selectedAssets();
   const names = sel.map(a => a.name?.en ?? a.asset_id);
   const summary = sel.length <= 2 ? names.join(', ') : `${names.slice(0, 2).join(', ')} +${sel.length - 2} more`;
@@ -486,6 +488,65 @@ function step2HTML() {
       <label class="fw-label">Reconstruction path</label>
       <div class="fw-radio-row" id="fwPathRow">${pathCards}</div>
     </div>
+    <div class="fw-field-group">
+      <label class="fw-label">Financing timeline</label>
+      <div class="fw-radio-row" id="fwTimingRow">${timingCards}</div>
+    </div>
+    ${W.timing !== 'during' ? `<div class="fw-info-note">Russian Reparations will be available as a tranche type in Step 3.</div>` : ''}
+  </div>`;
+}
+
+function step2GreenfieldHTML() {
+  // Auto-set path to baseline so downstream code that reads W.path does not break.
+  W.path = 'baseline';
+
+  const arch   = greenfieldArchetype();
+  const sector = _growthData?.sectors.find(s => s.id === W.greenfield.sectorId);
+  const tmpl   = greenfieldTemplate();
+
+  const PEACE_LABELS_LOCAL = {
+    pre_armistice:          { label: 'Available now',      cls: 'gs-gate-green' },
+    post_armistice_fragile: { label: 'Post ceasefire',     cls: 'gs-gate-amber' },
+    post_armistice_durable: { label: 'Durable peace only', cls: 'gs-gate-red'   },
+    mixed:                  { label: 'Varies by oblast',   cls: 'gs-gate-amber' },
+  };
+  const gate = arch ? (PEACE_LABELS_LOCAL[arch.peace_state_gate] ?? PEACE_LABELS_LOCAL.mixed) : null;
+
+  const summaryCard = arch && sector ? `
+    <div class="fw-gf-summary-card">
+      <div class="fw-gf-summary-header">
+        <span class="fw-gf-icon">${sector.icon}</span>
+        <div class="fw-gf-summary-titles">
+          <span class="fw-gf-sector-name">${sector.label}</span>
+          <span class="fw-gf-arch-name">${arch.label}</span>
+        </div>
+        <span class="gs-gate ${gate.cls} fw-gf-gate">${gate.label}</span>
+      </div>
+      <div class="fw-gf-summary-body">
+        <p class="fw-gf-thesis">${sector.thesis_one_line}</p>
+        <div class="fw-gf-meta-row">
+          <span class="fw-gf-meta-item"><strong>Project scale:</strong> USD ${arch.scale_usd_m.toLocaleString()}M</span>
+          <span class="fw-gf-meta-item"><strong>Capital structure template:</strong> ${arch.template_id}</span>
+        </div>
+        ${arch.scale_note ? `<p class="fw-gf-scale-note">${arch.scale_note}</p>` : ''}
+        ${!tmpl ? `<p class="fw-gf-tmpl-warn">Note: financing template "${arch.template_id}" not found in growth_sectors.json — tranches will use wizard defaults.</p>` : ''}
+      </div>
+    </div>` : `<p class="fw-gf-no-arch">No archetype selected. Go back to Step 1.</p>`;
+
+  const timingCards = Object.keys(TIMING_LABELS).map(k => `
+    <label class="fw-radio-card ${W.timing === k ? 'fw-rc-checked' : ''}">
+      <input type="radio" name="timing" value="${k}" ${W.timing === k ? 'checked' : ''} class="fw-sr">
+      <span class="fw-rc-label">${TIMING_LABELS[k]}</span>
+      <span class="fw-rc-desc">${
+        k === 'during' ? `⚡ +${WAR_PREMIUM}% wartime premium on commercial tranches` :
+        k === 'after'  ? 'Normal rates; reparations available as a funding source' :
+                         'Phased disbursement; reparations close the post-war tranche'
+      }</span>
+    </label>`).join('');
+
+  return `<div class="fw-step">
+    <h3 class="fw-sh">Project overview &amp; financing timeline</h3>
+    ${summaryCard}
     <div class="fw-field-group">
       <label class="fw-label">Financing timeline</label>
       <div class="fw-radio-row" id="fwTimingRow">${timingCards}</div>
@@ -631,7 +692,83 @@ function trancheRowHTML(t, total) {
   </div>`;
 }
 
+function seedGreenfieldTranches() {
+  const tmpl = greenfieldTemplate();
+  if (!tmpl) return;  // no template found; leave existing tranches
+
+  // Mapping: template field → tranche type (and optional label override)
+  // first_loss_pct absorbed into eu_concessional (blended first-loss facility)
+  // diaspora_pct mapped to equity with label override
+  const rows = [];
+  let nextId = 1;
+
+  function addRow(type, pct, labelOverride) {
+    const def = TRANCHE_DEFS[type] ?? TRANCHE_DEFS.equity;
+    rows.push({
+      id: nextId++,
+      type,
+      pct,
+      ret: def.ret,
+      tenor: def.tenor,
+      ...(labelOverride ? { _labelOverride: labelOverride } : {}),
+    });
+  }
+
+  // grant_pct → grant
+  if (tmpl.grant_pct > 0) addRow('grant', tmpl.grant_pct);
+
+  // era_pct → reparations (only if > 0)
+  if (tmpl.era_pct > 0) addRow('reparations', tmpl.era_pct);
+
+  // first_loss_pct → eu_concessional (absorbed into blended concessional layer)
+  const concPct = (tmpl.concessional_pct || 0) + (tmpl.first_loss_pct || 0);
+  if (concPct > 0) addRow('eu_concessional', concPct);
+
+  // senior_ifi_pct → world_bank (only if > 0)
+  if (tmpl.senior_ifi_pct > 0) addRow('world_bank', tmpl.senior_ifi_pct);
+
+  // eca_pct → eca_guarantee (only if > 0)
+  if (tmpl.eca_pct > 0) addRow('eca_guarantee', tmpl.eca_pct);
+
+  // dfi_equity_pct + public_equity_pct → equity (merge if both > 0)
+  const dfiEq  = tmpl.dfi_equity_pct    || 0;
+  const pubEq  = tmpl.public_equity_pct  || 0;
+  const privEq = tmpl.private_equity_pct || 0;
+  const diasEq = tmpl.diaspora_pct       || 0;
+
+  if (dfiEq > 0 && pubEq > 0) {
+    addRow('equity', dfiEq + pubEq, 'Public/DFI Equity');
+  } else if (dfiEq > 0) {
+    addRow('equity', dfiEq, 'DFI Equity');
+  } else if (pubEq > 0) {
+    addRow('equity', pubEq);
+  }
+
+  // private_equity_pct → equity (only if > 0)
+  if (privEq > 0) addRow('equity', privEq, 'Private Equity');
+
+  // diaspora_pct → equity with label override (only if > 0)
+  if (diasEq > 0) addRow('equity', diasEq, 'Diaspora Capital');
+
+  // commercial_bank_debt_pct → senior_debt (only if > 0)
+  if (tmpl.commercial_bank_debt_pct > 0) addRow('senior_debt', tmpl.commercial_bank_debt_pct);
+
+  // institutional_debt_pct → mezzanine (only if > 0)
+  if (tmpl.institutional_debt_pct > 0) addRow('mezzanine', tmpl.institutional_debt_pct);
+
+  if (rows.length === 0) return;  // nothing to seed
+
+  W.tranches = rows;
+  W.nextId   = nextId;
+  W._greenfieldTranchesSeed = true;
+}
+
 function wireStep3() {
+  // Seed tranches from greenfield template on first entry to Step 3
+  if (W.scope === 'greenfield' && !W._greenfieldTranchesSeed) {
+    seedGreenfieldTranches();
+  }
+
   document.getElementById('fwAddTranche')?.addEventListener('click', () => {
     W.tranches.push({ id: W.nextId++, type: 'equity', pct: 0, ret: 18, tenor: null });
     render();
@@ -731,6 +868,8 @@ function computeResults() {
 }
 
 function step4HTML() {
+  if (W.scope === 'greenfield') return step4GreenfieldHTML();
+
   const r = computeResults();
 
   const trancheRows = r.tranches.map(t => {
@@ -852,6 +991,132 @@ function step4HTML() {
   </div>`;
 }
 
+function step4GreenfieldHTML() {
+  const r      = computeResults();
+  const arch   = greenfieldArchetype();
+  const sector = _growthData?.sectors.find(s => s.id === W.greenfield.sectorId);
+  const tmpl   = greenfieldTemplate();
+
+  const memoTitle = arch && sector
+    ? `${sector.icon} ${arch.label} — Financing Memo`
+    : 'Greenfield Project — Financing Memo';
+
+  const trancheRows = r.tranches.map(t => {
+    const warTag = COMMERCIAL_TYPES.has(t.type) && (W.timing === 'during' || W.timing === 'phased')
+      ? `<span class="fw-war-tag">+${WAR_PREMIUM}% war</span>` : '';
+    const isTrustMode = t.type === 'reparations' && _trustModes.get(t.id) === 'trust';
+    const trustLabel  = isTrustMode
+      ? ` <span class="trust-annual-chip">Annual: USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr †</span>`
+      : '';
+    // Use _labelOverride for seeded greenfield tranches if present
+    const trancheLabel = t._labelOverride ?? (isTrustMode ? 'ERA/Trust — Availability Payment' : t.def.label);
+    const displayPct   = isTrustMode ? '—' : `${t.pct.toFixed(0)}%`;
+    const displayAmt   = isTrustMode ? `USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr` : fmtM(t.amt.toFixed(1));
+    return `<tr>
+      <td><span class="fw-type-dot" style="background:${t.def.col}"></span>${trancheLabel}${confidenceBadge(t.type)}${trustLabel}</td>
+      <td>${displayPct}</td>
+      <td>${displayAmt}</td>
+      <td>${t.effR.toFixed(1)}% ${warTag}</td>
+      <td>${t.tenor ?? '—'}</td>
+    </tr>`;
+  }).join('');
+
+  const repSection = r.repAmt > 0 && W.timing !== 'during' ? `
+    <div class="fw-results-sect">
+      <h4 class="fw-results-h4">Russian reparations scenario</h4>
+      <p class="fw-rep-ctx">Source: KSE Institute "Russia Will Pay" ($486B total claim); G7-frozen assets ~$300B.</p>
+      <div class="fw-rep-bar-wrap">
+        <div class="fw-rep-bar-track">
+          <div class="fw-rep-bar-fill" style="width:${Math.min(r.repPctFrozen, 100).toFixed(3)}%"></div>
+        </div>
+        <div class="fw-rep-bar-labels">
+          <span>This project: ${fmtM(r.repAmt.toFixed(0))}</span>
+          <span>Frozen assets: $300B</span>
+        </div>
+      </div>
+      <div class="fw-rep-stats">
+        <span><strong>${r.repPctClaim.toFixed(3)}%</strong> of $486B claim</span>
+        <span><strong>${r.repPctFrozen.toFixed(3)}%</strong> of $300B frozen</span>
+      </div>
+    </div>` : '';
+
+  return `<div class="fw-step fw-results fw-results-greenfield">
+    <h3 class="fw-sh">${memoTitle}</h3>
+    <div class="fw-results-meta">Greenfield ${sector ? sector.label : ''} · ${TIMING_LABELS[W.timing]}</div>
+
+    ${sector ? `<p class="fw-gf-results-thesis">${sector.thesis_one_line}</p>` : ''}
+
+    <div class="fw-results-sect">
+      <h4 class="fw-results-h4">Project type &amp; scale</h4>
+      <div class="fw-cost-display">
+        <span class="fw-cost-central">${fmtM(r.total)} <span class="fw-cost-lbl">fixed project scale</span></span>
+      </div>
+      <p class="fw-gf-type-note">Project type: Greenfield ${sector ? sector.label : ''}</p>
+      ${tmpl ? `<p class="fw-gf-tmpl-note">Capital structure pre-populated from uVidNova greenfield template ${tmpl.template_id}. Adjust tranches in Step 3.</p>` : ''}
+    </div>
+
+    <div class="fw-results-sect">
+      <h4 class="fw-results-h4">Capital stack</h4>
+      ${allocBar(r.total)}
+      <table class="fw-results-table">
+        <thead><tr><th>Tranche</th><th>%</th><th>Amount</th><th>Return</th><th>Tenor</th></tr></thead>
+        <tbody>${trancheRows}</tbody>
+      </table>
+    </div>
+
+    <div class="fw-results-sect">
+      <h4 class="fw-results-h4">Key metrics</h4>
+      <div class="fw-metrics-grid">
+        <div class="fw-mc"><span class="fw-mc-val">${r.blended.toFixed(2)}%</span><span class="fw-mc-lbl">Blended cost of capital</span></div>
+        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.pubTotal.toFixed(0))}</span><span class="fw-mc-lbl">Public support needed</span></div>
+        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.grantAmt.toFixed(0))}</span><span class="fw-mc-lbl">Grant requirement</span></div>
+        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.debtSvc.toFixed(1))}/yr</span><span class="fw-mc-lbl">Annual debt service</span></div>
+        ${r.mobRatio ? `<div class="fw-mc fw-mc-hl"><span class="fw-mc-val">${r.mobRatio}×</span><span class="fw-mc-lbl">Private mobilisation ratio</span></div>` : ''}
+      </div>
+      ${r.mobRatio ? `<p class="fw-mob-note">For every $1 of grant, this structure mobilises <strong>$${r.mobRatio}</strong> of private capital.</p>` : ''}
+    </div>
+
+    <div class="fw-results-sect">
+      <h4 class="fw-results-h4">Support needed by phase</h4>
+      <div class="fw-support-row">
+        <div class="fw-support-card fw-sc-during">
+          <span class="fw-sc-lbl">⚡ During war</span>
+          <span class="fw-sc-val">${fmtM(r.duringSupport.toFixed(0))}</span>
+          <span class="fw-sc-note">${W.timing === 'after' ? 'Deferred to post-war' : 'Grants + concessional required now'}</span>
+        </div>
+        <div class="fw-support-card fw-sc-after">
+          <span class="fw-sc-lbl">🕊 Post-war</span>
+          <span class="fw-sc-val">${fmtM(r.postSupport.toFixed(0))}</span>
+          <span class="fw-sc-note">${W.timing === 'during' ? 'Not modelled' : 'Requires peace settlement'}</span>
+        </div>
+      </div>
+      ${r.warExtra > 0 ? `<p class="fw-war-note">⚡ Wartime premium adds +${fmtM(r.warExtra.toFixed(1))}/yr to annual debt service.</p>` : ''}
+    </div>
+
+    ${repSection}
+
+    ${r.tranches.some(t => t.type === 'reparations' && _trustModes.get(t.id) === 'trust') ? `
+    <div class="fw-disclaimer trust-footnote">
+      † ERA/Trust replaces a lump-sum Russian reparations tranche with annual availability payments
+      from a Reconstruction Trust (4% drawdown · USD 286B corpus · ~USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr).
+      Annual payment services concessional debt rather than acting as an equity injection.
+      <a href="/trust.html" target="_blank" rel="noopener">See full Trust model and corpus trajectory →</a>
+    </div>` : ''}
+
+    <div class="fw-disclaimer">
+      Project scale and capital structure are indicative estimates pre-populated from the uVidNova greenfield template library. Not guarantees, procurement quotes, or substitutes for transaction-level due diligence.
+    </div>
+
+    <!-- AI memo (loaded asynchronously after render) -->
+    <div class="fw-results-sect" id="fwMemoSection">
+      <h4 class="fw-results-h4">Financing memo</h4>
+      <div id="fwMemoContent" class="fw-memo-loading">
+        <span class="fw-memo-spinner"></span> Generating institutional financing memo…
+      </div>
+    </div>
+  </div>`;
+}
+
 // ── AI memo generation ────────────────────────────────────────────────────────
 
 async function generateMemo() {
@@ -859,33 +1124,79 @@ async function generateMemo() {
   const memoEl = document.getElementById('fwMemoContent');
   if (!memoEl) return;
 
-  const payload = {
-    portfolio: r.sel.map(a => a.name?.en ?? a.asset_id).join(', '),
-    path: PATH_LABELS[W.path],
-    timing: TIMING_LABELS[W.timing],
-    total_cost_central_usd_m: r.total,
-    cost_range_low_usd_m: r.low,
-    cost_range_high_usd_m: r.high,
-    tranches: r.tranches.map(t => ({
-      type: t.def.label,
-      allocation_pct: t.pct,
-      amount_usd_m: +t.amt.toFixed(1),
-      required_return_pct: t.effR,
-      tenor_yr: t.tenor ?? null,
-    })),
-    blended_coc_pct: +r.blended.toFixed(2),
-    public_support_usd_m: +r.pubTotal.toFixed(0),
-    grant_requirement_usd_m: +r.grantAmt.toFixed(0),
-    annual_debt_service_usd_m: +r.debtSvc.toFixed(1),
-    private_mobilisation_ratio: r.mobRatio ? +r.mobRatio : null,
-    support_during_war_usd_m: +r.duringSupport.toFixed(0),
-    support_post_war_usd_m: +r.postSupport.toFixed(0),
-    reparations_usd_m: r.repAmt > 0 ? +r.repAmt.toFixed(0) : null,
-    reparations_pct_kse_claim: r.repAmt > 0 ? +r.repPctClaim.toFixed(3) : null,
-    reparations_pct_frozen: r.repAmt > 0 ? +r.repPctFrozen.toFixed(3) : null,
-  };
+  let payload, prompt;
 
-  const prompt = `You are a development finance analyst writing for an institutional investment committee.
+  if (W.scope === 'greenfield') {
+    const arch   = greenfieldArchetype();
+    const sector = _growthData?.sectors.find(s => s.id === W.greenfield.sectorId);
+    const tmpl   = greenfieldTemplate();
+
+    payload = {
+      project_type:              'Greenfield',
+      sector:                    sector?.label ?? W.greenfield.sectorId,
+      archetype:                 arch?.label ?? W.greenfield.archetypeId,
+      thesis_one_line:           sector?.thesis_one_line ?? null,
+      capital_structure_template: arch?.template_id ?? null,
+      project_scale_usd_m:       r.total,
+      timing:                    TIMING_LABELS[W.timing],
+      tranches: r.tranches.map(t => ({
+        type:               t._labelOverride ?? t.def.label,
+        allocation_pct:     t.pct,
+        amount_usd_m:       +t.amt.toFixed(1),
+        required_return_pct: t.effR,
+        tenor_yr:           t.tenor ?? null,
+      })),
+      blended_coc_pct:             +r.blended.toFixed(2),
+      public_support_usd_m:        +r.pubTotal.toFixed(0),
+      grant_requirement_usd_m:     +r.grantAmt.toFixed(0),
+      annual_debt_service_usd_m:   +r.debtSvc.toFixed(1),
+      private_mobilisation_ratio:  r.mobRatio ? +r.mobRatio : null,
+      support_during_war_usd_m:    +r.duringSupport.toFixed(0),
+      support_post_war_usd_m:      +r.postSupport.toFixed(0),
+      reparations_usd_m:           r.repAmt > 0 ? +r.repAmt.toFixed(0) : null,
+    };
+
+    prompt = `You are a development finance analyst writing for an institutional investment committee.
+
+Generate a concise 3-paragraph financing memo based ONLY on the figures below. Do NOT invent any numbers or assumptions not in this payload. If a metric is null, omit it.
+
+FINANCING PAYLOAD:
+${JSON.stringify(payload, null, 2)}
+
+Structure:
+1. Investment thesis — one sentence stating the greenfield project, its sector, and its strategic rationale for Ukraine's reconstruction.
+2. Financing structure — describe the capital stack, blended cost of capital, public support requirement, and what the private mobilisation ratio implies for this greenfield archetype.
+3. Key risks and timing — address the peace-state dependency and wartime execution risk, the during-war vs post-war public support split, and any reparations dependency. Close with a sentence on the next step for a prospective financier.
+
+Write in formal, economical prose. No bullet points. No markdown formatting.`;
+  } else {
+    payload = {
+      portfolio: r.sel.map(a => a.name?.en ?? a.asset_id).join(', '),
+      path: PATH_LABELS[W.path],
+      timing: TIMING_LABELS[W.timing],
+      total_cost_central_usd_m: r.total,
+      cost_range_low_usd_m: r.low,
+      cost_range_high_usd_m: r.high,
+      tranches: r.tranches.map(t => ({
+        type: t.def.label,
+        allocation_pct: t.pct,
+        amount_usd_m: +t.amt.toFixed(1),
+        required_return_pct: t.effR,
+        tenor_yr: t.tenor ?? null,
+      })),
+      blended_coc_pct: +r.blended.toFixed(2),
+      public_support_usd_m: +r.pubTotal.toFixed(0),
+      grant_requirement_usd_m: +r.grantAmt.toFixed(0),
+      annual_debt_service_usd_m: +r.debtSvc.toFixed(1),
+      private_mobilisation_ratio: r.mobRatio ? +r.mobRatio : null,
+      support_during_war_usd_m: +r.duringSupport.toFixed(0),
+      support_post_war_usd_m: +r.postSupport.toFixed(0),
+      reparations_usd_m: r.repAmt > 0 ? +r.repAmt.toFixed(0) : null,
+      reparations_pct_kse_claim: r.repAmt > 0 ? +r.repPctClaim.toFixed(3) : null,
+      reparations_pct_frozen: r.repAmt > 0 ? +r.repPctFrozen.toFixed(3) : null,
+    };
+
+    prompt = `You are a development finance analyst writing for an institutional investment committee.
 
 Generate a concise 3-paragraph financing memo based ONLY on the figures below. Do NOT invent any numbers or assumptions not in this payload. If a metric is null, omit it.
 
@@ -898,6 +1209,7 @@ Structure:
 3. Key risks and timing — address wartime execution risk, the during-war vs post-war public support split, and any reparations dependency. Close with a sentence on the next step for a prospective financier.
 
 Write in formal, economical prose. No bullet points. No markdown formatting.`;
+  }
 
   try {
     const res  = await fetch('/api/chat', {
