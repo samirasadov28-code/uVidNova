@@ -121,31 +121,31 @@ let mapViewMode = 'damaged';
 let selectedOblast = null; // GeoJSON feature name of selected oblast in Damaged view
 
 // Oblasts with significant current occupation (as of 2024-2025)
-// Crimea: fully occupied; Donetsk/Luhansk/Zaporizhzhia/Kherson: partially occupied
-const OCCUPIED_OBLASTS = new Set(['Crimea', 'Luhansk']);
-const PARTIALLY_OCCUPIED_OBLASTS = new Set(['Donetsk', 'Zaporizhzhia', 'Kherson']);
+// Names must match GeoJSON feature names exactly (apostrophe variants from Natural Earth)
+const OCCUPIED_OBLASTS = new Set(["Luhans'k"]);
+const PARTIALLY_OCCUPIED_OBLASTS = new Set(["Donets'k", 'Zaporizhzhya', 'Kherson']);
 
 // ── Oblast info panel ─────────────────────────────────────────────────────────
 
 // Explicit mapping from GeoJSON feature name → oblasts_info name_en
 // Needed because GeoJSON uses short names; oblasts_info uses "Oblast" suffix
 const OBLAST_INFO_MAP = {
-  'Kyiv':          'Kyiv Oblast',
+  'Kyiv Oblast':   'Kyiv Oblast',
   'Kyiv City':     'Kyiv City',
-  'Crimea':        'Crimea (Temporarily Occupied)',  // UA territory, temporarily occupied
-  'Donetsk':       'Donetsk Oblast',
-  'Luhansk':       'Luhansk Oblast',
-  'Dnipropetrovsk':'Dnipropetrovsk Oblast',
-  'Zaporizhzhia':  'Zaporizhzhia Oblast',
+  'Autonomous Republic of Crimea': 'Crimea (Temporarily Occupied)',
+  "Donets'k":      'Donetsk Oblast',
+  "Luhans'k":      'Luhansk Oblast',
+  'Dnipropetrovs\'k': 'Dnipropetrovsk Oblast',
+  'Zaporizhzhya':  'Zaporizhzhia Oblast',
   'Kharkiv':       'Kharkiv Oblast',
-  'Lviv':          'Lviv Oblast',
-  'Odesa':         'Odesa Oblast',
-  'Mykolaiv':      'Mykolaiv Oblast',
+  "L'viv":         'Lviv Oblast',
+  'Odessa':        'Odesa Oblast',
+  'Mykolayiv':     'Mykolaiv Oblast',
   'Kherson':       'Kherson Oblast',
-  'Zakarpattia':   'Zakarpattia Oblast',
-  'Khmelnytskyi':  'Khmelnytskyi Oblast',
-  'Ivano-Frankivsk':'Ivano-Frankivsk Oblast',
-  'Vinnytsia':     'Vinnytsia Oblast',
+  'Transcarpathia':'Zakarpattia Oblast',
+  "Khmel'nyts'kyy":'Khmelnytskyi Oblast',
+  "Ivano-Frankivs'k":'Ivano-Frankivsk Oblast',
+  'Vinnytsya':     'Vinnytsia Oblast',
   'Chernihiv':     'Chernihiv Oblast',
   'Chernivtsi':    'Chernivtsi Oblast',
   'Cherkasy':      'Cherkasy Oblast',
@@ -154,7 +154,7 @@ const OBLAST_INFO_MAP = {
   'Zhytomyr':      'Zhytomyr Oblast',
   'Rivne':         'Rivne Oblast',
   'Volyn':         'Volyn Oblast',
-  'Ternopil':      'Ternopil Oblast',
+  "Ternopil'":     'Ternopil Oblast',
   'Kirovohrad':    'Kirovohrad Oblast',
 };
 
@@ -569,12 +569,20 @@ function oblastStyle(feature) {
   const isPartial  = PARTIALLY_OCCUPIED_OBLASTS.has(name);
   const pal = VIEW_PALETTE[mapViewMode] ?? VIEW_PALETTE.damaged;
 
-  // War mode overlays (occupation stripes) — respect current palette border
-  if (warMode && (isOccupied || isCrimea)) {
-    return { color: pal.border, weight: 1.5, fillColor: '#6b0000', fillOpacity: 0.72, dashArray: '7, 5' };
-  }
-  if (warMode && isPartial) {
-    return { color: pal.border, weight: 1.5, fillColor: '#8b1a1a', fillOpacity: 0.50, dashArray: '5, 6' };
+  // War mode: occupation status — three tiers with distinct colours
+  if (warMode) {
+    if (isCrimea) {
+      // Occupied since 2014 — deepest tone, solid border
+      return { color: '#cc0000', weight: 2.5, fillColor: '#3d0000', fillOpacity: 0.85, dashArray: null };
+    }
+    if (isOccupied) {
+      // Largely occupied since 2022 (Luhansk) — dark red, solid border
+      return { color: '#cc2200', weight: 2, fillColor: '#5a0800', fillOpacity: 0.78, dashArray: null };
+    }
+    if (isPartial) {
+      // Contested/partially occupied — burnt orange, dashed border signals fluid frontline
+      return { color: '#cc4400', weight: 2, fillColor: '#7a1e08', fillOpacity: 0.60, dashArray: '10, 6' };
+    }
   }
 
   // Ukraine view uses light-map styling (lighter fill, thinner border)
@@ -606,6 +614,8 @@ function toggleWarMode() {
     btn.classList.toggle('war-active', warMode);
     btn.textContent = warMode ? '🗺 Normal view' : '⚔ War view';
   }
+  const legend = document.getElementById('warLegend');
+  if (legend) legend.hidden = !warMode;
 }
 
 async function addOblastLayer() {
@@ -616,7 +626,12 @@ async function addOblastLayer() {
       onEachFeature(feature, layer) {
         const name = feature.properties?.name ?? '';
         const isCrimea = name.includes('Crimea') || feature.properties?.status === 'occupied';
-        const tooltipText = isCrimea ? 'Autonomous Republic of Crimea (temporarily occupied — UA territory)' : name;
+        const isLuhansk  = name === "Luhans'k";
+        const isPartialOcc = PARTIALLY_OCCUPIED_OBLASTS.has(name);
+        let tooltipText = name;
+        if (isCrimea) tooltipText = 'Autonomous Republic of Crimea — occupied since 2014 (UA territory)';
+        else if (isLuhansk) tooltipText = 'Luhansk Oblast — largely occupied since 2022 (UA territory)';
+        else if (isPartialOcc) tooltipText = `${name} Oblast — contested/partially occupied (UA territory)`;
         if (name) layer.bindTooltip(tooltipText, { permanent: false, sticky: true, className: 'oblast-tooltip' });
 
         layer.on('mouseover', function () {
