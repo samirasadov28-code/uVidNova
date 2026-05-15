@@ -125,6 +125,42 @@ export function buildFormulaInputs(unitCost, quantity, destructionLevel, oblast)
   };
 }
 
+// ── Sector normalisation helpers ──────────────────────────────────────────────
+
+/**
+ * Map the short sector prefix used in asset_type (e.g. "healthcare") to the
+ * sector_group label used in financing_templates.json.
+ */
+const SECTOR_TO_GROUP = {
+  healthcare:   'social_infrastructure',
+  education:    'social_infrastructure',
+  heritage:     'social_infrastructure',
+  public_admin: 'public_administration',
+  residential:  'housing',
+  energy:       'energy',
+  transport:    'transport_non_revenue',
+  water:        'social_infrastructure',
+  industrial:   'industrial',
+  agricultural: 'industrial',
+};
+
+/**
+ * Map the short sector prefix to the long-form sector key used in
+ * precedents.json (which mirrors the taxonomy sector keys).
+ */
+const SECTOR_TO_PRECEDENT_KEY = {
+  healthcare:   'healthcare',
+  education:    'education',
+  heritage:     'heritage_and_culture',
+  public_admin: 'public_administration',
+  residential:  'residential',
+  energy:       'energy_and_power',
+  transport:    'transport_and_ports',
+  water:        'water_and_sanitation',
+  industrial:   'industrial_and_agricultural',
+  agricultural: 'industrial_and_agricultural',
+};
+
 // ── High-level API surface for classify.js ────────────────────────────────────
 
 // Cached taxonomy (not needed by the low-level narrate.js path so loaded lazily here)
@@ -228,25 +264,34 @@ export function computeCostPaths(assetType, physicalSpecs, destructionLevel, obl
 /**
  * Look up the financing template for a sector/path combination.
  *
+ * `sector` may be either the short asset prefix ("healthcare") or a full
+ * sector_group string ("social_infrastructure") — both are handled.
+ *
  * @returns {object|null}
  */
 export function lookupFinancingTemplate(sector, path, staticData) {
+  // Normalise: if the caller passes a short prefix, map it to sector_group
+  const group = SECTOR_TO_GROUP[sector] ?? sector;
   return staticData.financingTemplates.find(t => {
-    // Templates may use sector_group or sector; support both patterns
-    const templateSector = t.sector_group ?? t.sector ?? '';
-    return templateSector === sector && t.path === path;
+    const templateGroup = t.sector_group ?? t.sector ?? '';
+    return templateGroup === group && t.path === path;
   }) ?? null;
 }
 
 /**
  * Find top-N comparable precedents for a given sector and financing path.
  *
+ * `sector` may be either the short asset prefix ("healthcare") or the full
+ * precedent key ("healthcare" — same in most cases, but differs for compound
+ * sectors like "energy_and_power"). Both are handled via SECTOR_TO_PRECEDENT_KEY.
+ *
  * @returns {object[]} — up to N precedent objects
  */
 export function findComparablePrecedents(sector, path, staticData, n = 3) {
+  const precedentKey = SECTOR_TO_PRECEDENT_KEY[sector] ?? sector;
   return staticData.precedents
     .filter(p =>
-      p.sector === sector &&
+      p.sector === precedentKey &&
       (!p.reconstruction_path || p.reconstruction_path === path)
     )
     .slice(0, n);

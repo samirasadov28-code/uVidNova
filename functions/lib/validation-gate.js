@@ -140,24 +140,33 @@ function tokenMatchesPayload(canonical, payloadNums, payloadPcts) {
 /**
  * Validates a narrative string against its retrieval payload.
  *
- * @param {string} narrative
+ * Every numeric token extracted from the narrative must trace back to a value
+ * in the payload (within ±1% tolerance). Unmatched tokens abort publication.
+ *
+ * @param {string} narrative       — the LLM-generated narrative text
  * @param {object} retrievalPayload — the full structured payload passed to the LLM
- * @returns {{ valid: true } | { valid: false, unmatchedTokens: string[] }}
+ * @returns {{ valid: boolean, unmatched: string[], matched: string[] }}
  */
 export function validateNarrative(narrative, retrievalPayload) {
   const tokens = extractNumericTokens(narrative);
   const { nums, pcts } = buildPayloadSets(retrievalPayload);
 
   const unmatched = [];
+  const matched   = [];
+
   for (const tok of tokens) {
     const canonical = tokenToCanonical(tok);
     if (canonical === null) continue;
-    if (!tokenMatchesPayload(canonical, nums, pcts)) {
+    if (tokenMatchesPayload(canonical, nums, pcts)) {
+      matched.push(tok.trim());
+    } else {
       unmatched.push(tok.trim());
     }
   }
 
-  return unmatched.length > 0
-    ? { valid: false, unmatchedTokens: unmatched }
-    : { valid: true };
+  return {
+    valid: unmatched.length === 0,
+    unmatched,
+    matched,
+  };
 }

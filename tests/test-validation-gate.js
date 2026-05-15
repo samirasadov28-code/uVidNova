@@ -31,7 +31,7 @@ function assertValid(label, narrative, payload) {
   const r = validateNarrative(narrative, payload);
   if (!r.valid) {
     console.error(`  ✗  FAIL (expected valid): ${label}`);
-    console.error(`     Unmatched tokens:`, r.unmatchedTokens);
+    console.error(`     Unmatched tokens:`, r.unmatched);
     failed++;
   } else {
     console.log(`  ✓  ${label}`);
@@ -47,11 +47,11 @@ function assertCaught(label, narrative, payload, expectTokens = []) {
   } else {
     console.log(`  ✓  Caught: ${label}`);
     if (expectTokens.length > 0) {
-      const caught = r.unmatchedTokens;
+      const caught = r.unmatched;
       for (const tok of expectTokens) {
         const found = caught.some(c => c.includes(tok.replace(/[^0-9]/g, '')));
         if (!found) {
-          console.warn(`     ⚠ Expected token "${tok}" in unmatchedTokens but found: ${caught.join(', ')}`);
+          console.warn(`     ⚠ Expected token "${tok}" in unmatched but found: ${caught.join(', ')}`);
         }
       }
     }
