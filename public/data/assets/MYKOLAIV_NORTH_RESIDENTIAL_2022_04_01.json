@@ -68,14 +68,18 @@
     },
     "code_compliant": {
       "low_usd_m": 157,
-      "central_usd_m": 435,
+      "central_usd_m": 434,
       "high_usd_m": 712
     },
     "build_back_better": {
       "low_usd_m": 178,
-      "central_usd_m": 545,
+      "central_usd_m": 544,
       "high_usd_m": 911,
-      "tech_overlays": ["passive_house_standard", "modular_construction", "district_heating_upgrade"]
+      "tech_overlays": [
+        "passive_house_standard",
+        "modular_construction",
+        "district_heating_upgrade"
+      ]
     }
   },
   "financing_structures": {
@@ -95,9 +99,13 @@
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -116,9 +124,13 @@
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -137,9 +149,13 @@
       "private_equity_pct": 3,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "EU Housing Pillar reconstruction; Mykolaiv port-city industrial district context; EBRD Green Cities applicable",
       "comparable_projects": []
     }
@@ -148,10 +164,10 @@
     "applies": true,
     "commissioning_year": 2029,
     "construction_period_years": 2,
-    "coupon_pct": 5.0,
+    "coupon_pct": 5,
     "dscr": 1.25,
     "rationale": "District-scale housing; rental revenue insufficient at wartime income levels; Trust bridges debt-service gap",
-    "supportable_debt_usd_m": 106.0,
+    "supportable_debt_usd_m": 106,
     "tenor_years": 20
   },
   "donor_pathway": {

@@ -62,14 +62,18 @@
     },
     "code_compliant": {
       "low_usd_m": 9,
-      "central_usd_m": 31,
+      "central_usd_m": 30,
       "high_usd_m": 52
     },
     "build_back_better": {
       "low_usd_m": 10,
       "central_usd_m": 38,
       "high_usd_m": 66,
-      "tech_overlays": ["automated_handling", "dust_suppression", "smart_logistics"]
+      "tech_overlays": [
+        "automated_handling",
+        "dust_suppression",
+        "smart_logistics"
+      ]
     }
   },
   "financing_structures": {
@@ -90,9 +94,14 @@
       "pri_wrap": {
         "applicable": true,
         "required": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["a_b_loan", "mezzanine"],
+      "structure_patterns": [
+        "a_b_loan",
+        "mezzanine"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -112,9 +121,14 @@
       "pri_wrap": {
         "applicable": true,
         "required": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["a_b_loan", "mezzanine"],
+      "structure_patterns": [
+        "a_b_loan",
+        "mezzanine"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -134,11 +148,18 @@
       "pri_wrap": {
         "applicable": true,
         "required": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["a_b_loan", "mezzanine"],
+      "structure_patterns": [
+        "a_b_loan",
+        "mezzanine"
+      ],
       "rationale": "Danube corridor grain terminal; strategically important for Black Sea Grain Initiative alternative routing; MIGA war-risk wrap essential for any commercial financing; private operator equity dominant; re-damage risk (2 events) priced into MIGA premium",
-      "comparable_projects": ["ODESA_MYKOLAIV_GRAIN_TERMINALS_2022_04_01"]
+      "comparable_projects": [
+        "ODESA_MYKOLAIV_GRAIN_TERMINALS_2022_04_01"
+      ]
     }
   },
   "reparations_layer": {

@@ -68,14 +68,17 @@
     },
     "code_compliant": {
       "low_usd_m": 20,
-      "central_usd_m": 71,
+      "central_usd_m": 70,
       "high_usd_m": 121
     },
     "build_back_better": {
       "low_usd_m": 22,
       "central_usd_m": 89,
       "high_usd_m": 155,
-      "tech_overlays": ["passive_house_standard", "energy_efficiency_envelope"]
+      "tech_overlays": [
+        "passive_house_standard",
+        "energy_efficiency_envelope"
+      ]
     }
   },
   "financing_structures": {
@@ -95,9 +98,13 @@
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -116,9 +123,13 @@
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -137,9 +148,13 @@
       "private_equity_pct": 3,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "Light damage; relatively lower-cost reconstruction; EU Housing Pillar applicable; energy efficiency overlays qualify for BBB uplift",
       "comparable_projects": []
     }
@@ -148,7 +163,7 @@
     "applies": true,
     "commissioning_year": 2027,
     "construction_period_years": 1,
-    "coupon_pct": 5.0,
+    "coupon_pct": 5,
     "dscr": 1.25,
     "rationale": "Smaller-scale housing damage; quick reconstruction window; Trust bridges residual financing gap",
     "supportable_debt_usd_m": 17.1,

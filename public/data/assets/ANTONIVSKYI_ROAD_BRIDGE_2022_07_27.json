@@ -159,7 +159,7 @@
     "applies": true,
     "commissioning_year": 2029,
     "construction_period_years": 3,
-    "coupon_pct": 5.0,
+    "coupon_pct": 5,
     "dscr": 1.2,
     "rationale": "Transport infrastructure; concessional revenue model; Trust secures construction-phase debt service",
     "supportable_debt_usd_m": 329.4,

@@ -68,9 +68,13 @@
     },
     "build_back_better": {
       "low_usd_m": 65,
-      "central_usd_m": 271,
+      "central_usd_m": 270,
       "high_usd_m": 476,
-      "tech_overlays": ["smart_water_metering", "energy_efficient_pumping", "leak_detection"]
+      "tech_overlays": [
+        "smart_water_metering",
+        "energy_efficient_pumping",
+        "leak_detection"
+      ]
     }
   },
   "financing_structures": {
@@ -90,9 +94,13 @@
       "private_equity_pct": 0,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -111,9 +119,13 @@
       "private_equity_pct": 0,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -132,11 +144,17 @@
       "private_equity_pct": 0,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "EU Facility water sector BBB track; EBRD Green Cities Kherson applicable; smart metering and energy-efficiency overlays unlock maximum grant share; UA guarantee required given Kherson risk environment",
-      "comparable_projects": ["KHERSON_POST_KAKHOVKA_WATER_2023_06_06"]
+      "comparable_projects": [
+        "KHERSON_POST_KAKHOVKA_WATER_2023_06_06"
+      ]
     }
   },
   "reparations_layer": {

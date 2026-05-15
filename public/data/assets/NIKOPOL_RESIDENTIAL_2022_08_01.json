@@ -75,7 +75,10 @@
       "low_usd_m": 94,
       "central_usd_m": 281,
       "high_usd_m": 468,
-      "tech_overlays": ["passive_house_standard", "modular_construction"]
+      "tech_overlays": [
+        "passive_house_standard",
+        "modular_construction"
+      ]
     }
   },
   "financing_structures": {
@@ -95,9 +98,13 @@
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -116,9 +123,13 @@
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -137,9 +148,13 @@
       "private_equity_pct": 3,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "5 re-damage events from NPP-area shelling; EU Housing Pillar; persistent cross-river fire risk requires ongoing MIGA wrap; EU green efficiency standard applicable for BBB",
       "comparable_projects": []
     }
@@ -148,7 +163,7 @@
     "applies": true,
     "commissioning_year": 2029,
     "construction_period_years": 2,
-    "coupon_pct": 5.0,
+    "coupon_pct": 5,
     "dscr": 1.25,
     "rationale": "Repeatedly-shelled residential district; Trust bridges debt-service gap; ongoing re-damage risk factored into commissioning timeline",
     "supportable_debt_usd_m": 54.6,

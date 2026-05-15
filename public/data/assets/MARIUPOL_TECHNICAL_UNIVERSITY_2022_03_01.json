@@ -74,7 +74,11 @@
       "low_usd_m": 167,
       "central_usd_m": 344,
       "high_usd_m": 521,
-      "tech_overlays": ["fibre", "digital_labs", "passive_house_standard"]
+      "tech_overlays": [
+        "fibre",
+        "digital_labs",
+        "passive_house_standard"
+      ]
     }
   },
   "financing_structures": {
@@ -96,7 +100,9 @@
         "applicable": false,
         "providers": []
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -117,7 +123,9 @@
         "applicable": false,
         "providers": []
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -138,7 +146,9 @@
         "applicable": false,
         "providers": []
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "Pipeline-only asset while Mariupol remains occupied; financing structures documented for post-liberation planning; IFI participation contingent on territorial control verification; full EU reconstruction package applicable post-liberation",
       "comparable_projects": []
     }
@@ -147,7 +157,7 @@
     "applies": true,
     "commissioning_year": 2035,
     "construction_period_years": 4,
-    "coupon_pct": 5.0,
+    "coupon_pct": 5,
     "dscr": 1.25,
     "rationale": "Occupied university — pipeline only; Trust availability-payment contingent on liberation and de-occupation verification",
     "supportable_debt_usd_m": 68.2,

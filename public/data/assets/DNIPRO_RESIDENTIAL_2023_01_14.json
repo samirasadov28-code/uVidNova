@@ -62,20 +62,23 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 22,
-      "central_usd_m": 45,
-      "high_usd_m": 68
+      "low_usd_m": 23,
+      "central_usd_m": 50,
+      "high_usd_m": 77
     },
     "code_compliant": {
-      "low_usd_m": 25,
-      "central_usd_m": 55,
-      "high_usd_m": 85
+      "low_usd_m": 27,
+      "central_usd_m": 61,
+      "high_usd_m": 96
     },
     "build_back_better": {
-      "low_usd_m": 28,
-      "central_usd_m": 68,
-      "high_usd_m": 108,
-      "tech_overlays": ["passive_house_standard", "energy_efficiency_envelope"]
+      "low_usd_m": 30,
+      "central_usd_m": 76,
+      "high_usd_m": 123,
+      "tech_overlays": [
+        "passive_house_standard",
+        "energy_efficiency_envelope"
+      ]
     }
   },
   "financing_structures": {
@@ -95,9 +98,13 @@
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -116,9 +123,13 @@
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -137,9 +148,13 @@
       "private_equity_pct": 3,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "Single high-rise building; eRecovery grant programme applicable for individual building; EU standard energy-efficiency upgrade qualifies for BBB track",
       "comparable_projects": []
     }
@@ -148,7 +163,7 @@
     "applies": true,
     "commissioning_year": 2027,
     "construction_period_years": 2,
-    "coupon_pct": 5.0,
+    "coupon_pct": 5,
     "dscr": 1.25,
     "rationale": "Single residential building; Trust bridges residual financing gap; relatively quick reconstruction programme",
     "supportable_debt_usd_m": 13.6,

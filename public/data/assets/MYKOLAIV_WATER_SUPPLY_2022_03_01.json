@@ -5,7 +5,7 @@
     "uk": "Система водопостачання Миколаєва (Дніпро-Миколаївський канал)"
   },
   "location": {
-    "lat": 46.9750,
+    "lat": 46.975,
     "lon": 31.9946,
     "oblast": "Mykolaiv",
     "raion": null,
@@ -63,19 +63,24 @@
   "cost_paths": {
     "baseline": {
       "low_usd_m": 61,
-      "central_usd_m": 205,
+      "central_usd_m": 204,
       "high_usd_m": 348
     },
     "code_compliant": {
       "low_usd_m": 70,
-      "central_usd_m": 253,
+      "central_usd_m": 252,
       "high_usd_m": 435
     },
     "build_back_better": {
       "low_usd_m": 79,
       "central_usd_m": 318,
       "high_usd_m": 557,
-      "tech_overlays": ["smart_water_metering", "energy_efficient_pumping", "leak_detection", "reserve_supply_diversification"]
+      "tech_overlays": [
+        "smart_water_metering",
+        "energy_efficient_pumping",
+        "leak_detection",
+        "reserve_supply_diversification"
+      ]
     }
   },
   "financing_structures": {
@@ -95,9 +100,13 @@
       "private_equity_pct": 0,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -116,9 +125,13 @@
       "private_equity_pct": 0,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -137,11 +150,18 @@
       "private_equity_pct": 0,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR", "UKEF"]
+        "providers": [
+          "MIGA_WAR",
+          "UKEF"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "Mykolaiv water restoration was an early-reconstruction success story; lifecycle: funded reflects partial rebuild precedent; EBRD Green Cities Mykolaiv programme applicable; supply diversification overlay addresses single-source vulnerability that caused the 2022 crisis",
-      "comparable_projects": ["INHULETS_MYKOLAIV_WATER_2022_03_01"]
+      "comparable_projects": [
+        "INHULETS_MYKOLAIV_WATER_2022_03_01"
+      ]
     }
   },
   "reparations_layer": {

@@ -69,14 +69,18 @@
     },
     "code_compliant": {
       "low_usd_m": 12,
-      "central_usd_m": 60,
+      "central_usd_m": 59,
       "high_usd_m": 107
     },
     "build_back_better": {
       "low_usd_m": 13,
       "central_usd_m": 75,
       "high_usd_m": 137,
-      "tech_overlays": ["etcs_signalling", "smart_station_systems", "energy_recovery_braking"]
+      "tech_overlays": [
+        "etcs_signalling",
+        "smart_station_systems",
+        "energy_recovery_braking"
+      ]
     }
   },
   "financing_structures": {
@@ -96,9 +100,13 @@
       "private_equity_pct": 0,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -117,9 +125,13 @@
       "private_equity_pct": 0,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -138,18 +150,25 @@
       "private_equity_pct": 0,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR", "EBRD_RSF"]
+        "providers": [
+          "MIGA_WAR",
+          "EBRD_RSF"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "EU Connectivity Fund and TEN-T integration applicable; EBRD RSF active for Kharkiv metro; Line 1 under-reconstruction status indicates financing pipeline is active; ETCS and smart-station upgrades qualify for EU TEN-T conditionality",
-      "comparable_projects": ["KHARKIV_METRO_2022_03_01"]
+      "comparable_projects": [
+        "KHARKIV_METRO_2022_03_01"
+      ]
     }
   },
   "reparations_layer": {
     "applies": true,
     "commissioning_year": 2028,
     "construction_period_years": 2,
-    "coupon_pct": 5.0,
+    "coupon_pct": 5,
     "dscr": 1.2,
     "rationale": "Urban metro infrastructure; fare revenue insufficient for full debt service at wartime ridership levels; Trust bridges debt-service gap",
     "supportable_debt_usd_m": 14.4,

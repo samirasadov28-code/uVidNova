@@ -6,7 +6,7 @@
   },
   "location": {
     "lat": 47.1005,
-    "lon": 37.5620,
+    "lon": 37.562,
     "oblast": "Donetsk",
     "raion": null,
     "settlement": "Mariupol",
@@ -72,14 +72,18 @@
     },
     "code_compliant": {
       "low_usd_m": 2817,
-      "central_usd_m": 5521,
+      "central_usd_m": 5520,
       "high_usd_m": 8224
     },
     "build_back_better": {
       "low_usd_m": 3184,
-      "central_usd_m": 6856,
+      "central_usd_m": 6855,
       "high_usd_m": 10527,
-      "tech_overlays": ["passive_house_standard", "modular_construction", "district_heating_upgrade"]
+      "tech_overlays": [
+        "passive_house_standard",
+        "modular_construction",
+        "district_heating_upgrade"
+      ]
     }
   },
   "financing_structures": {
@@ -101,7 +105,9 @@
         "applicable": false,
         "providers": []
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -122,7 +128,9 @@
         "applicable": false,
         "providers": []
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -143,7 +151,9 @@
         "applicable": false,
         "providers": []
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "Pipeline-only asset while occupied; financing structures documented for post-liberation planning; IFI participation contingent on territorial control and de-occupation verification",
       "comparable_projects": []
     }
@@ -152,7 +162,7 @@
     "applies": true,
     "commissioning_year": 2035,
     "construction_period_years": 5,
-    "coupon_pct": 5.0,
+    "coupon_pct": 5,
     "dscr": 1.25,
     "rationale": "Largest-scale occupied residential asset; pipeline-only; Trust availability-payment contingent on liberation and de-occupation verification",
     "supportable_debt_usd_m": 1354.5,

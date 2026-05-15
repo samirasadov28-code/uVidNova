@@ -4,7 +4,7 @@
  * Strategy: cache-first for static assets; network-first for data files.
  */
 
-const CACHE_VERSION = 'uvidnova-v15';
+const CACHE_VERSION = 'uvidnova-v16';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const DATA_CACHE    = `${CACHE_VERSION}-data`;
 
@@ -13,6 +13,7 @@ const STATIC_ASSETS = [
   '/index.html',
   '/asset.html',
   '/about.html',
+  '/trust.html',
   '/finance.html',
   '/css/app.css',
   '/css/vendor/leaflet.css',
@@ -21,6 +22,7 @@ const STATIC_ASSETS = [
   '/js/asset-view.js',
   '/js/finance-page.js',
   '/js/finance-wizard.js',
+  '/js/trust-page.js',
   '/js/cost-calculator.js',
   '/js/filters.js',
   '/js/data-loader.js',
@@ -73,8 +75,8 @@ self.addEventListener('fetch', event => {
   if (request.method !== 'GET') return;
   if (url.pathname.startsWith('/.netlify/') || url.pathname.startsWith('/api/')) return;
 
-  // OpenStreetMap tiles: network-first with 5 s timeout, fallback to cache
-  if (url.hostname.endsWith('.tile.openstreetmap.org')) {
+  // CartoDB Positron tiles: network-first with 5 s timeout, fallback to cache
+  if (url.hostname.endsWith('.basemaps.cartocdn.com')) {
     event.respondWith(
       Promise.race([
         fetch(request).then(response => {

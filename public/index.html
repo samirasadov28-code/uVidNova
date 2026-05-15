@@ -34,13 +34,27 @@
     }
   </script>
 
-  <!-- Preconnect to tile server for faster first map load -->
-  <link rel="preconnect" href="https://a.tile.openstreetmap.org">
+  <!-- Preconnect to CartoDB tile CDN for faster first map load -->
+  <link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin>
+  <link rel="dns-prefetch" href="https://b.basemaps.cartocdn.com">
+  <link rel="dns-prefetch" href="https://c.basemaps.cartocdn.com">
+  <link rel="dns-prefetch" href="https://d.basemaps.cartocdn.com">
 
   <!-- Leaflet CSS — served locally for reliability -->
   <link rel="stylesheet" href="/css/vendor/leaflet.css">
 
   <link rel="stylesheet" href="/css/app.css">
+
+  <!-- Critical above-the-fold styles inlined to prevent FOUC before app.css loads -->
+  <style>
+    :root{--header-h:56px;--colour-navy:#1a3a6b;--colour-gold:#f0a500;--font-sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    [hidden]{display:none!important}
+    body{font-family:var(--font-sans);background:#0a1628;color:#fff;min-height:100vh;overflow:hidden}
+    .site-header{background:var(--colour-navy);position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--header-h);display:flex;align-items:center;padding:0 1rem}
+    #map{position:fixed;top:var(--header-h);left:0;right:0;bottom:0}
+    .map-layout{position:fixed;top:var(--header-h);left:0;right:0;bottom:0;overflow:hidden}
+  </style>
 </head>
 <body>
 
@@ -536,8 +550,8 @@
   </div>
 
   <!-- ── Leaflet JS ─────────────────────────────────────────────────────────── -->
-  <!-- Leaflet JS — served locally for reliability -->
-  <script src="/js/vendor/leaflet.js"></script>
+  <!-- Leaflet JS — defer so it doesn't block HTML parsing; executes before app.js module -->
+  <script src="/js/vendor/leaflet.js" defer></script>
 
   <script type="module" src="/js/app.js"></script>
   <script>

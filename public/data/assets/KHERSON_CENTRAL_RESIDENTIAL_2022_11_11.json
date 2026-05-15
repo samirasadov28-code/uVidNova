@@ -74,9 +74,13 @@
     },
     "build_back_better": {
       "low_usd_m": 501,
-      "central_usd_m": 1269,
+      "central_usd_m": 1268,
       "high_usd_m": 2036,
-      "tech_overlays": ["passive_house_standard", "modular_construction", "flood_resilience"]
+      "tech_overlays": [
+        "passive_house_standard",
+        "modular_construction",
+        "flood_resilience"
+      ]
     }
   },
   "financing_structures": {
@@ -96,9 +100,13 @@
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -117,9 +125,13 @@
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -138,9 +150,13 @@
       "private_equity_pct": 3,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "EU Housing Pillar reconstruction track; post-liberation Kherson carries re-damage risk (3 re-damage events) requiring MIGA wrap; flood-resilient design standard applicable post-Kakhovka",
       "comparable_projects": []
     }
@@ -149,10 +165,10 @@
     "applies": true,
     "commissioning_year": 2030,
     "construction_period_years": 3,
-    "coupon_pct": 5.0,
+    "coupon_pct": 5,
     "dscr": 1.25,
     "rationale": "District-scale housing in liberated but contested region; Trust bridges debt-service gap through reconstruction and ramp-up phases",
-    "supportable_debt_usd_m": 249.0,
+    "supportable_debt_usd_m": 249,
     "tenor_years": 20
   },
   "donor_pathway": {

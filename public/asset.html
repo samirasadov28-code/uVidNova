@@ -22,7 +22,8 @@
   <link rel="manifest"         href="/manifest.webmanifest">
   <link rel="icon"             href="/assets/logo_192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/logo_192.png">
-  <link rel="stylesheet"       href="/css/app.css">
+  <link rel="preload" href="/css/app.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/app.css"></noscript>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js').catch(function() {});

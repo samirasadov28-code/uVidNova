@@ -83,6 +83,7 @@ const TRANSLATIONS = {
     'feedback.sent':             'Thank you — your message has been sent.',
     // Chat
     'chat.btn':          'Ask AI',
+    'chat.title':        'uVidNova AI',
     'chat.powered':      'Powered by Groq',
     'chat.welcome':      'Ask me about reconstruction costs, financing structures, or specific assets.',
     'chat.suggestion1':  'What is the Kakhovka HPP baseline cost?',
@@ -173,6 +174,7 @@ const TRANSLATIONS = {
     'feedback.sent':             'Дякуємо — ваше повідомлення надіслано.',
     // Chat
     'chat.btn':          'AI-чат',
+    'chat.title':        'uVidNova ШІ',
     'chat.powered':      'Працює на Groq',
     'chat.welcome':      'Запитайте про витрати на відбудову, структури фінансування або конкретні активи.',
     'chat.suggestion1':  'Яка базова вартість Каховської ГЕС?',

@@ -74,9 +74,13 @@
     },
     "build_back_better": {
       "low_usd_m": 282,
-      "central_usd_m": 862,
+      "central_usd_m": 861,
       "high_usd_m": 1441,
-      "tech_overlays": ["passive_house_standard", "modular_construction", "district_heating_upgrade"]
+      "tech_overlays": [
+        "passive_house_standard",
+        "modular_construction",
+        "district_heating_upgrade"
+      ]
     }
   },
   "financing_structures": {
@@ -96,9 +100,13 @@
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -117,9 +125,13 @@
       "private_equity_pct": 5,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -138,18 +150,24 @@
       "private_equity_pct": 3,
       "pri_wrap": {
         "applicable": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["blending_facility"],
+      "structure_patterns": [
+        "blending_facility"
+      ],
       "rationale": "Extends SALTIVKA_DISTRICT_KHARKIV reconstruction programme; complements existing Saltivka anchor asset; EBRD Green Cities Kharkiv programme applicable; passive-house standard",
-      "comparable_projects": ["SALTIVKA_DISTRICT_KHARKIV_2022_02_24"]
+      "comparable_projects": [
+        "SALTIVKA_DISTRICT_KHARKIV_2022_02_24"
+      ]
     }
   },
   "reparations_layer": {
     "applies": true,
     "commissioning_year": 2029,
     "construction_period_years": 3,
-    "coupon_pct": 5.0,
+    "coupon_pct": 5,
     "dscr": 1.25,
     "rationale": "District-scale housing; rental revenue insufficient at wartime income levels; Trust bridges debt-service gap",
     "supportable_debt_usd_m": 167.9,

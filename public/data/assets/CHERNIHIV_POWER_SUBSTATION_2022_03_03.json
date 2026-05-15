@@ -63,14 +63,17 @@
     },
     "code_compliant": {
       "low_usd_m": 7,
-      "central_usd_m": 23,
+      "central_usd_m": 22,
       "high_usd_m": 38
     },
     "build_back_better": {
       "low_usd_m": 8,
-      "central_usd_m": 29,
+      "central_usd_m": 28,
       "high_usd_m": 49,
-      "tech_overlays": ["smart_grid_automation", "digital_relay_protection"]
+      "tech_overlays": [
+        "smart_grid_automation",
+        "digital_relay_protection"
+      ]
     }
   },
   "financing_structures": {
@@ -91,9 +94,13 @@
       "pri_wrap": {
         "applicable": true,
         "required": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["a_b_loan"],
+      "structure_patterns": [
+        "a_b_loan"
+      ],
       "comparable_projects": []
     },
     "code_compliant": {
@@ -113,9 +120,14 @@
       "pri_wrap": {
         "applicable": true,
         "required": true,
-        "providers": ["MIGA_WAR"]
+        "providers": [
+          "MIGA_WAR"
+        ]
       },
-      "structure_patterns": ["a_b_loan", "blending_facility"],
+      "structure_patterns": [
+        "a_b_loan",
+        "blending_facility"
+      ],
       "comparable_projects": []
     },
     "build_back_better": {
@@ -135,11 +147,19 @@
       "pri_wrap": {
         "applicable": true,
         "required": true,
-        "providers": ["MIGA_WAR", "EU_FACILITY_FIRST_LOSS"]
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
       },
-      "structure_patterns": ["a_b_loan", "blending_facility"],
+      "structure_patterns": [
+        "a_b_loan",
+        "blending_facility"
+      ],
       "rationale": "EU Facility energy-security grant; EBRD Energy Resilience Fund; Chernihiv oblast is liberated and grid restoration is a priority; smart-grid upgrade qualifies for EU energy conditionality",
-      "comparable_projects": ["UKRENERGO_PIVNICHNA_SUBSTATION_2024_03_22"]
+      "comparable_projects": [
+        "UKRENERGO_PIVNICHNA_SUBSTATION_2024_03_22"
+      ]
     }
   },
   "reparations_layer": {
