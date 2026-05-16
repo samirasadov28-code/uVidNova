@@ -250,16 +250,18 @@ function renderCostPaths(a) {
 }
 
 const TRANCHE_META = [
-  { key: 'grant_pct',           label: 'Grant (Pillar I)',        css: 'grant',           group: 'concessional' },
-  { key: 'era_pct',             label: 'ERA / Frozen Assets',     css: 'era',             group: 'concessional' },
-  { key: 'first_loss_pct',      label: 'First-loss / Guarantee',  css: 'first-loss',      group: 'concessional' },
-  { key: 'concessional_pct',    label: 'Concessional IFI Debt',   css: 'concessional',    group: 'concessional' },
-  { key: 'senior_ifi_pct',      label: 'Senior IFI (near-mkt)',   css: 'senior-ifi',      group: 'market' },
-  { key: 'dfi_equity_pct',      label: 'DFI Equity / Quasi-eq.',  css: 'dfi-equity',      group: 'market' },
-  { key: 'public_equity_pct',   label: 'Public / Municipal Eq.',  css: 'public-equity',   group: 'public' },
-  { key: 'diaspora_pct',        label: 'Diaspora / Patriotic Bd', css: 'diaspora',        group: 'market' },
-  { key: 'commercial_debt_pct', label: 'Commercial Senior Debt',  css: 'commercial-debt', group: 'market' },
-  { key: 'private_equity_pct',  label: 'Private Equity / Infra',  css: 'private-equity',  group: 'market' }
+  { key: 'grant_pct',                label: 'Grant (Pillar I)',          css: 'grant',            group: 'concessional' },
+  { key: 'era_pct',                  label: 'ERA / Frozen Assets',       css: 'era',              group: 'concessional' },
+  { key: 'first_loss_pct',           label: 'First-loss / Guarantee',    css: 'first-loss',       group: 'concessional' },
+  { key: 'concessional_pct',         label: 'Concessional IFI Debt',     css: 'concessional',     group: 'concessional' },
+  { key: 'senior_ifi_pct',           label: 'Senior IFI (near-mkt)',     css: 'senior-ifi',       group: 'market' },
+  { key: 'eca_pct',                  label: 'ECA-Covered Debt',          css: 'eca',              group: 'market' },
+  { key: 'dfi_equity_pct',           label: 'DFI Equity / Quasi-eq.',    css: 'dfi-equity',       group: 'market' },
+  { key: 'public_equity_pct',        label: 'Public / Municipal Eq.',    css: 'public-equity',    group: 'public' },
+  { key: 'diaspora_pct',             label: 'Diaspora / Patriotic Bd',   css: 'diaspora',         group: 'market' },
+  { key: 'commercial_bank_debt_pct', label: 'Commercial Bank Debt',      css: 'commercial-debt',  group: 'market' },
+  { key: 'institutional_debt_pct',   label: 'Institutional Debt',        css: 'institutional',    group: 'market' },
+  { key: 'private_equity_pct',       label: 'Private Equity / Infra',    css: 'private-equity',   group: 'market' }
 ];
 
 const PRI_PROVIDER_LABELS = {
@@ -495,7 +497,7 @@ function renderMeta(a) {
 
 // ── Main render ────────────────────────────────────────────────────────────────
 
-function renderAsset(asset) {
+async function renderAsset(asset) {
   const record = document.getElementById('assetRecord');
   if (!record) return;
 

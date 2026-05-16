@@ -555,7 +555,9 @@ body.asset-page { display: flex; flex-direction: column; }
 .stack-seg.dfi-equity     { background: var(--colour-dfi-equity); }
 .stack-seg.public-equity  { background: var(--colour-pub-equity); }
 .stack-seg.diaspora       { background: var(--colour-diaspora); }
+.stack-seg.eca            { background: #6c5ce7; }
 .stack-seg.commercial-debt{ background: var(--colour-commercial); }
+.stack-seg.institutional  { background: #a29bfe; }
 .stack-seg.private-equity { background: var(--colour-private); }
 .financing-rationale { font-size: 0.8rem; color: var(--colour-text-muted); margin-top: 0.5rem; line-height: 1.4; }
 .comparable-refs { font-size: 0.75rem; color: var(--colour-text-muted); margin-top: 0.35rem; }
@@ -579,7 +581,9 @@ body.asset-page { display: flex; flex-direction: column; }
 .tranche-dot.dfi-equity     { background: var(--colour-dfi-equity); }
 .tranche-dot.public-equity  { background: var(--colour-pub-equity); }
 .tranche-dot.diaspora       { background: var(--colour-diaspora); }
+.tranche-dot.eca            { background: #6c5ce7; }
 .tranche-dot.commercial-debt{ background: var(--colour-commercial); }
+.tranche-dot.institutional  { background: #a29bfe; }
 .tranche-dot.private-equity { background: var(--colour-private); }
 .tranche-note { font-size: 0.75rem; color: var(--colour-text-muted); margin-top: 0.35rem; line-height: 1.45; }
 .pri-note strong, .structure-note strong { color: var(--colour-navy); }
