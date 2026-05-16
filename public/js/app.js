@@ -242,10 +242,17 @@ function showOblastPanel(info, featureName) {
   const capital   = lang === 'uk' ? (info?.capital_uk ?? '—') : (info?.capital_en ?? '—');
   const famous    = lang === 'uk' ? (info?.famous_for_uk ?? '') : (info?.famous_for_en ?? '');
   const recon     = lang === 'uk' ? (info?.reconstruction_uk ?? '') : (info?.reconstruction_en ?? '');
-  const closeLabel = t('oblast.close');
+  const resources = lang === 'uk' ? (info?.resources_uk ?? '') : (info?.resources_en ?? '');
+  const revenue   = lang === 'uk' ? (info?.revenue_drivers_uk ?? '') : (info?.revenue_drivers_en ?? '');
+  const history   = lang === 'uk' ? (info?.history_uk ?? '') : (info?.history_en ?? '');
+
+  const closeLabel   = t('oblast.close');
   const capitalLabel = t('oblast.capital');
   const famousLabel  = t('oblast.famous_for');
   const reconLabel   = t('oblast.reconstruction');
+  const resLabel     = t('oblast.resources');
+  const revLabel     = t('oblast.revenue_drivers');
+  const histLabel    = t('oblast.history');
 
   const wikiArticle = info?.wiki_article;
   const imgHTML = wikiArticle
@@ -262,6 +269,21 @@ function showOblastPanel(info, featureName) {
         ${famous ? `<dt>${famousLabel}</dt><dd>${famous}</dd>` : ''}
         ${recon  ? `<dt>${reconLabel}</dt><dd>${recon}</dd>` : ''}
       </dl>
+      ${resources ? `
+      <div class="oblast-panel-section">
+        <h3 class="oblast-panel-sh">${resLabel}</h3>
+        <p class="oblast-panel-p">${resources}</p>
+      </div>` : ''}
+      ${revenue ? `
+      <div class="oblast-panel-section">
+        <h3 class="oblast-panel-sh">${revLabel}</h3>
+        <p class="oblast-panel-p">${revenue}</p>
+      </div>` : ''}
+      ${history ? `
+      <div class="oblast-panel-section oblast-panel-history">
+        <h3 class="oblast-panel-sh">${histLabel}</h3>
+        <p class="oblast-panel-p">${history}</p>
+      </div>` : ''}
     </div>`;
 
   panel.hidden = false;

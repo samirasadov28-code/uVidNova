@@ -91,10 +91,13 @@ const TRANSLATIONS = {
     'chat.suggestion3':  'What is the build-back-better path?',
     'chat.placeholder':  'Ask about reconstruction financing…',
     // Oblast panel
-    'oblast.close':      'Close',
-    'oblast.capital':    'Capital',
-    'oblast.famous_for': 'Known for',
-    'oblast.reconstruction': 'Reconstruction focus',
+    'oblast.close':           'Close',
+    'oblast.capital':         'Capital',
+    'oblast.famous_for':      'Known for',
+    'oblast.reconstruction':  'Reconstruction focus',
+    'oblast.resources':       'Key resources',
+    'oblast.revenue_drivers': 'Revenue drivers',
+    'oblast.history':         'History',
   },
   uk: {
     // Name etymology
@@ -182,10 +185,13 @@ const TRANSLATIONS = {
     'chat.suggestion3':  'Що таке сценарій «відбудови краще, ніж було»?',
     'chat.placeholder':  'Запитайте про фінансування відбудови…',
     // Oblast panel
-    'oblast.close':          'Закрити',
-    'oblast.capital':        'Обласний центр',
-    'oblast.famous_for':     'Відомо завдяки',
-    'oblast.reconstruction': 'Пріоритети відбудови',
+    'oblast.close':           'Закрити',
+    'oblast.capital':         'Обласний центр',
+    'oblast.famous_for':      'Відомо завдяки',
+    'oblast.reconstruction':  'Пріоритети відбудови',
+    'oblast.resources':       'Ключові ресурси',
+    'oblast.revenue_drivers': 'Рушії доходів',
+    'oblast.history':         'Історія',
   }
 };
 

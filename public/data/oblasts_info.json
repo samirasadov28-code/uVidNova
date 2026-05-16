@@ -24,7 +24,13 @@
         "readiness": 8
       },
       "capital_lat": 49.4328,
-      "capital_lon": 32.0597
+      "capital_lon": 32.0597,
+      "resources_en": "Fertile chernozem agriculture (grain, sugar beet, sunflower), Kremenchuk Reservoir hydropower, Cherkasy Azot chemical plant, and food-processing industry.",
+      "resources_uk": "Родючі чорноземи (зернові, цукровий буряк, соняшник), Кременчуцька ГЕС, хімічний завод «Азот», харчова промисловість.",
+      "history_en": "Cherkasy Oblast traces its roots to the medieval Rus principalities and the heart of Cossack Hetmanate culture, with Chyhyryn serving as the Hetmanate capital in the 17th century. The region is the birthplace of Taras Shevchenko, Ukraine's national poet. It has not been occupied but has sustained missile strikes on energy infrastructure since 2022.",
+      "history_uk": "Черкаська область бере початок від середньовічних руських князівств і є серцем козацької гетьманщини — Чигирин був її столицею у XVII ст. Регіон є батьківщиною Тараса Шевченка. Область не окупована, але зазнає ракетних ударів по енергетичній інфраструктурі з 2022 р.",
+      "revenue_drivers_en": "Agro-industrial exports (sunflower oil, grain, sugar), chemical production, energy generation (hydropower), and food manufacturing.",
+      "revenue_drivers_uk": "Агропромисловий експорт (соняшникова олія, зерно, цукор), хімічне виробництво, гідроенергетика, харчова промисловість."
     },
     {
       "name_en": "Chernihiv Oblast",
@@ -50,7 +56,13 @@
         "readiness": 6
       },
       "capital_lat": 51.4939,
-      "capital_lon": 31.2947
+      "capital_lon": 31.2947,
+      "resources_en": "Timber and forestry, agricultural land (grain, potatoes), food processing, light manufacturing, and strategic logistics corridors to Kyiv and Belarus border.",
+      "resources_uk": "Лісова промисловість, сільськогосподарські угіддя (зернові, картопля), харчова переробка, легка промисловість та стратегічні логістичні коридори до Києва і кордону з Білоруссю.",
+      "history_en": "One of the oldest cities in Kyivan Rus, Chernihiv was a major princely centre with 12th-century cathedrals that survive today. The oblast borders Russia and Belarus and was heavily shelled and besieged in February–March 2022 during the failed Russian advance on Kyiv. Russian forces withdrew by April 2022; significant civilian and infrastructure damage remains under active reconstruction.",
+      "history_uk": "Чернігів — одне з найдавніших міст Київської Русі, великий князівський центр зі соборами XII ст. Область межує з Росією та Білоруссю і зазнала жорстокого обстрілу та облоги у лютому–березні 2022 р. під час невдалого наступу на Київ. Після відходу російських військ у квітні 2022 р. тривають масштабні відновлювальні роботи.",
+      "revenue_drivers_en": "Timber and wood products, grain and oilseed farming, light manufacturing, and cross-border logistics (historically with Belarus).",
+      "revenue_drivers_uk": "Деревина та деревообробка, зерно й олійні культури, легка промисловість, транскордонна логістика."
     },
     {
       "name_en": "Chernivtsi Oblast",
@@ -76,7 +88,13 @@
         "readiness": 10
       },
       "capital_lat": 48.2916,
-      "capital_lon": 25.9358
+      "capital_lon": 25.9358,
+      "resources_en": "Forestry, agriculture (tobacco, fruits), tourism (Bukovyna heritage), cross-border trade with Romania and Moldova, and textile manufacturing.",
+      "resources_uk": "Лісова промисловість, сільське господарство (тютюн, фрукти), туризм (буковинська спадщина), транскордонна торгівля з Румунією та Молдовою, текстильна промисловість.",
+      "history_en": "Known historically as Bukovina, the region passed through Moldavian, Ottoman, Habsburg Austrian, and Romanian control before unification with Ukraine in 1940. Chernivtsi (Czernowitz) was a major cultural centre of the Habsburg era with a celebrated multicultural literary tradition. The oblast has not been occupied or directly attacked in the 2022–2025 war.",
+      "history_uk": "Відома як Буковина, область змінювала Молдавське, Османське, Австро-Угорське та Румунське управління до возз'єднання з Україною у 1940 р. Чернівці (Czernowitz) були видатним культурним центром Австро-Угорщини з багатою мультикультурною літературною традицією. Область не зазнала окупації чи прямих атак під час війни 2022–2025 рр.",
+      "revenue_drivers_en": "Agricultural exports, timber, IT outsourcing services, tourism (Carpathian foothills), and cross-border trade with Romania and Moldova.",
+      "revenue_drivers_uk": "Аграрний експорт, деревообробка, ІТ-аутсорсинг, туризм (Карпати), транскордонна торгівля з Румунією та Молдовою."
     },
     {
       "name_en": "Crimea (Temporarily Occupied)",
@@ -102,7 +120,13 @@
         "readiness": 1
       },
       "capital_lat": 44.9521,
-      "capital_lon": 34.1024
+      "capital_lon": 34.1024,
+      "resources_en": "Tourism (Black Sea coast, mountain resorts), agriculture (grapes, wine, lavender, grain), naval infrastructure (Sevastopol — Russia's Black Sea Fleet base), shipbuilding (Kerch), and offshore natural gas in the Black Sea shelf.",
+      "resources_uk": "Туризм (чорноморське узбережжя, гірські курорти), сільське господарство (виноград, вино, лаванда, зернові), флотська інфраструктура (Севастополь), суднобудування (Керч), шельфовий газ у Чорному морі.",
+      "history_en": "Crimea was part of the Greek, Scythian, Byzantine, Tatar Khanate, and Ottoman spheres before Russian annexation in 1783. The Crimean Tatars, the peninsula's indigenous population, were deported by Stalin in 1944 and only partially returned after 1989. Russia illegally annexed Crimea in March 2014 following the Euromaidan revolution; the peninsula remains under occupation and is recognised as Ukrainian territory by the vast majority of the international community.",
+      "history_uk": "Крим входив до грецької, скіфської, візантійської, татарської та османської сфер до анексії Росією у 1783 р. Кримські татари — корінний народ — були депортовані Сталіним у 1944 р. і частково повернулись після 1989 р. Росія незаконно анексувала Крим у березні 2014 р.; він залишається окупованим і визнається українською територією переважною більшістю міжнародної спільноти.",
+      "revenue_drivers_en": "Tourism (pre-occupation), agriculture (grain, wine), fishing, naval base economy, and strategic transit through Kerch Strait.",
+      "revenue_drivers_uk": "Туризм (до окупації), сільське господарство (зерно, виноробство), рибальство, економіка військово-морської бази, транзит через Керченську протоку."
     },
     {
       "name_en": "Dnipropetrovsk Oblast",
@@ -128,7 +152,13 @@
         "readiness": 6
       },
       "capital_lat": 48.4647,
-      "capital_lon": 35.0462
+      "capital_lon": 35.0462,
+      "resources_en": "Iron ore (Kryvyi Rih basin — one of world's largest), steel and metallurgy, Yuzhmash aerospace and missile manufacturing, uranium processing, and Dnipro River logistics.",
+      "resources_uk": "Залізна руда (Криворізький басейн — один з найбільших у світі), чорна металургія, ракетно-космічне виробництво «Південмаш», переробка урану, логістика Дніпра.",
+      "history_en": "Founded as Yekaterinoslav in 1776 on the Dnipro, the city grew into one of the Soviet Union's leading industrial centres for steel and defence manufacturing. The oblast hosts Kryvyi Rih — the hometown of President Zelensky — and the world's longest open-pit iron ore mine. Since 2022 the region has sustained repeated missile and drone strikes on industrial and energy targets while remaining a critical rear-area logistics hub.",
+      "history_uk": "Заснований як Катеринослав у 1776 р. на Дніпрі, він виріс в один з провідних промислових центрів СРСР із виробництва сталі та ВПК. Область включає Кривий Ріг — місто президента Зеленського — і найдовший у світі залізорудний кар'єр. З 2022 р. регіон зазнає ракетних та дронових ударів по промисловості й енергетиці, залишаючись ключовим тиловим логістичним вузлом.",
+      "revenue_drivers_en": "Steel and iron exports, rocket and aerospace manufacturing, grain and oilseed agriculture, chemical production, and financial services in Dnipro city.",
+      "revenue_drivers_uk": "Експорт сталі та чавуну, ракетно-космічне виробництво, зерно й олійні культури, хімічна промисловість, фінансові послуги в Дніпрі."
     },
     {
       "name_en": "Donetsk Oblast",
@@ -154,7 +184,13 @@
         "readiness": 1
       },
       "capital_lat": 48.7315,
-      "capital_lon": 37.5673
+      "capital_lon": 37.5673,
+      "resources_en": "Historically: coal mining (Donbas basin), steel (Azovstal, Ilyich), chemicals, and heavy machinery; currently the most heavily contested industrial region in Ukraine.",
+      "resources_uk": "Історично: вугледобування (Донецький басейн), металургія (Азовсталь, Ілліча), хімія, важке машинобудування; нині — найбільш уражений війною промисловий регіон України.",
+      "history_en": "The Donbas industrial region developed rapidly in the late 19th century through coal and steel investment, becoming a cornerstone of Soviet heavy industry. War broke out in April 2014 after Russian-backed separatists declared the 'Donetsk People's Republic'; frontline conflict continued until Russia's full-scale invasion in February 2022. As of 2025 roughly 60% of the oblast is under Russian occupation with intense active combat ongoing across the remainder.",
+      "history_uk": "Промисловий Донбас стрімко розвинувся наприкінці XIX ст. завдяки вугільним та сталеливарним інвестиціям. Війна розпочалася у квітні 2014 р. після проголошення підтримуваними Росією сепаратистами «ДНР». Після повномасштабного вторгнення у лютому 2022 р. близько 60% області перебуває під окупацією, активні бойові дії тривають на решті території.",
+      "revenue_drivers_en": "Coal mining, coke and steel production, chemical manufacturing, and port logistics (Mariupol pre-occupation). All sectors severely disrupted by war.",
+      "revenue_drivers_uk": "Видобуток вугілля, коксохімія й металургія, хімічна промисловість, портова логістика (Маріуполь до окупації). Усі сектори критично порушені внаслідок війни."
     },
     {
       "name_en": "Ivano-Frankivsk Oblast",
@@ -180,7 +216,13 @@
         "readiness": 9
       },
       "capital_lat": 48.9226,
-      "capital_lon": 24.7111
+      "capital_lon": 24.7111,
+      "resources_en": "Oil and gas (Prykarpattia fields), potash and salt deposits, forestry (Carpathian timber), tourism (ski resorts, Carpathian National Park), and chemical fertiliser production.",
+      "resources_uk": "Нафта і газ (Прикарпатські родовища), калійна сіль, лісова промисловість (карпатська деревина), туризм (гірськолижні курорти, Карпатський НПП), виробництво хімічних добрив.",
+      "history_en": "Historically part of Galicia under Polish and Austro-Hungarian rule, the region became Ukrainian Soviet territory in 1939 and was a centre of the Ukrainian insurgent movement (UPA) in the 1940s. Ivano-Frankivsk (formerly Stanyslaviv) developed as a cultural and educational hub for western Ukraine. The oblast has not been occupied in 2022–2025 and has received substantial internally displaced population from eastern regions.",
+      "history_uk": "Історично частина Галичини під польським та австро-угорським управлінням, у 1939 р. увійшла до складу УРСР. Регіон був центром Української повстанської армії (УПА) у 1940-х рр. Івано-Франківськ (колишній Станіслав) розвинувся як культурно-освітній центр Заходу України. З 2022 р. область прийняла значну кількість внутрішньо переміщених осіб.",
+      "revenue_drivers_en": "Oil and gas production, chemical and potash industry, timber exports, tourism (Bukovel, Carpathian resorts), and agricultural produce.",
+      "revenue_drivers_uk": "Нафтогазовидобуток, хімічна і калійна промисловість, деревина, туризм (Буковель, карпатські курорти), аграрна продукція."
     },
     {
       "name_en": "Kharkiv Oblast",
@@ -206,7 +248,13 @@
         "readiness": 5
       },
       "capital_lat": 49.9935,
-      "capital_lon": 36.2304
+      "capital_lon": 36.2304,
+      "resources_en": "Major engineering and defence manufacturing hub (Morozov tank design bureau, Turbоatom), Ukraine's second-largest IT cluster, large university ecosystem (Karazin), and fertile agricultural land.",
+      "resources_uk": "Великий центр машинобудування та ВПК (ХКБМ Морозова, Турбоатом), другий за розміром ІТ-кластер України, університетська екосистема (КНУ ім. Каразіна), родючі сільськогосподарські угіддя.",
+      "history_en": "Founded in 1654, Kharkiv served as the capital of Soviet Ukraine from 1919 to 1934 and remains the country's second-largest city and a leading industrial and academic centre. The oblast borders Russia and suffered devastating missile and artillery strikes from February 2022; parts of the northern oblast were briefly occupied and subsequently liberated in September 2022. Saltivka, Ukraine's largest residential district, sustained some of the heaviest urban damage of the war.",
+      "history_uk": "Заснований у 1654 р., Харків був столицею Радянської України з 1919 по 1934 рр. і залишається другим за чисельністю містом та провідним промисловим і науковим центром. Область межує з Росією і зазнала руйнівних ударів з лютого 2022 р. Частини північної області були тимчасово окуповані та звільнені у вересні 2022 р. Салтівка — найбільший житловий масив України — зазнала найважчих збитків серед міських кварталів.",
+      "revenue_drivers_en": "Defence and machine-building exports, IT services, scientific research services, grain and oilseed farming, and logistics hub revenues.",
+      "revenue_drivers_uk": "Оборонний і машинобудівний експорт, ІТ-послуги, наукові дослідження, зернівництво й олійні культури, доходи логістичного хабу."
     },
     {
       "name_en": "Kherson Oblast",
@@ -232,7 +280,13 @@
         "readiness": 3
       },
       "capital_lat": 46.6355,
-      "capital_lon": 32.6169
+      "capital_lon": 32.6169,
+      "resources_en": "Agriculture (grain, vegetables, melon, fruit orchards on fertile Dnipro delta soils), Black Sea and Dnipro River fisheries, irrigation infrastructure, and touristic coastline.",
+      "resources_uk": "Сільське господарство (зернові, овочі, кавуни, фрукти на родючих землях дельти Дніпра), рибальство у Чорному морі та на Дніпрі, зрошувальна інфраструктура, туристичне узбережжя.",
+      "history_en": "Kherson was founded in 1778 by Grigory Potemkin as a Black Sea naval fortress and grain port, becoming strategically vital for Dnipro–Black Sea trade. Russia occupied the city and right-bank oblast in February 2022; Ukrainian forces liberated Kherson city in November 2022. The destruction of Kakhovka HPP dam in June 2023 caused catastrophic flooding of the lower Dnipro basin, displacing tens of thousands and severely damaging agricultural land.",
+      "history_uk": "Херсон заснований у 1778 р. Григорієм Потьомкіним як чорноморська морська фортеця і зерновий порт. Росія окупувала місто та правобережну область у лютому 2022 р.; Херсон звільнено у листопаді 2022 р. Підрив Каховської ГЕС у червні 2023 р. спричинив катастрофічну повінь у пониззі Дніпра, спустошивши сільськогосподарські угіддя.",
+      "revenue_drivers_en": "Agriculture (grain, produce, melons), port logistics, fisheries, and irrigation-dependent horticulture (severely damaged by Kakhovka dam destruction).",
+      "revenue_drivers_uk": "Сільське господарство (зерно, овочі, дині), портова логістика, рибальство, зрошуване садівництво та городництво (критично постраждали від знищення Каховської ГЕС)."
     },
     {
       "name_en": "Khmelnytskyi Oblast",
@@ -258,7 +312,13 @@
         "readiness": 7
       },
       "capital_lat": 49.4229,
-      "capital_lon": 26.9958
+      "capital_lon": 26.9958,
+      "resources_en": "Khmelnytska Nuclear Power Plant (4 reactors — major EU grid export potential), agriculture (grain, sunflower, beet), food processing, and light industry.",
+      "resources_uk": "Хмельницька АЕС (4 енергоблоки — значний потенціал експорту в ЄС), сільське господарство (зернові, соняшник, буряк), харчова переробка, легка промисловість.",
+      "history_en": "The Podillia region, historically contested between Poland and the Ottoman Empire, contains Kamianets-Podilskyi — one of Ukraine's best-preserved medieval fortress cities. The oblast takes its name from Bohdan Khmelnytsky, the Cossack Hetman who led the 1648 uprising against Polish rule. It has not been occupied in the current war and hosts one of Ukraine's most important nuclear power assets.",
+      "history_uk": "Подільський регіон, що споконвіку оскаржувався Польщею та Ottoman Empire, включає Кам'янець-Подільський — одне з найкраще збережених середньовічних фортечних міст України. Назву область отримала від Богдана Хмельницького — гетьмана, який очолив повстання 1648 р. В умовах нинішньої війни не окупована; має один з найважливіших ядерних енергетичних об'єктів.",
+      "revenue_drivers_en": "Nuclear power generation, grain and sugar beet farming, food processing, uranium ore supply, and transit logistics.",
+      "revenue_drivers_uk": "Атомна генерація, зернівництво й цукрово-буряковий комплекс, харчова промисловість, уранова руда, транзитна логістика."
     },
     {
       "name_en": "Kirovohrad Oblast",
@@ -284,7 +344,13 @@
         "readiness": 7
       },
       "capital_lat": 48.5079,
-      "capital_lon": 32.2623
+      "capital_lon": 32.2623,
+      "resources_en": "Uranium mining (Zhovti Vody — Ukraine's only uranium ore producer supplying nuclear fuel cycle), fertile black-soil agriculture (grain, sunflower), and mineral processing.",
+      "resources_uk": "Видобуток урану (Жовті Води — єдиний в Україні виробник уранової руди для ядерного циклу), родючі чорноземи (зернові, соняшник), гірничо-збагачувальне виробництво.",
+      "history_en": "The region, known historically as Yelisavetgrad and later Kirovograd, is the geographic centre of Ukraine and was a major grain-trade hub in the 19th century. It was renamed Kropyvnytskyi in 2016 in honour of the Ukrainian playwright and theatre pioneer Marko Kropyvnytskyi. The oblast has not been occupied in the current war; uranium mining at Zhovti Vody remains strategically significant for Ukraine's nuclear energy sector.",
+      "history_uk": "Регіон, відомий як Єлисаветград, а пізніше Кіровоград, є географічним центром України та великим торговим вузлом зернового ринку XIX ст. У 2016 р. перейменований на Кропивницький на честь драматурга Марка Кропивницького. Область не окупована; видобуток урану у Жовтих Водах має стратегічне значення для ядерної галузі.",
+      "revenue_drivers_en": "Uranium mining and ore supply, grain and oilseed exports, food processing, and light manufacturing.",
+      "revenue_drivers_uk": "Урановидобуток і постачання руди, зерновий і олійний експорт, харчова переробка, легка промисловість."
     },
     {
       "name_en": "Kyiv City",
@@ -310,7 +376,13 @@
         "readiness": 8
       },
       "capital_lat": 50.4501,
-      "capital_lon": 30.5234
+      "capital_lon": 30.5234,
+      "resources_en": "Financial centre, government and diplomatic hub, major IT and professional-services cluster, international transport gateway, and cultural and educational capital of Ukraine.",
+      "resources_uk": "Фінансовий центр, столиця уряду та дипломатії, великий ІТ та сервісний кластер, міжнародні транспортні ворота, культурна та освітня столиця України.",
+      "history_en": "Kyiv, founded in the 5th century on the Dnipro, was the capital of Kyivan Rus and the cultural and ecclesiastical heart of eastern Slavic civilisation. The city survived Nazi occupation (1941–1943) and returned to prominence as the Soviet Ukrainian capital and, after 1991, as the capital of independent Ukraine. Russia's February 2022 assault on Kyiv was repelled within weeks; the city has since sustained regular missile and drone attacks on infrastructure, yet continues to function as Ukraine's political and economic centre.",
+      "history_uk": "Київ, заснований у V ст. на Дніпрі, був столицею Київської Русі і духовним серцем східнослов'янської цивілізації. Місто пережило нацистську окупацію (1941–1943 рр.) і відродилось як радянська українська столиця, а після 1991 р. — як столиця незалежної України. Наступ Росії на Київ у лютому 2022 р. відбито протягом тижнів; відтоді місто регулярно зазнає ракетних і дронових ударів по інфраструктурі.",
+      "revenue_drivers_en": "Financial services, IT and software exports, government and international institution spending, retail and real estate, and national media and culture.",
+      "revenue_drivers_uk": "Фінансові послуги, ІТ-експорт, державні та міжнародні витрати, роздрібна торгівля й нерухомість, медіа та культура."
     },
     {
       "name_en": "Kyiv Oblast",
@@ -336,7 +408,13 @@
         "readiness": 7
       },
       "capital_lat": 50.3521,
-      "capital_lon": 30.9172
+      "capital_lon": 30.9172,
+      "resources_en": "Strategic logistics hub (road and rail gateway to all of Ukraine), food processing, aerospace (Antonov), construction materials, and fertile agricultural land around the Dnipro.",
+      "resources_uk": "Стратегічний логістичний вузол (автомобільно-залізничний gateway всієї України), харчова переробка, авіабудування (Антонов), будівельні матеріали, родючі землі навколо Дніпра.",
+      "history_en": "Kyiv Oblast surrounds the capital and was the scene of intense combat in the opening weeks of Russia's full-scale invasion, with the districts of Bucha, Irpin, Hostomel and Borodyanka briefly occupied from late February to early April 2022. The liberation of these towns revealed mass atrocities against civilians and became a defining moment in international recognition of war crimes. Reconstruction of residential, civic, and infrastructure assets in the liberated areas is among the most advanced in Ukraine.",
+      "history_uk": "Київська область оточує столицю і стала ареною інтенсивних боїв у перші тижні повномасштабного вторгнення — Буча, Ірпінь, Гостомель і Бородянка були тимчасово окуповані з кінця лютого до початку квітня 2022 р. Звільнення цих міст розкрило масові воєнні злочини проти цивільних і стало переломним моментом для міжнародного визнання злочинів Росії. Відбудова в звільнених районах є найбільш просунутою в Україні.",
+      "revenue_drivers_en": "Suburban residential economy, food processing and agribusiness, logistics (proximity to capital), light industry, and Chornobyl-zone scientific tourism.",
+      "revenue_drivers_uk": "Приміська житлова економіка, харчова промисловість та агробізнес, логістика, легка промисловість, науковий туризм у зоні Чорнобиля."
     },
     {
       "name_en": "Luhansk Oblast",
@@ -362,7 +440,13 @@
         "readiness": 1
       },
       "capital_lat": 48.9485,
-      "capital_lon": 38.4915
+      "capital_lon": 38.4915,
+      "resources_en": "Historically: coal (Donbas basin eastern fields), chemical industry (Sievierodonetsk Azot — Europe's largest ammonia plant, destroyed), and glass manufacturing; most capacity now occupied or destroyed.",
+      "resources_uk": "Історично: вугілля (східні поля Донбасу), хімічна промисловість (Сєвєродонецький «Азот» — найбільший в Європі аміачний завод, зруйнований), скловиробництво; більшість потужностей окупована або знищена.",
+      "history_en": "Luhansk developed as a Russian Empire ironworks colony in the late 18th century, growing into a major Soviet industrial centre. Separatist conflict backed by Russia began in April 2014 with the declaration of the 'Luhansk People's Republic'; roughly 30% of the oblast was already occupied before 2022. After Russia's full-scale invasion, the oblast fell almost entirely under occupation by mid-2022; it remains the most thoroughly occupied Ukrainian region as of 2025.",
+      "history_uk": "Луганськ розвинувся як колонія залізоробного виробництва Російської імперії наприкінці XVIII ст. У квітні 2014 р. розпочався сепаратистський конфлікт із проголошенням «ЛНР», і близько 30% області вже перебувало під окупацією до 2022 р. Після повномасштабного вторгнення більша частина області була захоплена до середини 2022 р.; станом на 2025 р. це найбільш окупований регіон України.",
+      "revenue_drivers_en": "Coal mining, chemical manufacturing, machine-building (pre-occupation), and agricultural production in western parts. All economic activity severely disrupted under occupation.",
+      "revenue_drivers_uk": "Вугледобуток, хімічна промисловість, машинобудування (до окупації), аграрне виробництво на заході. Вся економічна діяльність критично порушена."
     },
     {
       "name_en": "Lviv Oblast",
@@ -388,7 +472,13 @@
         "readiness": 9
       },
       "capital_lat": 49.8397,
-      "capital_lon": 24.0297
+      "capital_lon": 24.0297,
+      "resources_en": "Ukraine's largest IT outsourcing cluster (50 000+ professionals), tourism (UNESCO-listed Lviv old city), natural gas fields (Lviv–Volhynian basin), forestry, and cross-border EU trade gateway.",
+      "resources_uk": "Найбільший в Україні ІТ-аутсорсинговий кластер (50 000+ фахівців), туризм (Старе місто зі статусом ЮНЕСКО), родовища природного газу (Львівсько-Волинський басейн), лісова промисловість, транскордонний ЄС-хаб.",
+      "history_en": "Founded in the 13th century by King Danylo of Galicia–Volhynia, Lviv (Lemberg in German, Lwów in Polish) served successively as a Galician, Polish, Habsburg, and Soviet administrative centre before becoming a symbol of western Ukrainian identity. The city's medieval old town is a UNESCO World Heritage Site. During 2022–2025, Lviv has functioned as Ukraine's logistical rear and reception hub for millions of displaced persons, absorbing the heaviest internal migration pressure of any Ukrainian city.",
+      "history_uk": "Заснований у XIII ст. галицько-волинським князем Данилом, Львів (Лемберг, Lwów) послідовно був галицьким, польським, австро-угорським та радянським адміністративним центром, ставши символом Заходу України. Середньовічне старе місто внесено до списку ЮНЕСКО. У 2022–2025 рр. Львів виконував роль логістичного тилу та приймального хабу для мільйонів переселенців.",
+      "revenue_drivers_en": "IT exports, tourism and hospitality, cross-border logistics and trade with EU (Poland, Slovakia), light manufacturing, and agricultural and food exports.",
+      "revenue_drivers_uk": "ІТ-експорт, туризм і гостинність, логістика і торгівля з ЄС (Польща, Словаччина), легка промисловість, харчовий і аграрний експорт."
     },
     {
       "name_en": "Mykolaiv Oblast",
@@ -414,7 +504,13 @@
         "readiness": 5
       },
       "capital_lat": 46.975,
-      "capital_lon": 31.9946
+      "capital_lon": 31.9946,
+      "resources_en": "Historically Europe's largest shipbuilding cluster (Chornomorsk, Zaliv yards — now severely damaged), agriculture (grain, sunflower, rapeseed), and Dnipro–Buh estuary logistics.",
+      "resources_uk": "Історично найбільший суднобудівний кластер Європи (заводи «Чорноморський», «Залив» — зараз значно пошкоджені), сільське господарство (зернові, соняшник, ріпак), логістика гирла Дніпро–Бугу.",
+      "history_en": "Mykolaiv was founded in 1789 as Russia's primary Black Sea shipbuilding centre and supplied the Imperial Navy for over a century. The city came under intense Russian artillery bombardment from March 2022 and sustained severe civilian and infrastructure damage before Ukrainian counter-offensives stabilised the front south of the city. Mykolaiv's water supply was deliberately disrupted by shelling, requiring emergency humanitarian intervention.",
+      "history_uk": "Миколаїв заснований у 1789 р. як головний центр суднобудування Росії на Чорному морі. З березня 2022 р. місто перебувало під інтенсивним артилерійським обстрілом і зазнало значних руйнувань до стабілізації фронту на південь від міста. Водопостачання Миколаєва було навмисне порушено обстрілами.",
+      "revenue_drivers_en": "Grain exports through port terminals, shipbuilding and ship repair, agricultural production (grain, oilseeds), and fish processing.",
+      "revenue_drivers_uk": "Зерновий експорт через порт, суднобудування та судноремонт, аграрне виробництво (зерно, олійні), рибопереробна галузь."
     },
     {
       "name_en": "Odesa Oblast",
@@ -440,7 +536,13 @@
         "readiness": 6
       },
       "capital_lat": 46.4825,
-      "capital_lon": 30.7233
+      "capital_lon": 30.7233,
+      "resources_en": "Ukraine's primary sea-trade gateway (Port of Odesa — major grain export terminal), tourism (Black Sea coast, Bessarabia wine region), agriculture, food processing, and chemicals.",
+      "resources_uk": "Головна морська торговельна брама України (Одеський порт — великий зерновий термінал), туризм (Чорноморське узбережжя, виноробна Бессарабія), сільське господарство, харчова переробка, хімічна промисловість.",
+      "history_en": "Founded in 1794 on the site of an Ottoman fortress, Odesa became one of the Russian Empire's wealthiest and most cosmopolitan cities — a major Black Sea port synonymous with grain trade, Jewish cultural life, and revolutionary history. Russia has conducted repeated missile and drone strikes on Odesa's port infrastructure and historic city centre since 2022, including strikes on the UNESCO-listed grain terminal area and the Transfiguration Cathedral. The port remained partly operational under the UN Black Sea Grain Initiative until Russia withdrew in 2023.",
+      "history_uk": "Заснована у 1794 р. на місці османської фортеці, Одеса стала одним із найбагатших і найкосмополітичніших міст Російської імперії — великим чорноморським портом, відомим хлібною торгівлею та єврейською культурою. З 2022 р. Росія завдає ракетних і дронових ударів по портовій інфраструктурі та історичному центру міста. Порт частково функціонував у рамках «Зернової ініціативи ООН» до виходу Росії у 2023 р.",
+      "revenue_drivers_en": "Port logistics and grain exports, tourism and hospitality, IT services, wine and agri-food production, and international trade transit.",
+      "revenue_drivers_uk": "Портова логістика й зерновий експорт, туризм і гостинність, ІТ-послуги, виноробство й харчова промисловість, міжнародний транзит."
     },
     {
       "name_en": "Poltava Oblast",
@@ -466,7 +568,13 @@
         "readiness": 6
       },
       "capital_lat": 49.5883,
-      "capital_lon": 34.5514
+      "capital_lon": 34.5514,
+      "resources_en": "Oil and gas production (Poltava gas fields — Ukraine's largest onshore gas reserves), agriculture (grain, sunflower), food processing, aerospace components, and mineral resources (kaolin).",
+      "resources_uk": "Видобуток нафти і газу (Полтавські родовища — найбільші наземні газові запаси України), сільське господарство (зернові, соняшник), харчова переробка, аерокосмічні компоненти, корисні копалини (каолін).",
+      "history_en": "The Battle of Poltava (1709), in which Peter the Great defeated Charles XII of Sweden and the Cossack Hetman Mazepa, was a turning point that consolidated Russian Imperial control over Ukraine. The oblast served as an agricultural and oil-industry heartland throughout the 20th century. It has not been occupied in the current war but has sustained missile strikes on gas infrastructure and industrial targets.",
+      "history_uk": "Полтавська битва (1709 р.), у якій Петро I переміг Карла XII та гетьмана Мазепу, стала поворотним моментом, що закріпив контроль Росії над Україною. У ХХ ст. область слугувала аграрним та нафтопромисловим осередком. Нині не окупована, але зазнає ракетних ударів по газовій інфраструктурі.",
+      "revenue_drivers_en": "Natural gas and oil production, grain and oilseed farming, food and tobacco processing, and chemical industry (Poltava Chemical Plant).",
+      "revenue_drivers_uk": "Видобуток природного газу та нафти, зернівництво й олійні культури, харчова та тютюнова переробка, хімічна промисловість."
     },
     {
       "name_en": "Rivne Oblast",
@@ -492,7 +600,13 @@
         "readiness": 9
       },
       "capital_lat": 50.6197,
-      "capital_lon": 26.2516
+      "capital_lon": 26.2516,
+      "resources_en": "Rivnenska Nuclear Power Plant (4 reactors — major electricity exporter), amber mining (one of world's largest deposits), forestry, agriculture, and Pripyat wetland ecosystem.",
+      "resources_uk": "Рівненська АЕС (4 енергоблоки — великий експортер електроенергії), видобуток бурштину (одне з найбільших родовищ у світі), лісова промисловість, сільське господарство, поліські болотні екосистеми.",
+      "history_en": "Part of the historic Volhynia region, Rivne Oblast was under Polish sovereignty (as Równe) between the wars and became Soviet Ukrainian territory in 1939. The region was a major theatre of conflict between German, Soviet, and Ukrainian partisan forces during World War II. It has not been occupied or directly attacked in the 2022–2025 war; its nuclear plant provides significant electricity export capacity to the EU.",
+      "history_uk": "Частина Волинського регіону, Рівненська область між двома світовими війнами перебувала під польським суверенітетом і ввійшла до УРСР у 1939 р. Регіон був важливим театром воєнних дій між нацистськими, радянськими та українськими партизанами у Другій світовій. У 2022–2025 рр. не окупована і не зазнає прямих ударів; атомна станція забезпечує значний експорт електроенергії до ЄС.",
+      "revenue_drivers_en": "Nuclear power generation, amber mining and jewellery exports, timber and wood products, agriculture (grain, flax, vegetables), and transit logistics.",
+      "revenue_drivers_uk": "Атомна генерація, бурштиновидобуток та ювелірний експорт, деревина й лісоматеріали, аграрна продукція (зерно, льон, овочі), транзитна логістика."
     },
     {
       "name_en": "Sumy Oblast",
@@ -518,7 +632,13 @@
         "readiness": 4
       },
       "capital_lat": 50.9077,
-      "capital_lon": 34.7981
+      "capital_lon": 34.7981,
+      "resources_en": "Chemical industry (Sumykhimprom — phosphate fertilisers), agricultural machinery manufacturing, grain and sunflower agriculture, natural gas transit infrastructure, and cross-border trade with Russia.",
+      "resources_uk": "Хімічна промисловість (Сумихімпром — фосфатні добрива), виробництво сільськогосподарської техніки, зернові та соняшник, транзитна газова інфраструктура, транскордонна торгівля.",
+      "history_en": "Sumy Oblast borders Russia and was briefly occupied in February–March 2022 during Russia's opening offensive toward Kyiv. After Russian withdrawal, the oblast has been subject to ongoing cross-border artillery and drone attacks. The chemical plant Sumykhimprom was struck, releasing hazardous material and requiring emergency response.",
+      "history_uk": "Сумська область межує з Росією і була тимчасово окупована у лютому–березні 2022 р. під час початкового наступу на Київ. Після відходу росіян область зазнає систематичних транскордонних артилерійських і дронових ударів. Завод Сумихімпром був уражений з витоком небезпечних речовин.",
+      "revenue_drivers_en": "Sugar beet and grain farming, chemical production, machine-building industry, and energy (gas transit infrastructure historically).",
+      "revenue_drivers_uk": "Цукровий буряк і зерно, хімічна промисловість, машинобудування, газотранзитна інфраструктура (до 2022 р.)."
     },
     {
       "name_en": "Ternopil Oblast",
@@ -544,7 +664,13 @@
         "readiness": 9
       },
       "capital_lat": 49.5535,
-      "capital_lon": 25.5948
+      "capital_lon": 25.5948,
+      "resources_en": "Agriculture (grain, sugar beet, rapeseed — Podillia black-soil belt), sugar-processing industry, food manufacturing, and tourism (Kamianets-Podilskyi fortress, rural heritage tourism).",
+      "resources_uk": "Сільське господарство (зернові, цукровий буряк, ріпак — подільські чорноземи), цукропереробна промисловість, харчове виробництво, туризм (Кам'янець-Подільський, сільський агротуризм).",
+      "history_en": "Ternopil Oblast, historically the eastern fringe of Galicia, was contested between Poland and the Ukrainian SSR before Soviet annexation in 1939 and was a centre of the Ukrainian Greek Catholic Church. The region was a stronghold of the Organisation of Ukrainian Nationalists (OUN) during the 1940s. It has not been occupied in the current war and has received significant internally displaced populations from eastern Ukraine.",
+      "history_uk": "Тернопільська область, що є східним краєм Галичини, оспорювалась між Польщею та УРСР до радянської анексії у 1939 р. Регіон був осередком УГКЦ та ОУН у 1940-х рр. Нині не окупована і прийняла значну кількість переміщених осіб зі Сходу.",
+      "revenue_drivers_en": "Agricultural and food exports (sugar, grain, vegetable oils), light manufacturing, and logistics serving western Ukraine.",
+      "revenue_drivers_uk": "Аграрний і харчовий експорт (цукор, зерно, олія), легка промисловість, логістика Західної України."
     },
     {
       "name_en": "Vinnytsia Oblast",
@@ -570,7 +696,13 @@
         "readiness": 7
       },
       "capital_lat": 49.2331,
-      "capital_lon": 28.4682
+      "capital_lon": 28.4682,
+      "resources_en": "Agriculture (beet sugar — Ukraine's sugar bowl, sunflower, grain), food processing (Roshen confectionery flagship), pharmaceuticals, and renewable energy (solar and wind farms).",
+      "resources_uk": "Сільське господарство (цукровий буряк — «цукровий куш» України, соняшник, зернові), харчова переробка (Roshen), фармацевтика, відновлювана енергетика (сонячні та вітрові ферми).",
+      "history_en": "Vinnytsia Oblast lies in the heart of Podillia and was a major battleground during the Polish–Soviet War and World War II, including the site of a Nazi extermination camp and the Vinnytsia massacre (1937–1938 NKVD killings). President Zelensky's family roots are in the region. In July 2022 Vinnytsia city sustained a devastating ballistic missile strike on a concert hall, killing 23 civilians, demonstrating that deep-rear cities are not immune from attack.",
+      "history_uk": "Вінницька область лежить у серці Поділля і була ареною запеклих боїв у Польсько-радянській та Другій світовій війнах. У липні 2022 р. Вінниця зазнала нищівного ракетного удару по концертному залу, загинули 23 цивільних — підтвердження вразливості навіть глибокого тилу.",
+      "revenue_drivers_en": "Sugar and food industry exports, IT services, grain and oilseed farming, and light manufacturing.",
+      "revenue_drivers_uk": "Цукрова та харчова промисловість, ІТ-послуги, зерно й олійні культури, легка промисловість."
     },
     {
       "name_en": "Volyn Oblast",
@@ -596,7 +728,13 @@
         "readiness": 9
       },
       "capital_lat": 50.7592,
-      "capital_lon": 25.3421
+      "capital_lon": 25.3421,
+      "resources_en": "Amber mining (global amber capital — largest European deposits in Polissia), forestry, agriculture, coal (Volynskyi coal basin — limited production), and cross-border trade with Poland.",
+      "resources_uk": "Видобуток бурштину (світова бурштинова столиця — найбільші в Європі поліські поклади), лісова промисловість, сільське господарство, вугілля (Волинський вугільний басейн), транскордонна торгівля з Польщею.",
+      "history_en": "Volyn Oblast occupies the historic Volhynia region, which was part of the Grand Duchy of Lithuania, the Polish-Lithuanian Commonwealth, and the Russian Empire before becoming Soviet Ukrainian in 1939. The region was devastated by the Volhynia massacres of 1943–1945 — a fraught episode in Polish–Ukrainian history. It has not been occupied in the current war and serves as a NATO-border corridor for military and humanitarian supply.",
+      "history_uk": "Волинська область займає історичну Волинь, що входила до ВКЛ, Речі Посполитої та Російської імперії до входу до УРСР у 1939 р. Регіон спустошили Волинська різанина 1943–1945 рр. Нині не окупований і служить коридором НАТО для військових та гуманітарних поставок.",
+      "revenue_drivers_en": "Cross-border logistics (Poland border), timber and wood products, agriculture (grain, potatoes), and light manufacturing.",
+      "revenue_drivers_uk": "Транскордонна логістика (польський кордон), деревина та лісопродукти, аграрне виробництво, легка промисловість."
     },
     {
       "name_en": "Zakarpattia Oblast",
@@ -622,7 +760,13 @@
         "readiness": 10
       },
       "capital_lat": 48.6208,
-      "capital_lon": 22.2879
+      "capital_lon": 22.2879,
+      "resources_en": "Tourism (Carpathian ski resorts, Mukachevo castle, spa resorts), forestry, cross-border EU trade (Poland, Slovakia, Hungary, Romania borders), wine production (Transcarpathian varietals), and mineral water springs.",
+      "resources_uk": "Туризм (карпатські курорти, замок Мукачево, бальнеологічні курорти), лісова промисловість, транскордонна торгівля з ЄС, виноробство (закарпатські сорти), мінеральні джерела.",
+      "history_en": "Transcarpathia was part of the Hungarian Kingdom for nearly a millennium before passing to Czechoslovakia (1918), Hungary (1939), and the Soviet Union (1944), becoming Ukrainian in 1991. The region has a unique multiethnic character — Ukrainian, Hungarian, Romani, Slovak, and Rusyn communities co-exist. It has not been occupied in the current war and serves as a key EU-border transit and humanitarian corridor.",
+      "history_uk": "Закарпаття майже тисячу років входило до складу Угорського королівства, перейшовши до Чехословаччини (1918), Угорщини (1939) і СРСР (1944), ставши українським у 1991 р. Регіон має унікальний поліетнічний характер. Нині не окупований і є ключовим транзитним та гуманітарним коридором до ЄС.",
+      "revenue_drivers_en": "Transit logistics (EU-Ukraine rail gauge junction), tourism and health resorts, timber exports, mineral water, and cross-border trade with four EU member states.",
+      "revenue_drivers_uk": "Транзитна логістика (залізничний вузол ЄС-Україна), туризм та бальнеологія, деревний експорт, мінеральні води, транскордонна торгівля з чотирма країнами ЄС."
     },
     {
       "name_en": "Zaporizhzhia Oblast",
@@ -648,7 +792,13 @@
         "readiness": 2
       },
       "capital_lat": 47.8388,
-      "capital_lon": 35.1396
+      "capital_lon": 35.1396,
+      "resources_en": "Zaporizka Nuclear Power Plant (6 reactors — Europe's largest NPP, under Russian occupation), Zaporizhstal and other steel mills, aluminium smelting (Zaporozhye Aluminium), and Dnipro River hydropower (DniproHES dam).",
+      "resources_uk": "Запорізька АЕС (6 блоків — найбільша АЕС Європи, під окупацією), металургійні заводи Запоріжсталь, алюмінієве виробництво, ДніпроГЕС.",
+      "history_en": "Zaporizhzhia (the name means 'beyond the rapids') was the heartland of the Zaporozhian Sich — the Cossack warrior republic that was the precursor to Ukrainian statehood consciousness. The DniproHES dam, completed in 1932, was one of the great Soviet industrialisation projects. Since 2022, the oblast has been partially occupied; the Zaporizka NPP — Europe's largest nuclear plant — has been under Russian military control since March 2022, raising serious nuclear safety concerns.",
+      "history_uk": "Запоріжжя («за порогами») — серце Запорозької Січі, козацької республіки — попередниці держави. ДніпроГЕС, завершений у 1932 р., — один із символів радянської індустріалізації. З 2022 р. область частково окупована; Запорізька АЕС — найбільша в Європі — перебуває під російським військовим контролем з березня 2022 р.",
+      "revenue_drivers_en": "Nuclear and hydroelectric power generation, steel and manganese exports, grain and oilseed farming. Southern portions under occupation with disrupted economic activity.",
+      "revenue_drivers_uk": "Ядерна та гідроелектрогенерація, металургійний і марганцевий експорт, зернівництво й олійні культури. Економічна діяльність на окупованому півдні порушена."
     },
     {
       "name_en": "Zhytomyr Oblast",
@@ -674,7 +824,13 @@
         "readiness": 7
       },
       "capital_lat": 50.2547,
-      "capital_lon": 28.6587
+      "capital_lon": 28.6587,
+      "resources_en": "Forestry (Polissia pine forests), granite quarrying (major construction aggregate source), beryllium and rare-earth mineral deposits (strategic for defence and electronics), agriculture, and food processing.",
+      "resources_uk": "Лісова промисловість (поліські соснові ліси), видобуток граніту (велике джерело будівельного щебеню), родовища берилію та рідкісноземельних елементів, сільське господарство, харчова переробка.",
+      "history_en": "Zhytomyr Oblast lies in the historic Polissia wetland belt and was a major centre of Jewish and Polish settlement in the 19th century before devastating pogroms and the Holocaust reduced these communities. The oblast borders Belarus and was briefly crossed by Russian forces in February 2022 during the Kyiv offensive. It has since returned to Ukrainian control with occasional missile strikes on logistics infrastructure.",
+      "history_uk": "Житомирська область лежить у поліській болотній зоні та у XIX ст. була великим центром єврейського і польського населення до погромів і Голокосту. Область межує з Білоруссю і в лютому 2022 р. була частково перетнута російськими військами під час наступу на Київ. Відтоді повернута під контроль України із поодинокими ударами по логістиці.",
+      "revenue_drivers_en": "Granite and stone exports, timber and wood products, agriculture (grain, flax, potatoes), and defence manufacturing (Korosten missile plant).",
+      "revenue_drivers_uk": "Гранітний і кам'яний експорт, деревина і деревопродукти, аграрне виробництво, оборонне виробництво (Коростенський ракетний завод)."
     }
   ]
 }

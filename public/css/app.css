@@ -2079,6 +2079,35 @@ details[open] .agg-summary::before { content: '▼ '; }
   margin: 0;
 }
 
+.oblast-panel-section {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.oblast-panel-sh {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: rgba(201,162,39,0.9);
+  margin: 0 0 0.35rem;
+}
+
+.oblast-panel-p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.oblast-panel-history .oblast-panel-p {
+  font-style: italic;
+  color: rgba(255,255,255,0.72);
+  border-left: 2px solid rgba(201,162,39,0.35);
+  padding-left: 0.6rem;
+}
+
 /* ── Oblast reconstructed panel (Reconstructed view) ────────────────────── */
 .oblast-recon-panel {
   position: absolute;

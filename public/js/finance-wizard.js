@@ -204,8 +204,70 @@ function updateChrome() {
   if (backBtn) backBtn.onclick = goBack;
 }
 
+/** Map asset financing_structure keys to wizard tranche types + default returns */
+const FS_KEY_TO_TRANCHE = {
+  grant_pct:               { type: 'grant',             ret: 0,    tenor: null },
+  era_pct:                 { type: 'reparations',        ret: 0,    tenor: null },
+  first_loss_pct:          { type: 'grant',              ret: 0,    tenor: null },
+  concessional_pct:        { type: 'eu_concessional',   ret: 1.5,  tenor: 20  },
+  senior_ifi_pct:          { type: 'world_bank',         ret: 1.0,  tenor: 25  },
+  eca_pct:                 { type: 'eca_guarantee',      ret: 3.5,  tenor: 10  },
+  dfi_equity_pct:          { type: 'mezzanine',          ret: 8.0,  tenor: null },
+  public_equity_pct:       { type: 'equity',             ret: 0,    tenor: null },
+  diaspora_pct:            { type: 'mezzanine',          ret: 5.0,  tenor: 10  },
+  commercial_bank_debt_pct:{ type: 'senior_debt',        ret: 9.0,  tenor: 10  },
+  institutional_debt_pct:  { type: 'ebrd_concessional',  ret: 2.5,  tenor: 15  },
+  private_equity_pct:      { type: 'equity',             ret: 18.0, tenor: null },
+};
+
+function seedTranchesFromAssets() {
+  const sel = selectedAssets();
+  if (sel.length === 0 || W.scope === 'greenfield') return;
+
+  // Weighted average by cost
+  const totalCost = sel.reduce((s, a) => s + (a.cost_paths?.[W.path]?.central_usd_m ?? 1), 0);
+  const merged = {};
+  for (const a of sel) {
+    const fs = a.financing_structures?.[W.path];
+    if (!fs) continue;
+    const weight = (a.cost_paths?.[W.path]?.central_usd_m ?? 1) / totalCost;
+    for (const [key, map] of Object.entries(FS_KEY_TO_TRANCHE)) {
+      const pct = fs[key] ?? 0;
+      if (pct === 0) continue;
+      const k = map.type;
+      merged[k] = (merged[k] ?? 0) + pct * weight;
+    }
+  }
+
+  // Convert to tranche list, skip zero entries
+  const tranches = [];
+  let id = 1;
+  for (const [type, pct] of Object.entries(merged)) {
+    if (pct < 0.5) continue;
+    const def = FS_KEY_TO_TRANCHE[Object.keys(FS_KEY_TO_TRANCHE).find(k => FS_KEY_TO_TRANCHE[k].type === type)] ?? {};
+    const defType = TRANCHE_DEFS[type] ?? TRANCHE_DEFS.equity;
+    tranches.push({ id: id++, type, pct: Math.round(pct * 10) / 10, ret: def.ret ?? defType.ret, tenor: def.tenor ?? defType.tenor });
+  }
+
+  // Normalise to 100%
+  const sum = tranches.reduce((s, t) => s + t.pct, 0);
+  if (sum > 0 && tranches.length > 0) {
+    const scale = 100 / sum;
+    tranches.forEach(t => { t.pct = Math.round(t.pct * scale * 10) / 10; });
+    // Fix rounding to exactly 100
+    const diff = 100 - tranches.reduce((s, t) => s + t.pct, 0);
+    tranches[0].pct = Math.round((tranches[0].pct + diff) * 10) / 10;
+  }
+
+  if (tranches.length > 0) {
+    W.tranches = tranches;
+    W.nextId = id;
+  }
+}
+
 function goNext() {
   if (!validate()) return;
+  if (W.step === 2 && W.scope !== 'greenfield') seedTranchesFromAssets();
   if (W.step < 4) { W.step++; render(); }
 }
 
@@ -981,13 +1043,6 @@ function step4HTML() {
       </div>
     </div>
 
-    <div class="fw-results-sect fw-growth-placeholder">
-      <h4 class="fw-results-h4">Growth restoration</h4>
-      <p class="fw-growth-note">
-        Pre-war GDP by sector data not yet loaded. Once added to <code>data/sector_gdp_prewar.json</code>,
-        this section will show investment required to restore each sector to its pre-2022 growth trajectory.
-      </p>
-    </div>
   </div>`;
 }
 
