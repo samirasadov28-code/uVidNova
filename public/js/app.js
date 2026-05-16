@@ -115,6 +115,7 @@ let allAssets = [];
 const markerMap = new Map();
 let oblastLayer = null;
 let oblastInfoData = null;
+let capitalLayer  = null;   // capital city markers (Ukraine view)
 let warMode = false;
 let warLayer = null;
 let mapViewMode = 'damaged';
@@ -161,7 +162,10 @@ const OBLAST_INFO_MAP = {
 async function loadOblastInfo() {
   try {
     const res = await fetch('/data/oblasts_info.json');
-    if (res.ok) oblastInfoData = await res.json();
+    if (res.ok) {
+      oblastInfoData = await res.json();
+      renderCapitalMarkers();
+    }
   } catch { /* non-critical */ }
 }
 
@@ -178,6 +182,50 @@ function findOblastInfo(featureName) {
     o.name_en.toLowerCase().startsWith(lower) ||
     o.name_en.toLowerCase().replace(' oblast', '') === lower
   ) ?? null;
+}
+
+// ── Capital city markers (Ukraine view) ──────────────────────────────────────
+
+function renderCapitalMarkers() {
+  if (!map || !oblastInfoData) return;
+  if (capitalLayer) { capitalLayer.remove(); capitalLayer = null; }
+  if (mapViewMode !== 'ukraine') return;
+
+  const oblasts = oblastInfoData.oblasts ?? oblastInfoData;
+  capitalLayer = L.layerGroup();
+
+  oblasts.forEach(o => {
+    if (!o.capital_lat || !o.capital_lon) return;
+    const isOccupied = o.name_en?.includes('Crimea') || o.name_en?.includes('Luhansk');
+    const dotColor   = isOccupied ? '#cc0000' : '#c9a227';
+    const labelClass = isOccupied ? 'capital-label capital-label-occupied' : 'capital-label';
+
+    const icon = L.divIcon({
+      className: '',
+      html: `<div class="capital-dot" style="background:${dotColor}"></div>`,
+      iconSize: [8, 8],
+      iconAnchor: [4, 4],
+    });
+
+    const marker = L.marker([o.capital_lat, o.capital_lon], { icon, interactive: false })
+      .bindTooltip(`<span class="${labelClass}">${o.capital_en ?? o.capital_uk ?? ''}</span>`, {
+        permanent: true,
+        direction: 'top',
+        offset: [0, -6],
+        className: 'capital-tooltip',
+      });
+
+    capitalLayer.addLayer(marker);
+  });
+
+  capitalLayer.addTo(map);
+}
+
+function zoomToOblastFeature(layer) {
+  try {
+    const bounds = layer.getBounds().pad(0.08);
+    map.flyToBounds(bounds, { maxZoom: 9, duration: 0.8, easeLinearity: 0.35 });
+  } catch { /* no bounds */ }
 }
 
 function showOblastPanel(info, featureName) {
@@ -612,7 +660,7 @@ function toggleWarMode() {
   const btn = document.getElementById('warModeBtn');
   if (btn) {
     btn.classList.toggle('war-active', warMode);
-    btn.textContent = warMode ? '🗺 Normal view' : '⚔ War view';
+    btn.textContent = warMode ? '🗺 Hide occupation' : '🔴 Occupied territories';
   }
   const legend = document.getElementById('warLegend');
   if (legend) legend.hidden = !warMode;
@@ -653,8 +701,10 @@ async function addOblastLayer() {
           } else if (mapViewMode === 'reconstructed') {
             handleReconstructedOblastClick(name, this, layer, info);
           } else {
+            // Ukraine / Development view: animate zoom into the oblast
             oblastLayer.resetStyle();
-            this.setStyle({ fillOpacity: 0.92, weight: 2.5, color: '#c9a227' });
+            this.setStyle({ fillColor: '#fff9c4', fillOpacity: 0.70, weight: 2.5, color: '#c9a227' });
+            zoomToOblastFeature(this);
             showOblastPanel(info ?? { name_en: name, name_uk: name }, name);
           }
         });
@@ -727,6 +777,7 @@ function setMapView(view) {
   hint.hidden = !hints[view];
 
   renderMarkers();
+  renderCapitalMarkers();
 }
 
 // ── Marker layer ──────────────────────────────────────────────────────────────

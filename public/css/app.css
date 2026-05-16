@@ -377,6 +377,30 @@ img { max-width: 100%; height: auto; }
 .popup-link { font-size: 0.85rem; font-weight: 600; color: var(--colour-navy-light); display: block; margin-top: 0.25rem; }
 .oblast-tooltip { background: rgba(26,58,107,0.9); color: #fff; border: none; border-radius: var(--radius-sm); font-size: 0.8rem; }
 
+/* ── Capital city markers (Ukraine view) ────────────────────────────────── */
+.capital-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.7);
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+.capital-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.capital-label {
+  font-size: 0.67rem;
+  font-weight: 600;
+  color: #1a3a6b;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.9), 0 0 4px #fff;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.capital-label-occupied {
+  color: #7a0000;
+}
+
 .load-error { padding: 2rem; color: var(--colour-danger); }
 
 /* ── Asset detail page ───────────────────────────────────────────────────────── */
@@ -919,23 +943,32 @@ body.asset-page { display: flex; flex-direction: column; }
   font-family: var(--font-sans);
 }
 
-/* ── War mode toggle button ─────────────────────────────────────────────── */
+/* ── Occupied territories toggle button ─────────────────────────────────── */
 .war-mode-btn {
   margin-left: auto;
-  background: none;
-  border: 1px solid rgba(201,162,39,0.35);
-  color: rgba(255,255,255,0.55);
-  font-size: 0.68rem;
+  background: rgba(180,20,20,0.18);
+  border: 1.5px solid rgba(220,60,60,0.65);
+  color: #ff9999;
+  font-size: 0.72rem;
+  font-weight: 600;
   font-family: var(--font-sans);
-  padding: 0.15rem 0.55rem;
-  border-radius: 4px;
+  padding: 0.22rem 0.7rem;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s;
+  box-shadow: 0 0 6px rgba(220,60,60,0.25);
 }
-.war-mode-btn:hover { background: rgba(201,162,39,0.12); color: rgba(255,255,255,0.85); }
+.war-mode-btn:hover {
+  background: rgba(200,30,30,0.35);
+  border-color: rgba(255,80,80,0.9);
+  color: #ffbbbb;
+  box-shadow: 0 0 10px rgba(220,60,60,0.45);
+}
 .war-mode-btn.war-active {
-  background: rgba(139,26,26,0.5);
-  border-color: #c9a227;
+  background: rgba(150,0,0,0.65);
+  border-color: #ff4444;
   color: #f5c842;
 }
 
