@@ -196,9 +196,8 @@ function renderCapitalMarkers() {
 
   oblasts.forEach(o => {
     if (!o.capital_lat || !o.capital_lon) return;
-    const isOccupied = o.name_en?.includes('Crimea') || o.name_en?.includes('Luhansk');
-    const dotColor   = isOccupied ? '#cc0000' : '#c9a227';
-    const labelClass = isOccupied ? 'capital-label capital-label-occupied' : 'capital-label';
+    const dotColor   = '#c9a227';
+    const labelClass = 'capital-label';
 
     const icon = L.divIcon({
       className: '',
