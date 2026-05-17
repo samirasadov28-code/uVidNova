@@ -663,7 +663,7 @@ function oblastStyle(feature) {
       opacity:     0.6,
       fillColor:   isCrimea ? pal.crimeaFill : pal.fill,
       fillOpacity: 0.25,
-      dashArray:   isCrimea ? '6, 4' : null,
+      dashArray:   null,
     };
   }
 
@@ -672,7 +672,7 @@ function oblastStyle(feature) {
     weight:      1.5,
     fillColor:   isCrimea ? pal.crimeaFill : pal.fill,
     fillOpacity: isCrimea ? 0.55 : 0.68,
-    dashArray:   isCrimea ? '6, 4' : null,
+    dashArray:   null,
   };
 }
 
