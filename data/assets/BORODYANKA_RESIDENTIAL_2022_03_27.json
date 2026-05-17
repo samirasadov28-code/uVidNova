@@ -44,7 +44,7 @@
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "under_reconstruction",
     "rebuildability": "rebuildable",
     "de_risking": [
       "MIGA_WAR",
@@ -183,6 +183,6 @@
     "liberated",
     "large_scale"
   ],
-  "last_reviewed": "2026-05-14",
+  "last_reviewed": "2026-05-17",
   "version": "1.0.0"
 }

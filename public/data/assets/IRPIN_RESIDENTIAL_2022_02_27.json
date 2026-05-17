@@ -38,7 +38,7 @@
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "under_reconstruction",
     "rebuildability": "rebuildable",
     "de_risking": [
       "MIGA_WAR",
@@ -159,7 +159,7 @@
     "applies": true,
     "commissioning_year": 2028,
     "construction_period_years": 2,
-    "coupon_pct": 5,
+    "coupon_pct": 5.0,
     "dscr": 1.25,
     "rationale": "District-scale housing; rental revenue insufficient at wartime income levels; Trust bridges debt-service gap",
     "supportable_debt_usd_m": 86.8,
@@ -176,6 +176,6 @@
     "ground_combat",
     "liberated"
   ],
-  "last_reviewed": "2026-05-14",
+  "last_reviewed": "2026-05-17",
   "version": "1.0.0"
 }

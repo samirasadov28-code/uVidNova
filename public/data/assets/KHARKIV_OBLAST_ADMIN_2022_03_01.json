@@ -37,7 +37,7 @@
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "funded",
     "rebuildability": "rebuildable",
     "de_risking": [
       "EU_FACILITY_FIRST_LOSS",
@@ -146,7 +146,7 @@
     "coupon_pct": 4.5,
     "dscr": 1.2,
     "rationale": "Public administration; no revenue; Trust enables capital-market financing of civic rebuilding",
-    "supportable_debt_usd_m": 23,
+    "supportable_debt_usd_m": 23.0,
     "tenor_years": 20
   },
   "donor_pathway": {
@@ -160,6 +160,6 @@
     "government",
     "missile_strike"
   ],
-  "last_reviewed": "2026-05-14",
+  "last_reviewed": "2026-05-17",
   "version": "1.0.0"
 }

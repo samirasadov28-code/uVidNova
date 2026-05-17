@@ -37,7 +37,7 @@
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "funded",
     "rebuildability": "rebuildable",
     "de_risking": [
       "EU_FACILITY_FIRST_LOSS",
@@ -160,6 +160,6 @@
     "library",
     "air_strike"
   ],
-  "last_reviewed": "2026-05-14",
+  "last_reviewed": "2026-05-17",
   "version": "1.0.0"
 }

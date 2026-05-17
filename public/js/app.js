@@ -116,6 +116,8 @@ const markerMap = new Map();
 let oblastLayer = null;
 let oblastInfoData = null;
 let capitalLayer  = null;   // capital city markers (Ukraine view)
+let cityMarkersLayer = null; // zoomed-in city markers
+let citiesData = null;
 let warMode = false;
 let warLayer = null;
 let mapViewMode = 'damaged';
@@ -299,6 +301,7 @@ function showOblastPanel(info, featureName) {
     panel.classList.remove('visible');
     setTimeout(() => { panel.hidden = true; }, 280);
     if (oblastLayer) oblastLayer.resetStyle();
+    clearCityMarkers();
   });
 
   // Load photo via Wikipedia REST API (avoids guessing Commons filenames)
@@ -629,14 +632,52 @@ function showReconstructedPanel(info, featureName) {
   }
 }
 
+// ── City markers (zoomed view) ───────────────────────────────────────────────
+
+async function loadCities() {
+  if (citiesData) return;
+  try {
+    const res = await fetch('/data/cities.json');
+    if (res.ok) citiesData = await res.json();
+  } catch { /* non-critical */ }
+}
+
+function showCityMarkers(oblastNameEn) {
+  clearCityMarkers();
+  if (!map || !citiesData) return;
+  const cities = citiesData.cities.filter(c => c.oblast_en === oblastNameEn);
+  if (cities.length === 0) return;
+
+  cityMarkersLayer = L.layerGroup();
+  const lang = getLang();
+  cities.forEach(city => {
+    const label = lang === 'uk' ? city.name_uk : city.name_en;
+    const dotSize = city.capital ? 10 : city.pop >= 200000 ? 8 : city.pop >= 50000 ? 7 : 6;
+    const dotColor = city.capital ? '#c9a227' : '#6ab0e4';
+    const icon = L.divIcon({
+      html: `<div class="city-dot" style="width:${dotSize}px;height:${dotSize}px;background:${dotColor}"></div>`,
+      className: '',
+      iconSize: [dotSize, dotSize],
+      iconAnchor: [dotSize / 2, dotSize / 2],
+    });
+    const marker = L.marker([city.lat, city.lon], { icon, interactive: false })
+      .bindTooltip(label, { permanent: true, direction: 'right', offset: [dotSize / 2 + 2, 0], className: 'city-label' });
+    cityMarkersLayer.addLayer(marker);
+  });
+  cityMarkersLayer.addTo(map);
+}
+
+function clearCityMarkers() {
+  if (cityMarkersLayer) { cityMarkersLayer.remove(); cityMarkersLayer = null; }
+}
+
 // ── Oblast boundary layer ─────────────────────────────────────────────────────
 
-// Per-view colour palette  [border, normalFill, crimeaFill, mapBg]
 const VIEW_PALETTE = {
-  ukraine:       { border: '#4a90d9', fill: '#e8f4fd', crimeaFill: '#b8d4ef', bg: '#eaf2fb' },
-  damaged:       { border: '#27ae60', fill: '#b03030', crimeaFill: '#6b0000', bg: '#1a0808' },
-  reconstructed: { border: '#c9a227', fill: '#0d2b5e', crimeaFill: '#060e22', bg: '#040e24' },
-  development:   { border: '#1a7a2e', fill: '#2d7a3a', crimeaFill: '#1a3a1a', bg: '#071208' },
+  ukraine:       { border: '#4a90d9', fill: '#e8f4fd', bg: '#eaf2fb' },
+  damaged:       { border: '#27ae60', fill: '#b03030', bg: '#1a0808' },
+  reconstructed: { border: '#c9a227', fill: '#0d2b5e', bg: '#040e24' },
+  development:   { border: '#1a7a2e', fill: '#2d7a3a', bg: '#071208' },
 };
 
 function oblastStyle(feature) {
@@ -649,38 +690,22 @@ function oblastStyle(feature) {
   // War mode: occupation status — three tiers with distinct colours
   if (warMode) {
     if (isCrimea) {
-      // Occupied since 2014 — deepest tone, solid border
       return { color: '#cc0000', weight: 2.5, fillColor: '#3d0000', fillOpacity: 0.85, dashArray: null };
     }
     if (isOccupied) {
-      // Largely occupied since 2022 (Luhansk) — dark red, solid border
       return { color: '#cc2200', weight: 2, fillColor: '#5a0800', fillOpacity: 0.78, dashArray: null };
     }
     if (isPartial) {
-      // Contested/partially occupied — burnt orange, dashed border signals fluid frontline
       return { color: '#cc4400', weight: 2, fillColor: '#7a1e08', fillOpacity: 0.60, dashArray: '10, 6' };
     }
   }
 
-  // Ukraine view uses light-map styling (lighter fill, thinner border)
+  // Ukraine view uses light-map styling
   if (mapViewMode === 'ukraine') {
-    return {
-      color:       pal.border,
-      weight:      1,
-      opacity:     0.6,
-      fillColor:   isCrimea ? pal.crimeaFill : pal.fill,
-      fillOpacity: 0.25,
-      dashArray:   null,
-    };
+    return { color: pal.border, weight: 1, opacity: 0.6, fillColor: pal.fill, fillOpacity: 0.25, dashArray: null };
   }
 
-  return {
-    color:       pal.border,
-    weight:      1.5,
-    fillColor:   isCrimea ? pal.crimeaFill : pal.fill,
-    fillOpacity: isCrimea ? 0.55 : 0.68,
-    dashArray:   null,
-  };
+  return { color: pal.border, weight: 1.5, fillColor: pal.fill, fillOpacity: 0.68, dashArray: null };
 }
 
 function toggleWarMode() {
@@ -734,6 +759,8 @@ async function addOblastLayer() {
             oblastLayer.resetStyle();
             this.setStyle({ fillColor: '#fff9c4', fillOpacity: 0.70, weight: 2.5, color: '#c9a227' });
             zoomToOblastFeature(this);
+            const oblastNameEn = info?.name_en ?? OBLAST_INFO_MAP[name] ?? name;
+            showCityMarkers(oblastNameEn);
             showOblastPanel(info ?? { name_en: name, name_uk: name }, name);
           }
         });
@@ -764,6 +791,7 @@ function setMapView(view) {
   selectedOblast = null;
   closeOblastWarPanel();
   closeReconstructedPanel();
+  clearCityMarkers();
   if (oblastLayer) oblastLayer.setStyle(oblastStyle);
 
   // Swap map background colour to match view palette
@@ -829,22 +857,10 @@ function renderMarkers() {
     return;
   }
 
-  let candidates = allAssets.filter(matchesFilters);
-
-  // Reconstructed view: only completed assets, shown in green
-  if (mapViewMode === 'reconstructed') {
-    candidates = allAssets.filter(a => a.wartime_status?.lifecycle === 'complete');
-  }
-
-  // With a selected oblast: filter markers to that region
-  if (selectedOblast && (mapViewMode === 'damaged' || mapViewMode === 'reconstructed')) {
-    const fullName = OBLAST_INFO_MAP[selectedOblast] ?? selectedOblast;
-    candidates = candidates.filter(a => {
-      const loc = a.location?.oblast ?? '';
-      return loc === fullName || loc === selectedOblast ||
-             loc.replace(' Oblast', '') === selectedOblast;
-    });
-  }
+  const RECON_LIFECYCLES = new Set(['complete', 'under_reconstruction', 'funded']);
+  let candidates = mapViewMode === 'reconstructed'
+    ? allAssets.filter(a => RECON_LIFECYCLES.has(a.wartime_status?.lifecycle))
+    : allAssets.filter(matchesFilters);
 
   const visible = candidates;
 
@@ -1159,7 +1175,8 @@ async function init() {
     const [assets] = await Promise.all([
       loadAllAssets(),
       addOblastLayer(),
-      loadOblastInfo()
+      loadOblastInfo(),
+      loadCities()
     ]);
 
     allAssets = assets;

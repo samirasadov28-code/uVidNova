@@ -1,0 +1,138 @@
+{
+  "cities": [
+    {"oblast_en":"Cherkasy Oblast","name_en":"Cherkasy","name_uk":"Черкаси","lat":49.4328,"lon":32.0597,"pop":270000,"capital":true},
+    {"oblast_en":"Cherkasy Oblast","name_en":"Uman","name_uk":"Умань","lat":48.7486,"lon":30.2236,"pop":85000},
+    {"oblast_en":"Cherkasy Oblast","name_en":"Smila","name_uk":"Сміла","lat":49.2196,"lon":31.8728,"pop":68000},
+    {"oblast_en":"Cherkasy Oblast","name_en":"Zolotonosha","name_uk":"Золотоноша","lat":49.6737,"lon":32.0365,"pop":27000},
+    {"oblast_en":"Cherkasy Oblast","name_en":"Kaniv","name_uk":"Канів","lat":49.7526,"lon":31.4569,"pop":25000},
+
+    {"oblast_en":"Chernihiv Oblast","name_en":"Chernihiv","name_uk":"Чернігів","lat":51.4939,"lon":31.2947,"pop":280000,"capital":true},
+    {"oblast_en":"Chernihiv Oblast","name_en":"Nizhyn","name_uk":"Ніжин","lat":51.0500,"lon":31.8833,"pop":71000},
+    {"oblast_en":"Chernihiv Oblast","name_en":"Pryluky","name_uk":"Прилуки","lat":50.5953,"lon":32.3923,"pop":55000},
+    {"oblast_en":"Chernihiv Oblast","name_en":"Bakhmachy","name_uk":"Бахмач","lat":51.1767,"lon":32.8067,"pop":17000},
+
+    {"oblast_en":"Chernivtsi Oblast","name_en":"Chernivtsi","name_uk":"Чернівці","lat":48.2921,"lon":25.9358,"pop":265000,"capital":true},
+    {"oblast_en":"Chernivtsi Oblast","name_en":"Khotyn","name_uk":"Хотин","lat":48.5077,"lon":26.4887,"pop":10000},
+    {"oblast_en":"Chernivtsi Oblast","name_en":"Novoselytsia","name_uk":"Новоселиця","lat":48.2199,"lon":26.2712,"pop":10000},
+
+    {"oblast_en":"Crimea (Temporarily Occupied)","name_en":"Simferopol","name_uk":"Сімферополь","lat":44.9521,"lon":34.1024,"pop":340000,"capital":true},
+    {"oblast_en":"Crimea (Temporarily Occupied)","name_en":"Sevastopol","name_uk":"Севастополь","lat":44.6054,"lon":33.5224,"pop":400000},
+    {"oblast_en":"Crimea (Temporarily Occupied)","name_en":"Kerch","name_uk":"Керч","lat":45.3556,"lon":36.4675,"pop":147000},
+    {"oblast_en":"Crimea (Temporarily Occupied)","name_en":"Yevpatoria","name_uk":"Євпаторія","lat":45.1897,"lon":33.3667,"pop":107000},
+    {"oblast_en":"Crimea (Temporarily Occupied)","name_en":"Feodosiya","name_uk":"Феодосія","lat":45.0225,"lon":35.3819,"pop":70000},
+
+    {"oblast_en":"Dnipropetrovsk Oblast","name_en":"Dnipro","name_uk":"Дніпро","lat":48.4647,"lon":35.0462,"pop":990000,"capital":true},
+    {"oblast_en":"Dnipropetrovsk Oblast","name_en":"Kryvyi Rih","name_uk":"Кривий Ріг","lat":47.9077,"lon":33.3942,"pop":620000},
+    {"oblast_en":"Dnipropetrovsk Oblast","name_en":"Kamianske","name_uk":"Кам'янське","lat":48.5069,"lon":34.6228,"pop":230000},
+    {"oblast_en":"Dnipropetrovsk Oblast","name_en":"Nikopol","name_uk":"Нікополь","lat":47.5643,"lon":34.3983,"pop":107000},
+    {"oblast_en":"Dnipropetrovsk Oblast","name_en":"Pavlohrad","name_uk":"Павлоград","lat":48.5267,"lon":35.8661,"pop":105000},
+    {"oblast_en":"Dnipropetrovsk Oblast","name_en":"Marhanets","name_uk":"Марганець","lat":47.6469,"lon":34.6258,"pop":47000},
+
+    {"oblast_en":"Donetsk Oblast","name_en":"Kramatorsk","name_uk":"Краматорськ","lat":48.7239,"lon":37.5985,"pop":160000,"capital":true},
+    {"oblast_en":"Donetsk Oblast","name_en":"Sloviansk","name_uk":"Слов'янськ","lat":48.8581,"lon":37.6244,"pop":110000},
+    {"oblast_en":"Donetsk Oblast","name_en":"Mariupol","name_uk":"Маріуполь","lat":47.0956,"lon":37.5407,"pop":430000},
+    {"oblast_en":"Donetsk Oblast","name_en":"Donetsk","name_uk":"Донецьк","lat":48.0159,"lon":37.8028,"pop":900000},
+    {"oblast_en":"Donetsk Oblast","name_en":"Kostiantynivka","name_uk":"Костянтинівка","lat":48.5283,"lon":37.7118,"pop":80000},
+    {"oblast_en":"Donetsk Oblast","name_en":"Bakhmut","name_uk":"Бахмут","lat":48.5953,"lon":37.9983,"pop":70000},
+
+    {"oblast_en":"Ivano-Frankivsk Oblast","name_en":"Ivano-Frankivsk","name_uk":"Івано-Франківськ","lat":48.9226,"lon":24.7111,"pop":240000,"capital":true},
+    {"oblast_en":"Ivano-Frankivsk Oblast","name_en":"Kolomyia","name_uk":"Коломия","lat":48.5253,"lon":25.0364,"pop":60000},
+    {"oblast_en":"Ivano-Frankivsk Oblast","name_en":"Kalush","name_uk":"Калуш","lat":49.0156,"lon":24.3653,"pop":64000},
+    {"oblast_en":"Ivano-Frankivsk Oblast","name_en":"Nadvirna","name_uk":"Надвірна","lat":48.6264,"lon":24.5703,"pop":22000},
+
+    {"oblast_en":"Kharkiv Oblast","name_en":"Kharkiv","name_uk":"Харків","lat":49.9935,"lon":36.2304,"pop":1400000,"capital":true},
+    {"oblast_en":"Kharkiv Oblast","name_en":"Lozova","name_uk":"Лозова","lat":48.8877,"lon":36.3163,"pop":55000},
+    {"oblast_en":"Kharkiv Oblast","name_en":"Izium","name_uk":"Ізюм","lat":49.2073,"lon":37.2765,"pop":45000},
+    {"oblast_en":"Kharkiv Oblast","name_en":"Kupiansk","name_uk":"Куп'янськ","lat":49.7128,"lon":37.6108,"pop":27000},
+    {"oblast_en":"Kharkiv Oblast","name_en":"Chuhuiv","name_uk":"Чугуїв","lat":49.8381,"lon":36.6858,"pop":32000},
+
+    {"oblast_en":"Kherson Oblast","name_en":"Kherson","name_uk":"Херсон","lat":46.6354,"lon":32.6169,"pop":290000,"capital":true},
+    {"oblast_en":"Kherson Oblast","name_en":"Nova Kakhovka","name_uk":"Нова Каховка","lat":46.7512,"lon":33.3742,"pop":45000},
+    {"oblast_en":"Kherson Oblast","name_en":"Henichesk","name_uk":"Генічеськ","lat":46.1754,"lon":34.8139,"pop":20000},
+
+    {"oblast_en":"Khmelnytskyi Oblast","name_en":"Khmelnytskyi","name_uk":"Хмельницький","lat":49.4220,"lon":26.9971,"pop":270000,"capital":true},
+    {"oblast_en":"Khmelnytskyi Oblast","name_en":"Kamianets-Podilskyi","name_uk":"Кам'янець-Подільський","lat":48.6795,"lon":26.5804,"pop":100000},
+    {"oblast_en":"Khmelnytskyi Oblast","name_en":"Shepetivka","name_uk":"Шепетівка","lat":50.1849,"lon":27.0588,"pop":40000},
+
+    {"oblast_en":"Kirovohrad Oblast","name_en":"Kropyvnytskyi","name_uk":"Кропивницький","lat":48.5107,"lon":32.2597,"pop":225000,"capital":true},
+    {"oblast_en":"Kirovohrad Oblast","name_en":"Oleksandriia","name_uk":"Олександрія","lat":48.6709,"lon":33.1176,"pop":80000},
+    {"oblast_en":"Kirovohrad Oblast","name_en":"Znamyanka","name_uk":"Знам'янка","lat":48.7167,"lon":32.6667,"pop":22000},
+
+    {"oblast_en":"Kyiv City","name_en":"Kyiv","name_uk":"Київ","lat":50.4501,"lon":30.5234,"pop":3000000,"capital":true},
+
+    {"oblast_en":"Kyiv Oblast","name_en":"Bila Tserkva","name_uk":"Біла Церква","lat":49.7993,"lon":30.1161,"pop":220000},
+    {"oblast_en":"Kyiv Oblast","name_en":"Brovary","name_uk":"Бровари","lat":50.5116,"lon":30.7901,"pop":115000},
+    {"oblast_en":"Kyiv Oblast","name_en":"Boryspil","name_uk":"Бориспіль","lat":50.3511,"lon":30.9570,"pop":60000},
+    {"oblast_en":"Kyiv Oblast","name_en":"Irpin","name_uk":"Ірпінь","lat":50.5217,"lon":30.2545,"pop":60000},
+    {"oblast_en":"Kyiv Oblast","name_en":"Vasylkiv","name_uk":"Васильків","lat":50.1769,"lon":30.3147,"pop":37000},
+    {"oblast_en":"Kyiv Oblast","name_en":"Bucha","name_uk":"Буча","lat":50.5491,"lon":30.2313,"pop":37000},
+    {"oblast_en":"Kyiv Oblast","name_en":"Fastiv","name_uk":"Фастів","lat":50.0783,"lon":29.9102,"pop":45000},
+
+    {"oblast_en":"Luhansk Oblast","name_en":"Sievierodonetsk","name_uk":"Сєвєродонецьк","lat":48.9563,"lon":38.4736,"pop":100000,"capital":true},
+    {"oblast_en":"Luhansk Oblast","name_en":"Luhansk","name_uk":"Луганськ","lat":48.5742,"lon":39.3075,"pop":400000},
+    {"oblast_en":"Luhansk Oblast","name_en":"Lysychansk","name_uk":"Лисичанськ","lat":48.9143,"lon":38.4362,"pop":95000},
+    {"oblast_en":"Luhansk Oblast","name_en":"Alchevsk","name_uk":"Алчевськ","lat":48.4683,"lon":38.8000,"pop":109000},
+    {"oblast_en":"Luhansk Oblast","name_en":"Rubizhne","name_uk":"Рубіжне","lat":49.0123,"lon":38.3736,"pop":56000},
+
+    {"oblast_en":"Lviv Oblast","name_en":"Lviv","name_uk":"Львів","lat":49.8397,"lon":24.0297,"pop":760000,"capital":true},
+    {"oblast_en":"Lviv Oblast","name_en":"Drohobych","name_uk":"Дрогобич","lat":49.3499,"lon":23.5032,"pop":73000},
+    {"oblast_en":"Lviv Oblast","name_en":"Stryi","name_uk":"Стрий","lat":49.2545,"lon":23.8537,"pop":58000},
+    {"oblast_en":"Lviv Oblast","name_en":"Boryslav","name_uk":"Борислав","lat":49.2875,"lon":23.4328,"pop":35000},
+    {"oblast_en":"Lviv Oblast","name_en":"Truskavets","name_uk":"Трускавець","lat":49.2798,"lon":23.5073,"pop":31000},
+
+    {"oblast_en":"Mykolaiv Oblast","name_en":"Mykolaiv","name_uk":"Миколаїв","lat":46.9750,"lon":31.9946,"pop":480000,"capital":true},
+    {"oblast_en":"Mykolaiv Oblast","name_en":"Pervomaisk","name_uk":"Первомайськ","lat":48.0429,"lon":30.8558,"pop":63000},
+    {"oblast_en":"Mykolaiv Oblast","name_en":"Voznesensk","name_uk":"Вознесенськ","lat":47.5622,"lon":31.3285,"pop":35000},
+
+    {"oblast_en":"Odesa Oblast","name_en":"Odesa","name_uk":"Одеса","lat":46.4825,"lon":30.7233,"pop":1000000,"capital":true},
+    {"oblast_en":"Odesa Oblast","name_en":"Izmail","name_uk":"Ізмаїл","lat":45.3493,"lon":28.8310,"pop":70000},
+    {"oblast_en":"Odesa Oblast","name_en":"Chornomorsk","name_uk":"Чорноморськ","lat":46.3014,"lon":30.6564,"pop":60000},
+    {"oblast_en":"Odesa Oblast","name_en":"Bilhorod-Dnistrovskyi","name_uk":"Білгород-Дністровський","lat":46.1886,"lon":30.3458,"pop":50000},
+    {"oblast_en":"Odesa Oblast","name_en":"Yuzhne","name_uk":"Южне","lat":46.5724,"lon":31.0973,"pop":24000},
+
+    {"oblast_en":"Poltava Oblast","name_en":"Poltava","name_uk":"Полтава","lat":49.5883,"lon":34.5514,"pop":280000,"capital":true},
+    {"oblast_en":"Poltava Oblast","name_en":"Kremenchuk","name_uk":"Кременчук","lat":49.0675,"lon":33.4197,"pop":220000},
+    {"oblast_en":"Poltava Oblast","name_en":"Lubny","name_uk":"Лубни","lat":50.0175,"lon":33.0100,"pop":45000},
+    {"oblast_en":"Poltava Oblast","name_en":"Myrhorod","name_uk":"Миргород","lat":49.9704,"lon":33.6063,"pop":39000},
+
+    {"oblast_en":"Rivne Oblast","name_en":"Rivne","name_uk":"Рівне","lat":50.6199,"lon":26.2516,"pop":245000,"capital":true},
+    {"oblast_en":"Rivne Oblast","name_en":"Dubno","name_uk":"Дубно","lat":50.4127,"lon":25.7379,"pop":38000},
+    {"oblast_en":"Rivne Oblast","name_en":"Korosten","name_uk":"Корoстень","lat":50.9547,"lon":28.6521,"pop":63000},
+    {"oblast_en":"Rivne Oblast","name_en":"Sarny","name_uk":"Сарни","lat":51.3370,"lon":26.5993,"pop":24000},
+
+    {"oblast_en":"Sumy Oblast","name_en":"Sumy","name_uk":"Суми","lat":50.9077,"lon":34.7981,"pop":262000,"capital":true},
+    {"oblast_en":"Sumy Oblast","name_en":"Konotop","name_uk":"Конотоп","lat":51.2378,"lon":33.2071,"pop":88000},
+    {"oblast_en":"Sumy Oblast","name_en":"Shostka","name_uk":"Шостка","lat":51.8677,"lon":33.4709,"pop":78000},
+    {"oblast_en":"Sumy Oblast","name_en":"Romny","name_uk":"Ромни","lat":50.7419,"lon":33.4785,"pop":40000},
+
+    {"oblast_en":"Ternopil Oblast","name_en":"Ternopil","name_uk":"Тернопіль","lat":49.5535,"lon":25.5948,"pop":220000,"capital":true},
+    {"oblast_en":"Ternopil Oblast","name_en":"Chortkiv","name_uk":"Чортків","lat":49.0155,"lon":25.7977,"pop":27000},
+    {"oblast_en":"Ternopil Oblast","name_en":"Kremenets","name_uk":"Кременець","lat":50.0993,"lon":25.7299,"pop":22000},
+
+    {"oblast_en":"Vinnytsia Oblast","name_en":"Vinnytsia","name_uk":"Вінниця","lat":49.2331,"lon":28.4682,"pop":370000,"capital":true},
+    {"oblast_en":"Vinnytsia Oblast","name_en":"Berdychiv","name_uk":"Бердичів","lat":49.9003,"lon":28.5976,"pop":73000},
+    {"oblast_en":"Vinnytsia Oblast","name_en":"Zhmerynka","name_uk":"Жмеринка","lat":49.0382,"lon":28.1156,"pop":35000},
+    {"oblast_en":"Vinnytsia Oblast","name_en":"Mohyliv-Podilskyi","name_uk":"Могилів-Подільський","lat":48.4499,"lon":27.7985,"pop":30000},
+
+    {"oblast_en":"Volyn Oblast","name_en":"Lutsk","name_uk":"Луцьк","lat":50.7472,"lon":25.3254,"pop":220000,"capital":true},
+    {"oblast_en":"Volyn Oblast","name_en":"Kovel","name_uk":"Ковель","lat":51.2167,"lon":24.7167,"pop":68000},
+    {"oblast_en":"Volyn Oblast","name_en":"Novovolynsk","name_uk":"Нововолинськ","lat":50.7272,"lon":24.1650,"pop":52000},
+    {"oblast_en":"Volyn Oblast","name_en":"Volodymyr","name_uk":"Володимир","lat":50.8477,"lon":24.3193,"pop":37000},
+
+    {"oblast_en":"Zakarpattia Oblast","name_en":"Uzhhorod","name_uk":"Ужгород","lat":48.6239,"lon":22.2947,"pop":115000,"capital":true},
+    {"oblast_en":"Zakarpattia Oblast","name_en":"Mukachevo","name_uk":"Мукачево","lat":48.4411,"lon":22.7152,"pop":86000},
+    {"oblast_en":"Zakarpattia Oblast","name_en":"Khust","name_uk":"Хуст","lat":48.1763,"lon":23.2965,"pop":28000},
+    {"oblast_en":"Zakarpattia Oblast","name_en":"Berehove","name_uk":"Берегово","lat":48.2053,"lon":22.6440,"pop":23000},
+
+    {"oblast_en":"Zaporizhzhia Oblast","name_en":"Zaporizhzhia","name_uk":"Запоріжжя","lat":47.8388,"lon":35.1396,"pop":770000,"capital":true},
+    {"oblast_en":"Zaporizhzhia Oblast","name_en":"Melitopol","name_uk":"Мелітополь","lat":46.8479,"lon":35.3654,"pop":150000},
+    {"oblast_en":"Zaporizhzhia Oblast","name_en":"Berdiansk","name_uk":"Бердянськ","lat":46.7591,"lon":36.7985,"pop":110000},
+    {"oblast_en":"Zaporizhzhia Oblast","name_en":"Enerhodar","name_uk":"Енергодар","lat":47.4983,"lon":34.6572,"pop":55000},
+    {"oblast_en":"Zaporizhzhia Oblast","name_en":"Tokmak","name_uk":"Токмак","lat":47.2578,"lon":35.7170,"pop":30000},
+
+    {"oblast_en":"Zhytomyr Oblast","name_en":"Zhytomyr","name_uk":"Житомир","lat":50.2547,"lon":28.6587,"pop":270000,"capital":true},
+    {"oblast_en":"Zhytomyr Oblast","name_en":"Berdychiv","name_uk":"Бердичів","lat":49.9003,"lon":28.5976,"pop":73000},
+    {"oblast_en":"Zhytomyr Oblast","name_en":"Korosten","name_uk":"Коростень","lat":50.9547,"lon":28.6521,"pop":63000},
+    {"oblast_en":"Zhytomyr Oblast","name_en":"Zvyahel","name_uk":"Звягель","lat":50.6055,"lon":27.6157,"pop":57000}
+  ]
+}
