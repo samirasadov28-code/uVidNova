@@ -224,7 +224,15 @@ function renderCapitalMarkers() {
 function zoomToOblastFeature(layer) {
   try {
     const bounds = layer.getBounds().pad(0.08);
-    map.flyToBounds(bounds, { maxZoom: 9, duration: 0.8, easeLinearity: 0.35 });
+    // Offset right padding to compensate for the 340px info panel that opens on the right
+    const panelWidth = window.innerWidth < 600 ? 0 : 340;
+    map.flyToBounds(bounds, {
+      maxZoom: 9,
+      duration: 0.8,
+      easeLinearity: 0.35,
+      paddingTopLeft:     [0, 0],
+      paddingBottomRight: [panelWidth, 0],
+    });
   } catch { /* no bounds */ }
 }
 
