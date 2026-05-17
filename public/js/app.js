@@ -118,6 +118,7 @@ let oblastInfoData = null;
 let capitalLayer  = null;   // capital city markers (Ukraine view)
 let cityMarkersLayer = null; // zoomed-in city markers
 let citiesData = null;
+let devOppsData = null;
 let warMode = false;
 let warLayer = null;
 let mapViewMode = 'damaged';
@@ -671,6 +672,81 @@ function clearCityMarkers() {
   if (cityMarkersLayer) { cityMarkersLayer.remove(); cityMarkersLayer = null; }
 }
 
+// ── Development view panel ────────────────────────────────────────────────────
+
+async function loadDevOpps() {
+  if (devOppsData) return;
+  try {
+    const res = await fetch('/data/development_opportunities.json');
+    if (res.ok) devOppsData = await res.json();
+  } catch { /* non-critical */ }
+}
+
+const SECTOR_ICONS = {
+  defense_technology:   '🛡',
+  critical_minerals:    '⛏',
+  green_steel:          '♻',
+  renewables:           '⚡',
+  nuclear:              '⚛',
+  it_services:          '💻',
+  modular_construction: '🏗',
+  eu_logistics:         '🚢',
+  carbon_credits:       '🌿',
+  real_estate:          '🏙',
+};
+
+function showDevelopmentPanel(oblastNameEn, info) {
+  // Remove any existing development panel
+  const old = document.getElementById('devOppsPanel');
+  if (old) { old.remove(); }
+
+  const panel = document.createElement('div');
+  panel.id = 'devOppsPanel';
+  panel.className = 'dev-opps-panel';
+  document.body.appendChild(panel);
+
+  const opps = devOppsData?.opportunities?.[oblastNameEn] ?? [];
+  const displayName = info?.name_en ?? oblastNameEn;
+
+  const oppsHTML = opps.length > 0 ? opps.map(o => {
+    const icon = SECTOR_ICONS[o.sector_id] ?? '📊';
+    const sizeFmt = o.size_usd_m_central >= 1000
+      ? `USD ${(o.size_usd_m_central / 1000).toFixed(1)}B`
+      : `USD ${o.size_usd_m_central}M`;
+    return `
+      <div class="dev-opp-card">
+        <div class="dev-opp-header">
+          <span class="dev-opp-icon">${icon}</span>
+          <span class="dev-opp-label">${o.label}</span>
+          <span class="dev-opp-size">${sizeFmt}</span>
+        </div>
+        <p class="dev-opp-rationale">${o.rationale}</p>
+      </div>`;
+  }).join('') : `<p class="dev-opp-empty">Development opportunities for this region are being researched.</p>`;
+
+  panel.innerHTML = `
+    <div class="dev-opps-header">
+      <div>
+        <div class="dev-opps-region">${displayName}</div>
+        <div class="dev-opps-subtitle">Investment opportunities</div>
+      </div>
+      <button class="dev-opps-close" aria-label="Close">×</button>
+    </div>
+    <div class="dev-opps-body">
+      ${oppsHTML}
+    </div>`;
+
+  panel.hidden = false;
+  requestAnimationFrame(() => panel.classList.add('visible'));
+
+  panel.querySelector('.dev-opps-close').addEventListener('click', () => {
+    panel.classList.remove('visible');
+    setTimeout(() => panel.remove(), 280);
+    clearCityMarkers();
+    if (oblastLayer) oblastLayer.resetStyle();
+  });
+}
+
 // ── Oblast boundary layer ─────────────────────────────────────────────────────
 
 const VIEW_PALETTE = {
@@ -754,8 +830,15 @@ async function addOblastLayer() {
             handleDamagedOblastClick(name, this, layer, info);
           } else if (mapViewMode === 'reconstructed') {
             handleReconstructedOblastClick(name, this, layer, info);
+          } else if (mapViewMode === 'development') {
+            oblastLayer.resetStyle();
+            this.setStyle({ fillColor: '#d4edda', fillOpacity: 0.75, weight: 2.5, color: '#27ae60' });
+            zoomToOblastFeature(this);
+            const oblastNameEn = info?.name_en ?? OBLAST_INFO_MAP[name] ?? name;
+            showCityMarkers(oblastNameEn);
+            showDevelopmentPanel(oblastNameEn, info);
           } else {
-            // Ukraine / Development view: animate zoom into the oblast
+            // Ukraine view: animate zoom into the oblast
             oblastLayer.resetStyle();
             this.setStyle({ fillColor: '#fff9c4', fillOpacity: 0.70, weight: 2.5, color: '#c9a227' });
             zoomToOblastFeature(this);
@@ -792,6 +875,8 @@ function setMapView(view) {
   closeOblastWarPanel();
   closeReconstructedPanel();
   clearCityMarkers();
+  const devPanel = document.getElementById('devOppsPanel');
+  if (devPanel) devPanel.remove();
   if (oblastLayer) oblastLayer.setStyle(oblastStyle);
 
   // Swap map background colour to match view palette
@@ -1176,7 +1261,8 @@ async function init() {
       loadAllAssets(),
       addOblastLayer(),
       loadOblastInfo(),
-      loadCities()
+      loadCities(),
+      loadDevOpps()
     ]);
 
     allAssets = assets;
