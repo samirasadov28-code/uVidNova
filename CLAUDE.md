@@ -385,6 +385,7 @@ Full bibliography lives in `docs/sources.md`.
 - **JS:** ES modules. No transpilation. Targets evergreen browsers + Node 20 (Netlify Functions runtime).
 - **CSS:** plain CSS, custom properties for theming, mobile-first. No Tailwind, no preprocessor.
 - **Commits:** Conventional Commits style. Sectional prefixes: `data:`, `schema:`, `map:`, `orchestrator:`, `costing:`, `docs:`, `infra:`.
+- **Version bump on every commit:** Every commit that changes any file under `public/` or `data/` must increment both (a) `CACHE_VERSION` in `public/service-worker.js` (e.g. `uvidnova-v18` → `uvidnova-v19`) and (b) `app-version` / `version-label` strings in `public/index.html` (e.g. `0.2.2` → `0.2.3`). This ensures users always receive the latest assets after deployment without manual cache clearing.
 - **PRs:** every PR that touches `data/` must pass `scripts/validate-all.js`. CI enforces this.
 - **Adding a new asset:** always use `scripts/new-asset.js <asset_id>` to scaffold from template. Never copy-paste an existing JSON and mutate — too easy to miss a field.
 - **Adding a new asset_type to taxonomy:** separate PR, must include unit_cost row and any new physical-spec fields required by the type.
