@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>uVidNova — Ukraine Reconstruction Finance Atlas</title>
   <meta name="description" content="Ukraine reconstruction atlas — 75+ documented damaged assets with deterministic cost estimates and bankable financing structures.">
   <meta name="theme-color" content="#0d2248">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="app-version" content="0.2.2">
+  <meta name="app-version" content="0.2.3">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
@@ -121,7 +121,7 @@
         Not a fundraising platform. No political framing. Every figure independently sourced.
       </p>
       <div class="landing-actions">
-        <span class="landing-version">v0.2.2</span>
+        <span class="landing-version">v0.2.3</span>
         <button class="landing-force-reload" id="landingForceReload" title="Clear cache and reload latest version">↻ Force update</button>
       </div>
     </div>
@@ -134,12 +134,19 @@
     var btn     = document.getElementById('enterAtlas');
     if (!overlay) return;
 
+    function revealChrome() {
+      var warBtn = document.getElementById('warModeBtn');
+      if (warBtn) warBtn.hidden = false;
+      document.body.classList.add('landed');
+    }
+
     function dismiss() {
       try { sessionStorage.setItem('uvidnova_landed', '1'); } catch(e) {}
       overlay.style.transition = 'opacity 0.45s ease';
       overlay.style.opacity    = '0';
       overlay.style.pointerEvents = 'none';
       setTimeout(function () { overlay.style.display = 'none'; }, 480);
+      revealChrome();
     }
 
     // Already visited this session — hide immediately without animation
@@ -147,6 +154,7 @@
     try { alreadyLanded = !!sessionStorage.getItem('uvidnova_landed'); } catch(e) {}
     if (alreadyLanded) {
       overlay.style.display = 'none';
+      revealChrome();
       return;
     }
 
@@ -436,7 +444,7 @@
 
   <!-- ── Version bar — version label + SW update notification only ──────────── -->
   <div class="version-bar" id="versionBar" role="status">
-    <span class="version-label" id="versionLabel">v0.2.2</span>
+    <span class="version-label" id="versionLabel">v0.2.3</span>
     <span class="update-prompt" id="updatePrompt" hidden>
       <span data-i18n="version.update_msg">· New version ready —</span>
       <button class="update-reload-btn" id="updateReloadBtn" data-i18n="version.reload">reload</button>
@@ -444,7 +452,7 @@
   </div>
 
   <!-- ── Occupied territories toggle (bottom-center) ─────────────────────── -->
-  <button class="war-mode-btn" id="warModeBtn" onclick="uvToggleWarMode()" title="Show occupied territories">🔴 Occupied territories</button>
+  <button class="war-mode-btn" id="warModeBtn" onclick="uvToggleWarMode()" title="Show occupied territories" hidden>🔴 Occupied territories</button>
 
   <!-- ── War-mode occupation legend ───────────────────────────────────────── -->
   <div class="war-legend" id="warLegend" hidden>

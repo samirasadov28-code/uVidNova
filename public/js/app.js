@@ -199,6 +199,8 @@ function renderCapitalMarkers() {
 
   oblasts.forEach(o => {
     if (!o.capital_lat || !o.capital_lon) return;
+    // Kyiv City already shows Kyiv — skip Kyiv Oblast's duplicate capital marker
+    if (o.name_en === 'Kyiv Oblast') return;
     const dotColor   = '#c9a227';
     const labelClass = 'capital-label';
 
@@ -349,6 +351,9 @@ function handleDamagedOblastClick(name, leafletThis, layer, info) {
       l.setStyle({ fillOpacity: 0.25, weight: 1, color: '#c9a227' });
     }
   });
+
+  // Zoom into oblast
+  zoomToOblastFeature(leafletThis);
 
   // Filter asset markers to this oblast
   renderMarkers();
@@ -558,14 +563,16 @@ function showReconstructedPanel(info, featureName) {
   const name = lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName);
 
   const fullName = OBLAST_INFO_MAP[featureName] ?? featureName;
+  const RECON_STAGES = new Set(['complete', 'under_reconstruction', 'funded', 'in_pipeline']);
+  const STAGE_LABEL  = { complete: '✅ Complete', under_reconstruction: '🔨 Under reconstruction', funded: '💰 Funded', in_pipeline: '📋 In pipeline' };
   const completed = allAssets.filter(a => {
-    if (a.wartime_status?.lifecycle !== 'complete') return false;
+    if (!RECON_STAGES.has(a.wartime_status?.lifecycle)) return false;
     const loc = a.location?.oblast ?? '';
     return loc === fullName || loc === featureName || loc.replace(' Oblast', '') === featureName;
   });
 
   const projectsHTML = completed.length === 0
-    ? `<div class="orp-empty">No completed reconstruction projects recorded in this region yet.</div>`
+    ? `<div class="orp-empty">No reconstruction projects recorded in this region yet.</div>`
     : completed.map(a => {
         const aName = getName(a);
         const colour = SECTOR_COLOURS[a.sector] ?? '#555';
@@ -573,10 +580,12 @@ function showReconstructedPanel(info, featureName) {
         const codeComp = a.cost_paths?.code_compliant?.central_usd_m;
         const bbb      = a.cost_paths?.build_back_better?.central_usd_m;
         const totalCost = bbb ?? codeComp ?? baseline;
+        const stageLabel = STAGE_LABEL[a.wartime_status?.lifecycle] ?? '';
         return `
-          <a class="orp-project" href="/asset.html?id=${encodeURIComponent(a.asset_id)}">
+          <div class="orp-project">
             <div class="orp-project-banner" style="background:${colour}22;border-left:3px solid ${colour}">
               <span class="orp-project-sector" style="color:${colour}">${SECTOR_LABELS[a.sector] ?? a.sector}</span>
+              <span class="orp-project-stage">${stageLabel}</span>
               ${totalCost != null ? `<span class="orp-project-cost">$${totalCost}M</span>` : ''}
             </div>
             <div class="orp-project-body">
@@ -586,8 +595,12 @@ function showReconstructedPanel(info, featureName) {
                 ${codeComp != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">Code+</span> $${codeComp}M</span>` : ''}
                 ${bbb      != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">BBB</span> $${bbb}M</span>` : ''}
               </div>
+              <div class="orp-project-actions">
+                <button class="orp-detail-btn" data-id="${encodeURIComponent(a.asset_id)}">Details →</button>
+                <button class="orp-finance-btn" data-id="${a.asset_id}">💰 Finance It</button>
+              </div>
             </div>
-          </a>`;
+          </div>`;
       }).join('');
 
   const panel = document.createElement('div');
@@ -597,12 +610,12 @@ function showReconstructedPanel(info, featureName) {
     <div class="orp-header">
       <div>
         <div class="orp-name">${name}</div>
-        <div class="orp-subtitle">✅ Reconstruction projects</div>
+        <div class="orp-subtitle">Reconstruction pipeline</div>
       </div>
       <button class="orp-close" aria-label="Close">×</button>
     </div>
     <div class="orp-projects">${projectsHTML}</div>
-    ${completed.length > 0 ? `<div class="orp-stats"><span class="orp-stat-n">${completed.length}</span><span class="orp-stat-l"> completed project${completed.length !== 1 ? 's' : ''}</span></div>` : ''}
+    ${completed.length > 0 ? `<div class="orp-stats"><span class="orp-stat-n">${completed.length}</span><span class="orp-stat-l"> project${completed.length !== 1 ? 's' : ''} in pipeline</span></div>` : ''}
     <p class="orp-hint">Click the region again to deselect</p>`;
 
   panel.querySelector('.orp-close').addEventListener('click', () => {
@@ -610,6 +623,18 @@ function showReconstructedPanel(info, featureName) {
     oblastLayer.setStyle(oblastStyle);
     closeReconstructedPanel();
     renderMarkers();
+  });
+
+  // Wire detail links
+  panel.querySelectorAll('.orp-detail-btn').forEach(btn => {
+    btn.addEventListener('click', () => { window.location.href = `/asset.html?id=${btn.dataset.id}`; });
+  });
+
+  // Wire "Finance It" buttons to open wizard pre-seeded with this asset
+  panel.querySelectorAll('.orp-finance-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (window._openFinanceWizard) window._openFinanceWizard([btn.dataset.id]);
+    });
   });
 
   document.querySelector('.map-layout').appendChild(panel);
@@ -1301,3 +1326,4 @@ init();
 window._appWarToggle   = toggleWarMode;
 window._appSetMapView  = setMapView;
 window._appFinance     = () => openFinanceWizard(allAssets);
+window._openFinanceWizard = (ids) => openFinanceWizard(allAssets, ids ?? []);

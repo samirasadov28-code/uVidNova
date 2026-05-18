@@ -647,7 +647,7 @@ body.asset-page { display: flex; flex-direction: column; }
 .landing-overlay {
   position: fixed;
   inset: 0;
-  z-index: 4000;
+  z-index: 5200;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1353,13 +1353,13 @@ body:has(#disclaimerBanner) .fab { bottom: 100px; }
 /* ── Mobile — comprehensive overrides for phones (≤ 640 px) ─────────────── */
 @media (max-width: 640px) {
 
-  /* Header: hide tagline, shrink logo */
+  /* Header: hide tagline, shrink logo, hide text nav links */
   .tagline { display: none; }
   .logo-img { width: 28px; height: 28px; }
-  .wordmark-text { font-size: 1.1rem; }
-  .site-nav { gap: 0.75rem; }
-  .site-nav a { font-size: 0.78rem; }
-  .lang-toggle { font-size: 0.78rem; padding: 0.25rem 0.5rem; }
+  .wordmark-text { font-size: 1.05rem; }
+  .site-nav a { display: none; }      /* nav links hidden — accessible via tabs */
+  .header-finance-btn { display: none; } /* Finance tab covers this */
+  .lang-toggle { font-size: 0.75rem; padding: 0.22rem 0.45rem; }
 
   /* Landing — smaller card so the background landscape shows */
   .landing-overlay {
@@ -1390,14 +1390,26 @@ body:has(#disclaimerBanner) .fab { bottom: 100px; }
   .etym-source, .etym-meaning { font-size: 0.54rem; }
   .etym-plus { font-size: 0.85rem; }
 
-  /* Map view tabs — compact on mobile (in header) */
-  .map-view-tabs { max-width: calc(100vw - 160px); overflow-x: auto; }
-  .map-view-tab { font-size: 0.62rem; padding: 0.28rem 0.45rem; }
+  /* Map view tabs — compact on mobile, no scrollbar, bigger tap targets */
+  .map-view-tabs {
+    max-width: calc(100vw - 130px);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .map-view-tabs::-webkit-scrollbar { display: none; }
+  .map-view-tab {
+    font-size: 0.68rem;
+    padding: 0.45rem 0.55rem;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+  }
 
-  /* Map toggle buttons — smaller on mobile */
+  /* Map toggle buttons — bigger tap area */
   .map-toggle-btn {
     font-size: 0.7rem;
-    padding: 0.32rem 0.65rem;
+    padding: 0.5rem 0.75rem;
+    min-height: 40px;
   }
   .map-toggle-left  { left: 0.5rem; }
   .map-toggle-right { right: 0.5rem; }
@@ -1430,24 +1442,36 @@ body:has(#disclaimerBanner) .fab { bottom: 100px; }
   }
   .asset-list-panel.panel-open { transform: translateY(0); }
 
-  /* Smaller chip/filter text */
-  .chip { font-size: 0.68rem; padding: 0.2rem 0.48rem; }
+  /* Smaller chip/filter text — bigger tap target */
+  .chip {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.55rem;
+    min-height: 34px;
+    display: inline-flex;
+    align-items: center;
+  }
   .filter-label { font-size: 0.67rem; }
   .panel-title { font-size: 0.7rem; }
   .asset-list-title { font-size: 0.7rem; }
   .asset-count { font-size: 0.68rem; }
-  .asset-list-item { font-size: 0.78rem; padding: 0.6rem 0.75rem; }
+  .asset-list-item { font-size: 0.78rem; padding: 0.65rem 0.75rem; }
   .ali-meta { font-size: 0.68rem; }
   .filter-group { margin-bottom: 0.9rem; }
 
-  /* FABs — sit just above version bar */
-  .fab { bottom: 34px; }
+  /* FABs — sit above version bar, with safe-area inset */
+  .fab {
+    bottom: calc(34px + env(safe-area-inset-bottom, 0px));
+    min-height: 40px;
+  }
   .fab > span { display: none; }  /* icon only on mobile */
-  body:has(#disclaimerBanner) .fab { bottom: 72px; }
+  body:has(#disclaimerBanner) .fab {
+    bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
 
-  /* Disclaimer narrower text */
+  /* Disclaimer — wraps cleanly, bigger dismiss button */
   .disclaimer-banner { font-size: 0.72rem; padding: 0.5rem 1rem; }
-  .dismiss-btn { font-size: 0.72rem; padding: 0.2rem 0.55rem; }
+  .disclaimer-banner p { flex-wrap: wrap; gap: 0.4rem; }
+  .dismiss-btn { font-size: 0.75rem; padding: 0.4rem 0.75rem; min-height: 36px; margin-left: auto; }
 
   /* Modal — scrollable on small screens */
   .modal-box { max-height: 88vh; overflow-y: auto; padding: 1rem; }
@@ -1455,13 +1479,24 @@ body:has(#disclaimerBanner) .fab { bottom: 100px; }
   /* Chat full-width, height capped to viewport */
   .chat-panel { width: 100%; right: 0; height: min(520px, calc(78vh - 24px)); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
 
-  /* Version bar smaller */
-  .version-bar { font-size: 0.65rem; height: 24px; }
+  /* Version bar — height includes safe-area, hide force-reload to save space */
+  .version-bar {
+    font-size: 0.65rem;
+    height: calc(24px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
   .version-label { font-size: 0.65rem; }
-  .force-reload-btn { font-size: 0.65rem; padding: 0.1rem 0.35rem; }
+  .force-reload-btn { display: none; }
 
-  /* Oblast info panel */
-  .oblast-info-panel { width: 100%; max-width: 100%; top: auto; bottom: 0; border-radius: var(--radius-lg) var(--radius-lg) 0 0; max-height: 65vh; }
+  /* Oblast info panel — bottom drawer, clears version bar + safe area */
+  .oblast-info-panel {
+    width: 100%;
+    max-width: 100%;
+    top: auto;
+    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    max-height: 68vh;
+  }
 }
 
 /* ── Filter panel enhancements (Weekend 5) ───────────────────────────────── */
@@ -2007,7 +2042,12 @@ details[open] .agg-summary::before { content: '▼ '; }
 .owp-close:hover { color: #fff; }
 
 @media (max-width: 640px) {
-  .oblast-war-panel { width: calc(100vw - 28px); left: 14px; bottom: 70px; }
+  .oblast-war-panel {
+    width: calc(100vw - 28px);
+    left: 14px;
+    bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+    max-height: calc(55vh - env(safe-area-inset-bottom, 0px));
+  }
 }
 
 /* ── Oblast info panel ───────────────────────────────────────────────────── */
@@ -2237,7 +2277,15 @@ details[open] .agg-summary::before { content: '▼ '; }
 }
 
 @media (max-width: 600px) {
-  .dev-opps-panel { width: 100%; max-width: 100%; top: auto; bottom: 0; border-radius: var(--radius-lg) var(--radius-lg) 0 0; max-height: 65vh; transform: translateY(20px); }
+  .dev-opps-panel {
+    width: 100%;
+    max-width: 100%;
+    top: auto;
+    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    max-height: 68vh;
+    transform: translateY(20px);
+  }
   .dev-opps-panel.visible { transform: translateY(0); }
 }
 
@@ -2337,6 +2385,40 @@ details[open] .agg-summary::before { content: '▼ '; }
   margin-right: 0.2rem;
 }
 
+.orp-project-stage {
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.5);
+  flex: 1;
+  text-align: center;
+}
+.orp-project-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+.orp-detail-btn, .orp-finance-btn {
+  font-size: 0.7rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid rgba(201,162,39,0.4);
+  background: rgba(201,162,39,0.1);
+  color: #f5c842;
+  transition: background 0.12s, border-color 0.12s;
+}
+.orp-detail-btn:hover, .orp-finance-btn:hover {
+  background: rgba(201,162,39,0.25);
+  border-color: #f5c842;
+}
+.orp-finance-btn {
+  background: rgba(39,174,96,0.15);
+  border-color: rgba(39,174,96,0.45);
+  color: #7ee8a2;
+}
+.orp-finance-btn:hover { background: rgba(39,174,96,0.3); border-color: #7ee8a2; }
+
 .orp-empty {
   padding: 1rem 0.9rem;
   font-size: 0.8rem;
@@ -2356,33 +2438,44 @@ details[open] .agg-summary::before { content: '▼ '; }
 .orp-hint { font-size: 0.68rem; color: rgba(255,255,255,0.3); padding: 0 0.9rem 0.7rem; margin: 0; }
 
 @media (max-width: 640px) {
-  .oblast-recon-panel { width: calc(100vw - 28px); left: 14px; bottom: 70px; }
+  .oblast-recon-panel {
+    width: calc(100vw - 28px);
+    left: 14px;
+    bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+    max-height: calc(55vh - env(safe-area-inset-bottom, 0px));
+  }
 }
 
-/* ── Finance It wizard ───────────────────────────────────────────────────── */
+/* ── Finance It wizard — right-side panel, map stays visible ─────────────── */
 .fw-overlay {
   position: fixed;
-  inset: 0;
-  z-index: 6000;
-  background: rgba(0,0,0,0.65);
+  top: var(--header-h);
+  right: 0;
+  bottom: 0;
+  width: 420px;
+  max-width: 100vw;
+  z-index: 3500;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  backdrop-filter: blur(4px);
+  flex-direction: column;
+  pointer-events: none;
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .fw-overlay[hidden] { display: none; }
+.fw-overlay.fw-open {
+  transform: translateX(0);
+  pointer-events: all;
+}
 
 .fw-modal {
-  background: var(--colour-surface);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 8px 48px rgba(0,0,0,0.45);
-  width: 100%;
-  max-width: 680px;
-  max-height: 90vh;
+  flex: 1;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background: var(--colour-surface);
+  box-shadow: -6px 0 32px rgba(0,0,0,0.35);
+  border-left: 1px solid rgba(255,255,255,0.06);
+  position: relative;
 }
 
 .fw-header {
@@ -2456,7 +2549,7 @@ details[open] .agg-summary::before { content: '▼ '; }
 }
 
 /* Step layout */
-.fw-step { display: flex; flex-direction: column; gap: 1.1rem; color: var(--colour-navy); }
+.fw-step { display: flex; flex-direction: column; gap: 1.1rem; color: var(--colour-navy); position: relative; }
 .fw-sh { font-size: 1rem; font-weight: 700; color: var(--colour-navy); margin: 0; }
 
 /* Scope row */
@@ -2655,7 +2748,26 @@ details[open] .agg-summary::before { content: '▼ '; }
 body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
 
 @media (max-width: 640px) {
-  .fw-modal { max-height: 96vh; border-radius: var(--radius-md) var(--radius-md) 0 0; margin-top: auto; }
+  /* On phones: finance wizard becomes a bottom drawer */
+  .fw-overlay {
+    top: auto;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 88vh;
+    transform: translateY(100%);
+    transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .fw-overlay.fw-open { transform: translateY(0); }
+  .fw-modal {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .fw-footer {
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
   .fw-overlay { align-items: flex-end; padding: 0; }
   .fw-scope-row { grid-template-columns: 1fr; }
   .fw-radio-card { flex-direction: row; text-align: left; padding: 0.6rem 0.75rem; }
@@ -2665,6 +2777,177 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
   .fw-body { padding: 0.9rem; }
   body:has(#disclaimerBanner) .fab-finance { bottom: 72px; }
 }
+/* ── Finance wizard: tranche name label (replaces type select) ───────────── */
+.fw-tr-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--colour-navy);
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.fw-tr-rep-label {
+  font-size: 0.75rem;
+  color: var(--colour-text-muted);
+  font-style: italic;
+  align-self: center;
+}
+
+/* ── Step 3 header with help button ─────────────────────────────────────── */
+.fw-step3-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fw-help-btn {
+  font-size: 0.72rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--colour-navy);
+  background: transparent;
+  color: var(--colour-navy);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.fw-help-btn:hover { background: var(--colour-navy); color: #fff; }
+
+/* ── Tranche catalog grid ────────────────────────────────────────────────── */
+.fw-catalog-section { margin-bottom: 0.5rem; }
+.fw-catalog-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--colour-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.fw-catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+}
+.fw-catalog-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 0.45rem;
+  row-gap: 0.05rem;
+  align-items: center;
+  padding: 0.5rem 0.6rem;
+  border: 1.5px solid var(--colour-border);
+  border-radius: var(--radius-sm);
+  background: var(--colour-bg);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.12s, background 0.12s;
+  font-family: var(--font-sans);
+}
+.fw-catalog-card:hover { border-color: var(--colour-navy-light); background: #f0f4fb; }
+.fw-catalog-active { border-color: var(--colour-navy); background: #e8f0fc; }
+.fw-catalog-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  grid-row: 1 / 3;
+  flex-shrink: 0;
+}
+.fw-catalog-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--colour-navy);
+  grid-column: 2;
+  grid-row: 1;
+  line-height: 1.2;
+}
+.fw-catalog-ret {
+  font-size: 0.62rem;
+  color: var(--colour-text-muted);
+  grid-column: 2;
+  grid-row: 2;
+}
+.fw-catalog-desc {
+  display: none; /* shown on hover via title attr */
+}
+.fw-catalog-check {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--colour-navy);
+  grid-row: 1 / 3;
+  grid-column: 3;
+}
+.fw-catalog-active .fw-catalog-check { color: #27ae60; }
+
+/* ── Tranche help overlay ────────────────────────────────────────────────── */
+.fw-help-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background: var(--colour-surface);
+  overflow-y: auto;
+  padding: 0;
+}
+.fw-help-inner { padding: 1rem; }
+.fw-help-hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  font-size: 0.95rem;
+  color: var(--colour-navy);
+}
+.fw-help-close {
+  background: none; border: none; font-size: 1.3rem;
+  cursor: pointer; color: var(--colour-text-muted); line-height: 1;
+}
+.fw-help-close:hover { color: var(--colour-text); }
+.fw-help-row {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--colour-border);
+}
+.fw-help-row:last-child { border-bottom: none; }
+.fw-help-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+.fw-help-row div { font-size: 0.8rem; color: var(--colour-text); }
+.fw-help-row div strong { color: var(--colour-navy); font-size: 0.82rem; }
+.fw-help-row p { font-size: 0.75rem; color: var(--colour-text-muted); margin: 0.2rem 0 0; line-height: 1.5; }
+
+/* ── Results summary banner ──────────────────────────────────────────────── */
+.fw-summary-banner {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: var(--colour-navy);
+  border-radius: var(--radius-md);
+}
+.fw-sb-item {
+  flex: 1;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.fw-sb-label {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.55);
+  font-weight: 700;
+}
+.fw-sb-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+}
+.fw-sb-sub { font-size: 0.62rem; color: rgba(255,255,255,0.5); }
+.fw-sb-russia .fw-sb-value { color: #f5c842; }
+.fw-sb-market .fw-sb-value { color: #7ee8a2; }
+
 /* ── Wizard AI memo ──────────────────────────────────────────────────────── */
 .fw-memo-loading {
   display: flex;
@@ -3370,4 +3653,56 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
   color: var(--colour-text-muted);
   margin-top: 0.4rem;
   font-style: italic;
+}
+
+/* ── Phone-specific improvements ────────────────────────────────────────── */
+
+/* War mode button & legend — safe-area aware, legend collapses on phones */
+@media (max-width: 640px) {
+  .war-mode-btn {
+    bottom: calc(38px + env(safe-area-inset-bottom, 0px));
+    font-size: 0.72rem;
+    padding: 0.4rem 0.9rem;
+  }
+  .war-legend {
+    bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+    left: 0.5rem;
+    right: 0.5rem;
+    min-width: unset;
+    font-size: 0.7rem;
+  }
+  /* Asset list panel safe area */
+  .asset-list-panel {
+    bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+  }
+  /* Disclaimer safe area */
+  .disclaimer-banner {
+    bottom: calc(calc(24px + env(safe-area-inset-bottom, 0px)));
+  }
+  /* Finance wizard overlay — align to bottom on phone */
+  .fw-overlay { padding-bottom: env(safe-area-inset-bottom, 0px); }
+}
+
+/* Very small phones (SE, Pixel 4a) */
+@media (max-width: 390px) {
+  .wordmark-text { font-size: 0.9rem; }
+  .logo-img { width: 24px; height: 24px; }
+  .map-view-tab { font-size: 0.62rem; padding: 0.4rem 0.4rem; }
+  .lang-toggle { font-size: 0.68rem; padding: 0.2rem 0.35rem; }
+  .landing-title { font-size: 1.55rem; }
+  .landing-cta { font-size: 0.82rem; padding: 0.5rem 1.1rem; }
+}
+
+/* Touch-action: allow pan on map panels that scroll */
+.oblast-info-panel,
+.oblast-war-panel,
+.oblast-recon-panel,
+.dev-opps-panel,
+.asset-list-panel,
+.filter-panel { -webkit-overflow-scrolling: touch; }
+
+/* Increase base tap-target height for all Leaflet controls on mobile */
+@media (max-width: 640px) {
+  .leaflet-control-zoom a { width: 34px !important; height: 34px !important; line-height: 34px !important; font-size: 18px !important; }
+  .leaflet-control-zoom { box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
 }

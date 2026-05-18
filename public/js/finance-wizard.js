@@ -121,10 +121,10 @@ export function openFinanceWizard(assets, preselectedIds = [], onClose = null) {
   }
   overlay.innerHTML = shell();
   overlay.hidden = false;
-  document.body.style.overflow = 'hidden';
+  // Small delay so the CSS transition plays from the transformed position
+  requestAnimationFrame(() => overlay.classList.add('fw-open'));
 
   overlay.querySelector('#fwClose').addEventListener('click', close);
-  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
   document.addEventListener('keydown', escClose);
 
   render();
@@ -132,8 +132,10 @@ export function openFinanceWizard(assets, preselectedIds = [], onClose = null) {
 
 function close() {
   const o = document.getElementById('financeWizard');
-  if (o) o.hidden = true;
-  document.body.style.overflow = '';
+  if (o) {
+    o.classList.remove('fw-open');
+    setTimeout(() => { if (o) o.hidden = true; }, 340);
+  }
   document.removeEventListener('keydown', escClose);
   if (_onClose) { _onClose(); _onClose = null; }
 }
@@ -637,6 +639,18 @@ function wireStep2() {
 
 // ── Step 3: Tranche builder ───────────────────────────────────────────────────
 
+const TRANCHE_DESCRIPTIONS = {
+  grant:             'EU Facility, bilateral donors. Zero cost capital — most competitive for public and social assets.',
+  eu_concessional:   'Below-market loans from EU institutions. Typically 1–2% interest, 15–25yr tenor.',
+  ebrd_concessional: 'EBRD concessional lending window for Ukraine. 2–3% interest, 15yr tenor.',
+  world_bank:        'World Bank / IDA credits. 1% or fixed rate, 25–30yr tenor. Requires sovereign guarantee.',
+  eca_guarantee:     'UKEF, BPI France, Allianz Trade — export credit guarantees. Mobilises commercial debt at reduced risk premium.',
+  senior_debt:       'Commercial bank loans. 8–10% during wartime, 5–7% post-war normalisation.',
+  mezzanine:         'Subordinated / mezzanine debt. Higher return (12–16%), absorbs first loss before equity.',
+  equity:            'Private equity and institutional capital. Target IRR 15–20%. Requires de-risking instruments.',
+  reparations:       'Russian state reparations (UNCC/ERA mechanism). G7-frozen $300B assets. No return — sovereign obligation.',
+};
+
 function step3HTML() {
   const total = portfolioCost(W.path);
   const sumPct = W.tranches.reduce((s, t) => s + (+t.pct || 0), 0);
@@ -645,20 +659,57 @@ function step3HTML() {
   const privPct  = W.tranches.filter(t => COMMERCIAL_TYPES.has(t.type)).reduce((s, t) => s + (+t.pct || 0), 0);
   const mobRatio = grantPct > 0 ? (privPct / grantPct).toFixed(1) + '×' : 'n/a';
   const ok = Math.abs(sumPct - 100) <= 0.5;
+  const selectedTypes = new Set(W.tranches.map(t => t.type));
+
+  const catalogHTML = Object.entries(TRANCHE_DEFS).map(([k, def]) => {
+    const isSelected = selectedTypes.has(k);
+    const desc = TRANCHE_DESCRIPTIONS[k] ?? '';
+    const retLabel = k === 'reparations' ? 'No return · sovereign obligation' : `${def.ret}% ${def.tenor ? `· ${def.tenor}yr` : ''}`;
+    return `<button class="fw-catalog-card ${isSelected ? 'fw-catalog-active' : ''}"
+              data-tranche-type="${k}" type="button" title="${def.label}">
+      <span class="fw-catalog-dot" style="background:${def.col}"></span>
+      <span class="fw-catalog-name">${def.label}</span>
+      <span class="fw-catalog-ret">${retLabel}</span>
+      <span class="fw-catalog-desc">${desc}</span>
+      <span class="fw-catalog-check">${isSelected ? '✓' : '+'}</span>
+    </button>`;
+  }).join('');
 
   return `<div class="fw-step">
-    <h3 class="fw-sh">Build your financing structure</h3>
+    <div class="fw-step3-header">
+      <h3 class="fw-sh">Build your financing structure</h3>
+      <button class="fw-help-btn" id="fwHelpBtn" type="button" title="Tranche guide">? Help</button>
+    </div>
     ${W.timing === 'during' ? `<div class="fw-war-note">⚡ Wartime: +${WAR_PREMIUM}% applied to commercial tranches in Results.</div>` : ''}
+
+    <div class="fw-catalog-section">
+      <div class="fw-catalog-label">Select tranches to include:</div>
+      <div class="fw-catalog-grid" id="fwCatalogGrid">${catalogHTML}</div>
+    </div>
+
     <div class="fw-tranche-hdr">
       <span class="fw-total-lbl">Total cost: <strong>${fmtM(total)}</strong> (${PATH_LABELS[W.path]})</span>
       <span class="fw-alloc-sum ${ok ? 'fw-alloc-ok' : 'fw-alloc-warn'}" id="fwAllocSum">Allocated: ${sumPct.toFixed(0)}%</span>
     </div>
     ${allocBar(total)}
     <div id="fwTranches">${W.tranches.map(t => trancheRowHTML(t, total)).join('')}</div>
-    ${W.tranches.length < 5 ? `<button class="fw-add-tranche" id="fwAddTranche">+ Add tranche</button>` : ''}
     <div class="fw-metrics-row">
       <div class="fw-mini-metric"><span class="fw-mm-val">${blended.toFixed(2)}%</span><span class="fw-mm-lbl">Blended cost of capital</span></div>
       <div class="fw-mini-metric"><span class="fw-mm-val">${mobRatio}</span><span class="fw-mm-lbl">Private mobilisation ratio</span></div>
+    </div>
+
+    <!-- Tranche help overlay -->
+    <div class="fw-help-panel" id="fwHelpPanel" hidden>
+      <div class="fw-help-inner">
+        <div class="fw-help-hdr"><strong>Tranche Guide</strong><button class="fw-help-close" id="fwHelpClose" type="button">×</button></div>
+        ${Object.entries(TRANCHE_DEFS).map(([k, def]) => `
+          <div class="fw-help-row">
+            <span class="fw-help-dot" style="background:${def.col}"></span>
+            <div><strong>${def.label}</strong>${k === 'reparations' ? '' : ` — ${def.ret}% ${def.tenor ? `/ ${def.tenor}yr` : ''}`}
+              <p>${TRANCHE_DESCRIPTIONS[k]}</p>
+            </div>
+          </div>`).join('')}
+      </div>
     </div>
   </div>`;
 }
@@ -717,15 +768,12 @@ function trancheRowHTML(t, total) {
         </p>` : ''}
     </div>` : '';
 
-  const typeOptions = Object.entries(TRANCHE_DEFS).map(([k, v]) =>
-    `<option value="${k}" ${k === t.type ? 'selected' : ''}>${v.label}</option>`).join('');
+  const isReparations = t.type === 'reparations';
 
   return `<div class="fw-tranche-row" data-id="${t.id}">
     <div class="fw-tr-dot" style="background:${def.col}"></div>
     <div class="fw-tr-fields">
-      <div style="display:flex;align-items:center;gap:0.3rem">
-        <select class="fw-select fw-tr-type" data-id="${t.id}">${typeOptions}</select>${confidenceBadge(t.type)}
-      </div>
+      <div class="fw-tr-name">${def.label}${confidenceBadge(t.type)}</div>
       <div class="fw-tr-nums">
         <label class="fw-tr-lbl">Allocation
           <div class="fw-tr-input-wrap">
@@ -733,13 +781,13 @@ function trancheRowHTML(t, total) {
             <span class="fw-tr-unit">%</span>
           </div>
         </label>
-        <label class="fw-tr-lbl">Return
+        ${isReparations ? `<span class="fw-tr-rep-label">No return · sovereign obligation</span>` : `<label class="fw-tr-lbl">Return
           <div class="fw-tr-input-wrap">
             <input class="fw-input fw-tr-num fw-tr-ret" type="number" min="0" max="50" step="0.1" value="${+t.ret}" data-id="${t.id}" data-field="ret">
             <span class="fw-tr-unit">%</span>
           </div>
-        </label>
-        ${def.tenor != null ? `<label class="fw-tr-lbl">Tenor
+        </label>`}
+        ${def.tenor != null && !isReparations ? `<label class="fw-tr-lbl">Tenor
           <div class="fw-tr-input-wrap">
             <input class="fw-input fw-tr-num fw-tr-ten" type="number" min="1" max="40" step="1" value="${t.tenor ?? def.tenor}" data-id="${t.id}" data-field="tenor">
             <span class="fw-tr-unit">yr</span>
@@ -831,9 +879,32 @@ function wireStep3() {
     seedGreenfieldTranches();
   }
 
-  document.getElementById('fwAddTranche')?.addEventListener('click', () => {
-    W.tranches.push({ id: W.nextId++, type: 'equity', pct: 0, ret: 18, tenor: null });
-    render();
+  // Catalog card toggles
+  document.querySelectorAll('.fw-catalog-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const type = card.dataset.trancheType;
+      const existing = W.tranches.findIndex(t => t.type === type);
+      if (existing >= 0) {
+        // Remove if already there (only if more than 1 tranche)
+        if (W.tranches.length > 1) W.tranches.splice(existing, 1);
+      } else {
+        // Add with default ret = 0 for reparations, def.ret for others
+        const def = TRANCHE_DEFS[type] ?? TRANCHE_DEFS.equity;
+        const ret = type === 'reparations' ? 0 : def.ret;
+        W.tranches.push({ id: W.nextId++, type, pct: 0, ret, tenor: def.tenor });
+      }
+      render();
+    });
+  });
+
+  // Help panel
+  document.getElementById('fwHelpBtn')?.addEventListener('click', () => {
+    const p = document.getElementById('fwHelpPanel');
+    if (p) p.hidden = !p.hidden;
+  });
+  document.getElementById('fwHelpClose')?.addEventListener('click', () => {
+    const p = document.getElementById('fwHelpPanel');
+    if (p) p.hidden = true;
   });
 
   document.querySelectorAll('.fw-tr-remove').forEach(btn => {
@@ -841,19 +912,6 @@ function wireStep3() {
       const id = +e.currentTarget.dataset.id;
       if (W.tranches.length <= 1) return;
       W.tranches = W.tranches.filter(t => t.id !== id);
-      render();
-    });
-  });
-
-  document.querySelectorAll('.fw-tr-type').forEach(sel => {
-    sel.addEventListener('change', e => {
-      const id = +e.target.dataset.id;
-      const tr = W.tranches.find(t => t.id === id);
-      if (!tr) return;
-      tr.type  = e.target.value;
-      const def = TRANCHE_DEFS[e.target.value];
-      tr.ret   = def.ret;
-      tr.tenor = def.tenor;
       render();
     });
   });
@@ -971,9 +1029,33 @@ function step4HTML() {
       </div>
     </div>` : '';
 
+  const nonRepTotal  = r.total - r.repAmt;
+  const toRaise      = Math.max(0, nonRepTotal);
+  const russiaPct    = r.total > 0 ? (r.repAmt / r.total * 100).toFixed(0) : 0;
+
   return `<div class="fw-step fw-results">
     <h3 class="fw-sh">Financing structure analysis</h3>
     <div class="fw-results-meta">${r.sel.length} project${r.sel.length !== 1 ? 's' : ''} · ${PATH_LABELS[W.path]} · ${TIMING_LABELS[W.timing]}</div>
+
+    <!-- Summary banner -->
+    <div class="fw-summary-banner">
+      <div class="fw-sb-item fw-sb-raise">
+        <span class="fw-sb-label">Total to raise</span>
+        <span class="fw-sb-value">${fmtM(r.total)}</span>
+        <span class="fw-sb-sub">Range: ${fmtM(r.low)} – ${fmtM(r.high)}</span>
+      </div>
+      ${r.repAmt > 0 ? `
+      <div class="fw-sb-item fw-sb-russia">
+        <span class="fw-sb-label">Russia must pay</span>
+        <span class="fw-sb-value">${fmtM(r.repAmt.toFixed(0))}</span>
+        <span class="fw-sb-sub">${russiaPct}% of total · ${r.repPctFrozen.toFixed(2)}% of $300B frozen</span>
+      </div>
+      <div class="fw-sb-item fw-sb-market">
+        <span class="fw-sb-label">Market / donor raise</span>
+        <span class="fw-sb-value">${fmtM(toRaise.toFixed(0))}</span>
+        <span class="fw-sb-sub">Grants + concessional + private</span>
+      </div>` : ''}
+    </div>
 
     <div class="fw-results-sect">
       <h4 class="fw-results-h4">Portfolio cost</h4>
