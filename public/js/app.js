@@ -350,9 +350,6 @@ function handleDamagedOblastClick(name, leafletThis, layer, info) {
     }
   });
 
-  // Zoom to oblast bounds
-  try { map.fitBounds(layer.getBounds().pad(0.12)); } catch { /* no bounds */ }
-
   // Filter asset markers to this oblast
   renderMarkers();
 
@@ -646,30 +643,46 @@ async function loadCities() {
 function showCityMarkers(oblastNameEn) {
   clearCityMarkers();
   if (!map || !citiesData) return;
+
+  // Filter cities for this oblast; exclude the capital if it duplicates the capital dot layer
   const cities = citiesData.cities.filter(c => c.oblast_en === oblastNameEn);
   if (cities.length === 0) return;
 
+  // Hide capital dots while city markers are shown to avoid duplicate pins
+  if (capitalLayer) { capitalLayer.remove(); }
+
   cityMarkersLayer = L.layerGroup();
   const lang = getLang();
+
   cities.forEach(city => {
     const label = lang === 'uk' ? city.name_uk : city.name_en;
-    const dotSize = city.capital ? 10 : city.pop >= 200000 ? 8 : city.pop >= 50000 ? 7 : 6;
-    const dotColor = city.capital ? '#c9a227' : '#6ab0e4';
-    const icon = L.divIcon({
-      html: `<div class="city-dot" style="width:${dotSize}px;height:${dotSize}px;background:${dotColor}"></div>`,
-      className: '',
-      iconSize: [dotSize, dotSize],
-      iconAnchor: [dotSize / 2, dotSize / 2],
+    const radius = city.capital ? 7 : city.pop >= 200000 ? 6 : city.pop >= 50000 ? 5 : 4;
+    const color  = city.capital ? '#c9a227' : '#4a90d9';
+
+    const circle = L.circleMarker([city.lat, city.lon], {
+      radius,
+      color: '#fff',
+      weight: 1.5,
+      fillColor: color,
+      fillOpacity: 0.92,
+      interactive: true,
+    }).bindTooltip(label, {
+      permanent: true,
+      direction: 'right',
+      offset: [radius + 3, 0],
+      className: 'city-label',
     });
-    const marker = L.marker([city.lat, city.lon], { icon, interactive: false })
-      .bindTooltip(label, { permanent: true, direction: 'right', offset: [dotSize / 2 + 2, 0], className: 'city-label' });
-    cityMarkersLayer.addLayer(marker);
+
+    cityMarkersLayer.addLayer(circle);
   });
+
   cityMarkersLayer.addTo(map);
 }
 
 function clearCityMarkers() {
   if (cityMarkersLayer) { cityMarkersLayer.remove(); cityMarkersLayer = null; }
+  // Restore capital dots (only relevant in Ukraine view)
+  if (mapViewMode === 'ukraine' && oblastInfoData) renderCapitalMarkers();
 }
 
 // ── Development view panel ────────────────────────────────────────────────────
@@ -913,7 +926,7 @@ function setMapView(view) {
     ukraine:       'Click any region to explore',
     damaged:       '',
     reconstructed: 'Showing completed reconstruction projects',
-    development:   'Development opportunities — coming soon',
+    development:   'Click any region to see investment opportunities',
   };
   hint.textContent = hints[view] || '';
   hint.hidden = !hints[view];
