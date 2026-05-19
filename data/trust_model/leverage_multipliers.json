@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "instruments": [
+    {
+      "id": "isif_direct",
+      "label": "ISIF-Style Direct Co-Investment",
+      "description": "Trust capital invested alongside private sector under a co-investment mandate. Each EUR/USD of Trust capital crowds in private capital via matching requirement.",
+      "multiplier_low": 1.3,
+      "multiplier_central": 1.6,
+      "multiplier_high": 2.1,
+      "mechanism": "Trust acts as anchor investor; private co-investors required to match at 1:1 to 1.5:1",
+      "source_code": "ISIF",
+      "source_label": "Ireland ISIF Annual Report 2023 — 1.6× private co-investment ratio",
+      "applicable_channels": ["equity", "concessional"]
+    },
+    {
+      "id": "miga_war_insurance",
+      "label": "MIGA War & Civil Disturbance Insurance",
+      "description": "MIGA political-risk insurance for private investors. Trust capital backstops first-loss tranche, enabling MIGA to issue insurance at scale and crowd in commercial lenders.",
+      "multiplier_low": 5.0,
+      "multiplier_central": 7.5,
+      "multiplier_high": 10.0,
+      "mechanism": "Trust provides first-loss reserve (10–20% of insured exposure); MIGA insures 50–80%; commercial banks lend the balance",
+      "source_code": "MIGA",
+      "source_label": "MIGA War & Civil Disturbance product documentation — Ukraine portfolio 2024",
+      "applicable_channels": ["availability_payments", "concessional"]
+    },
+    {
+      "id": "ebrd_rsf",
+      "label": "EBRD Risk-Sharing Framework",
+      "description": "Trust capital as subordinated first-loss piece enabling EBRD to lend senior at 3–4× leverage.",
+      "multiplier_low": 3.0,
+      "multiplier_central": 3.5,
+      "multiplier_high": 4.0,
+      "mechanism": "Trust holds 20–25% subordinated tranche; EBRD lends senior on remaining 75–80%",
+      "source_code": "EBRD_CASE",
+      "source_label": "EBRD Ukraine Reconstruction Financing Framework 2023",
+      "applicable_channels": ["concessional", "equity"]
+    },
+    {
+      "id": "eu_first_loss",
+      "label": "EU Facility First-Loss Guarantee",
+      "description": "EU Ukraine Facility first-loss guarantee enables Trust capital to backstop a portfolio guarantee, crowding in EIB and private bank lending.",
+      "multiplier_low": 4.0,
+      "multiplier_central": 5.5,
+      "multiplier_high": 8.0,
+      "mechanism": "EU guarantee covers first 20% of losses; Trust provides second-loss; EIB/commercial banks lend senior",
+      "source_code": "EU_FACILITY",
+      "source_label": "EU Regulation 2024/792 — guarantee mechanism provisions",
+      "applicable_channels": ["grants", "concessional"]
+    },
+    {
+      "id": "ap_debt_service",
+      "label": "Availability Payment Debt Service",
+      "description": "Trust availability payments service senior concessional debt at 15-year tenor, 2.5% coupon. Each USD 1 of annual payment supports USD 13–14 of senior debt.",
+      "multiplier_low": 11.0,
+      "multiplier_central": 13.1,
+      "multiplier_high": 15.0,
+      "mechanism": "Annual availability payment / debt service constant (≈7.65% for 15yr @ 2.5%) = supportable principal",
+      "source_code": "EBRD_CASE",
+      "source_label": "Standard project finance debt service constant — 15yr concessional loan",
+      "applicable_channels": ["availability_payments"]
+    }
+  ],
+  "note": "Multipliers represent total capital mobilised per unit of Trust capital deployed. Ranges reflect deal complexity and market conditions. Central values used in module calculations.",
+  "source_notes": "ISIF ratio from NTMA/ISIF Annual Report 2023. MIGA multiplier range from MIGA FY2023 Annual Report. EBRD RSF from EBRD project documentation. All values are precedent-based, not modelled projections."
+}

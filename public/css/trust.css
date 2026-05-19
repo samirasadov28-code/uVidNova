@@ -1,0 +1,925 @@
+/* trust.css — VidNova Trust interactive module styles
+   Plain CSS, mobile-first, navy/gold Ukrainian palette.
+   No preprocessor, no framework. */
+
+/* ── Trust page layout ──────────────────────────────────────────────────────── */
+.trust-page-body {
+  background: #f4f6f9;
+  overflow: auto;
+}
+
+.trust-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: calc(var(--header-h, 56px) + 1.5rem) 1rem 3rem;
+  min-height: 100vh;
+}
+
+/* ── Hero ────────────────────────────────────────────────────────────────────── */
+.trust-hero {
+  background: linear-gradient(135deg, #1a3a6b 0%, #0d2248 60%, #1a3a6b 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 2rem 2rem 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 24px rgba(26,58,107,0.25);
+}
+
+.trust-hero-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f5c842;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.trust-hero-title {
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.trust-hero-sub {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.85);
+  max-width: 72ch;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Stat cards ──────────────────────────────────────────────────────────────── */
+.trust-stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.trust-stat-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.trust-stat-card.highlight {
+  background: rgba(201,162,39,0.18);
+  border-color: rgba(201,162,39,0.5);
+}
+
+.tsc-value {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.trust-stat-card.highlight .tsc-value {
+  color: #f5c842;
+}
+
+.tsc-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tsc-note {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.4;
+}
+
+/* ── Modules ─────────────────────────────────────────────────────────────────── */
+.trust-module {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #d0d8e8;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.trust-module-header {
+  background: #1a3a6b;
+  color: #fff;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.trust-module-header:hover {
+  background: #1e4480;
+}
+
+.trust-module-num {
+  background: rgba(201,162,39,0.25);
+  color: #f5c842;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.trust-module-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  flex: 1;
+}
+
+.trust-module-subtitle {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.1rem;
+}
+
+.trust-module-chevron {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  transition: transform 0.2s;
+}
+
+.trust-module.collapsed .trust-module-chevron {
+  transform: rotate(-90deg);
+}
+
+.trust-module-body {
+  padding: 1.25rem;
+  transition: max-height 0.3s ease;
+}
+
+.trust-module.collapsed .trust-module-body {
+  display: none;
+}
+
+/* ── Two-column layout within modules ───────────────────────────────────────── */
+.trust-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .trust-two-col { grid-template-columns: 1fr; }
+  .trust-three-col { grid-template-columns: 1fr !important; }
+}
+
+.trust-three-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* ── Scenario toggle ─────────────────────────────────────────────────────────── */
+.trust-scenario-toggle {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #1a3a6b;
+  width: fit-content;
+  margin-bottom: 1rem;
+}
+
+.trust-scenario-btn {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  background: #fff;
+  color: #1a3a6b;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  font-family: var(--font-sans);
+}
+
+.trust-scenario-btn.active {
+  background: #1a3a6b;
+  color: #fff;
+}
+
+.trust-scenario-btn:first-child {
+  border-right: 1px solid #1a3a6b;
+}
+
+/* ── Sliders ─────────────────────────────────────────────────────────────────── */
+.trust-sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.trust-slider-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 80px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .trust-slider-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
+
+.trust-slider-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1a3a6b;
+  line-height: 1.3;
+}
+
+.trust-slider-source {
+  font-size: 0.65rem;
+  color: #5a6272;
+  font-weight: 400;
+  display: block;
+  margin-top: 1px;
+}
+
+.trust-range {
+  width: 100%;
+  accent-color: #1a3a6b;
+  cursor: pointer;
+  height: 18px;
+}
+
+.trust-range-val {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a3a6b;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── Capital stack bar ───────────────────────────────────────────────────────── */
+.trust-stack-bar {
+  height: 40px;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  margin: 1rem 0 0.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+
+.trust-stack-segment {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  transition: width 0.4s ease;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0 4px;
+  min-width: 0;
+}
+
+.trust-stack-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.trust-stack-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.73rem;
+  color: #1a1d23;
+}
+
+.trust-stack-legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.trust-total-nav {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a3a6b;
+  margin-bottom: 0.25rem;
+}
+
+.trust-total-label {
+  font-size: 0.75rem;
+  color: #5a6272;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Chart containers ────────────────────────────────────────────────────────── */
+.trust-chart-container {
+  position: relative;
+  height: 300px;
+}
+
+.trust-chart-sm {
+  position: relative;
+  height: 220px;
+}
+
+/* ── Allocation donut + channel list ─────────────────────────────────────────── */
+.trust-allocation-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 600px) {
+  .trust-allocation-layout { grid-template-columns: 1fr; }
+}
+
+.trust-donut-wrap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.trust-channel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.trust-channel-row {
+  display: grid;
+  grid-template-columns: 14px 130px 1fr 50px;
+  gap: 0.4rem 0.6rem;
+  align-items: center;
+}
+
+.trust-channel-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.trust-channel-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1a1d23;
+}
+
+.trust-channel-range {
+  accent-color: #1a3a6b;
+  width: 100%;
+  cursor: pointer;
+}
+
+.trust-channel-val {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a3a6b;
+  text-align: right;
+}
+
+.trust-alloc-warning {
+  font-size: 0.75rem;
+  color: #c0392b;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.trust-alloc-warning.visible {
+  display: block;
+}
+
+/* ── Project support tabs ────────────────────────────────────────────────────── */
+.trust-tabs {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #d0d8e8;
+  margin-bottom: 1rem;
+}
+
+.trust-tab-btn {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  background: none;
+  color: #5a6272;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  font-family: var(--font-sans);
+  transition: color 0.15s;
+}
+
+.trust-tab-btn:hover {
+  color: #1a3a6b;
+}
+
+.trust-tab-btn.active {
+  color: #1a3a6b;
+  border-bottom-color: #1a3a6b;
+}
+
+.trust-asset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+.trust-asset-card {
+  border: 1px solid #d0d8e8;
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.trust-asset-card:hover {
+  border-color: #1a3a6b;
+  box-shadow: 0 2px 8px rgba(26,58,107,0.1);
+}
+
+.trust-asset-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a3a6b;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.trust-asset-meta {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.trust-asset-tag {
+  font-size: 0.64rem;
+  font-weight: 600;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.trust-asset-tag.grant { background: #d5f5e3; color: #1e8449; }
+.trust-asset-tag.concessional { background: #d6eaf8; color: #1a5276; }
+.trust-asset-tag.equity { background: #e8daef; color: #6c3483; }
+.trust-asset-tag.ap { background: #fef9e7; color: #9a7d0a; border: 1px solid #f0c040; }
+
+.trust-asset-cost {
+  font-size: 0.78rem;
+  color: #5a6272;
+}
+
+.trust-asset-cost strong {
+  color: #1a3a6b;
+}
+
+/* ── Leverage module ─────────────────────────────────────────────────────────── */
+.trust-leverage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.trust-leverage-card {
+  border: 2px solid #d0d8e8;
+  border-radius: 8px;
+  padding: 0.85rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  background: #fff;
+}
+
+.trust-leverage-card:hover,
+.trust-leverage-card.selected {
+  border-color: #1a3a6b;
+  background: #f0f4fc;
+}
+
+.trust-leverage-card.selected {
+  background: rgba(26,58,107,0.06);
+}
+
+.trust-leverage-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a3a6b;
+  margin-bottom: 0.3rem;
+}
+
+.trust-leverage-mult {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #c9a227;
+}
+
+.trust-leverage-range {
+  font-size: 0.7rem;
+  color: #5a6272;
+  margin-bottom: 0.4rem;
+}
+
+.trust-leverage-desc {
+  font-size: 0.72rem;
+  color: #5a6272;
+  line-height: 1.4;
+}
+
+.trust-leverage-result {
+  background: linear-gradient(135deg, #1a3a6b, #0d2248);
+  color: #fff;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.trust-leverage-result-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+}
+
+.trust-leverage-result-val {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f5c842;
+  line-height: 1.1;
+}
+
+.trust-leverage-result-range {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.25rem;
+}
+
+/* ── Strategic equity list ───────────────────────────────────────────────────── */
+.trust-equity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.85rem;
+}
+
+.trust-equity-card {
+  border: 1px solid #d0d8e8;
+  border-left: 4px solid #1a3a6b;
+  border-radius: 0 8px 8px 0;
+  padding: 0.85rem 0.85rem 0.85rem 1rem;
+  background: #fff;
+}
+
+.trust-equity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.4rem;
+}
+
+.trust-equity-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1a3a6b;
+  line-height: 1.3;
+}
+
+.trust-equity-stake {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #c9a227;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+}
+
+.trust-equity-sector {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  background: #eef2fa;
+  color: #1a3a6b;
+  margin-bottom: 0.4rem;
+}
+
+.trust-equity-desc {
+  font-size: 0.75rem;
+  color: #5a6272;
+  line-height: 1.45;
+  margin-bottom: 0.5rem;
+}
+
+.trust-equity-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.74rem;
+}
+
+.trust-equity-row-label {
+  color: #5a6272;
+}
+
+.trust-equity-row-val {
+  font-weight: 600;
+  color: #1a1d23;
+}
+
+.trust-equity-status {
+  font-size: 0.68rem;
+  margin-top: 0.4rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.trust-equity-status.damaged { background: #fdecea; color: #c0392b; }
+.trust-equity-status.operational { background: #d5f5e3; color: #1e8449; }
+.trust-equity-status.closed { background: #fef9e7; color: #9a7d0a; }
+.trust-equity-status.occupied { background: #f5eef8; color: #6c3483; }
+
+/* ── Precedent comparison cards ─────────────────────────────────────────────── */
+.trust-precedent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.trust-precedent-card {
+  border-radius: 10px;
+  border: 1px solid #d0d8e8;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.15s;
+}
+
+.trust-precedent-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.trust-precedent-card.is-trust {
+  border: 2px solid #c9a227;
+  box-shadow: 0 2px 12px rgba(201,162,39,0.25);
+}
+
+.trust-precedent-bar {
+  height: 6px;
+}
+
+.trust-precedent-head {
+  padding: 0.9rem 0.9rem 0.5rem;
+}
+
+.trust-precedent-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1a3a6b;
+  margin-bottom: 0.15rem;
+  line-height: 1.2;
+}
+
+.trust-precedent-card.is-trust .trust-precedent-name {
+  color: #9a7d0a;
+}
+
+.trust-precedent-country {
+  font-size: 0.7rem;
+  color: #5a6272;
+  margin-bottom: 0.6rem;
+}
+
+.trust-precedent-body {
+  padding: 0 0.9rem 0.9rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.trust-precedent-stat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.trust-precedent-stat:last-child {
+  border-bottom: none;
+}
+
+.trust-precedent-stat-label {
+  color: #5a6272;
+}
+
+.trust-precedent-stat-val {
+  font-weight: 700;
+  color: #1a1d23;
+}
+
+.trust-precedent-lesson {
+  padding: 0.6rem 0.9rem;
+  background: #f8f9fb;
+  border-top: 1px solid #e8ecf2;
+  font-size: 0.72rem;
+  color: #5a6272;
+  line-height: 1.45;
+  font-style: italic;
+}
+
+.trust-precedent-card.is-trust .trust-precedent-lesson {
+  background: #fffbef;
+  border-top-color: #f0c040;
+  color: #856404;
+  font-style: normal;
+}
+
+/* ── Info box / callout ──────────────────────────────────────────────────────── */
+.trust-infobox {
+  background: #f0f4fc;
+  border-left: 3px solid #1a3a6b;
+  border-radius: 0 6px 6px 0;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.8rem;
+  color: #1a3a6b;
+  line-height: 1.5;
+  margin: 0.75rem 0;
+}
+
+.trust-infobox strong {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.trust-infobox.gold {
+  background: #fffbef;
+  border-left-color: #c9a227;
+  color: #856404;
+}
+
+/* ── Source citation ─────────────────────────────────────────────────────────── */
+.trust-source {
+  font-size: 0.67rem;
+  color: #8a93a2;
+  margin-top: 0.2rem;
+}
+
+.trust-source a {
+  color: #5a7cc0;
+}
+
+/* ── NAV summary band ────────────────────────────────────────────────────────── */
+.trust-nav-band {
+  background: linear-gradient(90deg, #1a3a6b 0%, #2a5298 100%);
+  color: #fff;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.trust-nav-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.trust-nav-val {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f5c842;
+  line-height: 1.1;
+}
+
+.trust-nav-lbl {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.trust-nav-separator {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.2);
+}
+
+/* ── Comparison table ────────────────────────────────────────────────────────── */
+.trust-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.trust-compare-table th {
+  background: #1a3a6b;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.78rem;
+}
+
+.trust-compare-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #e8ecf2;
+  color: #1a1d23;
+  vertical-align: top;
+}
+
+.trust-compare-table tr:last-child td {
+  border-bottom: none;
+}
+
+.trust-compare-table tr:nth-child(even) td {
+  background: #f8f9fb;
+}
+
+.trust-highlight-val {
+  font-weight: 700;
+  color: #1a3a6b;
+}
+
+.perpetual {
+  color: #27ae60;
+  font-weight: 700;
+}
+
+/* ── Disclaimer ──────────────────────────────────────────────────────────────── */
+.trust-disclaimer {
+  font-size: 0.75rem;
+  color: #8a93a2;
+  line-height: 1.6;
+  border-top: 1px solid #d0d8e8;
+  padding-top: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.trust-disclaimer strong {
+  color: #5a6272;
+}
+
+/* ── Loading state ───────────────────────────────────────────────────────────── */
+.trust-loading {
+  text-align: center;
+  padding: 2rem;
+  color: #8a93a2;
+  font-size: 0.85rem;
+}
+
+/* ── Chart.js override: keep aspect ratio on mobile ─────────────────────────── */
+canvas.trust-canvas {
+  max-width: 100%;
+}
+
+/* ── Animation ───────────────────────────────────────────────────────────────── */
+@keyframes trust-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.trust-module {
+  animation: trust-fade-in 0.3s ease both;
+}
+
+.trust-module:nth-child(1) { animation-delay: 0.05s; }
+.trust-module:nth-child(2) { animation-delay: 0.10s; }
+.trust-module:nth-child(3) { animation-delay: 0.15s; }
+.trust-module:nth-child(4) { animation-delay: 0.20s; }
+.trust-module:nth-child(5) { animation-delay: 0.25s; }
+.trust-module:nth-child(6) { animation-delay: 0.30s; }
+.trust-module:nth-child(7) { animation-delay: 0.35s; }

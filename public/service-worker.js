@@ -4,7 +4,7 @@
  * Strategy: cache-first for static assets; network-first for data files.
  */
 
-const CACHE_VERSION = 'uvidnova-v19';
+const CACHE_VERSION = 'uvidnova-v20';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const DATA_CACHE    = `${CACHE_VERSION}-data`;
 
@@ -28,6 +28,7 @@ const STATIC_ASSETS = [
   '/js/data-loader.js',
   '/js/lang.js',
   '/js/trust-calculator.js',
+  '/css/trust.css',
   '/js/growth-sectors.js',
   '/js/scenario-engine.js',
   '/js/aggregation.js',
@@ -39,7 +40,20 @@ const DATA_ASSETS = [
   '/data/geo/ua_oblasts.geojson',
   '/data/oblasts_info.json',
   '/data/cities.json',
-  '/data/development_opportunities.json'
+  '/data/development_opportunities.json',
+  '/data/trust_model/capital_sources.json',
+  '/data/trust_model/scenarios.json',
+  '/data/trust_model/return_assumptions.json',
+  '/data/trust_model/allocation_defaults.json',
+  '/data/trust_model/leverage_multipliers.json',
+  '/data/trust_model/ap_financing_thresholds.json',
+  '/data/trust_model/strategic_assets.json',
+  '/data/trust_model/precedents.json'
+];
+
+// Chart.js CDN is cached separately via the service worker fetch handler
+const CDN_ASSETS = [
+  'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js'
 ];
 
 // ── Message (SKIP_WAITING from page) ─────────────────────────────────────────
@@ -76,6 +90,21 @@ self.addEventListener('fetch', event => {
   // Skip non-GET and Netlify function calls
   if (request.method !== 'GET') return;
   if (url.pathname.startsWith('/.netlify/') || url.pathname.startsWith('/api/')) return;
+
+  // CDN assets (Chart.js, etc.): cache-first
+  if (url.hostname.endsWith('cdnjs.cloudflare.com')) {
+    event.respondWith(
+      caches.open(STATIC_CACHE).then(async cache => {
+        const cached = await cache.match(request);
+        if (cached) return cached;
+        return fetch(request).then(response => {
+          if (response.ok) cache.put(request, response.clone());
+          return response;
+        });
+      })
+    );
+    return;
+  }
 
   // CartoDB Positron tiles: network-first with 5 s timeout, fallback to cache
   if (url.hostname.endsWith('.basemaps.cartocdn.com')) {

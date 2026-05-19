@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "description": "Availability Payment financing thresholds — defines minimum annual AP budget required to support a project at each asset size tier",
+  "debt_service_constant": {
+    "tenor_years": 15,
+    "coupon_pct": 2.5,
+    "value": 0.07665,
+    "note": "r / (1 - (1+r)^-n) where r=0.025, n=15"
+  },
+  "dscr_standard": 1.20,
+  "tiers": [
+    {
+      "id": "tier_1",
+      "label": "Tier 1 — Small Infrastructure",
+      "project_cost_usd_m_min": 1,
+      "project_cost_usd_m_max": 20,
+      "debt_fraction": 0.60,
+      "min_ap_usd_m_annual": 0.05,
+      "examples": ["school reconstruction", "clinic", "bridge"]
+    },
+    {
+      "id": "tier_2",
+      "label": "Tier 2 — Medium Infrastructure",
+      "project_cost_usd_m_min": 20,
+      "project_cost_usd_m_max": 100,
+      "debt_fraction": 0.65,
+      "min_ap_usd_m_annual": 1.0,
+      "examples": ["regional hospital", "substation", "water treatment plant"]
+    },
+    {
+      "id": "tier_3",
+      "label": "Tier 3 — Major Infrastructure",
+      "project_cost_usd_m_min": 100,
+      "project_cost_usd_m_max": 500,
+      "debt_fraction": 0.70,
+      "min_ap_usd_m_annual": 5.0,
+      "examples": ["power plant", "port, rail corridor", "university campus"]
+    },
+    {
+      "id": "tier_4",
+      "label": "Tier 4 — Strategic / National Scale",
+      "project_cost_usd_m_min": 500,
+      "project_cost_usd_m_max": 10000,
+      "debt_fraction": 0.75,
+      "min_ap_usd_m_annual": 25.0,
+      "examples": ["Kakhovka HPP rebuild", "Azovstal repurposing", "Mariupol port reconstruction"]
+    }
+  ],
+  "source_notes": "Debt fraction and DSCR based on EBRD Ukraine infrastructure precedents. Debt service constant is a standard 15-year annuity formula."
+}

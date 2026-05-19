@@ -1,0 +1,43 @@
+{
+  "version": "1.0.0",
+  "scenarios": [
+    {
+      "id": "conservative",
+      "label": "Conservative",
+      "real_return_pct": 3.0,
+      "description": "Real return matching long-run AAA sovereign bond yield. Minimal equity exposure.",
+      "precedent": "GPFG 2022 drawdown year — real return 3.1%",
+      "source_code": "NORGES_BANK_IM",
+      "source_label": "Norges Bank Investment Management Annual Report 2022"
+    },
+    {
+      "id": "baseline",
+      "label": "Baseline",
+      "real_return_pct": 4.0,
+      "description": "GPFG long-run real return target. 60/40 global equities/bonds with infrastructure overlay.",
+      "precedent": "GPFG 1998–2023 average real return: 4.0%",
+      "source_code": "NORGES_BANK_IM",
+      "source_label": "Norges Bank Investment Management 25-year review 2023"
+    },
+    {
+      "id": "moderate",
+      "label": "Moderate",
+      "real_return_pct": 5.0,
+      "description": "Blended return with higher EM and infrastructure weighting — consistent with ISIF 5-year track record.",
+      "precedent": "Ireland ISIF: 5.2% real return 2015–2023",
+      "source_code": "ISIF",
+      "source_label": "Ireland Strategic Investment Fund Annual Report 2023"
+    },
+    {
+      "id": "ambitious",
+      "label": "Ambitious",
+      "real_return_pct": 7.0,
+      "description": "Temasek-style strategic equity portfolio. Higher risk, higher long-run return. Requires deep institutional capacity.",
+      "precedent": "Temasek: 14% total shareholder return since 1974 inception; normalised real ~6–8%",
+      "source_code": "TEMASEK",
+      "source_label": "Temasek Review 2023 — 49-year track record"
+    }
+  ],
+  "default_id": "baseline",
+  "source_notes": "Real returns computed net of management costs and inflation assumption of 2.5% (ECB medium-term target). Nominal yields from ECB AAA sovereign yield curve, 2026-Q1."
+}

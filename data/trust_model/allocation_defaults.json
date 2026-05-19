@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "channels": [
+    {
+      "id": "grants",
+      "label": "Grants",
+      "description": "First-loss grant capital deployed directly to non-revenue-generating reconstruction (schools, hospitals, cultural heritage). No return expected.",
+      "default_pct": 20,
+      "min_pct": 0,
+      "max_pct": 50,
+      "colour": "#27ae60",
+      "icon": "🏫"
+    },
+    {
+      "id": "concessional",
+      "label": "Concessional Loans",
+      "description": "Below-market rate loans for public-sector and municipal infrastructure. Return: 1–2% real. Recycled to corpus on repayment.",
+      "default_pct": 30,
+      "min_pct": 0,
+      "max_pct": 60,
+      "colour": "#2980b9",
+      "icon": "🏗️"
+    },
+    {
+      "id": "equity",
+      "label": "Strategic Equity",
+      "description": "Equity stakes in nationally strategic enterprises (energy, ports, telecoms, agri-infrastructure). Target return: 6–8% real.",
+      "default_pct": 25,
+      "min_pct": 0,
+      "max_pct": 50,
+      "colour": "#8e44ad",
+      "icon": "📈"
+    },
+    {
+      "id": "availability_payments",
+      "label": "Availability Payments",
+      "description": "Annual payment stream backing senior concessional debt — the mechanism enabling project financing without full upfront capital.",
+      "default_pct": 15,
+      "min_pct": 0,
+      "max_pct": 40,
+      "colour": "#f0a500",
+      "icon": "💳"
+    },
+    {
+      "id": "endowment_reserve",
+      "label": "Endowment Reserve",
+      "description": "Retained in corpus to generate future returns. Not deployed in current period. Grows the NAV base.",
+      "default_pct": 10,
+      "min_pct": 5,
+      "max_pct": 40,
+      "colour": "#1a3a6b",
+      "icon": "🏦"
+    }
+  ],
+  "constraint": "Percentages must sum to 100. Endowment reserve minimum 5% to preserve corpus.",
+  "source_notes": "Channel proportions inspired by ISIF directed investment mandate (2014) and GPFG drawdown rules (§7 of the Management Mandate). Availability payment channel modelled on UNCC compensation mechanism precedent."
+}

@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "scenarios": {
+    "A": {
+      "id": "A",
+      "label": "Scenario A — During War",
+      "description": "Trust capitalised from assets available during active conflict: ERA loan proceeds, EU Facility, bilateral donors, diaspora bonds. Frozen principal remains in custodian accounts pending legal resolution.",
+      "default_nav_usd_bn": 75,
+      "real_return_pct": 4.0,
+      "deployment_rate_pct": 6.0,
+      "horizon_years": 30,
+      "recycling_rate_pct": 15,
+      "contingency_reserve_pct": 10,
+      "active_source_ids": ["frozen_russian_assets", "g7_era_loan", "eu_ukraine_facility", "bilateral_donors", "diaspora_bonds"]
+    },
+    "B": {
+      "id": "B",
+      "label": "Scenario B — Post-War",
+      "description": "Trust capitalised from full reparations settlement, frozen asset transfer, and post-war reconstruction pledges. Higher corpus but longer mobilisation timeline.",
+      "default_nav_usd_bn": 390,
+      "real_return_pct": 4.5,
+      "deployment_rate_pct": 5.0,
+      "horizon_years": 30,
+      "recycling_rate_pct": 20,
+      "contingency_reserve_pct": 8,
+      "active_source_ids": ["reparations_direct", "frozen_asset_transfer", "eu_successor", "bilateral_donors_b", "diaspora_bonds_b", "privatisation_b"]
+    }
+  }
+}
