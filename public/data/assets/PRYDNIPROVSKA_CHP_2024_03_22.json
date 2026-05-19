@@ -1,0 +1,197 @@
+{
+  "asset_id": "PRYDNIPROVSKA_CHP_2024_03_22",
+  "name": {
+    "en": "Prydniprovska Combined Heat and Power Plant",
+    "uk": "Придніпровська ТЕЦ"
+  },
+  "location": {
+    "lat": 48.4351,
+    "lon": 34.9656,
+    "oblast": "Dnipropetrovsk",
+    "raion": "Dnipro",
+    "settlement": "Dnipro",
+    "address_en": "Prydniprovska CHP, Dnipro, Dnipropetrovsk Oblast"
+  },
+  "asset_type": "energy.chp",
+  "sector": "energy_and_power",
+  "damage": {
+    "incident_date": "2024-03-22",
+    "incident_type": "missile_strike",
+    "destruction_level": "severe",
+    "re_damage_count": 1,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update — March 2024 Energy Infrastructure Attacks",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-march-2024-energy-attacks",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Damage to Energy Infrastructure — Q1 2024 Assessment",
+        "url": "https://kse.ua/wp-content/uploads/2024/04/KSE_Energy_Damage_Q1_2024.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE",
+      "EBRD_RSF"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "installed_capacity_mw": {
+      "value": 820,
+      "unit": "MW",
+      "source": "extracted_from_source",
+      "ref": "DTEK Prydniprovska CHP official capacity data; RDNA3 Table A2.3"
+    },
+    "heat_output_gcal_h": {
+      "value": 1340,
+      "unit": "Gcal/h",
+      "source": "extracted_from_source",
+      "ref": "Dnipro District Heating Authority records; RDNA3 Annex"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 312,
+      "central_usd_m": 492,
+      "high_usd_m": 672
+    },
+    "code_compliant": {
+      "low_usd_m": 359,
+      "central_usd_m": 601,
+      "high_usd_m": 843
+    },
+    "build_back_better": {
+      "low_usd_m": 406,
+      "central_usd_m": 738,
+      "high_usd_m": 1070,
+      "tech_overlays": [
+        "combined_cycle_upgrade",
+        "heat_pump_integration",
+        "smart_grid_integration",
+        "district_heat_metering"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "ENERGY_BASELINE",
+      "grant_pct": 30,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 30,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "EBRD_RSF"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "ENERGY_CODE_COMPLIANT",
+      "grant_pct": 30,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 30,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "EBRD_RSF"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "ENERGY_BBB",
+      "grant_pct": 30,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 30,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "EBRD_RSF"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "blending_facility"
+      ],
+      "rationale": "CHP rebuild with combined-cycle upgrade eligible for EU Energy Platform grants and EBRD climate-finance windows; district-heat modernisation qualifies for additional EU4Energy support",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2028,
+    "construction_period_years": 3,
+    "coupon_pct": 5.5,
+    "dscr": 1.2,
+    "rationale": "Heat and power tariff revenues support partial debt service; Trust covers ramp-up shortfall",
+    "supportable_debt_usd_m": 185,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "energy",
+    "chp",
+    "dnipro",
+    "missile_strike",
+    "district_heating"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

@@ -1,0 +1,196 @@
+{
+  "asset_id": "KHERSON_ANTONIVSKYI_RAILWAY_BRIDGE_2022_08_27",
+  "name": {
+    "en": "Antonivka Railway Bridge over the Dnipro (Kherson)",
+    "uk": "Антонівський залізничний міст через Дніпро (Херсон)"
+  },
+  "location": {
+    "lat": 46.7438,
+    "lon": 32.7834,
+    "oblast": "Kherson",
+    "raion": "Kherson",
+    "settlement": "Antonivka",
+    "address_en": "Antonivka railway bridge, Kherson Oblast"
+  },
+  "asset_type": "transport.railway_bridge",
+  "sector": "transport_and_ports",
+  "damage": {
+    "incident_date": "2022-08-27",
+    "incident_type": "precision_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Situation Report — Kherson Oblast August 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kherson-august-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Kherson Oblast Transport Infrastructure Damage Assessment",
+        "url": "https://kse.ua/wp-content/uploads/2022/10/KSE_Kherson_Transport_Damage.pdf",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat: Antonivka Bridge Strikes — Damage Verification August 2022",
+        "url": "https://www.bellingcat.com/news/2022/08/antonivka-bridge-damage-verification",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE",
+      "EBRD_RSF"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "bridge_length_m": {
+      "value": 1870,
+      "unit": "m",
+      "source": "extracted_from_source",
+      "ref": "Ukrzaliznytsia technical registry; RDNA3 Transport Annex"
+    },
+    "track_gauge_mm": {
+      "value": 1520,
+      "unit": "mm",
+      "source": "extracted_from_source",
+      "ref": "Ukrzaliznytsia standard gauge specification"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 68,
+      "central_usd_m": 121,
+      "high_usd_m": 174
+    },
+    "code_compliant": {
+      "low_usd_m": 78,
+      "central_usd_m": 148,
+      "high_usd_m": 217
+    },
+    "build_back_better": {
+      "low_usd_m": 88,
+      "central_usd_m": 181,
+      "high_usd_m": 274,
+      "tech_overlays": [
+        "seismic_resilience",
+        "smart_monitoring",
+        "electrification_ready"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "TRANSPORT_BASELINE",
+      "grant_pct": 30,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 25,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EBRD_RSF"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "TRANSPORT_CODE_COMPLIANT",
+      "grant_pct": 30,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 25,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EBRD_RSF"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "TRANSPORT_BBB",
+      "grant_pct": 35,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EBRD_RSF"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Strategic railway crossing; critical for Kherson Oblast agricultural and humanitarian logistics post-liberation; EU TEN-T and EBRD rail financing applicable; electrification-ready design aligns with Ukraine rail modernisation programme",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2028,
+    "construction_period_years": 3,
+    "coupon_pct": 5.0,
+    "dscr": 1.2,
+    "rationale": "Railway bridge; freight revenue via Ukrzaliznytsia supports partial debt service post-reconstruction",
+    "supportable_debt_usd_m": 52,
+    "tenor_years": 25
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "transport",
+    "railway_bridge",
+    "kherson",
+    "precision_strike",
+    "destroyed"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

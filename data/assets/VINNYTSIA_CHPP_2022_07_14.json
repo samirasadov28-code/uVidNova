@@ -1,0 +1,191 @@
+{
+  "asset_id": "VINNYTSIA_CHPP_2022_07_14",
+  "name": {
+    "en": "Vinnytsia Combined Heat and Power Plant",
+    "uk": "Вінницька ТЕЦ"
+  },
+  "location": {
+    "lat": 49.2328,
+    "lon": 28.4753,
+    "oblast": "Vinnytsia",
+    "raion": null,
+    "settlement": "Vinnytsia",
+    "address_en": "Vinnytsia CHP, Vinnytsia, Vinnytsia Oblast"
+  },
+  "asset_type": "energy.chp",
+  "sector": "energy_and_power",
+  "damage": {
+    "incident_date": "2022-07-14",
+    "incident_type": "missile_strike",
+    "destruction_level": "moderate",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Situation Report — 14 July 2022 Mass Casualty Attack",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-14-july-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Vinnytsia Oblast Infrastructure Damage — July 2022",
+        "url": "https://kse.ua/wp-content/uploads/2022/08/KSE_Vinnytsia_July2022_Damage.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "installed_capacity_mw": {
+      "value": 120,
+      "unit": "MW",
+      "source": "extracted_from_source",
+      "ref": "Vinnytsiamistoteploenergo official capacity data; RDNA3 Annex"
+    },
+    "heat_output_gcal_h": {
+      "value": 290,
+      "unit": "Gcal/h",
+      "source": "extracted_from_source",
+      "ref": "Vinnytsia District Heating Authority records"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 38,
+      "central_usd_m": 62,
+      "high_usd_m": 86
+    },
+    "code_compliant": {
+      "low_usd_m": 44,
+      "central_usd_m": 76,
+      "high_usd_m": 107
+    },
+    "build_back_better": {
+      "low_usd_m": 50,
+      "central_usd_m": 93,
+      "high_usd_m": 136,
+      "tech_overlays": [
+        "combined_cycle_upgrade",
+        "heat_pump_integration",
+        "district_heat_metering",
+        "smart_grid_integration"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "ENERGY_BASELINE",
+      "grant_pct": 30,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 30,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": false,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "ENERGY_CODE_COMPLIANT",
+      "grant_pct": 30,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 30,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": false,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "ENERGY_BBB",
+      "grant_pct": 30,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 30,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": false,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Moderate damage enables faster repair timeline; EU4Energy grants applicable for heat modernisation; Vinnytsia location well behind frontline reduces security premium",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2027,
+    "construction_period_years": 2,
+    "coupon_pct": 5.0,
+    "dscr": 1.25,
+    "rationale": "District heat tariff revenue provides stable debt-service base; shorter reconstruction timeline",
+    "supportable_debt_usd_m": 28,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "energy",
+    "chp",
+    "vinnytsia",
+    "missile_strike",
+    "district_heating"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

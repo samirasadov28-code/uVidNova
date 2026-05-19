@@ -1,0 +1,188 @@
+{
+  "asset_id": "ZAPORIZHZHIA_POLYTECHNIC_2022_10_09",
+  "name": {
+    "en": "Zaporizhzhia National Technical University (ZNTU)",
+    "uk": "Запорізький національний технічний університет (ЗНТУ)"
+  },
+  "location": {
+    "lat": 47.8374,
+    "lon": 35.1487,
+    "oblast": "Zaporizhzhia",
+    "raion": null,
+    "settlement": "Zaporizhzhia",
+    "address_en": "64 Zhukovskoho St, Zaporizhzhia"
+  },
+  "asset_type": "education.university",
+  "sector": "education",
+  "damage": {
+    "incident_date": "2022-10-09",
+    "incident_type": "missile_strike",
+    "destruction_level": "moderate",
+    "re_damage_count": 1,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update — October 2022 Zaporizhzhia Attacks",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-october-2022-zaporizhzhia",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Zaporizhzhia Oblast Education Infrastructure Damage",
+        "url": "https://kse.ua/wp-content/uploads/2022/11/KSE_Zaporizhzhia_Education_Damage.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 55000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "ZNTU official facility register; Zaporizhzhia Oblast Education Department"
+    },
+    "student_capacity": {
+      "value": 11000,
+      "unit": "students",
+      "source": "extracted_from_source",
+      "ref": "ZNTU enrollment data 2021–22; Ministry of Education Ukraine"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 28,
+      "central_usd_m": 48,
+      "high_usd_m": 69
+    },
+    "code_compliant": {
+      "low_usd_m": 32,
+      "central_usd_m": 59,
+      "high_usd_m": 86
+    },
+    "build_back_better": {
+      "low_usd_m": 36,
+      "central_usd_m": 73,
+      "high_usd_m": 110,
+      "tech_overlays": [
+        "passive_house_standard",
+        "microgrid",
+        "fibre",
+        "digital_twin_lab_infrastructure"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "EDUCATION_BASELINE",
+      "grant_pct": 50,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "EDUCATION_CODE_COMPLIANT",
+      "grant_pct": 55,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "EDUCATION_BBB",
+      "grant_pct": 60,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 20,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Technical university in frontline-adjacent city; critical for industrial reconstruction workforce; EU4Education grants applicable; moderate damage enables faster repair than full rebuild",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": false,
+    "commissioning_year": null,
+    "construction_period_years": null,
+    "coupon_pct": null,
+    "dscr": null,
+    "rationale": "University; primarily grant and public-equity financed",
+    "supportable_debt_usd_m": 0,
+    "tenor_years": null
+  },
+  "donor_pathway": {
+    "united24_url": "https://u24.gov.ua/rebuild-schools",
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "education",
+    "university",
+    "zaporizhzhia",
+    "missile_strike",
+    "moderate"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

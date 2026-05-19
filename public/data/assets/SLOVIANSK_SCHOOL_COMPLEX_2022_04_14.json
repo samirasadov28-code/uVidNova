@@ -1,0 +1,189 @@
+{
+  "asset_id": "SLOVIANSK_SCHOOL_COMPLEX_2022_04_14",
+  "name": {
+    "en": "Sloviansk Secondary School Complex",
+    "uk": "Слов'янський шкільний комплекс"
+  },
+  "location": {
+    "lat": 48.8602,
+    "lon": 37.6071,
+    "oblast": "Donetsk",
+    "raion": "Kramatorsk",
+    "settlement": "Sloviansk",
+    "address_en": "School Complex, Sloviansk, Donetsk Oblast"
+  },
+  "asset_type": "education.secondary_school",
+  "sector": "education",
+  "damage": {
+    "incident_date": "2022-04-14",
+    "incident_type": "artillery_strike",
+    "destruction_level": "severe",
+    "re_damage_count": 2,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Humanitarian Situation Report — April 2022 Donetsk",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-situation-report-april-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Donetsk Oblast Education Infrastructure Damage — 2022",
+        "url": "https://kse.ua/wp-content/uploads/2022/09/KSE_Donetsk_Education_Damage_2022.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 12500,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery (Planet Labs); pre-war building footprints from OpenStreetMap"
+    },
+    "student_capacity": {
+      "value": 1800,
+      "unit": "students",
+      "source": "extracted_from_source",
+      "ref": "Sloviansk City Education Department records 2021"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 14,
+      "central_usd_m": 24,
+      "high_usd_m": 35
+    },
+    "code_compliant": {
+      "low_usd_m": 16,
+      "central_usd_m": 29,
+      "high_usd_m": 43
+    },
+    "build_back_better": {
+      "low_usd_m": 18,
+      "central_usd_m": 36,
+      "high_usd_m": 54,
+      "tech_overlays": [
+        "passive_house_standard",
+        "microgrid",
+        "fibre",
+        "mass_timber"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "EDUCATION_BASELINE",
+      "grant_pct": 50,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "EDUCATION_CODE_COMPLIANT",
+      "grant_pct": 55,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "EDUCATION_BBB",
+      "grant_pct": 60,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 20,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Multiple-school complex in Donetsk Oblast; high grant eligibility under EU education reconstruction; passive standard overlays reduce long-term energy costs in conflict-affected region",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": false,
+    "commissioning_year": null,
+    "construction_period_years": null,
+    "coupon_pct": null,
+    "dscr": null,
+    "rationale": "Educational facility; no monetisable cashflows; purely grant-funded reconstruction",
+    "supportable_debt_usd_m": 0,
+    "tenor_years": null
+  },
+  "donor_pathway": {
+    "united24_url": "https://u24.gov.ua/rebuild-schools",
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "education",
+    "secondary_school",
+    "donetsk",
+    "sloviansk",
+    "artillery_strike",
+    "severe"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

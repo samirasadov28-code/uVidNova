@@ -1,0 +1,190 @@
+{
+  "asset_id": "ZAPORIZHZHIA_REGIONAL_HOSPITAL_2022_10_09",
+  "name": {
+    "en": "Zaporizhzhia Regional Clinical Hospital",
+    "uk": "Запорізька обласна клінічна лікарня"
+  },
+  "location": {
+    "lat": 47.8388,
+    "lon": 35.1396,
+    "oblast": "Zaporizhzhia",
+    "raion": null,
+    "settlement": "Zaporizhzhia",
+    "address_en": "Zaporizhzhia Regional Clinical Hospital, 10 Orfeeva St, Zaporizhzhia"
+  },
+  "asset_type": "healthcare.tertiary_hospital",
+  "sector": "healthcare",
+  "damage": {
+    "incident_date": "2022-10-09",
+    "incident_type": "missile_strike",
+    "destruction_level": "moderate",
+    "re_damage_count": 2,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update — October 2022 Attacks on Healthcare Facilities",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-october-2022-healthcare",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "WHO Ukraine: Health Facility Attack Reporting — October 2022",
+        "url": "https://www.unocha.org/ukraine/who-health-facility-attacks-october-2022",
+        "source_code": "OCHA"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 32000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "Zaporizhzhia Oblast Health Department official facility register 2022"
+    },
+    "beds": {
+      "value": 1200,
+      "unit": "beds",
+      "source": "extracted_from_source",
+      "ref": "Ministry of Health of Ukraine facility database 2022"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 58,
+      "central_usd_m": 101,
+      "high_usd_m": 144
+    },
+    "code_compliant": {
+      "low_usd_m": 67,
+      "central_usd_m": 123,
+      "high_usd_m": 180
+    },
+    "build_back_better": {
+      "low_usd_m": 76,
+      "central_usd_m": 152,
+      "high_usd_m": 228,
+      "tech_overlays": [
+        "microgrid",
+        "modular_clinical_units",
+        "passive_house_standard",
+        "telemedicine"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "HEALTHCARE_BASELINE",
+      "grant_pct": 30,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "HEALTHCARE_CODE_COMPLIANT",
+      "grant_pct": 40,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 35,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "HEALTHCARE_BBB",
+      "grant_pct": 55,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Regional tertiary hospital serving frontline-adjacent population; high grant eligibility under EU healthcare reconstruction; microgrid and passive standard overlays qualify for additional EU green conditionality",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2028,
+    "construction_period_years": 2,
+    "coupon_pct": 5.0,
+    "dscr": 1.2,
+    "rationale": "Regional tertiary care; availability payment from Oblast budget supports debt service",
+    "supportable_debt_usd_m": 42,
+    "tenor_years": 25
+  },
+  "donor_pathway": {
+    "united24_url": "https://u24.gov.ua/healthcare",
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "healthcare",
+    "tertiary_hospital",
+    "zaporizhzhia",
+    "missile_strike",
+    "re_damaged"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

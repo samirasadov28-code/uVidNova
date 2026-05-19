@@ -1,0 +1,204 @@
+{
+  "asset_id": "KREMENCHUK_KREMEN_OIL_REFINERY_2022_06_27",
+  "name": {
+    "en": "Kremenchuk Kremenchutskyi Oil Refinery Complex",
+    "uk": "Кременчуцький нафтопереробний завод"
+  },
+  "location": {
+    "lat": 49.0882,
+    "lon": 33.4117,
+    "oblast": "Poltava",
+    "raion": "Kremenchuk",
+    "settlement": "Kremenchuk",
+    "address_en": "Kremenchuk Oil Refinery, Kremenchuk, Poltava Oblast"
+  },
+  "asset_type": "energy.refinery",
+  "sector": "energy_and_power",
+  "damage": {
+    "incident_date": "2022-06-27",
+    "incident_type": "missile_strike",
+    "destruction_level": "severe",
+    "re_damage_count": 2,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Situation Report — June 2022 Kremenchuk Attacks",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-june-2022-kremenchuk",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Industrial Infrastructure Damage — Poltava Oblast",
+        "url": "https://kse.ua/wp-content/uploads/2022/08/KSE_Poltava_Industrial_Damage.pdf",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat: Kremenchuk Strike Verification — June 2022",
+        "url": "https://www.bellingcat.com/news/2022/06/27/kremenchuk-strikes-verification",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UKEF",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "processing_capacity_mtpa": {
+      "value": 18,
+      "unit": "million tonnes per annum",
+      "source": "extracted_from_source",
+      "ref": "Ukrtatnafta annual report; RDNA3 Annex — Industrial Assets"
+    },
+    "site_area_ha": {
+      "value": 680,
+      "unit": "ha",
+      "source": "extracted_from_source",
+      "ref": "Ukrtatnafta facility documentation; satellite cross-reference"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 780,
+      "central_usd_m": 1240,
+      "high_usd_m": 1700
+    },
+    "code_compliant": {
+      "low_usd_m": 897,
+      "central_usd_m": 1488,
+      "high_usd_m": 2125
+    },
+    "build_back_better": {
+      "low_usd_m": 1014,
+      "central_usd_m": 1790,
+      "high_usd_m": 2550,
+      "tech_overlays": [
+        "low_sulphur_compliance",
+        "waste_heat_recovery",
+        "process_electrification",
+        "smart_monitoring"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "INDUSTRIAL_BASELINE",
+      "grant_pct": 20,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 20,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 30,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF"
+        ]
+      },
+      "structure_patterns": [
+        "project_finance",
+        "a_b_loan"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "INDUSTRIAL_CODE_COMPLIANT",
+      "grant_pct": 20,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 20,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 30,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF"
+        ]
+      },
+      "structure_patterns": [
+        "project_finance",
+        "a_b_loan"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "INDUSTRIAL_BBB",
+      "grant_pct": 20,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 20,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 30,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF"
+        ]
+      },
+      "structure_patterns": [
+        "project_finance",
+        "a_b_loan"
+      ],
+      "rationale": "Private-sector-led reconstruction with EBRD/IFC equity co-investment; ECA coverage from UKEF required for commercial lender participation; EU grant element tied to green process upgrades",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2029,
+    "construction_period_years": 4,
+    "coupon_pct": 6.5,
+    "dscr": 1.3,
+    "rationale": "Refinery generates commercial revenues; strong debt-service coverage with MIGA wrap; long reconstruction lead time",
+    "supportable_debt_usd_m": 420,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "energy",
+    "refinery",
+    "poltava",
+    "kremenchuk",
+    "missile_strike",
+    "industrial"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

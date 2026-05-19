@@ -1,0 +1,196 @@
+{
+  "asset_id": "SLOVIANSK_CHP_2022_04_14",
+  "name": {
+    "en": "Sloviansk Combined Heat and Power Plant",
+    "uk": "Слов'янська ТЕЦ"
+  },
+  "location": {
+    "lat": 48.8614,
+    "lon": 37.6153,
+    "oblast": "Donetsk",
+    "raion": "Kramatorsk",
+    "settlement": "Sloviansk",
+    "address_en": "Sloviansk CHP, Sloviansk, Donetsk Oblast"
+  },
+  "asset_type": "energy.chp",
+  "sector": "energy_and_power",
+  "damage": {
+    "incident_date": "2022-04-14",
+    "incident_type": "artillery_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 3,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Humanitarian Situation Report — April 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-situation-report-april-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Donetsk Oblast Energy Infrastructure Damage Assessment",
+        "url": "https://kse.ua/wp-content/uploads/2022/09/KSE_Donetsk_Energy_Damage_2022.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "recently_liberated",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "installed_capacity_mw": {
+      "value": 270,
+      "unit": "MW",
+      "source": "extracted_from_source",
+      "ref": "RDNA3 Table A2.3; Ukrenergo Donetsk Oblast operational data pre-2022"
+    },
+    "heat_output_gcal_h": {
+      "value": 410,
+      "unit": "Gcal/h",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery analysis (Planet Labs); capacity estimated from facility footprint"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 108,
+      "central_usd_m": 189,
+      "high_usd_m": 270
+    },
+    "code_compliant": {
+      "low_usd_m": 124,
+      "central_usd_m": 231,
+      "high_usd_m": 337
+    },
+    "build_back_better": {
+      "low_usd_m": 140,
+      "central_usd_m": 284,
+      "high_usd_m": 428,
+      "tech_overlays": [
+        "combined_cycle_upgrade",
+        "smart_grid_integration",
+        "district_heat_metering",
+        "heat_pump_integration"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "ENERGY_BASELINE",
+      "grant_pct": 30,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 30,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "ENERGY_CODE_COMPLIANT",
+      "grant_pct": 30,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 30,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "ENERGY_BBB",
+      "grant_pct": 30,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 30,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "a_b_loan",
+        "blending_facility"
+      ],
+      "rationale": "Reconstruction in recently liberated Donetsk Oblast; reconstruction finance contingent on sustained security; EU recovery grants and EBRD concessional lending applicable post-stabilisation",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2030,
+    "construction_period_years": 3,
+    "coupon_pct": 6.0,
+    "dscr": 1.15,
+    "rationale": "Frontline-adjacent location adds construction-risk premium; tariff revenues contingent on post-war demand recovery",
+    "supportable_debt_usd_m": 62,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "energy",
+    "chp",
+    "donetsk",
+    "sloviansk",
+    "artillery_strike",
+    "destroyed"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

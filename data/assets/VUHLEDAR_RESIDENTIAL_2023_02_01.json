@@ -1,0 +1,196 @@
+{
+  "asset_id": "VUHLEDAR_RESIDENTIAL_2023_02_01",
+  "name": {
+    "en": "Vuhledar Housing District",
+    "uk": "Вугледар — житловий фонд міста"
+  },
+  "location": {
+    "lat": 47.7664,
+    "lon": 37.2522,
+    "oblast": "Donetsk",
+    "raion": "Volnovakha",
+    "settlement": "Vuhledar",
+    "address_en": "Vuhledar residential district, Donetsk Oblast"
+  },
+  "asset_type": "residential.urban_district",
+  "sector": "social_infrastructure",
+  "damage": {
+    "incident_date": "2023-02-01",
+    "incident_type": "artillery_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 5,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update — Vuhledar Humanitarian Crisis February 2023",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-vuhledar-february-2023",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Donetsk Oblast Residential Damage — Vuhledar 2022–2023",
+        "url": "https://kse.ua/wp-content/uploads/2023/04/KSE_Vuhledar_Residential.pdf",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat: Vuhledar — Satellite Damage Assessment 2022–2023",
+        "url": "https://www.bellingcat.com/news/2023/02/vuhledar-damage-assessment",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 140000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery (Maxar/Planet Labs); pre-war census 2020 cross-reference"
+    },
+    "residential_units": {
+      "value": 1900,
+      "unit": "units",
+      "source": "estimated_from_photo",
+      "ref": "KSE residential damage methodology; Donetsk Oblast building registry"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 107,
+      "central_usd_m": 210,
+      "high_usd_m": 313
+    },
+    "code_compliant": {
+      "low_usd_m": 123,
+      "central_usd_m": 257,
+      "high_usd_m": 391
+    },
+    "build_back_better": {
+      "low_usd_m": 139,
+      "central_usd_m": 315,
+      "high_usd_m": 491,
+      "tech_overlays": [
+        "passive_house_standard",
+        "microgrid",
+        "mass_timber",
+        "district_heat_metering"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "RESIDENTIAL_BASELINE",
+      "grant_pct": 40,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 35,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "RESIDENTIAL_CODE_COMPLIANT",
+      "grant_pct": 45,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "RESIDENTIAL_BBB",
+      "grant_pct": 50,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Occupied coal-mining town; near-total residential destruction; reconstruction contingent on liberation; long reconstruction horizon; EU and IFI grants primary financing once conditions permit",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": false,
+    "commissioning_year": null,
+    "construction_period_years": null,
+    "coupon_pct": null,
+    "dscr": null,
+    "rationale": "Residential district in occupied territory; no monetisable cashflows; grant-only mechanism",
+    "supportable_debt_usd_m": 0,
+    "tenor_years": null
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "housing",
+    "donetsk",
+    "vuhledar",
+    "artillery_strike",
+    "destroyed",
+    "occupied"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

@@ -1,0 +1,201 @@
+{
+  "asset_id": "KREMENCHUK_STROYMASH_PLANT_2022_06_27",
+  "name": {
+    "en": "Kremenchuk Stroymash Engineering Plant",
+    "uk": "Кременчуцький завод Stroymash (будівельного машинобудування)"
+  },
+  "location": {
+    "lat": 49.0701,
+    "lon": 33.4089,
+    "oblast": "Poltava",
+    "raion": "Kremenchuk",
+    "settlement": "Kremenchuk",
+    "address_en": "Stroymash Engineering Plant, Kremenchuk, Poltava Oblast"
+  },
+  "asset_type": "industrial.engineering_plant",
+  "sector": "industrial_and_agricultural",
+  "damage": {
+    "incident_date": "2022-06-27",
+    "incident_type": "missile_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 1,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Situation Report — June 2022 Kremenchuk Industrial Attacks",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-june-2022-kremenchuk",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Poltava Oblast Industrial Infrastructure Damage",
+        "url": "https://kse.ua/wp-content/uploads/2022/08/KSE_Poltava_Industrial_Damage.pdf",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat: Kremenchuk Industrial Zone Strikes — Verification June 2022",
+        "url": "https://www.bellingcat.com/news/2022/06/kremenchuk-industrial-strikes",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UKEF",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 48000,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "Kremenchuk Industrial Estate records; satellite imagery (Planet Labs) cross-reference"
+    },
+    "production_capacity_tonnes_year": {
+      "value": 12000,
+      "unit": "tonnes/year",
+      "source": "estimated_from_photo",
+      "ref": "Pre-war capacity estimated from facility footprint and sector benchmarks (RDNA3 Industrial Annex)"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 52,
+      "central_usd_m": 105,
+      "high_usd_m": 158
+    },
+    "code_compliant": {
+      "low_usd_m": 60,
+      "central_usd_m": 128,
+      "high_usd_m": 197
+    },
+    "build_back_better": {
+      "low_usd_m": 68,
+      "central_usd_m": 157,
+      "high_usd_m": 246,
+      "tech_overlays": [
+        "process_electrification",
+        "smart_manufacturing",
+        "energy_management_system",
+        "waste_heat_recovery"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "INDUSTRIAL_BASELINE",
+      "grant_pct": 20,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 20,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 30,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF"
+        ]
+      },
+      "structure_patterns": [
+        "project_finance"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "INDUSTRIAL_CODE_COMPLIANT",
+      "grant_pct": 20,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 20,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 30,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF"
+        ]
+      },
+      "structure_patterns": [
+        "project_finance"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "INDUSTRIAL_BBB",
+      "grant_pct": 20,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 20,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 30,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF"
+        ]
+      },
+      "structure_patterns": [
+        "project_finance"
+      ],
+      "rationale": "Industrial plant with private-sector operator; private equity and commercial debt dominant; UKEF and MIGA wrap required for international commercial lender participation; EU grant element for green process upgrade",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2028,
+    "construction_period_years": 3,
+    "coupon_pct": 7.0,
+    "dscr": 1.35,
+    "rationale": "Commercial manufacturing plant; strong revenue prospects post-reconstruction; higher coupon reflecting industrial-sector risk",
+    "supportable_debt_usd_m": 52,
+    "tenor_years": 15
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "industrial",
+    "engineering",
+    "poltava",
+    "kremenchuk",
+    "missile_strike",
+    "destroyed"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

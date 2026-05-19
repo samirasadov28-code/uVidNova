@@ -1,0 +1,191 @@
+{
+  "asset_id": "MYKOLAIV_REGIONAL_HOSPITAL_2022_04_15",
+  "name": {
+    "en": "Mykolaiv Regional Clinical Hospital",
+    "uk": "Миколаївська обласна клінічна лікарня"
+  },
+  "location": {
+    "lat": 46.9658,
+    "lon": 31.9916,
+    "oblast": "Mykolaiv",
+    "raion": null,
+    "settlement": "Mykolaiv",
+    "address_en": "Mykolaiv Regional Clinical Hospital, 28 Myrna St, Mykolaiv"
+  },
+  "asset_type": "healthcare.tertiary_hospital",
+  "sector": "healthcare",
+  "damage": {
+    "incident_date": "2022-04-15",
+    "incident_type": "missile_strike",
+    "destruction_level": "severe",
+    "re_damage_count": 1,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Humanitarian Situation Report — April 2022 Healthcare Attacks",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-situation-report-april-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Mykolaiv Oblast Damage Assessment — 2022",
+        "url": "https://kse.ua/wp-content/uploads/2022/09/KSE_Mykolaiv_Damage_2022.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 28500,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "Mykolaiv Oblast Health Department facility register; RDNA3 Annex"
+    },
+    "beds": {
+      "value": 1050,
+      "unit": "beds",
+      "source": "extracted_from_source",
+      "ref": "Ministry of Health of Ukraine facility database 2022"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 97,
+      "central_usd_m": 171,
+      "high_usd_m": 245
+    },
+    "code_compliant": {
+      "low_usd_m": 112,
+      "central_usd_m": 208,
+      "high_usd_m": 306
+    },
+    "build_back_better": {
+      "low_usd_m": 126,
+      "central_usd_m": 257,
+      "high_usd_m": 388,
+      "tech_overlays": [
+        "microgrid",
+        "modular_clinical_units",
+        "passive_house_standard",
+        "telemedicine",
+        "fibre"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "HEALTHCARE_BASELINE",
+      "grant_pct": 30,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "HEALTHCARE_CODE_COMPLIANT",
+      "grant_pct": 40,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 35,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "HEALTHCARE_BBB",
+      "grant_pct": 55,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Major southern regional hospital; high grant eligibility under EU healthcare reconstruction; post-Kakhovka resilience investment justified for water-stressed Mykolaiv region",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2028,
+    "construction_period_years": 3,
+    "coupon_pct": 5.0,
+    "dscr": 1.2,
+    "rationale": "Regional tertiary care; availability payment from Oblast budget supports debt service",
+    "supportable_debt_usd_m": 60,
+    "tenor_years": 25
+  },
+  "donor_pathway": {
+    "united24_url": "https://u24.gov.ua/healthcare",
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "healthcare",
+    "tertiary_hospital",
+    "mykolaiv",
+    "missile_strike",
+    "severe"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

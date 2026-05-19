@@ -1,0 +1,188 @@
+{
+  "asset_id": "IZMAIL_SUVOROV_MUSEUM_2024_07_14",
+  "name": {
+    "en": "Izmail Suvorov Museum of History and Military Glory",
+    "uk": "Ізмаїльський музей імені О.В.Суворова — Музей Ізмаїльської фортеці"
+  },
+  "location": {
+    "lat": 45.3500,
+    "lon": 28.8420,
+    "oblast": "Odesa",
+    "raion": "Izmail",
+    "settlement": "Izmail",
+    "address_en": "Suvorov Museum, Izmail, Odesa Oblast"
+  },
+  "asset_type": "heritage.museum",
+  "sector": "heritage_and_culture",
+  "damage": {
+    "incident_date": "2024-07-14",
+    "incident_type": "drone_strike",
+    "destruction_level": "moderate",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update — July 2024 Danube Region Strikes",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-july-2024-danube",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Odesa Oblast Cultural Heritage Damage 2024",
+        "url": "https://kse.ua/wp-content/uploads/2024/09/KSE_Odesa_Heritage_Damage_2024.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 3200,
+      "unit": "m2",
+      "source": "extracted_from_source",
+      "ref": "Izmail City Cultural Heritage Department; Ministry of Culture Ukraine inventory"
+    },
+    "collection_items_count": {
+      "value": 18000,
+      "unit": "items",
+      "source": "extracted_from_source",
+      "ref": "Museum official collection register 2023"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 5,
+      "central_usd_m": 9,
+      "high_usd_m": 13
+    },
+    "code_compliant": {
+      "low_usd_m": 6,
+      "central_usd_m": 11,
+      "high_usd_m": 16
+    },
+    "build_back_better": {
+      "low_usd_m": 8,
+      "central_usd_m": 15,
+      "high_usd_m": 22,
+      "tech_overlays": [
+        "heritage_conservation_premium",
+        "digital_twin_documentation",
+        "climate_controlled_storage"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "HERITAGE_BASELINE",
+      "grant_pct": 55,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "HERITAGE_CODE_COMPLIANT",
+      "grant_pct": 60,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "HERITAGE_BBB",
+      "grant_pct": 65,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 20,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Registered cultural monument; EU Creative Europe cultural heritage grants applicable; collection recovery and digital preservation component adds to reconstruction scope",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": false,
+    "commissioning_year": null,
+    "construction_period_years": null,
+    "coupon_pct": null,
+    "dscr": null,
+    "rationale": "Cultural heritage; no commercial cashflows; grant-only financing",
+    "supportable_debt_usd_m": 0,
+    "tenor_years": null
+  },
+  "donor_pathway": {
+    "united24_url": "https://u24.gov.ua/restore-culture",
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "heritage",
+    "museum",
+    "odesa",
+    "izmail",
+    "drone_strike",
+    "moderate"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

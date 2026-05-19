@@ -1,0 +1,190 @@
+{
+  "asset_id": "LYMAN_DISTRICT_HOSPITAL_2022_05_20",
+  "name": {
+    "en": "Lyman District Central Hospital",
+    "uk": "Лиманська районна центральна лікарня"
+  },
+  "location": {
+    "lat": 48.9801,
+    "lon": 37.8107,
+    "oblast": "Donetsk",
+    "raion": "Kramatorsk",
+    "settlement": "Lyman",
+    "address_en": "Lyman District Central Hospital, Lyman, Donetsk Oblast"
+  },
+  "asset_type": "healthcare.district_hospital",
+  "sector": "healthcare",
+  "damage": {
+    "incident_date": "2022-05-20",
+    "incident_type": "artillery_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 2,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Humanitarian Situation Report — May–June 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-situation-report-may-june-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Donetsk Oblast Damage Tracker — Healthcare Facilities",
+        "url": "https://kse.ua/wp-content/uploads/2022/09/KSE_Donetsk_Healthcare_Damage.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "recently_liberated",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 6800,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery (Planet Labs); pre-war mapping cross-reference"
+    },
+    "beds": {
+      "value": 280,
+      "unit": "beds",
+      "source": "extracted_from_source",
+      "ref": "Ministry of Health of Ukraine facility database 2021; Donetsk Oblast Health Registry"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 18,
+      "central_usd_m": 34,
+      "high_usd_m": 50
+    },
+    "code_compliant": {
+      "low_usd_m": 21,
+      "central_usd_m": 41,
+      "high_usd_m": 63
+    },
+    "build_back_better": {
+      "low_usd_m": 24,
+      "central_usd_m": 51,
+      "high_usd_m": 78,
+      "tech_overlays": [
+        "microgrid",
+        "modular_clinical_units",
+        "telemedicine",
+        "passive_house_standard"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "HEALTHCARE_BASELINE",
+      "grant_pct": 30,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "HEALTHCARE_CODE_COMPLIANT",
+      "grant_pct": 40,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 35,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "HEALTHCARE_BBB",
+      "grant_pct": 55,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "District hospital reconstruction in recently liberated Donetsk Oblast; grant-heavy financing essential given limited local fiscal capacity; reconstruction contingent on sustained territorial control",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2030,
+    "construction_period_years": 2,
+    "coupon_pct": 5.5,
+    "dscr": 1.15,
+    "rationale": "District-level care; limited operating revenues; availability payment mechanism required",
+    "supportable_debt_usd_m": 12,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": "https://u24.gov.ua/healthcare",
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "healthcare",
+    "district_hospital",
+    "donetsk",
+    "lyman",
+    "artillery_strike",
+    "destroyed",
+    "recently_liberated"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

@@ -1,0 +1,189 @@
+{
+  "asset_id": "CHASIV_YAR_DISTRICT_HOSPITAL_2023_07_09",
+  "name": {
+    "en": "Chasiv Yar District Hospital",
+    "uk": "Часів-Ярська районна лікарня"
+  },
+  "location": {
+    "lat": 48.5999,
+    "lon": 37.8524,
+    "oblast": "Donetsk",
+    "raion": "Bakhmut",
+    "settlement": "Chasiv Yar",
+    "address_en": "Chasiv Yar District Hospital, Chasiv Yar, Donetsk Oblast"
+  },
+  "asset_type": "healthcare.district_hospital",
+  "sector": "healthcare",
+  "damage": {
+    "incident_date": "2023-07-09",
+    "incident_type": "artillery_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 3,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update — Bakhmut-Chasiv Yar Humanitarian Situation July 2023",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-chasiv-yar-july-2023",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Donetsk Oblast Healthcare Damage Tracker — 2023",
+        "url": "https://kse.ua/wp-content/uploads/2023/08/KSE_Donetsk_Healthcare_2023.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "frontline_adjacent",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 4200,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery (Planet Labs); pre-war OpenStreetMap footprint"
+    },
+    "beds": {
+      "value": 180,
+      "unit": "beds",
+      "source": "extracted_from_source",
+      "ref": "Ministry of Health of Ukraine facility database 2021"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 14,
+      "central_usd_m": 25,
+      "high_usd_m": 36
+    },
+    "code_compliant": {
+      "low_usd_m": 16,
+      "central_usd_m": 31,
+      "high_usd_m": 45
+    },
+    "build_back_better": {
+      "low_usd_m": 18,
+      "central_usd_m": 38,
+      "high_usd_m": 58,
+      "tech_overlays": [
+        "microgrid",
+        "modular_clinical_units",
+        "telemedicine"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "HEALTHCARE_BASELINE",
+      "grant_pct": 30,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "HEALTHCARE_CODE_COMPLIANT",
+      "grant_pct": 40,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 35,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "HEALTHCARE_BBB",
+      "grant_pct": 55,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Frontline-adjacent; reconstruction finance available only after territorial stabilisation; EU humanitarian grant pathway dominant; modular construction reduces site-exposure time",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2031,
+    "construction_period_years": 2,
+    "coupon_pct": 6.0,
+    "dscr": 1.1,
+    "rationale": "Frontline-adjacent district hospital; reconstruction deeply contingent on stabilisation; limited debt-service capacity",
+    "supportable_debt_usd_m": 8,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": "https://u24.gov.ua/healthcare",
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "healthcare",
+    "district_hospital",
+    "donetsk",
+    "chasiv_yar",
+    "artillery_strike",
+    "destroyed",
+    "frontline_adjacent"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

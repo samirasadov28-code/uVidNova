@@ -1,0 +1,190 @@
+{
+  "asset_id": "MARIUPOL_SCHOOL_89_2022_03_01",
+  "name": {
+    "en": "Mariupol School No. 89",
+    "uk": "Маріупольська школа №89"
+  },
+  "location": {
+    "lat": 47.1031,
+    "lon": 37.5687,
+    "oblast": "Donetsk",
+    "raion": "Mariupol",
+    "settlement": "Mariupol",
+    "address_en": "School No. 89, Mariupol, Donetsk Oblast"
+  },
+  "asset_type": "education.primary_school",
+  "sector": "education",
+  "damage": {
+    "incident_date": "2022-03-01",
+    "incident_type": "artillery_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update — Mariupol Siege March 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-mariupol-siege-march-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Mariupol City Damage Assessment — Educational Infrastructure",
+        "url": "https://kse.ua/wp-content/uploads/2022/07/KSE_Mariupol_Education_Damage.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 3800,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery (Planet Labs); pre-war building footprint from OpenStreetMap"
+    },
+    "student_capacity": {
+      "value": 900,
+      "unit": "students",
+      "source": "extracted_from_source",
+      "ref": "Mariupol City Education Department records 2021"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 6,
+      "central_usd_m": 11,
+      "high_usd_m": 16
+    },
+    "code_compliant": {
+      "low_usd_m": 7,
+      "central_usd_m": 13,
+      "high_usd_m": 20
+    },
+    "build_back_better": {
+      "low_usd_m": 8,
+      "central_usd_m": 16,
+      "high_usd_m": 24,
+      "tech_overlays": [
+        "passive_house_standard",
+        "microgrid",
+        "fibre",
+        "mass_timber"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "EDUCATION_BASELINE",
+      "grant_pct": 50,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "EDUCATION_CODE_COMPLIANT",
+      "grant_pct": 55,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "EDUCATION_BBB",
+      "grant_pct": 60,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 20,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Occupied territory; reconstruction contingent on liberation; high grant-eligibility under EU education reconstruction programmes once territory restored",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": false,
+    "commissioning_year": null,
+    "construction_period_years": null,
+    "coupon_pct": null,
+    "dscr": null,
+    "rationale": "Educational facility; no monetisable cashflows; purely grant-funded reconstruction",
+    "supportable_debt_usd_m": 0,
+    "tenor_years": null
+  },
+  "donor_pathway": {
+    "united24_url": "https://u24.gov.ua/rebuild-schools",
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "education",
+    "primary_school",
+    "mariupol",
+    "donetsk",
+    "artillery_strike",
+    "destroyed",
+    "occupied"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

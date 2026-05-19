@@ -1,0 +1,204 @@
+{
+  "asset_id": "KHERSON_SHIPYARD_2022_11_11",
+  "name": {
+    "en": "Kherson Shipyard (Khersonsky Sudnobudivny Zavod)",
+    "uk": "Херсонський суднобудівний завод"
+  },
+  "location": {
+    "lat": 46.6303,
+    "lon": 32.6249,
+    "oblast": "Kherson",
+    "raion": "Kherson",
+    "settlement": "Kherson",
+    "address_en": "Khersonsky Sudnobudivny Zavod, Kherson, Kherson Oblast"
+  },
+  "asset_type": "industrial.shipyard",
+  "sector": "industrial_and_agricultural",
+  "damage": {
+    "incident_date": "2022-11-11",
+    "incident_type": "artillery_strike",
+    "destruction_level": "severe",
+    "re_damage_count": 3,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Situation Report — Kherson Liberation and Industrial Damage November 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kherson-november-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Kherson Oblast Industrial Damage Assessment — November 2022",
+        "url": "https://kse.ua/wp-content/uploads/2023/01/KSE_Kherson_Industrial_Damage.pdf",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat: Kherson Industrial Zone — Satellite Damage Assessment",
+        "url": "https://www.bellingcat.com/news/2022/11/kherson-industrial-damage",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UKEF",
+      "UA_GUARANTEE"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "site_area_ha": {
+      "value": 42,
+      "unit": "ha",
+      "source": "extracted_from_source",
+      "ref": "Khersonsky Sudnobudivny Zavod official records; RDNA3 Industrial Annex"
+    },
+    "dry_dock_capacity_tonnes": {
+      "value": 7000,
+      "unit": "tonnes displacement",
+      "source": "extracted_from_source",
+      "ref": "Pre-war production specifications; Ukraine Shipping Industry Association data"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 98,
+      "central_usd_m": 185,
+      "high_usd_m": 272
+    },
+    "code_compliant": {
+      "low_usd_m": 113,
+      "central_usd_m": 226,
+      "high_usd_m": 340
+    },
+    "build_back_better": {
+      "low_usd_m": 127,
+      "central_usd_m": 278,
+      "high_usd_m": 428,
+      "tech_overlays": [
+        "process_electrification",
+        "modular_prefabrication",
+        "smart_manufacturing",
+        "energy_management_system"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "INDUSTRIAL_BASELINE",
+      "grant_pct": 20,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 20,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 30,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF"
+        ]
+      },
+      "structure_patterns": [
+        "project_finance",
+        "a_b_loan"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "INDUSTRIAL_CODE_COMPLIANT",
+      "grant_pct": 20,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 20,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 30,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF"
+        ]
+      },
+      "structure_patterns": [
+        "project_finance",
+        "a_b_loan"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "INDUSTRIAL_BBB",
+      "grant_pct": 20,
+      "era_pct": 0,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 0,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 20,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 30,
+      "pri_wrap": {
+        "applicable": true,
+        "required": true,
+        "providers": [
+          "MIGA_WAR",
+          "UKEF"
+        ]
+      },
+      "structure_patterns": [
+        "project_finance",
+        "a_b_loan"
+      ],
+      "rationale": "Historic Dnipro shipyard; strategic for reconstruction logistics and post-war maritime recovery; private equity and ECA-backed commercial debt dominant; EU industrial reconstruction grant element tied to green manufacturing overlays",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2029,
+    "construction_period_years": 4,
+    "coupon_pct": 7.0,
+    "dscr": 1.3,
+    "rationale": "Commercial shipyard with order-book revenue potential; private-sector led; higher coupon reflecting industrial risk and ongoing shelling exposure",
+    "supportable_debt_usd_m": 82,
+    "tenor_years": 15
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "industrial",
+    "shipyard",
+    "kherson",
+    "artillery_strike",
+    "severe",
+    "re_damaged"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

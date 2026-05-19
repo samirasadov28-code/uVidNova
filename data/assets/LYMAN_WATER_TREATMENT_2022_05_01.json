@@ -1,0 +1,190 @@
+{
+  "asset_id": "LYMAN_WATER_TREATMENT_2022_05_01",
+  "name": {
+    "en": "Lyman Water Treatment Plant",
+    "uk": "Лиманська станція водопідготовки"
+  },
+  "location": {
+    "lat": 48.9735,
+    "lon": 37.8023,
+    "oblast": "Donetsk",
+    "raion": "Kramatorsk",
+    "settlement": "Lyman",
+    "address_en": "Lyman Water Treatment Plant, Lyman, Donetsk Oblast"
+  },
+  "asset_type": "water.treatment_plant",
+  "sector": "water_sanitation_public_services",
+  "damage": {
+    "incident_date": "2022-05-01",
+    "incident_type": "artillery_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 2,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Humanitarian Situation Report — Water Infrastructure Donetsk May 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-water-donetsk-may-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Donetsk Oblast Water Infrastructure Damage — 2022",
+        "url": "https://kse.ua/wp-content/uploads/2022/09/KSE_Donetsk_Water_Damage_2022.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "recently_liberated",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "treatment_capacity_m3_day": {
+      "value": 24000,
+      "unit": "m³/day",
+      "source": "extracted_from_source",
+      "ref": "Lyman Vodokanal operating data 2021; RDNA3 Water Sector Annex"
+    },
+    "population_served": {
+      "value": 42000,
+      "unit": "persons",
+      "source": "extracted_from_source",
+      "ref": "Lyman raion census data 2021; Donetsk Oblast Water Authority"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 14,
+      "central_usd_m": 25,
+      "high_usd_m": 36
+    },
+    "code_compliant": {
+      "low_usd_m": 16,
+      "central_usd_m": 31,
+      "high_usd_m": 45
+    },
+    "build_back_better": {
+      "low_usd_m": 18,
+      "central_usd_m": 38,
+      "high_usd_m": 58,
+      "tech_overlays": [
+        "smart_water_metering",
+        "energy_efficient_pumping",
+        "membrane_filtration",
+        "microgrid"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "WATER_BASELINE",
+      "grant_pct": 50,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 35,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "WATER_CODE_COMPLIANT",
+      "grant_pct": 55,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "WATER_BBB",
+      "grant_pct": 60,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Essential WASH infrastructure in recently liberated Donetsk Oblast; EU water-sector reconstruction grants and UNICEF/ICRC humanitarian investment applicable; smart metering reduces long-term OpEx",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2029,
+    "construction_period_years": 2,
+    "coupon_pct": 5.0,
+    "dscr": 1.15,
+    "rationale": "Water tariff revenues provide partial debt service; Trust covers ramp-up and tariff reform gap",
+    "supportable_debt_usd_m": 10,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "water",
+    "sanitation",
+    "donetsk",
+    "lyman",
+    "artillery_strike",
+    "destroyed",
+    "recently_liberated"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

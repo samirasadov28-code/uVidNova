@@ -1,0 +1,197 @@
+{
+  "asset_id": "MARIUPOL_LIVYI_BEREG_RESIDENTIAL_2022_03_01",
+  "name": {
+    "en": "Mariupol Left Bank (Livyi Bereh) Large-Panel Residential District",
+    "uk": "Маріуполь — житловий масив Лівий берег"
+  },
+  "location": {
+    "lat": 47.0762,
+    "lon": 37.5980,
+    "oblast": "Donetsk",
+    "raion": "Mariupol",
+    "settlement": "Mariupol",
+    "address_en": "Livyi Bereh residential district, Mariupol, Donetsk Oblast"
+  },
+  "asset_type": "residential.large_panel_district",
+  "sector": "social_infrastructure",
+  "damage": {
+    "incident_date": "2022-03-01",
+    "incident_type": "artillery_strike",
+    "destruction_level": "destroyed",
+    "re_damage_count": 0,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "BELLINGCAT"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update — Mariupol Siege March–April 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-mariupol-siege-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Mariupol Residential Damage Assessment — Full City Survey",
+        "url": "https://kse.ua/wp-content/uploads/2022/07/KSE_Mariupol_Residential_Damage.pdf",
+        "source_code": "KSE"
+      },
+      {
+        "title": "Bellingcat: Mariupol Siege — District-Level Satellite Analysis",
+        "url": "https://www.bellingcat.com/news/2022/04/mariupol-district-analysis",
+        "source_code": "BELLINGCAT"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "documented",
+    "rebuildability": "occupied",
+    "de_risking": [
+      "MIGA_WAR",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "severe"
+  },
+  "physical_specs": {
+    "floor_area_m2": {
+      "value": 620000,
+      "unit": "m2",
+      "source": "estimated_from_photo",
+      "ref": "Satellite imagery (Maxar/Planet Labs); KSE residential damage survey methodology"
+    },
+    "residential_units": {
+      "value": 8500,
+      "unit": "units",
+      "source": "estimated_from_photo",
+      "ref": "KSE Institute Mariupol residential survey; pre-war building registry cross-reference"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 496,
+      "central_usd_m": 868,
+      "high_usd_m": 1240
+    },
+    "code_compliant": {
+      "low_usd_m": 570,
+      "central_usd_m": 1060,
+      "high_usd_m": 1550
+    },
+    "build_back_better": {
+      "low_usd_m": 645,
+      "central_usd_m": 1300,
+      "high_usd_m": 1955,
+      "tech_overlays": [
+        "passive_house_standard",
+        "district_heat_metering",
+        "mass_timber",
+        "microgrid"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "RESIDENTIAL_BASELINE",
+      "grant_pct": 40,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 35,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "RESIDENTIAL_CODE_COMPLIANT",
+      "grant_pct": 45,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 15,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "RESIDENTIAL_BBB",
+      "grant_pct": 50,
+      "era_pct": 10,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Largest residential district in Mariupol; occupied status means reconstruction contingent on liberation; EU housing reconstruction grants and EBRD concessional lending dominant financing pathway once conditions allow",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": false,
+    "commissioning_year": null,
+    "construction_period_years": null,
+    "coupon_pct": null,
+    "dscr": null,
+    "rationale": "Residential district; no monetisable cashflows at scale; public-grant mechanism primary",
+    "supportable_debt_usd_m": 0,
+    "tenor_years": null
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "residential",
+    "housing",
+    "mariupol",
+    "donetsk",
+    "artillery_strike",
+    "destroyed",
+    "occupied",
+    "large_scale"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

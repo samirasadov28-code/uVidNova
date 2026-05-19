@@ -1,0 +1,198 @@
+{
+  "asset_id": "ZAPORIZHZHIA_WATER_SUPPLY_2022_10_01",
+  "name": {
+    "en": "Zaporizhzhia City Water Supply System",
+    "uk": "Запорізька міська система водопостачання"
+  },
+  "location": {
+    "lat": 47.8428,
+    "lon": 35.1432,
+    "oblast": "Zaporizhzhia",
+    "raion": null,
+    "settlement": "Zaporizhzhia",
+    "address_en": "Zaporizhzhia city water supply system, Zaporizhzhia"
+  },
+  "asset_type": "water.supply_system",
+  "sector": "water_sanitation_public_services",
+  "damage": {
+    "incident_date": "2022-10-01",
+    "incident_type": "missile_strike",
+    "destruction_level": "moderate",
+    "re_damage_count": 3,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA",
+      "UA_GOV"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update — Zaporizhzhia Water Infrastructure October 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-zaporizhzhia-water-october-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Zaporizhzhia Oblast Critical Infrastructure Damage",
+        "url": "https://kse.ua/wp-content/uploads/2022/11/KSE_Zaporizhzhia_Water_Damage.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE",
+      "EU_FACILITY_FIRST_LOSS"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "treatment_capacity_m3_day": {
+      "value": 320000,
+      "unit": "m³/day",
+      "source": "extracted_from_source",
+      "ref": "Zaporizhzhia Vodokanal annual report 2021; RDNA3 Water Sector Annex"
+    },
+    "population_served": {
+      "value": 700000,
+      "unit": "persons",
+      "source": "extracted_from_source",
+      "ref": "Zaporizhzhia City census data 2021"
+    },
+    "distribution_network_km": {
+      "value": 1840,
+      "unit": "km",
+      "source": "extracted_from_source",
+      "ref": "Zaporizhzhia Vodokanal network register 2021"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 58,
+      "central_usd_m": 96,
+      "high_usd_m": 134
+    },
+    "code_compliant": {
+      "low_usd_m": 67,
+      "central_usd_m": 117,
+      "high_usd_m": 167
+    },
+    "build_back_better": {
+      "low_usd_m": 76,
+      "central_usd_m": 144,
+      "high_usd_m": 212,
+      "tech_overlays": [
+        "smart_water_metering",
+        "energy_efficient_pumping",
+        "membrane_filtration",
+        "microgrid",
+        "leak_detection_sensors"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "WATER_BASELINE",
+      "grant_pct": 50,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 35,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "WATER_CODE_COMPLIANT",
+      "grant_pct": 55,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 30,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "WATER_BBB",
+      "grant_pct": 60,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 25,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 10,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EU_FACILITY_FIRST_LOSS"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "City-scale water utility serving 700,000 residents near active frontline; EU water-sector grants and EBRD municipal lending applicable; smart-metering investment reduces long-term OpEx and aligns with EU Water Framework Directive standards",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2027,
+    "construction_period_years": 2,
+    "coupon_pct": 5.0,
+    "dscr": 1.2,
+    "rationale": "Municipal water utility; tariff revenue supports partial debt service; EBRD municipal lending precedent well established in Ukraine",
+    "supportable_debt_usd_m": 38,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "water",
+    "supply_system",
+    "zaporizhzhia",
+    "missile_strike",
+    "moderate",
+    "re_damaged"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}

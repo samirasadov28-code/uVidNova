@@ -1,0 +1,190 @@
+{
+  "asset_id": "ZAPORIZHZHIA_ANTONIVKA_BRIDGE_2022_10_20",
+  "name": {
+    "en": "Zaporizhzhia Road Bridge over the Dnipro (Preobrazhenka)",
+    "uk": "Запорізький автомобільний міст через Дніпро (Преображенка)"
+  },
+  "location": {
+    "lat": 47.8020,
+    "lon": 35.0890,
+    "oblast": "Zaporizhzhia",
+    "raion": null,
+    "settlement": "Zaporizhzhia",
+    "address_en": "Dnipro road crossing, Zaporizhzhia, Zaporizhzhia Oblast"
+  },
+  "asset_type": "transport.road_bridge",
+  "sector": "transport_and_ports",
+  "damage": {
+    "incident_date": "2022-10-20",
+    "incident_type": "missile_strike",
+    "destruction_level": "moderate",
+    "re_damage_count": 1,
+    "verified_by": [
+      "KSE",
+      "UN_OCHA"
+    ],
+    "evidence_sources": [
+      {
+        "title": "UN OCHA Ukraine Flash Update — Zaporizhzhia Infrastructure October 2022",
+        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-zaporizhzhia-october-2022",
+        "source_code": "OCHA"
+      },
+      {
+        "title": "KSE Institute: Zaporizhzhia Oblast Transport Infrastructure Damage",
+        "url": "https://kse.ua/wp-content/uploads/2022/11/KSE_Zaporizhzhia_Transport_Damage.pdf",
+        "source_code": "KSE"
+      }
+    ]
+  },
+  "wartime_status": {
+    "lifecycle": "assessed",
+    "rebuildability": "rebuildable",
+    "de_risking": [
+      "MIGA_WAR",
+      "UA_GUARANTEE",
+      "EBRD_RSF"
+    ],
+    "sovereign_risk_band": "elevated"
+  },
+  "physical_specs": {
+    "bridge_length_m": {
+      "value": 1390,
+      "unit": "m",
+      "source": "extracted_from_source",
+      "ref": "Ukravtodor technical registry; RDNA3 Transport Annex"
+    },
+    "carriageway_width_m": {
+      "value": 14,
+      "unit": "m",
+      "source": "extracted_from_source",
+      "ref": "Ukravtodor technical specifications"
+    }
+  },
+  "cost_paths": {
+    "baseline": {
+      "low_usd_m": 35,
+      "central_usd_m": 58,
+      "high_usd_m": 81
+    },
+    "code_compliant": {
+      "low_usd_m": 40,
+      "central_usd_m": 71,
+      "high_usd_m": 101
+    },
+    "build_back_better": {
+      "low_usd_m": 46,
+      "central_usd_m": 87,
+      "high_usd_m": 128,
+      "tech_overlays": [
+        "seismic_resilience",
+        "smart_monitoring",
+        "active_travel_lanes"
+      ]
+    }
+  },
+  "financing_structures": {
+    "baseline": {
+      "template_id": "TRANSPORT_BASELINE",
+      "grant_pct": 30,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 25,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EBRD_RSF"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "code_compliant": {
+      "template_id": "TRANSPORT_CODE_COMPLIANT",
+      "grant_pct": 30,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 25,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EBRD_RSF"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "comparable_projects": []
+    },
+    "build_back_better": {
+      "template_id": "TRANSPORT_BBB",
+      "grant_pct": 35,
+      "era_pct": 5,
+      "first_loss_pct": 0,
+      "concessional_pct": 40,
+      "senior_ifi_pct": 0,
+      "eca_pct": 0,
+      "dfi_equity_pct": 0,
+      "public_equity_pct": 20,
+      "diaspora_pct": 0,
+      "commercial_bank_debt_pct": 0,
+      "institutional_debt_pct": 0,
+      "private_equity_pct": 0,
+      "pri_wrap": {
+        "applicable": true,
+        "providers": [
+          "MIGA_WAR",
+          "EBRD_RSF"
+        ]
+      },
+      "structure_patterns": [
+        "blending_facility"
+      ],
+      "rationale": "Critical Dnipro crossing for southern Ukrainian supply routes; moderate damage allows repair rather than full replacement; EU TEN-T extension programme applicable for connectivity investment",
+      "comparable_projects": []
+    }
+  },
+  "reparations_layer": {
+    "applies": true,
+    "commissioning_year": 2027,
+    "construction_period_years": 2,
+    "coupon_pct": 5.0,
+    "dscr": 1.2,
+    "rationale": "Strategic road bridge; no toll revenues but public economic value supports availability payment",
+    "supportable_debt_usd_m": 25,
+    "tenor_years": 20
+  },
+  "donor_pathway": {
+    "united24_url": null,
+    "mriya_url": null,
+    "vetted_ngos": []
+  },
+  "tags": [
+    "transport",
+    "road_bridge",
+    "zaporizhzhia",
+    "missile_strike",
+    "moderate"
+  ],
+  "last_reviewed": "2026-05-19",
+  "version": "1.0.0"
+}
