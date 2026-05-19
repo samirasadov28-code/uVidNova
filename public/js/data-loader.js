@@ -19,7 +19,9 @@ export async function loadAsset(id) {
 }
 
 export async function loadAllAssets() {
-  const ids = await loadAssetsIndex();
+  const index = await loadAssetsIndex();
+  // Support both legacy string-ID arrays and the current object-summary format
+  const ids = index.map(item => (typeof item === 'string' ? item : item.asset_id));
   const assets = await Promise.all(ids.map(id => loadAsset(id)));
   return assets;
 }
