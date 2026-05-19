@@ -1274,6 +1274,7 @@ async function init() {
   initFeedback();
   initChat();
   initLangToggle(document.getElementById('langToggle'));
+  initLangToggle(document.getElementById('landingLangToggle'));
   document.addEventListener('langChanged', applyTranslations);
 
   // Initialise Leaflet map — CartoDB Positron light tiles
