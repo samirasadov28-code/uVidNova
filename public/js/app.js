@@ -806,10 +806,10 @@ function showDevelopmentPanel(oblastNameEn, info) {
 // ── Oblast boundary layer ─────────────────────────────────────────────────────
 
 const VIEW_PALETTE = {
-  ukraine:       { border: '#FFD700', fill: '#005BBB', bg: '#003f8a' },
-  damaged:       { border: '#27ae60', fill: '#c45050', bg: '#1a0808' },
-  reconstructed: { border: '#c9a227', fill: '#0d2b5e', bg: '#040e24' },
-  development:   { border: '#1a7a2e', fill: '#2d7a3a', bg: '#071208' },
+  ukraine:       { border: '#FFD700', fill: '#005BBB', bg: '#deeeff' },
+  damaged:       { border: '#e74c3c', fill: '#c45050', bg: '#deeeff' },
+  reconstructed: { border: '#27ae60', fill: '#2d7a3a', bg: '#deeeff' },
+  development:   { border: '#1a7a2e', fill: '#2d7a3a', bg: '#deeeff' },
 };
 
 function oblastStyle(feature) {
@@ -911,27 +911,6 @@ async function addOblastLayer() {
   }
 }
 
-// ── Sevastopol City marker ────────────────────────────────────────────────────
-
-function addSevastopolMarker() {
-  // Sevastopol City has special status in Ukrainian law — separate from Crimea Oblast.
-  // The GeoJSON merges the territory visually, so we add an explicit label.
-  const icon = L.divIcon({
-    className: '',
-    html: `<div style="
-      background:#5a0000;border:2px solid #cc0000;border-radius:3px;
-      color:#ffaaaa;font-size:9px;font-weight:700;padding:1px 4px;
-      white-space:nowrap;pointer-events:none;opacity:0.9">Sevastopol City</div>`,
-    iconSize: [100, 16],
-    iconAnchor: [50, 8],
-  });
-  L.marker([44.6068, 33.5254], { icon, interactive: false })
-    .bindTooltip('City of Sevastopol — separate UA administrative unit, temporarily occupied since 2014', {
-      permanent: false, sticky: true, className: 'oblast-tooltip'
-    })
-    .addTo(map);
-}
-
 // ── Map view switching ────────────────────────────────────────────────────────
 
 function setMapView(view) {
@@ -963,8 +942,8 @@ function setMapView(view) {
   if (mapEl)    mapEl.style.background    = pal.bg;
   if (layoutEl) layoutEl.style.background = pal.bg;
 
-  // Ukraine mode: hide base tiles so only Ukraine's oblasts are visible
-  if (tileLayer) tileLayer.setOpacity(view === 'ukraine' ? 0 : 1);
+  // Hide map tiles for all views — clean light-blue background with oblast shapes only
+  if (tileLayer) tileLayer.setOpacity(0);
 
   // Show/hide filter+asset controls (not useful in ukraine/development views)
   const showControls = view === 'damaged' || view === 'reconstructed';
@@ -1347,8 +1326,6 @@ async function init() {
       loadCities(),
       loadDevOpps()
     ]);
-    addSevastopolMarker();
-
     allAssets = assets;
     initFilters();
     setMapView('ukraine');

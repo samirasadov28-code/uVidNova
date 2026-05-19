@@ -10,29 +10,37 @@ import { loadGrowthSectors, renderWizardSectorPicker, renderPortfolioGrowthPicke
 // ── Tranche definitions ───────────────────────────────────────────────────────
 
 const TRANCHE_DEFS = {
-  grant:             { label: 'EU / Donor Grant',           ret: 0,    tenor: null, col: '#27ae60' },
-  eu_concessional:   { label: 'EU Concessional Loan',       ret: 1.5,  tenor: 20,   col: '#2980b9' },
-  ebrd_concessional: { label: 'EBRD Concessional',          ret: 2.5,  tenor: 15,   col: '#1a6aa1' },
-  world_bank:        { label: 'World Bank / IDA',           ret: 1.0,  tenor: 25,   col: '#3498db' },
-  eca_guarantee:     { label: 'UKEF / ECA Guaranteed Debt', ret: 3.5,  tenor: 10,   col: '#8e44ad' },
-  senior_debt:       { label: 'Senior Commercial Debt',     ret: 9.0,  tenor: 10,   col: '#7f8c8d' },
-  mezzanine:         { label: 'Mezzanine / Sub Debt',       ret: 14.0, tenor: 7,    col: '#e67e22' },
-  equity:            { label: 'Equity / Private Capital',   ret: 18.0, tenor: null, col: '#e74c3c' },
-  reparations:       { label: 'Russian Reparations',        ret: 0,    tenor: null, col: '#9b59b6' },
+  reparations:       { label: 'Russian Reparations / ERA Proceeds',   ret: 0,    tenor: null, col: '#9b59b6' },
+  grant:             { label: 'Grants (EU / Bilateral Donors)',        ret: 0,    tenor: null, col: '#27ae60' },
+  first_loss:        { label: 'First-loss / Guarantee Facility',       ret: 0,    tenor: null, col: '#52be80' },
+  concessional_ifi:  { label: 'Concessional IFI Loan',                 ret: 1.5,  tenor: 20,   col: '#2980b9' },
+  senior_ifi:        { label: 'Senior IFI Near-market',                ret: 3.5,  tenor: 15,   col: '#1a6aa1' },
+  eca:               { label: 'ECA Buyer Credit / Direct Lending',     ret: 4.0,  tenor: 10,   col: '#8e44ad' },
+  pri_wrap:          { label: 'PRI / War-risk Insurance Wrap',         ret: 1.5,  tenor: null, col: '#e67e22', isFlag: true },
+  dfi_equity:        { label: 'DFI Equity',                            ret: 8.0,  tenor: null, col: '#5dade2' },
+  public_equity:     { label: 'Public Counterpart Equity',             ret: 0,    tenor: null, col: '#7f8c8d' },
+  diaspora:          { label: 'Diaspora / Patriotic Bonds',            ret: 5.0,  tenor: 10,   col: '#a9cce3' },
+  commercial_bank:   { label: 'Commercial Bank Debt',                  ret: 9.0,  tenor: 10,   col: '#884ea0' },
+  institutional_debt:{ label: 'Institutional / Capital Markets Debt',  ret: 6.5,  tenor: 12,   col: '#2c3e50' },
+  private_equity:    { label: 'Private Equity / Infra Funds',          ret: 18.0, tenor: null, col: '#e74c3c' },
 };
 
 // Confidence levels derived from funding_envelope.json — keyed by tranche type.
 // 'high' renders no badge; 'medium' = "~" prefix; 'low' = amber warning.
 const TRANCHE_CONFIDENCE = {
+  reparations:       { level: 'medium', note: 'ERA interest (~$3B/yr) available now; principal seizure requires legal framework not yet finalised.' },
   grant:             { level: 'high',   note: 'EU Facility Pillar I and named bilateral envelopes explicit in source documents.' },
-  eu_concessional:   { level: 'medium', note: 'Medium confidence — inferred from aggregate pledges' },
-  ebrd_concessional: { level: 'medium', note: 'Medium confidence — inferred from aggregate pledges' },
-  world_bank:        { level: 'medium', note: 'Medium confidence — World Bank / EBRD / EIB cumulative envelopes inferred from aggregate pledges.' },
-  eca_guarantee:     { level: 'high',   note: 'Named ECA envelopes explicit in programme documents.' },
-  senior_debt:       { level: 'low',    note: 'Low confidence — estimated from analogues. Verify before citing.' },
-  mezzanine:         { level: 'low',    note: 'Low confidence — estimated from analogues. Verify before citing.' },
-  equity:            { level: 'low',    note: 'Low confidence — estimated from fund-manager soundings and analogues.' },
-  reparations:       { level: 'medium', note: 'Medium confidence — G7 ERA envelope explicit; principal-seizure scenario is low-confidence additive.' },
+  first_loss:        { level: 'medium', note: 'Medium confidence — EU Guarantee Instrument and MIGA first-loss facilities in development.' },
+  concessional_ifi:  { level: 'medium', note: 'Medium confidence — inferred from aggregate IFI pledges.' },
+  senior_ifi:        { level: 'medium', note: 'Medium confidence — EBRD / IFC near-market windows exist but deal-by-deal approval.' },
+  eca:               { level: 'high',   note: 'Named ECA envelopes (UKEF, BpiFrance) explicit in programme documents.' },
+  pri_wrap:          { level: 'medium', note: 'MIGA WAR product active; BpiFrance AE and UKEF also have Ukraine war risk programmes.' },
+  dfi_equity:        { level: 'medium', note: 'EBRD / IFC equity available deal-by-deal; low confidence for occupied-adjacent assets.' },
+  public_equity:     { level: 'high',   note: 'Ukrainian government counterpart equity required under EU co-financing rules.' },
+  diaspora:          { level: 'medium', note: 'Diaspora appetite demonstrated; retail distribution infrastructure still developing.' },
+  commercial_bank:   { level: 'low',    note: 'Low confidence — wartime bank appetite limited; requires strong de-risking stack.' },
+  institutional_debt:{ level: 'low',    note: 'Low confidence — capital markets access contingent on post-armistice credit environment.' },
+  private_equity:    { level: 'low',    note: 'Low confidence — fund managers cautious; available for highest-return commercial assets only.' },
 };
 
 function confidenceBadge(type) {
@@ -48,8 +56,32 @@ const TRUST_CORPUS_USD_M = 286000; // ~$286B full frozen corpus for Trust modell
 const TRUST_DRAWDOWN_PCT = 0.04;   // Default 4% drawdown (UNCC model)
 const TRUST_RETURN_PCT   = 0.045;  // Default 4.5% annual return (ECB 2026-Q1)
 const WAR_PREMIUM       = 2.0;     // % added to commercial tranches during war
-const COMMERCIAL_TYPES  = new Set(['senior_debt', 'mezzanine', 'equity']);
-const CONCESSIONAL_TYPES = new Set(['eu_concessional', 'ebrd_concessional', 'world_bank', 'eca_guarantee']);
+const COMMERCIAL_TYPES  = new Set(['commercial_bank', 'institutional_debt', 'private_equity', 'dfi_equity']);
+const CONCESSIONAL_TYPES = new Set(['concessional_ifi', 'senior_ifi', 'eca', 'diaspora', 'first_loss']);
+
+// Sector revenue yield — estimated annual revenue as % of asset reconstruction cost
+// Used for debt service coverage ratio (DSCR) calculation in Results
+const SECTOR_REVENUE_YIELD = {
+  energy_and_power:             0.09,  // tariff revenues
+  healthcare:                   0.02,  // partial user fees / state payments
+  education:                    0.005, // minimal user revenues
+  residential:                  0.05,  // rental / service charge income
+  heritage_and_culture:         0.01,  // tourism / admission
+  transport_and_ports:          0.04,  // tolls / port fees
+  water_and_sanitation:         0.04,  // utility tariff
+  industrial_and_agricultural:  0.10,  // production revenues
+  public_administration:        0,     // fully publicly funded
+};
+
+const GENERIC_SECTOR_RECOVERY = [
+  { sectorId: 'energy',     label: 'Energy & Power',             scale_usd_m: 38700, note: 'RDNA3 energy sector total' },
+  { sectorId: 'housing',    label: 'Housing & Residential',      scale_usd_m: 80500, note: 'RDNA3 housing sector total' },
+  { sectorId: 'transport',  label: 'Transport & Infrastructure', scale_usd_m: 35400, note: 'RDNA3 transport total' },
+  { sectorId: 'social',     label: 'Social Infrastructure',      scale_usd_m: 26200, note: 'RDNA3 social (health+edu) total' },
+  { sectorId: 'agriculture',label: 'Agriculture & Food Systems', scale_usd_m: 34600, note: 'RDNA3 agriculture total' },
+  { sectorId: 'industry',   label: 'Industrial & Commercial',    scale_usd_m: 11900, note: 'RDNA3 industry sector total' },
+  { sectorId: 'water',      label: 'Water & Public Services',    scale_usd_m: 7100,  note: 'RDNA3 water/sanitation total' },
+];
 
 const PATH_LABELS = {
   baseline:          'Baseline reconstruction',
@@ -89,14 +121,16 @@ function reset(preselected = []) {
     path: 'baseline',
     timing: 'during',
     tranches: [
-      { id: 1, type: 'grant',           pct: 40, ret: 0,    tenor: null },
-      { id: 2, type: 'eu_concessional', pct: 35, ret: 1.5,  tenor: 20  },
-      { id: 3, type: 'equity',          pct: 25, ret: 18.0, tenor: null },
+      { id: 1, type: 'reparations',     pct: 30, ret: 0,    tenor: null },
+      { id: 2, type: 'grant',           pct: 40, ret: 0,    tenor: null },
+      { id: 3, type: 'concessional_ifi',pct: 20, ret: 1.5,  tenor: 20  },
+      { id: 4, type: 'private_equity',  pct: 10, ret: 18.0, tenor: null },
     ],
-    nextId: 4,
+    nextId: 5,
     greenfield: { sectorId: null, archetypeId: null },
     growthProjects: [],   // Array<{ sectorId, archetypeId, label, sector, scale_usd_m }>
     showGrowthPicker: false,
+    growthMode: 'specific',  // 'generic' | 'specific'
   };
   _trustModes = new Map();
 }
@@ -219,18 +253,18 @@ function updateChrome() {
 
 /** Map asset financing_structure keys to wizard tranche types + default returns */
 const FS_KEY_TO_TRANCHE = {
-  grant_pct:               { type: 'grant',             ret: 0,    tenor: null },
-  era_pct:                 { type: 'reparations',        ret: 0,    tenor: null },
-  first_loss_pct:          { type: 'grant',              ret: 0,    tenor: null },
-  concessional_pct:        { type: 'eu_concessional',   ret: 1.5,  tenor: 20  },
-  senior_ifi_pct:          { type: 'world_bank',         ret: 1.0,  tenor: 25  },
-  eca_pct:                 { type: 'eca_guarantee',      ret: 3.5,  tenor: 10  },
-  dfi_equity_pct:          { type: 'mezzanine',          ret: 8.0,  tenor: null },
-  public_equity_pct:       { type: 'equity',             ret: 0,    tenor: null },
-  diaspora_pct:            { type: 'mezzanine',          ret: 5.0,  tenor: 10  },
-  commercial_bank_debt_pct:{ type: 'senior_debt',        ret: 9.0,  tenor: 10  },
-  institutional_debt_pct:  { type: 'ebrd_concessional',  ret: 2.5,  tenor: 15  },
-  private_equity_pct:      { type: 'equity',             ret: 18.0, tenor: null },
+  grant_pct:                { type: 'grant',              ret: 0,    tenor: null },
+  era_pct:                  { type: 'reparations',        ret: 0,    tenor: null },
+  first_loss_pct:           { type: 'first_loss',         ret: 0,    tenor: null },
+  concessional_pct:         { type: 'concessional_ifi',   ret: 1.5,  tenor: 20   },
+  senior_ifi_pct:           { type: 'senior_ifi',         ret: 3.5,  tenor: 15   },
+  eca_pct:                  { type: 'eca',                ret: 4.0,  tenor: 10   },
+  dfi_equity_pct:           { type: 'dfi_equity',         ret: 8.0,  tenor: null },
+  public_equity_pct:        { type: 'public_equity',      ret: 0,    tenor: null },
+  diaspora_pct:             { type: 'diaspora',           ret: 5.0,  tenor: 10   },
+  commercial_bank_debt_pct: { type: 'commercial_bank',    ret: 9.0,  tenor: 10   },
+  institutional_debt_pct:   { type: 'institutional_debt', ret: 6.5,  tenor: 12   },
+  private_equity_pct:       { type: 'private_equity',     ret: 18.0, tenor: null },
 };
 
 function seedTranchesFromAssets() {
@@ -258,7 +292,7 @@ function seedTranchesFromAssets() {
   for (const [type, pct] of Object.entries(merged)) {
     if (pct < 0.5) continue;
     const def = FS_KEY_TO_TRANCHE[Object.keys(FS_KEY_TO_TRANCHE).find(k => FS_KEY_TO_TRANCHE[k].type === type)] ?? {};
-    const defType = TRANCHE_DEFS[type] ?? TRANCHE_DEFS.equity;
+    const defType = TRANCHE_DEFS[type] ?? TRANCHE_DEFS.private_equity;
     tranches.push({ id: id++, type, pct: Math.round(pct * 10) / 10, ret: def.ret ?? defType.ret, tenor: def.tenor ?? defType.tenor });
   }
 
@@ -454,7 +488,38 @@ function renderScopeDetail() {
         ${W.showGrowthPicker ? '▲ Hide growth projects' : `＋ Add growth sector projects${growthCount > 0 ? ` (${growthCount} selected)` : ''}`}
       </button>
       <div id="fwGrowthPickerWrap" ${W.showGrowthPicker ? '' : 'hidden'}>
-        ${_growthData ? renderPortfolioGrowthPicker(_growthData, W.growthProjects ?? []) : '<p class="fw-scope-summary">Loading growth sector data…</p>'}
+        <div class="fw-growth-mode-row">
+          <label class="fw-growth-mode-opt ${W.growthMode === 'generic' ? 'fw-gmo-active' : ''}">
+            <input type="radio" name="growthMode" value="generic" ${W.growthMode === 'generic' ? 'checked' : ''} class="fw-sr">
+            <span class="fw-gmo-icon">🌍</span>
+            <span class="fw-gmo-text">
+              <strong>Generic sector recovery</strong>
+              <span class="fw-gmo-sub">Restore pre-war growth trajectory across a whole sector</span>
+            </span>
+          </label>
+          <label class="fw-growth-mode-opt ${W.growthMode === 'specific' ? 'fw-gmo-active' : ''}">
+            <input type="radio" name="growthMode" value="specific" ${W.growthMode === 'specific' ? 'checked' : ''} class="fw-sr">
+            <span class="fw-gmo-icon">📋</span>
+            <span class="fw-gmo-text">
+              <strong>Specific projects</strong>
+              <span class="fw-gmo-sub">Select individual investment archetypes</span>
+            </span>
+          </label>
+        </div>
+        ${W.growthMode === 'generic' ? renderGenericGrowthPicker() : (_growthData ? renderPortfolioGrowthPicker(_growthData, W.growthProjects ?? []) : '<p class="fw-scope-summary">Loading growth sector data…</p>')}
+        <div id="fwGrowthChips" class="${W.growthProjects.length > 0 ? 'fw-growth-chips' : 'fw-growth-empty'}">
+          ${W.growthProjects.length > 0
+            ? W.growthProjects.map(p => {
+                const qtyControls = !p.isGeneric ? `
+                  <span class="fw-qty-ctrl">
+                    <button class="fw-qty-btn fw-growth-qty-down" data-arch-id="${p.archetypeId}" type="button">−</button>
+                    <span class="fw-qty-val">×${p.qty || 1}</span>
+                    <button class="fw-qty-btn fw-growth-qty-up" data-arch-id="${p.archetypeId}" type="button">+</button>
+                  </span>` : '';
+                return `<span class="fw-growth-chip">${p.label}${qtyControls} <span class="fw-gc-scale">USD ${(+p.scale_usd_m).toLocaleString()}M</span></span>`;
+              }).join('') + `<span class="fw-growth-total-chip">Growth total: <strong>USD ${(W.growthProjects ?? []).reduce((s,p)=>s+p.scale_usd_m,0).toLocaleString()}M</strong></span>`
+            : 'No growth projects selected yet.'}
+        </div>
       </div>`;
 
     document.getElementById('fwGrowthToggleBtn')?.addEventListener('click', () => {
@@ -549,43 +614,124 @@ function updateSelCount() {
   if (el) el.textContent = `${W.selectedIds.size} selected`;
 }
 
+function renderGenericGrowthPicker() {
+  const selected = new Set(W.growthProjects.map(p => p.sectorId));
+  return `<div class="fw-generic-sectors">
+    <p class="fw-generic-intro">Select sectors to include in pre-war growth recovery envelope (RDNA3 totals):</p>
+    ${GENERIC_SECTOR_RECOVERY.map(s => `
+      <label class="fw-generic-sector-row ${selected.has(s.sectorId) ? 'fw-gsr-sel' : ''}">
+        <input type="checkbox" class="fw-generic-cb" data-sector-id="${s.sectorId}"
+               data-label="${s.label}" data-scale="${s.scale_usd_m}" data-note="${s.note}"
+               ${selected.has(s.sectorId) ? 'checked' : ''}>
+        <span class="fw-gsr-label">${s.label}</span>
+        <span class="fw-gsr-scale">USD ${(s.scale_usd_m/1000).toFixed(1)}B</span>
+        <span class="fw-gsr-note">${s.note}</span>
+      </label>`).join('')}
+  </div>`;
+}
+
 function wireGrowthPicker() {
+  // Growth mode radio buttons
+  document.querySelectorAll('input[name="growthMode"]').forEach(r => {
+    r.addEventListener('change', e => {
+      W.growthMode = e.target.value;
+      W.growthProjects = [];
+      renderScopeDetail();
+    });
+  });
+
+  // Generic sector checkboxes
+  document.querySelectorAll('.fw-generic-cb').forEach(cb => {
+    cb.addEventListener('change', e => {
+      const { sectorId, label, scale, note } = e.target.dataset;
+      if (e.target.checked) {
+        if (!W.growthProjects.find(p => p.sectorId === sectorId)) {
+          W.growthProjects.push({ sectorId, archetypeId: `generic_${sectorId}`, label, sector: label, scale_usd_m: +scale, isGeneric: true });
+        }
+      } else {
+        W.growthProjects = W.growthProjects.filter(p => p.sectorId !== sectorId);
+      }
+      renderScopeDetail();
+    });
+  });
+
   document.querySelectorAll('.fw-growth-cb').forEach(cb => {
     cb.addEventListener('change', e => {
       const { archId, sectorId, label, sector, scale } = e.target.dataset;
       if (e.target.checked) {
         if (!W.growthProjects.find(p => p.archetypeId === archId)) {
-          W.growthProjects.push({ sectorId, archetypeId: archId, label, sector, scale_usd_m: +scale });
+          W.growthProjects.push({ sectorId, archetypeId: archId, label, sector, scale_usd_m: +scale, qty: 1, baseScale: +scale });
         }
       } else {
         W.growthProjects = W.growthProjects.filter(p => p.archetypeId !== archId);
       }
-      // Refresh summary line and chips without collapsing the picker
-      const assetTotal  = _assets.reduce((s, a) => s + (a.cost_paths?.baseline?.central_usd_m ?? 0), 0);
-      const growthTotal = W.growthProjects.reduce((s, p) => s + p.scale_usd_m, 0);
-      const grandTotal  = assetTotal + growthTotal;
-      const growthCount = W.growthProjects.length;
-      const summaryEl = document.querySelector('.fw-scope-summary');
-      if (summaryEl) {
-        summaryEl.innerHTML = `<strong>${_assets.length} damaged assets</strong> across all documented regions
-          — Baseline rehabilitation: <strong>${fmtM(assetTotal)}</strong>
-          ${growthCount > 0 ? ` + <strong>${growthCount} growth project${growthCount !== 1 ? 's' : ''}</strong> (${fmtM(growthTotal)}) = <strong>${fmtM(grandTotal)} total</strong>` : ''}`;
-      }
-      // Update the chips display
-      const chipsEl = document.getElementById('fwGrowthChips');
-      if (chipsEl) {
-        if (W.growthProjects.length > 0) {
-          chipsEl.className = 'fw-growth-chips';
-          chipsEl.innerHTML = W.growthProjects.map(p =>
-            `<span class="fw-growth-chip">${p.label} <span class="fw-gc-scale">USD ${(+p.scale_usd_m).toLocaleString()}M</span></span>`
-          ).join('') + `<span class="fw-growth-total-chip">Growth total: <strong>USD ${growthTotal.toLocaleString()}M</strong></span>`;
-        } else {
-          chipsEl.className = 'fw-growth-empty';
-          chipsEl.innerHTML = 'No growth projects selected yet.';
-        }
-      }
+      updateGrowthChips();
     });
   });
+
+  // Quantity +/- for specific projects
+  document.querySelectorAll('.fw-growth-qty-up').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const archId = e.currentTarget.dataset.archId;
+      const proj = W.growthProjects.find(p => p.archetypeId === archId);
+      if (proj) { proj.qty = (proj.qty || 1) + 1; proj.scale_usd_m = proj.baseScale * proj.qty; }
+      updateGrowthChips();
+    });
+  });
+  document.querySelectorAll('.fw-growth-qty-down').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const archId = e.currentTarget.dataset.archId;
+      const proj = W.growthProjects.find(p => p.archetypeId === archId);
+      if (proj && proj.qty > 1) { proj.qty -= 1; proj.scale_usd_m = proj.baseScale * proj.qty; updateGrowthChips(); }
+    });
+  });
+}
+
+function updateGrowthChips() {
+  const assetTotal  = _assets.reduce((s, a) => s + (a.cost_paths?.baseline?.central_usd_m ?? 0), 0);
+  const growthTotal = W.growthProjects.reduce((s, p) => s + p.scale_usd_m, 0);
+  const grandTotal  = assetTotal + growthTotal;
+  const growthCount = W.growthProjects.length;
+  const summaryEl = document.querySelector('.fw-scope-summary');
+  if (summaryEl) {
+    summaryEl.innerHTML = `<strong>${_assets.length} damaged assets</strong> across all documented regions
+      — Baseline rehabilitation: <strong>${fmtM(assetTotal)}</strong>
+      ${growthCount > 0 ? ` + <strong>${growthCount} growth project${growthCount !== 1 ? 's' : ''}</strong> (${fmtM(growthTotal)}) = <strong>${fmtM(grandTotal)} total</strong>` : ''}`;
+  }
+  const chipsEl = document.getElementById('fwGrowthChips');
+  if (chipsEl) {
+    if (W.growthProjects.length > 0) {
+      chipsEl.className = 'fw-growth-chips';
+      chipsEl.innerHTML = W.growthProjects.map(p => {
+        const qtyControls = !p.isGeneric ? `
+          <span class="fw-qty-ctrl">
+            <button class="fw-qty-btn fw-growth-qty-down" data-arch-id="${p.archetypeId}" type="button">−</button>
+            <span class="fw-qty-val">×${p.qty || 1}</span>
+            <button class="fw-qty-btn fw-growth-qty-up" data-arch-id="${p.archetypeId}" type="button">+</button>
+          </span>` : '';
+        return `<span class="fw-growth-chip">${p.label}${qtyControls} <span class="fw-gc-scale">USD ${(+p.scale_usd_m).toLocaleString()}M</span></span>`;
+      }).join('') + `<span class="fw-growth-total-chip">Growth total: <strong>USD ${growthTotal.toLocaleString()}M</strong></span>`;
+    } else {
+      chipsEl.className = 'fw-growth-empty';
+      chipsEl.innerHTML = 'No growth projects selected yet.';
+    }
+    // Re-wire qty buttons after chips update
+    chipsEl.querySelectorAll('.fw-growth-qty-up').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const archId = e.currentTarget.dataset.archId;
+        const proj = W.growthProjects.find(p => p.archetypeId === archId);
+        if (proj) { proj.qty = (proj.qty || 1) + 1; proj.scale_usd_m = proj.baseScale * proj.qty; }
+        updateGrowthChips();
+      });
+    });
+    chipsEl.querySelectorAll('.fw-growth-qty-down').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const archId = e.currentTarget.dataset.archId;
+        const proj = W.growthProjects.find(p => p.archetypeId === archId);
+        if (proj && proj.qty > 1) { proj.qty -= 1; proj.scale_usd_m = proj.baseScale * proj.qty; updateGrowthChips(); }
+      });
+    });
+  }
 }
 
 function renderSingleList(q) {
@@ -762,15 +908,19 @@ function wireStep2() {
 // ── Step 3: Tranche builder ───────────────────────────────────────────────────
 
 const TRANCHE_DESCRIPTIONS = {
-  grant:             'EU Facility, bilateral donors. Zero cost capital — most competitive for public and social assets.',
-  eu_concessional:   'Below-market loans from EU institutions. Typically 1–2% interest, 15–25yr tenor.',
-  ebrd_concessional: 'EBRD concessional lending window for Ukraine. 2–3% interest, 15yr tenor.',
-  world_bank:        'World Bank / IDA credits. 1% or fixed rate, 25–30yr tenor. Requires sovereign guarantee.',
-  eca_guarantee:     'UKEF, BPI France, Allianz Trade — export credit guarantees. Mobilises commercial debt at reduced risk premium.',
-  senior_debt:       'Commercial bank loans. 8–10% during wartime, 5–7% post-war normalisation.',
-  mezzanine:         'Subordinated / mezzanine debt. Higher return (12–16%), absorbs first loss before equity.',
-  equity:            'Private equity and institutional capital. Target IRR 15–20%. Requires de-risking instruments.',
-  reparations:       'Russian state reparations (UNCC/ERA mechanism). G7-frozen $300B assets. No return — sovereign obligation.',
+  reparations:       'Russian state reparations and ERA (Extraordinary Revenue Acceleration) proceeds — G7-frozen $300B assets. Zero cost to Ukraine — sovereign obligation under international law. ERA currently generates ~$3B/yr interest available now; full principal seizure requires peace settlement. The primary mechanism for large-scale reconstruction financing.',
+  grant:             'EU Facility (Pillar I), World Bank SURGE grants, bilateral donors (UK, Germany, Nordic, US). Zero cost capital — most competitive for social and public assets. Subject to conditionality and reform milestones under Ukraine Plan. Highest confidence funding source.',
+  first_loss:        'First-loss guarantee or credit enhancement facility. Absorbs initial losses to attract senior tranches above. Often provided by IFIs, EU Guarantee Instrument, or MIGA. Reduces risk premium across the capital stack. Typically 5–10% of total. Does not earn return — it is a risk absorber.',
+  concessional_ifi:  'Below-market IFI loans (EBRD, EIB, World Bank). 1–2% interest, 15–25yr tenor. Requires sovereign or sub-sovereign guarantee and IFI due diligence. Conditional on reform milestones. Largest available blended-finance instrument for Ukraine.',
+  senior_ifi:        'Near-market IFI lending (EBRD, IFC, EIB senior windows). 3–5% interest, 12–15yr tenor. Available for projects with partial commercial revenue. Less concessional than Pillar I grants but faster to mobilise. Bridges IFI concessional and commercial capital.',
+  eca:               'Export Credit Agency buyer credit or direct lending (UKEF, BpiFrance, Euler Hermes, KEXIM). Finances equipment and contractor import component at 3–5%, 10yr tenor. Requires home-country export content. Strong pipeline for energy, transport, and industrial reconstruction.',
+  pri_wrap:          'Political Risk Insurance and war-risk wrap (MIGA, UKEF, BpiFrance, OPIC). Covers expropriation, currency transfer restrictions, and war/civil disturbance. Not a capital source — a risk-mitigation instrument. Premium: 1–2%/yr of insured amount. Enables commercial lenders to reduce required return by 2–4%; often the key de-risking layer that makes private capital viable.',
+  dfi_equity:        'Development Finance Institution equity investment (EBRD, IFC, DEG, Proparco, FMO). Patient capital at 6–10% target return. Signals quality and alignment to private co-investors (cornerstone investor effect). Available for PPP-structured assets with identifiable revenue streams.',
+  public_equity:     'Ukrainian government or municipal counterpart equity stake. Zero return expectation — demonstrates public ownership, political commitment, and alignment of interest. Typically 10–20% under EU co-financing conditionality. Keeps the state as an equity partner in strategic assets.',
+  diaspora:          'Diaspora and patriotic retail bonds (analogous to Israeli War Bonds). Below-market return willingly accepted by the Ukrainian diaspora (10M+ globally). 3–6% return, 7–10yr tenor. Retail distribution through Ukrainian and diaspora financial institutions. Strong political and reputational signal.',
+  commercial_bank:   'Senior commercial bank loans and syndicated facilities. 8–10% during wartime (+2% war premium), normalising to 5–7% post-armistice. Requires solid security package, revenue visibility, and de-risking instruments (PRI wrap, first-loss). Available for revenue-generating assets (energy, transport, commercial real estate).',
+  institutional_debt:'Capital markets debt — project bonds, green bonds, social bonds for pension funds, insurance, and asset managers. 5–8% coupon, 10–15yr tenor. Lower cost than bank debt at scale. Requires credit rating, ESG reporting framework, and transparent revenue model. Long-term funding source for post-stabilisation phase.',
+  private_equity:    'Private equity and infrastructure fund capital. Target IRR 15–20% (war-risk adjusted). Requires full de-risking stack: PRI wrap, first-loss, concessional co-investment. Available primarily for commercial-grade assets with clear revenue and exit models (energy, industrial, logistics). Brings operational expertise alongside capital.',
 };
 
 function step3HTML() {
@@ -786,8 +936,12 @@ function step3HTML() {
   const catalogHTML = Object.entries(TRANCHE_DEFS).map(([k, def]) => {
     const isSelected = selectedTypes.has(k);
     const desc = TRANCHE_DESCRIPTIONS[k] ?? '';
-    const retLabel = k === 'reparations' ? 'No return · sovereign obligation' : `${def.ret}% ${def.tenor ? `· ${def.tenor}yr` : ''}`;
-    return `<button class="fw-catalog-card ${isSelected ? 'fw-catalog-active' : ''}"
+    const retLabel = k === 'reparations' || k === 'grant' || k === 'first_loss' || k === 'public_equity'
+      ? (k === 'reparations' ? 'No return · sovereign obligation' : k === 'first_loss' ? 'No return · risk absorber' : 'No return')
+      : def.isFlag
+        ? `Premium ~${def.ret}%/yr · risk wrap`
+        : `${def.ret}% ${def.tenor ? `· ${def.tenor}yr` : ''}`;
+    return `<button class="fw-catalog-card ${isSelected ? 'fw-catalog-active' : ''}${def.isFlag ? ' fw-catalog-flag' : ''}"
               data-tranche-type="${k}" type="button" title="${def.label}">
       <span class="fw-catalog-dot" style="background:${def.col}"></span>
       <span class="fw-catalog-name">${def.label}</span>
@@ -824,13 +978,21 @@ function step3HTML() {
     <div class="fw-help-panel" id="fwHelpPanel" hidden>
       <div class="fw-help-inner">
         <div class="fw-help-hdr"><strong>Tranche Guide</strong><button class="fw-help-close" id="fwHelpClose" type="button">×</button></div>
-        ${Object.entries(TRANCHE_DEFS).map(([k, def]) => `
+        ${Object.entries(TRANCHE_DEFS).map(([k, def]) => {
+          const noRetTypes = new Set(['reparations', 'grant', 'first_loss', 'public_equity']);
+          const retStr = noRetTypes.has(k)
+            ? ''
+            : def.isFlag
+              ? ` — Premium ~${def.ret}%/yr · risk wrap`
+              : ` — ${def.ret}% ${def.tenor ? `/ ${def.tenor}yr` : ''}`;
+          return `
           <div class="fw-help-row">
             <span class="fw-help-dot" style="background:${def.col}"></span>
-            <div><strong>${def.label}</strong>${k === 'reparations' ? '' : ` — ${def.ret}% ${def.tenor ? `/ ${def.tenor}yr` : ''}`}
+            <div><strong>${def.label}</strong>${retStr}
               <p>${TRANCHE_DESCRIPTIONS[k]}</p>
             </div>
-          </div>`).join('')}
+          </div>`;
+        }).join('')}
       </div>
     </div>
   </div>`;
@@ -839,7 +1001,7 @@ function step3HTML() {
 function allocBar(total) {
   const sumPct = W.tranches.reduce((s, t) => s + (+t.pct || 0), 0);
   const segs = W.tranches.map(t => {
-    const def = TRANCHE_DEFS[t.type] ?? TRANCHE_DEFS.equity;
+    const def = TRANCHE_DEFS[t.type] ?? TRANCHE_DEFS.private_equity;
     return `<div class="fw-bar-seg" style="width:${+t.pct||0}%;background:${def.col}" title="${def.label}: ${t.pct}%"></div>`;
   }).join('');
   const gap = Math.max(0, 100 - sumPct);
@@ -848,21 +1010,30 @@ function allocBar(total) {
 }
 
 function trancheRowHTML(t, total) {
-  const def = TRANCHE_DEFS[t.type] ?? TRANCHE_DEFS.equity;
+  const def = TRANCHE_DEFS[t.type] ?? TRANCHE_DEFS.private_equity;
   const pct = +t.pct || 0;
   const isTrustMode = _trustModes.get(t.id) === 'trust';
+  const isPriWrap   = def.isFlag === true;
 
   // For Trust-mode reparations tranches, show Annual payment instead of % of project
   const annualTrust = trustAnnualPayment_usd_m();
-  const trustAmt    = total > 0 ? (total * pct / 100).toFixed(1) : '—';
   const displayAmt  = isTrustMode
     ? `Annual: $${annualTrust.toLocaleString()}M/yr`
-    : `$${total > 0 ? (total * pct / 100).toFixed(1) : '—'}M`;
+    : isPriWrap
+      ? `Coverage: $${total > 0 ? (total * pct / 100).toFixed(1) : '—'}M`
+      : `$${total > 0 ? (total * pct / 100).toFixed(1) : '—'}M`;
 
   const repNote = t.type === 'reparations' && total > 0 ? (() => {
     const repAmt = total * pct / 100;
     return `<div class="fw-rep-note">= ${(repAmt / KSE_CLAIM_USD_M * 100).toFixed(3)}% of $486B KSE claim · ${(repAmt / FROZEN_USD_M * 100).toFixed(3)}% of $300B frozen assets</div>`;
   })() : '';
+
+  const priWrapNote = isPriWrap ? `
+    <div class="fw-pri-wrap-note">
+      <span class="fw-pri-icon">🛡</span>
+      Risk-mitigation instrument — not a capital source. Coverage % = share of portfolio insured.
+      Premium ~${def.ret}%/yr · reduces senior debt required return by ~2–3%.
+    </div>` : '';
 
   // Trust toggle: only shown when tranche is 'reparations' AND timing allows reparations
   const showTrustToggle = t.type === 'reparations' && W.timing !== 'during';
@@ -890,26 +1061,33 @@ function trancheRowHTML(t, total) {
         </p>` : ''}
     </div>` : '';
 
-  const isReparations = t.type === 'reparations';
+  const isReparations  = t.type === 'reparations';
+  const isZeroReturn   = isReparations || t.type === 'grant' || t.type === 'first_loss' || t.type === 'public_equity';
+  const allocationLabel = isPriWrap ? 'Coverage' : 'Allocation';
+  const retLabel = isPriWrap
+    ? `<span class="fw-tr-rep-label">Premium ~${def.ret}%/yr · reduces senior debt cost by ~2–3%</span>`
+    : isZeroReturn
+      ? `<span class="fw-tr-rep-label">${isReparations ? 'No return · sovereign obligation' : 'No return'}</span>`
+      : `<label class="fw-tr-lbl">Return
+          <div class="fw-tr-input-wrap">
+            <input class="fw-input fw-tr-num fw-tr-ret" type="number" min="0" max="50" step="0.1" value="${+t.ret}" data-id="${t.id}" data-field="ret">
+            <span class="fw-tr-unit">%</span>
+          </div>
+        </label>`;
 
   return `<div class="fw-tranche-row" data-id="${t.id}">
     <div class="fw-tr-dot" style="background:${def.col}"></div>
     <div class="fw-tr-fields">
-      <div class="fw-tr-name">${def.label}${confidenceBadge(t.type)}</div>
+      <div class="fw-tr-name">${def.label}${confidenceBadge(t.type)}${isPriWrap ? ' <span class="fw-flag-badge">Risk wrap</span>' : ''}</div>
       <div class="fw-tr-nums">
-        <label class="fw-tr-lbl">Allocation
+        <label class="fw-tr-lbl">${allocationLabel}
           <div class="fw-tr-input-wrap">
             <input class="fw-input fw-tr-num fw-tr-pct" type="number" min="0" max="100" step="1" value="${pct}" data-id="${t.id}" data-field="pct">
             <span class="fw-tr-unit">%</span>
           </div>
         </label>
-        ${isReparations ? `<span class="fw-tr-rep-label">No return · sovereign obligation</span>` : `<label class="fw-tr-lbl">Return
-          <div class="fw-tr-input-wrap">
-            <input class="fw-input fw-tr-num fw-tr-ret" type="number" min="0" max="50" step="0.1" value="${+t.ret}" data-id="${t.id}" data-field="ret">
-            <span class="fw-tr-unit">%</span>
-          </div>
-        </label>`}
-        ${def.tenor != null && !isReparations ? `<label class="fw-tr-lbl">Tenor
+        ${retLabel}
+        ${def.tenor != null && !isReparations && !isPriWrap ? `<label class="fw-tr-lbl">Tenor
           <div class="fw-tr-input-wrap">
             <input class="fw-input fw-tr-num fw-tr-ten" type="number" min="1" max="40" step="1" value="${t.tenor ?? def.tenor}" data-id="${t.id}" data-field="tenor">
             <span class="fw-tr-unit">yr</span>
@@ -918,6 +1096,7 @@ function trancheRowHTML(t, total) {
         <span class="fw-tr-amt">${displayAmt}</span>
       </div>
       ${repNote}
+      ${priWrapNote}
       ${trustToggleHTML}
     </div>
     <button class="fw-tr-remove" data-id="${t.id}" aria-label="Remove tranche">×</button>
@@ -928,14 +1107,11 @@ function seedGreenfieldTranches() {
   const tmpl = greenfieldTemplate();
   if (!tmpl) return;  // no template found; leave existing tranches
 
-  // Mapping: template field → tranche type (and optional label override)
-  // first_loss_pct absorbed into eu_concessional (blended first-loss facility)
-  // diaspora_pct mapped to equity with label override
   const rows = [];
   let nextId = 1;
 
   function addRow(type, pct, labelOverride) {
-    const def = TRANCHE_DEFS[type] ?? TRANCHE_DEFS.equity;
+    const def = TRANCHE_DEFS[type] ?? TRANCHE_DEFS.private_equity;
     rows.push({
       id: nextId++,
       type,
@@ -952,41 +1128,40 @@ function seedGreenfieldTranches() {
   // era_pct → reparations (only if > 0)
   if (tmpl.era_pct > 0) addRow('reparations', tmpl.era_pct);
 
-  // first_loss_pct → eu_concessional (absorbed into blended concessional layer)
-  const concPct = (tmpl.concessional_pct || 0) + (tmpl.first_loss_pct || 0);
-  if (concPct > 0) addRow('eu_concessional', concPct);
+  // first_loss_pct → first_loss (only if > 0)
+  if (tmpl.first_loss_pct > 0) addRow('first_loss', tmpl.first_loss_pct);
 
-  // senior_ifi_pct → world_bank (only if > 0)
-  if (tmpl.senior_ifi_pct > 0) addRow('world_bank', tmpl.senior_ifi_pct);
+  // concessional_pct → concessional_ifi (only if > 0)
+  if (tmpl.concessional_pct > 0) addRow('concessional_ifi', tmpl.concessional_pct);
 
-  // eca_pct → eca_guarantee (only if > 0)
-  if (tmpl.eca_pct > 0) addRow('eca_guarantee', tmpl.eca_pct);
+  // senior_ifi_pct → senior_ifi (only if > 0)
+  if (tmpl.senior_ifi_pct > 0) addRow('senior_ifi', tmpl.senior_ifi_pct);
 
-  // dfi_equity_pct + public_equity_pct → equity (merge if both > 0)
+  // eca_pct → eca (only if > 0)
+  if (tmpl.eca_pct > 0) addRow('eca', tmpl.eca_pct);
+
+  // dfi_equity_pct + public_equity_pct → separate tranches
   const dfiEq  = tmpl.dfi_equity_pct    || 0;
   const pubEq  = tmpl.public_equity_pct  || 0;
   const privEq = tmpl.private_equity_pct || 0;
   const diasEq = tmpl.diaspora_pct       || 0;
 
   if (dfiEq > 0 && pubEq > 0) {
-    addRow('equity', dfiEq + pubEq, 'Public/DFI Equity');
+    addRow('dfi_equity', dfiEq);
+    addRow('public_equity', pubEq);
   } else if (dfiEq > 0) {
-    addRow('equity', dfiEq, 'DFI Equity');
+    addRow('dfi_equity', dfiEq);
   } else if (pubEq > 0) {
-    addRow('equity', pubEq);
+    addRow('public_equity', pubEq);
   }
+  if (privEq > 0) addRow('private_equity', privEq);
+  if (diasEq > 0) addRow('diaspora', diasEq);
 
-  // private_equity_pct → equity (only if > 0)
-  if (privEq > 0) addRow('equity', privEq, 'Private Equity');
+  // commercial_bank_debt_pct → commercial_bank (only if > 0)
+  if (tmpl.commercial_bank_debt_pct > 0) addRow('commercial_bank', tmpl.commercial_bank_debt_pct);
 
-  // diaspora_pct → equity with label override (only if > 0)
-  if (diasEq > 0) addRow('equity', diasEq, 'Diaspora Capital');
-
-  // commercial_bank_debt_pct → senior_debt (only if > 0)
-  if (tmpl.commercial_bank_debt_pct > 0) addRow('senior_debt', tmpl.commercial_bank_debt_pct);
-
-  // institutional_debt_pct → mezzanine (only if > 0)
-  if (tmpl.institutional_debt_pct > 0) addRow('mezzanine', tmpl.institutional_debt_pct);
+  // institutional_debt_pct → institutional_debt (only if > 0)
+  if (tmpl.institutional_debt_pct > 0) addRow('institutional_debt', tmpl.institutional_debt_pct);
 
   if (rows.length === 0) return;  // nothing to seed
 
@@ -1011,7 +1186,7 @@ function wireStep3() {
         if (W.tranches.length > 1) W.tranches.splice(existing, 1);
       } else {
         // Add with default ret = 0 for reparations, def.ret for others
-        const def = TRANCHE_DEFS[type] ?? TRANCHE_DEFS.equity;
+        const def = TRANCHE_DEFS[type] ?? TRANCHE_DEFS.private_equity;
         const ret = type === 'reparations' ? 0 : def.ret;
         W.tranches.push({ id: W.nextId++, type, pct: 0, ret, tenor: def.tenor });
       }
@@ -1081,7 +1256,7 @@ function computeResults() {
   const isDuring = W.timing === 'during' || W.timing === 'phased';
 
   const tranches = W.tranches.map(t => {
-    const def  = TRANCHE_DEFS[t.type] ?? TRANCHE_DEFS.equity;
+    const def  = TRANCHE_DEFS[t.type] ?? TRANCHE_DEFS.private_equity;
     const pct  = +t.pct || 0;
     const amt  = total * pct / 100;
     const effR = (+t.ret || 0) + (COMMERCIAL_TYPES.has(t.type) && isDuring ? WAR_PREMIUM : 0);
@@ -1102,6 +1277,24 @@ function computeResults() {
   const growthTotal    = growthProjects.reduce((s, p) => s + p.scale_usd_m, 0);
   const assetTotal     = total - growthTotal;
 
+  // Portfolio revenue estimate from sector yield
+  const portfolioRevenue = sel.reduce((s, a) => {
+    const yield_ = SECTOR_REVENUE_YIELD[a.sector] ?? 0.03;
+    return s + (a.cost_paths?.[W.path]?.central_usd_m ?? 0) * yield_;
+  }, 0);
+
+  // Annual debt service on return-bearing tranches (excl. grants, reparations, public equity, first_loss)
+  const annualDebtSvc = tranches
+    .filter(t => t.effR > 0 && t.type !== 'public_equity' && t.type !== 'first_loss' && !t.def.isFlag)
+    .reduce((s, t) => s + t.annualCost, 0);
+
+  const dscr = annualDebtSvc > 0 ? portfolioRevenue / annualDebtSvc : null;
+
+  // Russian funding gap: capitalise any revenue shortfall at trust drawdown rate
+  const revenueShortfall   = Math.max(0, annualDebtSvc - portfolioRevenue);
+  const extraRussianNeeded = revenueShortfall / TRUST_DRAWDOWN_PCT;
+  const totalRussianNeeded = repAmt + extraRussianNeeded;
+
   return {
     sel, total, low, high, tranches,
     grantAmt, concAmt, privAmt, repAmt, pubTotal,
@@ -1111,6 +1304,8 @@ function computeResults() {
     duringSupport: W.timing === 'after' ? 0 : pubTotal,
     postSupport:   W.timing === 'during' ? 0 : pubTotal,
     growthProjects, growthTotal, assetTotal,
+    portfolioRevenue, annualDebtSvc, dscr,
+    revenueShortfall, extraRussianNeeded, totalRussianNeeded,
   };
 }
 
@@ -1216,6 +1411,51 @@ function step4HTML() {
         <tbody>${trancheRows}</tbody>
       </table>
     </div>
+
+    ${(() => {
+      const { dscr, portfolioRevenue, annualDebtSvc, revenueShortfall, extraRussianNeeded, repAmt: repAmtV, totalRussianNeeded } = r;
+      const dscrColor = dscr == null ? '#888' : dscr >= 1.2 ? '#27ae60' : dscr >= 0.8 ? '#e67e22' : '#e74c3c';
+      const dscrLabel = dscr == null ? 'N/A' : dscr >= 1.2 ? 'Commercially viable' : dscr >= 0.8 ? 'Marginal — needs support' : 'Not self-sustaining';
+      return `
+    <div class="fw-results-sect fw-viability-sect">
+      <h4 class="fw-results-h4">Return viability &amp; Russian funding requirement</h4>
+      <div class="fw-viability-grid">
+        <div class="fw-vg-item">
+          <span class="fw-vg-val">${fmtM(portfolioRevenue.toFixed(0))}/yr</span>
+          <span class="fw-vg-lbl">Est. portfolio annual revenue</span>
+          <span class="fw-vg-note">Based on sector revenue yield assumptions</span>
+        </div>
+        <div class="fw-vg-item">
+          <span class="fw-vg-val">${fmtM(annualDebtSvc.toFixed(0))}/yr</span>
+          <span class="fw-vg-lbl">Required annual debt service</span>
+          <span class="fw-vg-note">Return-bearing tranches only</span>
+        </div>
+        ${dscr != null ? `<div class="fw-vg-item fw-vg-dscr">
+          <span class="fw-vg-val" style="color:${dscrColor}">${dscr.toFixed(2)}×</span>
+          <span class="fw-vg-lbl">DSCR</span>
+          <span class="fw-vg-note" style="color:${dscrColor}">${dscrLabel}</span>
+        </div>` : ''}
+      </div>
+      ${extraRussianNeeded > 0 ? `
+      <div class="fw-russia-gap">
+        <div class="fw-rg-header">Revenue shortfall → additional Russian contribution needed</div>
+        <div class="fw-rg-calc">
+          Shortfall: <strong>${fmtM(revenueShortfall.toFixed(0))}/yr</strong>
+          capitalised at ${(TRUST_DRAWDOWN_PCT*100).toFixed(0)}% =
+          <strong class="fw-rg-extra">${fmtM(extraRussianNeeded.toFixed(0))}</strong> additional reparations
+        </div>
+        <div class="fw-rg-total">
+          Total Russian obligation for this portfolio:
+          <strong class="fw-rg-total-val">${fmtM(totalRussianNeeded.toFixed(0))}</strong>
+          <span class="fw-rg-breakdown">(${fmtM(repAmtV.toFixed(0))} allocated + ${fmtM(extraRussianNeeded.toFixed(0))} gap coverage)</span>
+        </div>
+      </div>` : `
+      <div class="fw-russia-gap fw-rg-green">
+        <div class="fw-rg-header">✓ Project revenues sufficient to service selected tranches</div>
+        ${repAmtV > 0 ? `<div class="fw-rg-calc">Russian reparations allocated (${fmtM(repAmtV.toFixed(0))}) are structural, not required for debt service in this scenario.</div>` : ''}
+      </div>`}
+    </div>`;
+    })()}
 
     <div class="fw-results-sect">
       <h4 class="fw-results-h4">Key metrics</h4>

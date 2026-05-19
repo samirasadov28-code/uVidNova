@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#0d2248">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="app-version" content="0.3.5">
+  <meta name="app-version" content="0.3.7">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
@@ -147,7 +147,7 @@
       </p>
       <div class="landing-actions">
         <button class="lang-toggle landing-lang-toggle" id="landingLangToggle" aria-label="Switch language">🇺🇦 Українська</button>
-        <span class="landing-version">v0.3.4</span>
+        <span class="landing-version">v0.3.7</span>
         <button class="landing-force-reload" id="landingForceReload" title="Clear cache and reload latest version">↻ Force update</button>
       </div>
     </div>
@@ -351,6 +351,7 @@
 
   <!-- ── Site header ───────────────────────────────────────────────────────── -->
   <header class="site-header">
+    <!-- Row 1: Logo + primary action buttons + util nav -->
     <div class="header-inner">
       <!-- Left: logo + wordmark -->
       <a href="/" class="wordmark" aria-label="uVidNova home">
@@ -358,29 +359,33 @@
         <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
       </a>
 
-      <!-- Centre: view tabs + Finance It button -->
+      <!-- Centre: Finance It + Vidnova Trust -->
       <div class="header-centre">
-        <div class="map-view-tabs" id="mapViewTabs" role="tablist">
-          <button class="map-view-tab map-view-tab-active" id="tab-ukraine" role="tab" aria-selected="true"
-                  onclick="uvSetMapView('ukraine')">🔱 Ukraine</button>
-          <button class="map-view-tab" id="tab-damaged" role="tab" aria-selected="false"
-                  onclick="uvSetMapView('damaged')">⚡ Damaged</button>
-          <button class="map-view-tab" id="tab-reconstructed" role="tab" aria-selected="false"
-                  onclick="uvSetMapView('reconstructed')">✅ Reconstructed</button>
-          <button class="map-view-tab" id="tab-development" role="tab" aria-selected="false"
-                  onclick="uvSetMapView('development')">🔮 Development</button>
-        </div>
-        <button class="header-finance-btn" onclick="uvOpenFinance()" aria-label="Open Finance It">
+        <button class="header-action-btn header-action-finance" onclick="uvOpenFinance()" aria-label="Open Finance It">
           💰 Finance It
         </button>
+        <a href="/trust.html" class="header-action-btn header-action-trust" aria-label="Vidnova Trust">
+          🏛 Vidnova Trust
+        </a>
       </div>
 
-      <!-- Right: Trust, About, lang toggle only -->
+      <!-- Right: About + lang toggle -->
       <nav class="site-nav">
-        <a href="/trust.html" class="nav-link" data-page="trust" style="color:#f5c842;font-weight:600">VidNova Trust ↗</a>
         <a href="/about.html" class="nav-link" data-page="about" data-i18n="nav.methodology">About</a>
         <button class="lang-toggle" id="langToggle" aria-label="Switch language">🇺🇦 Українська</button>
       </nav>
+    </div>
+
+    <!-- Row 2: View mode tabs -->
+    <div class="view-tab-bar" id="mapViewTabs" role="tablist">
+      <button class="map-view-tab map-view-tab-active" id="tab-ukraine" role="tab" aria-selected="true"
+              onclick="uvSetMapView('ukraine')">🔱 Ukraine</button>
+      <button class="map-view-tab" id="tab-damaged" role="tab" aria-selected="false"
+              onclick="uvSetMapView('damaged')">⚡ Damaged</button>
+      <button class="map-view-tab" id="tab-reconstructed" role="tab" aria-selected="false"
+              onclick="uvSetMapView('reconstructed')">✅ Reconstructed</button>
+      <button class="map-view-tab" id="tab-development" role="tab" aria-selected="false"
+              onclick="uvSetMapView('development')">🔮 Development</button>
     </div>
   </header>
 
@@ -490,7 +495,7 @@
 
   <!-- ── Version bar — version label + SW update notification only ──────────── -->
   <div class="version-bar" id="versionBar" role="status">
-    <span class="version-label" id="versionLabel">v0.3.5</span>
+    <span class="version-label" id="versionLabel">v0.3.7</span>
     <span class="update-prompt" id="updatePrompt" hidden>
       <span data-i18n="version.update_msg">· New version ready —</span>
       <button class="update-reload-btn" id="updateReloadBtn" data-i18n="version.reload">reload</button>
