@@ -86,9 +86,12 @@ export function getCostBand(asset) {
 export function getFinancingClass(asset) {
   const fs = asset.financing_structures?.baseline;
   if (!fs) return 'blended';
-  if ((fs.private_pct ?? 0) >= 30) return 'private_anchored';
-  if ((fs.grant_pct ?? 0) >= 50)   return 'grant_led';
-  if ((fs.concessional_pct ?? 0) >= (fs.grant_pct ?? 0)) return 'concessional_led';
+  // Slim index objects carry a pre-computed class
+  if (fs._financing_class) return fs._financing_class;
+  const privatePct = (fs.private_equity_pct ?? 0) + (fs.dfi_equity_pct ?? 0);
+  if (privatePct >= 30)                                      return 'private_anchored';
+  if ((fs.grant_pct ?? 0) >= 50)                             return 'grant_led';
+  if ((fs.concessional_pct ?? 0) >= (fs.grant_pct ?? 0))    return 'concessional_led';
   return 'blended';
 }
 

@@ -4,7 +4,7 @@
  * Clicking a pin navigates to asset.html?id=<asset_id>.
  */
 
-import { loadAllAssets, loadOblastsGeoJSON } from './data-loader.js';
+import { loadAssetsForMap, loadAsset, loadOblastsGeoJSON } from './data-loader.js';
 import {
   matchesFilters, initSectorFilter, initOblastFilter, initToggleChips,
   initCostBandFilter, initFinancingClassFilter, initReDamageFilter,
@@ -1296,7 +1296,7 @@ async function init() {
 
   try {
     const [assets] = await Promise.all([
-      loadAllAssets(),
+      loadAssetsForMap(),
       addOblastLayer(),
       loadOblastInfo(),
       loadCities(),
