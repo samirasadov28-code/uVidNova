@@ -29,6 +29,15 @@
       navigator.serviceWorker.register('/service-worker.js').catch(function() {});
     }
   </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MSQGC9TYQ5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MSQGC9TYQ5');
+  </script>
 </head>
 <body class="asset-page">
 
