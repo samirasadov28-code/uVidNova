@@ -52,6 +52,8 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  /* Prevent pull-to-refresh and over-scroll from stealing map gestures */
+  overscroll-behavior: none;
 }
 a { color: var(--colour-navy-light); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -166,7 +168,11 @@ img { max-width: 100%; height: auto; }
   z-index: 0;
   background: #1a0808;
   transition: background 0.4s ease;
+  /* Prevent browser scroll/zoom from intercepting Leaflet touch gestures */
+  touch-action: none;
 }
+/* Leaflet container inherits touch-action so pinch/pan are handled exclusively by Leaflet */
+.leaflet-container { touch-action: none; }
 
 /* ── Map view tab bar (now lives in header-centre) ─────────────────────────── */
 .map-view-tabs {
@@ -269,7 +275,11 @@ img { max-width: 100%; height: auto; }
   flex-direction: column;
   box-shadow: 4px 0 24px rgba(0,0,0,0.22);
   transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+  /* Panels off-screen must not intercept map touches */
+  pointer-events: none;
 }
+.filter-panel.panel-open,
+.asset-list-panel.panel-open { pointer-events: auto; }
 
 /* Filter panel — slides in from left */
 .filter-panel {
@@ -1502,6 +1512,13 @@ body:has(#disclaimerBanner) .fab { bottom: 100px; }
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     max-height: 68vh;
   }
+
+  /* Leaflet zoom control — hide on phones (pinch-to-zoom is the natural gesture) */
+  .leaflet-control-zoom { display: none; }
+
+  /* Map controls (filter/assets buttons) — ensure they don't overlap each other */
+  .map-toggle-left  { top: calc(var(--header-h) + 0.5rem); }
+  .map-toggle-right { top: calc(var(--header-h) + 0.5rem); }
 }
 
 /* ── Filter panel enhancements (Weekend 5) ───────────────────────────────── */

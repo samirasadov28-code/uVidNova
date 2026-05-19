@@ -1285,8 +1285,10 @@ async function init() {
     maxZoom:            12,
     zoomControl:        true,
     attributionControl: true,
-    maxBounds:          [[43.5, 21.5], [53.5, 40.5]],
-    maxBoundsViscosity: 0.85,
+    // Loose bounds — enough room to pan freely without the map feeling glued.
+    // Viscosity 0: map can drift outside the box, then elastically snaps back.
+    maxBounds:          [[41.0, 18.0], [56.0, 43.0]],
+    maxBoundsViscosity: 0,
   });
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
