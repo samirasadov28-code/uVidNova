@@ -98,6 +98,23 @@ const TRANSLATIONS = {
     'oblast.resources':       'Key resources',
     'oblast.revenue_drivers': 'Revenue drivers',
     'oblast.history':         'History',
+    // Map popups
+    'popup.cost_pending':  'Cost estimate pending methodology',
+    'popup.baseline':      'Baseline: {cost} central',
+    'popup.redamaged':     '⚠ Re-damaged ×{n}',
+    'popup.full_profile':  'Full financing profile →',
+    // Asset list
+    'asset.list.title':    'Reconstruction Assets',
+    // Aggregation panel
+    'agg.total_label':     'Pipeline baseline total',
+    'agg.by_sector':       'By sector',
+    'agg.by_rebuildability': 'By rebuildability',
+    'agg.by_oblast':       'By oblast',
+    'agg.by_financing':    'By financing class',
+    'agg.no_assets':       'No assets match current filters.',
+    'agg.redamaged_note':  '⚠ {n} asset re-damaged ×2 or more',
+    'agg.redamaged_note_pl':'⚠ {n} assets re-damaged ×2 or more',
+    'agg.disclaimer':      'All figures: USD baseline central estimate. Not guarantees.',
   },
   uk: {
     // Name etymology
@@ -192,6 +209,23 @@ const TRANSLATIONS = {
     'oblast.resources':       'Ключові ресурси',
     'oblast.revenue_drivers': 'Рушії доходів',
     'oblast.history':         'Історія',
+    // Map popups
+    'popup.cost_pending':  'Кошторис очікується',
+    'popup.baseline':      'Базовий: {cost} центральний',
+    'popup.redamaged':     '⚠ Пошкоджено повторно ×{n}',
+    'popup.full_profile':  'Повний фінансовий профіль →',
+    // Asset list
+    'asset.list.title':    'Активи відбудови',
+    // Aggregation panel
+    'agg.total_label':     'Загальний базовий показник',
+    'agg.by_sector':       'За сектором',
+    'agg.by_rebuildability': 'За можливістю відбудови',
+    'agg.by_oblast':       'За областю',
+    'agg.by_financing':    'За класом фінансування',
+    'agg.no_assets':       'Немає активів, що відповідають фільтрам.',
+    'agg.redamaged_note':  '⚠ {n} актив пошкоджено повторно ×2+',
+    'agg.redamaged_note_pl':'⚠ {n} активів пошкоджено повторно ×2+',
+    'agg.disclaimer':      'Усі дані: базова центральна оцінка в USD. Не є гарантіями.',
   }
 };
 
@@ -231,7 +265,9 @@ export function initLangToggle(btn) {
   if (!btn) return;
   const update = () => {
     const lang = getLang();
-    btn.textContent  = lang === 'uk' ? '🇬🇧 English' : '🇺🇦 Українська';
+    btn.innerHTML = lang === 'uk'
+      ? '🇬🇧 EN · <strong>🇺🇦 UA</strong>'
+      : '<strong>🇬🇧 EN</strong> · 🇺🇦 UA';
     btn.setAttribute('aria-label', lang === 'uk' ? 'Switch to English' : 'Переключити на українську');
     document.documentElement.lang = lang;
     applyTranslations();

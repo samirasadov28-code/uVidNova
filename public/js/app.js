@@ -83,11 +83,11 @@ function makePopupHTML(asset) {
   const reCount        = asset.damage?.re_damage_count ?? 0;
 
   const costLine = pending
-    ? `<span class="popup-pending">Cost estimate pending methodology</span>`
-    : `<span class="popup-cost">Baseline: ${fmtUSD(central)} central</span>`;
+    ? `<span class="popup-pending">${t('popup.cost_pending')}</span>`
+    : `<span class="popup-cost">${t('popup.baseline').replace('{cost}', fmtUSD(central))}</span>`;
 
   const reLine = reCount >= 2
-    ? `<span class="popup-redamage" title="Re-damaged ${reCount} time(s) — material investor-information field">⚠ Re-damaged ×${reCount}</span>`
+    ? `<span class="popup-redamage" title="Re-damaged ${reCount} time(s) — material investor-information field">${t('popup.redamaged').replace('{n}', reCount)}</span>`
     : '';
 
   return `
@@ -103,7 +103,7 @@ function makePopupHTML(asset) {
       </div>
       ${costLine}
       <a href="/asset.html?id=${encodeURIComponent(asset.asset_id)}" class="popup-link">
-        Full financing profile →
+        ${t('popup.full_profile')}
       </a>
     </div>`;
 }
@@ -111,6 +111,7 @@ function makePopupHTML(asset) {
 // ── State ─────────────────────────────────────────────────────────────────────
 
 let map = null;
+let tileLayer = null;
 let allAssets = [];
 const markerMap = new Map();
 let oblastLayer = null;
@@ -225,17 +226,16 @@ function renderCapitalMarkers() {
   capitalLayer.addTo(map);
 }
 
-function zoomToOblastFeature(layer) {
+function zoomToOblastFeature(layer, extraRightPad = 0) {
   try {
-    const bounds = layer.getBounds().pad(0.08);
-    // Offset right padding to compensate for the 340px info panel that opens on the right
-    const panelWidth = window.innerWidth < 600 ? 0 : 340;
+    const bounds = layer.getBounds().pad(0.1);
+    const panelWidth = window.innerWidth < 600 ? 0 : (380 + extraRightPad);
     map.flyToBounds(bounds, {
       maxZoom: 9,
       duration: 0.8,
       easeLinearity: 0.35,
-      paddingTopLeft:     [0, 0],
-      paddingBottomRight: [panelWidth, 0],
+      paddingTopLeft:     [0, 60],
+      paddingBottomRight: [panelWidth, 40],
     });
   } catch { /* no bounds */ }
 }
@@ -788,8 +788,8 @@ function showDevelopmentPanel(oblastNameEn, info) {
 // ── Oblast boundary layer ─────────────────────────────────────────────────────
 
 const VIEW_PALETTE = {
-  ukraine:       { border: '#4a90d9', fill: '#e8f4fd', bg: '#eaf2fb' },
-  damaged:       { border: '#27ae60', fill: '#b03030', bg: '#1a0808' },
+  ukraine:       { border: '#FFD700', fill: '#005BBB', bg: '#003f8a' },
+  damaged:       { border: '#27ae60', fill: '#c45050', bg: '#1a0808' },
   reconstructed: { border: '#c9a227', fill: '#0d2b5e', bg: '#040e24' },
   development:   { border: '#1a7a2e', fill: '#2d7a3a', bg: '#071208' },
 };
@@ -814,9 +814,9 @@ function oblastStyle(feature) {
     }
   }
 
-  // Ukraine view uses light-map styling
+  // Ukraine view: solid blue fill with yellow borders (flag colours), no tiles behind
   if (mapViewMode === 'ukraine') {
-    return { color: pal.border, weight: 1, opacity: 0.6, fillColor: pal.fill, fillOpacity: 0.25, dashArray: null };
+    return { color: pal.border, weight: 1.5, opacity: 0.9, fillColor: pal.fill, fillOpacity: 0.75, dashArray: null };
   }
 
   return { color: pal.border, weight: 1.5, fillColor: pal.fill, fillOpacity: 0.68, dashArray: null };
@@ -845,15 +845,15 @@ async function addOblastLayer() {
         const isLuhansk  = name === "Luhans'k";
         const isPartialOcc = PARTIALLY_OCCUPIED_OBLASTS.has(name);
         let tooltipText = name;
-        if (isCrimea) tooltipText = 'Autonomous Republic of Crimea — occupied since 2014 (UA territory)';
-        else if (isLuhansk) tooltipText = 'Luhansk Oblast — largely occupied since 2022 (UA territory)';
-        else if (isPartialOcc) tooltipText = `${name} Oblast — contested/partially occupied (UA territory)`;
+        if (isCrimea) tooltipText = 'Autonomous Republic of Crimea — temporarily occupied since 2014 (UA territory, excl. Sevastopol City)';
+        else if (isLuhansk) tooltipText = 'Luhansk Oblast — temporarily occupied (UA territory)';
+        else if (isPartialOcc) tooltipText = `${name} Oblast — temporarily partially occupied (UA territory)`;
         if (name) layer.bindTooltip(tooltipText, { permanent: false, sticky: true, className: 'oblast-tooltip' });
 
         layer.on('mouseover', function () {
           if (selectedOblast !== name) {
             if (mapViewMode === 'ukraine') {
-              this.setStyle({ fillColor: '#fff9c4', fillOpacity: 0.55, color: '#c9a227', weight: 2 });
+              this.setStyle({ fillColor: '#3a88d8', fillOpacity: 0.92, color: '#FFD700', weight: 2.5 });
             } else {
               this.setStyle({ fillOpacity: 0.90, weight: 2 });
             }
@@ -878,7 +878,7 @@ async function addOblastLayer() {
           } else {
             // Ukraine view: animate zoom into the oblast
             oblastLayer.resetStyle();
-            this.setStyle({ fillColor: '#fff9c4', fillOpacity: 0.70, weight: 2.5, color: '#c9a227' });
+            this.setStyle({ fillColor: '#3a88d8', fillOpacity: 0.95, weight: 2.5, color: '#FFD700' });
             zoomToOblastFeature(this);
             const oblastNameEn = info?.name_en ?? OBLAST_INFO_MAP[name] ?? name;
             showCityMarkers(oblastNameEn);
@@ -891,6 +891,27 @@ async function addOblastLayer() {
   } catch (e) {
     console.warn('Oblast GeoJSON failed to load:', e.message);
   }
+}
+
+// ── Sevastopol City marker ────────────────────────────────────────────────────
+
+function addSevastopolMarker() {
+  // Sevastopol City has special status in Ukrainian law — separate from Crimea Oblast.
+  // The GeoJSON merges the territory visually, so we add an explicit label.
+  const icon = L.divIcon({
+    className: '',
+    html: `<div style="
+      background:#5a0000;border:2px solid #cc0000;border-radius:3px;
+      color:#ffaaaa;font-size:9px;font-weight:700;padding:1px 4px;
+      white-space:nowrap;pointer-events:none;opacity:0.9">Sevastopol City</div>`,
+    iconSize: [100, 16],
+    iconAnchor: [50, 8],
+  });
+  L.marker([44.6068, 33.5254], { icon, interactive: false })
+    .bindTooltip('City of Sevastopol — separate UA administrative unit, temporarily occupied since 2014', {
+      permanent: false, sticky: true, className: 'oblast-tooltip'
+    })
+    .addTo(map);
 }
 
 // ── Map view switching ────────────────────────────────────────────────────────
@@ -923,6 +944,9 @@ function setMapView(view) {
   const layoutEl = document.querySelector('.map-layout');
   if (mapEl)    mapEl.style.background    = pal.bg;
   if (layoutEl) layoutEl.style.background = pal.bg;
+
+  // Ukraine mode: hide base tiles so only Ukraine's oblasts are visible
+  if (tileLayer) tileLayer.setOpacity(view === 'ukraine' ? 0 : 1);
 
   // Show/hide filter+asset controls (not useful in ukraine/development views)
   const showControls = view === 'damaged' || view === 'reconstructed';
@@ -1291,7 +1315,7 @@ async function init() {
     maxBoundsViscosity: 0,
   });
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  tileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://carto.com/">CARTO</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>',
     subdomains: 'abcd',
     maxZoom: 19
@@ -1305,10 +1329,11 @@ async function init() {
       loadCities(),
       loadDevOpps()
     ]);
+    addSevastopolMarker();
 
     allAssets = assets;
     initFilters();
-    setMapView('damaged');
+    setMapView('ukraine');
 
     if (assets.length > 0) {
       const latlngs = assets

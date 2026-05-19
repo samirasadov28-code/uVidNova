@@ -4,13 +4,17 @@
  */
 
 import { SECTOR_LABELS, COST_BAND_LABELS, FINANCING_CLASS_LABELS, getCostBand, getFinancingClass } from './filters.js';
+import { t } from './lang.js';
 
-const REBUILDABILITY_LABELS = {
-  rebuildable:        'Rebuildable',
-  recently_liberated: 'Recently liberated',
-  frontline_adjacent: 'Frontline adjacent',
-  occupied:           'Occupied'
-};
+function rebuildabilityLabel(key) {
+  const map = {
+    rebuildable:        'filter.chip.rebuildable',
+    recently_liberated: 'filter.chip.recently_liberated',
+    frontline_adjacent: 'filter.chip.frontline_adjacent',
+    occupied:           'filter.chip.occupied',
+  };
+  return map[key] ? t(map[key]) : key;
+}
 
 // ── Compute ───────────────────────────────────────────────────────────────────
 
@@ -89,7 +93,7 @@ function sortedEntries(obj) {
 export function renderAggregation(el, agg) {
   if (!el) return;
   if (agg.count === 0) {
-    el.innerHTML = '<p class="agg-empty">No assets match current filters.</p>';
+    el.innerHTML = `<p class="agg-empty">${t('agg.no_assets')}</p>`;
     return;
   }
 
@@ -109,7 +113,7 @@ export function renderAggregation(el, agg) {
   }).join('');
 
   const rebRows = sortedEntries(agg.byRebuildability).map(([reb, v]) => {
-    const label = REBUILDABILITY_LABELS[reb] ?? reb;
+    const label = rebuildabilityLabel(reb);
     return `<div class="agg-simple-row">
       <span class="agg-label">${label}</span>
       <span class="agg-value">${fmtB(v.total)}</span>
@@ -134,36 +138,37 @@ export function renderAggregation(el, agg) {
     </div>`;
   }).join('');
 
+  const reDamKey = agg.reDamagedCount === 1 ? 'agg.redamaged_note' : 'agg.redamaged_note_pl';
   el.innerHTML = `
     <div class="agg-total">
-      <span class="agg-total-label">Pipeline baseline total</span>
+      <span class="agg-total-label">${t('agg.total_label')}</span>
       <span class="agg-total-value">${fmtB(agg.totalUSD)}</span>
     </div>
 
     <details class="agg-details" open>
-      <summary class="agg-summary">By sector</summary>
+      <summary class="agg-summary">${t('agg.by_sector')}</summary>
       <div class="agg-section">${sectorRows}</div>
     </details>
 
     <details class="agg-details">
-      <summary class="agg-summary">By rebuildability</summary>
+      <summary class="agg-summary">${t('agg.by_rebuildability')}</summary>
       <div class="agg-section">${rebRows}</div>
     </details>
 
     <details class="agg-details">
-      <summary class="agg-summary">By oblast</summary>
+      <summary class="agg-summary">${t('agg.by_oblast')}</summary>
       <div class="agg-section">${oblastRows}</div>
     </details>
 
     <details class="agg-details">
-      <summary class="agg-summary">By financing class</summary>
+      <summary class="agg-summary">${t('agg.by_financing')}</summary>
       <div class="agg-section">${fcRows}</div>
     </details>
 
     ${agg.reDamagedCount > 0 ? `
     <div class="agg-redamage">
-      ⚠ ${agg.reDamagedCount} asset${agg.reDamagedCount !== 1 ? 's' : ''} re-damaged ×2 or more
+      ${t(reDamKey).replace('{n}', agg.reDamagedCount)}
     </div>` : ''}
 
-    <p class="agg-note">All figures: USD baseline central estimate. Not guarantees.</p>`;
+    <p class="agg-note">${t('agg.disclaimer')}</p>`;
 }
