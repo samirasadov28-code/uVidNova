@@ -5,7 +5,7 @@
 
 import { getName } from './lang.js';
 import { SECTOR_LABELS } from './filters.js';
-import { loadGrowthSectors, renderWizardSectorPicker, getGreenfieldsTemplates } from './growth-sectors.js';
+import { loadGrowthSectors, renderWizardSectorPicker, renderPortfolioGrowthPicker, getGreenfieldsTemplates } from './growth-sectors.js';
 
 // ── Tranche definitions ───────────────────────────────────────────────────────
 
@@ -93,6 +93,8 @@ function reset(preselected = []) {
     ],
     nextId: 4,
     greenfield: { sectorId: null, archetypeId: null },
+    growthProjects: [],   // Array<{ sectorId, archetypeId, label, sector, scale_usd_m }>
+    showGrowthPicker: false,
   };
   _trustModes = new Map();
 }
@@ -332,7 +334,9 @@ function portfolioCost(path) {
     const arch = greenfieldArchetype();
     return arch?.scale_usd_m ?? 0;
   }
-  return selectedAssets().reduce((s, a) => s + (a.cost_paths?.[path]?.central_usd_m ?? 0), 0);
+  const assetCost  = selectedAssets().reduce((s, a) => s + (a.cost_paths?.[path]?.central_usd_m ?? 0), 0);
+  const growthCost = (W.growthProjects ?? []).reduce((s, p) => s + p.scale_usd_m, 0);
+  return assetCost + growthCost;
 }
 
 function fmtM(n) { return n != null ? `$${(+n).toLocaleString()}M` : '—'; }
@@ -364,9 +368,15 @@ function scopeCard(val, icon, label, desc) {
 function wireStep1() {
   document.querySelectorAll('input[name="scope"]').forEach(r => {
     r.addEventListener('change', e => {
+      const prev = W.scope;
       W.scope = e.target.value;
-      if (W.scope === 'all') W.selectedIds = new Set(_assets.map(a => a.asset_id));
-      else if (W.scope !== e.target.value) W.selectedIds = new Set();
+      if (W.scope === 'all') {
+        W.selectedIds = new Set(_assets.map(a => a.asset_id));
+      } else if (W.scope !== prev) {
+        W.selectedIds = new Set();
+        W.growthProjects = [];
+        W.showGrowthPicker = false;
+      }
       document.querySelectorAll('#fwScopeRow .fw-radio-card').forEach(c => c.classList.remove('fw-rc-checked'));
       e.target.closest('.fw-radio-card').classList.add('fw-rc-checked');
       renderScopeDetail();
@@ -381,8 +391,33 @@ function renderScopeDetail() {
 
   if (W.scope === 'all') {
     W.selectedIds = new Set(_assets.map(a => a.asset_id));
-    const total = _assets.reduce((s, a) => s + (a.cost_paths?.baseline?.central_usd_m ?? 0), 0);
-    det.innerHTML = `<div class="fw-scope-summary"><strong>${_assets.length} assets</strong> across all documented regions — Baseline total: <strong>${fmtM(total)}</strong></div>`;
+    const assetTotal  = _assets.reduce((s, a) => s + (a.cost_paths?.baseline?.central_usd_m ?? 0), 0);
+    const growthTotal = (W.growthProjects ?? []).reduce((s, p) => s + p.scale_usd_m, 0);
+    const grandTotal  = assetTotal + growthTotal;
+    const growthCount = (W.growthProjects ?? []).length;
+
+    det.innerHTML = `
+      <div class="fw-scope-summary">
+        <strong>${_assets.length} damaged assets</strong> across all documented regions
+        — Baseline rehabilitation: <strong>${fmtM(assetTotal)}</strong>
+        ${growthCount > 0 ? ` + <strong>${growthCount} growth project${growthCount !== 1 ? 's' : ''}</strong> (${fmtM(growthTotal)}) = <strong>${fmtM(grandTotal)} total</strong>` : ''}
+      </div>
+      <button class="fw-growth-toggle-btn" id="fwGrowthToggleBtn">
+        ${W.showGrowthPicker ? '▲ Hide growth projects' : `＋ Add growth sector projects${growthCount > 0 ? ` (${growthCount} selected)` : ''}`}
+      </button>
+      <div id="fwGrowthPickerWrap" ${W.showGrowthPicker ? '' : 'hidden'}>
+        ${_growthData ? renderPortfolioGrowthPicker(_growthData, W.growthProjects ?? []) : '<p class="fw-scope-summary">Loading growth sector data…</p>'}
+      </div>`;
+
+    document.getElementById('fwGrowthToggleBtn')?.addEventListener('click', () => {
+      W.showGrowthPicker = !W.showGrowthPicker;
+      if (W.showGrowthPicker && !_growthData) {
+        loadGrowthSectors().then(d => { _growthData = d; renderScopeDetail(); }).catch(() => {});
+      }
+      renderScopeDetail();
+    });
+
+    wireGrowthPicker();
     return;
   }
 
@@ -464,6 +499,45 @@ function renderScopeDetail() {
 function updateSelCount() {
   const el = document.getElementById('fwSelCount');
   if (el) el.textContent = `${W.selectedIds.size} selected`;
+}
+
+function wireGrowthPicker() {
+  document.querySelectorAll('.fw-growth-cb').forEach(cb => {
+    cb.addEventListener('change', e => {
+      const { archId, sectorId, label, sector, scale } = e.target.dataset;
+      if (e.target.checked) {
+        if (!W.growthProjects.find(p => p.archetypeId === archId)) {
+          W.growthProjects.push({ sectorId, archetypeId: archId, label, sector, scale_usd_m: +scale });
+        }
+      } else {
+        W.growthProjects = W.growthProjects.filter(p => p.archetypeId !== archId);
+      }
+      // Refresh summary line and chips without collapsing the picker
+      const assetTotal  = _assets.reduce((s, a) => s + (a.cost_paths?.baseline?.central_usd_m ?? 0), 0);
+      const growthTotal = W.growthProjects.reduce((s, p) => s + p.scale_usd_m, 0);
+      const grandTotal  = assetTotal + growthTotal;
+      const growthCount = W.growthProjects.length;
+      const summaryEl = document.querySelector('.fw-scope-summary');
+      if (summaryEl) {
+        summaryEl.innerHTML = `<strong>${_assets.length} damaged assets</strong> across all documented regions
+          — Baseline rehabilitation: <strong>${fmtM(assetTotal)}</strong>
+          ${growthCount > 0 ? ` + <strong>${growthCount} growth project${growthCount !== 1 ? 's' : ''}</strong> (${fmtM(growthTotal)}) = <strong>${fmtM(grandTotal)} total</strong>` : ''}`;
+      }
+      // Update the chips display
+      const chipsEl = document.getElementById('fwGrowthChips');
+      if (chipsEl) {
+        if (W.growthProjects.length > 0) {
+          chipsEl.className = 'fw-growth-chips';
+          chipsEl.innerHTML = W.growthProjects.map(p =>
+            `<span class="fw-growth-chip">${p.label} <span class="fw-gc-scale">USD ${(+p.scale_usd_m).toLocaleString()}M</span></span>`
+          ).join('') + `<span class="fw-growth-total-chip">Growth total: <strong>USD ${growthTotal.toLocaleString()}M</strong></span>`;
+        } else {
+          chipsEl.className = 'fw-growth-empty';
+          chipsEl.innerHTML = 'No growth projects selected yet.';
+        }
+      }
+    });
+  });
 }
 
 function renderSingleList(q) {
@@ -976,6 +1050,10 @@ function computeResults() {
   const mobRatio  = grantAmt > 0 ? (privAmt / grantAmt).toFixed(1) : null;
   const warExtra  = isDuring ? tranches.filter(t => COMMERCIAL_TYPES.has(t.type)).reduce((s, t) => s + t.amt * WAR_PREMIUM / 100, 0) : 0;
 
+  const growthProjects = W.growthProjects ?? [];
+  const growthTotal    = growthProjects.reduce((s, p) => s + p.scale_usd_m, 0);
+  const assetTotal     = total - growthTotal;
+
   return {
     sel, total, low, high, tranches,
     grantAmt, concAmt, privAmt, repAmt, pubTotal,
@@ -984,6 +1062,7 @@ function computeResults() {
     repPctFrozen: repAmt / FROZEN_USD_M   * 100,
     duringSupport: W.timing === 'after' ? 0 : pubTotal,
     postSupport:   W.timing === 'during' ? 0 : pubTotal,
+    growthProjects, growthTotal, assetTotal,
   };
 }
 
@@ -1063,6 +1142,22 @@ function step4HTML() {
         <span class="fw-cost-central">${fmtM(r.total)} <span class="fw-cost-lbl">central</span></span>
         <span class="fw-cost-range">Range: ${fmtM(r.low)} – ${fmtM(r.high)}</span>
       </div>
+      ${r.growthProjects.length > 0 ? `
+      <div class="fw-cost-breakdown">
+        <div class="fw-cb-row">
+          <span class="fw-cb-lbl">🔴 Damage rehabilitation (${r.sel.length} assets)</span>
+          <span class="fw-cb-val">${fmtM(r.assetTotal)}</span>
+        </div>
+        ${r.growthProjects.map(p => `
+        <div class="fw-cb-row fw-cb-growth">
+          <span class="fw-cb-lbl">🌱 ${p.label} <span class="fw-cb-sector">${p.sector}</span></span>
+          <span class="fw-cb-val">${fmtM(p.scale_usd_m)}</span>
+        </div>`).join('')}
+        <div class="fw-cb-row fw-cb-total">
+          <span class="fw-cb-lbl">Total investment programme</span>
+          <span class="fw-cb-val">${fmtM(r.total)}</span>
+        </div>
+      </div>` : ''}
     </div>
 
     <div class="fw-results-sect">
@@ -1309,6 +1404,11 @@ Write in formal, economical prose. No bullet points. No markdown formatting.`;
   } else {
     payload = {
       portfolio: r.sel.map(a => a.name?.en ?? a.asset_id).join(', '),
+      ...(r.growthProjects.length > 0 ? {
+        growth_projects: r.growthProjects.map(p => ({ label: p.label, sector: p.sector, scale_usd_m: p.scale_usd_m })),
+        asset_rehabilitation_usd_m: r.assetTotal,
+        growth_investment_usd_m: r.growthTotal,
+      } : {}),
       path: PATH_LABELS[W.path],
       timing: TIMING_LABELS[W.timing],
       total_cost_central_usd_m: r.total,

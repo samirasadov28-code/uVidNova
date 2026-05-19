@@ -129,3 +129,59 @@ export function renderWizardSectorPicker(data, selectedSectorId, selectedArchety
     <div id="gsWizArch">${archetypeHTML}</div>
   </div>`;
 }
+
+/**
+ * Render a multi-select growth project picker for the "portfolio + growth" scope.
+ * selectedProjects: Array<{ sectorId, archetypeId, label, sector, scale_usd_m }>
+ */
+export function renderPortfolioGrowthPicker(data, selectedProjects = []) {
+  const selectedSet = new Set(selectedProjects.map(p => p.archetypeId));
+
+  const sectorItems = data.sectors.map(s => {
+    const gate = PEACE_LABELS[s.peace_state_availability] ?? PEACE_LABELS.mixed;
+    const archs = s.archetypes.map(a => {
+      const checked = selectedSet.has(a.id);
+      return `<label class="fw-gs-arch-item ${checked ? 'fw-gs-arch-checked' : ''}">
+        <input type="checkbox" class="fw-growth-cb fw-sr"
+               value="${a.id}"
+               data-sector-id="${s.id}"
+               data-arch-id="${a.id}"
+               data-label="${escHtml(a.label)}"
+               data-sector="${escHtml(s.label)}"
+               data-scale="${a.scale_usd_m}"
+               ${checked ? 'checked' : ''}>
+        <span class="fw-gs-arch-name">${escHtml(a.label)}</span>
+        <span class="fw-gs-arch-scale">USD ${a.scale_usd_m.toLocaleString()}M</span>
+        ${a.scale_note ? `<span class="fw-gs-arch-note">${escHtml(a.scale_note)}</span>` : ''}
+      </label>`;
+    }).join('');
+
+    const hasSelected = s.archetypes.some(a => selectedSet.has(a.id));
+
+    return `<details class="fw-gs-sector-item" ${hasSelected ? 'open' : ''}>
+      <summary class="fw-gs-sector-summary">
+        <span class="fw-gs-icon">${s.icon}</span>
+        <span class="fw-gs-sname">${escHtml(s.short_label ?? s.label)}</span>
+        <span class="gs-gate ${gate.cls} gs-gate-sm">${gate.label}</span>
+        ${hasSelected ? `<span class="fw-gs-sel-count">${s.archetypes.filter(a => selectedSet.has(a.id)).length} selected</span>` : ''}
+      </summary>
+      <div class="fw-gs-arch-list">${archs}</div>
+    </details>`;
+  }).join('');
+
+  const selectedChips = selectedProjects.length > 0
+    ? `<div class="fw-growth-chips" id="fwGrowthChips">
+        ${selectedProjects.map(p => `
+          <span class="fw-growth-chip">
+            ${escHtml(p.label)} <span class="fw-gc-scale">USD ${(+p.scale_usd_m).toLocaleString()}M</span>
+          </span>`).join('')}
+        <span class="fw-growth-total-chip">Growth total: <strong>USD ${selectedProjects.reduce((s, p) => s + p.scale_usd_m, 0).toLocaleString()}M</strong></span>
+      </div>`
+    : `<p class="fw-growth-empty" id="fwGrowthChips">No growth projects selected yet.</p>`;
+
+  return `<div class="fw-growth-picker" id="fwGrowthPicker">
+    <p class="fw-growth-intro">Select greenfield growth projects to model alongside damage rehabilitation. Each adds to the total financing requirement.</p>
+    ${selectedChips}
+    <div class="fw-gs-sectors">${sectorItems}</div>
+  </div>`;
+}

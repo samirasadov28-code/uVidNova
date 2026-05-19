@@ -4,7 +4,7 @@
  * Strategy: cache-first for static assets; network-first for data files.
  */
 
-const CACHE_VERSION = 'uvidnova-v21';
+const CACHE_VERSION = 'uvidnova-v22';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const DATA_CACHE    = `${CACHE_VERSION}-data`;
 
@@ -41,6 +41,7 @@ const DATA_ASSETS = [
   '/data/oblasts_info.json',
   '/data/cities.json',
   '/data/development_opportunities.json',
+  '/data/growth_sectors.json',
   '/data/trust_model/capital_sources.json',
   '/data/trust_model/scenarios.json',
   '/data/trust_model/return_assumptions.json',

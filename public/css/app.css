@@ -3706,3 +3706,141 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
   .leaflet-control-zoom a { width: 34px !important; height: 34px !important; line-height: 34px !important; font-size: 18px !important; }
   .leaflet-control-zoom { box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
 }
+
+/* ── Portfolio + Growth Picker ───────────────────────────────────────────────── */
+.fw-growth-toggle-btn {
+  margin-top: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--colour-navy);
+  color: #f5c842;
+  border: 1.5px solid #f5c842;
+  border-radius: 6px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.fw-growth-toggle-btn:hover { background: #f5c842; color: var(--colour-navy); }
+
+.fw-growth-picker { margin-top: 0.75rem; }
+.fw-growth-intro  { font-size: 0.78rem; color: var(--colour-text-muted); margin: 0 0 0.6rem; }
+
+.fw-growth-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+.fw-growth-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #1a3a6b22;
+  border: 1px solid var(--colour-accent);
+  color: var(--colour-navy);
+  border-radius: 12px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+.fw-gc-scale { font-weight: 400; color: var(--colour-text-muted); }
+.fw-growth-total-chip {
+  display: inline-flex;
+  align-items: center;
+  background: var(--colour-accent);
+  color: var(--colour-navy);
+  border-radius: 12px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.74rem;
+}
+.fw-growth-empty { font-size: 0.78rem; color: var(--colour-text-muted); margin: 0 0 0.6rem; font-style: italic; }
+
+.fw-gs-sectors { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.fw-gs-sector-item {
+  border: 1px solid var(--colour-border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.fw-gs-sector-item[open] { border-color: var(--colour-accent); }
+
+.fw-gs-sector-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--colour-surface);
+  user-select: none;
+  list-style: none;
+}
+.fw-gs-sector-summary::-webkit-details-marker { display: none; }
+.fw-gs-sector-summary::before { content: '▶'; font-size: 0.6rem; color: var(--colour-text-muted); transition: transform 0.15s; }
+.fw-gs-sector-item[open] .fw-gs-sector-summary::before { transform: rotate(90deg); }
+
+.fw-gs-icon    { font-size: 1rem; }
+.fw-gs-sname   { flex: 1; color: var(--colour-navy); }
+.fw-gs-sel-count {
+  background: var(--colour-accent);
+  color: var(--colour-navy);
+  border-radius: 10px;
+  padding: 0.1rem 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.fw-gs-arch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: #f7f9fc;
+}
+
+.fw-gs-arch-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.6rem;
+  border: 1.5px solid var(--colour-border);
+  border-radius: 6px;
+  cursor: pointer;
+  background: #fff;
+  transition: border-color 0.15s, background 0.15s;
+  font-size: 0.8rem;
+}
+.fw-gs-arch-item:hover { border-color: var(--colour-accent); background: #fffef0; }
+.fw-gs-arch-checked   { border-color: var(--colour-accent) !important; background: #fffbe6 !important; }
+.fw-gs-arch-name { flex: 1; font-weight: 600; color: var(--colour-navy); }
+.fw-gs-arch-scale { font-size: 0.75rem; color: var(--colour-accent-dark, #b8920f); font-weight: 700; }
+.fw-gs-arch-note  { font-size: 0.7rem; color: var(--colour-text-muted); }
+
+/* ── Cost breakdown in results ───────────────────────────────────────────────── */
+.fw-cost-breakdown {
+  margin-top: 0.75rem;
+  border: 1px solid var(--colour-border);
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.8rem;
+}
+.fw-cb-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid var(--colour-border);
+  gap: 0.5rem;
+}
+.fw-cb-row:last-child { border-bottom: none; }
+.fw-cb-lbl    { flex: 1; color: var(--colour-navy); }
+.fw-cb-val    { font-weight: 700; color: var(--colour-navy); }
+.fw-cb-sector { font-size: 0.72rem; color: var(--colour-text-muted); font-weight: 400; }
+.fw-cb-growth { background: #fffbe6; }
+.fw-cb-total  { background: var(--colour-navy); }
+.fw-cb-total .fw-cb-lbl,
+.fw-cb-total .fw-cb-val { color: #fff; font-weight: 700; }
