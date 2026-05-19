@@ -3707,6 +3707,128 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
   .leaflet-control-zoom { box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
 }
 
+/* ── Map hint strip ──────────────────────────────────────────────────────────── */
+.map-hint-strip {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  z-index: 250;
+  background: linear-gradient(90deg, #0d2248 0%, #1a3a6b 100%);
+  border-bottom: 2px solid #f5c842;
+  padding: 0.45rem 1rem;
+  animation: mhs-slide-in 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.4s ease;
+}
+.map-hint-strip.mhs-fade { opacity: 0; pointer-events: none; }
+@keyframes mhs-slide-in {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+.mhs-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.mhs-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  flex: 1;
+}
+.mhs-chip {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(245, 200, 66, 0.12);
+  border: 1px solid rgba(245, 200, 66, 0.3);
+  color: #e8d99a;
+  border-radius: 20px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+.mhs-close {
+  flex-shrink: 0;
+  background: #f5c842;
+  color: #0d2248;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.mhs-close:hover { background: #ffd86e; }
+@media (max-width: 640px) {
+  .mhs-chips { gap: 0.25rem; }
+  .mhs-chip { font-size: 0.68rem; padding: 0.15rem 0.5rem; }
+  .mhs-close { font-size: 0.68rem; padding: 0.25rem 0.5rem; }
+}
+
+/* ── Finance wizard intro screen ─────────────────────────────────────────────── */
+.fw-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+.fw-intro-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.fw-intro-icon { font-size: 2rem; line-height: 1; }
+.fw-intro-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--colour-navy);
+  margin: 0;
+}
+.fw-intro-body {
+  font-size: 0.85rem;
+  color: var(--colour-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+.fw-intro-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: #f7f9fc;
+  border: 1px solid var(--colour-border);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+}
+.fw-intro-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--colour-navy);
+  line-height: 1.45;
+}
+.fw-is-num {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--colour-navy);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.05rem;
+}
+.fw-intro-start {
+  align-self: flex-start;
+  margin-top: 0.25rem;
+}
+
 /* ── Portfolio + Growth Picker ───────────────────────────────────────────────── */
 .fw-growth-toggle-btn {
   margin-top: 0.75rem;

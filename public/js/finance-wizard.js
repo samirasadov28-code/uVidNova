@@ -71,6 +71,8 @@ const TIMING_LABELS = {
 
 // ── Wizard state ──────────────────────────────────────────────────────────────
 
+const FW_HINT_KEY = 'uvidnova.hint.finance.v1';
+
 let _assets = [];
 let _growthData = null;
 
@@ -113,6 +115,8 @@ export function openFinanceWizard(assets, preselectedIds = [], onClose = null) {
   _onClose = onClose;
   loadGrowthSectors().then(d => { _growthData = d; }).catch(() => {});
   reset(preselectedIds);
+  // Show intro on first-ever open; preselected calls skip it (context is clear)
+  W._showIntro = preselectedIds.length === 0 && !safeLS(FW_HINT_KEY);
 
   let overlay = document.getElementById('financeWizard');
   if (!overlay) {
@@ -144,6 +148,10 @@ function close() {
 
 function escClose(e) { if (e.key === 'Escape') close(); }
 
+function safeLS(key) {
+  try { return localStorage.getItem(key); } catch { return null; }
+}
+
 // ── Shell ─────────────────────────────────────────────────────────────────────
 
 function shell() {
@@ -171,6 +179,7 @@ function render() {
   updateChrome();
   const body = document.getElementById('fwBody');
   if (!body) return;
+  if (W._showIntro) { body.innerHTML = introHTML(); wireIntro(); return; }
   switch (W.step) {
     case 1: body.innerHTML = step1HTML(); wireStep1(); break;
     case 2: body.innerHTML = step2HTML(); wireStep2(); break;
@@ -193,19 +202,19 @@ function updateChrome() {
 
   const back = document.getElementById('fwBack');
   const next = document.getElementById('fwNext');
-  if (back) back.hidden = W.step === 1;
+  if (back) { back.hidden = W.step === 1 || !!W._showIntro; back.onclick = goBack; }
   if (next) {
-    if (W.step === 4) {
-      next.textContent = '↗ Export Brief';
-      next.onclick = exportBrief;
-    } else {
-      next.textContent = W.step === 3 ? 'See Results →' : 'Next →';
-      next.onclick = goNext;
+    next.hidden = !!W._showIntro;
+    if (!W._showIntro) {
+      if (W.step === 4) {
+        next.textContent = '↗ Export Brief';
+        next.onclick = exportBrief;
+      } else {
+        next.textContent = W.step === 3 ? 'See Results →' : 'Next →';
+        next.onclick = goNext;
+      }
     }
   }
-
-  const backBtn = document.getElementById('fwBack');
-  if (backBtn) backBtn.onclick = goBack;
 }
 
 /** Map asset financing_structure keys to wizard tranche types + default returns */
@@ -340,6 +349,45 @@ function portfolioCost(path) {
 }
 
 function fmtM(n) { return n != null ? `$${(+n).toLocaleString()}M` : '—'; }
+
+// ── Intro screen (first open only) ───────────────────────────────────────────
+
+function introHTML() {
+  return `<div class="fw-intro">
+    <div class="fw-intro-header">
+      <span class="fw-intro-icon">💰</span>
+      <h3 class="fw-intro-title">Finance It — how it works</h3>
+    </div>
+    <p class="fw-intro-body">Build a deterministic capital stack for any damaged asset, group, or the entire 100-asset portfolio. Every figure traces to RDNA3 and KSE benchmarks — no AI-generated numbers.</p>
+    <div class="fw-intro-steps">
+      <div class="fw-intro-step">
+        <span class="fw-is-num">1</span>
+        <div><strong>Scope</strong> — one project, a region group, or the full portfolio with optional greenfield growth investments</div>
+      </div>
+      <div class="fw-intro-step">
+        <span class="fw-is-num">2</span>
+        <div><strong>Scenario</strong> — choose reconstruction path (baseline / code-compliant / build-back-better) and financing timeline</div>
+      </div>
+      <div class="fw-intro-step">
+        <span class="fw-is-num">3</span>
+        <div><strong>Structure</strong> — pick tranches from the catalog (grants, concessional debt, equity, Russian reparations) and set allocations</div>
+      </div>
+      <div class="fw-intro-step">
+        <span class="fw-is-num">4</span>
+        <div><strong>Results</strong> — full capital stack analysis with blended CoC, mobilisation ratio, and an exportable financing brief</div>
+      </div>
+    </div>
+    <button class="fw-btn fw-btn-next fw-intro-start" id="fwIntroStart">Start — Step 1 →</button>
+  </div>`;
+}
+
+function wireIntro() {
+  document.getElementById('fwIntroStart')?.addEventListener('click', () => {
+    try { localStorage.setItem(FW_HINT_KEY, '1'); } catch { /* ignore */ }
+    W._showIntro = false;
+    render();
+  });
+}
 
 // ── Step 1: Scope ─────────────────────────────────────────────────────────────
 
