@@ -13,10 +13,10 @@
     "address_en": "Livyi Bereh residential district, Mariupol, Donetsk Oblast"
   },
   "asset_type": "residential.large_panel_district",
-  "sector": "social_infrastructure",
+  "sector": "residential",
   "damage": {
     "incident_date": "2022-03-01",
-    "incident_type": "artillery_strike",
+    "incident_type": "artillery_shelling",
     "destruction_level": "destroyed",
     "re_damage_count": 0,
     "verified_by": [

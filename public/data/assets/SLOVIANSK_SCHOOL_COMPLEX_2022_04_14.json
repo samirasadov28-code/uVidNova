@@ -16,7 +16,7 @@
   "sector": "education",
   "damage": {
     "incident_date": "2022-04-14",
-    "incident_type": "artillery_strike",
+    "incident_type": "artillery_shelling",
     "destruction_level": "severe",
     "re_damage_count": 2,
     "verified_by": [

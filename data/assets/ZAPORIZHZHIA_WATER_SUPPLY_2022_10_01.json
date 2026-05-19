@@ -12,8 +12,8 @@
     "settlement": "Zaporizhzhia",
     "address_en": "Zaporizhzhia city water supply system, Zaporizhzhia"
   },
-  "asset_type": "water.supply_system",
-  "sector": "water_sanitation_public_services",
+  "asset_type": "water.supply",
+  "sector": "water_and_sanitation",
   "damage": {
     "incident_date": "2022-10-01",
     "incident_type": "missile_strike",

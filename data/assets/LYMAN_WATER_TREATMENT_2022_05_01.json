@@ -12,11 +12,11 @@
     "settlement": "Lyman",
     "address_en": "Lyman Water Treatment Plant, Lyman, Donetsk Oblast"
   },
-  "asset_type": "water.treatment_plant",
-  "sector": "water_sanitation_public_services",
+  "asset_type": "water.treatment",
+  "sector": "water_and_sanitation",
   "damage": {
     "incident_date": "2022-05-01",
-    "incident_type": "artillery_strike",
+    "incident_type": "artillery_shelling",
     "destruction_level": "destroyed",
     "re_damage_count": 2,
     "verified_by": [

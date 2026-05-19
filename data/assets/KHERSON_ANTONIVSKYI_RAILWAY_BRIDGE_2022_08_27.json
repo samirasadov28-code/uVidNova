@@ -12,11 +12,11 @@
     "settlement": "Antonivka",
     "address_en": "Antonivka railway bridge, Kherson Oblast"
   },
-  "asset_type": "transport.railway_bridge",
+  "asset_type": "transport.bridge",
   "sector": "transport_and_ports",
   "damage": {
     "incident_date": "2022-08-27",
-    "incident_type": "precision_strike",
+    "incident_type": "missile_strike",
     "destruction_level": "destroyed",
     "re_damage_count": 0,
     "verified_by": [

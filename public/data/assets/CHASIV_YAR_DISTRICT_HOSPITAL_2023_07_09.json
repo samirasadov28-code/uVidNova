@@ -16,7 +16,7 @@
   "sector": "healthcare",
   "damage": {
     "incident_date": "2023-07-09",
-    "incident_type": "artillery_strike",
+    "incident_type": "artillery_shelling",
     "destruction_level": "destroyed",
     "re_damage_count": 3,
     "verified_by": [

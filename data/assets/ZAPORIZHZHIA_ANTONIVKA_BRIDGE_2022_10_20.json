@@ -12,7 +12,7 @@
     "settlement": "Zaporizhzhia",
     "address_en": "Dnipro road crossing, Zaporizhzhia, Zaporizhzhia Oblast"
   },
-  "asset_type": "transport.road_bridge",
+  "asset_type": "transport.bridge",
   "sector": "transport_and_ports",
   "damage": {
     "incident_date": "2022-10-20",

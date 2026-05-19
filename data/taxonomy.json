@@ -48,6 +48,18 @@
           "label_uk": "Газосховище",
           "physical_unit": "bcm",
           "description": "Underground or surface natural gas storage."
+        },
+        "energy.chp": {
+          "label_en": "Combined Heat and Power Plant",
+          "label_uk": "Теплоелектроцентраль",
+          "physical_unit": "MW",
+          "description": "Cogeneration plant producing electricity and district heat simultaneously."
+        },
+        "energy.refinery": {
+          "label_en": "Oil Refinery / Fuel Complex",
+          "label_uk": "Нафтопереробний завод",
+          "physical_unit": "tonnes_per_year",
+          "description": "Oil refining and fuel products facility."
         }
       }
     },
@@ -119,6 +131,13 @@
           "label_uk": "Дитячий садок",
           "physical_unit": "m2",
           "description": "Early childhood education facility."
+        },
+        "education.primary_school": {
+          "label_en": "Primary School",
+          "label_uk": "Початкова школа",
+          "physical_unit": "m2",
+          "secondary_unit": "student_places",
+          "description": "State primary school (grades 1–4 or combined primary-secondary)."
         }
       }
     },
@@ -145,6 +164,20 @@
           "label_uk": "Район приватного сектору",
           "physical_unit": "units",
           "description": "District of individual private dwellings (suburban / peri-urban)."
+        },
+        "residential.large_panel_district": {
+          "label_en": "Large-panel Housing District",
+          "label_uk": "Район великопанельного будівництва",
+          "physical_unit": "m2",
+          "secondary_unit": "units",
+          "description": "Soviet-era large-panel (khrushchevka / brezhnevka) multi-storey residential district."
+        },
+        "residential.urban_district": {
+          "label_en": "Urban Residential District (mixed)",
+          "label_uk": "Міський житловий район (змішаний)",
+          "physical_unit": "m2",
+          "secondary_unit": "units",
+          "description": "Mixed urban residential district including apartment blocks and private housing."
         }
       }
     },
@@ -186,6 +219,13 @@
           "label_uk": "Меморіал / пам'ятник",
           "physical_unit": "m2",
           "description": "Nationally significant memorial or historic monument.",
+          "heritage_premium": true
+        },
+        "heritage.heritage_building_cluster": {
+          "label_en": "Heritage Building Cluster",
+          "label_uk": "Ансамбль пам'яток архітектури",
+          "physical_unit": "m2",
+          "description": "Group of historically significant buildings forming an architectural ensemble. Heritage premium applies.",
           "heritage_premium": true
         }
       }
@@ -230,6 +270,12 @@
           "label_uk": "Суднобудівний завод",
           "physical_unit": "m2",
           "description": "Naval or commercial ship construction and repair facility."
+        },
+        "transport.road_network": {
+          "label_en": "Urban Road Network",
+          "label_uk": "Вулично-дорожня мережа",
+          "physical_unit": "km",
+          "description": "City or district road network including streets, junctions, and surface infrastructure."
         }
       }
     },
@@ -302,6 +348,12 @@
           "label_uk": "Переробний агропідприємство",
           "physical_unit": "m2",
           "description": "Food processing, oil extraction, or agri-industrial facility."
+        },
+        "industrial.engineering_plant": {
+          "label_en": "Engineering / Manufacturing Plant",
+          "label_uk": "Машинобудівний / виробничий завод",
+          "physical_unit": "m2",
+          "description": "General engineering, precision manufacturing, or light industrial plant."
         }
       }
     },

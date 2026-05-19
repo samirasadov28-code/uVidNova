@@ -260,12 +260,12 @@
       "additionalProperties": false,
       "properties": {
         "applies":                   { "type": "boolean" },
-        "supportable_debt_usd_m":    { "type": "number", "minimum": 0 },
-        "tenor_years":               { "type": "integer", "minimum": 5, "maximum": 40 },
-        "coupon_pct":                { "type": "number", "minimum": 0, "maximum": 15 },
-        "dscr":                      { "type": "number", "minimum": 1.0, "maximum": 2.0 },
-        "construction_period_years": { "type": "integer", "minimum": 1, "maximum": 10 },
-        "commissioning_year":        { "type": "integer", "minimum": 2025, "maximum": 2050 },
+        "supportable_debt_usd_m":    { "type": ["number", "null"], "minimum": 0 },
+        "tenor_years":               { "type": ["integer", "null"], "minimum": 5, "maximum": 40 },
+        "coupon_pct":                { "type": ["number", "null"], "minimum": 0, "maximum": 15 },
+        "dscr":                      { "type": ["number", "null"], "minimum": 1.0, "maximum": 2.0 },
+        "construction_period_years": { "type": ["integer", "null"], "minimum": 1, "maximum": 10 },
+        "commissioning_year":        { "type": ["integer", "null"], "minimum": 2025, "maximum": 2050 },
         "rationale":                 { "type": "string" }
       }
     },

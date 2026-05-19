@@ -13,10 +13,10 @@
     "address_en": "Vuhledar residential district, Donetsk Oblast"
   },
   "asset_type": "residential.urban_district",
-  "sector": "social_infrastructure",
+  "sector": "residential",
   "damage": {
     "incident_date": "2023-02-01",
-    "incident_type": "artillery_strike",
+    "incident_type": "artillery_shelling",
     "destruction_level": "destroyed",
     "re_damage_count": 5,
     "verified_by": [

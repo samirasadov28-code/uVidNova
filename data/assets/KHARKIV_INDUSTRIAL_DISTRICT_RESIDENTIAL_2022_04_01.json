@@ -13,7 +13,7 @@
     "address_en": "Industrialnyi district, Kharkiv, Kharkiv Oblast"
   },
   "asset_type": "residential.large_panel_district",
-  "sector": "social_infrastructure",
+  "sector": "residential",
   "damage": {
     "incident_date": "2022-04-01",
     "incident_type": "missile_strike",

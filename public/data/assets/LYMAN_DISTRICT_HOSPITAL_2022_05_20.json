@@ -16,7 +16,7 @@
   "sector": "healthcare",
   "damage": {
     "incident_date": "2022-05-20",
-    "incident_type": "artillery_strike",
+    "incident_type": "artillery_shelling",
     "destruction_level": "destroyed",
     "re_damage_count": 2,
     "verified_by": [

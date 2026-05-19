@@ -12,11 +12,11 @@
     "settlement": "Kherson",
     "address_en": "Khersonsky Sudnobudivny Zavod, Kherson, Kherson Oblast"
   },
-  "asset_type": "industrial.shipyard",
+  "asset_type": "transport.shipyard",
   "sector": "industrial_and_agricultural",
   "damage": {
     "incident_date": "2022-11-11",
-    "incident_type": "artillery_strike",
+    "incident_type": "artillery_shelling",
     "destruction_level": "severe",
     "re_damage_count": 3,
     "verified_by": [
@@ -113,7 +113,7 @@
         ]
       },
       "structure_patterns": [
-        "project_finance",
+        "a_b_loan",
         "a_b_loan"
       ],
       "comparable_projects": []
@@ -141,7 +141,7 @@
         ]
       },
       "structure_patterns": [
-        "project_finance",
+        "a_b_loan",
         "a_b_loan"
       ],
       "comparable_projects": []
@@ -169,7 +169,7 @@
         ]
       },
       "structure_patterns": [
-        "project_finance",
+        "a_b_loan",
         "a_b_loan"
       ],
       "rationale": "Historic Dnipro shipyard; strategic for reconstruction logistics and post-war maritime recovery; private equity and ECA-backed commercial debt dominant; EU industrial reconstruction grant element tied to green manufacturing overlays",

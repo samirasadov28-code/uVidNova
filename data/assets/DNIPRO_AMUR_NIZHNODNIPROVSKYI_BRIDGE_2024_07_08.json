@@ -12,7 +12,7 @@
     "settlement": "Dnipro",
     "address_en": "Amur-Nizhnodniprovskyi Bridge, Dnipro, Dnipropetrovsk Oblast"
   },
-  "asset_type": "transport.road_bridge",
+  "asset_type": "transport.bridge",
   "sector": "transport_and_ports",
   "damage": {
     "incident_date": "2024-07-08",

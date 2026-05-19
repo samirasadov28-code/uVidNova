@@ -13,9 +13,9 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=()"
-    # connect-src includes self (API endpoints, data files) + OSM tiles.
-    # Groq API is called server-side from Netlify Functions — not from the browser.
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org https://commons.wikimedia.org https://upload.wikimedia.org; connect-src 'self' https://*.tile.openstreetmap.org https://en.wikipedia.org; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';"
+    # connect-src: self (API/data) + OSM + CartoDB tiles + Wikipedia.
+    # script-src: cdnjs for Chart.js (trust.html). Groq called server-side only.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com https://commons.wikimedia.org https://upload.wikimedia.org; connect-src 'self' https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com https://en.wikipedia.org; font-src 'self' https://cdnjs.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self';"
 
 # ── Cache: static JS/CSS — long-lived (SW version bump invalidates on deploy) ─
 [[headers]]

@@ -16,7 +16,7 @@
   "sector": "energy_and_power",
   "damage": {
     "incident_date": "2022-04-14",
-    "incident_type": "artillery_strike",
+    "incident_type": "artillery_shelling",
     "destruction_level": "destroyed",
     "re_damage_count": 3,
     "verified_by": [

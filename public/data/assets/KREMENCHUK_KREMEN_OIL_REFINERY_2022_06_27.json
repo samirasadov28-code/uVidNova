@@ -113,7 +113,7 @@
         ]
       },
       "structure_patterns": [
-        "project_finance",
+        "a_b_loan",
         "a_b_loan"
       ],
       "comparable_projects": []
@@ -141,7 +141,7 @@
         ]
       },
       "structure_patterns": [
-        "project_finance",
+        "a_b_loan",
         "a_b_loan"
       ],
       "comparable_projects": []
@@ -169,7 +169,7 @@
         ]
       },
       "structure_patterns": [
-        "project_finance",
+        "a_b_loan",
         "a_b_loan"
       ],
       "rationale": "Private-sector-led reconstruction with EBRD/IFC equity co-investment; ECA coverage from UKEF required for commercial lender participation; EU grant element tied to green process upgrades",
