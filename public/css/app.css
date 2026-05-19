@@ -2747,6 +2747,19 @@ details[open] .agg-summary::before { content: '▼ '; }
 .fab-finance:hover { background: var(--colour-gold-light); }
 body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
 
+/* ── FAB conflict resolution ─────────────────────────────────────────────── */
+/*
+ * Desktop: wizard is 420px from the right. Move the chat FAB left of it so
+ * it never overlaps the wizard footer / Next button.
+ * Feedback FAB is on the left so it's unaffected.
+ */
+body:has(.fw-open) .fab-chat {
+  right: calc(420px + 14px);
+  transition: right 0.32s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s, box-shadow 0.15s, bottom 0.3s ease;
+}
+/* Hide chat FAB when the chat panel itself is open — it sits on top of the panel */
+body:has(.chat-panel:not([hidden])) .fab-chat { display: none; }
+
 @media (max-width: 640px) {
   /* On phones: finance wizard becomes a bottom drawer */
   .fw-overlay {
@@ -2776,6 +2789,8 @@ body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
   .fw-metrics-grid { grid-template-columns: repeat(2, 1fr); }
   .fw-body { padding: 0.9rem; }
   body:has(#disclaimerBanner) .fab-finance { bottom: 72px; }
+  /* Hide FABs when wizard drawer covers the bottom of the screen */
+  body:has(.fw-open) .fab { display: none; }
 }
 /* ── Finance wizard: tranche name label (replaces type select) ───────────── */
 .fw-tr-name {
