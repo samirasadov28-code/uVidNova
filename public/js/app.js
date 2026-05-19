@@ -240,6 +240,42 @@ function zoomToOblastFeature(layer, extraRightPad = 0) {
   } catch { /* no bounds */ }
 }
 
+// Fetch the best available photo for an oblast.
+// Primary: Wikimedia Commons API using the specific wiki_image filename (high-quality, curated).
+// Fallback: Wikipedia article REST summary thumbnail.
+async function fetchOblastPhoto(info) {
+  const wikiImage   = info?.wiki_image;
+  const wikiArticle = info?.wiki_article;
+
+  if (wikiImage) {
+    try {
+      const res = await fetch(
+        `https://commons.wikimedia.org/w/api.php?action=query&titles=File:${encodeURIComponent(wikiImage)}&prop=imageinfo&iiprop=url&iiurlwidth=1200&format=json&origin=*`
+      );
+      if (res.ok) {
+        const data  = await res.json();
+        const pages = data?.query?.pages;
+        const imgUrl = pages && Object.values(pages)[0]?.imageinfo?.[0]?.url;
+        if (imgUrl) return imgUrl;
+      }
+    } catch (_) {}
+  }
+
+  if (wikiArticle) {
+    try {
+      const res = await fetch(
+        `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wikiArticle)}`
+      );
+      if (res.ok) {
+        const data = await res.json();
+        if (data?.thumbnail?.source) return data.thumbnail.source;
+      }
+    } catch (_) {}
+  }
+
+  return null;
+}
+
 function showOblastPanel(info, featureName) {
   let panel = document.getElementById('oblastInfoPanel');
   if (!panel) {
@@ -267,7 +303,7 @@ function showOblastPanel(info, featureName) {
   const histLabel    = t('oblast.history');
 
   const wikiArticle = info?.wiki_article;
-  const imgHTML = wikiArticle
+  const imgHTML = (info?.wiki_image || wikiArticle)
     ? `<div class="oblast-photo-wrap" id="oblastPhotoWrap"><div class="oblast-photo-loading"></div></div>`
     : '';
 
@@ -307,24 +343,19 @@ function showOblastPanel(info, featureName) {
     clearCityMarkers();
   });
 
-  // Load photo via Wikipedia REST API (avoids guessing Commons filenames)
-  if (wikiArticle) {
-    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wikiArticle)}`)
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
-        const wrap = document.getElementById('oblastPhotoWrap');
-        if (!wrap) return;
-        if (data?.thumbnail?.source) {
-          wrap.innerHTML = `<img src="${data.thumbnail.source}" alt="${name}" class="oblast-photo">`;
-        } else {
-          wrap.remove();
-        }
-      })
-      .catch(() => {
-        const wrap = document.getElementById('oblastPhotoWrap');
-        if (wrap) wrap.remove();
-      });
-  }
+  // Load photo: try Wikimedia Commons specific image first, fall back to Wikipedia article thumbnail
+  fetchOblastPhoto(info).then(imgUrl => {
+    const wrap = document.getElementById('oblastPhotoWrap');
+    if (!wrap) return;
+    if (imgUrl) {
+      wrap.innerHTML = `<img src="${imgUrl}" alt="${name}" class="oblast-photo">`;
+    } else {
+      wrap.remove();
+    }
+  }).catch(() => {
+    const wrap = document.getElementById('oblastPhotoWrap');
+    if (wrap) wrap.remove();
+  });
 }
 
 // ── Damaged-view oblast interaction ──────────────────────────────────────────
@@ -511,20 +542,13 @@ function showOblastWarPanel(info, featureName) {
   document.querySelector('.map-layout').appendChild(panel);
   requestAnimationFrame(() => panel.classList.add('visible'));
 
-  // Load Wikipedia photo
-  const wikiArticle = info?.wiki_article;
-  if (wikiArticle) {
-    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wikiArticle)}`)
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
-        const img = data?.thumbnail?.source;
-        if (!img || !document.getElementById('oblastWarPanel')) return;
-        const photo = document.createElement('img');
-        photo.src = img; photo.className = 'owp-photo'; photo.alt = name;
-        panel.querySelector('.owp-header').insertAdjacentElement('afterend', photo);
-      })
-      .catch(() => {});
-  }
+  // Load photo: Wikimedia Commons specific image first, fallback to Wikipedia article thumbnail
+  fetchOblastPhoto(info).then(imgUrl => {
+    if (!imgUrl || !document.getElementById('oblastWarPanel')) return;
+    const photo = document.createElement('img');
+    photo.src = imgUrl; photo.className = 'owp-photo'; photo.alt = name;
+    panel.querySelector('.owp-header').insertAdjacentElement('afterend', photo);
+  }).catch(() => {});
 }
 
 // ── Reconstructed-view oblast interaction ─────────────────────────────────────
@@ -640,19 +664,13 @@ function showReconstructedPanel(info, featureName) {
   document.querySelector('.map-layout').appendChild(panel);
   requestAnimationFrame(() => panel.classList.add('visible'));
 
-  const wikiArticle = info?.wiki_article;
-  if (wikiArticle) {
-    fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(wikiArticle)}`)
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
-        const img = data?.thumbnail?.source;
-        if (!img || !document.getElementById('oblastReconPanel')) return;
-        const photo = document.createElement('img');
-        photo.src = img; photo.className = 'orp-photo'; photo.alt = name;
-        panel.querySelector('.orp-header').insertAdjacentElement('afterend', photo);
-      })
-      .catch(() => {});
-  }
+  // Load photo: Wikimedia Commons specific image first, fallback to Wikipedia article thumbnail
+  fetchOblastPhoto(info).then(imgUrl => {
+    if (!imgUrl || !document.getElementById('oblastReconPanel')) return;
+    const photo = document.createElement('img');
+    photo.src = imgUrl; photo.className = 'orp-photo'; photo.alt = name;
+    panel.querySelector('.orp-header').insertAdjacentElement('afterend', photo);
+  }).catch(() => {});
 }
 
 // ── City markers (zoomed view) ───────────────────────────────────────────────
