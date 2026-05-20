@@ -2194,11 +2194,12 @@ details[open] .agg-summary::before { content: '▼ '; }
 /* ── Oblast info panel ───────────────────────────────────────────────────── */
 .oblast-info-panel {
   position: fixed;
-  top: 70px;
+  top: var(--map-top);
+  bottom: var(--bar-h);
   right: 0;
   width: 340px;
   max-width: 92vw;
-  max-height: calc(100vh - 90px);
+  max-height: calc(100vh - var(--map-top) - var(--bar-h));
   overflow-y: auto;
   background: var(--colour-navy);
   border-left: 1px solid rgba(255,255,255,0.08);
