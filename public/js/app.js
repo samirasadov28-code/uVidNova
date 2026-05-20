@@ -503,9 +503,12 @@ function showOblastWarPanel(info, featureName) {
 
   // Count assets in this oblast
   const fullName = OBLAST_INFO_MAP[featureName] ?? featureName;
+  const normObl  = s => s.replace(/\s*oblast$/i, '').trim().toLowerCase();
+  const featN    = normObl(featureName);
+  const fullN    = normObl(fullName);
   const oblastAssets = allAssets.filter(a => {
     const loc = a.location?.oblast ?? '';
-    return loc === fullName || loc === featureName || loc.replace(' Oblast', '') === featureName;
+    return loc === fullName || loc === featureName || normObl(loc) === featN || normObl(loc) === fullN;
   });
   const totalCost = oblastAssets.reduce((s, a) => s + (a.cost_paths?.baseline?.central_usd_m ?? 0), 0);
 
@@ -589,10 +592,14 @@ function showReconstructedPanel(info, featureName) {
   const fullName = OBLAST_INFO_MAP[featureName] ?? featureName;
   const RECON_STAGES = new Set(['complete', 'under_reconstruction', 'funded', 'in_pipeline']);
   const STAGE_LABEL  = { complete: '✅ Complete', under_reconstruction: '🔨 Under reconstruction', funded: '💰 Funded', in_pipeline: '📋 In pipeline' };
+  const normOblast = s => s.replace(/\s*oblast$/i, '').trim().toLowerCase();
+  const featNorm   = normOblast(featureName);
+  const fullNorm   = normOblast(fullName);
   const completed = allAssets.filter(a => {
     if (!RECON_STAGES.has(a.wartime_status?.lifecycle)) return false;
     const loc = a.location?.oblast ?? '';
-    return loc === fullName || loc === featureName || loc.replace(' Oblast', '') === featureName;
+    const locNorm = normOblast(loc);
+    return loc === fullName || loc === featureName || locNorm === featNorm || locNorm === fullNorm;
   });
 
   const projectsHTML = completed.length === 0
