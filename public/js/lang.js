@@ -115,6 +115,16 @@ const TRANSLATIONS = {
     'agg.redamaged_note':  '⚠ {n} asset re-damaged ×2 or more',
     'agg.redamaged_note_pl':'⚠ {n} assets re-damaged ×2 or more',
     'agg.disclaimer':      'All figures: USD baseline central estimate. Not guarantees.',
+    // Header action buttons
+    'header.finance_btn':  'Finance Projects',
+    'header.trust_btn':    'Create Trust',
+    // Bottom action bar
+    'bar.occupied':        'Occupied territories',
+    // Map view tabs
+    'tab.ukraine':         'Ukraine',
+    'tab.damaged':         'Damaged',
+    'tab.reconstructed':   'Reconstructed',
+    'tab.development':     'Development',
   },
   uk: {
     // Name etymology
@@ -226,6 +236,16 @@ const TRANSLATIONS = {
     'agg.redamaged_note':  '⚠ {n} актив пошкоджено повторно ×2+',
     'agg.redamaged_note_pl':'⚠ {n} активів пошкоджено повторно ×2+',
     'agg.disclaimer':      'Усі дані: базова центральна оцінка в USD. Не є гарантіями.',
+    // Header action buttons
+    'header.finance_btn':  'Фінансувати проєкти',
+    'header.trust_btn':    'Заснувати фонд',
+    // Bottom action bar
+    'bar.occupied':        'Окуповані території',
+    // Map view tabs
+    'tab.ukraine':         'Україна',
+    'tab.damaged':         'Пошкоджено',
+    'tab.reconstructed':   'Відбудовано',
+    'tab.development':     'Розвиток',
   }
 };
 
@@ -265,10 +285,9 @@ export function initLangToggle(btn) {
   if (!btn) return;
   const update = () => {
     const lang = getLang();
-    // Show the language you can SWITCH TO — one option at a time
     btn.innerHTML = lang === 'uk'
-      ? '🇬🇧 English'
-      : '🇺🇦 Українська';
+      ? '<span class="lang-flag lang-active">🇺🇦</span><span class="lang-flag-label lang-active">UA</span><span class="lang-sep"> · </span><span class="lang-flag lang-inactive">🇬🇧</span><span class="lang-flag-label lang-inactive">EN</span>'
+      : '<span class="lang-flag lang-inactive">🇺🇦</span><span class="lang-flag-label lang-inactive">UA</span><span class="lang-sep"> · </span><span class="lang-flag lang-active">🇬🇧</span><span class="lang-flag-label lang-active">EN</span>';
     btn.setAttribute('aria-label', lang === 'uk' ? 'Switch to English' : 'Переключити на українську');
     document.documentElement.lang = lang;
     applyTranslations();

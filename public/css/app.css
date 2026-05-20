@@ -187,6 +187,11 @@ img { max-width: 100%; height: auto; }
   white-space: nowrap;
 }
 .lang-toggle:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.7); }
+.lang-flag { font-size: 1.1em; }
+.lang-flag-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em; }
+.lang-sep { color: rgba(255,255,255,0.35); font-size: 0.8rem; }
+.lang-active { opacity: 1; }
+.lang-inactive { opacity: 0.42; }
 
 /* ── Map layout — map always fills the frame; panels slide over as overlays ─── */
 .map-layout {

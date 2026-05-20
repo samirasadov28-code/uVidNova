@@ -194,7 +194,6 @@ function findOblastInfo(featureName) {
 function renderCapitalMarkers() {
   if (!map || !oblastInfoData) return;
   if (capitalLayer) { capitalLayer.remove(); capitalLayer = null; }
-  if (mapViewMode !== 'ukraine') return;
 
   const oblasts = oblastInfoData.oblasts ?? oblastInfoData;
   capitalLayer = L.layerGroup();
@@ -726,7 +725,7 @@ function showCityMarkers(oblastNameEn) {
 function clearCityMarkers() {
   if (cityMarkersLayer) { cityMarkersLayer.remove(); cityMarkersLayer = null; }
   // Restore capital dots (only relevant in Ukraine view)
-  if (mapViewMode === 'ukraine' && oblastInfoData) renderCapitalMarkers();
+  if (oblastInfoData) renderCapitalMarkers();
 }
 
 // ── Development view panel ────────────────────────────────────────────────────

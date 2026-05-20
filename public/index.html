@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#0d2248">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="app-version" content="0.3.8">
+  <meta name="app-version" content="0.4.0">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
@@ -147,7 +147,7 @@
       </p>
       <div class="landing-actions">
         <button class="lang-toggle landing-lang-toggle" id="landingLangToggle" aria-label="Switch language">🇺🇦 Українська</button>
-        <span class="landing-version">v0.3.9</span>
+        <span class="landing-version">v0.4.0</span>
         <button class="landing-force-reload" id="landingForceReload" title="Clear cache and reload latest version">↻ Force update</button>
       </div>
     </div>
@@ -361,12 +361,8 @@
 
       <!-- Centre: Finance Projects + Create Trust -->
       <div class="header-centre">
-        <button class="header-action-btn header-action-finance" onclick="uvOpenFinance()" aria-label="Finance reconstruction projects">
-          Finance Projects
-        </button>
-        <button class="header-action-btn header-action-trust" onclick="uvOpenTrust()" aria-label="Create Vidnova Trust model">
-          Create Trust
-        </button>
+        <button class="header-action-btn header-action-finance" onclick="uvOpenFinance()" aria-label="Finance reconstruction projects" data-i18n="header.finance_btn">Finance Projects</button>
+        <button class="header-action-btn header-action-trust" onclick="uvOpenTrust()" aria-label="Create Vidnova Trust model" data-i18n="header.trust_btn">Create Trust</button>
       </div>
 
       <!-- Right: About + lang toggle -->
@@ -381,13 +377,13 @@
   <!-- ── Map view tab bar — sits between header and map ──────────────────── -->
   <div class="map-view-bar" id="mapViewTabs" role="tablist">
     <button class="map-view-tab map-view-tab-active" id="tab-ukraine" role="tab" aria-selected="true"
-            onclick="uvSetMapView('ukraine')">🔱 Ukraine</button>
+            onclick="uvSetMapView('ukraine')"><span data-i18n="tab.ukraine">Ukraine</span></button>
     <button class="map-view-tab" id="tab-damaged" role="tab" aria-selected="false"
-            onclick="uvSetMapView('damaged')">⚡ Damaged</button>
+            onclick="uvSetMapView('damaged')"><span data-i18n="tab.damaged">Damaged</span></button>
     <button class="map-view-tab" id="tab-reconstructed" role="tab" aria-selected="false"
-            onclick="uvSetMapView('reconstructed')">✅ Reconstructed</button>
+            onclick="uvSetMapView('reconstructed')"><span data-i18n="tab.reconstructed">Reconstructed</span></button>
     <button class="map-view-tab" id="tab-development" role="tab" aria-selected="false"
-            onclick="uvSetMapView('development')">🔮 Development</button>
+            onclick="uvSetMapView('development')"><span data-i18n="tab.development">Development</span></button>
   </div>
 
   <!-- ── Map layout ────────────────────────────────────────────────────────── -->
@@ -496,13 +492,13 @@
 
   <!-- ── Bottom action bar — Feedback (left) · Occupied (centre) · Ask AI (right) ── -->
   <div class="bottom-action-bar" id="bottomActionBar">
-    <button class="bab-btn bab-feedback" onclick="uvOpenFeedback()" aria-label="Send feedback">Feedback</button>
+    <button class="bab-btn bab-feedback" onclick="uvOpenFeedback()" aria-label="Send feedback" data-i18n="feedback.btn">Feedback</button>
 
     <button class="bab-btn bab-occupied" id="warModeBtn" onclick="uvToggleWarMode()">
-      <span id="warModeBtnLabel">Occupied territories</span>
+      <span id="warModeBtnLabel" data-i18n="bar.occupied">Occupied territories</span>
     </button>
 
-    <button class="bab-btn bab-ai" onclick="uvOpenChat()" aria-label="Ask AI about reconstruction">Ask AI</button>
+    <button class="bab-btn bab-ai" onclick="uvOpenChat()" aria-label="Ask AI about reconstruction" data-i18n="chat.btn">Ask AI</button>
   </div>
 
   <!-- ── War-mode occupation legend ───────────────────────────────────────── -->
