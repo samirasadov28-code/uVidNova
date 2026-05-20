@@ -2,19 +2,21 @@
   "scenarios": {
     "A": {
       "id": "A",
-      "label": "Scenario A — During War",
-      "description": "Trust capitalised from assets legally available during active conflict. Frozen principal stays in custodian accounts pending legal resolution. ERA loan proceeds and multilateral pledges form the initial corpus.",
+      "label": "Scenario A — Wartime (ERA + Multilateral)",
+      "description": "Trust capitalised from instruments legally operable during active conflict. The ~$280B in frozen Russian sovereign assets remain in G7/EU custodian accounts; their windfall interest (~$3B/yr) backs the ERA extraordinary-revenue loan. Multilateral pledges and EU Facility tranches form the remainder. Russia's principal liability is acknowledged but not yet transferred.",
       "total_target_usd_bn": 429,
       "timeline": "2024–2026",
-      "risk_band": "elevated"
+      "risk_band": "elevated",
+      "legal_basis": "G7 Vilnius communiqué (2023); EU Council Regulation 2024/1469 (windfall interest); ERA/G7 framework (2024)"
     },
     "B": {
       "id": "B",
-      "label": "Scenario B — Post-War",
-      "description": "Post-war Trust capitalised from full reparations settlement and frozen-asset transfer. Larger corpus but longer mobilisation timeline — depends on legal resolution.",
+      "label": "Scenario B — Post-War (Hague Reparations + Full Transfer)",
+      "description": "Trust capitalised following a post-war legal settlement. The primary source is direct reparations from Russia under an ICJ/Hague tribunal award or negotiated peace treaty — Ukraine's documented damage claim exceeds $486B (RDNA3). A parallel track transfers the frozen $280B principal once G7 legal frameworks permit. Larger corpus, longer mobilisation timeline: 2–5 years from ceasefire.",
       "total_target_usd_bn": 430,
-      "timeline": "2026–2030",
-      "risk_band": "moderate"
+      "timeline": "2026–2032",
+      "risk_band": "moderate",
+      "legal_basis": "ICJ case Ukraine v. Russia (filed 2022); UN General Assembly Resolution ES-11/5 (reparations); REPO Act (US, 2024); G7 frozen-asset transfer framework"
     }
   }
 }

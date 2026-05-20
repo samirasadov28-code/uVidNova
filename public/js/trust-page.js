@@ -180,17 +180,17 @@ function renderCapitalFormation() {
       <div>
         <div class="trust-scenario-toggle" id="scenarioToggle">
           <button class="trust-scenario-btn ${state.scenario === 'A' ? 'active' : ''}" data-scenario="A">
-            Scenario A<br><small>During War</small>
+            Scenario A<br><small>Wartime</small>
           </button>
           <button class="trust-scenario-btn ${state.scenario === 'B' ? 'active' : ''}" data-scenario="B">
-            Scenario B<br><small>Post-War</small>
+            Scenario B<br><small>Hague + Post-War</small>
           </button>
         </div>
         <div class="trust-infobox">
-          <strong>${state.scenario === 'A' ? 'Scenario A — During War' : 'Scenario B — Post-War'}</strong>
+          <strong>${state.scenario === 'A' ? 'Scenario A — Wartime (ERA + Multilateral)' : 'Scenario B — Hague Reparations + Full Asset Transfer'}</strong>
           ${state.scenario === 'A'
-            ? 'Trust capitalised from assets legally available during active conflict. Frozen principal stays in custodian accounts pending legal resolution. ERA loan proceeds and multilateral pledges form the initial corpus.'
-            : 'Post-war Trust capitalised from full reparations settlement and frozen-asset transfer. Larger corpus but longer mobilisation timeline — depends on legal resolution.'}
+            ? 'Trust capitalised from instruments legally available during active conflict. ~$280B in frozen Russian assets remain in G7/EU custodians; their windfall interest (~$3B/yr) backs the ERA loan. Multilateral and EU Facility pledges complete the corpus. Russia\'s principal liability is acknowledged — not yet transferred.'
+            : 'Trust capitalised post-ceasefire from two parallel tracks: (1) direct reparations from Russia awarded by the ICJ / Hague tribunal (Ukraine\'s documented claim: $486B per RDNA3); (2) full transfer of the frozen $280B principal under the US REPO Act and G7 framework. Larger corpus — mobilisation timeline 2–5 years from ceasefire.'}
         </div>
         <div class="trust-sliders" id="m1-sliders">`;
 
