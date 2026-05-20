@@ -155,18 +155,14 @@ img { max-width: 100%; height: auto; }
 }
 .header-action-btn:hover { transform: translateY(-2px); text-decoration: none; }
 .header-action-btn:active { transform: translateY(0); }
-.header-action-finance {
+.header-action-finance,
+.header-action-trust {
   background: #f0a500;
   color: #0a1628;
   box-shadow: 0 3px 10px rgba(240,165,0,0.40);
 }
-.header-action-finance:hover { background: #f5b820; box-shadow: 0 5px 16px rgba(240,165,0,0.55); }
-.header-action-trust {
-  background: #f5c842;
-  color: #0a1628;
-  box-shadow: 0 3px 10px rgba(245,200,66,0.35);
-}
-.header-action-trust:hover { background: #fad060; box-shadow: 0 5px 16px rgba(245,200,66,0.50); }
+.header-action-finance:hover,
+.header-action-trust:hover { background: #f5b820; box-shadow: 0 5px 16px rgba(240,165,0,0.55); }
 .site-nav { display: flex; gap: 1.25rem; align-items: center; }
 .site-nav a { color: rgba(255,255,255,0.85); font-size: 0.875rem; }
 .site-nav a:hover { color: #fff; text-decoration: none; }
@@ -175,23 +171,20 @@ img { max-width: 100%; height: auto; }
   font-weight: 600;
 }
 .lang-toggle {
-  font-size: 0.75rem;
+  font-size: 1.35rem;
+  line-height: 1;
   font-family: var(--font-sans);
-  padding: 0.2rem 0.5rem;
+  padding: 0.18rem 0.45rem;
   border-radius: 999px;
-  border: 1.5px solid rgba(255,255,255,0.4);
+  border: 1.5px solid rgba(255,255,255,0.3);
   background: transparent;
-  color: rgba(255,255,255,0.85);
   cursor: pointer;
   transition: all 0.15s;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
 }
-.lang-toggle:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.7); }
-.lang-flag { font-size: 1.1em; }
-.lang-flag-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em; }
-.lang-sep { color: rgba(255,255,255,0.35); font-size: 0.8rem; }
-.lang-active { opacity: 1; }
-.lang-inactive { opacity: 0.42; }
+.lang-toggle:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.6); transform: scale(1.08); }
 
 /* ── Map layout — map always fills the frame; panels slide over as overlays ─── */
 .map-layout {
@@ -2235,18 +2228,18 @@ details[open] .agg-summary::before { content: '▼ '; }
 /* ── Development opportunities panel ────────────────────────────────────── */
 .dev-opps-panel {
   position: fixed;
-  top: 70px;
+  top: var(--map-top);
   left: 0;
-  width: 320px;
-  max-width: 92vw;
-  max-height: calc(100vh - 90px);
-  overflow-y: auto;
+  width: 360px;
+  max-width: 96vw;
+  height: calc(100vh - var(--map-top) - var(--bar-h));
+  display: flex;
+  flex-direction: column;
   background: rgba(4,22,12,0.97);
   border-right: 1px solid rgba(39,174,96,0.3);
-  border-bottom: 1px solid rgba(39,174,96,0.3);
   border-radius: 0 0 var(--radius-md) 0;
   z-index: 3000;
-  box-shadow: 4px 4px 24px rgba(0,0,0,0.5);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
   opacity: 0;
   transform: translateX(-20px);
@@ -2291,13 +2284,21 @@ details[open] .agg-summary::before { content: '▼ '; }
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(39,174,96,0.3) transparent;
 }
 .dev-opp-card {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(39,174,96,0.2);
   border-radius: var(--radius-sm);
   padding: 0.75rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
 }
+.dev-opp-card:hover { background: rgba(39,174,96,0.08); border-color: rgba(39,174,96,0.45); }
+.dev-opp-card.expanded { border-color: rgba(39,174,96,0.6); background: rgba(39,174,96,0.06); }
 .dev-opp-header {
   display: flex;
   align-items: center;
@@ -2334,6 +2335,73 @@ details[open] .agg-summary::before { content: '▼ '; }
   padding: 1.5rem 0;
   margin: 0;
 }
+.dev-opp-expand-hint {
+  font-size: 0.65rem;
+  color: rgba(39,174,96,0.6);
+  margin-top: 0.3rem;
+  letter-spacing: 0.02em;
+}
+.dev-opp-financing {
+  display: none;
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(39,174,96,0.18);
+}
+.dev-opp-card.expanded .dev-opp-financing { display: block; }
+.dev-fin-title {
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: rgba(39,174,96,0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+.dev-fin-stack {
+  display: flex;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  gap: 1px;
+}
+.dev-fin-seg { height: 100%; transition: flex 0.3s; }
+.dev-fin-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  margin-bottom: 0.55rem;
+}
+.dev-fin-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.72);
+}
+.dev-fin-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dev-fin-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem;
+}
+.dev-fin-stat {
+  background: rgba(255,255,255,0.04);
+  border-radius: 4px;
+  padding: 0.35rem 0.5rem;
+}
+.dev-fin-stat-val { font-size: 0.82rem; font-weight: 700; color: #f5c842; }
+.dev-fin-stat-lbl { font-size: 0.62rem; color: rgba(255,255,255,0.45); margin-top: 0.1rem; }
+.dev-fin-investors {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.55);
+  margin-top: 0.4rem;
+  line-height: 1.5;
+}
 
 @media (max-width: 600px) {
   .dev-opps-panel {
@@ -2341,8 +2409,8 @@ details[open] .agg-summary::before { content: '▼ '; }
     max-width: 100%;
     top: auto;
     bottom: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px));
+    height: 72vh;
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    max-height: 68vh;
     transform: translateY(20px);
   }
   .dev-opps-panel.visible { transform: translateY(0); }

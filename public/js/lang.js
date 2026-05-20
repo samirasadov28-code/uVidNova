@@ -285,9 +285,8 @@ export function initLangToggle(btn) {
   if (!btn) return;
   const update = () => {
     const lang = getLang();
-    btn.innerHTML = lang === 'uk'
-      ? '<span class="lang-flag lang-active">🇺🇦</span><span class="lang-flag-label lang-active">UA</span><span class="lang-sep"> · </span><span class="lang-flag lang-inactive">🇬🇧</span><span class="lang-flag-label lang-inactive">EN</span>'
-      : '<span class="lang-flag lang-inactive">🇺🇦</span><span class="lang-flag-label lang-inactive">UA</span><span class="lang-sep"> · </span><span class="lang-flag lang-active">🇬🇧</span><span class="lang-flag-label lang-active">EN</span>';
+    // Show the flag of the language you can switch TO
+    btn.innerHTML = lang === 'uk' ? '🇬🇧' : '🇺🇦';
     btn.setAttribute('aria-label', lang === 'uk' ? 'Switch to English' : 'Переключити на українську');
     document.documentElement.lang = lang;
     applyTranslations();

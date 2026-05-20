@@ -691,9 +691,6 @@ function showCityMarkers(oblastNameEn) {
   const cities = citiesData.cities.filter(c => c.oblast_en === oblastNameEn && c.name_en !== 'Sevastopol');
   if (cities.length === 0) return;
 
-  // Hide capital dots while city markers are shown to avoid duplicate pins
-  if (capitalLayer) { capitalLayer.remove(); }
-
   cityMarkersLayer = L.layerGroup();
   const lang = getLang();
 
@@ -749,10 +746,68 @@ const SECTOR_ICONS = {
   eu_logistics:         '🚢',
   carbon_credits:       '🌿',
   real_estate:          '🏙',
+  healthcare:           '🏥',
+  education:            '🎓',
+  water:                '💧',
+  agribusiness:         '🌾',
+  tourism:              '🏛',
+  logistics:            '🚛',
+  energy:               '🔋',
 };
 
+// Financing structure by sector — capital stack + return profile
+const SECTOR_FINANCING = {
+  renewables:           { grant:10, era:15, concessional:30, equity:25, private:20, irr:'12–18%', investors:'DFI equity, infrastructure funds, EBRD Green Energy', risk:'Medium' },
+  defense_technology:   { grant:20, era:10, concessional:20, equity:30, private:20, irr:'15–22%', investors:'NATO trust funds, defence-tech PE, bilateral grants', risk:'High' },
+  critical_minerals:    { grant:5, era:10, concessional:25, equity:30, private:30, irr:'14–20%', investors:'EU Critical Raw Materials Act funds, mining PE, DFI equity', risk:'High' },
+  green_steel:          { grant:15, era:10, concessional:35, equity:25, private:15, irr:'10–15%', investors:'EBRD, EU Just Transition, industrial-sector PE', risk:'Medium-High' },
+  it_services:          { grant:5, era:0, concessional:15, equity:35, private:45, irr:'18–28%', investors:'Venture capital, diaspora angels, EU startup funds', risk:'Medium' },
+  modular_construction: { grant:20, era:15, concessional:35, equity:20, private:10, irr:'8–12%', investors:'EU reconstruction grants, EBRD, municipal equity', risk:'Medium-Low' },
+  eu_logistics:         { grant:10, era:10, concessional:30, equity:25, private:25, irr:'9–14%', investors:'EBRD, EIB, Trans-European Network grants, infra funds', risk:'Medium' },
+  carbon_credits:       { grant:5, era:0, concessional:20, equity:30, private:45, irr:'12–18%', investors:'Carbon market funds, impact investors, agri-PE', risk:'Medium' },
+  real_estate:          { grant:10, era:15, concessional:35, equity:25, private:15, irr:'7–11%', investors:'EBRD, reconstruction funds, municipal equity', risk:'Medium-Low' },
+  healthcare:           { grant:45, era:10, concessional:35, equity:10, private:0,  irr:'N/A',   investors:'EU grants, bilateral donors, EBRD social sector', risk:'Low' },
+  education:            { grant:55, era:10, concessional:25, equity:10, private:0,  irr:'N/A',   investors:'EU / World Bank grants, bilateral donors', risk:'Low' },
+  water:                { grant:30, era:10, concessional:45, equity:15, private:0,  irr:'N/A',   investors:'KfW, EBRD, EIB, municipal equity', risk:'Low' },
+  agribusiness:         { grant:10, era:5,  concessional:30, equity:25, private:30, irr:'10–16%', investors:'EBRD AgriFinance, USAID, EU agri-funds, private equity', risk:'Medium' },
+  tourism:              { grant:25, era:5,  concessional:35, equity:20, private:15, irr:'8–13%', investors:'EBRD, EU heritage funds, diaspora capital', risk:'Medium' },
+  logistics:            { grant:10, era:10, concessional:35, equity:25, private:20, irr:'9–13%', investors:'EBRD, EIB TEN-T, logistics infrastructure funds', risk:'Medium' },
+  energy:               { grant:15, era:20, concessional:35, equity:20, private:10, irr:'8–12%', investors:'EBRD, EIB, EU energy grants, state equity', risk:'Medium' },
+};
+
+// Universal supplemental opportunities added for every oblast
+const UNIVERSAL_OPPS = [
+  { sector_id: 'healthcare',   archetype_id: 'clinic_rebuild',    label: 'Primary healthcare network rebuild',     rationale: 'Wartime damage to district hospitals and outpatient clinics creates a pipeline of grant-eligible healthcare infrastructure projects under EU social-sector conditionality.',                                size_usd_m_central: 35  },
+  { sector_id: 'logistics',    archetype_id: 'cold_chain',        label: 'Cold-chain logistics hub',               rationale: 'Export-quality agri-food logistics infrastructure — cold storage, customs clearance facilities, and rail connection to EU grain corridors — eligible for EBRD and TEN-T network funding.',  size_usd_m_central: 55  },
+  { sector_id: 'education',    archetype_id: 'vocational',        label: 'Vocational training & skills centre',    rationale: 'Reconstruction labour gap creates immediate demand for vocational training in construction trades, engineering, and digital skills. EU Just Transition Fund and bilateral grants available.',    size_usd_m_central: 18  },
+  { sector_id: 'it_services',  archetype_id: 'tech_hub',          label: 'Tech & innovation hub (Diia City node)', rationale: 'Ukraine\'s Diia City special tax zone for IT companies enables formation of regional tech hubs backed by venture capital and EU digital-transition co-financing.',                             size_usd_m_central: 22  },
+  { sector_id: 'agribusiness', archetype_id: 'food_processing',   label: 'Agricultural processing facility',       rationale: 'Value-added agri-processing (grain milling, oilseed, dairy) reduces raw-commodity export dependency and captures EU market premium. EBRD AgriFinance and EU agri-funds applicable.',          size_usd_m_central: 65  },
+  { sector_id: 'tourism',      archetype_id: 'heritage_tourism',  label: 'Heritage & cultural tourism corridor',   rationale: 'Post-war heritage tourism represents early-recovery economic activity with strong diaspora demand. UNESCO, EU heritage grants, and diaspora-backed impact capital available.',                  size_usd_m_central: 28  },
+];
+
+function buildFinancingDetailHTML(fin) {
+  const COLOURS = { grant:'#27ae60', era:'#8e44ad', concessional:'#2980b9', equity:'#e67e22', private:'#7f8c8d' };
+  const LABELS  = { grant:'Grants', era:'ERA/Frozen assets', concessional:'Concessional debt', equity:'DFI equity', private:'Private capital' };
+  const segs = Object.entries(fin)
+    .filter(([k]) => COLOURS[k] && fin[k] > 0)
+    .map(([k, v]) => `<div class="dev-fin-seg" style="flex:${v};background:${COLOURS[k]}" title="${LABELS[k]}: ${v}%"></div>`).join('');
+  const legend = Object.entries(fin)
+    .filter(([k]) => COLOURS[k] && fin[k] > 0)
+    .map(([k, v]) => `<div class="dev-fin-item"><div class="dev-fin-dot" style="background:${COLOURS[k]}"></div>${LABELS[k]}: ${v}%</div>`).join('');
+  return `
+    <div class="dev-opp-financing">
+      <div class="dev-fin-title">Financing structure</div>
+      <div class="dev-fin-stack">${segs}</div>
+      <div class="dev-fin-legend">${legend}</div>
+      <div class="dev-fin-stats">
+        <div class="dev-fin-stat"><div class="dev-fin-stat-val">${fin.irr}</div><div class="dev-fin-stat-lbl">Target IRR</div></div>
+        <div class="dev-fin-stat"><div class="dev-fin-stat-val">${fin.risk}</div><div class="dev-fin-stat-lbl">Risk profile</div></div>
+      </div>
+      <div class="dev-fin-investors">Key investors: ${fin.investors}</div>
+    </div>`;
+}
+
 function showDevelopmentPanel(oblastNameEn, info) {
-  // Remove any existing development panel
   const old = document.getElementById('devOppsPanel');
   if (old) { old.remove(); }
 
@@ -761,39 +816,54 @@ function showDevelopmentPanel(oblastNameEn, info) {
   panel.className = 'dev-opps-panel';
   document.body.appendChild(panel);
 
-  const opps = devOppsData?.opportunities?.[oblastNameEn] ?? [];
+  // Merge oblast-specific opportunities with universal ones
+  const specific = devOppsData?.opportunities?.[oblastNameEn] ?? [];
+  const allOpps = [...specific, ...UNIVERSAL_OPPS];
   const displayName = info?.name_en ?? oblastNameEn;
 
-  const oppsHTML = opps.length > 0 ? opps.map(o => {
+  const cardsHTML = allOpps.map((o, idx) => {
     const icon = SECTOR_ICONS[o.sector_id] ?? '📊';
+    const fin  = SECTOR_FINANCING[o.sector_id];
     const sizeFmt = o.size_usd_m_central >= 1000
       ? `USD ${(o.size_usd_m_central / 1000).toFixed(1)}B`
       : `USD ${o.size_usd_m_central}M`;
+    const finHTML = fin ? buildFinancingDetailHTML(fin) : '';
     return `
-      <div class="dev-opp-card">
+      <div class="dev-opp-card" data-idx="${idx}">
         <div class="dev-opp-header">
           <span class="dev-opp-icon">${icon}</span>
           <span class="dev-opp-label">${o.label}</span>
           <span class="dev-opp-size">${sizeFmt}</span>
         </div>
         <p class="dev-opp-rationale">${o.rationale}</p>
+        ${fin ? '<p class="dev-opp-expand-hint">Tap to see financing structure ▾</p>' : ''}
+        ${finHTML}
       </div>`;
-  }).join('') : `<p class="dev-opp-empty">Development opportunities for this region are being researched.</p>`;
+  }).join('');
 
   panel.innerHTML = `
     <div class="dev-opps-header">
       <div>
         <div class="dev-opps-region">${displayName}</div>
-        <div class="dev-opps-subtitle">Investment opportunities</div>
+        <div class="dev-opps-subtitle">${allOpps.length} investment opportunities</div>
       </div>
       <button class="dev-opps-close" aria-label="Close">×</button>
     </div>
-    <div class="dev-opps-body">
-      ${oppsHTML}
-    </div>`;
+    <div class="dev-opps-body">${cardsHTML}</div>`;
 
   panel.hidden = false;
   requestAnimationFrame(() => panel.classList.add('visible'));
+
+  // Click-to-expand financing detail
+  panel.querySelectorAll('.dev-opp-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const wasExpanded = card.classList.contains('expanded');
+      panel.querySelectorAll('.dev-opp-card').forEach(c => c.classList.remove('expanded'));
+      if (!wasExpanded) card.classList.add('expanded');
+      const hint = card.querySelector('.dev-opp-expand-hint');
+      if (hint) hint.textContent = card.classList.contains('expanded') ? 'Financing structure ▴' : 'Tap to see financing structure ▾';
+    });
+  });
 
   panel.querySelector('.dev-opps-close').addEventListener('click', () => {
     panel.classList.remove('visible');
