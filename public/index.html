@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#0d2248">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="app-version" content="0.3.7">
+  <meta name="app-version" content="0.3.8">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
@@ -147,7 +147,7 @@
       </p>
       <div class="landing-actions">
         <button class="lang-toggle landing-lang-toggle" id="landingLangToggle" aria-label="Switch language">🇺🇦 Українська</button>
-        <span class="landing-version">v0.3.7</span>
+        <span class="landing-version">v0.3.8</span>
         <button class="landing-force-reload" id="landingForceReload" title="Clear cache and reload latest version">↻ Force update</button>
       </div>
     </div>
@@ -328,6 +328,8 @@
   function uvSetMapView(view) { if (window._appSetMapView) window._appSetMapView(view); }
   // Finance wizard — stub; app.js overwrites window._appFinance after module loads
   function uvOpenFinance() { if (window._appFinance) window._appFinance(); }
+  // Trust panel — stub; app.js overwrites window._appTrust after module loads
+  function uvOpenTrust() { if (window._appTrust) window._appTrust(); }
   // Force reload (version bar button)
   function uvForceReload() {
     var btn = document.getElementById('forceReloadBtn');
@@ -362,9 +364,9 @@
         <button class="header-action-btn header-action-finance" onclick="uvOpenFinance()" aria-label="Open Finance Ukraine wizard">
           💰 Finance Ukraine
         </button>
-        <a href="/trust.html" class="header-action-btn header-action-trust" aria-label="Create Vidnova Trust">
+        <button class="header-action-btn header-action-trust" onclick="uvOpenTrust()" aria-label="Create Vidnova Trust">
           🏛 Create Vidnova Trust
-        </a>
+        </button>
       </div>
 
       <!-- Right: About + lang toggle -->
@@ -495,7 +497,7 @@
   <!-- ── Bottom action bar — Feedback · Occupied territories · Ask AI ──────── -->
   <div class="bottom-action-bar" id="bottomActionBar">
     <span class="bab-version">
-      <span class="version-label" id="versionLabel">v0.3.7</span>
+      <span class="version-label" id="versionLabel">v0.3.8</span>
       <span class="update-prompt" id="updatePrompt" hidden>
         · New version — <button class="update-reload-btn" id="updateReloadBtn">reload</button>
       </span>

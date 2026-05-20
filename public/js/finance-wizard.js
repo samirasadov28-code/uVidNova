@@ -11,18 +11,18 @@ import { loadGrowthSectors, renderWizardSectorPicker, renderPortfolioGrowthPicke
 
 const TRANCHE_DEFS = {
   reparations:       { label: 'Russian Reparations / ERA Proceeds',   ret: 0,    tenor: null, col: '#9b59b6' },
-  grant:             { label: 'Grants (EU / Bilateral Donors)',        ret: 0,    tenor: null, col: '#27ae60' },
+  grant:             { label: 'Pure grants (EU / Bilateral Donors)',    ret: 0,    tenor: null, col: '#27ae60' },
   first_loss:        { label: 'First-loss / Guarantee Facility',       ret: 0,    tenor: null, col: '#52be80' },
   concessional_ifi:  { label: 'Concessional IFI Loan',                 ret: 1.5,  tenor: 20,   col: '#2980b9' },
   senior_ifi:        { label: 'Senior IFI Near-market',                ret: 3.5,  tenor: 15,   col: '#1a6aa1' },
   eca:               { label: 'ECA Buyer Credit / Direct Lending',     ret: 4.0,  tenor: 10,   col: '#8e44ad' },
   pri_wrap:          { label: 'PRI / War-risk Insurance Wrap',         ret: 1.5,  tenor: null, col: '#e67e22', isFlag: true },
-  dfi_equity:        { label: 'DFI Equity',                            ret: 8.0,  tenor: null, col: '#5dade2' },
-  public_equity:     { label: 'Public Counterpart Equity',             ret: 0,    tenor: null, col: '#7f8c8d' },
+  dfi_equity:        { label: 'DFI equity & quasi-equity',              ret: 8.0,  tenor: null, col: '#5dade2' },
+  public_equity:     { label: 'Sovereign & municipal counterpart equity', ret: 0,  tenor: null, col: '#7f8c8d' },
   diaspora:          { label: 'Diaspora / Patriotic Bonds',            ret: 5.0,  tenor: 10,   col: '#a9cce3' },
-  commercial_bank:   { label: 'Commercial Bank Debt',                  ret: 9.0,  tenor: 10,   col: '#884ea0' },
+  commercial_bank:   { label: 'Commercial bank senior debt',            ret: 9.0,  tenor: 10,   col: '#884ea0' },
   institutional_debt:{ label: 'Institutional / Capital Markets Debt',  ret: 6.5,  tenor: 12,   col: '#2c3e50' },
-  private_equity:    { label: 'Private Equity / Infra Funds',          ret: 18.0, tenor: null, col: '#e74c3c' },
+  private_equity:    { label: 'Private equity & infrastructure equity funds', ret: 18.0, tenor: null, col: '#e74c3c' },
 };
 
 // Confidence levels derived from funding_envelope.json — keyed by tranche type.
@@ -131,6 +131,7 @@ function reset(preselected = []) {
     growthProjects: [],   // Array<{ sectorId, archetypeId, label, sector, scale_usd_m }>
     showGrowthPicker: false,
     growthMode: 'specific',  // 'generic' | 'specific'
+    minPrivateReturn: 18,
   };
   _trustModes = new Map();
 }
@@ -824,6 +825,17 @@ function step2HTML() {
       <label class="fw-label">Financing timeline</label>
       <div class="fw-radio-row" id="fwTimingRow">${timingCards}</div>
     </div>
+    <div class="fw-field-group">
+      <label class="fw-label">Private capital minimum return (pre-war equivalent)</label>
+      <div class="fw-radio-row" id="fwPrivRetRow">
+        ${['10','15','18','25'].map(v => `
+          <label class="fw-radio-card ${(W.minPrivateReturn ?? 18) == v ? 'fw-rc-checked' : ''}">
+            <input type="radio" name="minPrivRet" value="${v}" ${(W.minPrivateReturn ?? 18) == v ? 'checked' : ''} class="fw-sr">
+            <span class="fw-rc-label">${v}% IRR</span>
+            <span class="fw-rc-desc">${v == 10 ? 'DFI/concessional only' : v == 15 ? 'Conservative infrastructure' : v == 18 ? 'Wartime adjusted (default)' : 'High-risk private equity'}</span>
+          </label>`).join('')}
+      </div>
+    </div>
     ${W.timing !== 'during' ? `<div class="fw-info-note">Russian Reparations will be available as a tranche type in Step 3.</div>` : ''}
   </div>`;
 }
@@ -901,6 +913,13 @@ function wireStep2() {
       document.querySelectorAll('#fwTimingRow .fw-radio-card').forEach(c => c.classList.remove('fw-rc-checked'));
       e.target.closest('.fw-radio-card').classList.add('fw-rc-checked');
       render();  // refresh to show/hide reparations note
+    });
+  });
+  document.querySelectorAll('input[name="minPrivRet"]').forEach(r => {
+    r.addEventListener('change', e => {
+      W.minPrivateReturn = +e.target.value;
+      document.querySelectorAll('#fwPrivRetRow .fw-radio-card').forEach(c => c.classList.remove('fw-rc-checked'));
+      e.target.closest('.fw-radio-card').classList.add('fw-rc-checked');
     });
   });
 }
@@ -1358,6 +1377,34 @@ function step4HTML() {
   return `<div class="fw-step fw-results">
     <h3 class="fw-sh">Financing structure analysis</h3>
     <div class="fw-results-meta">${r.sel.length} project${r.sel.length !== 1 ? 's' : ''} · ${PATH_LABELS[W.path]} · ${TIMING_LABELS[W.timing]}</div>
+
+    <!-- Russian obligation headline box — the key output -->
+    ${r.totalRussianNeeded > 0 ? `
+    <div class="fw-russia-headline">
+      <div class="fw-rh-row">
+        <div class="fw-rh-item fw-rh-russia">
+          <span class="fw-rh-label">🇷🇺 Russia must contribute</span>
+          <span class="fw-rh-value">${fmtM(r.totalRussianNeeded.toFixed(0))}</span>
+          <span class="fw-rh-sub">${r.repPctFrozen.toFixed(2)}% of $300B frozen · ${(r.totalRussianNeeded / KSE_CLAIM_USD_M * 100).toFixed(2)}% of $486B claim</span>
+        </div>
+        <div class="fw-rh-item fw-rh-dscr">
+          <span class="fw-rh-label">📊 Can projects deliver returns?</span>
+          <span class="fw-rh-value" style="color:${r.dscr == null ? '#888' : r.dscr >= 1.2 ? '#27ae60' : r.dscr >= 0.8 ? '#e67e22' : '#e74c3c'}">${r.dscr != null ? r.dscr.toFixed(2) + '× DSCR' : 'N/A'}</span>
+          <span class="fw-rh-sub">${r.dscr == null ? 'No return-bearing tranches' : r.dscr >= 1.2 ? 'Self-sustaining — revenues cover debt service' : r.dscr >= 0.8 ? 'Marginal — needs concessional support' : 'Not self-sustaining — Russian reparations bridge the gap'}</span>
+        </div>
+        <div class="fw-rh-item fw-rh-market">
+          <span class="fw-rh-label">💼 Market / donor raise</span>
+          <span class="fw-rh-value">${fmtM((r.total - r.repAmt).toFixed(0))}</span>
+          <span class="fw-rh-sub">Grants + concessional + private capital</span>
+        </div>
+      </div>
+      ${r.revenueShortfall > 0 ? `<div class="fw-rh-gap-note">⚠ Revenue shortfall of ${fmtM(r.revenueShortfall.toFixed(0))}/yr → needs additional ${fmtM(r.extraRussianNeeded.toFixed(0))} Russian reparations to service debt</div>` : `<div class="fw-rh-gap-note fw-rh-ok">✓ Selected projects generate enough revenue to service the capital stack — Russian reparations are structural, not required for debt service</div>`}
+    </div>` : `
+    <div class="fw-russia-headline fw-rh-no-russia">
+      <span class="fw-rh-label">💼 No Russian reparations tranche — market/donor raise only</span>
+      <span class="fw-rh-value">${fmtM(r.total)}</span>
+      ${r.dscr != null ? `<span class="fw-rh-sub">DSCR: ${r.dscr.toFixed(2)}× — ${r.dscr >= 1.2 ? 'Projects are self-sustaining' : 'Projects need concessional support'}</span>` : ''}
+    </div>`}
 
     <!-- Summary banner -->
     <div class="fw-summary-banner">

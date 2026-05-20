@@ -14,6 +14,7 @@ import {
 import { computeAggregation, renderAggregation } from './aggregation.js';
 import { getLang, getName, initLangToggle, applyTranslations, t } from './lang.js';
 import { openFinanceWizard } from './finance-wizard.js';
+import { openTrustPanel } from './trust-panel.js';
 
 // ── Marker configuration ───────────────────────────────────────────────────────
 
@@ -688,7 +689,7 @@ function showCityMarkers(oblastNameEn) {
   if (!map || !citiesData) return;
 
   // Filter cities for this oblast; exclude the capital if it duplicates the capital dot layer
-  const cities = citiesData.cities.filter(c => c.oblast_en === oblastNameEn);
+  const cities = citiesData.cities.filter(c => c.oblast_en === oblastNameEn && c.name_en !== 'Sevastopol');
   if (cities.length === 0) return;
 
   // Hide capital dots while city markers are shown to avoid duplicate pins
@@ -866,7 +867,7 @@ async function addOblastLayer() {
         const isLuhansk  = name === "Luhans'k";
         const isPartialOcc = PARTIALLY_OCCUPIED_OBLASTS.has(name);
         let tooltipText = name;
-        if (isCrimea) tooltipText = 'Autonomous Republic of Crimea — temporarily occupied since 2014 (UA territory, excl. Sevastopol City)';
+        if (isCrimea) tooltipText = 'Autonomous Republic of Crimea — temporarily occupied since 2014 (UA sovereign territory)';
         else if (isLuhansk) tooltipText = 'Luhansk Oblast — temporarily occupied (UA territory)';
         else if (isPartialOcc) tooltipText = `${name} Oblast — temporarily partially occupied (UA territory)`;
         if (name) layer.bindTooltip(tooltipText, { permanent: false, sticky: true, className: 'oblast-tooltip' });
@@ -1353,3 +1354,4 @@ window._appWarToggle   = toggleWarMode;
 window._appSetMapView  = setMapView;
 window._appFinance     = () => openFinanceWizard(allAssets);
 window._openFinanceWizard = (ids) => openFinanceWizard(allAssets, ids ?? []);
+window._appTrust       = () => openTrustPanel();
