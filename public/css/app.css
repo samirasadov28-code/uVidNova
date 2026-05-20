@@ -884,23 +884,43 @@ body.asset-page { display: flex; flex-direction: column; }
 .landing-cta:hover { background: var(--colour-gold-light); transform: translateY(-1px); }
 .landing-cta:active { transform: translateY(0); }
 .landing-other-products {
-  display: inline-block;
-  margin-top: 0.65rem;
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.52);
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 20px;
-  padding: 0.3rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 1.4rem;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  border-radius: 32px;
   text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: color 0.15s, border-color 0.15s, background 0.15s;
-  background: rgba(255,255,255,0.05);
+  overflow: hidden;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
 }
 .landing-other-products:hover {
-  color: rgba(255,255,255,0.85);
-  border-color: rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.10);
+  border-color: var(--colour-gold);
+  box-shadow: 0 4px 20px rgba(240,165,0,0.28);
   text-decoration: none;
+}
+.lop-badge {
+  background: var(--colour-gold);
+  color: #0a1628;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 0.55rem 1rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.lop-text {
+  flex: 1;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.80);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.landing-other-products:hover .lop-text {
+  color: #fff;
 }
 .landing-audience {
   font-size: 0.8rem;
