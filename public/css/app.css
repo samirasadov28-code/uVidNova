@@ -4,9 +4,10 @@
 
 /* ── Variables ───────────────────────────────────────────────────────────────── */
 :root {
-  --header-h: 96px;
-  --header-top-h: 56px;
-  --subnav-h: 40px;
+  --header-h: 56px;
+  --viewbar-h: 44px;
+  --map-top: 100px;
+  --bar-h: 52px;
   --colour-navy:        #1a3a6b;
   --colour-navy-light:  #2a5298;
   --colour-gold:        #f0a500;
@@ -81,23 +82,29 @@ img { max-width: 100%; height: auto; }
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  height: var(--header-top-h);
+  height: var(--header-h);
   padding: 0 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-/* Sub-nav row — view tabs spanning full width below the top header row */
-.view-tab-bar {
-  height: var(--subnav-h);
-  background: rgba(0,0,0,0.22);
-  border-top: 1px solid rgba(255,255,255,0.1);
+
+/* ── Map view bar — separate fixed strip between header and map ─────────── */
+.map-view-bar {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  z-index: 900;
+  height: var(--viewbar-h);
+  background: rgba(10,20,50,0.88);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.2rem;
+  gap: 0.3rem;
   padding: 0 1rem;
-  width: 100%;
 }
 .wordmark {
   display: flex;
@@ -134,32 +141,32 @@ img { max-width: 100%; height: auto; }
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  border-radius: 20px;
-  padding: 0.45rem 1.1rem;
+  border-radius: 14px;
+  padding: 0.45rem 1.15rem;
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 800;
   font-family: var(--font-sans);
   cursor: pointer;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   white-space: nowrap;
-  transition: background 0.15s, transform 0.1s;
+  transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
   text-decoration: none;
+  border: none;
 }
-.header-action-btn:hover { transform: translateY(-1px); text-decoration: none; }
+.header-action-btn:hover { transform: translateY(-2px); text-decoration: none; }
 .header-action-btn:active { transform: translateY(0); }
 .header-action-finance {
-  background: #c9a227;
+  background: #f0a500;
   color: #0a1628;
-  border: none;
-  box-shadow: 0 2px 8px rgba(201,162,39,0.35);
+  box-shadow: 0 3px 10px rgba(240,165,0,0.40);
 }
-.header-action-finance:hover { background: #d4aa30; color: #0a1628; }
+.header-action-finance:hover { background: #f5b820; box-shadow: 0 5px 16px rgba(240,165,0,0.55); }
 .header-action-trust {
-  background: rgba(255,255,255,0.1);
-  color: #f5c842;
-  border: 1.5px solid rgba(245,200,66,0.45);
+  background: #f5c842;
+  color: #0a1628;
+  box-shadow: 0 3px 10px rgba(245,200,66,0.35);
 }
-.header-action-trust:hover { background: rgba(245,200,66,0.15); color: #f5c842; }
+.header-action-trust:hover { background: #fad060; box-shadow: 0 5px 16px rgba(245,200,66,0.50); }
 .site-nav { display: flex; gap: 1.25rem; align-items: center; }
 .site-nav a { color: rgba(255,255,255,0.85); font-size: 0.875rem; }
 .site-nav a:hover { color: #fff; text-decoration: none; }
@@ -185,7 +192,8 @@ img { max-width: 100%; height: auto; }
 .map-layout {
   position: fixed;
   inset: 0;
-  top: var(--header-h);
+  top: var(--map-top);
+  bottom: var(--bar-h);
   overflow: hidden;
   background: #deeeff; /* light blue — JS overrides on view switch but same colour */
   transition: background 0.4s ease;
@@ -230,7 +238,7 @@ img { max-width: 100%; height: auto; }
 }
 .map-view-hint {
   position: absolute;
-  bottom: 58px;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 600;
@@ -244,10 +252,10 @@ img { max-width: 100%; height: auto; }
   backdrop-filter: blur(6px);
 }
 
-/* Map overlay toggle buttons — fixed pills just below the header */
+/* Map overlay toggle buttons — fixed pills just below the view tab bar */
 .map-toggle-btn {
   position: fixed;
-  top: calc(var(--header-h) + 0.75rem);
+  top: calc(var(--map-top) + 0.75rem);
   z-index: 500;
   display: flex;
   align-items: center;
@@ -938,21 +946,7 @@ body.asset-page { display: flex; flex-direction: column; }
 }
 
 /* ── Version bar ─────────────────────────────────────────────────────────── */
-.version-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1500;
-  height: 26px;
-  background: var(--colour-navy);
-  color: rgba(255,255,255,0.55);
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
-  font-size: 0.72rem;
-  gap: 1rem;
-}
+/* version-bar removed — version label lives in .bab-version inside .bottom-action-bar */
 .version-label { font-family: var(--font-mono); }
 .force-reload-btn {
   background: none;
@@ -984,45 +978,83 @@ body.asset-page { display: flex; flex-direction: column; }
   font-family: var(--font-sans);
 }
 
-/* ── Occupied territories toggle button ─────────────────────────────────── */
-.war-mode-btn {
+/* ── Bottom action bar — fixed 3-button frame, never overlaps anything ───── */
+.bottom-action-bar {
   position: fixed;
-  bottom: 38px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 5100;
-  background: rgba(40,10,10,0.82);
-  border: 1.5px solid rgba(220,60,60,0.7);
-  color: #ff9999;
-  font-size: 0.76rem;
-  font-weight: 700;
-  font-family: var(--font-sans);
-  padding: 0.45rem 1.1rem;
-  border-radius: 24px;
-  cursor: pointer;
-  letter-spacing: 0.03em;
+  height: var(--bar-h);
+  background: rgba(8,18,38,0.93);
+  border-top: 1px solid rgba(255,255,255,0.09);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.bab-version {
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  color: rgba(255,255,255,0.35);
   white-space: nowrap;
-  transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.15s;
-  box-shadow: 0 2px 12px rgba(180,0,0,0.35);
-  backdrop-filter: blur(6px);
+  min-width: 60px;
 }
-.war-mode-btn:hover {
-  background: rgba(180,20,20,0.75);
-  border-color: rgba(255,80,80,0.9);
-  color: #ffcccc;
-  box-shadow: 0 4px 16px rgba(220,60,60,0.5);
-  transform: translateX(-50%) translateY(-2px);
+.bab-right { min-width: 60px; }
+.bab-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
 }
-.war-mode-btn.war-active {
-  background: rgba(120,0,0,0.85);
+.bab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.38rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.77rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+  border: 1.5px solid transparent;
+}
+.bab-btn:hover { transform: translateY(-1px); }
+.bab-btn:active { transform: translateY(0); }
+/* Feedback */
+.bab-feedback {
+  background: rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.82);
+  border-color: rgba(255,255,255,0.18);
+}
+.bab-feedback:hover { background: rgba(255,255,255,0.18); color: #fff; }
+/* Occupied territories */
+.bab-occupied {
+  background: rgba(100,0,0,0.45);
+  color: #ffaaaa;
+  border-color: rgba(220,60,60,0.45);
+}
+.bab-occupied:hover { background: rgba(170,20,20,0.60); color: #ffcccc; border-color: rgba(255,80,80,0.7); }
+.bab-occupied.war-active {
+  background: rgba(120,0,0,0.82);
   border-color: #ff4444;
   color: #f5c842;
 }
+/* Ask AI */
+.bab-ai {
+  background: rgba(79,70,229,0.22);
+  color: #a5b4fc;
+  border-color: rgba(99,102,241,0.40);
+}
+.bab-ai:hover { background: rgba(99,102,241,0.38); color: #c7d2fe; border-color: rgba(99,102,241,0.65); }
 
 /* ── War occupation legend ───────────────────────────────────────────────── */
 .war-legend {
   position: fixed;
-  bottom: 5.5rem;
+  bottom: calc(var(--bar-h) + 0.75rem);
   left: 0.75rem;
   background: rgba(10,22,40,0.94);
   border: 1px solid rgba(204,0,0,0.5);
@@ -1061,7 +1093,7 @@ body.asset-page { display: flex; flex-direction: column; }
   font-style: italic;
 }
 
-/* ── Disclaimer banner — sits above version bar ──────────────────────────── */
+/* ── Disclaimer banner — sits above bottom action bar ────────────────────── */
 .disclaimer-banner {
   background: #fff8e1;
   border-top: 2px solid var(--colour-gold);
@@ -1069,7 +1101,7 @@ body.asset-page { display: flex; flex-direction: column; }
   font-size: 0.8rem;
   color: #5a4000;
   position: fixed;
-  bottom: 26px;
+  bottom: var(--bar-h);
   left: 0;
   right: 0;
   z-index: 2000;
@@ -1107,39 +1139,10 @@ body.asset-page { display: flex; flex-direction: column; }
 }
 .leaflet-tooltip.city-label::before { display: none !important; }
 
-/* ── Floating action buttons (FABs) ─────────────────────────────────────── */
-.fab {
-  position: fixed;
-  bottom: 38px;
-  z-index: 5100;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 0.9rem;
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  font-family: var(--font-sans);
-  font-weight: 600;
-  box-shadow: var(--shadow-md);
-  transition: transform 0.15s, box-shadow 0.15s, bottom 0.3s ease;
-}
-/* Raise FABs above the disclaimer banner while it is in the DOM */
-body:has(#disclaimerBanner) .fab { bottom: 100px; }
+/* ── FAB compatibility shim — old .fab selectors kept for finance wizard ── */
+.fab { transition: transform 0.15s, box-shadow 0.15s; }
 .fab:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
 .fab:active { transform: translateY(0); }
-.fab-feedback {
-  left: 12px;
-  background: var(--colour-surface);
-  color: var(--colour-navy);
-  border: 1.5px solid var(--colour-border);
-}
-.fab-chat {
-  right: 12px;
-  background: var(--colour-navy);
-  color: #fff;
-}
 
 /* ── Feedback modal ──────────────────────────────────────────────────────── */
 .modal-overlay {
@@ -1478,7 +1481,7 @@ body:has(#disclaimerBanner) .fab { bottom: 100px; }
     right: 0;
     left: 0;
     top: auto;
-    bottom: 60px;  /* sit above version bar */
+    bottom: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px));
     transform: translateY(110%);
   }
   .asset-list-panel.panel-open { transform: translateY(0); }
@@ -1499,15 +1502,10 @@ body:has(#disclaimerBanner) .fab { bottom: 100px; }
   .ali-meta { font-size: 0.68rem; }
   .filter-group { margin-bottom: 0.9rem; }
 
-  /* FABs — sit above version bar, with safe-area inset */
-  .fab {
-    bottom: calc(34px + env(safe-area-inset-bottom, 0px));
-    min-height: 40px;
-  }
-  .fab > span { display: none; }  /* icon only on mobile */
-  body:has(#disclaimerBanner) .fab {
-    bottom: calc(72px + env(safe-area-inset-bottom, 0px));
-  }
+  /* Bottom action bar — labels hidden on very small screens */
+  .bab-btn > span { font-size: 0.72rem; }
+  .bab-version { display: none; }  /* hide version label on mobile — save space */
+  .bab-right { display: none; }
 
   /* Disclaimer — wraps cleanly, bigger dismiss button */
   .disclaimer-banner { font-size: 0.72rem; padding: 0.5rem 1rem; }
@@ -1520,21 +1518,19 @@ body:has(#disclaimerBanner) .fab { bottom: 100px; }
   /* Chat full-width, height capped to viewport */
   .chat-panel { width: 100%; right: 0; height: min(520px, calc(78vh - 24px)); border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
 
-  /* Version bar — height includes safe-area, hide force-reload to save space */
-  .version-bar {
-    font-size: 0.65rem;
-    height: calc(24px + env(safe-area-inset-bottom, 0px));
+  /* Bottom action bar on mobile — safe-area aware */
+  .bottom-action-bar {
+    height: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px));
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   .version-label { font-size: 0.65rem; }
-  .force-reload-btn { display: none; }
 
   /* Oblast info panel — bottom drawer, clears version bar + safe area */
   .oblast-info-panel {
     width: 100%;
     max-width: 100%;
     top: auto;
-    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px));
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     max-height: 68vh;
   }
@@ -1543,8 +1539,8 @@ body:has(#disclaimerBanner) .fab { bottom: 100px; }
   .leaflet-control-zoom { display: none; }
 
   /* Map controls (filter/assets buttons) — ensure they don't overlap each other */
-  .map-toggle-left  { top: calc(var(--header-h) + 0.5rem); }
-  .map-toggle-right { top: calc(var(--header-h) + 0.5rem); }
+  .map-toggle-left  { top: calc(var(--map-top) + 0.5rem); }
+  .map-toggle-right { top: calc(var(--map-top) + 0.5rem); }
 }
 
 /* ── Filter panel enhancements (Weekend 5) ───────────────────────────────── */
@@ -2329,7 +2325,7 @@ details[open] .agg-summary::before { content: '▼ '; }
     width: 100%;
     max-width: 100%;
     top: auto;
-    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px));
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
     max-height: 68vh;
     transform: translateY(20px);
@@ -2497,7 +2493,7 @@ details[open] .agg-summary::before { content: '▼ '; }
 /* ── Finance It wizard — right-side panel, map stays visible ─────────────── */
 .fw-overlay {
   position: fixed;
-  top: var(--header-h);
+  top: var(--map-top);
   right: 0;
   bottom: 0;
   width: 420px;
@@ -2784,7 +2780,7 @@ details[open] .agg-summary::before { content: '▼ '; }
   line-height: 1.5; margin-top: 0.75rem;
 }
 
-/* Finance FAB */
+/* Finance FAB — unused, kept as fallback */
 .fab-finance {
   left: 50%;
   transform: translateX(-50%);
@@ -2793,20 +2789,11 @@ details[open] .agg-summary::before { content: '▼ '; }
   border: none;
 }
 .fab-finance:hover { background: var(--colour-gold-light); }
-body:has(#disclaimerBanner) .fab-finance { bottom: 100px; }
 
-/* ── FAB conflict resolution ─────────────────────────────────────────────── */
-/*
- * Desktop: wizard is 420px from the right. Move the chat FAB left of it so
- * it never overlaps the wizard footer / Next button.
- * Feedback FAB is on the left so it's unaffected.
- */
-body:has(.fw-open) .fab-chat {
-  right: calc(420px + 14px);
-  transition: right 0.32s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s, box-shadow 0.15s, bottom 0.3s ease;
+/* ── Bottom bar: hide when finance wizard is open on mobile (drawer covers it) */
+@media (max-width: 640px) {
+  body:has(.fw-open) .bottom-action-bar { display: none; }
 }
-/* Hide chat FAB when the chat panel itself is open — it sits on top of the panel */
-body:has(.chat-panel:not([hidden])) .fab-chat { display: none; }
 
 @media (max-width: 640px) {
   /* On phones: finance wizard becomes a bottom drawer */
@@ -2836,10 +2823,8 @@ body:has(.chat-panel:not([hidden])) .fab-chat { display: none; }
   .fw-support-row { grid-template-columns: 1fr; }
   .fw-metrics-grid { grid-template-columns: repeat(2, 1fr); }
   .fw-body { padding: 0.9rem; }
-  body:has(#disclaimerBanner) .fab-finance { bottom: 72px; }
-  /* Hide FABs when wizard drawer covers the bottom of the screen */
-  body:has(.fw-open) .fab { display: none; }
 }
+/* ── Hide bottom bar when finance wizard drawer covers the bottom on mobile */
 /* ── Finance wizard: tranche name label (replaces type select) ───────────── */
 .fw-tr-name {
   font-size: 0.82rem;
@@ -3720,15 +3705,10 @@ body:has(.chat-panel:not([hidden])) .fab-chat { display: none; }
 
 /* ── Phone-specific improvements ────────────────────────────────────────── */
 
-/* War mode button & legend — safe-area aware, legend collapses on phones */
+/* War legend — safe-area aware on phones */
 @media (max-width: 640px) {
-  .war-mode-btn {
-    bottom: calc(38px + env(safe-area-inset-bottom, 0px));
-    font-size: 0.72rem;
-    padding: 0.4rem 0.9rem;
-  }
   .war-legend {
-    bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+    bottom: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px) + 0.5rem);
     left: 0.5rem;
     right: 0.5rem;
     min-width: unset;
@@ -3736,11 +3716,11 @@ body:has(.chat-panel:not([hidden])) .fab-chat { display: none; }
   }
   /* Asset list panel safe area */
   .asset-list-panel {
-    bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px));
   }
-  /* Disclaimer safe area */
+  /* Disclaimer safe area — above bottom bar */
   .disclaimer-banner {
-    bottom: calc(calc(24px + env(safe-area-inset-bottom, 0px)));
+    bottom: calc(var(--bar-h) + env(safe-area-inset-bottom, 0px));
   }
   /* Finance wizard overlay — align to bottom on phone */
   .fw-overlay { padding-bottom: env(safe-area-inset-bottom, 0px); }
@@ -3773,7 +3753,7 @@ body:has(.chat-panel:not([hidden])) .fab-chat { display: none; }
 /* ── Map hint strip ──────────────────────────────────────────────────────────── */
 .map-hint-strip {
   position: fixed;
-  top: var(--header-h);
+  top: var(--map-top);
   left: 0;
   right: 0;
   z-index: 250;

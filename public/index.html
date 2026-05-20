@@ -51,13 +51,13 @@
 
   <!-- Critical above-the-fold styles inlined to prevent FOUC before app.css loads -->
   <style>
-    :root{--header-h:56px;--colour-navy:#1a3a6b;--colour-gold:#f0a500;--font-sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+    :root{--header-h:56px;--viewbar-h:44px;--map-top:100px;--colour-navy:#1a3a6b;--colour-gold:#f0a500;--font-sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     [hidden]{display:none!important}
     body{font-family:var(--font-sans);background:#0a1628;color:#fff;min-height:100vh;overflow:hidden}
     .site-header{background:var(--colour-navy);position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--header-h);display:flex;align-items:center;padding:0 1rem}
-    #map{position:fixed;top:var(--header-h);left:0;right:0;bottom:0}
-    .map-layout{position:fixed;top:var(--header-h);left:0;right:0;bottom:0;overflow:hidden}
+    #map{position:absolute;inset:0}
+    .map-layout{position:fixed;top:var(--map-top);left:0;right:0;bottom:0;overflow:hidden}
   </style>
 
   <!-- Google Analytics -->
@@ -169,8 +169,6 @@
     }
 
     function revealChrome() {
-      var warBtn = document.getElementById('warModeBtn');
-      if (warBtn) warBtn.hidden = false;
       document.body.classList.add('landed');
       // Show map hint strip on first-ever visit (localStorage, not session)
       try {
@@ -359,13 +357,13 @@
         <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
       </a>
 
-      <!-- Centre: Finance It + Vidnova Trust -->
+      <!-- Centre: Finance Ukraine + Create Vidnova Trust -->
       <div class="header-centre">
-        <button class="header-action-btn header-action-finance" onclick="uvOpenFinance()" aria-label="Open Finance It">
-          💰 Finance It
+        <button class="header-action-btn header-action-finance" onclick="uvOpenFinance()" aria-label="Open Finance Ukraine wizard">
+          💰 Finance Ukraine
         </button>
-        <a href="/trust.html" class="header-action-btn header-action-trust" aria-label="Vidnova Trust">
-          🏛 Vidnova Trust
+        <a href="/trust.html" class="header-action-btn header-action-trust" aria-label="Create Vidnova Trust">
+          🏛 Create Vidnova Trust
         </a>
       </div>
 
@@ -376,18 +374,19 @@
       </nav>
     </div>
 
-    <!-- Row 2: View mode tabs -->
-    <div class="view-tab-bar" id="mapViewTabs" role="tablist">
-      <button class="map-view-tab map-view-tab-active" id="tab-ukraine" role="tab" aria-selected="true"
-              onclick="uvSetMapView('ukraine')">🔱 Ukraine</button>
-      <button class="map-view-tab" id="tab-damaged" role="tab" aria-selected="false"
-              onclick="uvSetMapView('damaged')">⚡ Damaged</button>
-      <button class="map-view-tab" id="tab-reconstructed" role="tab" aria-selected="false"
-              onclick="uvSetMapView('reconstructed')">✅ Reconstructed</button>
-      <button class="map-view-tab" id="tab-development" role="tab" aria-selected="false"
-              onclick="uvSetMapView('development')">🔮 Development</button>
-    </div>
   </header>
+
+  <!-- ── Map view tab bar — sits between header and map ──────────────────── -->
+  <div class="map-view-bar" id="mapViewTabs" role="tablist">
+    <button class="map-view-tab map-view-tab-active" id="tab-ukraine" role="tab" aria-selected="true"
+            onclick="uvSetMapView('ukraine')">🔱 Ukraine</button>
+    <button class="map-view-tab" id="tab-damaged" role="tab" aria-selected="false"
+            onclick="uvSetMapView('damaged')">⚡ Damaged</button>
+    <button class="map-view-tab" id="tab-reconstructed" role="tab" aria-selected="false"
+            onclick="uvSetMapView('reconstructed')">✅ Reconstructed</button>
+    <button class="map-view-tab" id="tab-development" role="tab" aria-selected="false"
+            onclick="uvSetMapView('development')">🔮 Development</button>
+  </div>
 
   <!-- ── Map layout ────────────────────────────────────────────────────────── -->
   <main class="map-layout">
@@ -493,17 +492,31 @@
     </p>
   </div>
 
-  <!-- ── Version bar — version label + SW update notification only ──────────── -->
-  <div class="version-bar" id="versionBar" role="status">
-    <span class="version-label" id="versionLabel">v0.3.7</span>
-    <span class="update-prompt" id="updatePrompt" hidden>
-      <span data-i18n="version.update_msg">· New version ready —</span>
-      <button class="update-reload-btn" id="updateReloadBtn" data-i18n="version.reload">reload</button>
+  <!-- ── Bottom action bar — Feedback · Occupied territories · Ask AI ──────── -->
+  <div class="bottom-action-bar" id="bottomActionBar">
+    <span class="bab-version">
+      <span class="version-label" id="versionLabel">v0.3.7</span>
+      <span class="update-prompt" id="updatePrompt" hidden>
+        · New version — <button class="update-reload-btn" id="updateReloadBtn">reload</button>
+      </span>
     </span>
-  </div>
 
-  <!-- ── Occupied territories toggle (bottom-center) ─────────────────────── -->
-  <button class="war-mode-btn" id="warModeBtn" onclick="uvToggleWarMode()" title="Show occupied territories" hidden>🔴 Occupied territories</button>
+    <div class="bab-buttons">
+      <button class="bab-btn bab-feedback" onclick="uvOpenFeedback()" aria-label="Send feedback">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>Feedback</span>
+      </button>
+      <button class="bab-btn bab-occupied" id="warModeBtn" onclick="uvToggleWarMode()" title="Show occupied territories">
+        🔴 <span>Occupied territories</span>
+      </button>
+      <button class="bab-btn bab-ai" onclick="uvOpenChat()" aria-label="Ask AI about reconstruction">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span>Ask AI</span>
+      </button>
+    </div>
+
+    <span class="bab-right"></span>
+  </div>
 
   <!-- ── War-mode occupation legend ───────────────────────────────────────── -->
   <div class="war-legend" id="warLegend" hidden>
@@ -514,14 +527,6 @@
     <div class="war-legend-note">UA sovereign territory throughout. Frontline indicative only.</div>
   </div>
 
-  <!-- ── Feedback floating button ──────────────────────────────────────────── -->
-  <button class="fab fab-feedback" id="feedbackBtn" onclick="uvOpenFeedback()" aria-label="Send feedback" title="Send feedback">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-      <polyline points="22,6 12,13 2,6"/>
-    </svg>
-    <span data-i18n="feedback.btn">Feedback</span>
-  </button>
 
   <!-- ── Feedback modal ────────────────────────────────────────────────────── -->
   <div class="modal-overlay" id="feedbackModal" hidden role="dialog" aria-modal="true" aria-labelledby="feedbackModalTitle">
@@ -564,13 +569,6 @@
     </div>
   </div>
 
-  <!-- ── AI chat floating button ───────────────────────────────────────────── -->
-  <button class="fab fab-chat" id="chatBtn" onclick="uvOpenChat()" aria-label="Open AI assistant" title="Ask AI about reconstruction">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-    </svg>
-    <span data-i18n="chat.btn">Ask AI</span>
-  </button>
 
   <!-- ── AI chat panel ─────────────────────────────────────────────────────── -->
   <div class="chat-panel" id="chatPanel" hidden role="complementary" aria-label="AI assistant">

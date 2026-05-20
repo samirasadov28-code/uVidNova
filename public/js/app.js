@@ -846,7 +846,10 @@ function toggleWarMode() {
   const btn = document.getElementById('warModeBtn');
   if (btn) {
     btn.classList.toggle('war-active', warMode);
-    btn.textContent = warMode ? '🗺 Hide occupation' : '🔴 Occupied territories';
+    const label = btn.querySelector('span');
+    if (label) label.textContent = warMode ? 'Hide occupation' : 'Occupied territories';
+    const emoji = btn.childNodes[0];
+    if (emoji && emoji.nodeType === Node.TEXT_NODE) emoji.textContent = warMode ? '🗺 ' : '🔴 ';
   }
   const legend = document.getElementById('warLegend');
   if (legend) legend.hidden = !warMode;
