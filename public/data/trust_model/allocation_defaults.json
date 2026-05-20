@@ -1,0 +1,49 @@
+{
+  "channels": [
+    {
+      "id": "grants",
+      "label": "Direct grants",
+      "description": "Non-repayable capital deployed directly to priority reconstruction projects, particularly social infrastructure and cultural heritage.",
+      "default_pct": 20,
+      "colour": "#27ae60",
+      "min_pct": 5,
+      "max_pct": 60
+    },
+    {
+      "id": "concessional",
+      "label": "Concessional debt",
+      "description": "Below-market loans to municipalities and state enterprises for energy, water, and transport reconstruction.",
+      "default_pct": 30,
+      "colour": "#2980b9",
+      "min_pct": 10,
+      "max_pct": 60
+    },
+    {
+      "id": "equity",
+      "label": "Equity & quasi-equity",
+      "description": "DFI-style equity co-investments in commercially viable reconstruction assets, primarily energy and industrial.",
+      "default_pct": 25,
+      "colour": "#8e44ad",
+      "min_pct": 5,
+      "max_pct": 50
+    },
+    {
+      "id": "availability_payments",
+      "label": "Availability payments",
+      "description": "Structured payments to PPP contractors guaranteeing service availability — mitigates revenue risk for private capital.",
+      "default_pct": 15,
+      "colour": "#f0a500",
+      "min_pct": 5,
+      "max_pct": 40
+    },
+    {
+      "id": "endowment_reserve",
+      "label": "Endowment reserve",
+      "description": "Liquid reserve maintaining Trust solvency and covering operating costs during deployment hiatus.",
+      "default_pct": 10,
+      "colour": "#1a3a6b",
+      "min_pct": 5,
+      "max_pct": 25
+    }
+  ]
+}

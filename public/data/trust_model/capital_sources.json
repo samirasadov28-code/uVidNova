@@ -1,0 +1,116 @@
+{
+  "sources": {
+    "scenario_a": [
+      {
+        "id": "frozen_russian_assets",
+        "label": "G7-frozen Russian sovereign assets (ERA interest)",
+        "source_label": "G7 Vilnius communiqué 2023",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 300,
+        "step_usd_bn": 5,
+        "default_usd_bn": 300
+      },
+      {
+        "id": "g7_era_loan",
+        "label": "ERA extraordinary-revenue acceleration loan",
+        "source_label": "EU ERA/G7 framework 2024",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 100,
+        "step_usd_bn": 5,
+        "default_usd_bn": 50
+      },
+      {
+        "id": "eu_ukraine_facility",
+        "label": "EU Ukraine Facility — trust-eligible tranche",
+        "source_label": "EU Ukraine Facility 2024–27",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 55,
+        "step_usd_bn": 1,
+        "default_usd_bn": 54
+      },
+      {
+        "id": "bilateral_donors",
+        "label": "Bilateral donor pledges (US, UK, DE, FR, JP)",
+        "source_label": "G7 Hiroshima / Vilnius pledges",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 50,
+        "step_usd_bn": 1,
+        "default_usd_bn": 20
+      },
+      {
+        "id": "diaspora_bonds",
+        "label": "Diaspora war bonds (UA sovereign)",
+        "source_label": "UA Ministry of Finance estimate",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 20,
+        "step_usd_bn": 1,
+        "default_usd_bn": 5
+      },
+      {
+        "id": "privatisation",
+        "label": "Privatisation proceeds (state-owned enterprise sales)",
+        "source_label": "FGIU / IMF Article IV",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 30,
+        "step_usd_bn": 1,
+        "default_usd_bn": 0
+      }
+    ],
+    "scenario_b": [
+      {
+        "id": "reparations_direct",
+        "label": "Russian reparations (peace-settlement transfer)",
+        "source_label": "ICJ / UN reparations framework",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 486,
+        "step_usd_bn": 10,
+        "default_usd_bn": 200
+      },
+      {
+        "id": "frozen_asset_transfer",
+        "label": "Frozen-asset full transfer (post-legal resolution)",
+        "source_label": "G7 / REPO Act framework",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 300,
+        "step_usd_bn": 5,
+        "default_usd_bn": 150
+      },
+      {
+        "id": "eu_successor",
+        "label": "EU reconstruction facility (successor programme)",
+        "source_label": "EU Ukraine Facility post-2027 projection",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 80,
+        "step_usd_bn": 2,
+        "default_usd_bn": 30
+      },
+      {
+        "id": "bilateral_donors_b",
+        "label": "Post-war bilateral donor pledges",
+        "source_label": "IMF / World Bank reconstruction conference",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 60,
+        "step_usd_bn": 1,
+        "default_usd_bn": 25
+      },
+      {
+        "id": "diaspora_bonds_b",
+        "label": "Diaspora reconstruction bonds (10yr)",
+        "source_label": "UA diaspora capital survey",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 30,
+        "step_usd_bn": 1,
+        "default_usd_bn": 10
+      },
+      {
+        "id": "privatisation_b",
+        "label": "Post-war privatisation proceeds",
+        "source_label": "FGIU / EBRD post-war estimates",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 50,
+        "step_usd_bn": 1,
+        "default_usd_bn": 15
+      }
+    ]
+  }
+}

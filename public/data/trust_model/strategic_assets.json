@@ -1,0 +1,76 @@
+{
+  "priority_sectors": [
+    {
+      "id": "energy",
+      "label": "Energy & Power",
+      "total_damage_usd_bn": 11.8,
+      "priority": "critical",
+      "trust_channel": "availability_payments",
+      "private_ready": true,
+      "note": "Grid infrastructure enables all other reconstruction sectors"
+    },
+    {
+      "id": "housing",
+      "label": "Housing (district-scale)",
+      "total_damage_usd_bn": 58.4,
+      "priority": "high",
+      "trust_channel": "concessional",
+      "private_ready": false,
+      "note": "Largest damage category; municipal equity required"
+    },
+    {
+      "id": "transport",
+      "label": "Transport & Ports",
+      "total_damage_usd_bn": 35.1,
+      "priority": "high",
+      "trust_channel": "equity",
+      "private_ready": true,
+      "note": "Strategic for export revenue recovery"
+    },
+    {
+      "id": "industrial",
+      "label": "Industrial & Agricultural",
+      "total_damage_usd_bn": 12.4,
+      "priority": "medium",
+      "trust_channel": "equity",
+      "private_ready": true,
+      "note": "Steel, coke, grain terminals — equity-ready post-war"
+    },
+    {
+      "id": "healthcare",
+      "label": "Healthcare",
+      "total_damage_usd_bn": 3.8,
+      "priority": "high",
+      "trust_channel": "grants",
+      "private_ready": false,
+      "note": "Grant-primary; availability payments for PPP hospitals"
+    },
+    {
+      "id": "education",
+      "label": "Education",
+      "total_damage_usd_bn": 2.7,
+      "priority": "high",
+      "trust_channel": "grants",
+      "private_ready": false,
+      "note": "Public good; grant-financed"
+    },
+    {
+      "id": "heritage",
+      "label": "Heritage & Culture",
+      "total_damage_usd_bn": 4.2,
+      "priority": "medium",
+      "trust_channel": "grants",
+      "private_ready": false,
+      "note": "UNESCO / ICOMOS framework; grant and diaspora-financed"
+    },
+    {
+      "id": "water",
+      "label": "Water & Sanitation",
+      "total_damage_usd_bn": 2.2,
+      "priority": "critical",
+      "trust_channel": "concessional",
+      "private_ready": false,
+      "note": "Municipal utility; concessional and grant mix"
+    }
+  ]
+}

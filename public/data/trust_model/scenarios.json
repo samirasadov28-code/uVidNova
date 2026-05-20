@@ -1,0 +1,20 @@
+{
+  "scenarios": {
+    "A": {
+      "id": "A",
+      "label": "Scenario A — During War",
+      "description": "Trust capitalised from assets legally available during active conflict. Frozen principal stays in custodian accounts pending legal resolution. ERA loan proceeds and multilateral pledges form the initial corpus.",
+      "total_target_usd_bn": 429,
+      "timeline": "2024–2026",
+      "risk_band": "elevated"
+    },
+    "B": {
+      "id": "B",
+      "label": "Scenario B — Post-War",
+      "description": "Post-war Trust capitalised from full reparations settlement and frozen-asset transfer. Larger corpus but longer mobilisation timeline — depends on legal resolution.",
+      "total_target_usd_bn": 430,
+      "timeline": "2026–2030",
+      "risk_band": "moderate"
+    }
+  }
+}

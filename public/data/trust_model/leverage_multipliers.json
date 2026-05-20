@@ -1,0 +1,49 @@
+{
+  "instruments": [
+    {
+      "id": "isif_direct",
+      "label": "ISIF-style direct co-investment",
+      "description": "Ireland Strategic Investment Fund model: Trust takes junior equity, commercial co-investors take senior. Proven 1:3.5 leverage.",
+      "leverage_multiple": 3.5,
+      "typical_tenure_yr": 15,
+      "interest_rate_pct": 3.0,
+      "source": "ISIF Annual Report 2023"
+    },
+    {
+      "id": "ebrd_rsf",
+      "label": "EBRD Risk-Sharing Framework",
+      "description": "Trust provides first-loss tranche; EBRD provides senior debt. Typical 1:4 leverage with war-risk wrap.",
+      "leverage_multiple": 4.0,
+      "typical_tenure_yr": 20,
+      "interest_rate_pct": 2.5,
+      "source": "EBRD RSF product documentation"
+    },
+    {
+      "id": "eu_blending",
+      "label": "EU blending facility (InvestEU-UA)",
+      "description": "EU grants blended with EIB/EBRD debt. Trust acts as co-guarantor reducing risk premium by ~150bps.",
+      "leverage_multiple": 5.0,
+      "typical_tenure_yr": 25,
+      "interest_rate_pct": 1.5,
+      "source": "EU Ukraine Facility programme documents 2024"
+    },
+    {
+      "id": "green_bond",
+      "label": "Sovereign green bond / ABS",
+      "description": "Trust corpus backs green-bond issuance secured by future availability payments and asset-backed securities.",
+      "leverage_multiple": 6.5,
+      "typical_tenure_yr": 10,
+      "interest_rate_pct": 4.5,
+      "source": "Climate Bonds Initiative / IFC Green Bond framework"
+    },
+    {
+      "id": "ppp_guarantee",
+      "label": "PPP availability guarantee",
+      "description": "Trust provides availability payment guarantee to commercial PPP lenders. Mobilises purely private capital.",
+      "leverage_multiple": 2.8,
+      "typical_tenure_yr": 30,
+      "interest_rate_pct": 1.8,
+      "source": "EBRD / EIB PPP Ukraine framework 2024"
+    }
+  ]
+}

@@ -808,8 +808,8 @@ function showDevelopmentPanel(oblastNameEn, info) {
 
 const VIEW_PALETTE = {
   ukraine:       { border: '#FFD700', fill: '#005BBB', bg: '#deeeff' },
-  damaged:       { border: '#e74c3c', fill: '#c45050', bg: '#deeeff' },
-  reconstructed: { border: '#27ae60', fill: '#2d7a3a', bg: '#deeeff' },
+  damaged:       { border: '#27ae60', fill: '#1a5c2a', bg: '#deeeff' },
+  reconstructed: { border: '#FFD700', fill: '#0d2b52', bg: '#deeeff' },
   development:   { border: '#1a7a2e', fill: '#2d7a3a', bg: '#deeeff' },
 };
 
@@ -847,10 +847,8 @@ function toggleWarMode() {
   const btn = document.getElementById('warModeBtn');
   if (btn) {
     btn.classList.toggle('war-active', warMode);
-    const label = btn.querySelector('span');
+    const label = document.getElementById('warModeBtnLabel') ?? btn.querySelector('span');
     if (label) label.textContent = warMode ? 'Hide occupation' : 'Occupied territories';
-    const emoji = btn.childNodes[0];
-    if (emoji && emoji.nodeType === Node.TEXT_NODE) emoji.textContent = warMode ? '🗺 ' : '🔴 ';
   }
   const legend = document.getElementById('warLegend');
   if (legend) legend.hidden = !warMode;
@@ -867,9 +865,9 @@ async function addOblastLayer() {
         const isLuhansk  = name === "Luhans'k";
         const isPartialOcc = PARTIALLY_OCCUPIED_OBLASTS.has(name);
         let tooltipText = name;
-        if (isCrimea) tooltipText = 'Autonomous Republic of Crimea — temporarily occupied since 2014 (UA sovereign territory)';
-        else if (isLuhansk) tooltipText = 'Luhansk Oblast — temporarily occupied (UA territory)';
-        else if (isPartialOcc) tooltipText = `${name} Oblast — temporarily partially occupied (UA territory)`;
+        if (isCrimea) tooltipText = 'Autonomous Republic of Crimea (UA sovereign territory)';
+        else if (isLuhansk) tooltipText = 'Luhansk Oblast (UA territory)';
+        else if (isPartialOcc) tooltipText = `${name} Oblast (UA territory)`;
         if (name) layer.bindTooltip(tooltipText, { permanent: false, sticky: true, className: 'oblast-tooltip' });
 
         layer.on('mouseover', function () {
@@ -892,7 +890,7 @@ async function addOblastLayer() {
             handleReconstructedOblastClick(name, this, layer, info);
           } else if (mapViewMode === 'development') {
             oblastLayer.resetStyle();
-            this.setStyle({ fillColor: '#d4edda', fillOpacity: 0.75, weight: 2.5, color: '#27ae60' });
+            this.setStyle({ fillColor: '#1a4070', fillOpacity: 0.85, weight: 2.5, color: '#FFD700' });
             zoomToOblastFeature(this);
             const oblastNameEn = info?.name_en ?? OBLAST_INFO_MAP[name] ?? name;
             showCityMarkers(oblastNameEn);

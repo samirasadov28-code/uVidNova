@@ -978,7 +978,7 @@ body.asset-page { display: flex; flex-direction: column; }
   font-family: var(--font-sans);
 }
 
-/* ── Bottom action bar — fixed 3-button frame, never overlaps anything ───── */
+/* ── Bottom action bar — Feedback left · Occupied centre · Ask AI right ───── */
 .bottom-action-bar {
   position: fixed;
   bottom: 0;
@@ -986,70 +986,82 @@ body.asset-page { display: flex; flex-direction: column; }
   right: 0;
   z-index: 5100;
   height: var(--bar-h);
-  background: rgba(8,18,38,0.93);
-  border-top: 1px solid rgba(255,255,255,0.09);
-  backdrop-filter: blur(10px);
+  background: rgba(8,18,38,0.97);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   padding-bottom: env(safe-area-inset-bottom, 0px);
-}
-.bab-version {
-  font-size: 0.68rem;
-  font-family: var(--font-mono);
-  color: rgba(255,255,255,0.35);
-  white-space: nowrap;
-  min-width: 60px;
-}
-.bab-right { min-width: 60px; }
-.bab-buttons {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
 }
 .bab-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.38rem 0.9rem;
+  justify-content: center;
+  padding: 0.46rem 1.5rem;
   border-radius: 999px;
-  font-size: 0.77rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   font-family: var(--font-sans);
+  letter-spacing: 0.02em;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+  transition: background 0.18s ease, transform 0.14s ease, box-shadow 0.18s ease, border-color 0.18s ease;
   border: 1.5px solid transparent;
+  text-transform: none;
+  min-width: 110px;
 }
-.bab-btn:hover { transform: translateY(-1px); }
+.bab-btn:hover  { transform: translateY(-2px); }
 .bab-btn:active { transform: translateY(0); }
-/* Feedback */
+/* Feedback — clean frosted glass */
 .bab-feedback {
-  background: rgba(255,255,255,0.10);
-  color: rgba(255,255,255,0.82);
+  background: rgba(255,255,255,0.09);
+  color: rgba(255,255,255,0.80);
   border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
 }
-.bab-feedback:hover { background: rgba(255,255,255,0.18); color: #fff; }
-/* Occupied territories */
+.bab-feedback:hover {
+  background: rgba(255,255,255,0.17);
+  color: #fff;
+  border-color: rgba(255,255,255,0.35);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.28);
+}
+/* Occupied territories — crimson accent */
 .bab-occupied {
-  background: rgba(100,0,0,0.45);
-  color: #ffaaaa;
-  border-color: rgba(220,60,60,0.45);
+  background: linear-gradient(135deg, rgba(140,10,10,0.60) 0%, rgba(80,0,0,0.60) 100%);
+  color: #ffbbbb;
+  border-color: rgba(200,50,50,0.55);
+  box-shadow: 0 2px 14px rgba(160,0,0,0.30);
+  font-weight: 700;
 }
-.bab-occupied:hover { background: rgba(170,20,20,0.60); color: #ffcccc; border-color: rgba(255,80,80,0.7); }
+.bab-occupied:hover {
+  background: linear-gradient(135deg, rgba(185,15,15,0.78) 0%, rgba(110,0,0,0.78) 100%);
+  color: #ffd5d5;
+  border-color: rgba(255,70,70,0.68);
+  box-shadow: 0 4px 22px rgba(200,0,0,0.42);
+}
 .bab-occupied.war-active {
-  background: rgba(120,0,0,0.82);
-  border-color: #ff4444;
+  background: linear-gradient(135deg, #8b0000 0%, #500000 100%);
+  border-color: rgba(255,60,60,0.75);
   color: #f5c842;
+  box-shadow: 0 4px 22px rgba(220,0,0,0.50);
 }
-/* Ask AI */
+/* Ask AI — indigo/violet gradient */
 .bab-ai {
-  background: rgba(79,70,229,0.22);
-  color: #a5b4fc;
-  border-color: rgba(99,102,241,0.40);
+  background: linear-gradient(135deg, rgba(79,70,229,0.30) 0%, rgba(139,92,246,0.30) 100%);
+  color: #b5c8fd;
+  border-color: rgba(139,92,246,0.45);
+  box-shadow: 0 2px 14px rgba(99,102,241,0.22);
 }
-.bab-ai:hover { background: rgba(99,102,241,0.38); color: #c7d2fe; border-color: rgba(99,102,241,0.65); }
+.bab-ai:hover {
+  background: linear-gradient(135deg, rgba(79,70,229,0.52) 0%, rgba(139,92,246,0.52) 100%);
+  color: #d4ddff;
+  border-color: rgba(139,92,246,0.68);
+  box-shadow: 0 4px 22px rgba(99,102,241,0.38);
+}
 
 /* ── War occupation legend ───────────────────────────────────────────────── */
 .war-legend {
@@ -1502,10 +1514,8 @@ body.asset-page { display: flex; flex-direction: column; }
   .ali-meta { font-size: 0.68rem; }
   .filter-group { margin-bottom: 0.9rem; }
 
-  /* Bottom action bar — labels hidden on very small screens */
-  .bab-btn > span { font-size: 0.72rem; }
-  .bab-version { display: none; }  /* hide version label on mobile — save space */
-  .bab-right { display: none; }
+  /* Bottom action bar — compact on small screens */
+  .bab-btn { padding: 0.4rem 0.85rem; font-size: 0.72rem; min-width: 80px; }
 
   /* Disclaimer — wraps cleanly, bigger dismiss button */
   .disclaimer-banner { font-size: 0.72rem; padding: 0.5rem 1rem; }
@@ -2495,7 +2505,7 @@ details[open] .agg-summary::before { content: '▼ '; }
   position: fixed;
   top: var(--map-top);
   right: 0;
-  bottom: 0;
+  bottom: var(--bar-h);
   width: 420px;
   max-width: 100vw;
   z-index: 3500;
