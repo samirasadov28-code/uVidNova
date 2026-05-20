@@ -138,7 +138,7 @@ const PARTIALLY_OCCUPIED_OBLASTS = new Set(["Donets'k", 'Zaporizhzhya', 'Kherson
 const OBLAST_INFO_MAP = {
   'Kyiv Oblast':   'Kyiv Oblast',
   'Kyiv City':     'Kyiv City',
-  'Autonomous Republic of Crimea': 'Crimea (Temporarily Occupied)',
+  'Autonomous Republic of Crimea': 'Crimea',
   "Donets'k":      'Donetsk Oblast',
   "Luhans'k":      'Luhansk Oblast',
   'Dnipropetrovs\'k': 'Dnipropetrovsk Oblast',
@@ -934,9 +934,9 @@ async function addOblastLayer() {
         const isLuhansk  = name === "Luhans'k";
         const isPartialOcc = PARTIALLY_OCCUPIED_OBLASTS.has(name);
         let tooltipText = name;
-        if (isCrimea) tooltipText = 'Autonomous Republic of Crimea (UA sovereign territory)';
-        else if (isLuhansk) tooltipText = 'Luhansk Oblast (UA territory)';
-        else if (isPartialOcc) tooltipText = `${name} Oblast (UA territory)`;
+        if (isCrimea) tooltipText = 'Crimea';
+        else if (isLuhansk) tooltipText = 'Luhansk Oblast';
+        else if (isPartialOcc) tooltipText = `${name} Oblast`;
         if (name) layer.bindTooltip(tooltipText, { permanent: false, sticky: true, className: 'oblast-tooltip' });
 
         layer.on('mouseover', function () {
@@ -1003,7 +1003,7 @@ function setMapView(view) {
   closeReconstructedPanel();
   clearCityMarkers();
   const devPanel = document.getElementById('devOppsPanel');
-  if (devPanel) devPanel.remove();
+  if (devPanel && view !== 'ukraine') devPanel.remove();
   if (oblastLayer) oblastLayer.setStyle(oblastStyle);
 
   // Swap map background colour to match view palette

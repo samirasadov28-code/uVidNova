@@ -4327,7 +4327,11 @@ details[open] .agg-summary::before { content: '▼ '; }
 
 /* ── Trust panel (trust-panel.js) ───────────────────────────────────────────── */
 .tp-overlay { z-index: 3600; }
-.tp-modal { max-width: 440px; }
+.tp-modal {
+  max-width: 440px;
+  background: #0d1e3a !important;
+  color: #fff;
+}
 .fw-header-sub {
   font-size: 0.72rem;
   color: rgba(255,255,255,0.6);
