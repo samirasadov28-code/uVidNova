@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash /home/user/uVidNova/.claude/hooks/auto-version-bump.sh",
+            "timeout": 60,
+            "statusMessage": "Bumping version & pushing…"
+          }
+        ]
+      }
+    ]
+  }
+}
