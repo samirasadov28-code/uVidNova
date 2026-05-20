@@ -49,7 +49,7 @@
       </a>
       <p class="tagline">Ukraine Reconstruction Finance Atlas</p>
       <nav class="site-nav">
-        <a href="/" class="nav-link" data-page="map">Map</a>
+        <a href="/" class="nav-link" data-page="map" onclick="try{sessionStorage.setItem('uvidnova_landed','1')}catch(e){}">Map</a>
         <a href="/finance.html" class="nav-link" data-page="finance">Finance</a>
         <a href="/trust.html" class="nav-link" data-page="trust">Trust</a>
         <a href="/about.html" class="nav-link" data-page="about">About</a>
@@ -64,7 +64,7 @@
     </div>
     <div class="error-state" id="errorState" hidden>
       <p id="errorMessage">Asset not found.</p>
-      <a href="/">← Return to map</a>
+      <a href="/" onclick="try{sessionStorage.setItem('uvidnova_landed','1')}catch(e){}">← Return to map</a>
     </div>
     <article class="asset-record" id="assetRecord" hidden></article>
   </main>

@@ -38,7 +38,7 @@
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "complete",
     "rebuildability": "rebuildable",
     "de_risking": [
       "MIGA_WAR",

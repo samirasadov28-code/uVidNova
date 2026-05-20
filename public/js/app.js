@@ -884,7 +884,7 @@ function showDevelopmentPanel(oblastNameEn, info) {
 
 const VIEW_PALETTE = {
   ukraine:       { border: '#FFD700', fill: '#005BBB', bg: '#deeeff' },
-  damaged:       { border: '#27ae60', fill: '#1a5c2a', bg: '#deeeff' },
+  damaged:       { border: '#1a6b32', fill: '#c0392b', bg: '#deeeff' },
   reconstructed: { border: '#FFD700', fill: '#0d2b52', bg: '#deeeff' },
   development:   { border: '#1a7a2e', fill: '#2d7a3a', bg: '#deeeff' },
 };
