@@ -1,49 +1,74 @@
 {
   "precedents": [
     {
-      "id": "marshall_plan",
-      "label": "Marshall Plan (ERP)",
-      "year": 1948,
-      "total_usd_bn_2024": 163.0,
-      "mechanism": "Grant aid via OEEC conditioned on European cooperation",
-      "leverage_multiple": 1.0,
-      "relevance": "Benchmark for post-conflict reconstruction grant scale"
-    },
-    {
-      "id": "kosovo_reconstruction",
-      "label": "Kosovo Reconstruction (1999–2004)",
-      "year": 1999,
-      "total_usd_bn_2024": 6.5,
-      "mechanism": "EU, World Bank, bilateral grants via UNMIK trust fund",
-      "leverage_multiple": 1.8,
-      "relevance": "Post-conflict trust fund structure precedent"
-    },
-    {
-      "id": "iraq_fund",
-      "label": "International Compact with Iraq (2004)",
-      "year": 2004,
-      "total_usd_bn_2024": 13.5,
-      "mechanism": "Multi-donor trust fund; IFI debt and bilateral grants",
-      "leverage_multiple": 2.2,
-      "relevance": "Sovereign-reparations + multilateral blending structure"
+      "id": "norway_gpfg",
+      "name": "Norway Government Pension Fund Global",
+      "country": "Norway",
+      "established": 1990,
+      "colour": "#003d82",
+      "is_trust": true,
+      "initial_capitalisation_usd_bn": 2.0,
+      "current_aum_usd_bn": 1650,
+      "real_return_pct": 4.1,
+      "portfolio_split": "70% equities · 27% fixed income · 3% real estate",
+      "drawdown_rule": "4% fiscal rule — only real return drawn",
+      "key_lesson": "Perpetual mandate with strict drawdown rule preserves principal indefinitely. Corpus grew 825× in 34 years. Applicable to VidNova Trust endowment reserve channel."
     },
     {
       "id": "isif",
-      "label": "Ireland Strategic Investment Fund",
-      "year": 2014,
-      "total_usd_bn_2024": 11.0,
-      "mechanism": "Sovereign wealth fund; first-loss co-investment, 1:3.5 leverage",
-      "leverage_multiple": 3.5,
-      "relevance": "Co-investment leverage model for Trust deployment phase"
+      "name": "Ireland Strategic Investment Fund",
+      "country": "Ireland",
+      "established": 2014,
+      "colour": "#169b62",
+      "is_trust": true,
+      "initial_capitalisation_usd_bn": 8.0,
+      "current_aum_usd_bn": 11.0,
+      "real_return_pct": 5.2,
+      "portfolio_split": "45% Irish directed investments · 55% global portfolio",
+      "drawdown_rule": "Double Bottom Line mandate — economic and social return required",
+      "key_lesson": "First-loss co-investment model achieves 1:3.5 leverage on directed capital. Every EUR 1 of Trust capital mobilises EUR 3.50 of private investment. Direct structural model for VidNova equity channel."
+    },
+    {
+      "id": "marshall_plan",
+      "name": "Marshall Plan (ERP)",
+      "country": "USA / OEEC",
+      "established": 1948,
+      "colour": "#b22234",
+      "is_trust": false,
+      "initial_capitalisation_usd_bn": 163.0,
+      "current_aum_usd_bn": null,
+      "real_return_pct": null,
+      "portfolio_split": "90% grants · 10% loans (counterpart funds)",
+      "drawdown_rule": "Four-year grant programme; counterpart funds reinvested locally",
+      "key_lesson": "Speed and scale of grant deployment critical — 98% committed in 4 years. Conditionality (OEEC cooperation) drove institutional reform alongside reconstruction. Benchmark for VidNova grants channel scale."
+    },
+    {
+      "id": "kosovo_reconstruction",
+      "name": "Kosovo Reconstruction Programme",
+      "country": "Kosovo / EU",
+      "established": 1999,
+      "colour": "#244aa5",
+      "is_trust": false,
+      "initial_capitalisation_usd_bn": 2.3,
+      "current_aum_usd_bn": null,
+      "real_return_pct": null,
+      "portfolio_split": "60% EU grants · 25% bilateral · 15% World Bank loans",
+      "drawdown_rule": "UNMIK trust fund — donor pledges drawn against verified milestones",
+      "key_lesson": "Multi-donor trust fund with single implementing entity prevents duplication. Milestone-based drawdown reduces absorption risk. Applicable to VidNova governance structure for donor coordination."
     },
     {
       "id": "era_2024",
-      "label": "G7 ERA Extraordinary Revenue Acceleration Loan",
-      "year": 2024,
-      "total_usd_bn_2024": 50.0,
-      "mechanism": "Loan collateralised against frozen Russian sovereign asset windfall interest",
-      "leverage_multiple": 6.0,
-      "relevance": "Direct legal precedent for ERA-backed Trust capitalisation"
+      "name": "G7 ERA Extraordinary Revenue Acceleration",
+      "country": "G7 / EU",
+      "established": 2024,
+      "colour": "#f0c030",
+      "is_trust": false,
+      "initial_capitalisation_usd_bn": 50.0,
+      "current_aum_usd_bn": null,
+      "real_return_pct": null,
+      "portfolio_split": "100% loan backed by frozen Russian asset interest (~$3B/yr)",
+      "drawdown_rule": "Loan repaid from windfall interest on ~$280B frozen Russian sovereign assets",
+      "key_lesson": "Direct legal precedent for collateralising Trust capitalisation against frozen Russian assets. ERA loan interest (~$3B/yr) demonstrably available and legally defensible. Establishes the capital formation path for VidNova Scenario A."
     }
   ]
 }

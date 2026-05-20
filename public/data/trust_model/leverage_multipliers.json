@@ -3,47 +3,57 @@
     {
       "id": "isif_direct",
       "label": "ISIF-style direct co-investment",
-      "description": "Ireland Strategic Investment Fund model: Trust takes junior equity, commercial co-investors take senior. Proven 1:3.5 leverage.",
-      "leverage_multiple": 3.5,
-      "typical_tenure_yr": 15,
-      "interest_rate_pct": 3.0,
-      "source": "ISIF Annual Report 2023"
+      "description": "Ireland Strategic Investment Fund model: Trust takes junior equity, commercial co-investors take senior.",
+      "mechanism": "Trust anchors each deal as first-loss junior equity investor. Commercial partners (pension funds, insurance) take senior positions. Governance modelled on ISIF Double Bottom Line mandate.",
+      "multiplier_low": 2.5,
+      "multiplier_central": 3.5,
+      "multiplier_high": 4.5,
+      "source_label": "ISIF Annual Report 2023",
+      "applicable_channels": ["equity", "concessional"]
     },
     {
       "id": "ebrd_rsf",
       "label": "EBRD Risk-Sharing Framework",
-      "description": "Trust provides first-loss tranche; EBRD provides senior debt. Typical 1:4 leverage with war-risk wrap.",
-      "leverage_multiple": 4.0,
-      "typical_tenure_yr": 20,
-      "interest_rate_pct": 2.5,
-      "source": "EBRD RSF product documentation"
+      "description": "Trust provides first-loss tranche; EBRD provides senior debt. Proven war-risk wrap.",
+      "mechanism": "Trust places 20–25% first-loss into RSF tranche. EBRD senior debt fills remaining 75–80%. MIGA war-risk insurance covers political risk for both tranches.",
+      "multiplier_low": 3.0,
+      "multiplier_central": 4.0,
+      "multiplier_high": 5.0,
+      "source_label": "EBRD RSF product documentation 2024",
+      "applicable_channels": ["concessional", "availability_payments"]
     },
     {
       "id": "eu_blending",
       "label": "EU blending facility (InvestEU-UA)",
       "description": "EU grants blended with EIB/EBRD debt. Trust acts as co-guarantor reducing risk premium by ~150bps.",
-      "leverage_multiple": 5.0,
-      "typical_tenure_yr": 25,
-      "interest_rate_pct": 1.5,
-      "source": "EU Ukraine Facility programme documents 2024"
+      "mechanism": "EU grant covers 15–20% of project cost as subsidy. Trust co-guarantees EIB/EBRD senior loan, cutting coupon by 150bps. Remaining equity from domestic or private sources.",
+      "multiplier_low": 4.0,
+      "multiplier_central": 5.0,
+      "multiplier_high": 6.5,
+      "source_label": "EU Ukraine Facility programme documents 2024",
+      "applicable_channels": ["grants", "concessional"]
     },
     {
       "id": "green_bond",
       "label": "Sovereign green bond / ABS",
       "description": "Trust corpus backs green-bond issuance secured by future availability payments and asset-backed securities.",
-      "leverage_multiple": 6.5,
-      "typical_tenure_yr": 10,
-      "interest_rate_pct": 4.5,
-      "source": "Climate Bonds Initiative / IFC Green Bond framework"
+      "mechanism": "Trust pledges NAV as credit enhancement for sovereign green bond. Proceeds deployed into certified climate-resilient infrastructure. AUM rating upgraded by guarantee, unlocking institutional demand.",
+      "multiplier_low": 5.0,
+      "multiplier_central": 6.5,
+      "multiplier_high": 8.0,
+      "source_label": "Climate Bonds Initiative / IFC Green Bond framework 2024",
+      "applicable_channels": ["availability_payments", "equity"]
     },
     {
       "id": "ppp_guarantee",
       "label": "PPP availability guarantee",
       "description": "Trust provides availability payment guarantee to commercial PPP lenders. Mobilises purely private capital.",
-      "leverage_multiple": 2.8,
-      "typical_tenure_yr": 30,
-      "interest_rate_pct": 1.8,
-      "source": "EBRD / EIB PPP Ukraine framework 2024"
+      "mechanism": "Trust guarantees availability payments to private operator for 25–30 years. Commercial lenders fund 80–85% of capex against guaranteed revenue stream. No public capital invested directly.",
+      "multiplier_low": 2.0,
+      "multiplier_central": 2.8,
+      "multiplier_high": 4.0,
+      "source_label": "EBRD / EIB PPP Ukraine framework 2024",
+      "applicable_channels": ["availability_payments"]
     }
   ]
 }

@@ -1,76 +1,93 @@
 {
-  "priority_sectors": [
+  "total_trust_equity_usd_bn": 14.2,
+  "assets": [
     {
-      "id": "energy",
-      "label": "Energy & Power",
-      "total_damage_usd_bn": 11.8,
-      "priority": "critical",
-      "trust_channel": "availability_payments",
-      "private_ready": true,
-      "note": "Grid infrastructure enables all other reconstruction sectors"
+      "name": "Ukrhydroenergo (Hydro Portfolio)",
+      "sector": "Energy & Power",
+      "description": "State hydro-power company operating Dnipro cascade dams. Post-war privatisation candidate with strong revenue base. Trust anchor stake preserves public interest while enabling private co-investment.",
+      "indicative_valuation_usd_bn": 6.0,
+      "indicative_equity_stake_pct": 25,
+      "trust_equity_usd_bn": 1.5,
+      "co_investor_target": "EBRD, IFC, European pension funds",
+      "status": "Partially damaged — Kakhovka HPP destroyed",
+      "source": "KSE energy sector assessment 2024"
     },
     {
-      "id": "housing",
-      "label": "Housing (district-scale)",
-      "total_damage_usd_bn": 58.4,
-      "priority": "high",
-      "trust_channel": "concessional",
-      "private_ready": false,
-      "note": "Largest damage category; municipal equity required"
+      "name": "Ukrzaliznytsia (Rail Network)",
+      "sector": "Transport & Ports",
+      "description": "National railway operator. Wartime proven backbone of civilian evacuation and military logistics. Post-war freight revenue recovery underpins equity value. European gauge conversion creates EU market access.",
+      "indicative_valuation_usd_bn": 8.5,
+      "indicative_equity_stake_pct": 20,
+      "trust_equity_usd_bn": 1.7,
+      "co_investor_target": "EIB, EBRD, Deutsche Bahn Capital",
+      "status": "Operational — active wartime service",
+      "source": "EBRD Ukraine transport strategy 2023"
     },
     {
-      "id": "transport",
-      "label": "Transport & Ports",
-      "total_damage_usd_bn": 35.1,
-      "priority": "high",
-      "trust_channel": "equity",
-      "private_ready": true,
-      "note": "Strategic for export revenue recovery"
+      "name": "Odesa & Mykolaiv Port Complex",
+      "sector": "Transport & Ports",
+      "description": "Black Sea grain export terminals. Grain corridor revenue stream supports long-term equity value. Strategic for Ukraine's agricultural export recovery and EU food security.",
+      "indicative_valuation_usd_bn": 4.2,
+      "indicative_equity_stake_pct": 30,
+      "trust_equity_usd_bn": 1.26,
+      "co_investor_target": "IFC, DP World, COFCO International",
+      "status": "Operational — corridor active",
+      "source": "RDNA3 transport chapter; KSE port assessment"
     },
     {
-      "id": "industrial",
-      "label": "Industrial & Agricultural",
-      "total_damage_usd_bn": 12.4,
-      "priority": "medium",
-      "trust_channel": "equity",
-      "private_ready": true,
-      "note": "Steel, coke, grain terminals — equity-ready post-war"
+      "name": "Metinvest Steel (Mariupol Rebuild)",
+      "sector": "Industrial & Agricultural",
+      "description": "Post-war rebuild of Azovstal and Illich integrated steelworks. Export-grade steel production for European market. Equity co-investment with Metinvest and strategic industrial partners.",
+      "indicative_valuation_usd_bn": 5.5,
+      "indicative_equity_stake_pct": 15,
+      "trust_equity_usd_bn": 0.83,
+      "co_investor_target": "Metinvest BV, EBRD, ArcelorMittal",
+      "status": "Destroyed — Azovstal complex; Mariupol occupied",
+      "source": "KSE industrial damage assessment 2024"
     },
     {
-      "id": "healthcare",
-      "label": "Healthcare",
-      "total_damage_usd_bn": 3.8,
-      "priority": "high",
-      "trust_channel": "grants",
-      "private_ready": false,
-      "note": "Grant-primary; availability payments for PPP hospitals"
+      "name": "Kyiv City District Residential Fund",
+      "sector": "Residential",
+      "description": "Large-scale multi-family residential rebuild in Saltivka and liberated Kyiv Oblast districts. Social housing equity vehicle modelled on Vienna Gemeindebau. Availability payments from municipal budget.",
+      "indicative_valuation_usd_bn": 3.8,
+      "indicative_equity_stake_pct": 35,
+      "trust_equity_usd_bn": 1.33,
+      "co_investor_target": "EIB Social Housing, BERD, municipal bonds",
+      "status": "Assessed — pipeline ready",
+      "source": "RDNA3 housing chapter; Kyiv City recovery plan 2024"
     },
     {
-      "id": "education",
-      "label": "Education",
-      "total_damage_usd_bn": 2.7,
-      "priority": "high",
-      "trust_channel": "grants",
-      "private_ready": false,
-      "note": "Public good; grant-financed"
+      "name": "Naftogaz Renewable Transition",
+      "sector": "Energy & Power",
+      "description": "Conversion of Naftogaz infrastructure assets to renewable gas and hydrogen production. Green bond-eligible. EU taxonomy alignment unlocks blended finance from InvestEU-UA facility.",
+      "indicative_valuation_usd_bn": 7.0,
+      "indicative_equity_stake_pct": 20,
+      "trust_equity_usd_bn": 1.4,
+      "co_investor_target": "EIB Climate, EBRD Green Economy, EU4Energy",
+      "status": "In pipeline — gas network operational",
+      "source": "EU Ukraine Facility energy chapter 2024"
     },
     {
-      "id": "heritage",
-      "label": "Heritage & Culture",
-      "total_damage_usd_bn": 4.2,
-      "priority": "medium",
-      "trust_channel": "grants",
-      "private_ready": false,
-      "note": "UNESCO / ICOMOS framework; grant and diaspora-financed"
+      "name": "Kharkiv–Dnipro Agro-Industrial Zone",
+      "sector": "Industrial & Agricultural",
+      "description": "Liberated agricultural land and processing capacity across Kharkiv and Zaporizhzhia oblasts. Land bank equity vehicle with grain terminal integration. First beneficiary of EU agricultural reconstruction fund.",
+      "indicative_valuation_usd_bn": 4.5,
+      "indicative_equity_stake_pct": 25,
+      "trust_equity_usd_bn": 1.13,
+      "co_investor_target": "COFCO, Louis Dreyfus, EBRD agribusiness",
+      "status": "Partially liberated — active reconstruction",
+      "source": "RDNA3 agricultural chapter; KSE land assessment 2024"
     },
     {
-      "id": "water",
-      "label": "Water & Sanitation",
-      "total_damage_usd_bn": 2.2,
-      "priority": "critical",
-      "trust_channel": "concessional",
-      "private_ready": false,
-      "note": "Municipal utility; concessional and grant mix"
+      "name": "National Telecom & Fibre Backbone",
+      "sector": "Digital Infrastructure",
+      "description": "Post-war fibre-to-the-premises rollout across liberated oblasts. Digital public goods vehicle. Revenue from service contracts; equity value from connectivity premium on rebuilt property values.",
+      "indicative_valuation_usd_bn": 3.2,
+      "indicative_equity_stake_pct": 40,
+      "trust_equity_usd_bn": 1.28,
+      "co_investor_target": "EBRD, EIF Digital, Kyivstar / Vodafone Ukraine",
+      "status": "In pipeline — partial network operational",
+      "source": "EU Digital Ukraine strategy 2024; RDNA3 digital chapter"
     }
   ]
 }
