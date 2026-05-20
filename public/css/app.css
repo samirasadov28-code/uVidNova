@@ -2706,6 +2706,7 @@ details[open] .agg-summary::before { content: '▼ '; }
 }
 .fw-header-left { display: flex; flex-direction: column; gap: 0.5rem; }
 .fw-title { font-size: 1.1rem; font-weight: 700; color: #fff; margin: 0; }
+.fw-header .fw-header-sub { color: rgba(255,255,255,0.65); }
 .fw-progress { display: flex; gap: 0.35rem; flex-wrap: wrap; }
 .fw-ps {
   font-size: 0.7rem;
