@@ -4540,3 +4540,94 @@ details[open] .agg-summary::before { content: '▼ '; }
   .fw-rh-row { grid-template-columns: 1fr; }
   .tp-metrics { grid-template-columns: 1fr; }
 }
+
+/* ── Landscape nudge ─────────────────────────────────────────────────────────
+   Only shown on phones in portrait orientation.
+   Hidden by default; JS adds .ln-visible when conditions met.            */
+.landscape-nudge {
+  display: none; /* hidden by default; overridden below on portrait mobile */
+}
+/* Show only on narrow portrait screens (phones) */
+@media (max-width: 600px) and (orientation: portrait) {
+  .landscape-nudge:not([hidden]) {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 12, 35, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    animation: lnFadeIn 0.35s ease both;
+  }
+}
+@keyframes lnFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.ln-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.65rem;
+  background: linear-gradient(160deg, #0d1e46 0%, #081528 100%);
+  border: 1px solid rgba(240,165,0,0.30);
+  border-radius: 24px;
+  padding: 2.2rem 1.8rem 1.8rem;
+  max-width: 320px;
+  width: 88vw;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+}
+.ln-phone {
+  font-size: 3rem;
+  line-height: 1;
+  animation: lnRock 2.4s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+.ln-arrow {
+  font-size: 2rem;
+  color: #f0a500;
+  font-weight: 900;
+  animation: lnSpin 2.4s ease-in-out infinite;
+  margin-top: -0.5rem;
+}
+@keyframes lnRock {
+  0%,100% { transform: rotate(0deg); }
+  40%      { transform: rotate(90deg); }
+  60%      { transform: rotate(90deg); }
+}
+@keyframes lnSpin {
+  0%,100% { opacity: 0.3; transform: rotate(0deg); }
+  40%     { opacity: 1;   transform: rotate(90deg); }
+  60%     { opacity: 1;   transform: rotate(90deg); }
+}
+.ln-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0.3rem 0 0;
+  line-height: 1.25;
+}
+.ln-sub {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.55;
+  margin: 0;
+}
+.ln-dismiss {
+  margin-top: 0.6rem;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.20);
+  color: rgba(255,255,255,0.50);
+  font-size: 0.75rem;
+  padding: 0.45rem 1.1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.ln-dismiss:hover {
+  color: rgba(255,255,255,0.80);
+  border-color: rgba(255,255,255,0.40);
+}
