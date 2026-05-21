@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#0d2248">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="app-version" content="0.5.2">
+  <meta name="app-version" content="0.5.3">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
@@ -70,17 +70,6 @@
   </script>
 </head>
 <body>
-
-  <!-- ── Landscape nudge (portrait mobile only) ────────────────────────────── -->
-  <div class="landscape-nudge" id="landscapeNudge" hidden>
-    <div class="ln-card">
-      <div class="ln-phone">📱</div>
-      <div class="ln-arrow">↻</div>
-      <p class="ln-title">Rotate for the best experience</p>
-      <p class="ln-sub">uVidNova is a map-first app — landscape mode gives you much more space to explore Ukraine's reconstruction atlas.</p>
-      <button class="ln-dismiss" id="lnDismiss">Continue in portrait</button>
-    </div>
-  </div>
 
   <!-- ── Cache bypass — ?nocache in URL unregisters SW + clears all caches ── -->
   <script>
@@ -158,7 +147,7 @@
       </p>
       <div class="landing-actions">
         <button class="lang-toggle landing-lang-toggle" id="landingLangToggle" aria-label="Switch language">🇺🇦 Українська</button>
-        <span class="landing-version">v0.5.2</span>
+        <span class="landing-version">v0.5.3</span>
         <button class="landing-force-reload" id="landingForceReload" title="Clear cache and reload latest version">↻ Force update</button>
       </div>
       <a class="landing-other-products" href="https://asadov-stack.netlify.app/" target="_blank" rel="noopener noreferrer">
@@ -246,43 +235,6 @@
           }));
         }
         Promise.all(tasks).finally(function () { window.location.reload(); });
-      });
-    }
-  })();
-  </script>
-
-  <!-- ── Landscape nudge logic ─────────────────────────────────────────────── -->
-  <script>
-  (function () {
-    var nudge      = document.getElementById('landscapeNudge');
-    var dismissBtn = document.getElementById('lnDismiss');
-    if (!nudge) return;
-
-    var DISMISSED_KEY = 'uvidnova.landscape_nudge_dismissed.v1';
-
-    function isPortraitPhone() {
-      return window.innerWidth < 600 && window.innerHeight > window.innerWidth;
-    }
-
-    function check() {
-      if (isPortraitPhone()) {
-        try { if (sessionStorage.getItem(DISMISSED_KEY)) return; } catch(e) {}
-        nudge.hidden = false;
-      } else {
-        nudge.hidden = true;
-      }
-    }
-
-    dismissBtn && dismissBtn.addEventListener('click', function () {
-      try { sessionStorage.setItem(DISMISSED_KEY, '1'); } catch(e) {}
-      nudge.hidden = true;
-    });
-
-    check();
-    window.addEventListener('resize', check);
-    if (window.screen && window.screen.orientation) {
-      window.screen.orientation.addEventListener('change', function () {
-        setTimeout(check, 150);
       });
     }
   })();
