@@ -123,7 +123,7 @@ let citiesData = null;
 let devOppsData = null;
 let warMode = false;
 let warLayer = null;
-let mapViewMode = 'damaged';
+let mapViewMode = 'ukraine';
 let selectedOblast = null; // GeoJSON feature name of selected oblast in Damaged view
 
 // Oblasts with significant current occupation (as of 2024-2025)
