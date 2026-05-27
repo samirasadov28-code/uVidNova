@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>uVidNova — Ukraine Reconstruction Finance Atlas</title>
-  <meta name="description" content="Ukraine reconstruction atlas — 100+ documented damaged assets with deterministic cost estimates and bankable financing structures.">
+  <meta name="description" content="Asset-level register of Ukraine war damage and reconstruction finance. 100+ verified assets — energy, hospitals, housing, heritage, transport — with deterministic cost estimates (RDNA3/KSE) and bankable EBRD/EU financing structures. For DFI officers and policy researchers.">
+  <meta name="keywords" content="Ukraine reconstruction, war damage, reconstruction finance, RDNA3, KSE Institute, EBRD Ukraine, EIB Ukraine, DFI investment, Okhmatdyt, Kakhovka HPP, Mariupol, Kharkiv, infrastructure finance, Ukraine recovery, EU4Ukraine">
+  <meta name="author" content="Samir Asadov">
   <meta name="theme-color" content="#0d2248">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -14,20 +16,95 @@
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="uVidNova">
   <meta property="og:title"       content="uVidNova — Ukraine Reconstruction Finance Atlas">
-  <meta property="og:description" content="Asset-level, project-finance-grade reconstruction opportunities in Ukraine. USD 41B+ pipeline. Every figure traceable to RDNA3 and KSE benchmarks.">
+  <meta property="og:description" content="Asset-level, project-finance-grade reconstruction opportunities in Ukraine. USD 41B+ pipeline across 100+ verified damaged assets. Every figure traceable to RDNA3 and KSE benchmarks.">
   <meta property="og:url"         content="https://atlasvidnova.org/">
   <meta property="og:image"       content="https://atlasvidnova.org/assets/logo_512.png">
 
   <!-- Twitter card -->
-  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="uVidNova — Ukraine Reconstruction Finance Atlas">
-  <meta name="twitter:description" content="50 anchor assets. USD 41B+ pipeline. Deterministic cost estimates. Defensible financing structures. Every number traceable to source.">
+  <meta name="twitter:description" content="100+ war-damaged assets. USD 41B+ pipeline. Deterministic cost estimates. EBRD/EU financing structures. Every number traceable to source.">
   <meta name="twitter:image"       content="https://atlasvidnova.org/assets/logo_512.png">
 
   <link rel="manifest"         href="/manifest.webmanifest">
   <link rel="icon"             href="/assets/logo_192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/logo_192.png">
   <link rel="canonical"        href="https://atlasvidnova.org/">
+
+  <!-- Structured data: Dataset + WebSite -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org/",
+      "@type": "Dataset",
+      "name": "uVidNova Ukraine Reconstruction Finance Atlas",
+      "description": "Asset-level register of wartime damage and reconstruction financing opportunities in Ukraine, covering 100+ verified assets across energy, healthcare, education, residential, heritage, transport, water, industrial, and public administration sectors. Cost estimates are derived deterministically from RDNA3 (World Bank/EC/UN, Feb 2024) and KSE Institute benchmarks.",
+      "url": "https://atlasvidnova.org",
+      "identifier": "https://atlasvidnova.org",
+      "keywords": [
+        "Ukraine reconstruction", "war damage assessment", "reconstruction finance",
+        "RDNA3", "KSE Institute", "DFI investment", "EBRD Ukraine", "EIB Ukraine",
+        "EU4Ukraine", "IFC", "Okhmatdyt", "Kakhovka HPP", "Mariupol Drama Theatre",
+        "infrastructure finance", "Ukraine recovery", "project finance", "MIGA"
+      ],
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creator": {
+        "@type": "Person",
+        "name": "Samir Asadov",
+        "url": "https://atlasvidnova.org/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "uVidNova",
+        "url": "https://atlasvidnova.org"
+      },
+      "temporalCoverage": "2022-02-24/..",
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Ukraine",
+        "geo": {
+          "@type": "GeoShape",
+          "box": "44.0 22.0 52.4 40.2"
+        }
+      },
+      "variableMeasured": [
+        "Reconstruction cost — baseline (USD millions)",
+        "Reconstruction cost — code-compliant (USD millions)",
+        "Reconstruction cost — build-back-better (USD millions)",
+        "Financing structure — grant / concessional / public equity / private (%)",
+        "Wartime damage level (light / moderate / severe / destroyed)",
+        "Rebuildability classification",
+        "Re-damage count"
+      ],
+      "measurementTechnique": "Deterministic formula: unit_cost × physical_quantity × destruction_factor × regional_multiplier × path_multiplier × contingency. Unit costs sourced from RDNA3 and KSE Institute. No AI-generated numeric output.",
+      "dateModified": "2026-05-27",
+      "inLanguage": ["en", "uk", "fr", "es", "de"],
+      "citation": [
+        {
+          "@type": "CreativeWork",
+          "name": "Ukraine Rapid Damage and Needs Assessment, Third Edition (RDNA3)",
+          "author": "World Bank, European Commission, United Nations",
+          "datePublished": "2024-02"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Russia Will Pay — Ukraine War Damage Tracker",
+          "author": "KSE Institute",
+          "url": "https://kse.ua/russia-will-pay/"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "uVidNova",
+      "url": "https://atlasvidnova.org",
+      "description": "Ukraine Reconstruction Finance Atlas — asset-level wartime damage register with deterministic cost estimates and bankable financing structures"
+    }
+  ]
+  </script>
+
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js').catch(function() {});
