@@ -170,21 +170,115 @@ img { max-width: 100%; height: auto; }
   color: var(--colour-gold-light) !important;
   font-weight: 600;
 }
-.lang-toggle {
-  font-size: 1.35rem;
-  line-height: 1;
+/* ── Language picker ─────────────────────────────────────────────────────── */
+.lang-toggle { /* legacy fallback — replaced by .lang-picker-btn at runtime */
+  font-size: 0.8rem;
   font-family: var(--font-sans);
-  padding: 0.18rem 0.45rem;
+  padding: 0.22rem 0.5rem;
   border-radius: 999px;
   border: 1.5px solid rgba(255,255,255,0.3);
   background: transparent;
+  color: inherit;
   cursor: pointer;
-  transition: all 0.15s;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
+  gap: 0.25rem;
 }
-.lang-toggle:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.6); transform: scale(1.08); }
+
+.lang-picker {
+  position: relative;
+  display: inline-flex;
+}
+.landing-lang-picker { margin-right: auto; }
+
+.lang-picker-btn {
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  line-height: 1;
+}
+.lang-picker-btn:hover { background: rgba(255,255,255,0.13); border-color: rgba(255,255,255,0.6); }
+
+.lpb-flag    { font-size: 1.05rem; line-height: 1; }
+.lpb-code    { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; }
+.lpb-chevron { font-size: 0.58rem; opacity: 0.65; margin-left: 0.05rem; }
+.lpb-noflag  {
+  font-size: 0.62rem; font-weight: 800;
+  border: 1.5px solid rgba(255,255,255,0.45);
+  border-radius: 3px; padding: 1px 3px;
+  line-height: 1.2;
+}
+
+.lang-picker-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 7px);
+  right: 0;
+  background: #0d1c3f;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 12px;
+  padding: 8px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  z-index: 9999;
+  min-width: 190px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
+  animation: lpDropIn 0.15s ease;
+}
+.lang-picker-dropdown.open { display: grid; }
+
+@keyframes lpDropIn {
+  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+.lang-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 7px 3px 5px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s, color 0.1s;
+  font-family: var(--font-sans);
+  line-height: 1;
+}
+.lang-option:hover  { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.18); color: #fff; }
+.lang-option.active {
+  background: rgba(255,215,90,0.14);
+  border-color: rgba(255,215,90,0.45);
+  color: var(--colour-gold-light);
+}
+
+.lo-flag   { font-size: 1.3rem; }
+.lo-code   { font-size: 0.56rem; font-weight: 700; letter-spacing: 0.05em; opacity: 0.75; }
+.lo-noflag {
+  font-size: 0.6rem; font-weight: 800;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  border-radius: 3px;
+  padding: 2px 4px;
+  min-width: 24px;
+  text-align: center;
+  line-height: 1.2;
+}
+.lang-option.active .lo-noflag { border-color: rgba(255,215,90,0.55); }
+.lang-option.active .lo-code   { opacity: 1; }
 
 /* ── Map layout — map always fills the frame; panels slide over as overlays ─── */
 .map-layout {
@@ -1014,7 +1108,7 @@ body.asset-page { display: flex; flex-direction: column; }
 .landing-lang-toggle {
   font-size: 0.78rem;
   padding: 0.22rem 0.6rem;
-  margin-right: auto;  /* push version+reload to the right */
+  margin-right: auto;
 }
 .landing-update-prompt {
   color: var(--colour-gold-light);
@@ -1502,7 +1596,7 @@ body.asset-page { display: flex; flex-direction: column; }
   .wordmark-text { font-size: 1.05rem; }
   .site-nav a { display: none; }      /* nav links hidden — accessible via tabs */
   .header-finance-btn { display: none; } /* Finance tab covers this */
-  .lang-toggle { font-size: 0.75rem; padding: 0.22rem 0.45rem; }
+  .lang-toggle, .lang-picker-btn { font-size: 0.72rem; padding: 0.2rem 0.42rem; }
 
   /* Landing — smaller card so the background landscape shows */
   .landing-overlay {
@@ -3496,19 +3590,10 @@ details[open] .agg-summary::before { content: '▼ '; }
   cursor: help;
 }
 
-/* ── Lang toggle ─────────────────────────────────────────────────────────── */
-.lang-toggle {
-  background: none;
-  border: 1px solid rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.75);
-  font-size: 0.78rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: border-color 0.15s, color 0.15s;
-  white-space: nowrap;
+/* ── Lang toggle (asset/trust page context) ──────────────────────────────── */
+.lang-toggle, .lang-picker-btn {
+  color: rgba(255,255,255,0.85);
 }
-.lang-toggle:hover { border-color: rgba(255,255,255,0.55); color: #fff; }
 
 /* ── Growth sectors panel (asset page) ──────────────────────────────────── */
 .gs-panel { margin-top: 1.5rem; }
@@ -3905,7 +3990,7 @@ details[open] .agg-summary::before { content: '▼ '; }
   .wordmark-text { font-size: 0.9rem; }
   .logo-img { width: 24px; height: 24px; }
   .map-view-tab { font-size: 0.62rem; padding: 0.4rem 0.4rem; }
-  .lang-toggle { font-size: 0.68rem; padding: 0.2rem 0.35rem; }
+  .lang-toggle, .lang-picker-btn { font-size: 0.65rem; padding: 0.18rem 0.32rem; }
   .landing-title { font-size: 1.55rem; }
   .landing-cta { font-size: 0.82rem; padding: 0.5rem 1.1rem; }
 }
