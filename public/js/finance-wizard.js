@@ -1888,7 +1888,7 @@ ${r.repAmt > 0 ? `
 = <strong>${r.repPctFrozen.toFixed(3)}%</strong> of G7-frozen Russian assets (~$300B)<br>
 Source: KSE Institute "Russia Will Pay" tracker.</p>` : ''}
 
-<div class="disclaimer">Cost and financing-structure figures are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and comparable Ukrainian precedents. They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence. uVidNova — atlasvidnova.org</div>
+<div class="disclaimer">Cost and financing-structure figures are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and comparable Ukrainian precedents. They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence. uVidNova — uvidnova.netlify.app</div>
 </body></html>`;
 
   const blob = new Blob([html], { type: 'text/html' });
