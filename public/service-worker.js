@@ -4,7 +4,7 @@
  * Strategy: cache-first for static assets; network-first for data files.
  */
 
-const CACHE_VERSION = 'uvidnova-v53';
+const CACHE_VERSION = 'uvidnova-v54';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const DATA_CACHE    = `${CACHE_VERSION}-data`;
 
@@ -32,7 +32,10 @@ const STATIC_ASSETS = [
   '/js/growth-sectors.js',
   '/js/scenario-engine.js',
   '/js/aggregation.js',
-  '/manifest.webmanifest'
+  '/manifest.webmanifest',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png',
+  '/icons/icon-512-maskable.png'
 ];
 
 const DATA_ASSETS = [

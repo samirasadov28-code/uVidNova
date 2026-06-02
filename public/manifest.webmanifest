@@ -1,27 +1,35 @@
 {
   "name": "uVidNova — Ukraine Reconstruction Atlas",
   "short_name": "uVidNova",
-  "description": "Live reconstruction-finance atlas of Ukraine. Asset-level damage records with deterministic cost estimates and bankable financing structures.",
-  "start_url": "/",
+  "description": "The live reconstruction-finance atlas of Ukraine — per-asset damage, cost paths, and financing structures.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#0a1628",
-  "theme_color": "#0d2248",
-  "orientation": "any",
-  "lang": "en-UA",
+  "theme_color": "#1a3a6b",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["finance", "business", "education"],
   "icons": [
     {
-      "src": "/assets/logo_192.png",
+      "src": "/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/assets/logo_512.png",
+      "src": "/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "screenshots": [],
-  "categories": ["finance", "news", "productivity"]
+  "screenshots": []
 }
