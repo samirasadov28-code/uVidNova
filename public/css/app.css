@@ -1105,6 +1105,19 @@ body.asset-page { display: flex; flex-direction: column; }
 }
 .landing-force-reload:hover { color: rgba(255,255,255,0.65); border-color: rgba(255,255,255,0.25); background: rgba(10,30,80,0.75); }
 .landing-force-reload:disabled { opacity: 0.4; cursor: default; }
+.landing-legal {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 0.6rem;
+  justify-content: center;
+}
+.landing-legal-link {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.landing-legal-link:hover { color: rgba(255,255,255,0.75); }
 .landing-lang-toggle {
   font-size: 0.78rem;
   padding: 0.22rem 0.6rem;
