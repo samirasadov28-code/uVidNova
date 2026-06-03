@@ -2,12 +2,12 @@ name: Weekly Refresh
 
 on:
   schedule:
-    # Monday 06:00 UTC
-    - cron: '0 6 * * 1'
+    # Every Monday 07:00 UTC
+    - cron: '0 7 * * 1'
   workflow_dispatch:
     inputs:
       dry_run:
-        description: 'Dry run (no PR created)'
+        description: 'Dry run (generates report but does not commit or open PR)'
         type: boolean
         default: false
 
@@ -36,47 +36,57 @@ jobs:
         run: |
           node scripts/weekly-refresh.js ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
 
-      - name: Check for report
-        id: check_report
+      - name: Locate report file
+        id: report
         run: |
           REPORT=$(ls reports/weekly-*.json 2>/dev/null | sort | tail -1)
-          if [ -n "$REPORT" ]; then
-            echo "report_path=$REPORT" >> $GITHUB_OUTPUT
-            echo "has_report=true" >> $GITHUB_OUTPUT
+          if [ -z "$REPORT" ]; then
+            echo "No report file found — dry run or script error." >> "$GITHUB_STEP_SUMMARY"
+            echo "found=false" >> "$GITHUB_OUTPUT"
           else
-            echo "has_report=false" >> $GITHUB_OUTPUT
+            echo "found=true"  >> "$GITHUB_OUTPUT"
+            echo "path=$REPORT" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Build PR body
-        if: steps.check_report.outputs.has_report == 'true' && github.event.inputs.dry_run != 'true'
-        id: pr_body
+      - name: Extract signal counts
+        if: steps.report.outputs.found == 'true'
+        id: counts
         run: |
-          REPORT="${{ steps.check_report.outputs.report_path }}"
-          DATE=$(node -e "const r=require('./$REPORT'); console.log(r.date)")
-          REDAMAGE=$(node -e "const r=require('./$REPORT'); console.log(r.re_damage_signals.length)")
-          LIFECYCLE=$(node -e "const r=require('./$REPORT'); console.log(r.lifecycle_signals.length)")
-          CANDIDATES=$(node -e "const r=require('./$REPORT'); console.log(r.candidate_new_assets.length)")
-          ITEMS=$(node -e "const r=require('./$REPORT'); console.log(r.feed_items_fetched)")
+          R="${{ steps.report.outputs.path }}"
+          echo "date=$(jq -r '.date' "$R")"                                         >> "$GITHUB_OUTPUT"
+          echo "items=$(jq '.feed_items_fetched' "$R")"                             >> "$GITHUB_OUTPUT"
+          echo "redamage=$(jq '.re_damage_signals | length' "$R")"                  >> "$GITHUB_OUTPUT"
+          echo "lifecycle=$(jq '.lifecycle_signals | length' "$R")"                 >> "$GITHUB_OUTPUT"
+          echo "candidates=$(jq '.candidate_new_assets | length' "$R")"             >> "$GITHUB_OUTPUT"
+          echo "stale=$(jq '.data_quality.stale_assets | length' "$R")"             >> "$GITHUB_OUTPUT"
+          echo "pending=$(jq '.data_quality.pending_data_assets | length' "$R")"   >> "$GITHUB_OUTPUT"
+          echo "highrd=$(jq '.data_quality.high_redamage_assets | length' "$R")"   >> "$GITHUB_OUTPUT"
 
-          cat >> $GITHUB_STEP_SUMMARY << EOF
-          ## Weekly Refresh — $DATE
-          - Feed items fetched: $ITEMS
-          - Re-damage signals: $REDAMAGE
-          - Lifecycle signals: $LIFECYCLE
-          - Candidate new assets: $CANDIDATES
+      - name: Write job summary
+        if: steps.report.outputs.found == 'true'
+        run: |
+          cat >> "$GITHUB_STEP_SUMMARY" << EOF
+          ## Weekly Refresh — ${{ steps.counts.outputs.date }}
+
+          | Signal | Count |
+          |--------|-------|
+          | Feed items fetched | ${{ steps.counts.outputs.items }} |
+          | Re-damage signals | ${{ steps.counts.outputs.redamage }} |
+          | Lifecycle signals | ${{ steps.counts.outputs.lifecycle }} |
+          | Candidate new assets | ${{ steps.counts.outputs.candidates }} |
+          | Stale assets (>30 d) | ${{ steps.counts.outputs.stale }} |
+          | Pending-data specs | ${{ steps.counts.outputs.pending }} |
+          | High re-damage (≥2) | ${{ steps.counts.outputs.highrd }} |
           EOF
 
-          echo "date=$DATE" >> $GITHUB_OUTPUT
-          echo "redamage=$REDAMAGE" >> $GITHUB_OUTPUT
-          echo "lifecycle=$LIFECYCLE" >> $GITHUB_OUTPUT
-          echo "candidates=$CANDIDATES" >> $GITHUB_OUTPUT
-
       - name: Commit report and open draft PR
-        if: steps.check_report.outputs.has_report == 'true' && github.event.inputs.dry_run != 'true'
+        if: >
+          steps.report.outputs.found == 'true' &&
+          github.event.inputs.dry_run != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          DATE="${{ steps.pr_body.outputs.date }}"
+          DATE="${{ steps.counts.outputs.date }}"
           BRANCH="refresh/weekly-${DATE}"
 
           git config user.name  "github-actions[bot]"
@@ -87,27 +97,44 @@ jobs:
           git commit -m "data: weekly refresh report ${DATE}"
           git push origin "$BRANCH"
 
+          # Write PR body to a temp file (avoids heredoc quoting issues)
+          cat > /tmp/pr-body.md << BODY
+          ## Weekly Refresh — ${DATE}
+
+          Auto-generated by the weekly refresh workflow. **Nothing in this PR auto-merges.**
+          Review each signal, make changes manually, run \`node scripts/validate-all.js\`, then merge.
+
+          ### Signals from RSS feeds
+          | Signal | Count |
+          |--------|-------|
+          | Feed items fetched | ${{ steps.counts.outputs.items }} |
+          | Re-damage signals | ${{ steps.counts.outputs.redamage }} |
+          | Lifecycle signals | ${{ steps.counts.outputs.lifecycle }} |
+          | Candidate new assets (LLM-classified) | ${{ steps.counts.outputs.candidates }} |
+
+          ### Data quality (local scan)
+          | Check | Count |
+          |-------|-------|
+          | Stale assets — \`last_reviewed\` > 30 days | ${{ steps.counts.outputs.stale }} |
+          | Assets with pending-data physical specs | ${{ steps.counts.outputs.pending }} |
+          | Assets with re-damage count ≥ 2 | ${{ steps.counts.outputs.highrd }} |
+
+          ### Review checklist
+          - [ ] Verify each re-damage signal against source links in \`reports/weekly-${DATE}.json\`
+          - [ ] Update \`damage.re_damage_count\` on confirmed re-struck assets
+          - [ ] Verify each lifecycle signal; update \`wartime_status.lifecycle\` accordingly
+          - [ ] For each candidate new asset: verify LLM classification, confirm sources,
+                run \`node scripts/new-asset.js <ASSET_ID>\`, fill physical specs
+          - [ ] For stale assets: update \`last_reviewed\` date after verification
+          - [ ] Run \`node scripts/validate-all.js\` — must pass before merge
+          - [ ] Bump \`CACHE_VERSION\` in \`service-worker.js\` if any \`public/\` files changed
+
+          > Report file: \`reports/weekly-${DATE}.json\`
+          BODY
+
           gh pr create \
             --title "Weekly refresh — ${DATE}" \
-            --body "$(cat << 'PREOF'
-## Weekly Refresh — ${{ steps.pr_body.outputs.date }}
-
-Auto-generated by the weekly refresh workflow. **Nothing in this PR auto-merges.** Review each signal and apply changes manually.
-
-### Signals
-- **Re-damage signals:** ${{ steps.pr_body.outputs.redamage }} — check \`re_damage_count\` fields
-- **Lifecycle signals:** ${{ steps.pr_body.outputs.lifecycle }} — check \`wartime_status.lifecycle\` fields
-- **Candidate new assets:** ${{ steps.pr_body.outputs.candidates }} — review LLM classifications, verify against sources, run \`scripts/new-asset.js\` if valid
-
-### Review checklist
-- [ ] Verify each re-damage signal against source links in the report
-- [ ] Update \`re_damage_count\` on confirmed re-damaged assets
-- [ ] Verify each lifecycle signal and update \`wartime_status.lifecycle\`
-- [ ] For each candidate new asset: verify classification, add physical specs, run compute-costs, create via \`scripts/new-asset.js\`
-- [ ] Update \`data/assets/index.json\` if new assets added
-- [ ] Run \`node scripts/validate-all.js\` before merging
-PREOF
-)" \
+            --body-file /tmp/pr-body.md \
             --draft \
             --base main \
             --head "$BRANCH"
