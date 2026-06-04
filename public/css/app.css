@@ -1107,15 +1107,20 @@ body.asset-page { display: flex; flex-direction: column; }
 .landing-force-reload:disabled { opacity: 0.4; cursor: default; }
 .landing-legal {
   display: flex;
-  gap: 1.2rem;
-  margin-top: 0.6rem;
+  gap: 1.5rem;
+  margin-top: 0.7rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .landing-legal-link {
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   color: rgba(255,255,255,0.45);
   text-decoration: none;
   transition: color 0.15s;
+  padding: 0.25rem 0.1rem; /* tap target */
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
 }
 .landing-legal-link:hover { color: rgba(255,255,255,0.75); }
 .landing-lang-toggle {
@@ -1632,9 +1637,23 @@ body.asset-page { display: flex; flex-direction: column; }
   .landing-cta { font-size: 0.88rem; padding: 0.55rem 1.4rem; margin: 0.5rem 0 0.4rem; }
   .landing-audience { font-size: 0.68rem; }
   .landing-disclaimer-small { font-size: 0.65rem; }
-  .landing-actions { margin-top: 0.5rem; }
+  .landing-actions {
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    row-gap: 0.35rem;
+    padding-top: 0.65rem;
+  }
   .landing-version { font-size: 0.65rem; }
   .landing-force-reload { font-size: 0.63rem; }
+  .landing-legal {
+    gap: 1.8rem;
+    margin-top: 0.5rem;
+  }
+  .landing-legal-link {
+    font-size: 0.78rem;
+    min-height: 38px;
+    padding: 0.3rem 0.25rem;
+  }
   .name-etymology { column-gap: 0.35rem; margin: 0.3rem 0 0.8rem; max-width: 280px; }
   .etym-mark { font-size: 1.3rem; }
   .etym-source, .etym-meaning { font-size: 0.54rem; }
