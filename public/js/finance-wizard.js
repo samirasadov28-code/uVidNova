@@ -316,11 +316,19 @@ function seedTranchesFromAssets() {
 function goNext() {
   if (!validate()) return;
   if (W.step === 2 && W.scope !== 'greenfield') seedTranchesFromAssets();
-  if (W.step < 4) { W.step++; render(); }
+  if (W.step < 4) {
+    W.step++;
+    render();
+    document.querySelector('.fw-body')?.scrollTo({ top: 0, behavior: 'instant' });
+  }
 }
 
 function goBack() {
-  if (W.step > 1) { W.step--; render(); }
+  if (W.step > 1) {
+    W.step--;
+    render();
+    document.querySelector('.fw-body')?.scrollTo({ top: 0, behavior: 'instant' });
+  }
 }
 
 function validate() {
