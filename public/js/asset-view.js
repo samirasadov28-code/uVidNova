@@ -61,12 +61,12 @@ const DE_RISKING_LABELS = {
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
 function fmt(n) {
-  if (n === null || n === undefined) return '—';
+  if (n === null || n === undefined) return '-';
   return n.toLocaleString('en-US');
 }
 
 function fmtUSD(m) {
-  if (m === null || m === undefined) return '—';
+  if (m === null || m === undefined) return '-';
   return `USD ${fmt(m)}M`;
 }
 
@@ -322,7 +322,7 @@ function renderFinancing(a) {
           ? (isEra
               ? `<strong>${v}%</strong> <span class="trust-annual-chip">USD ${eraAnnual.toFixed(1)}M/yr</span>`
               : `<strong>${v}%</strong>`)
-          : '—';
+          : '-';
         return `<tr class="${v === 0 ? 'tranche-zero' : ''}">
           <td><span class="tranche-dot ${m.css}"></span>${isEra ? 'ERA / Trust (availability payment)' : m.label}</td>
           <td class="tranche-pct">${valCell}</td>
@@ -394,7 +394,7 @@ function renderFinancing(a) {
               const v = s[m.key] ?? 0;
               return `<tr class="${v === 0 ? 'tranche-zero' : ''}">
                 <td><span class="tranche-dot ${m.css}"></span>${m.label}</td>
-                <td class="tranche-pct">${v > 0 ? `<strong>${v}%</strong>` : '—'}</td>
+                <td class="tranche-pct">${v > 0 ? `<strong>${v}%</strong>` : '-'}</td>
               </tr>`;
             }).join('');
 

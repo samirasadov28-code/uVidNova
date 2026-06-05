@@ -903,13 +903,13 @@ function renderPrecedents() {
 function renderPrecedentCard(p) {
   const isTrust   = p.is_trust === true;
   const initStr   = p.initial_capitalisation_usd_bn != null
-    ? fmtBn(p.initial_capitalisation_usd_bn) : '—';
+    ? fmtBn(p.initial_capitalisation_usd_bn) : '-';
   const currentStr= p.current_aum_usd_bn != null
-    ? fmtBn(p.current_aum_usd_bn) : isTrust ? `${fmtBn(state.nav_usd_bn)} (initial)` : '—';
+    ? fmtBn(p.current_aum_usd_bn) : isTrust ? `${fmtBn(state.nav_usd_bn)} (initial)` : '-';
   const returnStr = p.real_return_pct != null
     ? `${p.real_return_pct}% real` : 'N/A (grant vehicle)';
-  const splitStr  = p.portfolio_split ?? '—';
-  const drawStr   = p.drawdown_rule ?? '—';
+  const splitStr  = p.portfolio_split ?? '-';
+  const drawStr   = p.drawdown_rule ?? '-';
 
   return `
     <div class="trust-precedent-card ${isTrust ? 'is-trust' : ''}">

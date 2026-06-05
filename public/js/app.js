@@ -69,16 +69,16 @@ function makeCompletedIcon() {
 // ── Popup content ─────────────────────────────────────────────────────────────
 
 function fmtUSD(m) {
-  if (m == null) return '—';
+  if (m == null) return '-';
   return `USD ${m}M`;
 }
 
 function makePopupHTML(asset) {
   const name           = getName(asset);
   const sector         = t(`sector.${asset.sector}`) || SECTOR_LABELS[asset.sector] || asset.sector;
-  const level          = asset.damage?.destruction_level ?? '—';
-  const lifecycle      = asset.wartime_status?.lifecycle ?? '—';
-  const rebuildability = asset.wartime_status?.rebuildability ?? '—';
+  const level          = asset.damage?.destruction_level ?? '-';
+  const lifecycle      = asset.wartime_status?.lifecycle ?? '-';
+  const rebuildability = asset.wartime_status?.rebuildability ?? '-';
   const central        = asset.cost_paths?.baseline?.central_usd_m;
   const pending        = asset.cost_paths?.pending_methodology;
   const reCount        = asset.damage?.re_damage_count ?? 0;
@@ -287,7 +287,7 @@ function showOblastPanel(info, featureName) {
 
   const lang = getLang();
   const name      = lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName);
-  const capital   = lang === 'uk' ? (info?.capital_uk ?? '—') : (info?.capital_en ?? '—');
+  const capital   = lang === 'uk' ? (info?.capital_uk ?? '-') : (info?.capital_en ?? '-');
   const famous    = lang === 'uk' ? (info?.famous_for_uk ?? '') : (info?.famous_for_en ?? '');
   const recon     = lang === 'uk' ? (info?.reconstruction_uk ?? '') : (info?.reconstruction_en ?? '');
   const resources = lang === 'uk' ? (info?.resources_uk ?? '') : (info?.resources_en ?? '');
@@ -1121,7 +1121,7 @@ function renderAssetList(assets) {
 
     const name    = getName(asset);
     const sector  = t(`sector.${asset.sector}`) || SECTOR_LABELS[asset.sector] || asset.sector;
-    const level   = asset.damage?.destruction_level ?? '—';
+    const level   = asset.damage?.destruction_level ?? '-';
     const colour  = SECTOR_COLOURS[asset.sector] ?? '#555';
     const reCount = asset.damage?.re_damage_count ?? 0;
     const central = asset.cost_paths?.baseline?.central_usd_m;

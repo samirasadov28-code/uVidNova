@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin — uVidNova Asset Orchestrator</title>
+  <title>Admin - uVidNova Asset Orchestrator</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#1a3a6b">
 
@@ -20,7 +20,7 @@
         <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36" loading="lazy">
         <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
       </a>
-      <p class="tagline">Asset Orchestrator — Owner Only</p>
+      <p class="tagline">Asset Orchestrator - Owner Only</p>
       <nav class="site-nav">
         <a href="/">← Map</a>
         <a href="/about.html">Methodology</a>
@@ -59,16 +59,16 @@
       <h1 class="admin-page-title">Asset Orchestrator</h1>
       <p class="admin-page-sub">
         Two-stage pipeline: classify OSINT input → generate narration + cost payload.
-        Numbers come from deterministic lookups only — the LLM classifies and narrates, never estimates.
+        Numbers come from deterministic lookups only - the LLM classifies and narrates, never estimates.
       </p>
     </div>
 
     <!-- ── Stage 1: Classify ─────────────────────────────────────────────── -->
     <section class="admin-section" id="stage1Section">
-      <h2 class="admin-section-title">Stage 1 — Classify</h2>
+      <h2 class="admin-section-title">Stage 1 - Classify</h2>
       <p class="admin-section-desc">
         Submit raw OSINT input. The classifier extracts structured fields: asset type, physical specs,
-        damage level, and wartime status. No numbers are invented — unknown specs are flagged as
+        damage level, and wartime status. No numbers are invented - unknown specs are flagged as
         <code>pending_data</code>.
       </p>
 
@@ -142,13 +142,13 @@
     <!-- ── Stage 2: Narrate ───────────────────────────────────────────────── -->
     <section class="admin-section admin-section-locked" id="stage2Section" aria-disabled="true">
       <h2 class="admin-section-title">
-        Stage 2 — Narrate
+        Stage 2 - Narrate
         <span class="admin-locked-badge" id="stage2LockedBadge">Complete Stage 1 first</span>
       </h2>
       <p class="admin-section-desc">
         Server performs deterministic cost lookups, selects financing templates, retrieves comparable
         precedents, then narrates the complete structured payload. Every number in the narration is
-        traced back to the payload — unmatched tokens abort publication.
+        traced back to the payload - unmatched tokens abort publication.
       </p>
 
       <div class="admin-form-actions">
@@ -164,7 +164,7 @@
         <span id="stage2ErrorMsg"></span>
         <!-- Human review block, shown only when humanReview: true -->
         <div class="admin-review-block" id="humanReviewBlock" hidden>
-          <p class="admin-review-title">Unmatched numeric tokens — human review required</p>
+          <p class="admin-review-title">Unmatched numeric tokens - human review required</p>
           <pre class="admin-pre admin-pre-sm" id="unmatchedTokensPre"></pre>
         </div>
       </div>
@@ -199,7 +199,7 @@
 
   <!-- ── Version bar ───────────────────────────────────────────────────────── -->
   <div class="version-bar" role="status">
-    <span class="version-label">v0.0.3 — admin</span>
+    <span class="version-label">v0.0.3 - admin</span>
     <span style="margin-left:auto; color: rgba(255,255,255,0.4); font-size:0.68rem;">
       Owner-only tool · not linked from public UI
     </span>

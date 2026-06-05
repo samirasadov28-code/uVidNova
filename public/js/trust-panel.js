@@ -20,13 +20,13 @@ let _state = {
 };
 
 function fmtBn(v) {
-  if (v == null || isNaN(v)) return '—';
+  if (v == null || isNaN(v)) return '-';
   if (Math.abs(v) >= 1000) return `$${(v/1000).toFixed(1)}T`;
   return `$${(+v).toFixed(1)}B`;
 }
 
 function fmtM(v) {
-  if (v == null || isNaN(v)) return '—';
+  if (v == null || isNaN(v)) return '-';
   if (Math.abs(v) >= 1000) return `$${(v/1000).toFixed(1)}B`;
   return `$${(+v).toFixed(0)}M`;
 }
@@ -123,7 +123,7 @@ function renderPanel() {
           ${[1,3,5,10,15,20,25,30].map(yr => {
             const n = r.navAt(yr);
             const d = r.deployedAt(yr);
-            return `<tr${n != null && n < _state.corpus_usd_bn * 0.3 ? ' class="tp-tr-low"' : ''}><td>Yr ${yr}</td><td>${n != null ? fmtBn(n) : '—'}</td><td>${fmtBn(d)}</td></tr>`;
+            return `<tr${n != null && n < _state.corpus_usd_bn * 0.3 ? ' class="tp-tr-low"' : ''}><td>Yr ${yr}</td><td>${n != null ? fmtBn(n) : '-'}</td><td>${fmtBn(d)}</td></tr>`;
           }).join('')}
         </tbody>
       </table>

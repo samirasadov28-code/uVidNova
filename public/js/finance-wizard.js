@@ -383,7 +383,7 @@ function portfolioCost(path) {
   return assetCost + growthCost;
 }
 
-function fmtM(n) { return n != null ? `$${(+n).toLocaleString()}M` : '—'; }
+function fmtM(n) { return n != null ? `$${(+n).toLocaleString()}M` : '-'; }
 
 // ── Intro screen (first open only) ───────────────────────────────────────────
 
@@ -1039,8 +1039,8 @@ function trancheRowHTML(t, total) {
   const displayAmt  = isTrustMode
     ? `Annual: $${annualTrust.toLocaleString()}M/yr`
     : isPriWrap
-      ? `Coverage: $${total > 0 ? (total * pct / 100).toFixed(1) : '—'}M`
-      : `$${total > 0 ? (total * pct / 100).toFixed(1) : '—'}M`;
+      ? `Coverage: $${total > 0 ? (total * pct / 100).toFixed(1) : '-'}M`
+      : `$${total > 0 ? (total * pct / 100).toFixed(1) : '-'}M`;
 
   const repNote = t.type === 'reparations' && total > 0 ? (() => {
     const repAmt = total * pct / 100;
@@ -1340,14 +1340,14 @@ function step4HTML() {
     const trustLabel  = isTrustMode
       ? ` <span class="trust-annual-chip">Annual: USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr †</span>`
       : '';
-    const displayPct  = isTrustMode ? '—' : `${t.pct.toFixed(0)}%`;
+    const displayPct  = isTrustMode ? '-' : `${t.pct.toFixed(0)}%`;
     const displayAmt  = isTrustMode ? `USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr` : fmtM(t.amt.toFixed(1));
     return `<tr>
       <td><span class="fw-type-dot" style="background:${t.def.col}"></span>${isTrustMode ? 'ERA/Trust — Availability Payment' : t.def.label}${confidenceBadge(t.type)}${trustLabel}</td>
       <td>${displayPct}</td>
       <td>${displayAmt}</td>
       <td>${t.effR.toFixed(1)}% ${warTag}</td>
-      <td>${t.tenor ?? '—'}</td>
+      <td>${t.tenor ?? '-'}</td>
     </tr>`;
   }).join('');
 
@@ -1577,14 +1577,14 @@ function step4GreenfieldHTML() {
       : '';
     // Use _labelOverride for seeded greenfield tranches if present
     const trancheLabel = t._labelOverride ?? (isTrustMode ? 'ERA/Trust — Availability Payment' : t.def.label);
-    const displayPct   = isTrustMode ? '—' : `${t.pct.toFixed(0)}%`;
+    const displayPct   = isTrustMode ? '-' : `${t.pct.toFixed(0)}%`;
     const displayAmt   = isTrustMode ? `USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr` : fmtM(t.amt.toFixed(1));
     return `<tr>
       <td><span class="fw-type-dot" style="background:${t.def.col}"></span>${trancheLabel}${confidenceBadge(t.type)}${trustLabel}</td>
       <td>${displayPct}</td>
       <td>${displayAmt}</td>
       <td>${t.effR.toFixed(1)}% ${warTag}</td>
-      <td>${t.tenor ?? '—'}</td>
+      <td>${t.tenor ?? '-'}</td>
     </tr>`;
   }).join('');
 
@@ -1853,7 +1853,7 @@ function exportBrief() {
       <td>${t.pct.toFixed(0)}%</td>
       <td>${fmtM(t.amt.toFixed(1))}</td>
       <td>${t.effR.toFixed(1)}%${COMMERCIAL_TYPES.has(t.type) && W.timing !== 'after' ? ' (incl. wartime +' + WAR_PREMIUM + '%)' : ''}</td>
-      <td>${t.tenor ?? '—'}</td>
+      <td>${t.tenor ?? '-'}</td>
     </tr>`).join('')}
   </tbody>
 </table>

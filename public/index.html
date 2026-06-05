@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>uVidNova — Ukraine Reconstruction Finance Atlas</title>
-  <meta name="description" content="Asset-level register of Ukraine war damage and reconstruction finance. 100+ verified assets — energy, hospitals, housing, heritage, transport — with deterministic cost estimates (RDNA3/KSE) and bankable EBRD/EU financing structures. For DFI officers and policy researchers.">
+  <title>uVidNova - Ukraine Reconstruction Finance Atlas</title>
+  <meta name="description" content="Asset-level register of Ukraine war damage and reconstruction finance. 100+ verified assets - energy, hospitals, housing, heritage, transport - with deterministic cost estimates (RDNA3/KSE) and bankable EBRD/EU financing structures. For DFI officers and policy researchers.">
   <meta name="keywords" content="Ukraine reconstruction, war damage, reconstruction finance, RDNA3, KSE Institute, EBRD Ukraine, EIB Ukraine, DFI investment, Okhmatdyt, Kakhovka HPP, Mariupol, Kharkiv, infrastructure finance, Ukraine recovery, EU4Ukraine">
   <meta name="author" content="Samir Asadov">
   <meta name="theme-color" content="#1a3a6b">
@@ -17,14 +17,14 @@
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="uVidNova">
-  <meta property="og:title"       content="uVidNova — Ukraine Reconstruction Finance Atlas">
+  <meta property="og:title"       content="uVidNova - Ukraine Reconstruction Finance Atlas">
   <meta property="og:description" content="Asset-level, project-finance-grade reconstruction opportunities in Ukraine. USD 41B+ pipeline across 100+ verified damaged assets. Every figure traceable to RDNA3 and KSE benchmarks.">
   <meta property="og:url"         content="https://uvidnova.netlify.app/">
   <meta property="og:image"       content="https://uvidnova.netlify.app/icons/icon-512.png">
 
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="uVidNova — Ukraine Reconstruction Finance Atlas">
+  <meta name="twitter:title"       content="uVidNova - Ukraine Reconstruction Finance Atlas">
   <meta name="twitter:description" content="100+ war-damaged assets. USD 41B+ pipeline. Deterministic cost estimates. EBRD/EU financing structures. Every number traceable to source.">
   <meta name="twitter:image"       content="https://uvidnova.netlify.app/icons/icon-512.png">
 
@@ -71,10 +71,10 @@
         }
       },
       "variableMeasured": [
-        "Reconstruction cost — baseline (USD millions)",
-        "Reconstruction cost — code-compliant (USD millions)",
-        "Reconstruction cost — build-back-better (USD millions)",
-        "Financing structure — grant / concessional / public equity / private (%)",
+        "Reconstruction cost - baseline (USD millions)",
+        "Reconstruction cost - code-compliant (USD millions)",
+        "Reconstruction cost - build-back-better (USD millions)",
+        "Financing structure - grant / concessional / public equity / private (%)",
         "Wartime damage level (light / moderate / severe / destroyed)",
         "Rebuildability classification",
         "Re-damage count"
@@ -91,7 +91,7 @@
         },
         {
           "@type": "CreativeWork",
-          "name": "Russia Will Pay — Ukraine War Damage Tracker",
+          "name": "Russia Will Pay - Ukraine War Damage Tracker",
           "author": "KSE Institute",
           "url": "https://kse.ua/russia-will-pay/"
         }
@@ -102,7 +102,7 @@
       "@type": "WebSite",
       "name": "uVidNova",
       "url": "https://uvidnova.netlify.app",
-      "description": "Ukraine Reconstruction Finance Atlas — asset-level wartime damage register with deterministic cost estimates and bankable financing structures"
+      "description": "Ukraine Reconstruction Finance Atlas - asset-level wartime damage register with deterministic cost estimates and bankable financing structures"
     }
   ]
   </script>
@@ -113,7 +113,7 @@
     }
   </script>
 
-  <!-- Preload critical data — start fetching before JS parses -->
+  <!-- Preload critical data - start fetching before JS parses -->
   <link rel="preload" href="/data/assets/index.json" as="fetch" crossorigin>
   <link rel="preload" href="/data/geo/ua_oblasts.geojson" as="fetch" crossorigin>
 
@@ -123,7 +123,7 @@
   <link rel="dns-prefetch" href="https://c.basemaps.cartocdn.com">
   <link rel="dns-prefetch" href="https://d.basemaps.cartocdn.com">
 
-  <!-- Leaflet CSS — served locally for reliability -->
+  <!-- Leaflet CSS - served locally for reliability -->
   <link rel="stylesheet" href="/css/vendor/leaflet.css">
 
   <link rel="stylesheet" href="/css/app.css">
@@ -150,7 +150,7 @@
 </head>
 <body class="map-page">
 
-  <!-- ── Cache bypass — ?nocache in URL unregisters SW + clears all caches ── -->
+  <!-- ── Cache bypass - ?nocache in URL unregisters SW + clears all caches ── -->
   <script>
   (function () {
     if (window.location.search.indexOf('nocache') === -1) return;
@@ -194,7 +194,7 @@
         <!-- row 1: sources -->
         <div class="etym-source etym-source-u">Ukraine</div>
         <div class="etym-connector-top"></div>
-        <div class="etym-source etym-source-vid">Відновa — Restoration</div>
+        <div class="etym-source etym-source-vid">Відновa - Restoration</div>
 
         <!-- row 2: the wordmark (centre) -->
         <div class="etym-mark etym-mark-u"><span class="u">u</span></div>
@@ -204,7 +204,7 @@
         <!-- row 3: poetic meanings -->
         <div class="etym-meaning etym-meaning-u">you</div>
         <div class="etym-connector-bot"></div>
-        <div class="etym-meaning etym-meaning-nova"><span class="nova-star-inline">Nova</span><span class="etym-star">★</span> — New Star</div>
+        <div class="etym-meaning etym-meaning-nova"><span class="nova-star-inline">Nova</span><span class="etym-star">★</span> - New Star</div>
       </div>
 
       <p class="landing-sub" data-i18n="landing.sub">Ukraine Reconstruction Finance Atlas</p>
@@ -213,8 +213,8 @@
         Every figure traceable to RDNA3, KSE Institute, and verified open-source intelligence.
       </p>
       <ul class="landing-features" aria-label="Key features">
-        <li data-i18n="landing.feat1">Deterministic cost estimates — three reconstruction paths per asset</li>
-        <li data-i18n="landing.feat2">Defensible financing structures — grant, concessional, equity, private</li>
+        <li data-i18n="landing.feat1">Deterministic cost estimates - three reconstruction paths per asset</li>
+        <li data-i18n="landing.feat2">Defensible financing structures - grant, concessional, equity, private</li>
         <li data-i18n="landing.feat3">Re-damage tracking and wartime risk classification</li>
       </ul>
       <button class="landing-cta" id="enterAtlas" data-i18n="landing.cta">Explore the atlas →</button>
@@ -249,7 +249,7 @@
     </div>
   </div>
 
-  <!-- ── Landing dismiss — inline script, never SW-cached ──────────────────── -->
+  <!-- ── Landing dismiss - inline script, never SW-cached ──────────────────── -->
   <script>
   (function () {
     var overlay = document.getElementById('landing');
@@ -289,7 +289,7 @@
       revealChrome();
     }
 
-    // Already visited this session — hide immediately without animation
+    // Already visited this session - hide immediately without animation
     var alreadyLanded = false;
     try { alreadyLanded = !!sessionStorage.getItem('uvidnova_landed'); } catch(e) {}
     if (alreadyLanded) {
@@ -323,7 +323,7 @@
   })();
   </script>
 
-  <!-- ── Global UI helpers — plain script, never SW-cached, always fresh ─────
+  <!-- ── Global UI helpers - plain script, never SW-cached, always fresh ─────
        These inline functions are the authoritative handlers for every critical
        button. They work even if the app.js ES module fails to load.           -->
   <script>
@@ -396,7 +396,7 @@
     var p = document.getElementById('chatPanel');
     if (p && !p.hasAttribute('hidden')) uvCloseChat();
   });
-  // Feedback form — AJAX submit (prevents browser navigation)
+  // Feedback form - AJAX submit (prevents browser navigation)
   function uvSubmitFeedback(e) {
     e.preventDefault();
     var form = document.getElementById('feedbackForm');
@@ -418,13 +418,13 @@
       if (submit) submit.disabled = false;
     });
   }
-  // War mode toggle — stub; app.js overwrites window._appWarToggle after module loads
+  // War mode toggle - stub; app.js overwrites window._appWarToggle after module loads
   function uvToggleWarMode() { if (window._appWarToggle) window._appWarToggle(); }
-  // Map view switch — stub; app.js overwrites window._appSetMapView after module loads
+  // Map view switch - stub; app.js overwrites window._appSetMapView after module loads
   function uvSetMapView(view) { if (window._appSetMapView) window._appSetMapView(view); }
-  // Finance wizard — stub; app.js overwrites window._appFinance after module loads
+  // Finance wizard - stub; app.js overwrites window._appFinance after module loads
   function uvOpenFinance() { if (window._appFinance) window._appFinance(); }
-  // Trust panel — stub; app.js overwrites window._appTrust after module loads
+  // Trust panel - stub; app.js overwrites window._appTrust after module loads
   function uvOpenTrust() { if (window._appTrust) window._appTrust(); }
   // Force reload (version bar button)
   function uvForceReload() {
@@ -471,7 +471,7 @@
 
   </header>
 
-  <!-- ── Map view tab bar — sits between header and map ──────────────────── -->
+  <!-- ── Map view tab bar - sits between header and map ──────────────────── -->
   <div class="map-view-bar" id="mapViewTabs" role="tablist">
     <button class="map-view-tab map-view-tab-active" id="tab-ukraine" role="tab" aria-selected="true"
             onclick="uvSetMapView('ukraine')"><span data-i18n="tab.ukraine">Ukraine</span></button>
@@ -503,7 +503,7 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
     </button>
 
-    <!-- Filter panel — left overlay, hidden by default -->
+    <!-- Filter panel - left overlay, hidden by default -->
     <aside class="filter-panel" id="filterPanel">
       <div class="filter-header">
         <h2 class="panel-title" data-i18n="filter.title">Filters</h2>
@@ -564,7 +564,7 @@
       <div class="agg-panel" id="aggPanel" aria-live="polite" aria-relevant="additions text"></div>
     </aside>
 
-    <!-- Asset list panel — right overlay, hidden by default -->
+    <!-- Asset list panel - right overlay, hidden by default -->
     <div class="asset-list-panel" id="assetListPanel">
       <div class="asset-list-header">
         <div>
@@ -587,7 +587,7 @@
     </p>
   </div>
 
-  <!-- ── Bottom action bar — Feedback (left) · Occupied (centre) · Ask AI (right) ── -->
+  <!-- ── Bottom action bar - Feedback (left) · Occupied (centre) · Ask AI (right) ── -->
   <div class="bottom-action-bar" id="bottomActionBar">
     <button class="bab-btn bab-feedback" onclick="uvOpenFeedback()" aria-label="Send feedback" data-i18n="feedback.btn">Feedback</button>
 
@@ -601,9 +601,9 @@
   <!-- ── War-mode occupation legend ───────────────────────────────────────── -->
   <div class="war-legend" id="warLegend" hidden>
     <div class="war-legend-title">Conflict status (2024–25)</div>
-    <div class="war-legend-row"><span class="war-legend-swatch" style="background:#3d0000;border:2px solid #cc0000"></span>Crimea — Russian-controlled</div>
-    <div class="war-legend-row"><span class="war-legend-swatch" style="background:#5a0800;border:2px solid #cc2200"></span>Luhansk — largely Russian-controlled</div>
-    <div class="war-legend-row"><span class="war-legend-swatch" style="background:#7a1e08;border:2px dashed #cc4400"></span>Donetsk · Zaporizhzhia · Kherson — contested</div>
+    <div class="war-legend-row"><span class="war-legend-swatch" style="background:#3d0000;border:2px solid #cc0000"></span>Crimea - Russian-controlled</div>
+    <div class="war-legend-row"><span class="war-legend-swatch" style="background:#5a0800;border:2px solid #cc2200"></span>Luhansk - largely Russian-controlled</div>
+    <div class="war-legend-row"><span class="war-legend-swatch" style="background:#7a1e08;border:2px dashed #cc4400"></span>Donetsk · Zaporizhzhia · Kherson - contested</div>
     <div class="war-legend-note">Frontline indicative only.</div>
   </div>
 
@@ -615,7 +615,7 @@
         <h3 id="feedbackModalTitle" data-i18n="feedback.title">Send feedback</h3>
         <button class="modal-close" id="closeFeedbackModal" onclick="uvCloseFeedback()" aria-label="Close feedback form">×</button>
       </div>
-      <!-- Netlify Form — configure email notification in Netlify dashboard:
+      <!-- Netlify Form - configure email notification in Netlify dashboard:
            Forms → feedback → Notifications → Email notification → finmodelup@gmail.com -->
       <form name="feedback" method="POST" netlify netlify-honeypot="bot-field" id="feedbackForm" onsubmit="uvSubmitFeedback(event)">
         <input type="hidden" name="form-name" value="feedback">
@@ -644,7 +644,7 @@
         <div class="form-actions">
           <button type="submit" class="form-submit" id="feedbackSubmit" data-i18n="feedback.submit">Send</button>
         </div>
-        <p class="form-sent" id="feedbackSent" hidden data-i18n="feedback.sent">Thank you — your message has been sent.</p>
+        <p class="form-sent" id="feedbackSent" hidden data-i18n="feedback.sent">Thank you - your message has been sent.</p>
       </form>
     </div>
   </div>
@@ -689,12 +689,12 @@
   </div>
 
   <!-- ── Leaflet JS ─────────────────────────────────────────────────────────── -->
-  <!-- Leaflet JS — defer so it doesn't block HTML parsing; executes before app.js module -->
+  <!-- Leaflet JS - defer so it doesn't block HTML parsing; executes before app.js module -->
   <script src="/js/vendor/leaflet.js" defer></script>
 
   <script type="module" src="/js/app.js"></script>
   <script>
-  /* ── Force-reload button — clears ALL caches + SW, always gets fresh content ── */
+  /* ── Force-reload button - clears ALL caches + SW, always gets fresh content ── */
   (function () {
     var btn = document.getElementById('forceReloadBtn');
     if (!btn) return;
