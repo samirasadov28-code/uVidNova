@@ -54,8 +54,10 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
+}
+/* Map page: no scroll — the Leaflet map fills the viewport */
+body.map-page {
   overflow: hidden;
-  /* Prevent pull-to-refresh and over-scroll from stealing map gestures */
   overscroll-behavior: none;
 }
 a { color: var(--colour-navy-light); text-decoration: none; }
