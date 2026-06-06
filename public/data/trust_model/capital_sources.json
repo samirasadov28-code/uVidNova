@@ -6,10 +6,10 @@
         "label": "Russian reparations obligation (acknowledged — pending settlement)",
         "source_label": "RDNA3 $486B claim; ICJ Ukraine v. Russia (2022); UN GA Res. ES-11/5",
         "colour": "#c0392b",
-        "note": "Ukraine's documented war damage claim is $486B (RDNA3, Feb 2024). Russia's reparations obligation is legally acknowledged under international law. Transfer timeline contingent on peace settlement; can be securitised against future award to back Trust corpus now.",
+        "note": "Ukraine's documented war damage claim is $486B (RDNA3, Feb 2024). Full economic loss including GDP and future damage may reach $2 trillion. Russia's reparations obligation is legally acknowledged under international law. Transfer timeline contingent on peace settlement; can be securitised against future award to back Trust corpus now.",
         "range_min_usd_bn": 0,
-        "range_max_usd_bn": 486,
-        "step_usd_bn": 10,
+        "range_max_usd_bn": 2000,
+        "step_usd_bn": 50,
         "default_usd_bn": 75
       },
       {
@@ -85,10 +85,10 @@
         "label": "ICJ / Hague tribunal reparations — direct transfer from Russia",
         "source_label": "ICJ Ukraine v. Russia (2022); UN GA Res. ES-11/5; RDNA3 $486B claim",
         "colour": "#c0392b",
-        "note": "Post-war reparations awarded by ICJ or negotiated peace treaty. Ukraine's documented damage claim is $486B (RDNA3, Feb 2024). Range reflects negotiated settlement discount.",
+        "note": "Post-war reparations awarded by ICJ or negotiated peace treaty. Ukraine's documented direct damage claim is $486B (RDNA3, Feb 2024). Full economic loss including GDP and future damage may reach $2 trillion. Range reflects negotiated settlement discount.",
         "range_min_usd_bn": 0,
-        "range_max_usd_bn": 486,
-        "step_usd_bn": 10,
+        "range_max_usd_bn": 2000,
+        "step_usd_bn": 50,
         "default_usd_bn": 200
       },
       {

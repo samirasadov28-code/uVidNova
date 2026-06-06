@@ -159,9 +159,9 @@ function currentSources() {
 }
 
 function computeTotalNav() {
-  // NAV = sum of active sources for the selected scenario
+  // NAV = sum of active sources for the selected scenario (values are in USD bn)
   const src = currentSources();
-  return Object.values(src).reduce((a, b) => a + b, 0) / 1000; // convert USD bn → keep in bn
+  return Object.values(src).reduce((a, b) => a + b, 0);
 }
 
 // ── Module 1: Capital Formation ───────────────────────────────────────────────
