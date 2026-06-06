@@ -171,7 +171,7 @@ img { max-width: 100%; height: auto; }
 }
 .header-action-finance:hover,
 .header-action-trust:hover { background: #f5b820; box-shadow: 0 5px 16px rgba(240,165,0,0.55); }
-.site-nav { display: flex; gap: 1.25rem; align-items: center; }
+.site-nav { display: flex; gap: 1.25rem; align-items: center; margin-left: auto; }
 .site-nav a { color: rgba(255,255,255,0.85); font-size: 0.875rem; }
 .site-nav a:hover { color: #fff; text-decoration: none; }
 .nav-finance-link {
@@ -198,8 +198,7 @@ img { max-width: 100%; height: auto; }
   position: relative;
   display: inline-flex;
 }
-.landing-lang-picker { margin-right: auto; }
-.landing-lang-picker .lang-picker-dropdown { right: auto; left: 0; }
+.landing-lang-picker { position: relative; }
 
 .lang-picker-btn {
   font-size: 0.8rem;
@@ -1150,7 +1149,18 @@ body.asset-page { display: flex; flex-direction: column; }
 .landing-lang-toggle {
   font-size: 0.78rem;
   padding: 0.22rem 0.6rem;
-  margin-right: auto;
+}
+/* When initLangToggle wraps it, the whole picker floats top-right of overlay */
+.landing-overlay > .landing-lang-picker {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+}
+.landing-overlay > .landing-lang-picker .lang-picker-dropdown {
+  right: 0;
+  left: auto;
+  top: calc(100% + 4px);
 }
 .landing-update-prompt {
   color: var(--colour-gold-light);

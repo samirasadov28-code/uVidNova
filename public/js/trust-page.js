@@ -19,7 +19,7 @@ import {
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
-const LS_KEY = 'uvidnova.trust_model.state.v3';
+const LS_KEY = 'uvidnova.trust_model.state.v4';
 
 const NAVY   = '#1a3a6b';
 const GOLD   = '#c9a227';

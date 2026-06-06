@@ -12,7 +12,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="uVidNova">
-  <meta name="app-version" content="0.7.1">
+  <meta name="app-version" content="0.7.2">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
@@ -183,6 +183,8 @@
 
   <!-- ── Landing overlay ──────────────────────────────────────────────────── -->
   <div id="landing" class="landing-overlay" role="dialog" aria-modal="true" aria-labelledby="landingTitle">
+    <!-- Language picker sits outside the scrollable card so its dropdown is never clipped -->
+    <button class="lang-toggle landing-lang-toggle" id="landingLangToggle" aria-label="Switch language">🇺🇦 Українська</button>
     <div class="landing-content">
       <img src="/assets/logo_192.png" alt="uVidNova" class="landing-logo" width="72" height="72">
       <h1 id="landingTitle" class="landing-title">
@@ -225,8 +227,7 @@
         Not a fundraising platform. No political framing. Every figure independently sourced.
       </p>
       <div class="landing-actions">
-        <button class="lang-toggle landing-lang-toggle" id="landingLangToggle" aria-label="Switch language">🇺🇦 Українська</button>
-        <span class="landing-version" id="versionLabel">v0.7.1</span>
+        <span class="landing-version" id="versionLabel">v0.7.2</span>
         <button class="landing-force-reload" id="landingForceReload" title="Clear cache and reload latest version">↻ Force update</button>
       </div>
       <div class="landing-legal">
