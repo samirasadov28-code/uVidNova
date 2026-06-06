@@ -26,8 +26,7 @@ function fmtBn(v) {
 
 function fmtM(v) {
   if (v == null || isNaN(v)) return '-';
-  if (Math.abs(v) >= 1000) return `$${(v/1000).toFixed(1)}B`;
-  return `$${(+v).toFixed(0)}M`;
+  return `$${Math.round(v).toLocaleString()}M`;
 }
 
 function calc() {

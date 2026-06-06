@@ -70,7 +70,7 @@ function makeCompletedIcon() {
 
 function fmtUSD(m) {
   if (m == null) return '-';
-  return `USD ${m}M`;
+  return `USD ${Math.round(m).toLocaleString()}M`;
 }
 
 function makePopupHTML(asset) {
@@ -531,7 +531,7 @@ function showOblastWarPanel(info, featureName) {
     ${freq ? `<div class="owp-section"><div class="owp-section-label">Attack frequency</div><p>${freq}</p></div>` : ''}
     <div class="owp-stats">
       <div class="owp-stat"><span class="owp-stat-n">${oblastAssets.length}</span><span class="owp-stat-l">damaged assets</span></div>
-      ${totalCost > 0 ? `<div class="owp-stat"><span class="owp-stat-n">$${totalCost}M</span><span class="owp-stat-l">est. baseline cost</span></div>` : ''}
+      ${totalCost > 0 ? `<div class="owp-stat"><span class="owp-stat-n">$${Math.round(totalCost).toLocaleString()}M</span><span class="owp-stat-l">est. baseline cost</span></div>` : ''}
     </div>
     <p class="owp-hint">Click the region again to deselect</p>`;
 
@@ -617,14 +617,14 @@ function showReconstructedPanel(info, featureName) {
             <div class="orp-project-banner" style="background:${colour}22;border-left:3px solid ${colour}">
               <span class="orp-project-sector" style="color:${colour}">${SECTOR_LABELS[a.sector] ?? a.sector}</span>
               <span class="orp-project-stage">${stageLabel}</span>
-              ${totalCost != null ? `<span class="orp-project-cost">$${totalCost}M</span>` : ''}
+              ${totalCost != null ? `<span class="orp-project-cost">$${Math.round(totalCost).toLocaleString()}M</span>` : ''}
             </div>
             <div class="orp-project-body">
               <div class="orp-project-name">${aName}</div>
               <div class="orp-cost-row">
-                ${baseline != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">Baseline</span> $${baseline}M</span>` : ''}
-                ${codeComp != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">Code+</span> $${codeComp}M</span>` : ''}
-                ${bbb      != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">BBB</span> $${bbb}M</span>` : ''}
+                ${baseline != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">Baseline</span> $${Math.round(baseline).toLocaleString()}M</span>` : ''}
+                ${codeComp != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">Code+</span> $${Math.round(codeComp).toLocaleString()}M</span>` : ''}
+                ${bbb      != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">BBB</span> $${Math.round(bbb).toLocaleString()}M</span>` : ''}
               </div>
               <div class="orp-project-actions">
                 <button class="orp-detail-btn" data-id="${encodeURIComponent(a.asset_id)}">Details →</button>
