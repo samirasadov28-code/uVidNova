@@ -8,23 +8,30 @@
  */
 
 export const LANG_META = {
-  en: { flag: '🇬🇧', label: 'EN', name: 'English',            dir: 'ltr' },
-  uk: { flag: '🇺🇦', label: 'UK', name: 'Українська',         dir: 'ltr' },
-  fr: { flag: '🇫🇷', label: 'FR', name: 'Français',           dir: 'ltr' },
-  es: { flag: '🇪🇸', label: 'ES', name: 'Español',            dir: 'ltr' },
-  de: { flag: '🇩🇪', label: 'DE', name: 'Deutsch',            dir: 'ltr' },
-  pt: { flag: '🇧🇷', label: 'PT', name: 'Português',          dir: 'ltr' },
-  it: { flag: '🇮🇹', label: 'IT', name: 'Italiano',           dir: 'ltr' },
-  nl: { flag: '🇳🇱', label: 'NL', name: 'Nederlands',         dir: 'ltr' },
-  tr: { flag: '🇹🇷', label: 'TR', name: 'Türkçe',             dir: 'ltr' },
-  zh: { flag: '🇨🇳', label: 'ZH', name: '中文',               dir: 'ltr' },
-  ar: { flag: '🇸🇦', label: 'AR', name: 'العربية',            dir: 'rtl' },
-  hi: { flag: '🇮🇳', label: 'HI', name: 'हिन्दी',             dir: 'ltr' },
-  ru: { flag: null,   label: 'RU', name: 'Русский',            dir: 'ltr' },
-  bn: { flag: '🇧🇩', label: 'BN', name: 'বাংলা',              dir: 'ltr' },
-  ja: { flag: '🇯🇵', label: 'JA', name: '日本語',             dir: 'ltr' },
-  id: { flag: '🇮🇩', label: 'ID', name: 'Bahasa Indonesia',   dir: 'ltr' },
+  en: { flagCode: 'gb', label: 'EN', name: 'English',            dir: 'ltr' },
+  uk: { flagCode: 'ua', label: 'UK', name: 'Українська',         dir: 'ltr' },
+  fr: { flagCode: 'fr', label: 'FR', name: 'Français',           dir: 'ltr' },
+  es: { flagCode: 'es', label: 'ES', name: 'Español',            dir: 'ltr' },
+  de: { flagCode: 'de', label: 'DE', name: 'Deutsch',            dir: 'ltr' },
+  pt: { flagCode: 'br', label: 'PT', name: 'Português',          dir: 'ltr' },
+  it: { flagCode: 'it', label: 'IT', name: 'Italiano',           dir: 'ltr' },
+  nl: { flagCode: 'nl', label: 'NL', name: 'Nederlands',         dir: 'ltr' },
+  tr: { flagCode: 'tr', label: 'TR', name: 'Türkçe',             dir: 'ltr' },
+  zh: { flagCode: 'cn', label: 'ZH', name: '中文',               dir: 'ltr' },
+  ar: { flagCode: 'sa', label: 'AR', name: 'العربية',            dir: 'rtl' },
+  hi: { flagCode: 'in', label: 'HI', name: 'हिन्दी',             dir: 'ltr' },
+  ru: { flagCode: null, label: 'RU', name: 'Русский',            dir: 'ltr' },
+  bn: { flagCode: 'bd', label: 'BN', name: 'বাংলা',              dir: 'ltr' },
+  ja: { flagCode: 'jp', label: 'JA', name: '日本語',             dir: 'ltr' },
+  id: { flagCode: 'id', label: 'ID', name: 'Bahasa Indonesia',   dir: 'ltr' },
 };
+
+function flagImg(flagCode, cls) {
+  if (flagCode) {
+    return `<img src="https://flagcdn.com/20x15/${flagCode}.png" width="20" height="15" alt="" aria-hidden="true" class="${cls}">`;
+  }
+  return '';
+}
 
 const TRANSLATIONS = {
   en: {
@@ -43,6 +50,7 @@ const TRANSLATIONS = {
     // Header / nav
     'header.tagline':     'Ukraine Reconstruction Finance Atlas',
     'nav.methodology':    'Methodology',
+    'nav.privacy':        'Privacy',
     // Filters
     'filter.title':       'Filters',
     'filter.reset':       'Reset',
@@ -162,6 +170,7 @@ const TRANSLATIONS = {
     'landing.disclaimer': 'Не платформа для збору коштів. Без політичного контексту. Кожна цифра має незалежне підтвердження.',
     'header.tagline':     'Атлас фінансування відбудови України',
     'nav.methodology':    'Методологія',
+    'nav.privacy':        'Конфіденційність',
     'filter.title':       'Фільтри',
     'filter.reset':       'Скинути',
     'filter.sector':      'Сектор',
@@ -268,6 +277,7 @@ const TRANSLATIONS = {
     'landing.disclaimer': 'Pas une plateforme de collecte de fonds. Aucun cadrage politique. Chaque chiffre sourcé indépendamment.',
     'header.tagline':     'Atlas du financement de la reconstruction en Ukraine',
     'nav.methodology':    'Méthodologie',
+    'nav.privacy':        'Confidentialité',
     'filter.title':       'Filtres',
     'filter.reset':       'Réinitialiser',
     'filter.sector':      'Secteur',
@@ -372,6 +382,7 @@ const TRANSLATIONS = {
     'landing.disclaimer': 'No es una plataforma de recaudación de fondos. Sin encuadre político. Cada cifra con fuente independiente.',
     'header.tagline':     'Atlas de Financiamiento de la Reconstrucción de Ucrania',
     'nav.methodology':    'Metodología',
+    'nav.privacy':        'Privacidad',
     'filter.title':       'Filtros',
     'filter.reset':       'Restablecer',
     'filter.sector':      'Sector',
@@ -476,6 +487,7 @@ const TRANSLATIONS = {
     'landing.disclaimer': 'Keine Spendenplattform. Kein politischer Rahmen. Jede Zahl unabhängig belegt.',
     'header.tagline':     'Atlas der Ukraine-Wiederaufbaufinanzierung',
     'nav.methodology':    'Methodik',
+    'nav.privacy':        'Datenschutz',
     'filter.title':       'Filter',
     'filter.reset':       'Zurücksetzen',
     'filter.sector':      'Sektor',
@@ -635,19 +647,18 @@ export function initLangToggle(btn) {
     opt.dataset.lang = code;
     opt.setAttribute('role', 'option');
     opt.title = meta.name;
-    if (meta.flag) {
-      opt.innerHTML = `<span class="lo-flag">${meta.flag}</span><span class="lo-code">${meta.label}</span>`;
-    } else {
-      opt.innerHTML = `<span class="lo-noflag">${meta.label}</span><span class="lo-code">${meta.label}</span>`;
-    }
+    const flagHtml = meta.flagCode
+      ? flagImg(meta.flagCode, 'lo-flag-img')
+      : `<span class="lo-noflag">${meta.label}</span>`;
+    opt.innerHTML = `${flagHtml}<span class="lo-name">${meta.name}</span>`;
     dropdown.appendChild(opt);
   }
 
   const syncUI = () => {
     const lang = getLang();
     const meta = LANG_META[lang] ?? LANG_META.en;
-    const flagHtml = meta.flag
-      ? `<span class="lpb-flag">${meta.flag}</span>`
+    const flagHtml = meta.flagCode
+      ? flagImg(meta.flagCode, 'lpb-flag-img')
       : `<span class="lpb-noflag">${meta.label}</span>`;
     btn.innerHTML = `${flagHtml}<span class="lpb-code">${meta.label}</span><span class="lpb-chevron">▾</span>`;
     for (const opt of dropdown.querySelectorAll('.lang-option')) {

@@ -200,28 +200,27 @@ img { max-width: 100%; height: auto; }
 .lang-picker-btn {
   font-size: 0.8rem;
   font-family: var(--font-sans);
-  padding: 0.22rem 0.55rem;
+  padding: 0.28rem 0.65rem 0.28rem 0.5rem;
   border-radius: 999px;
-  border: 1.5px solid rgba(255,255,255,0.3);
-  background: transparent;
-  color: inherit;
+  border: 1.5px solid rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
-  gap: 0.28rem;
+  gap: 0.35rem;
   line-height: 1;
 }
-.lang-picker-btn:hover { background: rgba(255,255,255,0.13); border-color: rgba(255,255,255,0.6); }
-
-.lpb-flag    { font-size: 1.05rem; line-height: 1; }
-.lpb-code    { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; }
-.lpb-chevron { font-size: 0.58rem; opacity: 0.65; margin-left: 0.05rem; }
+.lang-picker-btn:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.8); }
+.lpb-flag-img { display: block; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.15); }
+.lpb-code    { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; }
+.lpb-chevron { font-size: 0.58rem; opacity: 0.7; margin-left: 0.05rem; }
 .lpb-noflag  {
   font-size: 0.62rem; font-weight: 800;
   border: 1.5px solid rgba(255,255,255,0.45);
-  border-radius: 3px; padding: 1px 3px;
+  border-radius: 3px; padding: 1px 4px;
   line-height: 1.2;
 }
 
@@ -233,15 +232,17 @@ img { max-width: 100%; height: auto; }
   background: #0d1c3f;
   border: 1px solid rgba(255,255,255,0.14);
   border-radius: 12px;
-  padding: 8px;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3px;
+  padding: 6px;
+  flex-direction: column;
+  gap: 1px;
   z-index: 9999;
-  min-width: 190px;
+  min-width: 210px;
+  max-height: 360px;
+  overflow-y: auto;
   box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
   animation: lpDropIn 0.15s ease;
 }
-.lang-picker-dropdown.open { display: grid; }
+.lang-picker-dropdown.open { display: flex; }
 
 @keyframes lpDropIn {
   from { opacity: 0; transform: translateY(-6px) scale(0.97); }
@@ -250,19 +251,20 @@ img { max-width: 100%; height: auto; }
 
 .lang-option {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 2px;
-  padding: 7px 3px 5px;
+  gap: 10px;
+  padding: 7px 12px;
   border-radius: 7px;
   border: 1px solid transparent;
   background: transparent;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.75);
   cursor: pointer;
   transition: background 0.1s, border-color 0.1s, color 0.1s;
   font-family: var(--font-sans);
   line-height: 1;
+  width: 100%;
+  text-align: left;
 }
 .lang-option:hover  { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.18); color: #fff; }
 .lang-option.active {
@@ -271,8 +273,8 @@ img { max-width: 100%; height: auto; }
   color: var(--colour-gold-light);
 }
 
-.lo-flag   { font-size: 1.3rem; }
-.lo-code   { font-size: 0.56rem; font-weight: 700; letter-spacing: 0.05em; opacity: 0.75; }
+.lo-flag-img { display: block; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.15); flex-shrink: 0; }
+.lo-name   { font-size: 0.8rem; font-weight: 500; }
 .lo-noflag {
   font-size: 0.6rem; font-weight: 800;
   border: 1.5px solid rgba(255,255,255,0.35);
@@ -281,9 +283,9 @@ img { max-width: 100%; height: auto; }
   min-width: 24px;
   text-align: center;
   line-height: 1.2;
+  flex-shrink: 0;
 }
 .lang-option.active .lo-noflag { border-color: rgba(255,215,90,0.55); }
-.lang-option.active .lo-code   { opacity: 1; }
 
 /* ── Map layout — map always fills the frame; panels slide over as overlays ─── */
 .map-layout {
