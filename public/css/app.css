@@ -806,9 +806,9 @@ body.asset-page { display: flex; flex-direction: column; }
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(2,8,28,0.72) 0%,
-    rgba(4,12,40,0.58) 50%,
-    rgba(2,8,28,0.78) 100%
+    rgba(2,8,28,0.46) 0%,
+    rgba(4,12,40,0.32) 50%,
+    rgba(2,8,28,0.50) 100%
   );
   pointer-events: none;
   z-index: 0;
@@ -835,6 +835,17 @@ body.asset-page { display: flex; flex-direction: column; }
   border-radius: 1.5rem;
   padding: 2.5rem 2.5rem 1.75rem;
   box-shadow: 0 8px 48px rgba(0,0,0,0.55);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(245,200,66,0.35) transparent;
+}
+.landing-content::-webkit-scrollbar { width: 4px; }
+.landing-content::-webkit-scrollbar-track { background: transparent; }
+.landing-content::-webkit-scrollbar-thumb {
+  background: rgba(245,200,66,0.35);
+  border-radius: 2px;
+}
+.landing-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(245,200,66,0.6);
 }
 .landing-logo {
   border-radius: 6px;
