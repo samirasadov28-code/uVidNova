@@ -2,6 +2,17 @@
   "sources": {
     "scenario_a": [
       {
+        "id": "reparations_acknowledged",
+        "label": "Russian reparations obligation (acknowledged — pending settlement)",
+        "source_label": "RDNA3 $486B claim; ICJ Ukraine v. Russia (2022); UN GA Res. ES-11/5",
+        "colour": "#c0392b",
+        "note": "Ukraine's documented war damage claim is $486B (RDNA3, Feb 2024). Russia's reparations obligation is legally acknowledged under international law. Transfer timeline contingent on peace settlement; can be securitised against future award to back Trust corpus now.",
+        "range_min_usd_bn": 0,
+        "range_max_usd_bn": 486,
+        "step_usd_bn": 10,
+        "default_usd_bn": 75
+      },
+      {
         "id": "frozen_russian_assets",
         "label": "Frozen Russian sovereign assets — ERA windfall interest",
         "source_label": "EU Council Reg. 2024/1469; G7 Vilnius communiqué 2023",
