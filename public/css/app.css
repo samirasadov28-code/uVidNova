@@ -4429,46 +4429,78 @@ details[open] .agg-summary::before { content: '▼ '; }
 
 /* ── Finance wizard: Russia headline box (step 4 results top) ────────────── */
 .fw-russia-headline {
-  background: linear-gradient(135deg, rgba(120,0,0,0.20) 0%, rgba(10,20,50,0.25) 100%);
-  border: 1.5px solid rgba(220,60,60,0.38);
-  border-radius: var(--radius-md);
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
   margin-bottom: 1rem;
 }
 .fw-rh-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-  margin-bottom: 0.6rem;
+  gap: 0.6rem;
 }
-.fw-rh-item { display: flex; flex-direction: column; gap: 0.2rem; }
-.fw-rh-label { font-size: 0.72rem; color: rgba(255,255,255,0.65); font-weight: 600; }
-.fw-rh-value { font-size: 1.3rem; font-weight: 800; color: #fff; line-height: 1.1; }
-.fw-rh-russia .fw-rh-value { color: #ff9999; }
-.fw-rh-sub { font-size: 0.67rem; color: rgba(255,255,255,0.48); line-height: 1.4; }
+.fw-rh-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--colour-surface);
+  border: 1px solid var(--colour-border);
+  border-top: 3px solid var(--colour-border);
+}
+.fw-rh-russia { border-top-color: #c0392b; background: #fff8f8; }
+.fw-rh-dscr   { border-top-color: #7d3c98; }
+.fw-rh-market { border-top-color: #1e8449; background: #f7fef9; }
+.fw-rh-label {
+  font-size: 0.67rem;
+  color: var(--colour-text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.fw-rh-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--colour-navy);
+  line-height: 1.1;
+}
+.fw-rh-russia .fw-rh-value { color: #c0392b; }
+.fw-rh-market .fw-rh-value { color: #1e8449; }
+.fw-rh-sub {
+  font-size: 0.71rem;
+  color: var(--colour-text-muted);
+  line-height: 1.4;
+  margin-top: 0.05rem;
+}
 .fw-rh-gap-note {
-  padding: 0.4rem 0.75rem;
-  background: rgba(220,60,60,0.14);
+  padding: 0.55rem 0.85rem;
   border-radius: var(--radius-sm);
-  font-size: 0.73rem;
-  color: #ffaaaa;
-  border-left: 3px solid #cc3333;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: #922b21;
+  background: #fff3f3;
+  border: 1px solid rgba(192,57,43,0.2);
+  border-left: 3px solid #c0392b;
 }
 .fw-rh-gap-note.fw-rh-ok {
-  background: rgba(39,174,96,0.12);
-  color: #7de8a8;
-  border-left-color: #27ae60;
+  color: #1a6e3c;
+  background: #f0fff4;
+  border-color: rgba(30,132,73,0.2);
+  border-left-color: #1e8449;
 }
 .fw-rh-no-russia {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.15);
-  padding: 0.75rem 1rem;
+  gap: 0.35rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--colour-surface);
+  border: 1px solid var(--colour-border);
+  border-top: 3px solid var(--colour-gold);
 }
-.fw-rh-no-russia .fw-rh-label { color: rgba(255,255,255,0.7); }
-.fw-rh-no-russia .fw-rh-value { font-size: 1.1rem; color: #f5c842; }
+.fw-rh-no-russia .fw-rh-label { color: var(--colour-text-muted); }
+.fw-rh-no-russia .fw-rh-value { font-size: 1.35rem; color: var(--colour-navy); }
 @media (max-width: 640px) { .fw-rh-row { grid-template-columns: 1fr; } }
 
 /* ── Finance wizard header subtitle ─────────────────────────────────────── */
@@ -4564,47 +4596,7 @@ details[open] .agg-summary::before { content: '▼ '; }
   margin-top: 2px;
 }
 
-/* Finance wizard Russia headline box */
-.fw-russia-headline {
-  background: linear-gradient(135deg, rgba(120,0,0,0.18) 0%, rgba(10,20,50,0.22) 100%);
-  border: 1.5px solid rgba(220,60,60,0.35);
-  border-radius: var(--radius-md);
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-.fw-rh-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-}
-.fw-rh-item { display: flex; flex-direction: column; gap: 0.2rem; }
-.fw-rh-label { font-size: 0.72rem; color: rgba(255,255,255,0.65); font-weight: 600; }
-.fw-rh-value { font-size: 1.35rem; font-weight: 800; color: #fff; line-height: 1.1; }
-.fw-rh-russia .fw-rh-value { color: #ff9999; }
-.fw-rh-sub { font-size: 0.68rem; color: rgba(255,255,255,0.5); }
-.fw-rh-gap-note {
-  margin-top: 0.75rem;
-  padding: 0.4rem 0.75rem;
-  background: rgba(220,60,60,0.15);
-  border-radius: var(--radius-sm);
-  font-size: 0.73rem;
-  color: #ffaaaa;
-  border-left: 3px solid #cc3333;
-}
-.fw-rh-gap-note.fw-rh-ok {
-  background: rgba(39,174,96,0.12);
-  color: #7de8a8;
-  border-left-color: #27ae60;
-}
-.fw-rh-no-russia {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.15);
-}
-.fw-rh-no-russia .fw-rh-label { color: rgba(255,255,255,0.7); }
-.fw-rh-no-russia .fw-rh-value { font-size: 1.1rem; color: #f5c842; }
+/* Finance wizard Russia headline box — styles defined above */
 
 /* Investor param cards — step 2 */
 .fw-radio-card.fw-investor-card { padding: 0.5rem 0.75rem; }
