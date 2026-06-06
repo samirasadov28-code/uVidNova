@@ -230,8 +230,12 @@ function round2(n) {
  */
 export function fmtBn(usd_bn) {
   if (usd_bn == null || isNaN(usd_bn)) return '-';
-  const m = Math.round(usd_bn * 1000);
-  return `$${m.toLocaleString()}M`;
+  if (usd_bn >= 10) {
+    return usd_bn >= 100
+      ? `$${Math.round(usd_bn).toLocaleString()}B`
+      : `$${usd_bn.toFixed(1)}B`;
+  }
+  return `$${Math.round(usd_bn * 1000).toLocaleString()}M`;
 }
 
 /**
@@ -241,5 +245,11 @@ export function fmtBn(usd_bn) {
  */
 export function fmtM(usd_m) {
   if (usd_m == null || isNaN(usd_m)) return '-';
+  if (usd_m >= 10000) {
+    const bn = usd_m / 1000;
+    return bn >= 100
+      ? `$${Math.round(bn).toLocaleString()}B`
+      : `$${bn.toFixed(1)}B`;
+  }
   return `$${Math.round(usd_m).toLocaleString()}M`;
 }

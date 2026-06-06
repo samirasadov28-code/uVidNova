@@ -4525,6 +4525,7 @@ details[open] .agg-summary::before { content: '▼ '; }
   margin-bottom: 0.65rem;
 }
 .tp-slider-row { margin-bottom: 0.8rem; }
+.tp-corpus-total { font-size: 0.75rem; color: var(--colour-text-muted); margin-top: 0.1rem; padding-top: 0.5rem; border-top: 1px solid var(--colour-border); }
 .tp-sl-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.3rem; }
 .tp-sl-label { font-size: 0.77rem; color: rgba(10,22,40,0.72); }
 .tp-sl-val { font-size: 0.88rem; font-weight: 700; color: #b07800; font-family: var(--font-mono); }

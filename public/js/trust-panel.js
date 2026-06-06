@@ -13,6 +13,7 @@ const EBRD_TERMS = { rate: 0.015, tenor: 20 };  // concessional debt terms
 
 let _state = {
   corpus_usd_bn:       75,
+  reparations_usd_bn:  0,
   drawdown_pct:        4.0,
   return_pct:          4.5,
   recycling_pct:       15,
@@ -21,21 +22,31 @@ let _state = {
 
 function fmtBn(v) {
   if (v == null || isNaN(v)) return '-';
+  if (v >= 10) {
+    return v >= 100
+      ? `$${Math.round(v).toLocaleString()}B`
+      : `$${v.toFixed(1)}B`;
+  }
   return `$${Math.round(v * 1000).toLocaleString()}M`;
 }
 
 function fmtM(v) {
   if (v == null || isNaN(v)) return '-';
+  if (v >= 10000) {
+    const bn = v / 1000;
+    return bn >= 100 ? `$${Math.round(bn).toLocaleString()}B` : `$${bn.toFixed(1)}B`;
+  }
   return `$${Math.round(v).toLocaleString()}M`;
 }
 
 function calc() {
-  const { corpus_usd_bn, drawdown_pct, return_pct, recycling_pct, horizon_years } = _state;
-  const annualPayment_bn = corpus_usd_bn * (drawdown_pct / 100);  // annual deploy
-  const annualReturn_bn  = corpus_usd_bn * (return_pct  / 100);
+  const { corpus_usd_bn, reparations_usd_bn, drawdown_pct, return_pct, recycling_pct, horizon_years } = _state;
+  const totalCorpus_bn   = corpus_usd_bn + reparations_usd_bn;
+  const annualPayment_bn = totalCorpus_bn * (drawdown_pct / 100);
+  const annualReturn_bn  = totalCorpus_bn * (return_pct  / 100);
 
   const traj = simulateNavTrajectory({
-    initialNav_usd_bn:   corpus_usd_bn,
+    initialNav_usd_bn:   totalCorpus_bn,
     realReturn_pct:      return_pct,
     deploymentRate_pct:  drawdown_pct,
     recyclingRate_pct:   recycling_pct,
@@ -46,10 +57,11 @@ function calc() {
   const deployedAt = (yr) => traj.find(t => t.year === yr)?.deployed_cumulative ?? 0;
 
   const supportableDebt_bn = annualPayment_bn / EBRD_TERMS.rate * (1 - Math.pow(1 + EBRD_TERMS.rate, -EBRD_TERMS.tenor));
-  const totalMobilised_bn  = corpus_usd_bn + supportableDebt_bn;
+  const totalMobilised_bn  = totalCorpus_bn + supportableDebt_bn;
   const coveragePct        = (totalMobilised_bn / RDNA3_TOTAL_BN * 100);
 
   return {
+    totalCorpus_bn,
     annualPayment_bn,
     annualReturn_bn,
     supportableDebt_bn,
@@ -82,9 +94,11 @@ function renderPanel() {
   panel.querySelector('#tpBody').innerHTML = `
     <div class="tp-section">
       <h4 class="tp-sh">Corpus &amp; deployment inputs</h4>
-      ${sliderRow('tpCorpus',   'Frozen assets mobilised',  10,  300, 5,   _state.corpus_usd_bn,  v => fmtBn(v))}
-      ${sliderRow('tpDrawdown', 'Annual deployment rate',    2,    8, 0.5, _state.drawdown_pct,   v => v + '%')}
-      ${sliderRow('tpReturn',   'Annual real return on NAV', 2,    7, 0.5, _state.return_pct,     v => v + '%')}
+      ${sliderRow('tpCorpus',       'Frozen assets mobilised',          0, 300,  5,  _state.corpus_usd_bn,       v => fmtBn(v))}
+      ${sliderRow('tpReparations',  'Russian reparations contribution',  0, 2000, 50, _state.reparations_usd_bn, v => fmtBn(v))}
+      ${sliderRow('tpDrawdown',     'Annual deployment rate',            2,   8,  0.5, _state.drawdown_pct,      v => v + '%')}
+      ${sliderRow('tpReturn',       'Annual real return on NAV',         2,   7,  0.5, _state.return_pct,        v => v + '%')}
+      <div class="tp-corpus-total">Total corpus: <strong>${fmtBn(r.totalCorpus_bn)}</strong></div>
     </div>
 
     <div class="tp-section tp-outputs">
@@ -93,7 +107,7 @@ function renderPanel() {
         <div class="tp-metric tp-m-primary">
           <span class="tp-m-val">${fmtBn(r.annualPayment_bn)}/yr</span>
           <span class="tp-m-lbl">Annual availability payment</span>
-          <span class="tp-m-note">${(_state.drawdown_pct)}% × ${fmtBn(_state.corpus_usd_bn)} corpus</span>
+          <span class="tp-m-note">${(_state.drawdown_pct)}% × ${fmtBn(r.totalCorpus_bn)} corpus</span>
         </div>
         <div class="tp-metric">
           <span class="tp-m-val">${fmtBn(r.supportableDebt_bn)}</span>
@@ -121,7 +135,7 @@ function renderPanel() {
           ${[1,3,5,10,15,20,25,30].map(yr => {
             const n = r.navAt(yr);
             const d = r.deployedAt(yr);
-            return `<tr${n != null && n < _state.corpus_usd_bn * 0.3 ? ' class="tp-tr-low"' : ''}><td>Yr ${yr}</td><td>${n != null ? fmtBn(n) : '-'}</td><td>${fmtBn(d)}</td></tr>`;
+            return `<tr${n != null && n < r.totalCorpus_bn * 0.3 ? ' class="tp-tr-low"' : ''}><td>Yr ${yr}</td><td>${n != null ? fmtBn(n) : '-'}</td><td>${fmtBn(d)}</td></tr>`;
           }).join('')}
         </tbody>
       </table>
@@ -135,14 +149,14 @@ function renderPanel() {
           <div class="tp-ctx-bar-fill" style="width:${Math.min(r.coveragePct, 100).toFixed(1)}%"></div>
         </div>
         <div class="tp-ctx-bar-labels">
-          <span>This corpus: ${fmtBn(_state.corpus_usd_bn)}</span>
+          <span>This corpus: ${fmtBn(r.totalCorpus_bn)}</span>
           <span>Reconstruction claim: ${fmtBn(RDNA3_TOTAL_BN)}</span>
         </div>
       </div>
       <p class="tp-ctx-note">
-        ${fmtBn(_state.corpus_usd_bn)} represents <strong>${(_state.corpus_usd_bn / FROZEN_TOTAL_BN * 100).toFixed(0)}%</strong> of $300B G7-frozen Russian assets.
-        At ${_state.drawdown_pct}% deployment, the Trust generates ${fmtBn(r.annualPayment_bn)}/yr in availability payments —
-        enough to service ${fmtBn(r.supportableDebt_bn)} of concessional debt, bringing total mobilised capital to ${fmtBn(r.totalMobilised_bn)}.
+        Frozen assets ${fmtBn(_state.corpus_usd_bn)} (${(_state.corpus_usd_bn / FROZEN_TOTAL_BN * 100).toFixed(0)}% of $300B G7-frozen)${_state.reparations_usd_bn > 0 ? ` + reparations ${fmtBn(_state.reparations_usd_bn)}` : ''} = ${fmtBn(r.totalCorpus_bn)} total corpus.
+        At ${_state.drawdown_pct}% deployment the Trust generates ${fmtBn(r.annualPayment_bn)}/yr —
+        enough to service ${fmtBn(r.supportableDebt_bn)} of concessional debt, bringing total mobilised to ${fmtBn(r.totalMobilised_bn)}.
       </p>
     </div>
 
@@ -157,9 +171,10 @@ function renderPanel() {
 
 function wireSliders() {
   const sliders = [
-    { id: 'tpCorpus',   key: 'corpus_usd_bn',  fmt: v => fmtBn(v) },
-    { id: 'tpDrawdown', key: 'drawdown_pct',    fmt: v => v + '%'  },
-    { id: 'tpReturn',   key: 'return_pct',      fmt: v => v + '%'  },
+    { id: 'tpCorpus',       key: 'corpus_usd_bn',      fmt: v => fmtBn(v) },
+    { id: 'tpReparations',  key: 'reparations_usd_bn', fmt: v => fmtBn(v) },
+    { id: 'tpDrawdown',     key: 'drawdown_pct',        fmt: v => v + '%'  },
+    { id: 'tpReturn',       key: 'return_pct',          fmt: v => v + '%'  },
   ];
   sliders.forEach(({ id, key, fmt }) => {
     const el = document.getElementById(id);
@@ -181,7 +196,7 @@ function renderResults() {
   // Update metric values without re-rendering sliders
   const upd = (sel, val) => { const el = panel.querySelector(sel); if (el) el.textContent = val; };
   upd('.tp-m-primary .tp-m-val',  fmtBn(r.annualPayment_bn) + '/yr');
-  upd('.tp-m-primary .tp-m-note', `${_state.drawdown_pct}% × ${fmtBn(_state.corpus_usd_bn)} corpus`);
+  upd('.tp-m-primary .tp-m-note', `${_state.drawdown_pct}% × ${fmtBn(r.totalCorpus_bn)} corpus`);
 
   // Full re-render is fine since it's just DOM — no chart to preserve
   renderPanel();

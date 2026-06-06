@@ -67,6 +67,10 @@ function fmt(n) {
 
 function fmtUSD(m) {
   if (m === null || m === undefined) return '-';
+  if (m >= 10000) {
+    const bn = m / 1000;
+    return bn >= 100 ? `USD ${Math.round(bn).toLocaleString()}B` : `USD ${bn.toFixed(1)}B`;
+  }
   return `USD ${fmt(m)}M`;
 }
 

@@ -70,6 +70,10 @@ function makeCompletedIcon() {
 
 function fmtUSD(m) {
   if (m == null) return '-';
+  if (m >= 10000) {
+    const bn = m / 1000;
+    return bn >= 100 ? `USD ${Math.round(bn).toLocaleString()}B` : `USD ${bn.toFixed(1)}B`;
+  }
   return `USD ${Math.round(m).toLocaleString()}M`;
 }
 

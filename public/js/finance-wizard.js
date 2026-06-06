@@ -391,7 +391,14 @@ function portfolioCost(path) {
   return assetCost + growthCost;
 }
 
-function fmtM(n) { return n != null ? `$${(+n).toLocaleString()}M` : '-'; }
+function fmtM(n) {
+  if (n == null) return '-';
+  if (+n >= 10000) {
+    const bn = +n / 1000;
+    return bn >= 100 ? `$${Math.round(bn).toLocaleString()}B` : `$${bn.toFixed(1)}B`;
+  }
+  return `$${(+n).toLocaleString()}M`;
+}
 
 // ── Intro screen (first open only) ───────────────────────────────────────────
 
