@@ -209,7 +209,7 @@ function renderCapitalFormation() {
               step="${src.step_usd_bn}"
               value="${val}"
               aria-label="${src.label}">
-            <span class="trust-range-val" id="m1-val-${src.id}">$${val}B</span>
+            <span class="trust-range-val" id="m1-val-${src.id}">$${Math.round(val * 1000).toLocaleString()}M</span>
           </div>`;
   }
 
@@ -217,7 +217,7 @@ function renderCapitalFormation() {
         </div>
       </div>
       <div>
-        <div class="trust-total-nav" id="m1-total-nav">$${computeTotalNav().toFixed(0)}B</div>
+        <div class="trust-total-nav" id="m1-total-nav">$${Math.round(computeTotalNav() * 1000).toLocaleString()}M</div>
         <div class="trust-total-label">Total Trust NAV at formation</div>
         <div class="trust-stack-bar" id="m1-stack-bar"></div>
         <div class="trust-stack-legend" id="m1-stack-legend"></div>
@@ -248,13 +248,13 @@ function renderCapitalFormation() {
       else                        state.sources_B[id] = val;
 
       const label = document.getElementById(`m1-val-${id}`);
-      if (label) label.textContent = `$${val}B`;
+      if (label) label.textContent = `$${Math.round(val * 1000).toLocaleString()}M`;
 
       state.nav_usd_bn = Math.round(computeTotalNav() * 10) / 10;
       saveState();
 
       const totalEl = document.getElementById('m1-total-nav');
-      if (totalEl) totalEl.textContent = `$${computeTotalNav().toFixed(0)}B`;
+      if (totalEl) totalEl.textContent = `$${Math.round(computeTotalNav() * 1000).toLocaleString()}M`;
 
       renderStackBar();
       renderNavBand();
@@ -278,8 +278,8 @@ function renderStackBar() {
   bar.innerHTML = sources.map(src => {
     const val = activeSrc[src.id] ?? 0;
     const pct = (val / total * 100).toFixed(1);
-    return `<div class="trust-stack-segment" style="width:${pct}%;background:${src.colour}" title="${src.label}: $${val}B">
-      ${pct > 8 ? `$${val}B` : ''}
+    return `<div class="trust-stack-segment" style="width:${pct}%;background:${src.colour}" title="${src.label}: $${Math.round(val * 1000).toLocaleString()}M">
+      ${pct > 8 ? `$${Math.round(val * 1000).toLocaleString()}M` : ''}
     </div>`;
   }).join('');
 
@@ -287,7 +287,7 @@ function renderStackBar() {
     const val = activeSrc[src.id] ?? 0;
     return `<span class="trust-stack-legend-item">
       <span class="trust-stack-legend-swatch" style="background:${src.colour}"></span>
-      ${src.label} — $${val}B
+      ${src.label} — $${Math.round(val * 1000).toLocaleString()}M
     </span>`;
   }).join('');
 }
@@ -733,7 +733,7 @@ function renderAssetGrid(assets, tab) {
         <div class="trust-asset-cost">
           <strong>${oblast}</strong> · ${capitalise(sector.split('.').pop() ?? sector)}<br>
           ${dl ? `Damage: <strong>${capitalise(dl)}</strong>` : ''}
-          ${cost ? ` · Cost: <strong>$${(cost / 1000).toFixed(0)}B</strong>` : ''}
+          ${cost ? ` · Cost: <strong>$${Math.round(cost).toLocaleString()}M</strong>` : ''}
         </div>
       </div>`;
   }).join('');
@@ -752,13 +752,13 @@ function renderLeverage() {
       <div>
         <div class="trust-slider-row" style="margin-bottom:1rem">
           <div>
-            <span class="trust-slider-label">Trust capital deployed ($B)</span>
+            <span class="trust-slider-label">Trust capital deployed ($M)</span>
             <span class="trust-slider-source">Source: ISIF directed mandate 2014</span>
           </div>
           <input type="range" class="trust-range" id="m5-capital"
             min="1" max="50" step="1" value="${state.leverage_capital_usd_bn}"
             aria-label="Trust capital deployed">
-          <span class="trust-range-val" id="m5-capital-val">$${state.leverage_capital_usd_bn}B</span>
+          <span class="trust-range-val" id="m5-capital-val">$${Math.round(state.leverage_capital_usd_bn * 1000).toLocaleString()}M</span>
         </div>
         <div class="trust-leverage-grid" id="m5-instruments"></div>
       </div>
@@ -779,7 +779,7 @@ function renderLeverage() {
   document.getElementById('m5-capital')?.addEventListener('input', (e) => {
     state.leverage_capital_usd_bn = parseFloat(e.target.value);
     const lbl = document.getElementById('m5-capital-val');
-    if (lbl) lbl.textContent = `$${state.leverage_capital_usd_bn}B`;
+    if (lbl) lbl.textContent = `$${Math.round(state.leverage_capital_usd_bn * 1000).toLocaleString()}M`;
     saveState();
     updateLeverageResult(instruments);
   });
@@ -842,7 +842,7 @@ function renderStrategicEquity() {
 
   container.innerHTML = `
     <div class="trust-infobox" style="margin-bottom:1rem">
-      <strong>Total indicative Trust equity portfolio: $${total}B across ${assets.length} strategic assets</strong>
+      <strong>Total indicative Trust equity portfolio: $${Math.round(total * 1000).toLocaleString()}M across ${assets.length} strategic assets</strong>
       Equity stakes preserve Ukrainian public interest while mobilising private co-investment under ISIF-style mandate.
       All valuations are indicative modelling estimates — not offers or guarantees.
       <span class="trust-source">Source: RDNA3 sector assessments, KSE Institute, EBRD Ukraine strategy 2023</span>
@@ -862,11 +862,11 @@ function renderEquityCard(asset) {
       <p class="trust-equity-desc">${asset.description}</p>
       <div class="trust-equity-row">
         <span class="trust-equity-row-label">Indicative valuation</span>
-        <span class="trust-equity-row-val">$${asset.indicative_valuation_usd_bn}B</span>
+        <span class="trust-equity-row-val">$${Math.round(asset.indicative_valuation_usd_bn * 1000).toLocaleString()}M</span>
       </div>
       <div class="trust-equity-row">
         <span class="trust-equity-row-label">Trust equity</span>
-        <span class="trust-equity-row-val">$${asset.trust_equity_usd_bn}B</span>
+        <span class="trust-equity-row-val">$${Math.round(asset.trust_equity_usd_bn * 1000).toLocaleString()}M</span>
       </div>
       <div class="trust-equity-row">
         <span class="trust-equity-row-label">Co-investors</span>
@@ -1042,15 +1042,22 @@ async function boot() {
   // Compute initial NAV from default sources
   state.nav_usd_bn = Math.round(computeTotalNav() * 10) / 10;
 
-  // Restore collapsed state
-  if (state.collapsed) {
-    Object.entries(state.collapsed).forEach(([id, collapsed]) => {
-      const mod = document.getElementById(id);
-      if (mod) mod.classList.toggle('collapsed', collapsed);
-    });
-  }
+  // Restore collapsed state (mod-4 collapses by default — it's long)
+  const defaultCollapsed = { 'mod-4': true };
+  const collapsedState = Object.assign({}, defaultCollapsed, state.collapsed ?? {});
+  Object.entries(collapsedState).forEach(([id, collapsed]) => {
+    const mod = document.getElementById(id);
+    if (mod) mod.classList.toggle('collapsed', collapsed);
+  });
 
   wireModuleToggles();
+
+  // Lang toggle
+  import('/js/lang.js').then(({ initLangToggle }) => {
+    const btn = document.getElementById('langToggle');
+    if (btn) initLangToggle(btn);
+  }).catch(() => {});
+
   renderAll();
 }
 

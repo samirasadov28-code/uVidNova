@@ -47,8 +47,8 @@
   }
   </script>
 
-  <link rel="preload" href="/css/app.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="/css/app.css"></noscript>
+  <link rel="stylesheet" href="/css/app.css">
+  <style> body { overflow-y: auto !important; } </style>
 
   <style>
     /* ── About page supplemental styles ─────────────────────────────── */
@@ -748,5 +748,10 @@
   <div class="version-bar" role="status">
     <span class="version-label">v0.2.7</span>
   </div>
+  <script type="module">
+    import { initLangToggle } from '/js/lang.js';
+    const btn = document.getElementById('langToggle');
+    if (btn) initLangToggle(btn);
+  </script>
 </body>
 </html>

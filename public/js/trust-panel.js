@@ -21,8 +21,7 @@ let _state = {
 
 function fmtBn(v) {
   if (v == null || isNaN(v)) return '-';
-  if (Math.abs(v) >= 1000) return `$${(v/1000).toFixed(1)}T`;
-  return `$${(+v).toFixed(1)}B`;
+  return `$${Math.round(v * 1000).toLocaleString()}M`;
 }
 
 function fmtM(v) {

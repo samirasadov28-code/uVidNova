@@ -55,6 +55,8 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
 /* Map page: no scroll — the Leaflet map fills the viewport */
 body.map-page {
@@ -822,6 +824,8 @@ body.asset-page { display: flex; flex-direction: column; }
   z-index: 1;
   max-width: 540px;
   width: 100%;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
   text-align: center;
   color: #fff;
   background: rgba(4,12,40,0.68);
