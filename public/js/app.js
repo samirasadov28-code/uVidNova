@@ -129,6 +129,7 @@ let warMode = false;
 let warLayer = null;
 let mapViewMode = 'ukraine';
 let selectedOblast = null; // GeoJSON feature name of selected oblast in Damaged view
+let activeCityOblast = null; // tracks which oblast has city markers shown (for lang refresh)
 
 // Oblasts with significant current occupation (as of 2024-2025)
 // Names must match GeoJSON feature names exactly (apostrophe variants from Natural Earth)
@@ -695,6 +696,7 @@ async function loadCities() {
 }
 
 function showCityMarkers(oblastNameEn) {
+  activeCityOblast = oblastNameEn;
   clearCityMarkers();
   if (!map || !citiesData) return;
 
@@ -1210,7 +1212,10 @@ function initFilters() {
   });
 
   document.addEventListener('filtersChanged', renderMarkers);
-  document.addEventListener('langChanged', renderMarkers);
+  document.addEventListener('langChanged', () => {
+    renderMarkers();
+    if (activeCityOblast) showCityMarkers(activeCityOblast);
+  });
 }
 
 // ── App version ───────────────────────────────────────────────────────────────

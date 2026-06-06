@@ -8,28 +8,26 @@
  */
 
 export const LANG_META = {
-  en: { flagCode: 'gb', label: 'EN', name: 'English',            dir: 'ltr' },
-  uk: { flagCode: 'ua', label: 'UK', name: 'Українська',         dir: 'ltr' },
-  fr: { flagCode: 'fr', label: 'FR', name: 'Français',           dir: 'ltr' },
-  es: { flagCode: 'es', label: 'ES', name: 'Español',            dir: 'ltr' },
-  de: { flagCode: 'de', label: 'DE', name: 'Deutsch',            dir: 'ltr' },
-  pt: { flagCode: 'br', label: 'PT', name: 'Português',          dir: 'ltr' },
-  it: { flagCode: 'it', label: 'IT', name: 'Italiano',           dir: 'ltr' },
-  nl: { flagCode: 'nl', label: 'NL', name: 'Nederlands',         dir: 'ltr' },
-  tr: { flagCode: 'tr', label: 'TR', name: 'Türkçe',             dir: 'ltr' },
-  zh: { flagCode: 'cn', label: 'ZH', name: '中文',               dir: 'ltr' },
-  ar: { flagCode: 'sa', label: 'AR', name: 'العربية',            dir: 'rtl' },
-  hi: { flagCode: 'in', label: 'HI', name: 'हिन्दी',             dir: 'ltr' },
-  ru: { flagCode: null, label: 'RU', name: 'Русский',            dir: 'ltr' },
-  bn: { flagCode: 'bd', label: 'BN', name: 'বাংলা',              dir: 'ltr' },
-  ja: { flagCode: 'jp', label: 'JA', name: '日本語',             dir: 'ltr' },
-  id: { flagCode: 'id', label: 'ID', name: 'Bahasa Indonesia',   dir: 'ltr' },
+  en: { flag: '🇬🇧', flagCode: 'gb', label: 'EN', name: 'English',            dir: 'ltr' },
+  uk: { flag: '🇺🇦', flagCode: 'ua', label: 'UK', name: 'Українська',         dir: 'ltr' },
+  fr: { flag: '🇫🇷', flagCode: 'fr', label: 'FR', name: 'Français',           dir: 'ltr' },
+  es: { flag: '🇪🇸', flagCode: 'es', label: 'ES', name: 'Español',            dir: 'ltr' },
+  de: { flag: '🇩🇪', flagCode: 'de', label: 'DE', name: 'Deutsch',            dir: 'ltr' },
+  pt: { flag: '🇧🇷', flagCode: 'br', label: 'PT', name: 'Português',          dir: 'ltr' },
+  it: { flag: '🇮🇹', flagCode: 'it', label: 'IT', name: 'Italiano',           dir: 'ltr' },
+  nl: { flag: '🇳🇱', flagCode: 'nl', label: 'NL', name: 'Nederlands',         dir: 'ltr' },
+  tr: { flag: '🇹🇷', flagCode: 'tr', label: 'TR', name: 'Türkçe',             dir: 'ltr' },
+  zh: { flag: '🇨🇳', flagCode: 'cn', label: 'ZH', name: '中文',               dir: 'ltr' },
+  ar: { flag: '🇸🇦', flagCode: 'sa', label: 'AR', name: 'العربية',            dir: 'rtl' },
+  hi: { flag: '🇮🇳', flagCode: 'in', label: 'HI', name: 'हिन्दी',             dir: 'ltr' },
+  ru: { flag: null,   flagCode: null, label: 'RU', name: 'Русский',            dir: 'ltr' },
+  bn: { flag: '🇧🇩', flagCode: 'bd', label: 'BN', name: 'বাংলা',              dir: 'ltr' },
+  ja: { flag: '🇯🇵', flagCode: 'jp', label: 'JA', name: '日本語',             dir: 'ltr' },
+  id: { flag: '🇮🇩', flagCode: 'id', label: 'ID', name: 'Bahasa Indonesia',   dir: 'ltr' },
 };
 
-function flagImg(flagCode, cls) {
-  if (flagCode) {
-    return `<img src="https://flagcdn.com/20x15/${flagCode}.png" width="20" height="15" alt="" aria-hidden="true" class="${cls}">`;
-  }
+function flagSpan(flag, cls) {
+  if (flag) return `<span class="${cls}" aria-hidden="true">${flag}</span>`;
   return '';
 }
 
@@ -647,8 +645,8 @@ export function initLangToggle(btn) {
     opt.dataset.lang = code;
     opt.setAttribute('role', 'option');
     opt.title = meta.name;
-    const flagHtml = meta.flagCode
-      ? flagImg(meta.flagCode, 'lo-flag-img')
+    const flagHtml = meta.flag
+      ? flagSpan(meta.flag, 'lo-flag')
       : `<span class="lo-noflag">${meta.label}</span>`;
     opt.innerHTML = `${flagHtml}<span class="lo-name">${meta.name}</span>`;
     dropdown.appendChild(opt);
@@ -657,8 +655,8 @@ export function initLangToggle(btn) {
   const syncUI = () => {
     const lang = getLang();
     const meta = LANG_META[lang] ?? LANG_META.en;
-    const flagHtml = meta.flagCode
-      ? flagImg(meta.flagCode, 'lpb-flag-img')
+    const flagHtml = meta.flag
+      ? flagSpan(meta.flag, 'lpb-flag')
       : `<span class="lpb-noflag">${meta.label}</span>`;
     btn.innerHTML = `${flagHtml}<span class="lpb-code">${meta.label}</span><span class="lpb-chevron">▾</span>`;
     for (const opt of dropdown.querySelectorAll('.lang-option')) {

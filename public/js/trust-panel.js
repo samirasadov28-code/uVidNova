@@ -22,12 +22,10 @@ let _state = {
 
 function fmtBn(v) {
   if (v == null || isNaN(v)) return '-';
-  if (v >= 10) {
-    return v >= 100
-      ? `$${Math.round(v).toLocaleString()}B`
-      : `$${v.toFixed(1)}B`;
-  }
-  return `$${Math.round(v * 1000).toLocaleString()}M`;
+  if (v === 0) return '$0';
+  if (v >= 100) return `$${Math.round(v).toLocaleString()}B`;
+  if (v >= 1)   return `$${v.toFixed(1)}B`;
+  return `$${Math.round(v * 1000).toLocaleString()}M`; // sub-$1B
 }
 
 function fmtM(v) {
@@ -161,7 +159,7 @@ function renderPanel() {
     </div>
 
     <div class="tp-footer">
-      <a href="/trust.html" class="tp-full-btn" target="_blank" rel="noopener">Open full Trust model analysis →</a>
+      <a href="/trust.html" class="tp-full-btn">Open full Trust model analysis →</a>
       <p class="tp-disclaimer">Corpus and return figures are deterministic estimates from published benchmarks. Not guarantees or legal obligations. Russian reparations are a sovereign obligation under international law — disbursement timeline contingent on peace settlement.</p>
     </div>
   `;

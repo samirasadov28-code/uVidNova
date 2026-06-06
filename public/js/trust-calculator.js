@@ -230,12 +230,10 @@ function round2(n) {
  */
 export function fmtBn(usd_bn) {
   if (usd_bn == null || isNaN(usd_bn)) return '-';
-  if (usd_bn >= 10) {
-    return usd_bn >= 100
-      ? `$${Math.round(usd_bn).toLocaleString()}B`
-      : `$${usd_bn.toFixed(1)}B`;
-  }
-  return `$${Math.round(usd_bn * 1000).toLocaleString()}M`;
+  if (usd_bn === 0) return '$0';
+  if (usd_bn >= 100) return `$${Math.round(usd_bn).toLocaleString()}B`;
+  if (usd_bn >= 1)   return `$${usd_bn.toFixed(1)}B`;
+  return `$${Math.round(usd_bn * 1000).toLocaleString()}M`; // sub-$1B
 }
 
 /**

@@ -139,9 +139,12 @@ img { max-width: 100%; height: auto; }
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  flex: 1;
-  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
+.header-centre > * { pointer-events: auto; }
 .header-action-btn {
   display: inline-flex;
   align-items: center;
@@ -196,6 +199,7 @@ img { max-width: 100%; height: auto; }
   display: inline-flex;
 }
 .landing-lang-picker { margin-right: auto; }
+.landing-lang-picker .lang-picker-dropdown { right: auto; left: 0; }
 
 .lang-picker-btn {
   font-size: 0.8rem;
@@ -214,7 +218,7 @@ img { max-width: 100%; height: auto; }
   line-height: 1;
 }
 .lang-picker-btn:hover { background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.8); }
-.lpb-flag-img { display: block; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.15); }
+.lpb-flag    { font-size: 1.15rem; line-height: 1; font-family: 'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif; }
 .lpb-code    { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; }
 .lpb-chevron { font-size: 0.58rem; opacity: 0.7; margin-left: 0.05rem; }
 .lpb-noflag  {
@@ -273,8 +277,8 @@ img { max-width: 100%; height: auto; }
   color: var(--colour-gold-light);
 }
 
-.lo-flag-img { display: block; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.15); flex-shrink: 0; }
-.lo-name   { font-size: 0.8rem; font-weight: 500; }
+.lo-flag   { font-size: 1.3rem; line-height: 1; flex-shrink: 0; font-family: 'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif; }
+.lo-name   { font-size: 0.82rem; font-weight: 500; }
 .lo-noflag {
   font-size: 0.6rem; font-weight: 800;
   border: 1.5px solid rgba(255,255,255,0.35);
