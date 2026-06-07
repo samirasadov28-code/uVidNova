@@ -20,7 +20,7 @@ export const LANG_META = {
   zh: { flag: '🇨🇳', flagCode: 'cn', label: 'ZH', name: '中文',               dir: 'ltr' },
   ar: { flag: '🇸🇦', flagCode: 'sa', label: 'AR', name: 'العربية',            dir: 'rtl' },
   hi: { flag: '🇮🇳', flagCode: 'in', label: 'HI', name: 'हिन्दी',             dir: 'ltr' },
-  ru: { flag: '🇷🇺', flagCode: 'ru', label: 'RU', name: 'Русский',            dir: 'ltr' },
+  ru: { flag: null,   flagCode: null,  label: 'RU', name: 'Русский',            dir: 'ltr' },
   bn: { flag: '🇧🇩', flagCode: 'bd', label: 'BN', name: 'বাংলা',              dir: 'ltr' },
   ja: { flag: '🇯🇵', flagCode: 'jp', label: 'JA', name: '日本語',             dir: 'ltr' },
   id: { flag: '🇮🇩', flagCode: 'id', label: 'ID', name: 'Bahasa Indonesia',   dir: 'ltr' },
