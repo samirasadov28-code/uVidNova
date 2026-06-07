@@ -6,6 +6,7 @@
  */
 
 import { simulateNavTrajectory, computeAnnualAP, computeSupportableDebt, computeTotalMobilised } from './trust-calculator.js';
+import { t } from './lang.js';
 
 const FROZEN_TOTAL_BN = 300;   // G7-frozen Russian assets
 const RDNA3_TOTAL_BN  = 486;   // KSE total reparations claim / reconstruction need
@@ -91,44 +92,44 @@ function renderPanel() {
 
   panel.querySelector('#tpBody').innerHTML = `
     <div class="tp-section">
-      <h4 class="tp-sh">Corpus &amp; deployment inputs</h4>
-      ${sliderRow('tpCorpus',       'Frozen assets mobilised',          0, 300,  5,  _state.corpus_usd_bn,       v => fmtBn(v))}
-      ${sliderRow('tpReparations',  'Russian reparations contribution',  0, 2000, 50, _state.reparations_usd_bn, v => fmtBn(v))}
-      ${sliderRow('tpDrawdown',     'Annual deployment rate',            2,   8,  0.5, _state.drawdown_pct,      v => v + '%')}
-      ${sliderRow('tpReturn',       'Annual real return on NAV',         2,   7,  0.5, _state.return_pct,        v => v + '%')}
-      <div class="tp-corpus-total">Total corpus: <strong>${fmtBn(r.totalCorpus_bn)}</strong></div>
+      <h4 class="tp-sh">${t('tp.corpus_inputs') || 'Corpus &amp; deployment inputs'}</h4>
+      ${sliderRow('tpCorpus',       t('tp.frozen_assets') || 'Frozen assets mobilised',         0, 300,  5,  _state.corpus_usd_bn,       v => fmtBn(v))}
+      ${sliderRow('tpReparations',  t('tp.reparations')   || 'Russian reparations contribution', 0, 2000, 50, _state.reparations_usd_bn, v => fmtBn(v))}
+      ${sliderRow('tpDrawdown',     t('tp.drawdown')      || 'Annual deployment rate',            2,  8,  0.5, _state.drawdown_pct,      v => v + '%')}
+      ${sliderRow('tpReturn',       t('tp.return')        || 'Annual real return on NAV',         2,  7,  0.5, _state.return_pct,        v => v + '%')}
+      <div class="tp-corpus-total">${t('tp.total_corpus') || 'Total corpus:'} <strong>${fmtBn(r.totalCorpus_bn)}</strong></div>
     </div>
 
     <div class="tp-section tp-outputs">
-      <h4 class="tp-sh">Key outputs</h4>
+      <h4 class="tp-sh">${t('tp.key_outputs') || 'Key outputs'}</h4>
       <div class="tp-metrics">
         <div class="tp-metric tp-m-primary">
           <span class="tp-m-val">${fmtBn(r.annualPayment_bn)}/yr</span>
-          <span class="tp-m-lbl">Annual availability payment</span>
+          <span class="tp-m-lbl">${t('tp.annual_ap') || 'Annual availability payment'}</span>
           <span class="tp-m-note">${(_state.drawdown_pct)}% × ${fmtBn(r.totalCorpus_bn)} corpus</span>
         </div>
         <div class="tp-metric">
           <span class="tp-m-val">${fmtBn(r.supportableDebt_bn)}</span>
-          <span class="tp-m-lbl">Supportable concessional debt</span>
+          <span class="tp-m-lbl">${t('tp.conc_debt') || 'Supportable concessional debt'}</span>
           <span class="tp-m-note">EBRD terms: 1.5% / 20yr</span>
         </div>
         <div class="tp-metric tp-m-total">
           <span class="tp-m-val">${fmtBn(r.totalMobilised_bn)}</span>
-          <span class="tp-m-lbl">Total capital mobilised</span>
+          <span class="tp-m-lbl">${t('tp.total_mob') || 'Total capital mobilised'}</span>
           <span class="tp-m-note">Corpus + leveraged debt</span>
         </div>
         <div class="tp-metric">
           <span class="tp-m-val">${r.coveragePct.toFixed(1)}%</span>
-          <span class="tp-m-lbl">Coverage of $486B reconstruction claim</span>
-          <span class="tp-m-note">KSE Institute baseline (RDNA3)</span>
+          <span class="tp-m-lbl">${t('tp.coverage') || 'Coverage of $486B reconstruction claim'}</span>
+          <span class="tp-m-note">${t('tp.rdna3_note') || 'KSE Institute baseline (RDNA3)'}</span>
         </div>
       </div>
     </div>
 
     <div class="tp-section">
-      <h4 class="tp-sh">NAV trajectory</h4>
+      <h4 class="tp-sh">${t('tp.nav_traj') || 'NAV trajectory'}</h4>
       <table class="tp-traj-table">
-        <thead><tr><th>Year</th><th>NAV</th><th>Deployed (cum.)</th></tr></thead>
+        <thead><tr><th>${t('tp.col_year') || 'Year'}</th><th>${t('tp.col_nav') || 'NAV'}</th><th>${t('tp.col_deployed') || 'Deployed (cum.)'}</th></tr></thead>
         <tbody>
           ${[1,3,5,10,15,20,25,30].map(yr => {
             const n = r.navAt(yr);
@@ -141,7 +142,7 @@ function renderPanel() {
     </div>
 
     <div class="tp-section tp-context">
-      <h4 class="tp-sh">Russia's obligation in context</h4>
+      <h4 class="tp-sh">${t('tp.russia_context') || "Russia's obligation in context"}</h4>
       <div class="tp-ctx-bar-wrap">
         <div class="tp-ctx-bar-track">
           <div class="tp-ctx-bar-fill" style="width:${Math.min(r.coveragePct, 100).toFixed(1)}%"></div>
@@ -159,8 +160,8 @@ function renderPanel() {
     </div>
 
     <div class="tp-footer">
-      <a href="/trust.html?corpus=${_state.corpus_usd_bn}&rep=${_state.reparations_usd_bn}&draw=${_state.drawdown_pct}&ret=${_state.return_pct}&rec=${_state.recycling_pct}" class="tp-full-btn">Open full Trust model analysis →</a>
-      <p class="tp-disclaimer">Corpus and return figures are deterministic estimates from published benchmarks. Not guarantees or legal obligations. Russian reparations are a sovereign obligation under international law — disbursement timeline contingent on peace settlement.</p>
+      <a href="/trust.html?corpus=${_state.corpus_usd_bn}&rep=${_state.reparations_usd_bn}&draw=${_state.drawdown_pct}&ret=${_state.return_pct}&rec=${_state.recycling_pct}" class="tp-full-btn">${t('tp.open_full') || 'Open full Trust model analysis →'}</a>
+      <p class="tp-disclaimer">${t('tp.disclaimer') || 'Corpus and return figures are deterministic estimates from published benchmarks. Not guarantees or legal obligations. Russian reparations are a sovereign obligation under international law — disbursement timeline contingent on peace settlement.'}</p>
     </div>
   `;
 
@@ -217,8 +218,8 @@ export function openTrustPanel() {
       <div class="fw-modal tp-modal" role="dialog" aria-modal="true" aria-label="Create Vidnova Trust">
         <div class="fw-header">
           <div class="fw-header-left">
-            <h2 class="fw-title">🏛 Create Vidnova Trust</h2>
-            <span class="fw-header-sub">Russian frozen assets → annual reconstruction payments</span>
+            <h2 class="fw-title">${t('tp.title') || '🏛 Create Vidnova Trust'}</h2>
+            <span class="fw-header-sub">${t('tp.subtitle') || 'Russian frozen assets → annual reconstruction payments'}</span>
           </div>
           <button class="fw-close" id="tpClose" aria-label="Close">×</button>
         </div>

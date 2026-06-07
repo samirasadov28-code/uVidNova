@@ -179,7 +179,7 @@
       <p class="tagline">Ukraine Reconstruction Finance Atlas</p>
       <nav class="site-nav">
         <a href="/" onclick="try{sessionStorage.setItem('uvidnova_landed','1')}catch(e){}">&#8592; Map</a>
-        <a href="/finance.html" class="nav-finance-link" data-i18n="nav.finance">Finance It</a>
+        <a href="/?openFinance=1" class="nav-finance-link" data-i18n="nav.finance">Finance It</a>
         <a href="/trust.html" class="nav-trust-link" data-i18n="nav.trust">Trust</a>
         <a href="/privacy" class="nav-link" data-i18n="nav.privacy">Privacy</a>
         <button class="lang-toggle" id="langToggle" aria-label="Switch language">🇬🇧 EN</button>
@@ -750,9 +750,15 @@
     <span class="version-label">v0.2.7</span>
   </div>
   <script type="module">
-    import { initLangToggle } from '/js/lang.js';
+    import { initLangToggle, t } from '/js/lang.js';
     const btn = document.getElementById('langToggle');
     if (btn) initLangToggle(btn);
+    function applyPageLang() {
+      const h1 = document.querySelector('.about-main h1');
+      if (h1) h1.textContent = t('about.title') || h1.textContent;
+    }
+    document.addEventListener('langChanged', applyPageLang);
+    applyPageLang();
   </script>
 </body>
 </html>

@@ -88,7 +88,7 @@
       <p class="tagline">Ukraine Reconstruction Finance Atlas</p>
       <nav class="site-nav">
         <a href="/" onclick="try{sessionStorage.setItem('uvidnova_landed','1')}catch(e){}">&#8592; Map</a>
-        <a href="/about.html" class="nav-link">Methodology</a>
+        <a href="/about.html" class="nav-link" data-i18n="nav.methodology">Methodology</a>
         <button class="lang-toggle" id="langToggle" aria-label="Switch language">🇬🇧 EN</button>
       </nav>
     </div>
@@ -162,5 +162,19 @@
     <p>If you have questions about this Privacy Policy, contact us at <a href="mailto:finmodelup@gmail.com"><strong>finmodelup@gmail.com</strong></a>.</p>
   </main>
 
+  <script type="module">
+    import { initLangToggle, applyTranslations, getLang, t } from '/js/lang.js';
+    initLangToggle(document.getElementById('langToggle'));
+    // Translate headings on lang change
+    function applyPageLang() {
+      const h1 = document.querySelector('.privacy-main h1');
+      const back = document.querySelector('.privacy-back');
+      if (h1)   h1.textContent = t('privacy.title') || h1.textContent;
+      if (back && back.textContent.trim().startsWith('←'))
+        back.textContent = t('privacy.back') || '← Back to atlas';
+    }
+    document.addEventListener('langChanged', applyPageLang);
+    applyPageLang();
+  </script>
 </body>
 </html>

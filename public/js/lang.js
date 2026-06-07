@@ -29,9 +29,17 @@ export const LANG_META = {
 function flagSpan(code, name, cls, h) {
   if (!code) return '';
   h = h || 14;
-  const w = Math.round(h * 1.5);
-  const fallback = code.toUpperCase();
-  return `<img src="https://flagcdn.com/w40/${code}.png" srcset="https://flagcdn.com/w80/${code}.png 2x" width="${w}" height="${h}" alt="${name || ''}" class="${cls}" style="border-radius:2px;vertical-align:middle;object-fit:cover;display:inline-block" onerror="this.outerHTML='<span style=\\'font-size:0.75rem\\'>${fallback}</span>'">`;
+  var w = Math.round(h * 1.5);
+  var fb = code.toUpperCase();
+  return '<img'
+    + ' src="https://flagcdn.com/w40/' + code + '.png"'
+    + ' srcset="https://flagcdn.com/w80/' + code + '.png 2x"'
+    + ' width="' + w + '" height="' + h + '"'
+    + ' alt="' + (name || '') + '"'
+    + ' class="' + cls + '"'
+    + ' style="display:inline-block;vertical-align:middle;border-radius:2px;object-fit:cover"'
+    + ' onerror="this.outerHTML=\'<span style=&quot;font-size:0.75rem;font-weight:700;opacity:0.7&quot;>' + fb + '</span>\'"'
+    + '>';
 }
 
 const TRANSLATIONS = {
@@ -265,6 +273,33 @@ const TRANSLATIONS = {
     'tab.damaged':         'Пошкоджено',
     'tab.reconstructed':   'Відбудовано',
     'tab.development':     'Розвиток',
+    // Trust panel labels (items 14)
+    'tp.title':            '🏛 Заснувати фонд Vidnova',
+    'tp.subtitle':         'Заморожені активи РФ → щорічні виплати на відбудову',
+    'tp.corpus_inputs':    'Корпус та параметри розгортання',
+    'tp.frozen_assets':    'Мобілізовані заморожені активи',
+    'tp.reparations':      'Репарації від Росії',
+    'tp.drawdown':         'Річна ставка розгортання',
+    'tp.return':           'Річний реальний дохід від NAV',
+    'tp.total_corpus':     'Загальний корпус:',
+    'tp.key_outputs':      'Ключові показники',
+    'tp.annual_ap':        'Щорічна виплата наявності',
+    'tp.conc_debt':        'Підтримуваний концесійний борг',
+    'tp.total_mob':        'Загальний мобілізований капітал',
+    'tp.coverage':         'Покриття вимоги відбудови $486 млрд',
+    'tp.rdna3_note':       'Базовий сценарій KSE Institute (RDNA3)',
+    'tp.nav_traj':         'Траєкторія NAV',
+    'tp.col_year':         'Рік',
+    'tp.col_nav':          'NAV',
+    'tp.col_deployed':     'Розгорнуто (нарост.)',
+    'tp.russia_context':   'Зобов\'язання Росії в контексті',
+    'tp.open_full':        'Відкрити повну модель фонду →',
+    'tp.disclaimer':       'Показники корпусу та доходності — детерміновані оцінки на основі опублікованих орієнтирів. Не є гарантіями. Репарації Росії — суверенне зобов\'язання за міжнародним правом; строки залежать від мирного врегулювання.',
+    // Privacy page (item 11)
+    'privacy.title':       'Політика конфіденційності',
+    'privacy.back':        '← Назад до атласу',
+    // Methodology/about page (item 12)
+    'about.title':         'Методологія та джерела',
   },
 
   // ── Batch 1 ───────────────────────────────────────────────────────────────
@@ -1757,29 +1792,39 @@ export function initLangToggle(btn) {
   // For pickers inside overflow-y:auto containers (landing card), use position:fixed
   const isLanding = wrapper.classList.contains('landing-lang-picker');
 
+  function closeLandingDropdown() {
+    if (!dropdown.classList.contains('open')) return;
+    dropdown.classList.remove('open');
+    if (isLanding && dropdown.parentNode === document.body) {
+      // Return to wrapper and clear teleport styles
+      wrapper.appendChild(dropdown);
+      dropdown.removeAttribute('style');
+    }
+  }
+
   btn.addEventListener('click', e => {
     e.stopPropagation();
-    // Close any other open pickers
     document.querySelectorAll('.lang-picker-dropdown.open').forEach(d => {
       if (d !== dropdown) d.classList.remove('open');
     });
     const isOpening = !dropdown.classList.contains('open');
     if (isLanding && isOpening) {
-      // Position as fixed so it isn't clipped by overflow-y:auto on landing-content
+      // Teleport dropdown to <body> to escape backdrop-filter stacking context
+      // (backdrop-filter makes position:fixed children position relative to it, not viewport)
       const rect = wrapper.getBoundingClientRect();
+      document.body.appendChild(dropdown);
       dropdown.style.position = 'fixed';
-      dropdown.style.left     = rect.left + 'px';
-      dropdown.style.right    = 'auto';
+      dropdown.style.zIndex   = '99999';
       dropdown.style.minWidth = '200px';
-      dropdown.style.zIndex   = '9999';
+      dropdown.style.right    = 'auto';
+      dropdown.style.bottom   = 'auto';
+      dropdown.style.left     = rect.left + 'px';
       // Flip upward if near bottom of viewport
-      const estimatedHeight = 340;
-      if (rect.bottom + estimatedHeight > window.innerHeight) {
-        dropdown.style.top    = 'auto';
+      if (rect.top + 340 > window.innerHeight) {
+        dropdown.style.top  = 'auto';
         dropdown.style.bottom = (window.innerHeight - rect.top + 4) + 'px';
       } else {
-        dropdown.style.top    = (rect.bottom + 4) + 'px';
-        dropdown.style.bottom = 'auto';
+        dropdown.style.top  = (rect.bottom + 4) + 'px';
       }
     }
     dropdown.classList.toggle('open');
@@ -1789,10 +1834,11 @@ export function initLangToggle(btn) {
     const opt = e.target.closest('.lang-option');
     if (!opt) return;
     setLang(opt.dataset.lang);
+    closeLandingDropdown();
     dropdown.classList.remove('open');
   });
 
-  document.addEventListener('click', () => dropdown.classList.remove('open'));
+  document.addEventListener('click', () => closeLandingDropdown());
   dropdown.addEventListener('click', e => e.stopPropagation());
 
   document.addEventListener('langChanged', () => {
