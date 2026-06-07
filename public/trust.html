@@ -162,8 +162,8 @@
       <div class="trust-module-header" role="button" tabindex="0" aria-expanded="true">
         <div class="trust-module-num">3</div>
         <div>
-          <div class="trust-module-title" id="mod-3-title">Allocation Strategy</div>
-          <div class="trust-module-subtitle">Grants / Concessional / Equity / Availability Payments / Endowment Reserve</div>
+          <div class="trust-module-title" id="mod-3-title" data-i18n="trust.mod3.title">Allocation Strategy</div>
+          <div class="trust-module-subtitle" data-i18n="trust.mod3.subtitle">Grants / Concessional / Equity / Availability Payments / Endowment Reserve</div>
         </div>
         <div class="trust-module-chevron">▾</div>
       </div>
@@ -179,8 +179,8 @@
       <div class="trust-module-header" role="button" tabindex="0" aria-expanded="true">
         <div class="trust-module-num">4</div>
         <div>
-          <div class="trust-module-title" id="mod-4-title">Project Support Mapping</div>
-          <div class="trust-module-subtitle">Atlas assets mapped to Trust financing channels</div>
+          <div class="trust-module-title" id="mod-4-title" data-i18n="trust.mod4.title">Project Support Mapping</div>
+          <div class="trust-module-subtitle" data-i18n="trust.mod4.subtitle">Atlas assets mapped to Trust financing channels</div>
         </div>
         <div class="trust-module-chevron">▾</div>
       </div>
@@ -196,8 +196,8 @@
       <div class="trust-module-header" role="button" tabindex="0" aria-expanded="true">
         <div class="trust-module-num">5</div>
         <div>
-          <div class="trust-module-title" id="mod-5-title">Leverage Multiplier</div>
-          <div class="trust-module-subtitle">Trust capital × instrument type → crowded-in capital (ISIF 1.6×, MIGA 5–10×, EBRD 3–4×)</div>
+          <div class="trust-module-title" id="mod-5-title" data-i18n="trust.mod5.title">Leverage Multiplier</div>
+          <div class="trust-module-subtitle" data-i18n="trust.mod5.subtitle">Trust capital × instrument type → crowded-in capital (ISIF 1.6×, MIGA 5–10×, EBRD 3–4×)</div>
         </div>
         <div class="trust-module-chevron">▾</div>
       </div>
@@ -213,8 +213,8 @@
       <div class="trust-module-header" role="button" tabindex="0" aria-expanded="true">
         <div class="trust-module-num">6</div>
         <div>
-          <div class="trust-module-title" id="mod-6-title">Strategic Equity Holdings</div>
-          <div class="trust-module-subtitle">Nationally strategic Ukrainian assets the Trust would hold equity in</div>
+          <div class="trust-module-title" id="mod-6-title" data-i18n="trust.mod6.title">Strategic Equity Holdings</div>
+          <div class="trust-module-subtitle" data-i18n="trust.mod6.subtitle">Nationally strategic Ukrainian assets the Trust would hold equity in</div>
         </div>
         <div class="trust-module-chevron">▾</div>
       </div>
@@ -230,8 +230,8 @@
       <div class="trust-module-header" role="button" tabindex="0" aria-expanded="true">
         <div class="trust-module-num">7</div>
         <div>
-          <div class="trust-module-title" id="mod-7-title">Precedent Comparison</div>
-          <div class="trust-module-subtitle">Norway GPFG · Temasek · ISIF · Marshall Plan · EU RRF · VidNova Trust at maturity</div>
+          <div class="trust-module-title" id="mod-7-title" data-i18n="trust.mod7.title">Precedent Comparison</div>
+          <div class="trust-module-subtitle" data-i18n="trust.mod7.subtitle">Norway GPFG · Temasek · ISIF · Marshall Plan · EU RRF · VidNova Trust at maturity</div>
         </div>
         <div class="trust-module-chevron">▾</div>
       </div>
@@ -241,7 +241,7 @@
     </section>
 
     <!-- ── Disclaimer ─────────────────────────────────────────────────────────── -->
-    <div class="trust-disclaimer">
+    <div class="trust-disclaimer" data-i18n="trust.disclaimer">
       <strong>Disclaimer.</strong>
       The VidNova Trust is a <strong>modelled scenario</strong>, not a legal instrument, operating entity, or investment fund.
       All figures are estimates derived from published benchmarks: RDNA3 (World Bank / Government of Ukraine / EC / UN, February 2024),
@@ -296,6 +296,23 @@
   </script>
 
   <script type="module" src="/js/trust-page.js"></script>
+
+  <!-- ── Trust page i18n ───────────────────────────────────────────────────── -->
+  <script type="module">
+  import { t, getLang, applyTranslations } from '/js/lang.js';
+
+  function applyTrustI18n() {
+    for (const el of document.querySelectorAll('[data-i18n]')) {
+      const val = t(el.dataset.i18n);
+      if (val !== el.dataset.i18n) {
+        el.innerHTML = val;
+      }
+    }
+  }
+
+  applyTrustI18n();
+  document.addEventListener('langChanged', applyTrustI18n);
+  </script>
 
 </body>
 </html>
