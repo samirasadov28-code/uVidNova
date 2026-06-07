@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Methodology and Sources - uVidNova Ukraine Reconstruction Finance Atlas</title>
-  <meta name="description" content="How uVidNova computes reconstruction costs and financing structures: deterministic formula, RDNA3/KSE sources, anti-hallucination architecture, Reconstruction Trust methodology, and full source bibliography.">
+  <title>Методологія та джерела - uVidNova Атлас фінансування відбудови України</title>
+  <meta name="description" content="Як uVidNova розраховує витрати на відбудову та структури фінансування: детермінована формула, джерела RDNA3/KSE, архітектура захисту від галюцинацій, методологія фонду відбудови та повна бібліографія джерел.">
   <meta name="theme-color" content="#1a3a6b">
   <meta name="app-version" content="0.2.7">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="uVidNova">
-  <meta property="og:title"       content="Methodology and Sources - uVidNova Ukraine Reconstruction Finance Atlas">
-  <meta property="og:description" content="Deterministic cost estimation against RDNA3 and KSE benchmarks. Every number traces to a named published source. No figures invented by AI.">
+  <meta property="og:title"       content="Методологія та джерела - uVidNova Атлас фінансування відбудови України">
+  <meta property="og:description" content="Детерміноване оцінювання витрат на основі показників RDNA3 та KSE. Кожне число простежується до конкретного опублікованого джерела. Жодні цифри не вигадуються ШІ.">
   <meta property="og:url"         content="https://uvidnova.netlify.app/about.html">
   <meta property="og:image"       content="https://uvidnova.netlify.app/assets/logo_512.png">
 
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary">
-  <meta name="twitter:title"       content="Methodology - uVidNova">
-  <meta name="twitter:description" content="How uVidNova computes Ukraine reconstruction costs: deterministic formula, RDNA3/KSE sources, anti-hallucination gate, Reconstruction Trust model.">
+  <meta name="twitter:title"       content="Методологія - uVidNova">
+  <meta name="twitter:description" content="Як uVidNova розраховує витрати на відбудову України: детермінована формула, джерела RDNA3/KSE, захист від галюцинацій, модель фонду відбудови.">
   <meta name="twitter:image"       content="https://uvidnova.netlify.app/assets/logo_512.png">
 
   <link rel="manifest"         href="/manifest.webmanifest">
@@ -38,7 +38,7 @@
     "isPartOf": { "@type": "WebSite", "name": "uVidNova", "url": "https://uvidnova.netlify.app" },
     "author": { "@type": "Person", "name": "Samir Asadov" },
     "dateModified": "2026-05-27",
-    "inLanguage": "en",
+    "inLanguage": "uk",
     "about": {
       "@type": "Dataset",
       "name": "uVidNova Ukraine Reconstruction Finance Atlas",
@@ -179,10 +179,10 @@
       </a>
       <p class="tagline">Ukraine Reconstruction Finance Atlas</p>
       <nav class="site-nav">
-        <a href="/" onclick="try{sessionStorage.setItem('uvidnova_landed','1')}catch(e){}">&#8592; Map</a>
-        <a href="/?openFinance=1" class="nav-finance-link" data-i18n="nav.finance">Finance It</a>
-        <a href="/trust.html" class="nav-trust-link" data-i18n="nav.trust">Trust</a>
-        <a href="/privacy" class="nav-link" data-i18n="nav.privacy">Privacy</a>
+        <a href="/" onclick="try{sessionStorage.setItem('uvidnova_landed','1')}catch(e){}">&#8592; Карта</a>
+        <a href="/?openFinance=1" class="nav-finance-link" data-i18n="nav.finance">Фінансування</a>
+        <a href="/trust.html" class="nav-trust-link" data-i18n="nav.trust">Фонд</a>
+        <a href="/privacy" class="nav-link" data-i18n="nav.privacy">Конфіденційність</a>
         <button class="lang-toggle" id="langToggle" aria-label="Switch language">🇬🇧 EN</button>
       </nav>
     </div>
@@ -190,22 +190,23 @@
 
   <main class="about-main" id="top">
 
-    <h1>Methodology and Sources</h1>
+    <h1>Методологія та джерела</h1>
     <p class="about-lead">
-      uVidNova is a project-finance-grade atlas. Every number on this platform traces
-      to a named published source. No figures are produced by AI. The platform's value
-      is integration of authoritative external data, not invention.
+      uVidNova — це атлас рівня проєктного фінансування. Кожне число на цій платформі
+      простежується до конкретного опублікованого джерела. Жодна цифра не генерується
+      ШІ. Цінність платформи — в інтеграції авторитетних зовнішніх даних, а не у
+      їх вигадуванні.
     </p>
 
     <!-- ── Table of contents ─────────────────────────────────────────────── -->
-    <nav class="about-toc" aria-label="Page sections">
-      <p class="about-toc-title">Contents</p>
+    <nav class="about-toc" aria-label="Розділи сторінки">
+      <p class="about-toc-title">Зміст</p>
       <ol>
-        <li><a href="#methodology">Cost and financing methodology</a></li>
-        <li><a href="#sources">Authoritative reference sources</a></li>
-        <li><a href="#financing">Financing structure methodology</a></li>
-        <li><a href="#trust">Reconstruction Trust methodology</a></li>
-        <li><a href="#disclaimer">Disclaimer</a></li>
+        <li><a href="#methodology">Методологія вартості та фінансування</a></li>
+        <li><a href="#sources">Авторитетні довідкові джерела</a></li>
+        <li><a href="#financing">Методологія структури фінансування</a></li>
+        <li><a href="#trust">Методологія фонду відбудови</a></li>
+        <li><a href="#disclaimer">Застереження</a></li>
       </ol>
     </nav>
 
@@ -213,12 +214,12 @@
          1. COST AND FINANCING METHODOLOGY
     ═════════════════════════════════════════════════════════════════════════ -->
     <section class="about-section" id="methodology" aria-labelledby="methodology-title">
-      <h2 class="about-section-title" id="methodology-title">1. Cost and financing methodology</h2>
+      <h2 class="about-section-title" id="methodology-title">1. Методологія вартості та фінансування</h2>
 
       <!-- 1.1 Deterministic formula -->
       <div class="about-subsection">
-        <h3>1.1 The deterministic cost formula</h3>
-        <p>All reconstruction cost estimates are computed deterministically by formula. The AI orchestrator used on this platform (which classifies damage records and generates narrative summaries) <strong>never produces numeric output</strong>. Every number in every cost field derives from lookups against published benchmark tables, computed in <code>scripts/compute-costs.js</code>.</p>
+        <h3>1.1 Детермінована формула вартості</h3>
+        <p>Усі оцінки вартості відбудови розраховуються детерміновано за формулою. Оркестратор ШІ, який використовується на цій платформі (він класифікує записи про збитки та генерує наративні резюме), <strong>ніколи не генерує числовий результат</strong>. Кожне число в кожному полі вартості отримується шляхом пошуку в опублікованих таблицях орієнтирів, обчислених у <code>scripts/compute-costs.js</code>.</p>
         <div class="formula-block">cost = unit_cost
      × physical_quantity
      × destruction_factor
@@ -228,225 +229,226 @@
 
         <table>
           <thead>
-            <tr><th>Variable</th><th>Range / values</th><th>Source</th></tr>
+            <tr><th>Змінна</th><th>Діапазон / значення</th><th>Джерело</th></tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>unit_cost</strong></td>
-              <td>USD per m², MW, km, bed, or unit - varies by <code>asset_type</code></td>
+              <td>USD за м², МВт, км, ліжко або одиницю — залежить від <code>asset_type</code></td>
               <td>
-                <code>data/unit_cost_table.json</code>. Every row carries a source code
-                and a <code>vintage_year</code>. Primary sources:
+                <code>data/unit_cost_table.json</code>. Кожен рядок містить код джерела
+                та <code>vintage_year</code>. Основні джерела:
                 [<code>RDNA3</code>] [<code>KSE</code>] [<code>EBRD_CASE</code>]
               </td>
             </tr>
             <tr>
               <td><strong>physical_quantity</strong></td>
-              <td>m², MW, km, beds, tonnes - depends on <code>asset_type</code></td>
+              <td>м², МВт, км, ліжка, тонни — залежить від <code>asset_type</code></td>
               <td>
-                Per-asset <code>physical_specs</code> field. Every value wrapped
-                <code>{ value, source, ref }</code> where
+                Поле <code>physical_specs</code> для кожного активу. Кожне значення обгорнуте
+                <code>{ value, source, ref }</code>, де
                 <code>source</code> &#8712; <em>extracted_from_source, estimated_from_photo,
-                pending_data, modelled</em>. Assets with <code>pending_data</code> specs
-                return only a low/high range, marked preliminary.
+                pending_data, modelled</em>. Активи зі специфікаціями <code>pending_data</code>
+                повертають лише діапазон низького/високого значення, позначений як попередній.
               </td>
             </tr>
             <tr>
               <td><strong>destruction_factor</strong></td>
               <td>
-                light: 0.10&#8211;0.25 &#183;
-                moderate: 0.30&#8211;0.55 &#183;
-                severe: 0.60&#8211;0.85 &#183;
-                destroyed: 0.95&#8211;1.10
+                легкі: 0.10&#8211;0.25 &#183;
+                помірні: 0.30&#8211;0.55 &#183;
+                значні: 0.60&#8211;0.85 &#183;
+                повне руйнування: 0.95&#8211;1.10
               </td>
               <td>
-                <code>data/destruction_factors.json</code>. Ranges calibrated against
-                RDNA3 damage-level definitions and EBRD case-study repair cost ratios.
+                <code>data/destruction_factors.json</code>. Діапазони калібровані відповідно до
+                визначень рівнів пошкоджень RDNA3 та співвідношень витрат на ремонт із кейс-студій EBRD.
                 [<code>RDNA3</code>] [<code>EBRD_CASE</code>]
               </td>
             </tr>
             <tr>
               <td><strong>regional_multiplier</strong></td>
-              <td>Varies by oblast. Frontline regions: higher logistics premium. Western regions: at or below 1.00×.</td>
+              <td>Варіюється залежно від області. Прифронтові регіони: вища логістична премія. Західні регіони: на рівні або нижче 1.00×.</td>
               <td>
-                <code>data/regional_multipliers.json</code>. Derived from RDNA3 regional
-                cost variation analysis and EBRD Ukraine programme procurement premiums.
+                <code>data/regional_multipliers.json</code>. Отриманий з аналізу регіональних
+                варіацій вартості RDNA3 та закупівельних премій програми EBRD для України.
                 [<code>RDNA3</code>] [<code>EBRD_CASE</code>]
               </td>
             </tr>
             <tr>
               <td><strong>path_multiplier</strong></td>
-              <td>Baseline: 1.00× &#183; Code-compliant: 1.15&#8211;1.25× &#183; Build-back-better: 1.30&#8211;1.60×</td>
+              <td>Базовий: 1.00× &#183; Відповідний нормам: 1.15&#8211;1.25× &#183; Відбудова краще, ніж було: 1.30&#8211;1.60×</td>
               <td>
-                <code>data/path_multipliers.json</code>. Derived from EU energy efficiency
-                and accessibility conditionality cost data and RDNA3 build-back-better
-                scenario analysis. [<code>RDNA3</code>] [<code>EU_FACILITY</code>]
+                <code>data/path_multipliers.json</code>. Отриманий з даних про вартість дотримання
+                умов енергоефективності та доступності ЄС та аналізу сценарію відбудови краще, ніж
+                було, за RDNA3. [<code>RDNA3</code>] [<code>EU_FACILITY</code>]
               </td>
             </tr>
             <tr>
               <td><strong>contingency</strong></td>
-              <td>1.15 (15%) for <em>assessed</em> assets &#183; 1.25 (25%) for <em>documented-only</em> assets</td>
+              <td>1.15 (15%) для <em>оцінених</em> активів &#183; 1.25 (25%) для активів, лише <em>задокументованих</em></td>
               <td>
-                Standard project-finance contingency for post-conflict environments,
-                consistent with World Bank procurement guidance for Ukraine.
+                Стандартний резерв на непередбачені витрати в проєктному фінансуванні для
+                постконфліктних середовищ, відповідно до керівних принципів державних закупівель
+                Світового банку для України.
                 [<code>RDNA3</code>]
               </td>
             </tr>
           </tbody>
         </table>
 
-        <p>The <code>{low, central, high}</code> triple is generated by walking the low and high ends of each multiplier range simultaneously - not by applying the formula at the central value of each input individually:</p>
+        <p>Трійка <code>{low, central, high}</code> генерується шляхом одночасного проходження нижніх і верхніх меж кожного діапазону мультиплікаторів — а не шляхом застосування формули до центрального значення кожного вхідного параметра окремо:</p>
         <ul>
-          <li><strong>low</strong> = formula(all low-end inputs simultaneously)</li>
-          <li><strong>high</strong> = formula(all high-end inputs simultaneously)</li>
-          <li><strong>central</strong> = arithmetic mean of low and high</li>
+          <li><strong>low</strong> = formula(усі вхідні параметри на нижній межі одночасно)</li>
+          <li><strong>high</strong> = formula(усі вхідні параметри на верхній межі одночасно)</li>
+          <li><strong>central</strong> = середнє арифметичне низького та високого значень</li>
         </ul>
-        <p>This is consistent with the RDNA3 uncertainty-range methodology and avoids artificially narrowing the range by mixing low-end and high-end assumptions across different inputs. [<code>RDNA3</code>]</p>
+        <p>Це відповідає методології діапазону невизначеності RDNA3 і дозволяє уникнути штучного звуження діапазону шляхом змішування нижніх і верхніх допущень з різних вхідних параметрів. [<code>RDNA3</code>]</p>
       </div>
 
       <!-- 1.2 Heritage premium -->
       <div class="about-subsection">
-        <h3>1.2 Heritage and cultural asset premium</h3>
-        <p>Assets classified under <code>heritage.*</code> carry a separate conservation-premium multiplier applied after the standard formula. This multiplier reflects the cost of traditional materials, specialist craftsmanship, archaeological monitoring, and UNESCO and Council of Europe conservation standards that are not captured in standard unit costs.</p>
+        <h3>1.2 Премія за об'єкти культурної спадщини</h3>
+        <p>Активи, класифіковані за категорією <code>heritage.*</code>, мають окремий мультиплікатор премії за консервацію, що застосовується після стандартної формули. Цей мультиплікатор відображає вартість традиційних матеріалів, спеціалізованого ремесла, археологічного моніторингу та стандартів консервації ЮНЕСКО і Ради Європи, які не враховані в стандартних питомих витратах.</p>
         <table>
-          <thead><tr><th>Heritage condition</th><th>Premium multiplier</th></tr></thead>
+          <thead><tr><th>Стан об'єкта спадщини</th><th>Мультиплікатор премії</th></tr></thead>
           <tbody>
-            <tr><td>Largely intact (light&#8211;moderate damage, recoverable fabric)</td><td>1.8&#215;&#8211;2.2&#215;</td></tr>
-            <tr><td>Substantially destroyed, documented record survives</td><td>2.2&#215;&#8211;2.6&#215;</td></tr>
-            <tr><td>Destroyed, contested historical record, exceptional significance</td><td>2.6&#215;&#8211;3.0&#215;</td></tr>
+            <tr><td>Переважно збережений (легкі&#8211;помірні пошкодження, відновлювана структура)</td><td>1.8&#215;&#8211;2.2&#215;</td></tr>
+            <tr><td>Значно зруйнований, документальні свідчення збереглися</td><td>2.2&#215;&#8211;2.6&#215;</td></tr>
+            <tr><td>Зруйнований, оспорюваний історичний запис, виняткове значення</td><td>2.6&#215;&#8211;3.0&#215;</td></tr>
           </tbody>
         </table>
-        <p>The heritage premium is held in a separate table in <code>data/unit_cost_table.json</code> and is <strong>not folded into the general regional multiplier</strong>. Any asset receiving the premium displays it explicitly in the "show cost formula" panel on the asset detail page.</p>
+        <p>Премія за спадщину зберігається в окремій таблиці у <code>data/unit_cost_table.json</code> і <strong>не включається до загального регіонального мультиплікатора</strong>. Будь-який актив, що отримує цю премію, відображає її явно на панелі «показати формулу вартості» на сторінці деталей активу.</p>
       </div>
 
       <!-- 1.3 Three paths -->
       <div class="about-subsection">
-        <h3>1.3 Three reconstruction paths</h3>
-        <p>Every asset is costed across three paths. The path multiplier adjusts the unit cost and unlocks different technology overlays and financing structures.</p>
+        <h3>1.3 Три шляхи відбудови</h3>
+        <p>Кожен актив оцінюється за трьома шляхами. Мультиплікатор шляху коригує питому вартість та відкриває різні технологічні накладки та структури фінансування.</p>
         <table>
-          <thead><tr><th>Path</th><th>Definition</th><th>Multiplier</th><th>Financing logic</th></tr></thead>
+          <thead><tr><th>Шлях</th><th>Визначення</th><th>Мультиплікатор</th><th>Логіка фінансування</th></tr></thead>
           <tbody>
             <tr>
-              <td><strong>Baseline</strong></td>
-              <td>Repair or rebuild to pre-war condition and pre-war technical standard.</td>
+              <td><strong>Базовий</strong></td>
+              <td>Ремонт або відбудова до довоєнного стану та довоєнного технічного стандарту.</td>
               <td>1.00&#215;</td>
-              <td>Lower grant share; fewer EU conditionality levers to activate.</td>
+              <td>Менша частка грантів; менше важелів умовності ЄС для активації.</td>
             </tr>
             <tr>
-              <td><strong>Code-compliant</strong></td>
-              <td>Rebuild to current EU and Ukrainian building codes: structural, energy, accessibility, and fire safety standards.</td>
+              <td><strong>Відповідний нормам</strong></td>
+              <td>Відбудова відповідно до чинних норм ЄС та України: конструктивних, енергетичних, доступності та протипожежних стандартів.</td>
               <td>1.15&#8211;1.25&#215;</td>
-              <td>EU Facility conditionality partially unlocked; standard concessional mix.</td>
+              <td>Умовність Фонду ЄС частково активована; стандартний концесійний склад.</td>
             </tr>
             <tr>
-              <td><strong>Build-back-better</strong></td>
-              <td>Code-compliant plus named technology overlays - microgrids, passive energy standard, mass timber, fibre connectivity, telemedicine, green steel, modular clinical units. Full catalogue in <code>data/tech_overlays.json</code>.</td>
+              <td><strong>Відбудова краще, ніж було</strong></td>
+              <td>Відповідний нормам плюс іменовані технологічні накладки — мікромережі, пасивний енергетичний стандарт, масова деревина, оптоволоконна мережа, телемедицина, зелена сталь, модульні клінічні блоки. Повний каталог у <code>data/tech_overlays.json</code>.</td>
               <td>1.30&#8211;1.60&#215;</td>
-              <td>Maximum EU grant share via Pillar I green and accessibility conditionalities; EBRD Green Economy concessional; higher first-loss guarantee leverage.</td>
+              <td>Максимальна частка гранту ЄС через умовності Стовпа I щодо зеленої та доступності; концесійний EBRD Green Economy; вищий важіль гарантії першого збитку.</td>
             </tr>
           </tbody>
         </table>
-        <p>The build-back-better path costs more in absolute terms but typically attracts a higher grant percentage, compressing the concessional and equity burden on Ukraine's own balance sheet. All three paths are presented side-by-side so users can evaluate the trade-off directly. [<code>EU_FACILITY</code>] [<code>RDNA3</code>]</p>
+        <p>Шлях «відбудова краще, ніж було» коштує більше в абсолютному вираженні, але, як правило, привертає вищий відсоток гранту, зменшуючи концесійне та власне навантаження на баланс України. Усі три шляхи представлені поруч, щоб користувачі могли безпосередньо оцінити компромісний вибір. [<code>EU_FACILITY</code>] [<code>RDNA3</code>]</p>
       </div>
 
       <!-- 1.4 Anti-hallucination -->
       <div class="about-subsection">
-        <h3>1.4 Anti-hallucination architecture</h3>
-        <p>A hallucinated reconstruction cost cited in a publication by EBRD, EIB, or a policy team would represent a reputational failure. The architecture eliminates that risk structurally rather than through prompt instruction alone.</p>
+        <h3>1.4 Архітектура захисту від галюцинацій</h3>
+        <p>Вигадана вартість відбудови, процитована у публікації EBRD, ЄІБ або урядової команди, стала б репутаційним провалом. Архітектура усуває цей ризик структурно, а не лише через інструкцію у запиті.</p>
         <ol>
-          <li><strong>Stage 1 - Classification.</strong> The LLM extracts structured fields from OSINT input: <code>asset_type</code>, <code>physical_specs.*</code>, <code>damage.destruction_level</code>, <code>wartime_status.*</code>. All numeric specs are flagged with source provenance. Uncertain values default to <code>pending_data</code>. Temperature: 0.2.</li>
-          <li><strong>Stage 2 - Retrieval and narration.</strong> The server performs all deterministic lookups and computes the cost formula. The LLM receives the complete structured payload and narrates it. It may rephrase; it may not introduce numbers absent from the payload. Temperature: 0.4.</li>
-          <li><strong>Validation gate.</strong> Every numeric token in the narration is extracted via regex and matched against the payload (with formatting tolerance). Any unmatched numeric token aborts publication and routes the entry to human review. Dates are whitelisted; financial and physical-quantity tokens are not. Implemented in <code>functions/lib/validation-gate.js</code>.</li>
+          <li><strong>Етап 1 — Класифікація.</strong> LLM витягує структуровані поля з вхідних даних OSINT: <code>asset_type</code>, <code>physical_specs.*</code>, <code>damage.destruction_level</code>, <code>wartime_status.*</code>. Усі числові специфікації позначаються даними про походження джерела. Невизначені значення за замовчуванням отримують статус <code>pending_data</code>. Температура: 0.2.</li>
+          <li><strong>Етап 2 — Пошук і нарація.</strong> Сервер виконує всі детерміновані пошуки та обчислює формулу вартості. LLM отримує повний структурований пакет і описує його. Він може перефразовувати; але не може вводити числа, яких немає у пакеті. Температура: 0.4.</li>
+          <li><strong>Валідаційна застава.</strong> Кожен числовий токен у нарації витягується через регулярний вираз і порівнюється з пакетом (з допуском форматування). Будь-який не зіставлений числовий токен зупиняє публікацію та передає запис на перевірку людиною. Дати внесені до білого списку; фінансові токени та токени фізичних величин — ні. Реалізовано у <code>functions/lib/validation-gate.js</code>.</li>
         </ol>
-        <p>System prompts are version-controlled in <code>functions/_shared/prompts/</code> as Markdown files. No prompts are hardcoded in JS string literals.</p>
+        <p>Системні підказки версіонуються у <code>functions/_shared/prompts/</code> як файли Markdown. Жодні підказки не закодовані у рядкових літералах JS.</p>
       </div>
 
-      <a href="#top" class="about-back-to-top">Back to top &#8593;</a>
+      <a href="#top" class="about-back-to-top">На початок &#8593;</a>
     </section>
 
     <!-- ════════════════════════════════════════════════════════════════════
          2. AUTHORITATIVE REFERENCE SOURCES
     ═════════════════════════════════════════════════════════════════════════ -->
     <section class="about-section" id="sources" aria-labelledby="sources-title">
-      <h2 class="about-section-title" id="sources-title">2. Authoritative reference sources</h2>
+      <h2 class="about-section-title" id="sources-title">2. Авторитетні довідкові джерела</h2>
 
-      <p>Every figure in the register must cite at least one of these sources by the short code shown. New sources require a pull request to <code>docs/sources.md</code>. Full bibliography including EBRD project identifiers and working paper references is maintained in that file.</p>
+      <p>Кожна цифра в реєстрі повинна посилатися принаймні на одне з цих джерел, використовуючи короткий код, зазначений нижче. Нові джерела потребують запиту на злиття до <code>docs/sources.md</code>. Повна бібліографія, включно з ідентифікаторами проєктів EBRD та посиланнями на робочі матеріали, підтримується у цьому файлі.</p>
 
       <table class="sources-table">
         <thead>
-          <tr><th>Code</th><th>Full reference</th></tr>
+          <tr><th>Код</th><th>Повне посилання</th></tr>
         </thead>
         <tbody>
           <tr>
             <td class="source-code-cell"><code>RDNA3</code></td>
-            <td>World Bank, Government of Ukraine, European Commission, United Nations. <em>Ukraine Rapid Damage and Needs Assessment, Third Edition.</em> February 2024. The canonical benchmark for sector-level unit costs, damage quantification methodology, and reconstruction path multipliers. Central finding: total recovery needs USD 486bn as of Q4 2023.</td>
+            <td>Світовий банк, Уряд України, Європейська комісія, Організація Об'єднаних Націй. <em>Швидка оцінка збитків і потреб України, третє видання.</em> Лютий 2024. Канонічний орієнтир для питомих витрат на рівні секторів, методології кількісного визначення збитків та мультиплікаторів шляху відбудови. Центральний висновок: загальні потреби у відновленні становлять 486 млрд дол. США станом на 4-й квартал 2023 року.</td>
           </tr>
           <tr>
             <td class="source-code-cell"><code>KSE</code></td>
-            <td>Kyiv School of Economics Institute. <em>"Russia Will Pay" damage tracker and methodology.</em> Updated periodically. Primary source for asset-level damage records, oblast-level cost totals, and sector damage aggregates. uVidNova cross-checks central cost values against KSE figures where asset-level data is available; divergences greater than &#177;15% are flagged in <code>docs/methodology.md</code>.</td>
+            <td>Інститут Київської школи економіки. <em>Трекер збитків та методологія «Росія заплатить».</em> Оновлюється periodично. Основне джерело для записів про пошкодження на рівні активів, сумарних витрат на рівні областей та секторних агрегатів збитків. uVidNova перевіряє центральні значення витрат за даними KSE там, де доступні дані на рівні активів; відхилення більше ніж на &#177;15% позначаються у <code>docs/methodology.md</code>.</td>
           </tr>
           <tr>
             <td class="source-code-cell"><code>EBRD_CASE</code></td>
-            <td>European Bank for Reconstruction and Development. Ukraine reconstruction case studies, various dates. Source for financing-structure precedents, concessional loan terms, regional cost variation parameters, and capital-stack templates. EBRD is the largest single IFI lender to Ukraine and provides the primary comparables for deal structures.</td>
+            <td>Європейський банк реконструкції та розвитку. Кейс-студії відбудови України, різні дати. Джерело для прецедентів структур фінансування, умов концесійних позик, параметрів регіональних варіацій вартості та шаблонів структури капіталу. EBRD є найбільшим окремим кредитором МФУ для України та надає основні порівнянні показники для структур угод.</td>
           </tr>
           <tr>
             <td class="source-code-cell"><code>EU_FACILITY</code></td>
-            <td>European Union. <em>Ukraine Facility Programme Documents</em> (EUR 50bn, 2024&#8211;27). Ukraine Plan reform and reconstruction milestones; Pillar I non-repayable grants; Pillar II guarantee window terms. Source for grant-eligibility conditionalities that drive the build-back-better financing uplift and for the ERA loan framework.</td>
+            <td>Європейський Союз. <em>Програмні документи Фонду ЄС для України</em> (50 млрд євро, 2024&#8211;27). Орієнтири реформ та відбудови Плану України; безповоротні гранти Стовпа I; умови гарантійного вікна Стовпа II. Джерело умов надання грантів, що визначають підвищення фінансування при відбудові краще, ніж було, та рамкової угоди ERA про позики.</td>
           </tr>
           <tr>
             <td class="source-code-cell"><code>EIB_UA</code></td>
-            <td>European Investment Bank. EU4Ukraine investment platform documentation. Source for EIB concessional lending terms, co-financing structures, and the EUR 1.5bn+ emergency lending portfolio extended to Ukraine since February 2022.</td>
+            <td>Європейський інвестиційний банк. Документація інвестиційної платформи EU4Ukraine. Джерело умов концесійного кредитування ЄІБ, структур спільного фінансування та портфелю надзвичайного кредитування на суму понад 1,5 млрд євро, наданого Україні з лютого 2022 року.</td>
           </tr>
           <tr>
             <td class="source-code-cell"><code>MIGA</code></td>
-            <td>Multilateral Investment Guarantee Agency. War &amp; Civil Disturbance insurance product documentation, Ukraine portfolio. Coverage scope (equity investments, lenders, contractors), pricing parameters, eligible transactions, and Ukraine-specific portfolio target announced at the Ukraine Recovery Conference 2023.</td>
+            <td>Багатостороннє агентство з гарантій інвестицій. Документація страхового продукту від воєнних ризиків та громадянських хвилювань, портфель для України. Обсяг покриття (пайові інвестиції, кредитори, підрядники), параметри ціноутворення, прийнятні операції та цільовий обсяг портфелю для України, оголошені на Конференції з відновлення України 2023 року.</td>
           </tr>
           <tr>
             <td class="source-code-cell"><code>OCHA</code></td>
-            <td>United Nations Office for the Coordination of Humanitarian Affairs. Ukraine flash updates and humanitarian needs overviews. Used for damage verification, population displacement figures, and access-constraint data informing <code>rebuildability</code> classification.</td>
+            <td>Управління ООН з координації гуманітарних справ. Термінові оновлення та огляди гуманітарних потреб України. Використовується для верифікації збитків, даних про переміщення населення та інформації про обмеження доступу, що впливає на класифікацію <code>rebuildability</code>.</td>
           </tr>
           <tr>
             <td class="source-code-cell"><code>BELLINGCAT</code></td>
-            <td>Bellingcat / Centre for Information Resilience. Verified-incident mapping and open-source intelligence analysis, Ukraine. Used for independent corroboration of damage incidents, particularly for assets in occupied territory where official sources are unavailable.</td>
+            <td>Bellingcat / Центр інформаційної стійкості. Верифіковане картування інцидентів та аналіз розвідки з відкритих джерел, Україна. Використовується для незалежного підтвердження інцидентів пошкодження, зокрема для активів на окупованій території, де офіційні джерела недоступні.</td>
           </tr>
           <tr>
             <td class="source-code-cell"><code>ACLED</code></td>
-            <td>Armed Conflict Location &amp; Event Data Project. Ukraine conflict event data, updated weekly. Used for incident-type and location verification and as a secondary cross-check on <code>damage.incident_date</code> and <code>damage.incident_type</code> fields.</td>
+            <td>Проєкт даних про збройні конфлікти та локації подій. Дані про конфліктні події в Україні, оновлюються щотижня. Використовується для верифікації типу та місця інциденту, а також як вторинна перевірка полів <code>damage.incident_date</code> та <code>damage.incident_type</code>.</td>
           </tr>
           <tr>
             <td class="source-code-cell"><code>eRECOVERY</code></td>
-            <td>Government of Ukraine. eRecovery / DREAM (Diia.Recovery for Economic Assistance in Municipalities) platform. Official Government of Ukraine damage registry and reconstruction project tracker. Used for lifecycle status updates, official project identifiers, and government-approved cost assessments.</td>
+            <td>Уряд України. Платформа eRecovery / DREAM (Diia.Recovery for Economic Assistance in Municipalities). Офіційний реєстр пошкоджень Уряду України та трекер проєктів відбудови. Використовується для оновлень статусу життєвого циклу, офіційних ідентифікаторів проєктів та затверджених урядом оцінок вартості.</td>
           </tr>
         </tbody>
       </table>
 
-      <a href="#top" class="about-back-to-top">Back to top &#8593;</a>
+      <a href="#top" class="about-back-to-top">На початок &#8593;</a>
     </section>
 
     <!-- ════════════════════════════════════════════════════════════════════
          3. FINANCING STRUCTURE METHODOLOGY
     ═════════════════════════════════════════════════════════════════════════ -->
     <section class="about-section" id="financing" aria-labelledby="financing-title">
-      <h2 class="about-section-title" id="financing-title">3. Financing structure methodology</h2>
+      <h2 class="about-section-title" id="financing-title">3. Методологія структури фінансування</h2>
 
       <!-- 3.1 Tranche taxonomy -->
       <div class="about-subsection">
-        <h3>3.1 Tranche taxonomy</h3>
-        <p>Ukraine's reconstruction capital stack is more granular than a simple grant/debt split. The platform uses a 12-layer taxonomy ordered from most concessional to most commercial. Every reconstruction deal can be expressed as a combination of these tranches; percentage allocations within a deal must sum to 100. Political-risk insurance (PRI) is modelled as a credit enhancement - a boolean flag with named providers - not as a capital tranche percentage.</p>
+        <h3>3.1 Класифікація траншів</h3>
+        <p>Структура капіталу для відбудови України є більш деталізованою, ніж простий розподіл грант/борг. Платформа використовує 12-рівневу класифікацію, впорядковану від найбільш концесійного до найбільш комерційного. Будь-яку угоду з відбудови можна виразити як комбінацію цих траншів; відсоткові розподіли в рамках угоди повинні в сумі давати 100. Страхування від політичних ризиків (PRI) моделюється як кредитне підвищення — булевий прапор із названими провайдерами — а не як відсотковий транш капіталу.</p>
 
-        <h4>Public-sector and grant tranches</h4>
+        <h4>Державні та грантові транші</h4>
         <table>
-          <thead><tr><th>Tranche</th><th>Code</th><th>Definition and typical range</th></tr></thead>
+          <thead><tr><th>Транш</th><th>Код</th><th>Визначення та типовий діапазон</th></tr></thead>
           <tbody>
             <tr>
-              <td><strong>Pure grants</strong></td>
+              <td><strong>Чисті гранти</strong></td>
               <td><code>grant_pct</code></td>
-              <td>Non-repayable. EU Ukraine Facility Pillar I, bilateral grants (KfW/BMZ, USAID legacy, FCDO, JICA), UN agency grants, UNESCO/EU Creative Europe for heritage. 40&#8211;70% for social infrastructure; near-zero for revenue-generating assets. [<code>EU_FACILITY</code>] [<code>RDNA3</code>]</td>
+              <td>Безповоротні. Стовп I Фонду ЄС для України, двосторонні гранти (KfW/BMZ, застаріле USAID, FCDO, JICA), гранти агентств ООН, ЮНЕСКО/Creative Europe ЄС для спадщини. 40&#8211;70% для соціальної інфраструктури; близько нуля для активів, що генерують дохід. [<code>EU_FACILITY</code>] [<code>RDNA3</code>]</td>
             </tr>
             <tr>
-              <td><strong>ERA / frozen-asset proceeds</strong></td>
+              <td><strong>ERA / надходження від заморожених активів</strong></td>
               <td><code>era_pct</code></td>
-              <td>Proceeds from the G7 Extraordinary Revenue Acceleration loan backed by interest on immobilised Russian sovereign reserves (~USD 50bn total envelope). Repayment contingent on Russian reparations - functionally grant-equivalent from Ukraine's balance-sheet perspective. Carried as a distinct tranche because the political conditionality differs from EU Facility grants. [<code>EU_FACILITY</code>]</td>
+              <td>Надходження від позики ERA G7, забезпеченої відсотками на іммобілізовані суверенні резерви Росії (загальний обсяг приблизно 50 млрд дол. США). Погашення залежить від репарацій Росії — функціонально еквівалентне гранту з погляду балансу України. Виділяється як окремий транш, оскільки політична умовність відрізняється від грантів Фонду ЄС. [<code>EU_FACILITY</code>]</td>
             </tr>
             <tr>
               <td><strong>First-loss / guarantee capital</strong></td>
