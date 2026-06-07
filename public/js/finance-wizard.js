@@ -3,7 +3,7 @@
  * Pure deterministic calculations; no AI involvement in numeric output.
  */
 
-import { getName } from './lang.js';
+import { getName, t } from './lang.js';
 import { SECTOR_LABELS } from './filters.js';
 import { loadGrowthSectors, renderWizardSectorPicker, renderPortfolioGrowthPicker, getGreenfieldsTemplates } from './growth-sectors.js';
 
@@ -194,14 +194,14 @@ function shell() {
     <div class="fw-modal" role="dialog" aria-modal="true" aria-label="Finance It wizard">
       <div class="fw-header">
         <div class="fw-header-left">
-          <h2 class="fw-title">💰 Finance It</h2>
+          <h2 class="fw-title">💰 ${t('fw.title') || 'Finance It'}</h2>
           <div class="fw-progress" id="fwProgress"></div>
         </div>
         <button class="fw-close" id="fwClose" aria-label="Close wizard">×</button>
       </div>
       <div class="fw-body" id="fwBody"></div>
       <div class="fw-footer">
-        <button class="fw-btn fw-btn-back" id="fwBack">← Back</button>
+        <button class="fw-btn fw-btn-back" id="fwBack">← ${t('fw.back') || 'Back'}</button>
         <span class="fw-step-label" id="fwStepLabel"></span>
         <button class="fw-btn fw-btn-next" id="fwNext">Next →</button>
       </div>
@@ -224,7 +224,7 @@ function render() {
 }
 
 function updateChrome() {
-  const STEPS = ['Scope', 'Scenario', 'Structure', 'Results'];
+  const STEPS = [t('fw.step.scope')||'Scope', t('fw.step.scenario')||'Scenario', t('fw.step.structure')||'Structure', t('fw.step.results')||'Results'];
   const prog = document.getElementById('fwProgress');
   if (prog) {
     prog.innerHTML = STEPS.map((s, i) =>
@@ -233,7 +233,7 @@ function updateChrome() {
   }
 
   const sl = document.getElementById('fwStepLabel');
-  if (sl) sl.textContent = `Step ${W.step} of 4`;
+  if (sl) sl.textContent = `${t('fw.step_label')||'Step'} ${W.step} ${t('fw.step_of')||'of'} 4`;
 
   const back = document.getElementById('fwBack');
   const next = document.getElementById('fwNext');
@@ -242,10 +242,10 @@ function updateChrome() {
     next.hidden = !!W._showIntro;
     if (!W._showIntro) {
       if (W.step === 4) {
-        next.textContent = '↗ Export Brief';
+        next.textContent = `↗ ${t('fw.export')||'Export Brief'}`;
         next.onclick = exportBrief;
       } else {
-        next.textContent = W.step === 3 ? 'See Results →' : 'Next →';
+        next.textContent = W.step === 3 ? `${t('fw.see_results')||'See Results'} →` : `${t('fw.next')||'Next'} →`;
         next.onclick = goNext;
       }
     }
@@ -443,12 +443,12 @@ function wireIntro() {
 
 function step1HTML() {
   return `<div class="fw-step">
-    <h3 class="fw-sh">What would you like to finance?</h3>
+    <h3 class="fw-sh">${t('fw.s1.title')||'What would you like to finance?'}</h3>
     <div class="fw-scope-row" id="fwScopeRow">
-      ${scopeCard('single',     '🏗', 'One project',             'Finance a specific damaged asset')}
-      ${scopeCard('group',      '🗂', 'Group of projects',       'Select by region or manually')}
-      ${scopeCard('all',        '🇺🇦', 'Entire portfolio',        `All ${_assets.length} documented assets`)}
-      ${scopeCard('greenfield', '🌱', 'Growth sector project',   'Model a new greenfield investment')}
+      ${scopeCard('single',     '🏗', t('fw.s1.single')||'One project',             t('fw.s1.single_desc')||'Finance a specific damaged asset')}
+      ${scopeCard('group',      '🗂', t('fw.s1.group')||'Group of projects',       t('fw.s1.group_desc')||'Select by region or manually')}
+      ${scopeCard('all',        '🇺🇦', t('fw.s1.all')||'Entire portfolio',        `All ${_assets.length} documented assets`)}
+      ${scopeCard('greenfield', '🌱', t('fw.s1.greenfield')||'Growth sector project',   t('fw.s1.greenfield_desc')||'Model a new greenfield investment')}
     </div>
     <div id="fwScopeDetail"></div>
   </div>`;
@@ -523,7 +523,6 @@ function renderScopeDetail() {
           </label>
         </div>
         ${W.growthMode === 'generic' ? renderGenericGrowthPicker() : (_growthData ? renderPortfolioGrowthPicker(_growthData, W.growthProjects ?? []) : '<p class="fw-scope-summary">Loading growth sector data…</p>')}
-        ${W.growthMode === 'generic' ? `
         <div id="fwGrowthChips" class="${W.growthProjects.length > 0 ? 'fw-growth-chips' : 'fw-growth-empty'}">
           ${W.growthProjects.length > 0
             ? W.growthProjects.map(p => {
@@ -536,8 +535,14 @@ function renderScopeDetail() {
                 return `<span class="fw-growth-chip">${p.label}${qtyControls} <span class="fw-gc-scale">USD ${(+p.scale_usd_m).toLocaleString()}M</span></span>`;
               }).join('') + `<span class="fw-growth-total-chip">Growth total: <strong>USD ${(W.growthProjects ?? []).reduce((s,p)=>s+p.scale_usd_m,0).toLocaleString()}M</strong></span>`
             : 'No growth projects selected yet.'}
-        </div>` : ''}
+        </div>
       </div>`;
+
+    // If renderPortfolioGrowthPicker created its own fwGrowthChips, remove it to avoid duplicates
+    if (W.growthMode !== 'generic') {
+      const allChips = det.querySelectorAll('#fwGrowthChips');
+      if (allChips.length > 1) allChips[0].remove();
+    }
 
     document.getElementById('fwGrowthToggleBtn')?.addEventListener('click', () => {
       W.showGrowthPicker = !W.showGrowthPicker;
@@ -831,7 +836,7 @@ function step2HTML() {
     </label>`).join('');
 
   return `<div class="fw-step">
-    <h3 class="fw-sh">Cost path &amp; financing timeline</h3>
+    <h3 class="fw-sh">${t('fw.s2.title')||'Cost path & financing timeline'}</h3>
     <div class="fw-selection-pill">${sel.length} project${sel.length !== 1 ? 's' : ''}: ${summary}</div>
     <div class="fw-field-group">
       <label class="fw-label">Reconstruction path</label>
@@ -988,7 +993,7 @@ function step3HTML() {
 
   return `<div class="fw-step">
     <div class="fw-step3-header">
-      <h3 class="fw-sh">Build your financing structure</h3>
+      <h3 class="fw-sh">${t('fw.s3.title')||'Capital structure'}</h3>
       <button class="fw-help-btn" id="fwHelpBtn" type="button" title="Tranche guide">? Help</button>
     </div>
     ${W.timing === 'during' ? `<div class="fw-war-note">⚡ Wartime: +${WAR_PREMIUM}% applied to commercial tranches in Results.</div>` : ''}
@@ -1391,7 +1396,7 @@ function step4HTML() {
   const russiaPct    = r.total > 0 ? (r.repAmt / r.total * 100).toFixed(0) : 0;
 
   return `<div class="fw-step fw-results">
-    <h3 class="fw-sh">Financing structure analysis</h3>
+    <h3 class="fw-sh">${t('fw.s4.title')||'Financing structure analysis'}</h3>
     <div class="fw-results-meta">${r.sel.length} project${r.sel.length !== 1 ? 's' : ''} · ${PATH_LABELS[W.path]} · ${TIMING_LABELS[W.timing]}</div>
 
     <!-- Russian obligation headline box — the key output -->
