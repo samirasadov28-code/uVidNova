@@ -293,7 +293,7 @@ function showOblastPanel(info, featureName) {
   }
 
   const lang = getLang();
-  const name      = lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName);
+  const name      = (lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName)).replace(' (Temporarily Occupied)', '');
   const capital   = lang === 'uk' ? (info?.capital_uk ?? '-') : (info?.capital_en ?? '-');
   const famous    = lang === 'uk' ? (info?.famous_for_uk ?? '') : (info?.famous_for_en ?? '');
   const recon     = lang === 'uk' ? (info?.reconstruction_uk ?? '') : (info?.reconstruction_en ?? '');
@@ -494,7 +494,7 @@ function showOblastWarPanel(info, featureName) {
   closeOblastWarPanel();
 
   const lang   = getLang();
-  const name   = lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName);
+  const name   = (lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName)).replace(' (Temporarily Occupied)', '');
   const risk   = info?.war_risk ?? 'unknown';
   const prox   = lang === 'uk' ? (info?.front_proximity_uk ?? '') : (info?.front_proximity_en ?? '');
   const freq   = lang === 'uk' ? (info?.attack_frequency_uk ?? '') : (info?.attack_frequency_en ?? '');

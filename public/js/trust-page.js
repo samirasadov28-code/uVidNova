@@ -1047,7 +1047,7 @@ async function boot() {
   const pRet    = parseFloat(params.get('ret'));
   const pRec    = parseFloat(params.get('rec'));
   if (!isNaN(pCorpus)) state.sources_A.frozen_russian_assets = pCorpus;
-  if (!isNaN(pRep))    state.reparations_usd_bn = pRep;
+  if (!isNaN(pRep))    state.sources_B.reparations_direct = pRep;
   if (!isNaN(pDraw))   state.deployment_rate_pct = pDraw;
   if (!isNaN(pRet))    state.real_return_pct = pRet;
   if (!isNaN(pRec))    state.recycling_rate_pct = pRec;

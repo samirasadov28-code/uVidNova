@@ -26,9 +26,12 @@ export const LANG_META = {
   id: { flag: '🇮🇩', flagCode: 'id', label: 'ID', name: 'Bahasa Indonesia',   dir: 'ltr' },
 };
 
-function flagSpan(code, cls) {
+function flagSpan(code, name, cls, h) {
   if (!code) return '';
-  return `<img src="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/flags/4x3/${code}.svg" class="${cls}" width="20" height="15" alt="" aria-hidden="true" loading="eager">`;
+  h = h || 14;
+  const w = Math.round(h * 1.5);
+  const fallback = code.toUpperCase();
+  return `<img src="https://flagcdn.com/w40/${code}.png" srcset="https://flagcdn.com/w80/${code}.png 2x" width="${w}" height="${h}" alt="${name || ''}" class="${cls}" style="border-radius:2px;vertical-align:middle;object-fit:cover;display:inline-block" onerror="this.outerHTML='<span style=\\'font-size:0.75rem\\'>${fallback}</span>'">`;
 }
 
 const TRANSLATIONS = {
@@ -49,6 +52,8 @@ const TRANSLATIONS = {
     'header.tagline':     'Ukraine Reconstruction Finance Atlas',
     'nav.methodology':    'Methodology',
     'nav.privacy':        'Privacy',
+    'nav.finance':        'Finance It',
+    'nav.trust':          'Trust',
     // Filters
     'filter.title':       'Filters',
     'filter.reset':       'Reset',
@@ -169,6 +174,8 @@ const TRANSLATIONS = {
     'header.tagline':     'Атлас фінансування відбудови України',
     'nav.methodology':    'Методологія',
     'nav.privacy':        'Конфіденційність',
+    'nav.finance':        'Фінансування',
+    'nav.trust':          'Траст',
     'filter.title':       'Фільтри',
     'filter.reset':       'Скинути',
     'filter.sector':      'Сектор',
@@ -276,6 +283,8 @@ const TRANSLATIONS = {
     'header.tagline':     'Atlas du financement de la reconstruction en Ukraine',
     'nav.methodology':    'Méthodologie',
     'nav.privacy':        'Confidentialité',
+    'nav.finance':        'Financement',
+    'nav.trust':          'Fonds',
     'filter.title':       'Filtres',
     'filter.reset':       'Réinitialiser',
     'filter.sector':      'Secteur',
@@ -381,6 +390,8 @@ const TRANSLATIONS = {
     'header.tagline':     'Atlas de Financiamiento de la Reconstrucción de Ucrania',
     'nav.methodology':    'Metodología',
     'nav.privacy':        'Privacidad',
+    'nav.finance':        'Financiación',
+    'nav.trust':          'Fondo',
     'filter.title':       'Filtros',
     'filter.reset':       'Restablecer',
     'filter.sector':      'Sector',
@@ -486,6 +497,8 @@ const TRANSLATIONS = {
     'header.tagline':     'Atlas der Ukraine-Wiederaufbaufinanzierung',
     'nav.methodology':    'Methodik',
     'nav.privacy':        'Datenschutz',
+    'nav.finance':        'Finanzierung',
+    'nav.trust':          'Fonds',
     'filter.title':       'Filter',
     'filter.reset':       'Zurücksetzen',
     'filter.sector':      'Sektor',
@@ -646,7 +659,7 @@ export function initLangToggle(btn) {
     opt.setAttribute('role', 'option');
     opt.title = meta.name;
     const flagHtml = meta.flagCode
-      ? flagSpan(meta.flagCode, 'lo-flag')
+      ? flagSpan(meta.flagCode, meta.name, 'lo-flag', 16)
       : `<span class="lo-noflag">${meta.label}</span>`;
     opt.innerHTML = `${flagHtml}<span class="lo-name">${meta.name}</span>`;
     dropdown.appendChild(opt);
@@ -656,7 +669,7 @@ export function initLangToggle(btn) {
     const lang = getLang();
     const meta = LANG_META[lang] ?? LANG_META.en;
     const flagHtml = meta.flagCode
-      ? flagSpan(meta.flagCode, 'lpb-flag')
+      ? flagSpan(meta.flagCode, meta.name, 'lpb-flag', 14)
       : `<span class="lpb-noflag">${meta.label}</span>`;
     btn.innerHTML = `${flagHtml}<span class="lpb-code">${meta.label}</span><span class="lpb-chevron">▾</span>`;
     for (const opt of dropdown.querySelectorAll('.lang-option')) {
@@ -680,12 +693,20 @@ export function initLangToggle(btn) {
     if (isLanding && isOpening) {
       // Position as fixed so it isn't clipped by overflow-y:auto on landing-content
       const rect = wrapper.getBoundingClientRect();
-      dropdown.style.position  = 'fixed';
-      dropdown.style.top       = (rect.bottom + 4) + 'px';
-      dropdown.style.left      = rect.left + 'px';
-      dropdown.style.right     = 'auto';
-      dropdown.style.minWidth  = '200px';
-      dropdown.style.zIndex    = '9999';
+      dropdown.style.position = 'fixed';
+      dropdown.style.left     = rect.left + 'px';
+      dropdown.style.right    = 'auto';
+      dropdown.style.minWidth = '200px';
+      dropdown.style.zIndex   = '9999';
+      // Flip upward if near bottom of viewport
+      const estimatedHeight = 340;
+      if (rect.bottom + estimatedHeight > window.innerHeight) {
+        dropdown.style.top    = 'auto';
+        dropdown.style.bottom = (window.innerHeight - rect.top + 4) + 'px';
+      } else {
+        dropdown.style.top    = (rect.bottom + 4) + 'px';
+        dropdown.style.bottom = 'auto';
+      }
     }
     dropdown.classList.toggle('open');
   });
