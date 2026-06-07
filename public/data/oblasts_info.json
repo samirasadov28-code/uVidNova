@@ -97,7 +97,7 @@
       "revenue_drivers_uk": "Аграрний експорт, деревообробка, ІТ-аутсорсинг, туризм (Карпати), транскордонна торгівля з Румунією та Молдовою."
     },
     {
-      "name_en": "Crimea (Temporarily Occupied)",
+      "name_en": "Crimea",
       "name_uk": "Крим (окупований)",
       "capital_en": "Simferopol",
       "capital_uk": "Сімферополь",
@@ -164,7 +164,7 @@
       "name_en": "Donetsk Oblast",
       "name_uk": "Донецька область",
       "capital_en": "Donetsk",
-      "capital_uk": "Донецьк (тимчасово окупований)",
+      "capital_uk": "Донецьк",
       "famous_for_en": "Industrial heartland, Azovstal steelworks, Mariupol Drama Theatre, Sloviansk Svyati Hory Lavra, significant coal and steel heritage",
       "famous_for_uk": "Промислове серце України, металургійний комбінат «Азовсталь», Маріупольський драматичний театр, Свято-Успенська Святогірська лавра",
       "reconstruction_en": "Azovstal, Mariupol port, Mariupol Drama Theatre, water/sanitation, mass housing",
@@ -420,7 +420,7 @@
       "name_en": "Luhansk Oblast",
       "name_uk": "Луганська область",
       "capital_en": "Luhansk",
-      "capital_uk": "Луганськ (тимчасово окупований)",
+      "capital_uk": "Луганськ",
       "famous_for_en": "Industrial coal and chemical region, Lysychansk oil refinery, Sviatohirsk Lavra in adjacent Donetsk Oblast, significant pre-war mining heritage",
       "famous_for_uk": "Вугільно-хімічний промисловий регіон, Лисичанський нафтопереробний завод, Святогірська лавра",
       "reconstruction_en": "Majority under occupation — full planning pending liberation",

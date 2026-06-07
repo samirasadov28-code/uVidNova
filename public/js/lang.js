@@ -166,6 +166,33 @@ const TRANSLATIONS = {
     'tab.damaged':         'Damaged',
     'tab.reconstructed':   'Reconstructed',
     'tab.development':     'Development',
+    // Trust panel labels
+    'tp.title':            '🏛 Create Vidnova Trust',
+    'tp.subtitle':         'Russian frozen assets → annual reconstruction payments',
+    'tp.corpus_inputs':    'Corpus & deployment inputs',
+    'tp.frozen_assets':    'Frozen assets mobilised',
+    'tp.reparations':      'Russian reparations contribution',
+    'tp.drawdown':         'Annual deployment rate',
+    'tp.return':           'Annual real return on NAV',
+    'tp.total_corpus':     'Total corpus:',
+    'tp.key_outputs':      'Key outputs',
+    'tp.annual_ap':        'Annual availability payment',
+    'tp.conc_debt':        'Supportable concessional debt',
+    'tp.total_mob':        'Total capital mobilised',
+    'tp.coverage':         'Coverage of $486B reconstruction claim',
+    'tp.rdna3_note':       'KSE Institute baseline (RDNA3)',
+    'tp.nav_traj':         'NAV trajectory',
+    'tp.col_year':         'Year',
+    'tp.col_nav':          'NAV',
+    'tp.col_deployed':     'Deployed (cum.)',
+    'tp.russia_context':   "Russia's obligation in context",
+    'tp.open_full':        'Open full Trust model analysis →',
+    'tp.disclaimer':       'Corpus and return figures are deterministic estimates from published benchmarks. Not guarantees or legal obligations. Russian reparations are a sovereign obligation under international law — disbursement timeline contingent on peace settlement.',
+    // Privacy page
+    'privacy.title':       'Privacy Policy',
+    'privacy.back':        '← Back to atlas',
+    // Methodology/about page
+    'about.title':         'Methodology and Sources',
   },
 
   uk: {

@@ -523,6 +523,7 @@ function renderScopeDetail() {
           </label>
         </div>
         ${W.growthMode === 'generic' ? renderGenericGrowthPicker() : (_growthData ? renderPortfolioGrowthPicker(_growthData, W.growthProjects ?? []) : '<p class="fw-scope-summary">Loading growth sector data…</p>')}
+        ${W.growthMode === 'generic' ? `
         <div id="fwGrowthChips" class="${W.growthProjects.length > 0 ? 'fw-growth-chips' : 'fw-growth-empty'}">
           ${W.growthProjects.length > 0
             ? W.growthProjects.map(p => {
@@ -535,7 +536,7 @@ function renderScopeDetail() {
                 return `<span class="fw-growth-chip">${p.label}${qtyControls} <span class="fw-gc-scale">USD ${(+p.scale_usd_m).toLocaleString()}M</span></span>`;
               }).join('') + `<span class="fw-growth-total-chip">Growth total: <strong>USD ${(W.growthProjects ?? []).reduce((s,p)=>s+p.scale_usd_m,0).toLocaleString()}M</strong></span>`
             : 'No growth projects selected yet.'}
-        </div>
+        </div>` : ''}
       </div>`;
 
     document.getElementById('fwGrowthToggleBtn')?.addEventListener('click', () => {
