@@ -159,7 +159,7 @@ function renderPanel() {
     </div>
 
     <div class="tp-footer">
-      <a href="/trust.html" class="tp-full-btn">Open full Trust model analysis →</a>
+      <a href="/trust.html?corpus=${_state.corpus_usd_bn}&rep=${_state.reparations_usd_bn}&draw=${_state.drawdown_pct}&ret=${_state.return_pct}&rec=${_state.recycling_pct}" class="tp-full-btn">Open full Trust model analysis →</a>
       <p class="tp-disclaimer">Corpus and return figures are deterministic estimates from published benchmarks. Not guarantees or legal obligations. Russian reparations are a sovereign obligation under international law — disbursement timeline contingent on peace settlement.</p>
     </div>
   `;

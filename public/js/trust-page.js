@@ -1039,7 +1039,20 @@ function renderAll() {
 async function boot() {
   await loadAll();
 
-  // Compute initial NAV from default sources
+  // If opened from the trust side panel, seed state from URL params
+  const params = new URLSearchParams(window.location.search);
+  const pCorpus = parseFloat(params.get('corpus'));
+  const pRep    = parseFloat(params.get('rep'));
+  const pDraw   = parseFloat(params.get('draw'));
+  const pRet    = parseFloat(params.get('ret'));
+  const pRec    = parseFloat(params.get('rec'));
+  if (!isNaN(pCorpus)) state.sources_A.frozen_russian_assets = pCorpus;
+  if (!isNaN(pRep))    state.reparations_usd_bn = pRep;
+  if (!isNaN(pDraw))   state.deployment_rate_pct = pDraw;
+  if (!isNaN(pRet))    state.real_return_pct = pRet;
+  if (!isNaN(pRec))    state.recycling_rate_pct = pRec;
+
+  // Compute initial NAV from sources (always recalculate — never trust stale localStorage)
   state.nav_usd_bn = Math.round(computeTotalNav() * 10) / 10;
 
   // Restore collapsed state (mod-4 collapses by default — it's long)

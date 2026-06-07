@@ -26,9 +26,9 @@ export const LANG_META = {
   id: { flag: '🇮🇩', flagCode: 'id', label: 'ID', name: 'Bahasa Indonesia',   dir: 'ltr' },
 };
 
-function flagSpan(flag, cls) {
-  if (flag) return `<span class="${cls}" aria-hidden="true">${flag}</span>`;
-  return '';
+function flagSpan(code, cls) {
+  if (!code) return '';
+  return `<img src="https://cdn.jsdelivr.net/npm/flag-icons@7.2.3/flags/4x3/${code}.svg" class="${cls}" width="20" height="15" alt="" aria-hidden="true" loading="eager">`;
 }
 
 const TRANSLATIONS = {
@@ -645,8 +645,8 @@ export function initLangToggle(btn) {
     opt.dataset.lang = code;
     opt.setAttribute('role', 'option');
     opt.title = meta.name;
-    const flagHtml = meta.flag
-      ? flagSpan(meta.flag, 'lo-flag')
+    const flagHtml = meta.flagCode
+      ? flagSpan(meta.flagCode, 'lo-flag')
       : `<span class="lo-noflag">${meta.label}</span>`;
     opt.innerHTML = `${flagHtml}<span class="lo-name">${meta.name}</span>`;
     dropdown.appendChild(opt);
@@ -655,8 +655,8 @@ export function initLangToggle(btn) {
   const syncUI = () => {
     const lang = getLang();
     const meta = LANG_META[lang] ?? LANG_META.en;
-    const flagHtml = meta.flag
-      ? flagSpan(meta.flag, 'lpb-flag')
+    const flagHtml = meta.flagCode
+      ? flagSpan(meta.flagCode, 'lpb-flag')
       : `<span class="lpb-noflag">${meta.label}</span>`;
     btn.innerHTML = `${flagHtml}<span class="lpb-code">${meta.label}</span><span class="lpb-chevron">▾</span>`;
     for (const opt of dropdown.querySelectorAll('.lang-option')) {
@@ -667,12 +667,26 @@ export function initLangToggle(btn) {
   syncUI();
   applyTranslations();
 
+  // For pickers inside overflow-y:auto containers (landing card), use position:fixed
+  const isLanding = wrapper.classList.contains('landing-lang-picker');
+
   btn.addEventListener('click', e => {
     e.stopPropagation();
     // Close any other open pickers
     document.querySelectorAll('.lang-picker-dropdown.open').forEach(d => {
       if (d !== dropdown) d.classList.remove('open');
     });
+    const isOpening = !dropdown.classList.contains('open');
+    if (isLanding && isOpening) {
+      // Position as fixed so it isn't clipped by overflow-y:auto on landing-content
+      const rect = wrapper.getBoundingClientRect();
+      dropdown.style.position  = 'fixed';
+      dropdown.style.top       = (rect.bottom + 4) + 'px';
+      dropdown.style.left      = rect.left + 'px';
+      dropdown.style.right     = 'auto';
+      dropdown.style.minWidth  = '200px';
+      dropdown.style.zIndex    = '9999';
+    }
     dropdown.classList.toggle('open');
   });
 

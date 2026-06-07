@@ -217,8 +217,10 @@ function renderCapitalMarkers() {
       iconAnchor: [4, 4],
     });
 
+    const lang = getLang();
+    const capitalName = (lang === 'uk' && o.capital_uk) ? o.capital_uk : (o.capital_en ?? o.capital_uk ?? '');
     const marker = L.marker([o.capital_lat, o.capital_lon], { icon, interactive: false })
-      .bindTooltip(`<span class="${labelClass}">${o.capital_en ?? o.capital_uk ?? ''}</span>`, {
+      .bindTooltip(`<span class="${labelClass}">${capitalName}</span>`, {
         permanent: true,
         direction: 'top',
         offset: [0, -6],
@@ -1214,6 +1216,7 @@ function initFilters() {
   document.addEventListener('filtersChanged', renderMarkers);
   document.addEventListener('langChanged', () => {
     renderMarkers();
+    renderCapitalMarkers();
     if (activeCityOblast) showCityMarkers(activeCityOblast);
   });
 }
