@@ -458,61 +458,61 @@
           </tbody>
         </table>
 
-        <h4>DFI and IFI tranches</h4>
+        <h4>Транші DFI та IFI</h4>
         <table>
-          <thead><tr><th>Tranche</th><th>Code</th><th>Definition and typical range</th></tr></thead>
+          <thead><tr><th>Транш</th><th>Код</th><th>Визначення та типовий діапазон</th></tr></thead>
           <tbody>
             <tr>
-              <td><strong>Concessional IFI debt</strong></td>
+              <td><strong>Концесійний борг IFI</strong></td>
               <td><code>concessional_pct</code></td>
-              <td>Long-tenor debt (20&#8211;40 years) with grace periods at sub-market pricing. World Bank, EBRD concessional window, EIB EU4Ukraine, AIIB, NIB; bilateral: KfW Entwicklungsbank, AFD, JICA. Typically 25&#8211;45% in mixed-finance social and municipal infrastructure. The workhorse layer. [<code>EBRD_CASE</code>] [<code>EIB_UA</code>]</td>
+              <td>Довгостроковий борг (20&#8211;40 років) з пільговими періодами за субринковими цінами. Світовий банк, концесійне вікно EBRD, EU4Ukraine ЄІБ, AIIB, NIB; двосторонні: KfW Entwicklungsbank, AFD, JICA. Зазвичай 25&#8211;45% у змішаній фінансовій соціальній та муніципальній інфраструктурі. Основний рівень. [<code>EBRD_CASE</code>] [<code>EIB_UA</code>]</td>
             </tr>
             <tr>
-              <td><strong>Senior IFI debt (near-market)</strong></td>
+              <td><strong>Старший борг IFI (близько до ринкового)</strong></td>
               <td><code>senior_ifi_pct</code></td>
-              <td>EBRD, EIB, IFC senior loans to revenue-generating assets: generation capacity, telecoms, port concessions, agri-export logistics. Priced just below commercial. Carries policy conditionality (governance, procurement, ESG). Primarily post-armistice or for assets with clear offtake structures. [<code>EBRD_CASE</code>] [<code>EIB_UA</code>]</td>
+              <td>Старші позики EBRD, ЄІБ, IFC для активів, що генерують дохід: генеруючі потужності, телекомунікації, портові концесії, агро-експортна логістика. Ціноутворення трохи нижче комерційного. Несе умовність політики (управління, закупівлі, ESG). Переважно після перемир'я або для активів з чіткими структурами виготовлення. [<code>EBRD_CASE</code>] [<code>EIB_UA</code>]</td>
             </tr>
             <tr>
-              <td><strong>DFI equity and quasi-equity</strong></td>
+              <td><strong>Акціонерний капітал DFI та квазіакціонерний капітал</strong></td>
               <td><code>dfi_equity_pct</code></td>
-              <td>IFC equity, EBRD direct equity, DFC equity, EU4Ukraine equity sleeve. Subordinated debt, convertible notes, preference shares sit here. Used for restructured SOEs, PPP concessionaires, anchor private sponsors. [<code>EBRD_CASE</code>]</td>
+              <td>Акціонерний капітал IFC, прямий акціонерний капітал EBRD, акціонерний капітал DFC, акціонерний рукав EU4Ukraine. Субординований борг, конвертовані векселі, привілейовані акції розміщуються тут. Використовується для реструктурованих ДПП, концесіонерів ДПП, якірних приватних спонсорів. [<code>EBRD_CASE</code>]</td>
             </tr>
             <tr>
-              <td><strong>ECA buyer credit / direct lending</strong></td>
+              <td><strong>Покупецький кредит / пряме кредитування ECA</strong></td>
               <td><code>eca_pct</code></td>
-              <td>Export credit agency instruments: UKEF, Bpifrance, Euler Hermes/SACE, EKF. Pre-armistice: 30&#8211;50% of announced capacity. Expands substantially post-armistice as bank syndication deepens. [<code>MIGA</code>]</td>
+              <td>Інструменти агентств з підтримки експорту: UKEF, Bpifrance, Euler Hermes/SACE, EKF. До перемир'я: 30&#8211;50% оголошених потужностей. Суттєво розширюється після перемир'я з поглибленням банківського синдикування. [<code>MIGA</code>]</td>
             </tr>
           </tbody>
         </table>
 
-        <h4>Sovereign and private-sector tranches</h4>
+        <h4>Суверенні та приватні транші</h4>
         <table>
-          <thead><tr><th>Tranche</th><th>Code</th><th>Definition and typical range</th></tr></thead>
+          <thead><tr><th>Транш</th><th>Код</th><th>Визначення та типовий діапазон</th></tr></thead>
           <tbody>
             <tr>
-              <td><strong>Sovereign / municipal counterpart equity</strong></td>
+              <td><strong>Суверенний / муніципальний зустрічний акціонерний капітал</strong></td>
               <td><code>public_equity_pct</code></td>
-              <td>Ukrainian government and oblast/municipal contribution. Often partly in-kind (land, existing structure, regulatory approvals at appraised value), partly budgetary. IFIs typically require 10&#8211;30%. [<code>RDNA3</code>] [<code>EBRD_CASE</code>]</td>
+              <td>Внесок уряду України та обласних/муніципальних органів. Часто частково в натуральній формі (земля, існуюча структура, регуляторні дозволи за оціненою вартістю), частково бюджетний. IFI, як правило, вимагають 10&#8211;30%. [<code>RDNA3</code>] [<code>EBRD_CASE</code>]</td>
             </tr>
             <tr>
-              <td><strong>Diaspora capital and patriotic bonds</strong></td>
+              <td><strong>Діаспорний капітал та патріотичні облігації</strong></td>
               <td><code>diaspora_pct</code></td>
-              <td>Ukrainian war bonds (UAH and FX), diaspora bond issuances modelled on Israel and Ireland precedents. 2&#8211;5% pre-armistice; grows materially post-armistice. Confidence: low. [<code>EBRD_CASE</code>]</td>
+              <td>Українські воєнні облігації (гривня та валюта), емісія облігацій діаспори за зразком прецедентів Ізраїлю та Ірландії. 2&#8211;5% до перемир'я; суттєво зростає після перемир'я. Впевненість: низька. [<code>EBRD_CASE</code>]</td>
             </tr>
             <tr>
-              <td><strong>Commercial bank senior debt</strong></td>
+              <td><strong>Старший борг комерційного банку</strong></td>
               <td><code>commercial_debt_pct</code></td>
-              <td>Pre-armistice: almost exclusively via IFI A/B structures where the IFI is lender of record and preferred-creditor status passes to B-loan banks. Standalone bank syndicates return post-armistice. Confidence: low pre-armistice. [<code>EBRD_CASE</code>]</td>
+              <td>До перемир'я: майже виключно через структури A/B IFI, де IFI є кредитором обліку і статус позичальника переважного кредитора передається банкам з позиками B. Самостійні банківські синдикати повертаються після перемир'я. Впевненість: низька до перемир'я. [<code>EBRD_CASE</code>]</td>
             </tr>
             <tr>
-              <td><strong>Institutional / capital markets debt</strong></td>
+              <td><strong>Інституційний борг / борг ринків капіталу</strong></td>
               <td><code>institutional_debt_pct</code></td>
-              <td>EU insurers and pension funds (Solvency II/matching adjustment), UK bulk annuity books, North American pension funds, sovereign wealth funds, global infrastructure debt funds. Most policy-contingent tranche: EU accession stall compresses capacity 40&#8211;60%; acceleration multiplies 1.5&#215;. Confidence: low. [<code>EU_FACILITY</code>]</td>
+              <td>Страховики та пенсійні фонди ЄС (Solvency II/matching adjustment), великі ринки аннуїтетів Великобританії, пенсійні фонди Північної Америки, суверенні фонди добробуту, глобальні фонди інфраструктурного боргу. Найбільш залежний від політики транш: зупинка вступу до ЄС стискає потужність на 40&#8211;60%; прискорення множить на 1.5&#215;. Впевненість: низька. [<code>EU_FACILITY</code>]</td>
             </tr>
             <tr>
-              <td><strong>Private equity / infrastructure funds</strong></td>
+              <td><strong>Приватний акціонерний капітал / інфраструктурні фонди</strong></td>
               <td><code>private_equity_pct</code></td>
-              <td>Ukraine-dedicated funds (Horizon Capital, Dragon Capital), regional EM infrastructure, impact-mandate global infrastructure. Mostly post-armistice or for narrow asset classes (telecoms, logistics) where revenue visibility justifies risk today. Confidence: low. [<code>EBRD_CASE</code>]</td>
+              <td>Фонди, присвячені Україні (Horizon Capital, Dragon Capital), регіональні EM-інфраструктури, глобальна інфраструктура з мандатом щодо впливу. Здебільшого після перемир'я або для вузьких класів активів (телекомунікації, логістика), де видимість доходу виправдовує ризик сьогодні. Впевненість: низька. [<code>EBRD_CASE</code>]</td>
             </tr>
           </tbody>
         </table>
@@ -520,230 +520,230 @@
 
       <!-- 3.2 Template assignment -->
       <div class="about-subsection">
-        <h3>3.2 Template assignment - sector × path matrix</h3>
-        <p>Capital-stack templates in <code>data/financing_templates.json</code> are keyed by <code>sector</code> &#215; <code>path</code>. When an asset record specifies both, the platform selects the matching template as the <em>standard stack</em>, with per-asset overrides permitted where named comparable projects justify deviation. Central-tendency grant percentages across the matrix:</p>
+        <h3>3.2 Призначення шаблонів — матриця сектор × шлях</h3>
+        <p>Шаблони структури капіталу у <code>data/financing_templates.json</code> індексовані за <code>sector</code> &#215; <code>path</code>. Коли запис активу вказує обидва, платформа обирає відповідний шаблон як <em>стандартний стек</em>, з дозволом переопределень для кожного активу там, де названі порівнянні проєкти виправдовують відхилення. Центральні тенденції відсотків грантів у матриці:</p>
         <table>
           <thead>
-            <tr><th>Sector group</th><th>Baseline grant %</th><th>Code-compliant grant %</th><th>BBB grant %</th><th>BBB rationale</th></tr>
+            <tr><th>Група секторів</th><th>Грант базовий %</th><th>Грант відповідний нормам %</th><th>Грант ВКБ %</th><th>Обґрунтування ВКБ</th></tr>
           </thead>
           <tbody>
             <tr>
-              <td>Healthcare, education, heritage, water &amp; sanitation</td>
+              <td>Охорона здоров'я, освіта, спадщина, водопостачання та санітарія</td>
               <td>30%</td><td>40%</td><td>55%</td>
-              <td>EU Pillar I green and accessibility conditionality [<code>EU_FACILITY</code>]</td>
+              <td>Умовність ЄС Стовпа I щодо зеленої та доступності [<code>EU_FACILITY</code>]</td>
             </tr>
             <tr>
-              <td>Residential (district-scale)</td>
+              <td>Житло (на районному рівні)</td>
               <td>25%</td><td>35%</td><td>45%</td>
-              <td>EU Housing Pillar + EBRD Green Cities concessional [<code>EBRD_CASE</code>]</td>
+              <td>Житловий Стовп ЄС + EBRD Green Cities концесійний [<code>EBRD_CASE</code>]</td>
             </tr>
             <tr>
-              <td>Energy - generation and grid</td>
+              <td>Енергетика — генерація та мережа</td>
               <td>10%</td><td>20%</td><td>30%</td>
-              <td>EU grant for renewables conversion + EBRD Green Economy [<code>EU_FACILITY</code>]</td>
+              <td>Грант ЄС для переходу на відновлювані джерела + EBRD Green Economy [<code>EU_FACILITY</code>]</td>
             </tr>
             <tr>
-              <td>Transport - revenue-generating (ports, toll roads)</td>
+              <td>Транспорт — що генерує дохід (порти, платні дороги)</td>
               <td>10%</td><td>15%</td><td>20%</td>
-              <td>PPP concession structure limits grant share [<code>EBRD_CASE</code>]</td>
+              <td>Структура концесії ДПП обмежує частку гранту [<code>EBRD_CASE</code>]</td>
             </tr>
             <tr>
-              <td>Transport - non-revenue (rail, bridges)</td>
+              <td>Транспорт — без доходу (залізниця, мости)</td>
               <td>30%</td><td>35%</td><td>40%</td>
-              <td>EU Connectivity Fund; public goods character [<code>EU_FACILITY</code>]</td>
+              <td>Фонд ЄС з підключення; характер суспільного блага [<code>EU_FACILITY</code>]</td>
             </tr>
             <tr>
-              <td>Industrial (steel, coke, agri-processing)</td>
+              <td>Промисловість (сталь, кокс, агропереробка)</td>
               <td>5%</td><td>10%</td><td>15%</td>
-              <td>Private-anchored; strategic investor required [<code>EBRD_CASE</code>]</td>
+              <td>Приватне кредитування; потрібен стратегічний інвестор [<code>EBRD_CASE</code>]</td>
             </tr>
             <tr>
-              <td>Public administration</td>
+              <td>Державне управління</td>
               <td>55%</td><td>60%</td><td>65%</td>
-              <td>EU Facility institutional reform track [<code>EU_FACILITY</code>]</td>
+              <td>Трек інституційних реформ Фонду ЄС [<code>EU_FACILITY</code>]</td>
             </tr>
           </tbody>
         </table>
-        <p>Full templates including all 12 tranche allocations, PRI wrap flags, and structure patterns are in <code>data/financing_templates.json</code>. Template rationale for each sector is documented in <code>docs/financing_tranches.md</code>.</p>
+        <p>Повні шаблони, включно з усіма 12 розподілами траншів, прапорами обгортки PRI та шаблонами структур, знаходяться у <code>data/financing_templates.json</code>. Обґрунтування шаблонів для кожного сектора задокументовано у <code>docs/financing_tranches.md</code>.</p>
       </div>
 
       <!-- 3.3 Wartime compression -->
       <div class="about-subsection">
-        <h3>3.3 Wartime adjustment rules</h3>
-        <p>In pre-armistice conditions, commercial capital tranches are materially compressed relative to a peacetime template. Rules from <code>data/wartime_adjustment_rules.json</code>:</p>
+        <h3>3.3 Правила коригування воєнного часу</h3>
+        <p>В умовах до перемир'я транші комерційного капіталу суттєво стиснуті порівняно з мирним шаблоном. Правила з <code>data/wartime_adjustment_rules.json</code>:</p>
         <table>
-          <thead><tr><th>Tranche</th><th>Pre-armistice retain fraction</th><th>Remainder redirected to</th></tr></thead>
+          <thead><tr><th>Транш</th><th>Частка утримання до перемир'я</th><th>Залишок перенаправляється до</th></tr></thead>
           <tbody>
-            <tr><td>Commercial bank debt</td><td>30%</td><td>Concessional IFI debt</td></tr>
-            <tr><td>Institutional debt</td><td>20%</td><td>50% ERA proceeds, 50% concessional IFI debt</td></tr>
-            <tr><td>Private equity</td><td>30%</td><td>60% DFI equity, 40% grant</td></tr>
+            <tr><td>Борг комерційного банку</td><td>30%</td><td>Концесійний борг IFI</td></tr>
+            <tr><td>Інституційний борг</td><td>20%</td><td>50% надходжень ERA, 50% концесійного боргу IFI</td></tr>
+            <tr><td>Приватний акціонерний капітал</td><td>30%</td><td>60% акціонерного капіталу DFI, 40% гранту</td></tr>
           </tbody>
         </table>
-        <p>PRI wrap is required on all retained commercial bank debt, institutional debt, and private equity in the pre-armistice state. The rationale is risk pricing: in active conflict, commercial lenders face loss scenarios that are not insurable at standard premiums without IFI first-loss and guarantee layering. Adjustments are informed by EBRD Ukraine portfolio deal structures and bilateral ECA utilisation rates. [<code>EBRD_CASE</code>] [<code>MIGA</code>]</p>
-        <p>In post-armistice fragile conditions, compression eases to 60% retention for commercial debt and private equity. Full drawback to peacetime templates requires durable peace and a sovereign-risk band of <em>low</em> or <em>elevated</em>.</p>
+        <p>Обгортка PRI є обов'язковою для всього утриманого боргу комерційних банків, інституційного боргу та приватного акціонерного капіталу у стані до перемир'я. Обґрунтування — ціноутворення ризику: в умовах активного конфлікту комерційні кредитори стикаються зі сценаріями збитків, які не страхуються за стандартними преміями без першого збитку IFI та шарів гарантій. Коригування засновані на структурах угод портфеля EBRD в Україні та рівнях використання двосторонніх ECA. [<code>EBRD_CASE</code>] [<code>MIGA</code>]</p>
+        <p>У постармістицних нестабільних умовах стиснення послаблюється до 60% утримання для комерційного боргу та приватного акціонерного капіталу. Повне повернення до мирних шаблонів вимагає тривалого миру та смуги суверенного ризику <em>низька</em> або <em>підвищена</em>.</p>
       </div>
 
       <!-- 3.4 Confidence levels -->
       <div class="about-subsection">
-        <h3>3.4 Confidence levels</h3>
+        <h3>3.4 Рівні впевненості</h3>
         <table>
-          <thead><tr><th>Level</th><th>Tranches</th><th>Meaning</th></tr></thead>
+          <thead><tr><th>Рівень</th><th>Транші</th><th>Значення</th></tr></thead>
           <tbody>
             <tr>
-              <td><span class="confidence-high">High</span></td>
-              <td>Pure grants, ERA proceeds, PRI wrap, ECA buyer credit</td>
-              <td>Capacity figures explicit in named source programme documents. Confirmed in published policy commitments.</td>
+              <td><span class="confidence-high">Високий</span></td>
+              <td>Чисті гранти, надходження ERA, обгортка PRI, покупецький кредит ECA</td>
+              <td>Цифри потужностей чітко зазначені в програмних документах іменованих джерел. Підтверджені в опублікованих політичних зобов'язаннях.</td>
             </tr>
             <tr>
-              <td><span class="confidence-medium">Medium</span></td>
-              <td>First-loss capital, concessional IFI debt, senior IFI debt, DFI equity, public equity</td>
-              <td>Aggregate commitments announced; deployment ratios and project-level splits inferred from comparable deal structures.</td>
+              <td><span class="confidence-medium">Середній</span></td>
+              <td>Капітал першого збитку, концесійний борг IFI, старший борг IFI, акціонерний капітал DFI, державний акціонерний капітал</td>
+              <td>Загальні зобов'язання оголошено; коефіцієнти розгортання та розподіли на рівні проєкту виведені з порівнянних структур угод.</td>
             </tr>
             <tr>
-              <td><span class="confidence-low">Low</span></td>
-              <td>Diaspora bonds, commercial bank debt, institutional debt, private equity</td>
-              <td>Estimated from analogues and fund-manager soundings. Post-armistice figures are theoretical capacity modelling, not confirmed commitments.</td>
+              <td><span class="confidence-low">Низький</span></td>
+              <td>Діаспорні облігації, борг комерційних банків, інституційний борг, приватний акціонерний капітал</td>
+              <td>Оціненні за аналогами та зондуваннями фондових менеджерів. Цифри після перемир'я є теоретичним моделюванням потужності, а не підтвердженими зобов'язаннями.</td>
             </tr>
           </tbody>
         </table>
-        <p><span class="confidence-low">Low-confidence</span> tranches carry the widest uncertainty bands and are most sensitive to EU accession trajectory and peace-state scenario. The Finance It tool exposes scenario toggles for these variables.</p>
+        <p>Транші з <span class="confidence-low">низькою впевненістю</span> мають найширші смуги невизначеності та найбільш чутливі до траєкторії вступу до ЄС та сценарію стану миру. Інструмент «Фінансування» відкриває перемикачі сценаріїв для цих змінних.</p>
       </div>
 
-      <a href="#top" class="about-back-to-top">Back to top &#8593;</a>
+      <a href="#top" class="about-back-to-top">На початок &#8593;</a>
     </section>
 
     <!-- ════════════════════════════════════════════════════════════════════
          4. RECONSTRUCTION TRUST METHODOLOGY
     ═════════════════════════════════════════════════════════════════════════ -->
     <section class="about-section" id="trust" aria-labelledby="trust-title">
-      <h2 class="about-section-title" id="trust-title">4. Reconstruction Trust methodology</h2>
+      <h2 class="about-section-title" id="trust-title">4. Методологія фонду відбудови</h2>
 
       <p class="about-lead">
-        The Reconstruction Trust is a modelling construct: a financing mechanism that
-        would allow reconstruction to begin now against a future stream of reparations
-        proceeds, rather than waiting for a lump-sum political settlement. This section
-        explains the mechanism, its historical precedents, and how it is parametrised
-        on this platform.
+        Фонд відбудови — це модельна конструкція: механізм фінансування, який дозволив би
+        розпочати відбудову зараз за рахунок майбутнього потоку надходжень від репарацій,
+        а не чекати на виплату єдиною сумою після політичного врегулювання. У цьому розділі
+        пояснюється механізм, його історичні прецеденти та те, як він параметризований
+        на цій платформі.
       </p>
 
       <!-- 4.1 Historical precedents -->
       <div class="about-subsection">
-        <h3>4.1 Historical precedents</h3>
+        <h3>4.1 Історичні прецеденти</h3>
 
         <div class="trust-precedent">
-          <p class="trust-precedent-title">Dawes Plan (1924) and Young Plan (1929) - annuity-backed reconstruction finance</p>
-          <p>Following Germany's default on WWI reparations in 1923, the Dawes Committee restructured the obligation into long-term annuities backed by German railway receipts, industrial bonds, and a first-charge on the national budget. A Reparations Agent (S. Parker Gilbert) was given access to German revenue streams and authority to issue bonds on international capital markets backed by those streams. Germany raised approximately USD 800m in foreign loans in 1924&#8211;29 on this basis - funds that financed industrial reconstruction - while the reparations annuity was paid from operating revenues rather than from a lump sum Germany could never have assembled.</p>
-          <p>The Young Plan (1929) commercialised the structure further: Germany issued bonds on international markets directly, and the Bank for International Settlements - established simultaneously - acted as trustee. The BIS's existence is itself a legacy of this annuity-backed structure.</p>
-          <p><strong>Key lesson:</strong> annuity-based structures allow reconstruction to proceed before the underlying liability is politically resolved. The creditor receives a flow; the debtor finances reconstruction from the same asset that generates the flow. Lump-sum settlement is not a prerequisite for productive use of the liability.</p>
+          <p class="trust-precedent-title">План Дауеса (1924) та План Янга (1929) — фінансування відбудови під ануїтет</p>
+          <p>Після дефолту Німеччини за репараціями Першої світової війни у 1923 році Комітет Дауеса реструктурував зобов'язання у довгострокові ануїтети, забезпечені надходженнями від залізниць, промисловими облігаціями та першочерговим правом на державний бюджет. Агент з репарацій (С. Паркер Гілберт) отримав доступ до потоків доходів Німеччини та повноваження випускати облігації на міжнародних ринках капіталу, забезпечені цими потоками. Протягом 1924&#8211;29 років Німеччина залучила приблизно 800 млн дол. США іноземних позик на цій основі — кошти, що фінансували промислову відбудову, — тоді як ануїтет з репарацій виплачувався з операційних доходів, а не з єдиної суми, яку Німеччина ніколи не змогла б зібрати.</p>
+          <p>План Янга (1929) ще більше комерціалізував структуру: Німеччина випускала облігації безпосередньо на міжнародних ринках, а Банк міжнародних розрахунків — заснований одночасно — виступав довірчим управителем. Саме існування BIS є спадщиною цієї структури, забезпеченої ануїтетом.</p>
+          <p><strong>Ключовий урок:</strong> структури на основі ануїтетів дозволяють розпочати відбудову ще до того, як буде вирішено основне зобов'язання. Кредитор отримує потік; боржник фінансує відбудову з того самого активу, який генерує цей потік. Розрахунок єдиною сумою не є передумовою для продуктивного використання зобов'язання.</p>
         </div>
 
         <div class="trust-precedent">
-          <p class="trust-precedent-title">Marshall Plan (1948&#8211;51) - conditioned multi-year disbursement</p>
-          <p>The European Recovery Program disbursed USD 13.3bn (approximately USD 160bn in 2024 terms) across 16 European countries in four annual tranches from 1948 to 1952. Critically, it was not a lump-sum transfer but a multi-year availability commitment: recipient countries knew the quantum and schedule of disbursements in advance, which allowed investment planning, procurement pipelines, and counterpart budget allocations to be established years ahead of actual receipt.</p>
-          <p>The programme was conditioned on two things: economic policy reform (the OEEC coordination mechanism, predecessor to the OECD) and trade liberalisation among recipients. The combination of conditioned disbursement and multi-year commitment is the structural feature that distinguished the Marshall Plan from both the unconditional reparations transfers that preceded WWII and the debt rescheduling that followed it.</p>
-          <p><strong>Key lesson:</strong> a known, committed, multi-year disbursement schedule is more useful to reconstruction planners than either a large uncertain lump sum or a series of ad hoc tranches. The EU Facility for Ukraine reproduces this structure with its EUR 50bn seven-year envelope and annual milestone-based tranches. [<code>EU_FACILITY</code>]</p>
+          <p class="trust-precedent-title">План Маршалла (1948&#8211;51) — обумовлене багаторічне виплачування</p>
+          <p>Програма відновлення Європи виплатила 13,3 млрд дол. США (приблизно 160 млрд дол. США у цінах 2024 року) у 16 європейських країнах чотирма щорічними траншами з 1948 по 1952 рік. Критично важливо, що це був не єдиноразовий переказ, а багаторічне зобов'язання щодо наявності: країни-отримувачі заздалегідь знали обсяг і графік виплат, що дозволило заздалегідь встановити плани інвестицій, закупівельні трубопроводи та зустрічні бюджетні асигнування за кілька років до фактичного отримання.</p>
+          <p>Програма була обумовлена двома речами: реформою економічної політики (механізм координації ОЄЕС, попередник ОЕСР) та торговельною лібералізацією між отримувачами. Саме поєднання обумовленого виплачування та багаторічного зобов'язання є структурною особливістю, яка відрізняла План Маршалла як від безумовних трансфертів репарацій, що передували Другій світовій війні, так і від реструктуризації боргу, що за нею послідувала.</p>
+          <p><strong>Ключовий урок:</strong> відомий, визначений, багаторічний графік виплат є більш корисним для планувальників відбудови, ніж невелика невизначена єдина сума або серія разових траншів. Фонд ЄС для України відтворює цю структуру з 50-мільярдним семирічним конвертом та щорічними траншами на основі орієнтирів. [<code>EU_FACILITY</code>]</p>
         </div>
 
         <div class="trust-precedent">
-          <p class="trust-precedent-title">UN Compensation Commission (1991&#8211;2022) - flow-based levy mechanism</p>
-          <p>The UNCC administered Iraq's reparations to Kuwait and other claimants through a levy on Iraqi oil export revenues, initially set at 30% of proceeds under the UN Oil-for-Food Programme. Over 31 years the Commission adjudicated 2.68 million claims and disbursed approximately USD 52.4bn. The final Iraqi payment was made in February 2022.</p>
-          <p>The UNCC mechanism demonstrated three things directly relevant to Ukraine. First, a percentage-of-revenue levy is more practically recoverable over time than a demand for immediate lump-sum payment: Iraq could not have paid USD 52bn in 1991, but it could sustain a 25&#8211;30% levy across three decades. Second, a multilateral trustee with independent adjudication authority sitting under the UN Security Council provided sufficient legitimacy that claimants accepted the process rather than pursuing parallel tracks. Third, flow-based structures could in principle support front-loaded financing: annual levy receipts could have backed bonds issued against the projected 30-year revenue stream, had the political will existed.</p>
-          <p><strong>Key lesson:</strong> a flow-based mechanism - a percentage of a predictable revenue stream - proved more practically recoverable over time than a lump-sum demand. For Ukraine, the analogous stream is the interest accruing on frozen Russian sovereign reserves, with principal seizure as a step-up scenario.</p>
+          <p class="trust-precedent-title">Компенсаційна комісія ООН (1991&#8211;2022) — механізм збору на основі потоку</p>
+          <p>КЗООН адмініструвала репарації Іраку Кувейту та іншим позивачам через відрахування з доходів Іраку від експорту нафти, спочатку встановлені на рівні 30% надходжень у рамках програми ООН «Нафта в обмін на продовольство». За 31 рік Комісія розглянула 2,68 мільйона претензій та виплатила приблизно 52,4 млрд дол. США. Остання виплата Іраку відбулася у лютому 2022 року.</p>
+          <p>Механізм КЗООН продемонстрував три речі, безпосередньо актуальні для України. По-перше, відрахування у відсотках від доходів є практично більш стягуваним у часі, ніж вимога негайної єдиноразової виплати: Ірак не міг би виплатити 52 млрд дол. США у 1991 році, але міг підтримувати відрахування 25&#8211;30% протягом трьох десятиліть. По-друге, багатосторонній довірчий управитель з незалежними повноваженнями арбітражу під Радою Безпеки ООН забезпечив достатню легітимність для того, щоб позивачі прийняли процес, а не переслідували паралельні шляхи. По-третє, структури на основі потоку могли б принципово підтримати авансове фінансування: щорічні надходження від збору могли б забезпечити облігації, випущені проти прогнозованого 30-річного потоку доходів, якби була наявна політична воля.</p>
+          <p><strong>Ключовий урок:</strong> механізм на основі потоку — відсоток від передбачуваного потоку доходів — виявився практично більш стягуваним у часі, ніж єдинораза вимога. Для України аналогічним потоком є відсотки, що нараховуються на заморожені суверенні резерви Росії, з вилученням основного боргу як сценарію підвищення.</p>
         </div>
       </div>
 
       <!-- 4.2 GPFG parallel -->
       <div class="about-subsection">
-        <h3>4.2 The sovereign wealth fund parallel - Norway's Government Pension Fund Global</h3>
-        <p>Norway's GPFG is the closest structural analogue to a Ukraine Reconstruction Trust. The Fund holds approximately USD 1.6 trillion in assets (2024) derived from North Sea oil revenues, governed under a rule that limits annual drawdowns to the expected real return - initially 4%, revised to approximately 3% of fund market value. Annual parliamentary appropriations may not exceed this limit except in extraordinary circumstances. The rule creates a fund that can deliver a predictable annual disbursement without depleting the corpus.</p>
-        <p>The structural parallel: a corpus derived from a windfall asset (frozen Russian reserves in place of oil revenues), governed under a drawdown rule (2.5%&#8211;5.0% depending on political will), converting the corpus into an annual availability payment that is known, predictable, and schedulable. This is precisely the feature that Marshall Plan experience shows is most valuable to reconstruction planners: not the size of the transfer, but its predictability.</p>
-        <p>The GPFG parallel also illustrates the governance requirement. Norway's rule works because it is legislated, administered by an independent manager (Norges Bank Investment Management), and subject to annual parliamentary scrutiny. A Ukraine Trust would require analogous governance - multilateral trusteeship, independent management, and regular public reporting - to provide the credibility on which institutional investors would rely when financing reconstruction projects against anticipated Trust disbursements.</p>
+        <h3>4.2 Паралель суверенного фонду добробуту — Норвезький урядовий пенсійний фонд Global</h3>
+        <p>GPFG Норвегії є найближчим структурним аналогом Фонду відбудови України. Фонд утримує приблизно 1,6 трлн дол. США активів (2024 рік), отриманих від доходів від видобутку нафти в Північному морі, і керується відповідно до правила, яке обмежує щорічні виплати очікуваним реальним прибутком — спочатку 4%, переглянутим до приблизно 3% від ринкової вартості фонду. Щорічні парламентські асигнування не можуть перевищувати цю межу, за винятком надзвичайних обставин. Правило створює фонд, який може забезпечити передбачувану щорічну виплату без виснаження корпусу.</p>
+        <p>Структурна паралель: корпус, отриманий від непередбаченого активу (заморожені резерви Росії замість нафтових доходів), що управляється за правилом виплати (2.5%&#8211;5.0% залежно від політичної волі), що перетворює корпус на щорічну виплату доступності, яка є відомою, передбачуваною та такою, що підлягає плануванню. Це саме та особливість, яку досвід Плану Маршалла показує як найбільш цінну для планувальників відбудови: не розмір переказу, а його передбачуваність.</p>
+        <p>Паралель з GPFG також ілюструє вимогу до управління. Правило Норвегії працює, тому що воно закріплено законодавчо, адмініструється незалежним менеджером (Norges Bank Investment Management) та підлягає щорічній парламентській перевірці. Фонд України вимагатиме аналогічного управління — багатостороннього довірчого управління, незалежного менеджменту та регулярної публічної звітності — щоб забезпечити довіру, на яку покладалися б інституційні інвестори при фінансуванні проєктів відбудови за рахунок очікуваних виплат Фонду.</p>
       </div>
 
       <!-- 4.3 Mechanism as modelled -->
       <div class="about-subsection">
-        <h3>4.3 The Trust mechanism as modelled on uVidNova</h3>
+        <h3>4.3 Механізм Фонду в моделі uVidNova</h3>
 
         <table>
-          <thead><tr><th>Parameter</th><th>Value / assumption</th><th>Source / basis</th></tr></thead>
+          <thead><tr><th>Параметр</th><th>Значення / допущення</th><th>Джерело / основа</th></tr></thead>
           <tbody>
             <tr>
-              <td><strong>Corpus</strong></td>
-              <td>Frozen Russian sovereign reserves placed under international trusteeship. Central estimate: USD 280&#8211;300bn principal. Platform default scenario: USD 50bn ERA proceeds only (G7 ERA loan on accrued interest).</td>
-              <td>G7 ERA agreement; public reporting on immobilised Euroclear holdings. [<code>EU_FACILITY</code>]</td>
+              <td><strong>Корпус</strong></td>
+              <td>Заморожені суверенні резерви Росії, передані під міжнародне довірче управління. Центральна оцінка: 280&#8211;300 млрд дол. США основного боргу. Сценарій за замовчуванням платформи: лише 50 млрд дол. США надходжень ERA (позика ERA G7 на нараховані відсотки).</td>
+              <td>Угода ERA G7; публічна звітність про іммобілізовані утримання Euroclear. [<code>EU_FACILITY</code>]</td>
             </tr>
             <tr>
-              <td><strong>Drawdown rate</strong></td>
-              <td>2.5%&#8211;5.0% of corpus per annum. Default: 4.0%.</td>
-              <td>Calibrated against GPFG drawdown rule and UNCC levy precedent.</td>
+              <td><strong>Ставка виплати</strong></td>
+              <td>2.5%&#8211;5.0% корпусу на рік. За замовчуванням: 4.0%.</td>
+              <td>Калібровано відповідно до правила виплати GPFG та прецеденту збору КЗООН.</td>
             </tr>
             <tr>
-              <td><strong>Annual availability payment</strong></td>
-              <td><code>corpus &#215; drawdown_pct &#215; (1 &#8722; operating_cost_pct)</code>. At USD 286bn corpus, 4.0% drawdown, 0.1% operating cost: approximately USD 11.4bn/year.</td>
-              <td>Modelling construct. Formula in <code>data/trust/trust_config.json</code>.</td>
+              <td><strong>Щорічна виплата доступності</strong></td>
+              <td><code>corpus &#215; drawdown_pct &#215; (1 &#8722; operating_cost_pct)</code>. При корпусі 286 млрд дол. США, виплаті 4.0%, операційних витратах 0.1%: приблизно 11,4 млрд дол. США/рік.</td>
+              <td>Модельна конструкція. Формула у <code>data/trust/trust_config.json</code>.</td>
             </tr>
             <tr>
-              <td><strong>Nominal yield on corpus</strong></td>
-              <td>4.0% (ECB AAA-rated euro-area sovereign average, 5-year duration, 2026-Q1 vintage).</td>
-              <td><code>data/trust/trust_config.json</code>. Source: ECB yield curve data.</td>
+              <td><strong>Номінальна прибутковість корпусу</strong></td>
+              <td>4.0% (середнє по єврозоні для державних паперів з рейтингом AAA від ЄЦБ, тривалість 5 років, вінтаж 2026-Q1).</td>
+              <td><code>data/trust/trust_config.json</code>. Джерело: дані кривої прибутковості ЄЦБ.</td>
             </tr>
             <tr>
-              <td><strong>Use of availability payments</strong></td>
-              <td>Annual Trust payments service concessional debt drawn to fund reconstruction projects in the current period, rather than waiting for political resolution of the lump-sum reparations claim.</td>
-              <td>Mechanism design; informed by UNCC and Dawes Plan precedents.</td>
+              <td><strong>Використання виплат доступності</strong></td>
+              <td>Щорічні виплати Фонду обслуговують концесійний борг, залучений для фінансування проєктів відбудови в поточному періоді, а не чекають на політичне вирішення єдиноразової вимоги репарацій.</td>
+              <td>Розробка механізму; спирається на прецеденти КЗООН та Плану Дауеса.</td>
             </tr>
             <tr>
-              <td><strong>Financing multiplier</strong></td>
-              <td>USD 1 of annual Trust availability supports approximately USD 5 of upfront project financing via concessional debt (at 5.0% coupon over 25 years with 1.25 DSCR). Sector-specific parameters in <code>data/availability_payment_params.json</code>.</td>
-              <td>Standard project-finance sizing at sector-specific coupon rates. [<code>EBRD_CASE</code>]</td>
+              <td><strong>Мультиплікатор фінансування</strong></td>
+              <td>1 дол. США щорічної доступності Фонду підтримує приблизно 5 дол. США авансового проєктного фінансування через концесійний борг (при купоні 5.0% на 25 років із DSCR 1.25). Параметри для конкретних секторів у <code>data/availability_payment_params.json</code>.</td>
+              <td>Стандартне розміщення проєктного фінансування за ставками купону, специфічними для сектора. [<code>EBRD_CASE</code>]</td>
             </tr>
           </tbody>
         </table>
 
-        <p>The annuity arithmetic illustrates why the Trust structure matters. A 4% drawdown on USD 286bn equals approximately USD 11.4bn per year - a contracted annual stream, unlike the uncertain and politically fraught prospect of a lump-sum settlement. At a 5&#215; financing multiplier, that stream supports approximately USD 57bn in reconstruction investment per year without requiring any political agreement on the total reparations amount.</p>
-        <p>In the current platform default (proceeds only, pre-armistice), the ERA envelope is approximately USD 50bn total - a one-time financing against accrued interest, not an annual stream. The principal-seizure scenario (USD 280&#8211;300bn corpus) is what unlocks the annuity logic and its financing multiplier. Users can toggle between these scenarios in the Finance It tool.</p>
+        <p>Арифметика ануїтетів ілюструє, чому структура Фонду має значення. Виплата 4% на 286 млрд дол. США дорівнює приблизно 11,4 млрд дол. США на рік — контрактований щорічний потік, на відміну від невизначеної та політично складної перспективи єдиноразового врегулювання. При мультиплікаторі фінансування 5&#215; цей потік підтримує приблизно 57 млрд дол. США інвестицій у відбудову на рік без необхідності будь-якої політичної угоди щодо загальної суми репарацій.</p>
+        <p>У поточному сценарії за замовчуванням платформи (лише надходження, до перемир'я) конверт ERA становить приблизно 50 млрд дол. США загалом — одноразове фінансування проти нарахованих відсотків, а не щорічний потік. Сценарій вилучення основного боргу (корпус 280&#8211;300 млрд дол. США) відкриває логіку ануїтету та її мультиплікатор фінансування. Користувачі можуть перемикатися між цими сценаріями в інструменті «Фінансування».</p>
       </div>
 
       <!-- 4.4 Trust disclaimer -->
       <div class="about-subsection">
-        <h3>4.4 Disclaimer - Trust mechanism</h3>
+        <h3>4.4 Застереження — механізм Фонду</h3>
         <div class="disclaimer-box">
-          <p>The Reconstruction Trust mechanism described on this platform is a <strong>modelling construct based on historical precedents and current legal proposals</strong>. It does not reflect confirmed government policy, a concluded international agreement, or any specific legislative or judicial outcome regarding frozen Russian sovereign assets.</p>
-          <p>The legality, enforceability, and quantum of any reparations claim by Ukraine against the Russian Federation remain contested in international law. The platform takes no position on these legal questions. Trust corpus and availability-payment figures are scenario assumptions for financing-structure modelling, not forecasts or legal assessments.</p>
-          <p>Users incorporating Trust mechanism assumptions into transaction models, investment memoranda, or public communications should make clear the conditional and illustrative nature of these figures.</p>
+          <p>Механізм Фонду відбудови, описаний на цій платформі, є <strong>модельною конструкцією, заснованою на історичних прецедентах і поточних правових пропозиціях</strong>. Він не відображає підтвердженої державної політики, укладеної міжнародної угоди або будь-якого конкретного законодавчого чи судового рішення щодо заморожених суверенних активів Росії.</p>
+          <p>Законність, виконуваність і розмір будь-якої вимоги про репарації України до Російської Федерації залишаються спірними в міжнародному праві. Платформа не займає позиції щодо цих правових питань. Цифри корпусу Фонду та виплат доступності є сценарними допущеннями для моделювання структури фінансування, а не прогнозами або правовими оцінками.</p>
+          <p>Користувачі, що включають допущення механізму Фонду до транзакційних моделей, інвестиційних меморандумів або публічних комунікацій, повинні чітко зазначати умовний та ілюстративний характер цих цифр.</p>
         </div>
       </div>
 
-      <a href="#top" class="about-back-to-top">Back to top &#8593;</a>
+      <a href="#top" class="about-back-to-top">На початок &#8593;</a>
     </section>
 
     <!-- ════════════════════════════════════════════════════════════════════
          5. DISCLAIMER
     ═════════════════════════════════════════════════════════════════════════ -->
     <section class="about-section" id="disclaimer" aria-labelledby="disclaimer-title">
-      <h2 class="about-section-title" id="disclaimer-title">5. Disclaimer</h2>
+      <h2 class="about-section-title" id="disclaimer-title">5. Застереження</h2>
 
       <div class="disclaimer-box">
-        <p><strong>Cost and financing-structure estimates.</strong> Cost and financing-structure figures on this platform are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and named comparable Ukrainian precedents. They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence. Actual project costs will depend on scope, procurement, timing, site conditions, contractor market conditions, and the political and security environment at the time of execution.</p>
+        <p><strong>Оцінки вартості та структури фінансування.</strong> Цифри вартості та структури фінансування на цій платформі є оцінками, отриманими з опублікованих орієнтирів питомих витрат (RDNA3, KSE Institute) та названих порівнянних українських прецедентів. Вони не є гарантіями, комерційними пропозиціями та не замінюють due diligence на рівні транзакцій. Фактичні витрати проєктів залежатимуть від обсягу, закупівель, термінів, умов майданчика, ринкових умов підрядника та політично-безпекового середовища на момент виконання.</p>
 
-        <p><strong>Re-damaged assets.</strong> Assets with <code>re_damage_count &#8805; 2</code> are flagged with a warning indicator on the map and in the asset detail page. This is a <strong>material investor-information field</strong>: re-damage events affect insurance pricing, schedule risk, and the case for hardened build-back-better designs. Re-damaged assets are not hidden or downweighted - they are documented with full transparency because suppressing this information would undermine the platform's purpose.</p>
+        <p><strong>Повторно пошкоджені активи.</strong> Активи з <code>re_damage_count &#8805; 2</code> позначаються попереджувальним індикатором на карті та на сторінці деталей активу. Це <strong>суттєве поле інформації для інвесторів</strong>: події повторного пошкодження впливають на ціноутворення страхування, ризики графіку та аргументи на користь зміцнених проєктів «відбудова краще, ніж було». Повторно пошкоджені активи не приховуються та не знецінюються — вони задокументовані з повною прозорістю, оскільки приховування цієї інформації підривало б мету платформи.</p>
 
-        <p><strong>Occupied and frontline-adjacent assets.</strong> Assets classified as <em>occupied</em> or <em>frontline-adjacent</em> are documented in the register as pipeline only. They are excluded from the default map view and from aggregate cost and financing-capacity figures. The Rebuildability filter exposes them for planning purposes. No reconstruction finance deployment is modelled for these assets in current conditions.</p>
+        <p><strong>Окуповані та прифронтові активи.</strong> Активи, класифіковані як <em>окуповані</em> або <em>прифронтові</em>, задокументовані в реєстрі лише як «у трубопроводі». Вони виключені з перегляду карти за замовчуванням та з агрегованих цифр вартості та фінансових можливостей. Фільтр «відбудовуваність» відкриває їх для цілей планування. Жодне розгортання фінансування відбудови для цих активів у поточних умовах не моделюється.</p>
 
-        <p><strong>Data vintage.</strong> RDNA3 is the February 2024 third edition; subsequent damage has not been incorporated into the unit-cost or regional-multiplier tables. The KSE "Russia Will Pay" tracker is updated periodically; figures cited reflect the version current at each asset record's <code>last_reviewed</code> date. No real-time damage feeds are used. This is a register, not a wire service.</p>
+        <p><strong>Вінтаж даних.</strong> RDNA3 — третє видання від лютого 2024 року; подальші збитки не включені до таблиць питомих витрат або регіональних мультиплікаторів. Трекер «Росія заплатить» KSE оновлюється periodично; наведені цифри відображають версію, актуальну на дату <code>last_reviewed</code> кожного запису активу. Жодні інформаційні джерела в реальному часі не використовуються. Це реєстр, а не інформаційна служба.</p>
 
-        <p><strong>Independence.</strong> uVidNova is a not-for-profit platform. It does not receive fees from any financing institution, donor, or government body. It has no affiliation with the Ukrainian government, the World Bank, EBRD, EIB, or any other institution whose data it cites. Citations do not imply endorsement by those institutions.</p>
+        <p><strong>Незалежність.</strong> uVidNova є некомерційною платформою. Вона не отримує комісій від жодної фінансової установи, донора або урядового органу. Вона не має жодної приналежності до уряду України, Світового банку, EBRD, ЄІБ або будь-якої іншої установи, чиї дані вона цитує. Цитати не передбачають схвалення з боку цих установ.</p>
 
-        <p><strong>Corrections.</strong> If you identify a factual error, a missing source citation, a figure inconsistent with a named reference, or an asset that should be in the register, use the Feedback button on the map page. Corrections are reviewed and committed as verified pull requests. All data is version-controlled and publicly auditable.</p>
+        <p><strong>Виправлення.</strong> Якщо ви виявили фактичну помилку, відсутнє посилання на джерело, цифру, що не відповідає вказаному посиланню, або актив, який має бути в реєстрі, скористайтеся кнопкою зворотного зв'язку на сторінці карти. Виправлення розглядаються та фіксуються як верифіковані запити на злиття. Усі дані контролюються версіями та є публічно перевірними.</p>
       </div>
 
       <p style="margin-top:1.25rem;font-size:0.85rem;color:var(--colour-text-muted);">
-        uVidNova is built and maintained by <strong>Samir Asadov, CFA</strong>.
-        For partnership enquiries from KSE analysts, EBRD investment officers, or policy researchers,
-        please use the feedback form on the map page.
+        uVidNova побудований та підтримується <strong>Саміром Асадовим, CFA</strong>.
+        Для партнерських запитів від аналітиків KSE, інвестиційних офіцерів EBRD або
+        дослідників з питань політики скористайтеся формою зворотного зв'язку на сторінці карти.
       </p>
 
-      <a href="#top" class="about-back-to-top">Back to top &#8593;</a>
+      <a href="#top" class="about-back-to-top">На початок &#8593;</a>
     </section>
 
   </main>
