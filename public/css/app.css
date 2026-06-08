@@ -76,7 +76,7 @@ img { max-width: 100%; height: auto; }
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 4000;
   height: var(--header-h);
   box-shadow: var(--shadow-md);
   display: flex;
