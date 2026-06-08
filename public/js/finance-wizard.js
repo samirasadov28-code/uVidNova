@@ -1594,7 +1594,7 @@ function step4GreenfieldHTML() {
       ? ` <span class="trust-annual-chip">Annual: USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr †</span>`
       : '';
     // Use _labelOverride for seeded greenfield tranches if present
-    const trancheLabel = t._labelOverride ?? (isTrustMode ? 'ERA/Trust — Availability Payment' : t.def.label);
+    const trancheLabel = t._labelOverride ?? (isTrustMode ? (t2('fw.s4.trust_label')||'ERA/Trust — Availability Payment') : t.def.label);
     const displayPct   = isTrustMode ? '-' : `${t.pct.toFixed(0)}%`;
     const displayAmt   = isTrustMode ? `USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr` : fmtM(t.amt.toFixed(1));
     return `<tr>
