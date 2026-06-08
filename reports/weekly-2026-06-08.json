@@ -1,0 +1,236 @@
+{
+  "generated_at": "2026-06-08T11:57:57.383Z",
+  "date": "2026-06-08",
+  "feed_items_fetched": 0,
+  "re_damage_signals": [],
+  "lifecycle_signals": [],
+  "candidate_new_assets": [],
+  "data_quality": {
+    "stale_assets": [],
+    "pending_data_assets": [
+      {
+        "asset_id": "AZOVSTAL_STEEL_2022_03_01",
+        "name": "Azovstal Iron and Steel Works, Mariupol"
+      },
+      {
+        "asset_id": "BAKHMUT_WATER_SANITATION_2022_08_01",
+        "name": "Bakhmut City Water Supply and Wastewater System"
+      },
+      {
+        "asset_id": "KHERSON_POST_KAKHOVKA_WATER_2023_06_06",
+        "name": "Kherson City Water and Sanitation System (post-Kakhovka)"
+      },
+      {
+        "asset_id": "MARIUPOL_WATER_WASTEWATER_2022_03_01",
+        "name": "Mariupol Water Supply and Wastewater Treatment System"
+      },
+      {
+        "asset_id": "ODESA_MYKOLAIV_GRAIN_TERMINALS_2022_04_01",
+        "name": "Odesa and Mykolaiv Grain Export Terminals"
+      }
+    ],
+    "high_redamage_assets": [
+      {
+        "asset_id": "ANTONIVSKYI_ROAD_BRIDGE_2022_07_27",
+        "re_damage_count": 3,
+        "name": "Antonivskyi Road Bridge over the Dnipro, Kherson Oblast"
+      },
+      {
+        "asset_id": "AVDIIVKA_COKE_PLANT_2022_02_24",
+        "re_damage_count": 3,
+        "name": "Avdiivka Coke Plant"
+      },
+      {
+        "asset_id": "AVDIIVKA_RESIDENTIAL_2023_10_01",
+        "re_damage_count": 2,
+        "name": "Avdiivka Town Residential — Donetsk Oblast"
+      },
+      {
+        "asset_id": "CHASIV_YAR_DISTRICT_HOSPITAL_2023_07_09",
+        "re_damage_count": 3,
+        "name": "Chasiv Yar District Hospital"
+      },
+      {
+        "asset_id": "CHASIV_YAR_RESIDENTIAL_2023_07_01",
+        "re_damage_count": 4,
+        "name": "Chasiv Yar Residential Blocks"
+      },
+      {
+        "asset_id": "INHULETS_MYKOLAIV_WATER_2022_03_01",
+        "re_damage_count": 2,
+        "name": "Inhulets–Mykolaiv Water Supply System"
+      },
+      {
+        "asset_id": "IZMAIL_GRAIN_TERMINAL_2023_07_26",
+        "re_damage_count": 2,
+        "name": "Izmail Danube Grain Terminal (July 2023 Drone Strike)"
+      },
+      {
+        "asset_id": "KARAZIN_KHARKIV_UNIVERSITY_2022_03_01",
+        "re_damage_count": 4,
+        "name": "V.N. Karazin Kharkiv National University"
+      },
+      {
+        "asset_id": "KHARKIV_CHP_2022_03_24",
+        "re_damage_count": 4,
+        "name": "Kharkiv CHP-5 Combined Heat and Power Station"
+      },
+      {
+        "asset_id": "KHARKIV_HISTORICAL_CENTRE_2022_03_01",
+        "re_damage_count": 4,
+        "name": "Kharkiv Historical City Centre — Heritage Building Cluster"
+      },
+      {
+        "asset_id": "KHARKIV_INDUSTRIAL_DISTRICT_RESIDENTIAL_2022_04_01",
+        "re_damage_count": 3,
+        "name": "Kharkiv Industrialnyi District Residential Housing Stock"
+      },
+      {
+        "asset_id": "KHARKIV_METRO_2022_03_01",
+        "re_damage_count": 5,
+        "name": "Kharkiv Metro System — Infrastructure Damage"
+      },
+      {
+        "asset_id": "KHARKIV_NATIONAL_AEROSPACE_UNIVERSITY_2022_03_01",
+        "re_damage_count": 2,
+        "name": "Kharkiv National Aerospace University — N. Ye. Zhukovsky National Aerospace University (KhAI)"
+      },
+      {
+        "asset_id": "KHARKIV_POLYTECHNIC_INSTITUTE_2022_02_28",
+        "re_damage_count": 6,
+        "name": "National Technical University KhPI — Kharkiv Polytechnic Institute"
+      },
+      {
+        "asset_id": "KHARKIV_REGIONAL_CHILDRENS_HOSPITAL_2022_03_06",
+        "re_damage_count": 3,
+        "name": "Kharkiv Regional Children's Clinical Hospital"
+      },
+      {
+        "asset_id": "KHERSON_CENTRAL_RESIDENTIAL_2022_11_11",
+        "re_damage_count": 3,
+        "name": "Kherson City Central Residential Districts (post-liberation)"
+      },
+      {
+        "asset_id": "KHERSON_REGIONAL_HOSPITAL_2022_11_11",
+        "re_damage_count": 5,
+        "name": "Kherson Regional Clinical Hospital"
+      },
+      {
+        "asset_id": "KHERSON_SHIPYARD_2022_11_11",
+        "re_damage_count": 3,
+        "name": "Kherson Shipyard (Khersonsky Sudnobudivny Zavod)"
+      },
+      {
+        "asset_id": "KHERSON_STATE_UNIVERSITY_2022_03_02",
+        "re_damage_count": 2,
+        "name": "Kherson State University"
+      },
+      {
+        "asset_id": "KREMENCHUK_KREMEN_OIL_REFINERY_2022_06_27",
+        "re_damage_count": 2,
+        "name": "Kremenchuk Kremenchutskyi Oil Refinery Complex"
+      },
+      {
+        "asset_id": "KRYVORIZKA_TPP_2022_10_18",
+        "re_damage_count": 3,
+        "name": "Kryvorizka Thermal Power Plant"
+      },
+      {
+        "asset_id": "KUPYANSK_RESIDENTIAL_2022_02_28",
+        "re_damage_count": 2,
+        "name": "Kupyansk Residential District"
+      },
+      {
+        "asset_id": "LYMAN_DISTRICT_HOSPITAL_2022_05_20",
+        "re_damage_count": 2,
+        "name": "Lyman District Central Hospital"
+      },
+      {
+        "asset_id": "LYMAN_RESIDENTIAL_DISTRICT_2022_05_20",
+        "re_damage_count": 2,
+        "name": "Lyman Residential District Housing Stock"
+      },
+      {
+        "asset_id": "LYMAN_WATER_TREATMENT_2022_05_01",
+        "re_damage_count": 2,
+        "name": "Lyman Water Treatment Plant"
+      },
+      {
+        "asset_id": "MYKOLAIV_RESIDENTIAL_2022_08_01",
+        "re_damage_count": 6,
+        "name": "Mykolaiv Central Residential District"
+      },
+      {
+        "asset_id": "MYKOLAIV_SHIPYARDS_2022_03_01",
+        "re_damage_count": 4,
+        "name": "Mykolaiv Shipbuilding Facilities — Black Sea Shipyard / NIBULON complex"
+      },
+      {
+        "asset_id": "NIKOPOL_RESIDENTIAL_2022_08_01",
+        "re_damage_count": 5,
+        "name": "Nikopol City Residential — Cross-River Shelling from Enerhodar"
+      },
+      {
+        "asset_id": "ODESA_MYKOLAIV_GRAIN_TERMINALS_2022_04_01",
+        "re_damage_count": 4,
+        "name": "Odesa and Mykolaiv Grain Export Terminals"
+      },
+      {
+        "asset_id": "ORIKHIV_RESIDENTIAL_2022_08_01",
+        "re_damage_count": 4,
+        "name": "Orikhiv Town Residential — Near-Frontline Zaporizhzhia Oblast"
+      },
+      {
+        "asset_id": "SALTIVKA_DISTRICT_KHARKIV_2022_02_24",
+        "re_damage_count": 8,
+        "name": "Saltivka Residential District, Kharkiv"
+      },
+      {
+        "asset_id": "SIEVIERODONETSK_RESIDENTIAL_2022_06_24",
+        "re_damage_count": 2,
+        "name": "Sievierodonetsk City Residential — Pre-occupation Damage"
+      },
+      {
+        "asset_id": "SLOVIANSK_CHP_2022_04_14",
+        "re_damage_count": 3,
+        "name": "Sloviansk Combined Heat and Power Plant"
+      },
+      {
+        "asset_id": "SLOVIANSK_SCHOOL_COMPLEX_2022_04_14",
+        "re_damage_count": 2,
+        "name": "Sloviansk Secondary School Complex"
+      },
+      {
+        "asset_id": "SVIATOHIRSK_LAVRA_2022_05_30",
+        "re_damage_count": 2,
+        "name": "Sviatohirsk Holy Dormition Lavra"
+      },
+      {
+        "asset_id": "UKRENERGO_PIVNICHNA_SUBSTATION_2024_03_22",
+        "re_damage_count": 2,
+        "name": "Ukrenergo Pivnichna 750kV Substation"
+      },
+      {
+        "asset_id": "VUHLEDAR_RESIDENTIAL_2023_02_01",
+        "re_damage_count": 5,
+        "name": "Vuhledar Housing District"
+      },
+      {
+        "asset_id": "ZAPORIZHZHIA_REGIONAL_HOSPITAL_2022_10_09",
+        "re_damage_count": 2,
+        "name": "Zaporizhzhia Regional Clinical Hospital"
+      },
+      {
+        "asset_id": "ZAPORIZHZHIA_WATER_SUPPLY_2022_10_01",
+        "re_damage_count": 3,
+        "name": "Zaporizhzhia City Water Supply System"
+      },
+      {
+        "asset_id": "ZMIIVSKA_TPP_2024_03_22",
+        "re_damage_count": 2,
+        "name": "Zmiivska Thermal Power Plant"
+      }
+    ]
+  },
+  "note": "All signals require human review. Nothing auto-merges."
+}
