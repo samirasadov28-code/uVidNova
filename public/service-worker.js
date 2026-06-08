@@ -4,7 +4,7 @@
  * Strategy: cache-first for static assets; network-first for data files.
  */
 
-const CACHE_VERSION = 'uvidnova-v92';
+const CACHE_VERSION = 'uvidnova-v93';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const DATA_CACHE    = `${CACHE_VERSION}-data`;
 
@@ -144,17 +144,18 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // CSS and JS: cache-first, update in background (cache busted by SW version)
+  // CSS and JS: network-first so updated translations/styles are never served stale.
+  // Falls back to cache only when offline.
   if (url.pathname.endsWith('.css') || url.pathname.endsWith('.js')) {
     event.respondWith(
-      caches.open(STATIC_CACHE).then(async cache => {
-        const cached = await cache.match(request);
-        const networkFetch = fetch(request).then(response => {
-          if (response.ok) cache.put(request, response.clone());
+      fetch(request)
+        .then(response => {
+          if (response.ok) {
+            caches.open(STATIC_CACHE).then(c => c.put(request, response.clone()));
+          }
           return response;
-        }).catch(() => null);
-        return cached || networkFetch;
-      })
+        })
+        .catch(() => caches.match(request))
     );
     return;
   }
