@@ -932,7 +932,7 @@ function toggleWarMode() {
   if (btn) {
     btn.classList.toggle('war-active', warMode);
     const label = document.getElementById('warModeBtnLabel') ?? btn.querySelector('span');
-    if (label) label.textContent = warMode ? 'Hide occupation' : 'Occupied territories';
+    if (label) label.textContent = warMode ? t('bar.hide_occupation') : t('bar.occupied');
   }
   const legend = document.getElementById('warLegend');
   if (legend) legend.hidden = !warMode;

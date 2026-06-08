@@ -827,6 +827,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>Corrections.</strong> If you find a factual error, a missing source citation, a figure inconsistent with the stated reference, or an asset that should be in the register, use the feedback button on the map page. Corrections are reviewed and committed as verified pull requests. All data is version-controlled and publicly auditable.',
     'about.s5.credit': 'uVidNova is built and maintained by <strong>Samir Asadov, CFA</strong>. For partnership enquiries from KSE analysts, EBRD investment officers, or policy researchers, use the feedback form on the map page.',
     'nav.map': '&#8592; Map',
+  
+    'bar.hide_occupation': 'Hide occupation',
+    'bar.legend.title': 'Conflict status (2024–25)',
+    'bar.legend.crimea': 'Crimea — Russian-controlled',
+    'bar.legend.luhansk': 'Luhansk — largely Russian-controlled',
+    'bar.legend.donetsk': 'Donetsk · Zaporizhzhia · Kherson — contested',
+    'bar.legend.note': 'Frontline indicative only.',
   },
 
   uk: {
@@ -1598,6 +1605,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>Виправлення.</strong> Якщо ви виявили фактичну помилку, відсутнє посилання на джерело, цифру, що не відповідає вказаному посиланню, або актив, який має бути в реєстрі, скористайтеся кнопкою зворотного зв\'язку на сторінці карти. Виправлення розглядаються та фіксуються як верифіковані запити на злиття. Усі дані контролюються версіями та є публічно перевірними.',
     'about.s5.credit': 'uVidNova побудований та підтримується <strong>Саміром Асадовим, CFA</strong>. Для партнерських запитів від аналітиків KSE, інвестиційних офіцерів EBRD або дослідників з питань політики скористайтеся формою зворотного зв\'язку на сторінці карти.',
     'nav.map': '&#8592; Карта',
+  
+    'bar.hide_occupation': 'Приховати окупацію',
+    'bar.legend.title': 'Статус конфлікту (2024–25)',
+    'bar.legend.crimea': 'Крим — під контролем Росії',
+    'bar.legend.luhansk': 'Луганськ — переважно під контролем Росії',
+    'bar.legend.donetsk': 'Донецьк · Запоріжжя · Херсон — спірні',
+    'bar.legend.note': 'Лінія фронту вказана орієнтовно.',
   },
 
   // ── Batch 1 ───────────────────────────────────────────────────────────────
@@ -2358,6 +2372,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>Corrections.</strong> Si vous trouvez une erreur factuelle, une citation de source manquante, un chiffre incohérent avec la référence indiquée, ou un actif qui devrait figurer dans le registre, utilisez le bouton de retour sur la page de la carte. Les corrections sont examinées et validées sous forme de pull requests vérifiées. Toutes les données sont versionnées et publiquement auditables.',
     'about.s5.credit': 'uVidNova est construit et maintenu par <strong>Samir Asadov, CFA</strong>. Pour les demandes de partenariat des analystes KSE, des chargés d\'investissement EBRD ou des chercheurs en politiques publiques, utilisez le formulaire de retour sur la page de la carte.',
     'nav.map': '&#8592; Carte',
+  
+    'bar.hide_occupation': 'Masquer l\'occupation',
+    'bar.legend.title': 'Situation du conflit (2024–25)',
+    'bar.legend.crimea': 'Crimée — contrôlée par la Russie',
+    'bar.legend.luhansk': 'Louhansk — largement contrôlé par la Russie',
+    'bar.legend.donetsk': 'Donetsk · Zaporijjia · Kherson — disputés',
+    'bar.legend.note': 'Ligne de front indicative seulement.',
   },
 
   es: {
@@ -2777,6 +2798,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>Correcciones.</strong> Si encuentra un error de hecho, una cita de fuente faltante, una cifra incoherente con la referencia indicada o un activo que debería estar en el registro, utilice el botón de comentarios en la página del mapa. Las correcciones se revisan y se registran como solicitudes de extracción verificadas. Todos los datos están versionados y son auditables públicamente.',
     'about.s5.credit': 'uVidNova está construido y mantenido por <strong>Samir Asadov, CFA</strong>. Para consultas de colaboración de analistas de KSE, responsables de inversión de EBRD o investigadores de políticas, utilice el formulario de comentarios en la página del mapa.',
     'nav.map': '&#8592; Mapa',
+  
+    'bar.hide_occupation': 'Ocultar ocupación',
+    'bar.legend.title': 'Estado del conflicto (2024–25)',
+    'bar.legend.crimea': 'Crimea — bajo control ruso',
+    'bar.legend.luhansk': 'Lugansk — en gran parte bajo control ruso',
+    'bar.legend.donetsk': 'Donetsk · Zaporiyia · Jersón — en disputa',
+    'bar.legend.note': 'Línea del frente solo indicativa.',
   },
 
   de: {
@@ -3535,6 +3563,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>Korrekturen.</strong> Wenn Sie einen sachlichen Fehler, ein fehlendes Quellzitat, eine Zahl finden, die mit der angegebenen Referenz inkonsistent ist, oder ein Objekt, das im Register sein sollte, verwenden Sie die Feedback-Schaltfläche auf der Kartenseite. Korrekturen werden überprüft und als verifizierte Pull Requests eingecheckt. Alle Daten sind versionskontrolliert und öffentlich prüfbar.',
     'about.s5.credit': 'uVidNova wird gebaut und gepflegt von <strong>Samir Asadov, CFA</strong>. Für Partnerschaftsanfragen von KSE-Analysten, EBRD-Investitionsbeauftragten oder politischen Forschern verwenden Sie das Feedback-Formular auf der Kartenseite.',
     'nav.map': '&#8592; Karte',
+  
+    'bar.hide_occupation': 'Besatzung ausblenden',
+    'bar.legend.title': 'Konfliktstatus (2024–25)',
+    'bar.legend.crimea': 'Krim — unter russischer Kontrolle',
+    'bar.legend.luhansk': 'Luhansk — größtenteils unter russischer Kontrolle',
+    'bar.legend.donetsk': 'Donezk · Saporischschja · Cherson — umkämpft',
+    'bar.legend.note': 'Frontlinie nur indikativ.',
   },
 
   // ── Batch 2 ───────────────────────────────────────────────────────────────
@@ -4295,6 +4330,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>Correções.</strong> Se encontrar um erro factual, uma citação de fonte em falta, um valor inconsistente com a referência declarada ou um ativo que deveria constar do registo, utilize o botão de feedback na página do mapa. As correções são revistas e confirmadas como pull requests verificados. Todos os dados são versionados e auditáveis publicamente.',
     'about.s5.credit': 'uVidNova é construído e mantido por <strong>Samir Asadov, CFA</strong>. Para pedidos de parceria de analistas do KSE, responsáveis de investimento do EBRD ou investigadores de políticas, utilize o formulário de feedback na página do mapa.',
     'nav.map': '&#8592; Mapa',
+  
+    'bar.hide_occupation': 'Ocultar ocupação',
+    'bar.legend.title': 'Status do conflito (2024–25)',
+    'bar.legend.crimea': 'Crimeia — sob controle russo',
+    'bar.legend.luhansk': 'Luhansk — em grande parte sob controle russo',
+    'bar.legend.donetsk': 'Donetsk · Zaporizhzhia · Kherson — contestados',
+    'bar.legend.note': 'Linha de frente apenas indicativa.',
   },
 
   it: {
@@ -5053,6 +5095,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>Correzioni.</strong> Se si trova un errore fattuale, una citazione di fonte mancante, una cifra incoerente con il riferimento dichiarato o un asset che dovrebbe essere nel registro, utilizzare il pulsante di feedback nella pagina della mappa. Le correzioni vengono esaminate e sottoposte come pull request verificate. Tutti i dati sono versionati e pubblicamente verificabili.',
     'about.s5.credit': 'uVidNova è costruito e mantenuto da <strong>Samir Asadov, CFA</strong>. Per richieste di partnership da analisti KSE, responsabili degli investimenti EBRD o ricercatori di politiche, utilizzare il modulo di feedback nella pagina della mappa.',
     'nav.map': '&#8592; Mappa',
+  
+    'bar.hide_occupation': 'Nascondi occupazione',
+    'bar.legend.title': 'Stato del conflitto (2024–25)',
+    'bar.legend.crimea': 'Crimea — sotto controllo russo',
+    'bar.legend.luhansk': 'Luhansk — in gran parte sotto controllo russo',
+    'bar.legend.donetsk': 'Donetsk · Zaporizhzhia · Kherson — contesi',
+    'bar.legend.note': 'Linea del fronte solo indicativa.',
   },
 
   nl: {
@@ -5811,6 +5860,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>Correcties.</strong> Als u een feitelijke fout vindt, een ontbrekende broncitaat, een cijfer dat inconsistent is met de vermelde referentie, of een actief dat in het register zou moeten staan, gebruik dan de feedbackknop op de kaartpagina. Correcties worden beoordeeld en ingediend als geverifieerde pull requests. Alle gegevens zijn versie-beheerd en publiekelijk controleerbaar.',
     'about.s5.credit': 'uVidNova is gebouwd en onderhouden door <strong>Samir Asadov, CFA</strong>. Voor partnershipvragen van KSE-analisten, EBRD-investeringsfunctionarissen of beleidsonderzoekers gebruikt u het feedbackformulier op de kaartpagina.',
     'nav.map': '&#8592; Kaart',
+  
+    'bar.hide_occupation': 'Bezetting verbergen',
+    'bar.legend.title': 'Conflictstatus (2024–25)',
+    'bar.legend.crimea': 'Krim — onder Russische controle',
+    'bar.legend.luhansk': 'Luhansk — grotendeels onder Russische controle',
+    'bar.legend.donetsk': 'Donetsk · Zaporizja · Cherson — betwist',
+    'bar.legend.note': 'Frontlinie slechts indicatief.',
   },
 
   tr: {
@@ -6569,6 +6625,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>Düzeltmeler.</strong> Gerçek bir hata, eksik bir kaynak atfı, belirtilen referansla tutarsız bir rakam veya kayıtta bulunması gereken bir varlık bulursanız harita sayfasındaki geri bildirim düğmesini kullanın. Düzeltmeler incelenir ve doğrulanmış çekme istekleri olarak işlenir. Tüm veriler sürüm kontrollüdür ve kamuya açık biçimde denetlenebilir.',
     'about.s5.credit': 'uVidNova, <strong>Samir Asadov, CFA</strong> tarafından geliştirilmekte ve sürdürülmektedir. KSE analistleri, EBRD yatırım uzmanları veya politika araştırmacılarının ortaklık talepleri için harita sayfasındaki geri bildirim formunu kullanın.',
     'nav.map': '&#8592; Harita',
+  
+    'bar.hide_occupation': 'İşgali gizle',
+    'bar.legend.title': 'Çatışma durumu (2024–25)',
+    'bar.legend.crimea': 'Kırım — Rusya kontrolünde',
+    'bar.legend.luhansk': 'Luhansk — büyük ölçüde Rusya kontrolünde',
+    'bar.legend.donetsk': 'Donetsk · Zaporijya · Herson — tartışmalı',
+    'bar.legend.note': 'Cephe hattı yalnızca gösterge niteliğindedir.',
   },
 
   // ── Batch 3 ───────────────────────────────────────────────────────────────
@@ -7329,6 +7392,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>更正。</strong>如果您发现事实错误、缺失的来源引用、与所述参考文献不符的数字，或应纳入登记册的资产，请使用地图页面上的反馈按钮。更正经审核并作为经验证的拉取请求提交。所有数据均受版本控制，且可公开审计。',
     'about.s5.credit': 'uVidNova 由 <strong>Samir Asadov, CFA</strong> 构建和维护。KSE 分析师、EBRD 投资官员或政策研究人员如需合作咨询，请使用地图页面上的反馈表。',
     'nav.map': '&#8592; 地图',
+  
+    'bar.hide_occupation': '隐藏占领区',
+    'bar.legend.title': '冲突状态（2024–25）',
+    'bar.legend.crimea': '克里米亚——俄罗斯控制',
+    'bar.legend.luhansk': '卢甘斯克——大部分处于俄罗斯控制',
+    'bar.legend.donetsk': '顿涅茨克 · 扎波罗热 · 赫尔松——争议地区',
+    'bar.legend.note': '前线仅供参考。',
   },
 
   ar: {
@@ -8087,6 +8157,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>التصحيحات.</strong> إن وجدت خطأً واقعيًا، أو استشهادًا مصدريًا مفقودًا، أو رقمًا غير متسق مع المرجع المُشار إليه، أو أصلًا ينبغي أن يكون في السجل، استخدم زر التغذية الراجعة في صفحة الخريطة. تُراجَع التصحيحات وتُقدَّم كطلبات سحب موثقة. جميع البيانات خاضعة للتحكم في الإصدارات وقابلة للتدقيق العام.',
     'about.s5.credit': 'uVidNova مبني ومُصان من قِبل <strong>Samir Asadov, CFA</strong>. لاستفسارات الشراكة من محللي KSE أو مسؤولي الاستثمار في EBRD أو باحثي السياسات، استخدم نموذج التغذية الراجعة في صفحة الخريطة.',
     'nav.map': '&#8592; الخريطة',
+  
+    'bar.hide_occupation': 'إخفاء الاحتلال',
+    'bar.legend.title': 'حالة النزاع (2024–25)',
+    'bar.legend.crimea': 'القرم — تحت السيطرة الروسية',
+    'bar.legend.luhansk': 'لوهانسك — تحت السيطرة الروسية إلى حد بعيد',
+    'bar.legend.donetsk': 'دونيتسك · زاباروجيا · خيرسون — متنازع عليها',
+    'bar.legend.note': 'خط الجبهة استرشادي فقط.',
   },
 
   hi: {
@@ -8845,6 +8922,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>सुधार।</strong> यदि आप कोई तथ्यात्मक त्रुटि, गायब स्रोत उद्धरण, बताए गए संदर्भ के साथ असंगत आंकड़ा, या कोई संपत्ति जो रजिस्टर में होनी चाहिए पाते हैं, तो मानचित्र पृष्ठ पर फीडबैक बटन का उपयोग करें। सुधार की समीक्षा की जाती है और सत्यापित पुल रिक्वेस्ट के रूप में प्रतिबद्ध किए जाते हैं। सभी डेटा संस्करण-नियंत्रित और सार्वजनिक रूप से लेखापरीक्षण योग्य हैं।',
     'about.s5.credit': 'uVidNova <strong>Samir Asadov, CFA</strong> द्वारा बनाया और अनुरक्षित किया गया है। KSE विश्लेषकों, EBRD निवेश अधिकारियों, या नीति शोधकर्ताओं से साझेदारी पूछताछ के लिए, मानचित्र पृष्ठ पर फीडबैक फॉर्म का उपयोग करें।',
     'nav.map': '&#8592; मानचित्र',
+  
+    'bar.hide_occupation': 'कब्जा छुपाएं',
+    'bar.legend.title': 'संघर्ष की स्थिति (2024–25)',
+    'bar.legend.crimea': 'क्रीमिया — रूसी नियंत्रण में',
+    'bar.legend.luhansk': 'लुहान्स्क — काफी हद तक रूसी नियंत्रण में',
+    'bar.legend.donetsk': 'डोनेत्स्क · ज़ापोरिझझिया · खेरसॉन — विवादित',
+    'bar.legend.note': 'फ्रंटलाइन केवल संकेतक है।',
   },
 
   bn: {
@@ -9603,6 +9687,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>সংশোধন।</strong> যদি আপনি একটি তথ্যগত ত্রুটি, একটি অনুপস্থিত উৎস উদ্ধৃতি, বলা রেফারেন্সের সাথে অসঙ্গতিপূর্ণ একটি সংখ্যা বা রেজিস্টারে থাকা উচিত এমন একটি সম্পদ খুঁজে পান, তাহলে মানচিত্র পৃষ্ঠার ফিডব্যাক বোতাম ব্যবহার করুন। সংশোধনগুলো পর্যালোচনা করা হয় এবং যাচাইকৃত পুল রিকোয়েস্ট হিসেবে প্রতিশ্রুত। সমস্ত ডেটা সংস্করণ-নিয়ন্ত্রিত এবং সরকারিভাবে নিরীক্ষাযোগ্য।',
     'about.s5.credit': 'uVidNova <strong>Samir Asadov, CFA</strong> দ্বারা নির্মিত ও রক্ষণাবেক্ষণ করা হয়। KSE বিশ্লেষক, EBRD বিনিয়োগ কর্মকর্তা বা নীতি গবেষকদের অংশীদারিত্বের অনুসন্ধানের জন্য, মানচিত্র পৃষ্ঠার ফিডব্যাক ফর্ম ব্যবহার করুন।',
     'nav.map': '&#8592; মানচিত্র',
+  
+    'bar.hide_occupation': 'দখল লুকান',
+    'bar.legend.title': 'সংঘর্ষের অবস্থা (2024–25)',
+    'bar.legend.crimea': 'ক্রিমিয়া — রাশিয়ার নিয়ন্ত্রণে',
+    'bar.legend.luhansk': 'লুহানস্ক — মূলত রাশিয়ার নিয়ন্ত্রণে',
+    'bar.legend.donetsk': 'দোনেৎস্ক · জাপোরিঝঝিয়া · খেরসন — বিতর্কিত',
+    'bar.legend.note': 'ফ্রন্টলাইন শুধুমাত্র আনুমানিক।',
   },
 
   ja: {
@@ -10361,6 +10452,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>訂正。</strong>事実の誤り、欠落した出典引用、記載された参照と一致しない数値、またはレジスターに含まれるべき資産を発見した場合は、地図ページのフィードバックボタンを使用してください。訂正はレビューされ、検証済みプルリクエストとしてコミットされます。すべてのデータはバージョン管理されており、公開的に監査可能です。',
     'about.s5.credit': 'uVidNova は<strong>Samir Asadov, CFA</strong>によって構築・維持されています。KSEアナリスト、EBRD投資オフィサー、または政策研究者からのパートナーシップに関するお問い合わせは、地図ページのフィードバックフォームをご利用ください。',
     'nav.map': '&#8592; 地図',
+  
+    'bar.hide_occupation': '占領地を隠す',
+    'bar.legend.title': '紛争状況（2024–25）',
+    'bar.legend.crimea': 'クリミア — ロシア支配下',
+    'bar.legend.luhansk': 'ルハンスク — ほぼロシア支配下',
+    'bar.legend.donetsk': 'ドネツク · ザポリージャ · ヘルソン — 係争中',
+    'bar.legend.note': '前線はあくまで目安です。',
   },
 
   ru: {
@@ -11119,6 +11217,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>Исправления.</strong> Если вы обнаружите фактическую ошибку, отсутствующую ссылку на источник, цифру, не соответствующую указанному источнику, или актив, который должен быть в реестре, воспользуйтесь кнопкой обратной связи на странице карты. Исправления проверяются и фиксируются как подтверждённые запросы на слияние. Все данные находятся под контролем версий и доступны для публичного аудита.',
     'about.s5.credit': 'uVidNova создан и поддерживается <strong>Самиром Асадовым, CFA</strong>. По вопросам партнёрства от аналитиков KSE, инвестиционных офицеров EBRD или исследователей в области политики используйте форму обратной связи на странице карты.',
     'nav.map': '&#8592; Карта',
+  
+    'bar.hide_occupation': 'Скрыть оккупацию',
+    'bar.legend.title': 'Статус конфликта (2024–25)',
+    'bar.legend.crimea': 'Крым — под контролем России',
+    'bar.legend.luhansk': 'Луганск — в основном под контролем России',
+    'bar.legend.donetsk': 'Донецк · Запорожье · Херсон — спорные',
+    'bar.legend.note': 'Линия фронта только ориентировочна.',
   },
 
   id: {
@@ -11877,6 +11982,13 @@ const TRANSLATIONS = {
     'about.s5.disclaimer.p6': '<strong>Koreksi.</strong> Jika Anda menemukan kesalahan faktual, kutipan sumber yang hilang, angka yang tidak konsisten dengan referensi yang dinyatakan, atau aset yang seharusnya ada di register, gunakan tombol umpan balik di halaman peta. Koreksi ditinjau dan dilakukan sebagai pull request yang terverifikasi. Semua data dikontrol versi dan dapat diaudit secara publik.',
     'about.s5.credit': 'uVidNova dibangun dan dipelihara oleh <strong>Samir Asadov, CFA</strong>. Untuk pertanyaan kemitraan dari analis KSE, petugas investasi EBRD, atau peneliti kebijakan, gunakan formulir umpan balik di halaman peta.',
     'nav.map': '&#8592; Peta',
+  
+    'bar.hide_occupation': 'Sembunyikan pendudukan',
+    'bar.legend.title': 'Status konflik (2024–25)',
+    'bar.legend.crimea': 'Krimea — dikuasai Rusia',
+    'bar.legend.luhansk': 'Luhansk — sebagian besar dikuasai Rusia',
+    'bar.legend.donetsk': 'Donetsk · Zaporizhzhia · Kherson — diperebutkan',
+    'bar.legend.note': 'Garis depan hanya indikatif.',
   },
 };
 
