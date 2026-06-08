@@ -8,7 +8,12 @@
       "lon": 32.0597,
       "pop": 270000,
       "capital": true,
-      "name_ru": "Черкаси"
+      "name_ru": "Черкаси",
+      "name_zh": "切尔卡瑟",
+      "name_ar": "تشيركاسي",
+      "name_hi": "चेर्कासी",
+      "name_bn": "চেরকাসি",
+      "name_ja": "チェルカースィ"
     },
     {
       "oblast_en": "Cherkasy Oblast",
@@ -17,7 +22,12 @@
       "lat": 48.7486,
       "lon": 30.2236,
       "pop": 85000,
-      "name_ru": "Умань"
+      "name_ru": "Умань",
+      "name_zh": "乌曼",
+      "name_ar": "أومان",
+      "name_hi": "उमान",
+      "name_bn": "উমান",
+      "name_ja": "ウーマニ"
     },
     {
       "oblast_en": "Cherkasy Oblast",
@@ -26,7 +36,12 @@
       "lat": 49.2196,
       "lon": 31.8728,
       "pop": 68000,
-      "name_ru": "Сміла"
+      "name_ru": "Сміла",
+      "name_zh": "斯米拉",
+      "name_ar": "سميلا",
+      "name_hi": "स्मिला",
+      "name_bn": "স্মিলা",
+      "name_ja": "スミラ"
     },
     {
       "oblast_en": "Cherkasy Oblast",
@@ -35,7 +50,12 @@
       "lat": 49.6737,
       "lon": 32.0365,
       "pop": 27000,
-      "name_ru": "Золотоноша"
+      "name_ru": "Золотоноша",
+      "name_zh": "佐洛托诺沙",
+      "name_ar": "زولوتونوشا",
+      "name_hi": "ज़ोलोतोनोशा",
+      "name_bn": "জোলোতোনোশা",
+      "name_ja": "ゾロトノーシャ"
     },
     {
       "oblast_en": "Cherkasy Oblast",
@@ -44,7 +64,12 @@
       "lat": 49.7526,
       "lon": 31.4569,
       "pop": 25000,
-      "name_ru": "Канів"
+      "name_ru": "Канів",
+      "name_zh": "卡尼夫",
+      "name_ar": "كانيف",
+      "name_hi": "कानिव",
+      "name_bn": "কানিভ",
+      "name_ja": "カーニウ"
     },
     {
       "oblast_en": "Cherkasy Oblast",
@@ -53,7 +78,12 @@
       "lat": 49.4256,
       "lon": 31.2703,
       "pop": 19000,
-      "name_ru": "Корсунь-Шевченківський"
+      "name_ru": "Корсунь-Шевченківський",
+      "name_zh": "科尔孙-舍甫琴科夫斯基",
+      "name_ar": "كورسون-شيفتشينكيفسكي",
+      "name_hi": "कोर्सुन-शेवचेन्किव्स्की",
+      "name_bn": "কোরসুন-শেভচেনকিভস্কি",
+      "name_ja": "コルスン・シェフチェンキウシクィイ"
     },
     {
       "oblast_en": "Cherkasy Oblast",
@@ -62,7 +92,12 @@
       "lat": 49.0784,
       "lon": 30.9628,
       "pop": 16000,
-      "name_ru": "Звенигородка"
+      "name_ru": "Звенигородка",
+      "name_zh": "兹韦尼霍罗德卡",
+      "name_ar": "زفينيهورودكا",
+      "name_hi": "ज़्वेन्यहोरोद्का",
+      "name_bn": "জ্ভেনিহোরোদকা",
+      "name_ja": "ズヴェニホロードカ"
     },
     {
       "oblast_en": "Cherkasy Oblast",
@@ -71,7 +106,12 @@
       "lat": 48.8894,
       "lon": 30.7003,
       "pop": 13000,
-      "name_ru": "Тальне"
+      "name_ru": "Тальне",
+      "name_zh": "塔利内",
+      "name_ar": "تالني",
+      "name_hi": "तालने",
+      "name_bn": "তালনে",
+      "name_ja": "タールネ"
     },
     {
       "oblast_en": "Chernihiv Oblast",
@@ -81,7 +121,12 @@
       "lon": 31.2947,
       "pop": 280000,
       "capital": true,
-      "name_ru": "Чернігів"
+      "name_ru": "Чернігів",
+      "name_zh": "切尔尼戈夫",
+      "name_ar": "تشيرنيهيف",
+      "name_hi": "चेर्निहिव",
+      "name_bn": "চের্নিহিভ",
+      "name_ja": "チェルニーヒウ"
     },
     {
       "oblast_en": "Chernihiv Oblast",
@@ -90,7 +135,12 @@
       "lat": 51.05,
       "lon": 31.8833,
       "pop": 71000,
-      "name_ru": "Ніжин"
+      "name_ru": "Ніжин",
+      "name_zh": "涅任",
+      "name_ar": "نيجين",
+      "name_hi": "निजिन",
+      "name_bn": "নিঝিন",
+      "name_ja": "ニージン"
     },
     {
       "oblast_en": "Chernihiv Oblast",
@@ -99,7 +149,12 @@
       "lat": 50.5953,
       "lon": 32.3923,
       "pop": 55000,
-      "name_ru": "Прилуки"
+      "name_ru": "Прилуки",
+      "name_zh": "普里卢基",
+      "name_ar": "بريلوكي",
+      "name_hi": "प्रिलुकी",
+      "name_bn": "প্রিলুকি",
+      "name_ja": "プリルーキ"
     },
     {
       "oblast_en": "Chernihiv Oblast",
@@ -108,7 +163,12 @@
       "lat": 51.1767,
       "lon": 32.8067,
       "pop": 17000,
-      "name_ru": "Бахмач"
+      "name_ru": "Бахмач",
+      "name_zh": "巴赫马奇",
+      "name_ar": "باخماتشي",
+      "name_hi": "बाखमाची",
+      "name_bn": "বাখমাচি",
+      "name_ja": "バフマーチ"
     },
     {
       "oblast_en": "Chernihiv Oblast",
@@ -117,7 +177,12 @@
       "lat": 50.9431,
       "lon": 30.8817,
       "pop": 9000,
-      "name_ru": "Остер"
+      "name_ru": "Остер",
+      "name_zh": "奥斯捷尔",
+      "name_ar": "أوستر",
+      "name_hi": "ओस्तर",
+      "name_bn": "ওস্তের",
+      "name_ja": "オースター"
     },
     {
       "oblast_en": "Chernihiv Oblast",
@@ -126,7 +191,12 @@
       "lat": 51.7714,
       "lon": 32.2597,
       "pop": 14000,
-      "name_ru": "Корюківка"
+      "name_ru": "Корюківка",
+      "name_zh": "科柳基夫卡",
+      "name_ar": "كوريوكيفكا",
+      "name_hi": "कोर्युकिव्का",
+      "name_bn": "কোরিউকিভকা",
+      "name_ja": "コリュキウカ"
     },
     {
       "oblast_en": "Chernihiv Oblast",
@@ -135,7 +205,12 @@
       "lat": 52.1775,
       "lon": 32.5706,
       "pop": 8000,
-      "name_ru": "Семенівка"
+      "name_ru": "Семенівка",
+      "name_zh": "谢苗尼夫卡",
+      "name_ar": "سيمينيفكا",
+      "name_hi": "सेमेनिव्का",
+      "name_bn": "সেমেনিভকা",
+      "name_ja": "セメニウカ"
     },
     {
       "oblast_en": "Chernivtsi Oblast",
@@ -145,7 +220,12 @@
       "lon": 25.9358,
       "pop": 265000,
       "capital": true,
-      "name_ru": "Чернівці"
+      "name_ru": "Чернівці",
+      "name_zh": "切尔诺夫策",
+      "name_ar": "تشيرنيفتسي",
+      "name_hi": "चेर्निवत्सी",
+      "name_bn": "চের্নিভৎসি",
+      "name_ja": "チェルニウツィ"
     },
     {
       "oblast_en": "Chernivtsi Oblast",
@@ -154,7 +234,12 @@
       "lat": 48.5077,
       "lon": 26.4887,
       "pop": 10000,
-      "name_ru": "Хотин"
+      "name_ru": "Хотин",
+      "name_zh": "霍京",
+      "name_ar": "خوتين",
+      "name_hi": "खोतिन",
+      "name_bn": "খোতিন",
+      "name_ja": "ホティン"
     },
     {
       "oblast_en": "Chernivtsi Oblast",
@@ -163,7 +248,12 @@
       "lat": 48.2199,
       "lon": 26.2712,
       "pop": 10000,
-      "name_ru": "Новоселиця"
+      "name_ru": "Новоселиця",
+      "name_zh": "诺沃谢利齐亚",
+      "name_ar": "نوفوسيليتسيا",
+      "name_hi": "नोवोसेलित्सिया",
+      "name_bn": "নোভোসেলিতসিয়া",
+      "name_ja": "ノヴォセルィツィア"
     },
     {
       "oblast_en": "Chernivtsi Oblast",
@@ -172,7 +262,12 @@
       "lat": 48.1614,
       "lon": 25.7225,
       "pop": 14000,
-      "name_ru": "Сторожинець"
+      "name_ru": "Сторожинець",
+      "name_zh": "斯托罗日涅茨",
+      "name_ar": "ستوروجينتس",
+      "name_hi": "स्तोरोजिनेत्स",
+      "name_bn": "স্তোরোজিনেতস",
+      "name_ja": "ストロジネツィ"
     },
     {
       "oblast_en": "Chernivtsi Oblast",
@@ -181,7 +276,12 @@
       "lat": 48.2431,
       "lon": 25.1878,
       "pop": 4500,
-      "name_ru": "Вижниця"
+      "name_ru": "Вижниця",
+      "name_zh": "维日尼齐亚",
+      "name_ar": "فيجنيتسيا",
+      "name_hi": "वीज़्नित्सिया",
+      "name_bn": "ভিঝনিতসিয়া",
+      "name_ja": "ヴィジュニツィア"
     },
     {
       "oblast_en": "Chernivtsi Oblast",
@@ -190,7 +290,12 @@
       "lat": 48.4522,
       "lon": 27.4208,
       "pop": 8000,
-      "name_ru": "Сокиряни"
+      "name_ru": "Сокиряни",
+      "name_zh": "索基里亚内",
+      "name_ar": "سوكيرياني",
+      "name_hi": "सोकिर्यानी",
+      "name_bn": "সোকিরিয়ানি",
+      "name_ja": "ソキリャーニ"
     },
     {
       "oblast_en": "Chernivtsi Oblast",
@@ -199,7 +304,12 @@
       "lat": 48.5269,
       "lon": 25.8467,
       "pop": 8500,
-      "name_ru": "Заставна"
+      "name_ru": "Заставна",
+      "name_zh": "扎斯塔夫纳",
+      "name_ar": "زاستافنا",
+      "name_hi": "ज़ास्तव्ना",
+      "name_bn": "জাস্তাভনা",
+      "name_ja": "ザスタウナ"
     },
     {
       "oblast_en": "Crimea (Temporarily Occupied)",
@@ -209,7 +319,12 @@
       "lon": 34.1024,
       "pop": 340000,
       "capital": true,
-      "name_ru": "Сімферополь"
+      "name_ru": "Сімферополь",
+      "name_zh": "辛菲罗波尔",
+      "name_ar": "سيمفيروبول",
+      "name_hi": "सिम्फेरोपोल",
+      "name_bn": "সিম্ফেরোপল",
+      "name_ja": "シンフェロポリ"
     },
     {
       "oblast_en": "Crimea (Temporarily Occupied)",
@@ -218,7 +333,12 @@
       "lat": 44.6054,
       "lon": 33.5224,
       "pop": 400000,
-      "name_ru": "Севастополь"
+      "name_ru": "Севастополь",
+      "name_zh": "塞瓦斯托波尔",
+      "name_ar": "سيباستوبول",
+      "name_hi": "सेवास्तोपोल",
+      "name_bn": "সেভাস্তোপোল",
+      "name_ja": "セバストポリ"
     },
     {
       "oblast_en": "Crimea (Temporarily Occupied)",
@@ -227,7 +347,12 @@
       "lat": 45.3556,
       "lon": 36.4675,
       "pop": 147000,
-      "name_ru": "Керч"
+      "name_ru": "Керч",
+      "name_zh": "刻赤",
+      "name_ar": "كيرتش",
+      "name_hi": "केर्च",
+      "name_bn": "কের্চ",
+      "name_ja": "ケルチ"
     },
     {
       "oblast_en": "Crimea (Temporarily Occupied)",
@@ -236,7 +361,12 @@
       "lat": 45.1897,
       "lon": 33.3667,
       "pop": 107000,
-      "name_ru": "Євпаторія"
+      "name_ru": "Євпаторія",
+      "name_zh": "叶夫帕托里亚",
+      "name_ar": "يفباتوريا",
+      "name_hi": "येव्पातोरिया",
+      "name_bn": "ইয়েভপাতোরিয়া",
+      "name_ja": "イェウパトーリヤ"
     },
     {
       "oblast_en": "Crimea (Temporarily Occupied)",
@@ -245,7 +375,12 @@
       "lat": 45.0225,
       "lon": 35.3819,
       "pop": 70000,
-      "name_ru": "Феодосія"
+      "name_ru": "Феодосія",
+      "name_zh": "费奥多西亚",
+      "name_ar": "فيودوسيا",
+      "name_hi": "फ़ेओदोसिया",
+      "name_bn": "ফেওদোসিয়া",
+      "name_ja": "フェオドーシヤ"
     },
     {
       "oblast_en": "Crimea (Temporarily Occupied)",
@@ -254,7 +389,12 @@
       "lat": 44.4986,
       "lon": 34.1571,
       "pop": 78000,
-      "name_ru": "Ялта"
+      "name_ru": "Ялта",
+      "name_zh": "雅尔塔",
+      "name_ar": "يالتا",
+      "name_hi": "याल्टा",
+      "name_bn": "ইয়ালতা",
+      "name_ja": "ヤールタ"
     },
     {
       "oblast_en": "Crimea (Temporarily Occupied)",
@@ -263,7 +403,12 @@
       "lat": 44.676,
       "lon": 34.4133,
       "pop": 29000,
-      "name_ru": "Алушта"
+      "name_ru": "Алушта",
+      "name_zh": "阿卢什塔",
+      "name_ar": "ألوشتا",
+      "name_hi": "अलुश्ता",
+      "name_bn": "আলুশতা",
+      "name_ja": "アルシュタ"
     },
     {
       "oblast_en": "Crimea (Temporarily Occupied)",
@@ -272,7 +417,12 @@
       "lat": 45.7078,
       "lon": 34.3939,
       "pop": 38000,
-      "name_ru": "Джанкой"
+      "name_ru": "Джанкой",
+      "name_zh": "占科伊",
+      "name_ar": "جانكوي",
+      "name_hi": "झान्कोई",
+      "name_bn": "ঝানকোই",
+      "name_ja": "ジャンコイ"
     },
     {
       "oblast_en": "Dnipropetrovsk Oblast",
@@ -282,7 +432,12 @@
       "lon": 35.0462,
       "pop": 990000,
       "capital": true,
-      "name_ru": "Дніпро"
+      "name_ru": "Дніпро",
+      "name_zh": "第聂伯罗",
+      "name_ar": "دنيبرو",
+      "name_hi": "दनिप्रो",
+      "name_bn": "দনিপ্রো",
+      "name_ja": "ドニプロ"
     },
     {
       "oblast_en": "Dnipropetrovsk Oblast",
@@ -291,7 +446,12 @@
       "lat": 47.9077,
       "lon": 33.3942,
       "pop": 620000,
-      "name_ru": "Кривий Ріг"
+      "name_ru": "Кривий Ріг",
+      "name_zh": "克里沃罗格",
+      "name_ar": "كريفي ريه",
+      "name_hi": "क्रिवी रिह",
+      "name_bn": "ক্রিভি রিহ",
+      "name_ja": "クリヴィー・リフ"
     },
     {
       "oblast_en": "Dnipropetrovsk Oblast",
@@ -300,7 +460,12 @@
       "lat": 48.5069,
       "lon": 34.6228,
       "pop": 230000,
-      "name_ru": "Кам'янське"
+      "name_ru": "Кам'янське",
+      "name_zh": "卡缅斯科耶",
+      "name_ar": "كامياnskي",
+      "name_hi": "कामियान्स्के",
+      "name_bn": "কামিয়ানস্কে",
+      "name_ja": "カミヤンシケ"
     },
     {
       "oblast_en": "Dnipropetrovsk Oblast",
@@ -309,7 +474,12 @@
       "lat": 47.5643,
       "lon": 34.3983,
       "pop": 107000,
-      "name_ru": "Нікополь"
+      "name_ru": "Нікополь",
+      "name_zh": "尼科波尔",
+      "name_ar": "نيكوبول",
+      "name_hi": "निकोपोल",
+      "name_bn": "নিকোপল",
+      "name_ja": "ニコポリ"
     },
     {
       "oblast_en": "Dnipropetrovsk Oblast",
@@ -318,7 +488,12 @@
       "lat": 48.5267,
       "lon": 35.8661,
       "pop": 105000,
-      "name_ru": "Павлоград"
+      "name_ru": "Павлоград",
+      "name_zh": "巴甫洛格勒",
+      "name_ar": "بافلوهراد",
+      "name_hi": "पाव्लोहराद",
+      "name_bn": "পাভলোহরাদ",
+      "name_ja": "パウロフラード"
     },
     {
       "oblast_en": "Dnipropetrovsk Oblast",
@@ -327,7 +502,12 @@
       "lat": 47.6469,
       "lon": 34.6258,
       "pop": 47000,
-      "name_ru": "Марганець"
+      "name_ru": "Марганець",
+      "name_zh": "马尔加涅茨",
+      "name_ar": "مارهانتس",
+      "name_hi": "मारहानेत्स",
+      "name_bn": "মারহানেতস",
+      "name_ja": "マルハネツィ"
     },
     {
       "oblast_en": "Dnipropetrovsk Oblast",
@@ -336,7 +516,12 @@
       "lat": 48.6347,
       "lon": 35.2264,
       "pop": 70000,
-      "name_ru": "Новомосковськ"
+      "name_ru": "Новомосковськ",
+      "name_zh": "新莫斯科夫斯克",
+      "name_ar": "نوفوموسكوفسك",
+      "name_hi": "नोवोमोस्कोव्स्क",
+      "name_bn": "নোভোমোস্কভস্ক",
+      "name_ja": "ノヴォモスコウシク"
     },
     {
       "oblast_en": "Dnipropetrovsk Oblast",
@@ -345,7 +530,12 @@
       "lat": 48.3542,
       "lon": 33.5067,
       "pop": 42000,
-      "name_ru": "Жовті Води"
+      "name_ru": "Жовті Води",
+      "name_zh": "若夫季沃迪",
+      "name_ar": "جوفتي فودي",
+      "name_hi": "झोव्ती वोदी",
+      "name_bn": "ঝোভতি ভোদি",
+      "name_ja": "ジョウティ・ヴォードィ"
     },
     {
       "oblast_en": "Dnipropetrovsk Oblast",
@@ -354,7 +544,12 @@
       "lat": 48.655,
       "lon": 34.3308,
       "pop": 19000,
-      "name_ru": "Верхньодніпровськ"
+      "name_ru": "Верхньодніпровськ",
+      "name_zh": "上第聂伯罗夫斯克",
+      "name_ar": "فيركهنودنيبروفسك",
+      "name_hi": "वेर्खनोदनिप्रोव्स्क",
+      "name_bn": "ভের্খনোদনিপ্রোভস্ক",
+      "name_ja": "ヴェルフノドニプロウシク"
     },
     {
       "oblast_en": "Donetsk Oblast",
@@ -364,7 +559,12 @@
       "lon": 37.5985,
       "pop": 160000,
       "capital": true,
-      "name_ru": "Краматорськ"
+      "name_ru": "Краматорськ",
+      "name_zh": "克拉马托尔斯克",
+      "name_ar": "كراماتورسك",
+      "name_hi": "क्रामाटोर्स्क",
+      "name_bn": "ক্রামাটোর্স্ক",
+      "name_ja": "クラマトルシク"
     },
     {
       "oblast_en": "Donetsk Oblast",
@@ -373,7 +573,12 @@
       "lat": 48.8581,
       "lon": 37.6244,
       "pop": 110000,
-      "name_ru": "Слов'янськ"
+      "name_ru": "Слов'янськ",
+      "name_zh": "斯洛夫扬斯克",
+      "name_ar": "سلوفيانسك",
+      "name_hi": "स्लोव्यान्स्क",
+      "name_bn": "স্লোভিয়ানস্ক",
+      "name_ja": "スロヴィヤンシク"
     },
     {
       "oblast_en": "Donetsk Oblast",
@@ -382,7 +587,12 @@
       "lat": 47.0956,
       "lon": 37.5407,
       "pop": 430000,
-      "name_ru": "Маріуполь"
+      "name_ru": "Маріуполь",
+      "name_zh": "马里乌波尔",
+      "name_ar": "ماريوبول",
+      "name_hi": "मारियुपोल",
+      "name_bn": "মারিউপোল",
+      "name_ja": "マリウポリ"
     },
     {
       "oblast_en": "Donetsk Oblast",
@@ -391,7 +601,12 @@
       "lat": 48.0159,
       "lon": 37.8028,
       "pop": 900000,
-      "name_ru": "Донецьк"
+      "name_ru": "Донецьк",
+      "name_zh": "顿涅茨克",
+      "name_ar": "دونيتسك",
+      "name_hi": "दोनेत्स्क",
+      "name_bn": "দোনেৎস্ক",
+      "name_ja": "ドネツク"
     },
     {
       "oblast_en": "Donetsk Oblast",
@@ -400,7 +615,12 @@
       "lat": 48.5283,
       "lon": 37.7118,
       "pop": 80000,
-      "name_ru": "Костянтинівка"
+      "name_ru": "Костянтинівка",
+      "name_zh": "科斯佳基尼夫卡",
+      "name_ar": "كوستيانتينيفكا",
+      "name_hi": "कोस्त्यान्तिनिव्का",
+      "name_bn": "কোস্তিয়ান্তিনিভকা",
+      "name_ja": "コスチャンティニウカ"
     },
     {
       "oblast_en": "Donetsk Oblast",
@@ -409,7 +629,12 @@
       "lat": 48.5953,
       "lon": 37.9983,
       "pop": 70000,
-      "name_ru": "Бахмут"
+      "name_ru": "Бахмут",
+      "name_zh": "巴赫穆特",
+      "name_ar": "باخموت",
+      "name_hi": "बाखमुत",
+      "name_bn": "বাখমুত",
+      "name_ja": "バフムト"
     },
     {
       "oblast_en": "Donetsk Oblast",
@@ -418,7 +643,12 @@
       "lat": 48.2797,
       "lon": 37.1758,
       "pop": 63000,
-      "name_ru": "Покровськ"
+      "name_ru": "Покровськ",
+      "name_zh": "波克罗夫斯克",
+      "name_ar": "بوكروفسك",
+      "name_hi": "पोक्रोव्स्क",
+      "name_bn": "পোক্রোভস্ক",
+      "name_ja": "ポクロウシク"
     },
     {
       "oblast_en": "Donetsk Oblast",
@@ -427,7 +657,12 @@
       "lat": 48.6175,
       "lon": 37.5425,
       "pop": 58000,
-      "name_ru": "Дружківка"
+      "name_ru": "Дружківка",
+      "name_zh": "德鲁日基夫卡",
+      "name_ar": "دروجكيفكا",
+      "name_hi": "द्रुज्किव्का",
+      "name_bn": "দ্রুঝকিভকা",
+      "name_ja": "ドルジュキウカ"
     },
     {
       "oblast_en": "Donetsk Oblast",
@@ -436,7 +671,12 @@
       "lat": 48.3006,
       "lon": 37.2578,
       "pop": 51000,
-      "name_ru": "Мирноград"
+      "name_ru": "Мирноград",
+      "name_zh": "米尔诺格勒",
+      "name_ar": "ميرنوهراد",
+      "name_hi": "मिर्नोहराद",
+      "name_bn": "মির্নোহরাদ",
+      "name_ja": "ミルノフラード"
     },
     {
       "oblast_en": "Ivano-Frankivsk Oblast",
@@ -446,7 +686,12 @@
       "lon": 24.7111,
       "pop": 240000,
       "capital": true,
-      "name_ru": "Івано-Франківськ"
+      "name_ru": "Івано-Франківськ",
+      "name_zh": "伊万诺-弗兰科夫斯克",
+      "name_ar": "إيفانو-فرانكيفسك",
+      "name_hi": "इवानो-फ्रान्किव्स्क",
+      "name_bn": "ইভানো-ফ্রাঙ্কিভস্ক",
+      "name_ja": "イヴァノ・フランキウシク"
     },
     {
       "oblast_en": "Ivano-Frankivsk Oblast",
@@ -455,7 +700,12 @@
       "lat": 48.5253,
       "lon": 25.0364,
       "pop": 60000,
-      "name_ru": "Коломия"
+      "name_ru": "Коломия",
+      "name_zh": "科洛梅亚",
+      "name_ar": "كولوميا",
+      "name_hi": "कोलोमिया",
+      "name_bn": "কোলোমিয়া",
+      "name_ja": "コロームィヤ"
     },
     {
       "oblast_en": "Ivano-Frankivsk Oblast",
@@ -464,7 +714,12 @@
       "lat": 49.0156,
       "lon": 24.3653,
       "pop": 64000,
-      "name_ru": "Калуш"
+      "name_ru": "Калуш",
+      "name_zh": "卡卢什",
+      "name_ar": "كالوش",
+      "name_hi": "कालुश",
+      "name_bn": "কালুশ",
+      "name_ja": "カールシュ"
     },
     {
       "oblast_en": "Ivano-Frankivsk Oblast",
@@ -473,7 +728,12 @@
       "lat": 48.6281,
       "lon": 24.5839,
       "pop": 20000,
-      "name_ru": "Надвірна"
+      "name_ru": "Надвірна",
+      "name_zh": "纳德维尔纳",
+      "name_ar": "نادفيرنا",
+      "name_hi": "नाद्विर्ना",
+      "name_bn": "নাদভির্না",
+      "name_ja": "ナドヴィールナ"
     },
     {
       "oblast_en": "Ivano-Frankivsk Oblast",
@@ -482,7 +742,12 @@
       "lat": 49.0636,
       "lon": 23.8581,
       "pop": 10000,
-      "name_ru": "Болехів"
+      "name_ru": "Болехів",
+      "name_zh": "博列基夫",
+      "name_ar": "بوليخيف",
+      "name_hi": "बोलेखिव",
+      "name_bn": "বোলেখিভ",
+      "name_ja": "ボレヒウ"
     },
     {
       "oblast_en": "Ivano-Frankivsk Oblast",
@@ -491,7 +756,12 @@
       "lat": 48.3219,
       "lon": 25.0986,
       "pop": 8000,
-      "name_ru": "Косів"
+      "name_ru": "Косів",
+      "name_zh": "科西夫",
+      "name_ar": "كوسيف",
+      "name_hi": "कोसिव",
+      "name_bn": "কোসিভ",
+      "name_ja": "コースィウ"
     },
     {
       "oblast_en": "Ivano-Frankivsk Oblast",
@@ -500,7 +770,12 @@
       "lat": 49.4075,
       "lon": 24.6106,
       "pop": 9000,
-      "name_ru": "Рогатин"
+      "name_ru": "Рогатин",
+      "name_zh": "罗加京",
+      "name_ar": "روهاتين",
+      "name_hi": "रोहातिन",
+      "name_bn": "রোহাতিন",
+      "name_ja": "ロハーティン"
     },
     {
       "oblast_en": "Ivano-Frankivsk Oblast",
@@ -509,7 +784,12 @@
       "lat": 48.9739,
       "lon": 23.9742,
       "pop": 20000,
-      "name_ru": "Долина"
+      "name_ru": "Долина",
+      "name_zh": "多利纳",
+      "name_ar": "دولينا",
+      "name_hi": "दोलिना",
+      "name_bn": "দোলিনা",
+      "name_ja": "ドールィナ"
     },
     {
       "oblast_en": "Kharkiv Oblast",
@@ -519,7 +799,12 @@
       "lon": 36.2304,
       "pop": 1430000,
       "capital": true,
-      "name_ru": "Харків"
+      "name_ru": "Харків",
+      "name_zh": "哈尔科夫",
+      "name_ar": "خاركيف",
+      "name_hi": "खार्किव",
+      "name_bn": "খারকিভ",
+      "name_ja": "ハルキウ"
     },
     {
       "oblast_en": "Kharkiv Oblast",
@@ -528,7 +813,12 @@
       "lat": 48.8867,
       "lon": 36.3181,
       "pop": 54000,
-      "name_ru": "Лозова"
+      "name_ru": "Лозова",
+      "name_zh": "洛佐瓦",
+      "name_ar": "لوزوفا",
+      "name_hi": "लोज़ोवा",
+      "name_bn": "লোজোভা",
+      "name_ja": "ロゾヴァ"
     },
     {
       "oblast_en": "Kharkiv Oblast",
@@ -537,7 +827,12 @@
       "lat": 49.8381,
       "lon": 36.6847,
       "pop": 30000,
-      "name_ru": "Чугуїв"
+      "name_ru": "Чугуїв",
+      "name_zh": "丘胡伊夫",
+      "name_ar": "تشوهويف",
+      "name_hi": "चुहुइव",
+      "name_bn": "চুহুইভ",
+      "name_ja": "チュフイウ"
     },
     {
       "oblast_en": "Kharkiv Oblast",
@@ -546,7 +841,12 @@
       "lat": 49.2081,
       "lon": 37.2781,
       "pop": 45000,
-      "name_ru": "Ізюм"
+      "name_ru": "Ізюм",
+      "name_zh": "伊久姆",
+      "name_ar": "إيزيوم",
+      "name_hi": "इज़्युम",
+      "name_bn": "ইজিউম",
+      "name_ja": "イジューム"
     },
     {
       "oblast_en": "Kharkiv Oblast",
@@ -555,7 +855,12 @@
       "lat": 49.7111,
       "lon": 37.6178,
       "pop": 27000,
-      "name_ru": "Куп'янськ"
+      "name_ru": "Куп'янськ",
+      "name_zh": "库皮扬斯克",
+      "name_ar": "كوبيانسك",
+      "name_hi": "कुपियान्स्क",
+      "name_bn": "কুপিয়ানস্ক",
+      "name_ja": "クピヤンシク"
     },
     {
       "oblast_en": "Kharkiv Oblast",
@@ -564,7 +869,12 @@
       "lat": 49.4642,
       "lon": 36.8531,
       "pop": 26000,
-      "name_ru": "Балаклія"
+      "name_ru": "Балаклія",
+      "name_zh": "巴拉克利亚",
+      "name_ar": "بالاكليا",
+      "name_hi": "बालाक्लिया",
+      "name_bn": "বালাক্লিয়া",
+      "name_ja": "バラクリヤ"
     },
     {
       "oblast_en": "Kharkiv Oblast",
@@ -573,7 +883,12 @@
       "lat": 49.3992,
       "lon": 36.2381,
       "pop": 38000,
-      "name_ru": "Первомайський"
+      "name_ru": "Первомайський",
+      "name_zh": "佩尔沃迈斯基",
+      "name_ar": "بيرفومايسكي",
+      "name_hi": "पेर्वोमाइस्की",
+      "name_bn": "পের্ভোমাইস্কি",
+      "name_ja": "ペルヴォマイシクィイ"
     },
     {
       "oblast_en": "Kharkiv Oblast",
@@ -582,7 +897,12 @@
       "lat": 50.29,
       "lon": 36.9458,
       "pop": 17000,
-      "name_ru": "Вовчанськ"
+      "name_ru": "Вовчанськ",
+      "name_zh": "沃夫昌斯克",
+      "name_ar": "فوفتشانسك",
+      "name_hi": "वोव्चान्स्क",
+      "name_bn": "ভোভচানস্ক",
+      "name_ja": "ヴォウチャンシク"
     },
     {
       "oblast_en": "Kherson Oblast",
@@ -592,7 +912,12 @@
       "lon": 32.6178,
       "pop": 290000,
       "capital": true,
-      "name_ru": "Херсон"
+      "name_ru": "Херсон",
+      "name_zh": "赫尔松",
+      "name_ar": "خيرسون",
+      "name_hi": "खेर्सोन",
+      "name_bn": "খেরসন",
+      "name_ja": "ヘルソン"
     },
     {
       "oblast_en": "Kherson Oblast",
@@ -601,7 +926,12 @@
       "lat": 46.7519,
       "lon": 33.3825,
       "pop": 45000,
-      "name_ru": "Нова Каховка"
+      "name_ru": "Нова Каховка",
+      "name_zh": "新卡霍夫卡",
+      "name_ar": "نوفا كاخوفكا",
+      "name_hi": "नोवा काखोव्का",
+      "name_bn": "নোভা কাখোভকা",
+      "name_ja": "ノヴァ・カホウカ"
     },
     {
       "oblast_en": "Kherson Oblast",
@@ -610,7 +940,12 @@
       "lat": 46.1736,
       "lon": 34.8003,
       "pop": 19000,
-      "name_ru": "Генічеськ"
+      "name_ru": "Генічеськ",
+      "name_zh": "赫尼切斯克",
+      "name_ar": "هينيتشيسك",
+      "name_hi": "हेनिचेस्क",
+      "name_bn": "হেনিচেস্ক",
+      "name_ja": "ヘニチェシク"
     },
     {
       "oblast_en": "Kherson Oblast",
@@ -619,7 +954,12 @@
       "lat": 46.1147,
       "lon": 32.9106,
       "pop": 19000,
-      "name_ru": "Скадовськ"
+      "name_ru": "Скадовськ",
+      "name_zh": "斯卡多夫斯克",
+      "name_ar": "سكادوفسك",
+      "name_hi": "स्कादोव्स्क",
+      "name_bn": "স্কাদোভস্ক",
+      "name_ja": "スカードウシク"
     },
     {
       "oblast_en": "Kherson Oblast",
@@ -628,7 +968,12 @@
       "lat": 46.8369,
       "lon": 33.42,
       "pop": 13000,
-      "name_ru": "Берислав"
+      "name_ru": "Берислав",
+      "name_zh": "别里斯拉夫",
+      "name_ar": "بيريسلاف",
+      "name_hi": "बेरिस्लाव",
+      "name_bn": "বেরিস্লাভ",
+      "name_ja": "ベリスラウ"
     },
     {
       "oblast_en": "Kherson Oblast",
@@ -637,7 +982,12 @@
       "lat": 46.8122,
       "lon": 33.4806,
       "pop": 35000,
-      "name_ru": "Каховка"
+      "name_ru": "Каховка",
+      "name_zh": "卡霍夫卡",
+      "name_ar": "كاخوفكا",
+      "name_hi": "काखोव्का",
+      "name_bn": "কাখোভকা",
+      "name_ja": "カホウカ"
     },
     {
       "oblast_en": "Kherson Oblast",
@@ -646,7 +996,12 @@
       "lat": 46.6089,
       "lon": 32.7756,
       "pop": 24000,
-      "name_ru": "Олешки"
+      "name_ru": "Олешки",
+      "name_zh": "奥列什基",
+      "name_ar": "أوليشكي",
+      "name_hi": "ओलेश्की",
+      "name_bn": "ওলেশকি",
+      "name_ja": "オレーシキ"
     },
     {
       "oblast_en": "Khmelnytskyi Oblast",
@@ -656,7 +1011,12 @@
       "lon": 26.9897,
       "pop": 275000,
       "capital": true,
-      "name_ru": "Хмельницький"
+      "name_ru": "Хмельницький",
+      "name_zh": "赫梅利尼茨基",
+      "name_ar": "خميلنيتسكي",
+      "name_hi": "ख्मेलनित्स्की",
+      "name_bn": "খমেলনিতস্কি",
+      "name_ja": "フメリニツィクィイ"
     },
     {
       "oblast_en": "Khmelnytskyi Oblast",
@@ -665,7 +1025,12 @@
       "lat": 48.6775,
       "lon": 26.5906,
       "pop": 96000,
-      "name_ru": "Кам'янець-Подільський"
+      "name_ru": "Кам'янець-Подільський",
+      "name_zh": "卡缅涅茨-波多利斯基",
+      "name_ar": "كامينيتس-بوديلسكي",
+      "name_hi": "कामियानेत्स-पोदिल्स्की",
+      "name_bn": "কামিয়ানেতস-পোদিলস্কি",
+      "name_ja": "カミヤネツィ・ポジーリシクィイ"
     },
     {
       "oblast_en": "Khmelnytskyi Oblast",
@@ -674,7 +1039,12 @@
       "lat": 50.1836,
       "lon": 27.0711,
       "pop": 41000,
-      "name_ru": "Шепетівка"
+      "name_ru": "Шепетівка",
+      "name_zh": "谢佩季夫卡",
+      "name_ar": "شيبيتيفكا",
+      "name_hi": "शेपेतिव्का",
+      "name_bn": "শেপেতিভকা",
+      "name_ja": "シェペティウカ"
     },
     {
       "oblast_en": "Khmelnytskyi Oblast",
@@ -683,7 +1053,12 @@
       "lat": 49.7539,
       "lon": 27.2122,
       "pop": 33000,
-      "name_ru": "Старокостянтинів"
+      "name_ru": "Старокостянтинів",
+      "name_zh": "斯塔罗科斯佳基尼夫",
+      "name_ar": "ستاروكوستيانتينيف",
+      "name_hi": "स्तारोकोस्त्यान्तिनिव",
+      "name_bn": "স্তারোকোস্তিয়ান্তিনিভ",
+      "name_ja": "スタロコスチャンティニウ"
     },
     {
       "oblast_en": "Khmelnytskyi Oblast",
@@ -692,7 +1067,12 @@
       "lat": 50.3086,
       "lon": 26.8608,
       "pop": 37000,
-      "name_ru": "Славута"
+      "name_ru": "Славута",
+      "name_zh": "斯拉武塔",
+      "name_ar": "سلافوتا",
+      "name_hi": "स्लावुता",
+      "name_bn": "স্লাভুতা",
+      "name_ja": "スラヴータ"
     },
     {
       "oblast_en": "Khmelnytskyi Oblast",
@@ -701,7 +1081,12 @@
       "lat": 49.6556,
       "lon": 26.9742,
       "pop": 21000,
-      "name_ru": "Красилів"
+      "name_ru": "Красилів",
+      "name_zh": "克拉西利夫",
+      "name_ar": "كراسيليف",
+      "name_hi": "क्रासिलिव",
+      "name_bn": "ক্রাসিলিভ",
+      "name_ja": "クラースィリウ"
     },
     {
       "oblast_en": "Khmelnytskyi Oblast",
@@ -710,7 +1095,12 @@
       "lat": 50.3303,
       "lon": 26.6342,
       "pop": 37000,
-      "name_ru": "Нетішин"
+      "name_ru": "Нетішин",
+      "name_zh": "涅季申",
+      "name_ar": "نيتيشين",
+      "name_hi": "नेतिशिन",
+      "name_bn": "নেতিশিন",
+      "name_ja": "ネティシン"
     },
     {
       "oblast_en": "Kirovohrad Oblast",
@@ -720,7 +1110,12 @@
       "lon": 32.2623,
       "pop": 222000,
       "capital": true,
-      "name_ru": "Кропивницький"
+      "name_ru": "Кропивницький",
+      "name_zh": "克罗皮夫尼茨基",
+      "name_ar": "كروبيفنيتسكي",
+      "name_hi": "क्रोपिव्नित्स्की",
+      "name_bn": "ক্রোপিভনিতস্কি",
+      "name_ja": "クロピウヌィツィクィイ"
     },
     {
       "oblast_en": "Kirovohrad Oblast",
@@ -729,7 +1124,12 @@
       "lat": 48.6706,
       "lon": 33.1078,
       "pop": 77000,
-      "name_ru": "Олександрія"
+      "name_ru": "Олександрія",
+      "name_zh": "奥列克桑德里亚",
+      "name_ar": "أوليكساندريا",
+      "name_hi": "ओलेक्सान्द्रिया",
+      "name_bn": "ওলেক্সান্দ্রিয়া",
+      "name_ja": "オレクサンドリーヤ"
     },
     {
       "oblast_en": "Kirovohrad Oblast",
@@ -738,7 +1138,12 @@
       "lat": 49.05,
       "lon": 33.2292,
       "pop": 45000,
-      "name_ru": "Світловодськ"
+      "name_ru": "Світловодськ",
+      "name_zh": "斯维特洛沃茨克",
+      "name_ar": "سفيتلوفودسك",
+      "name_hi": "स्वित्लोवोद्स्क",
+      "name_bn": "স্ভিতলোভোদস্ক",
+      "name_ja": "スヴィトロヴォードシク"
     },
     {
       "oblast_en": "Kirovohrad Oblast",
@@ -747,7 +1152,12 @@
       "lat": 48.7161,
       "lon": 32.6728,
       "pop": 27000,
-      "name_ru": "Знам'янка"
+      "name_ru": "Знам'янка",
+      "name_zh": "兹纳梅扬卡",
+      "name_ar": "زنامیانكا",
+      "name_hi": "ज़्नामयान्का",
+      "name_bn": "জনামিয়ানকা",
+      "name_ja": "ズナミヤンカ"
     },
     {
       "oblast_en": "Kirovohrad Oblast",
@@ -756,7 +1166,12 @@
       "lat": 48.3225,
       "lon": 31.5342,
       "pop": 15000,
-      "name_ru": "Новоукраїнка"
+      "name_ru": "Новоукраїнка",
+      "name_zh": "新乌克兰卡",
+      "name_ar": "نوفوأوكرانكا",
+      "name_hi": "नोवोउक्राइन्का",
+      "name_bn": "নোভোউক্রাইনকা",
+      "name_ja": "ノヴォウクライィンカ"
     },
     {
       "oblast_en": "Kirovohrad Oblast",
@@ -765,7 +1180,12 @@
       "lat": 48.2006,
       "lon": 30.5278,
       "pop": 6000,
-      "name_ru": "Голованівськ"
+      "name_ru": "Голованівськ",
+      "name_zh": "霍洛瓦尼夫斯克",
+      "name_ar": "هولوفانيفسك",
+      "name_hi": "होलोवानिव्स्क",
+      "name_bn": "হোলোভানিভস্ক",
+      "name_ja": "ホロヴァニウシク"
     },
     {
       "oblast_en": "Kirovohrad Oblast",
@@ -774,7 +1194,12 @@
       "lat": 48.6514,
       "lon": 31.6439,
       "pop": 16000,
-      "name_ru": "Мала Виска"
+      "name_ru": "Мала Виска",
+      "name_zh": "马拉维斯卡",
+      "name_ar": "مالا فيسكا",
+      "name_hi": "माला विस्का",
+      "name_bn": "মালা ভিস্কা",
+      "name_ja": "マラ・ヴィースカ"
     },
     {
       "oblast_en": "Kyiv City",
@@ -784,7 +1209,12 @@
       "lon": 30.5234,
       "pop": 2900000,
       "capital": true,
-      "name_ru": "Київ"
+      "name_ru": "Київ",
+      "name_zh": "基辅",
+      "name_ar": "كييف",
+      "name_hi": "कीव",
+      "name_bn": "কিয়েভ",
+      "name_ja": "キーウ"
     },
     {
       "oblast_en": "Kyiv Oblast",
@@ -793,7 +1223,12 @@
       "lat": 49.7989,
       "lon": 30.1175,
       "pop": 210000,
-      "name_ru": "Біла Церква"
+      "name_ru": "Біла Церква",
+      "name_zh": "比拉采尔克瓦",
+      "name_ar": "بيلا تسيركفا",
+      "name_hi": "बिला त्सेर्क्वा",
+      "name_bn": "বিলা তসের্কভা",
+      "name_ja": "ビラ・ツェールクヴァ"
     },
     {
       "oblast_en": "Kyiv Oblast",
@@ -802,7 +1237,12 @@
       "lat": 50.51,
       "lon": 30.7861,
       "pop": 110000,
-      "name_ru": "Бровари"
+      "name_ru": "Бровари",
+      "name_zh": "布罗瓦里",
+      "name_ar": "بروفاري",
+      "name_hi": "ब्रोवारी",
+      "name_bn": "ব্রোভারি",
+      "name_ja": "ブロヴァーリ"
     },
     {
       "oblast_en": "Kyiv Oblast",
@@ -811,7 +1251,12 @@
       "lat": 50.3519,
       "lon": 30.962,
       "pop": 65000,
-      "name_ru": "Бориспіль"
+      "name_ru": "Бориспіль",
+      "name_zh": "鲍里斯波尔",
+      "name_ar": "بوريسبيل",
+      "name_hi": "बोरिस्पिल",
+      "name_bn": "বোরিস্পিল",
+      "name_ja": "ボリスピーリ"
     },
     {
       "oblast_en": "Kyiv Oblast",
@@ -820,7 +1265,12 @@
       "lat": 50.5217,
       "lon": 30.2558,
       "pop": 62000,
-      "name_ru": "Ірпінь"
+      "name_ru": "Ірпінь",
+      "name_zh": "伊尔平",
+      "name_ar": "إيربين",
+      "name_hi": "इर्पिन",
+      "name_bn": "ইর্পিন",
+      "name_ja": "イルピン"
     },
     {
       "oblast_en": "Kyiv Oblast",
@@ -829,7 +1279,12 @@
       "lat": 50.1764,
       "lon": 30.3172,
       "pop": 38000,
-      "name_ru": "Васильків"
+      "name_ru": "Васильків",
+      "name_zh": "瓦西利基夫",
+      "name_ar": "فاسيلكيف",
+      "name_hi": "वासिलकिव",
+      "name_bn": "ভাসিলকিভ",
+      "name_ja": "ヴァスィルキウ"
     },
     {
       "oblast_en": "Kyiv Oblast",
@@ -838,7 +1293,12 @@
       "lat": 50.5489,
       "lon": 30.2342,
       "pop": 36000,
-      "name_ru": "Буча"
+      "name_ru": "Буча",
+      "name_zh": "布查",
+      "name_ar": "بوتشا",
+      "name_hi": "बुचा",
+      "name_bn": "বুচা",
+      "name_ja": "ブチャ"
     },
     {
       "oblast_en": "Kyiv Oblast",
@@ -847,7 +1307,12 @@
       "lat": 50.0739,
       "lon": 29.9108,
       "pop": 44000,
-      "name_ru": "Фастів"
+      "name_ru": "Фастів",
+      "name_zh": "法斯季夫",
+      "name_ar": "فاستيف",
+      "name_hi": "फास्तिव",
+      "name_bn": "ফাস্তিভ",
+      "name_ja": "ファースティウ"
     },
     {
       "oblast_en": "Kyiv Oblast",
@@ -856,7 +1321,12 @@
       "lat": 50.0639,
       "lon": 31.4511,
       "pop": 28000,
-      "name_ru": "Переяслав"
+      "name_ru": "Переяслав",
+      "name_zh": "佩列亚斯拉夫",
+      "name_ar": "بيرياسلاف",
+      "name_hi": "पेरेयास्लाव",
+      "name_bn": "পেরেয়াস্লাভ",
+      "name_ja": "ペレヤースラウ"
     },
     {
       "oblast_en": "Kyiv Oblast",
@@ -865,7 +1335,12 @@
       "lat": 50.6503,
       "lon": 29.9258,
       "pop": 13000,
-      "name_ru": "Бородянка"
+      "name_ru": "Бородянка",
+      "name_zh": "博罗江卡",
+      "name_ar": "بورودیانكا",
+      "name_hi": "बोरोद्यान्का",
+      "name_bn": "বোরোদিয়ানকা",
+      "name_ja": "ボロジャンカ"
     },
     {
       "oblast_en": "Luhansk Oblast",
@@ -875,7 +1350,12 @@
       "lon": 38.4889,
       "pop": 107000,
       "capital": true,
-      "name_ru": "Сєвєродонецьк"
+      "name_ru": "Сєвєродонецьк",
+      "name_zh": "北顿涅茨克",
+      "name_ar": "سيفيرودونيتسك",
+      "name_hi": "सेवेरोदोनेत्स्क",
+      "name_bn": "সেভেরোদোনেৎস্ক",
+      "name_ja": "セヴェロドネツィク"
     },
     {
       "oblast_en": "Luhansk Oblast",
@@ -884,7 +1364,12 @@
       "lat": 48.9056,
       "lon": 38.4297,
       "pop": 98000,
-      "name_ru": "Лисичанськ"
+      "name_ru": "Лисичанськ",
+      "name_zh": "利西昌斯克",
+      "name_ar": "ليسيتشانسك",
+      "name_hi": "लिसिचान्स्क",
+      "name_bn": "লিসিচানস্ক",
+      "name_ja": "リスィチャンシク"
     },
     {
       "oblast_en": "Luhansk Oblast",
@@ -893,7 +1378,12 @@
       "lat": 49.0142,
       "lon": 38.3756,
       "pop": 57000,
-      "name_ru": "Рубіжне"
+      "name_ru": "Рубіжне",
+      "name_zh": "鲁比日内",
+      "name_ar": "روبيجني",
+      "name_hi": "रुबिज्ने",
+      "name_bn": "রুবিঝনে",
+      "name_ja": "ルビージュネ"
     },
     {
       "oblast_en": "Luhansk Oblast",
@@ -902,7 +1392,12 @@
       "lat": 48.5699,
       "lon": 39.3189,
       "pop": 420000,
-      "name_ru": "Луганськ"
+      "name_ru": "Луганськ",
+      "name_zh": "卢甘斯克",
+      "name_ar": "لوهانسك",
+      "name_hi": "लुहान्स्क",
+      "name_bn": "লুহানস্ক",
+      "name_ja": "ルハンシク"
     },
     {
       "oblast_en": "Luhansk Oblast",
@@ -911,7 +1406,12 @@
       "lat": 48.4797,
       "lon": 38.8019,
       "pop": 109000,
-      "name_ru": "Алчевськ"
+      "name_ru": "Алчевськ",
+      "name_zh": "阿尔切夫斯克",
+      "name_ar": "ألتشيفسك",
+      "name_hi": "अल्चेव्स्क",
+      "name_bn": "আলচেভস্ক",
+      "name_ja": "アルチェウシク"
     },
     {
       "oblast_en": "Luhansk Oblast",
@@ -920,7 +1420,12 @@
       "lat": 48.5614,
       "lon": 38.6575,
       "pop": 71000,
-      "name_ru": "Стаханов"
+      "name_ru": "Стаханов",
+      "name_zh": "斯塔汉诺夫",
+      "name_ar": "ستاخانوف",
+      "name_hi": "स्ताखानोव",
+      "name_bn": "স্তাখানোভ",
+      "name_ja": "スタハノウ"
     },
     {
       "oblast_en": "Luhansk Oblast",
@@ -929,7 +1434,12 @@
       "lat": 48.1514,
       "lon": 38.9378,
       "pop": 87000,
-      "name_ru": "Красний Луч"
+      "name_ru": "Красний Луч",
+      "name_zh": "克拉斯内卢奇",
+      "name_ar": "كراسني لوتش",
+      "name_hi": "क्रास्नी लुच",
+      "name_bn": "ক্রাসনি লুচ",
+      "name_ja": "クラースヌィ・ルーチ"
     },
     {
       "oblast_en": "Luhansk Oblast",
@@ -938,7 +1448,12 @@
       "lat": 48.5025,
       "lon": 38.65,
       "pop": 47000,
-      "name_ru": "Брянка"
+      "name_ru": "Брянка",
+      "name_zh": "布里扬卡",
+      "name_ar": "بريانكا",
+      "name_hi": "ब्रियान्का",
+      "name_bn": "ব্রিয়ানকা",
+      "name_ja": "ブリャンカ"
     },
     {
       "oblast_en": "Lviv Oblast",
@@ -948,7 +1463,12 @@
       "lon": 24.0297,
       "pop": 720000,
       "capital": true,
-      "name_ru": "Львів"
+      "name_ru": "Львів",
+      "name_zh": "利沃夫",
+      "name_ar": "لفيف",
+      "name_hi": "ल्वीव",
+      "name_bn": "লভিভ",
+      "name_ja": "リヴィウ"
     },
     {
       "oblast_en": "Lviv Oblast",
@@ -957,7 +1477,12 @@
       "lat": 49.3494,
       "lon": 23.5053,
       "pop": 75000,
-      "name_ru": "Дрогобич"
+      "name_ru": "Дрогобич",
+      "name_zh": "德罗戈贝奇",
+      "name_ar": "دروهوبيتش",
+      "name_hi": "द्रोहोबिच",
+      "name_bn": "দ্রোহোবিচ",
+      "name_ja": "ドロホブィチ"
     },
     {
       "oblast_en": "Lviv Oblast",
@@ -966,7 +1491,12 @@
       "lat": 49.2578,
       "lon": 23.8542,
       "pop": 60000,
-      "name_ru": "Стрий"
+      "name_ru": "Стрий",
+      "name_zh": "斯特雷",
+      "name_ar": "ستري",
+      "name_hi": "स्त्री",
+      "name_bn": "স্ত্রি",
+      "name_ja": "ストルィイ"
     },
     {
       "oblast_en": "Lviv Oblast",
@@ -975,7 +1505,12 @@
       "lat": 49.5183,
       "lon": 23.1986,
       "pop": 35000,
-      "name_ru": "Самбір"
+      "name_ru": "Самбір",
+      "name_zh": "桑比尔",
+      "name_ar": "سامبير",
+      "name_hi": "सांबिर",
+      "name_bn": "সাম্বির",
+      "name_ja": "サンビール"
     },
     {
       "oblast_en": "Lviv Oblast",
@@ -984,7 +1519,12 @@
       "lat": 49.2836,
       "lon": 23.4267,
       "pop": 35000,
-      "name_ru": "Борислав"
+      "name_ru": "Борислав",
+      "name_zh": "博里斯拉夫",
+      "name_ar": "بوريسلاف",
+      "name_hi": "बोरिस्लाव",
+      "name_bn": "বোরিস্লাভ",
+      "name_ja": "ボリスラウ"
     },
     {
       "oblast_en": "Lviv Oblast",
@@ -993,7 +1533,12 @@
       "lat": 49.2803,
       "lon": 23.4975,
       "pop": 30000,
-      "name_ru": "Трускавець"
+      "name_ru": "Трускавець",
+      "name_zh": "特鲁斯卡韦茨",
+      "name_ar": "تروسكافيتس",
+      "name_hi": "त्रुस्कावेत्स",
+      "name_bn": "ত্রুস্কাভেতস",
+      "name_ja": "トルスカヴェツィ"
     },
     {
       "oblast_en": "Lviv Oblast",
@@ -1002,7 +1547,12 @@
       "lat": 49.8039,
       "lon": 24.9003,
       "pop": 24000,
-      "name_ru": "Золочів"
+      "name_ru": "Золочів",
+      "name_zh": "佐洛奇夫",
+      "name_ar": "زولوتشيف",
+      "name_hi": "ज़ोलोचिव",
+      "name_bn": "জোলোচিভ",
+      "name_ja": "ゾロチウ"
     },
     {
       "oblast_en": "Lviv Oblast",
@@ -1011,7 +1561,12 @@
       "lat": 50.0567,
       "lon": 23.9789,
       "pop": 14000,
-      "name_ru": "Жовква"
+      "name_ru": "Жовква",
+      "name_zh": "若夫克瓦",
+      "name_ar": "جوفكفا",
+      "name_hi": "झोव्क्वा",
+      "name_bn": "ঝোভকভা",
+      "name_ja": "ジョウクヴァ"
     },
     {
       "oblast_en": "Mykolaiv Oblast",
@@ -1021,7 +1576,12 @@
       "lon": 31.9946,
       "pop": 470000,
       "capital": true,
-      "name_ru": "Миколаїв"
+      "name_ru": "Миколаїв",
+      "name_zh": "尼古拉耶夫",
+      "name_ar": "نيكولاييف",
+      "name_hi": "मायकोलाइव",
+      "name_bn": "মিকোলাইভ",
+      "name_ja": "ムィコラーイウ"
     },
     {
       "oblast_en": "Mykolaiv Oblast",
@@ -1030,7 +1590,12 @@
       "lat": 47.5606,
       "lon": 31.3133,
       "pop": 36000,
-      "name_ru": "Вознесенськ"
+      "name_ru": "Вознесенськ",
+      "name_zh": "沃兹涅先斯克",
+      "name_ar": "فوزنيسينسك",
+      "name_hi": "वोज़्नेसेन्स्क",
+      "name_bn": "ভোজনেসেনস্ক",
+      "name_ja": "ヴォズネセンシク"
     },
     {
       "oblast_en": "Mykolaiv Oblast",
@@ -1039,7 +1604,12 @@
       "lat": 47.9958,
       "lon": 30.8539,
       "pop": 66000,
-      "name_ru": "Первомайськ"
+      "name_ru": "Первомайськ",
+      "name_zh": "佩尔沃迈斯克",
+      "name_ar": "بيرفومايسك",
+      "name_hi": "पेर्वोमाइस्क",
+      "name_bn": "পের্ভোমাইস্ক",
+      "name_ja": "ペルヴォマイシク"
     },
     {
       "oblast_en": "Mykolaiv Oblast",
@@ -1048,7 +1618,12 @@
       "lat": 47.3967,
       "lon": 32.4531,
       "pop": 13000,
-      "name_ru": "Баштанка"
+      "name_ru": "Баштанка",
+      "name_zh": "巴什坦卡",
+      "name_ar": "باشتانكا",
+      "name_hi": "बाश्तान्का",
+      "name_bn": "বাশতানকা",
+      "name_ja": "バシュタンカ"
     },
     {
       "oblast_en": "Mykolaiv Oblast",
@@ -1057,7 +1632,12 @@
       "lat": 47.8192,
       "lon": 31.1981,
       "pop": 39000,
-      "name_ru": "Южноукраїнськ"
+      "name_ru": "Южноукраїнськ",
+      "name_zh": "南乌克兰斯克",
+      "name_ar": "يوجنوأوكرانسك",
+      "name_hi": "युज़्नोउक्राइन्स्क",
+      "name_bn": "ইউঝনোউক্রাইনস্ক",
+      "name_ja": "ユジュノウクライィンシク"
     },
     {
       "oblast_en": "Mykolaiv Oblast",
@@ -1066,7 +1646,12 @@
       "lat": 46.6164,
       "lon": 31.5469,
       "pop": 14000,
-      "name_ru": "Очаків"
+      "name_ru": "Очаків",
+      "name_zh": "奥恰基夫",
+      "name_ar": "أوتشاكيف",
+      "name_hi": "ओचाकिव",
+      "name_bn": "ওচাকিভ",
+      "name_ja": "オチャキウ"
     },
     {
       "oblast_en": "Mykolaiv Oblast",
@@ -1075,7 +1660,12 @@
       "lat": 47.0728,
       "lon": 32.7936,
       "pop": 12000,
-      "name_ru": "Снігурівка"
+      "name_ru": "Снігурівка",
+      "name_zh": "斯尼胡里夫卡",
+      "name_ar": "سنيهوريفكا",
+      "name_hi": "स्निहुरिव्का",
+      "name_bn": "স্নিহুরিভকা",
+      "name_ja": "スニフリウカ"
     },
     {
       "oblast_en": "Odesa Oblast",
@@ -1085,7 +1675,12 @@
       "lon": 30.7233,
       "pop": 1010000,
       "capital": true,
-      "name_ru": "Одеса"
+      "name_ru": "Одеса",
+      "name_zh": "敖德萨",
+      "name_ar": "أوديسا",
+      "name_hi": "ओडेसा",
+      "name_bn": "ওদেসা",
+      "name_ja": "オデーサ"
     },
     {
       "oblast_en": "Odesa Oblast",
@@ -1094,7 +1689,12 @@
       "lat": 45.3422,
       "lon": 28.8453,
       "pop": 73000,
-      "name_ru": "Ізмаїл"
+      "name_ru": "Ізмаїл",
+      "name_zh": "伊兹迈尔",
+      "name_ar": "إزمايل",
+      "name_hi": "इज़्माइल",
+      "name_bn": "ইজমাইল",
+      "name_ja": "イズマイール"
     },
     {
       "oblast_en": "Odesa Oblast",
@@ -1103,7 +1703,12 @@
       "lat": 46.1903,
       "lon": 30.3442,
       "pop": 50000,
-      "name_ru": "Білгород-Дністровський"
+      "name_ru": "Білгород-Дністровський",
+      "name_zh": "比尔霍罗德-德涅斯特罗夫斯基",
+      "name_ar": "بيلهورود-دنيستروفسكي",
+      "name_hi": "बिलहोरोद-दनिस्त्रोव्स्की",
+      "name_bn": "বিলহোরোদ-দনিস্ত্রোভস্কি",
+      "name_ja": "ビールホロド・ドニストロウシクィイ"
     },
     {
       "oblast_en": "Odesa Oblast",
@@ -1112,7 +1717,12 @@
       "lat": 46.3058,
       "lon": 30.6567,
       "pop": 68000,
-      "name_ru": "Чорноморськ"
+      "name_ru": "Чорноморськ",
+      "name_zh": "切尔诺莫尔斯克",
+      "name_ar": "تشورنومورسك",
+      "name_hi": "चोर्नोमोर्स्क",
+      "name_bn": "চোর্নোমোর্স্ক",
+      "name_ja": "チョルノモルシク"
     },
     {
       "oblast_en": "Odesa Oblast",
@@ -1121,7 +1731,12 @@
       "lat": 46.6217,
       "lon": 31.0997,
       "pop": 25000,
-      "name_ru": "Южне"
+      "name_ru": "Южне",
+      "name_zh": "尤日内",
+      "name_ar": "يوجني",
+      "name_hi": "युज़्ने",
+      "name_bn": "ইউঝনে",
+      "name_ja": "ユジュネ"
     },
     {
       "oblast_en": "Odesa Oblast",
@@ -1130,7 +1745,12 @@
       "lat": 46.8472,
       "lon": 30.0753,
       "pop": 19000,
-      "name_ru": "Роздільна"
+      "name_ru": "Роздільна",
+      "name_zh": "罗兹季利纳",
+      "name_ar": "روزديلنا",
+      "name_hi": "रोज़्दिलना",
+      "name_bn": "রোজদিলনা",
+      "name_ja": "ロズジーリナ"
     },
     {
       "oblast_en": "Odesa Oblast",
@@ -1139,7 +1759,12 @@
       "lat": 47.7542,
       "lon": 29.5267,
       "pop": 42000,
-      "name_ru": "Котовськ"
+      "name_ru": "Котовськ",
+      "name_zh": "科托夫斯克",
+      "name_ar": "كوتوفسك",
+      "name_hi": "कोतोव्स्क",
+      "name_bn": "কোতোভস্ক",
+      "name_ja": "コトウシク"
     },
     {
       "oblast_en": "Odesa Oblast",
@@ -1148,7 +1773,12 @@
       "lat": 45.4486,
       "lon": 29.2625,
       "pop": 22000,
-      "name_ru": "Кілія"
+      "name_ru": "Кілія",
+      "name_zh": "基利亚",
+      "name_ar": "كيليا",
+      "name_hi": "किलिया",
+      "name_bn": "কিলিয়া",
+      "name_ja": "キーリヤ"
     },
     {
       "oblast_en": "Poltava Oblast",
@@ -1158,7 +1788,12 @@
       "lon": 34.5514,
       "pop": 285000,
       "capital": true,
-      "name_ru": "Полтава"
+      "name_ru": "Полтава",
+      "name_zh": "波尔塔瓦",
+      "name_ar": "بولتافا",
+      "name_hi": "पोल्टावा",
+      "name_bn": "পোল্টাভা",
+      "name_ja": "ポルタヴァ"
     },
     {
       "oblast_en": "Poltava Oblast",
@@ -1167,7 +1802,12 @@
       "lat": 49.0658,
       "lon": 33.415,
       "pop": 215000,
-      "name_ru": "Кременчук"
+      "name_ru": "Кременчук",
+      "name_zh": "克列缅丘格",
+      "name_ar": "كريمنشوك",
+      "name_hi": "क्रेमेन्चुक",
+      "name_bn": "ক্রেমেঞ্চুক",
+      "name_ja": "クレメンチュク"
     },
     {
       "oblast_en": "Poltava Oblast",
@@ -1176,7 +1816,12 @@
       "lat": 49.0194,
       "lon": 33.6442,
       "pop": 56000,
-      "name_ru": "Комсомольськ"
+      "name_ru": "Комсомольськ",
+      "name_zh": "共青城",
+      "name_ar": "كومسومولسك",
+      "name_hi": "कोमसोमोल्स्क",
+      "name_bn": "কমসোমলস্ক",
+      "name_ja": "コムソモーリシク"
     },
     {
       "oblast_en": "Poltava Oblast",
@@ -1185,7 +1830,12 @@
       "lat": 50.0169,
       "lon": 32.9856,
       "pop": 45000,
-      "name_ru": "Лубни"
+      "name_ru": "Лубни",
+      "name_zh": "卢布内",
+      "name_ar": "لوبني",
+      "name_hi": "लुब्नी",
+      "name_bn": "লুবনি",
+      "name_ja": "ルーブニ"
     },
     {
       "oblast_en": "Poltava Oblast",
@@ -1194,7 +1844,12 @@
       "lat": 49.9639,
       "lon": 33.6108,
       "pop": 39000,
-      "name_ru": "Миргород"
+      "name_ru": "Миргород",
+      "name_zh": "米尔戈罗德",
+      "name_ar": "ميرهورود",
+      "name_hi": "मिर्होरोद",
+      "name_bn": "মির্হোরোদ",
+      "name_ja": "ミルホロード"
     },
     {
       "oblast_en": "Poltava Oblast",
@@ -1203,7 +1858,12 @@
       "lat": 50.2453,
       "lon": 32.5094,
       "pop": 16000,
-      "name_ru": "Пирятин"
+      "name_ru": "Пирятин",
+      "name_zh": "皮里亚京",
+      "name_ar": "بيرياتين",
+      "name_hi": "पिरियातिन",
+      "name_bn": "পিরিয়াতিন",
+      "name_ja": "ピリャーティン"
     },
     {
       "oblast_en": "Poltava Oblast",
@@ -1212,7 +1872,12 @@
       "lat": 50.3672,
       "lon": 34.0028,
       "pop": 22000,
-      "name_ru": "Гадяч"
+      "name_ru": "Гадяч",
+      "name_zh": "加迪亚奇",
+      "name_ar": "هادياتش",
+      "name_hi": "हाद्याच",
+      "name_bn": "হাদিয়াচ",
+      "name_ja": "ハジャーチ"
     },
     {
       "oblast_en": "Poltava Oblast",
@@ -1221,7 +1886,12 @@
       "lat": 50.2031,
       "lon": 34.3708,
       "pop": 10000,
-      "name_ru": "Зіньків"
+      "name_ru": "Зіньків",
+      "name_zh": "津基夫",
+      "name_ar": "زينكيف",
+      "name_hi": "ज़िन्किव",
+      "name_bn": "জিনকিভ",
+      "name_ja": "ジーンキウ"
     },
     {
       "oblast_en": "Rivne Oblast",
@@ -1231,7 +1901,12 @@
       "lon": 26.2513,
       "pop": 248000,
       "capital": true,
-      "name_ru": "Рівне"
+      "name_ru": "Рівне",
+      "name_zh": "罗夫诺",
+      "name_ar": "ريفني",
+      "name_hi": "रिव्ने",
+      "name_bn": "রিভ্নে",
+      "name_ja": "リウネ"
     },
     {
       "oblast_en": "Rivne Oblast",
@@ -1240,7 +1915,12 @@
       "lat": 50.4167,
       "lon": 25.7342,
       "pop": 38000,
-      "name_ru": "Дубно"
+      "name_ru": "Дубно",
+      "name_zh": "杜布诺",
+      "name_ar": "دوبنو",
+      "name_hi": "दुब्नो",
+      "name_bn": "দুবনো",
+      "name_ja": "ドゥーブノ"
     },
     {
       "oblast_en": "Rivne Oblast",
@@ -1249,7 +1929,12 @@
       "lat": 50.3297,
       "lon": 26.5164,
       "pop": 15000,
-      "name_ru": "Острог"
+      "name_ru": "Острог",
+      "name_zh": "奥斯特罗格",
+      "name_ar": "أوستروه",
+      "name_hi": "ओस्त्रोह",
+      "name_bn": "ওস্ত্রোহ",
+      "name_ja": "オーストロフ"
     },
     {
       "oblast_en": "Rivne Oblast",
@@ -1258,7 +1943,12 @@
       "lat": 50.6214,
       "lon": 27.1633,
       "pop": 7000,
-      "name_ru": "Корець"
+      "name_ru": "Корець",
+      "name_zh": "科雷茨",
+      "name_ar": "كوريتس",
+      "name_hi": "कोरेत्स",
+      "name_bn": "কোরেতস",
+      "name_ja": "コーレツィ"
     },
     {
       "oblast_en": "Rivne Oblast",
@@ -1267,7 +1957,12 @@
       "lat": 51.3381,
       "lon": 26.6019,
       "pop": 28000,
-      "name_ru": "Сарни"
+      "name_ru": "Сарни",
+      "name_zh": "萨尔内",
+      "name_ar": "سارني",
+      "name_hi": "सार्नी",
+      "name_bn": "সার্নি",
+      "name_ja": "サールニ"
     },
     {
       "oblast_en": "Rivne Oblast",
@@ -1276,7 +1971,12 @@
       "lat": 50.5178,
       "lon": 26.2506,
       "pop": 23000,
-      "name_ru": "Здолбунів"
+      "name_ru": "Здолбунів",
+      "name_zh": "兹多尔布尼夫",
+      "name_ar": "زدولبونيف",
+      "name_hi": "ज़्दोल्बुनिव",
+      "name_bn": "জদোলবুনিভ",
+      "name_ja": "ズドウブニウ"
     },
     {
       "oblast_en": "Rivne Oblast",
@@ -1285,7 +1985,12 @@
       "lat": 50.8828,
       "lon": 26.45,
       "pop": 27000,
-      "name_ru": "Костопіль"
+      "name_ru": "Костопіль",
+      "name_zh": "科斯托皮尔",
+      "name_ar": "كوستوبيل",
+      "name_hi": "कोस्तोपिल",
+      "name_bn": "কোস্তোপিল",
+      "name_ja": "コストピーリ"
     },
     {
       "oblast_en": "Sumy Oblast",
@@ -1295,7 +2000,12 @@
       "lon": 34.7981,
       "pop": 264000,
       "capital": true,
-      "name_ru": "Суми"
+      "name_ru": "Суми",
+      "name_zh": "苏梅",
+      "name_ar": "سومي",
+      "name_hi": "सुमी",
+      "name_bn": "সুমি",
+      "name_ja": "スーミ"
     },
     {
       "oblast_en": "Sumy Oblast",
@@ -1304,7 +2014,12 @@
       "lat": 51.8658,
       "lon": 33.4756,
       "pop": 74000,
-      "name_ru": "Шостка"
+      "name_ru": "Шостка",
+      "name_zh": "肖斯特卡",
+      "name_ar": "شوستكا",
+      "name_hi": "शोस्त्का",
+      "name_bn": "শোস্তকা",
+      "name_ja": "ショーストカ"
     },
     {
       "oblast_en": "Sumy Oblast",
@@ -1313,7 +2028,12 @@
       "lat": 51.2361,
       "lon": 33.2097,
       "pop": 91000,
-      "name_ru": "Конотоп"
+      "name_ru": "Конотоп",
+      "name_zh": "科诺托普",
+      "name_ar": "كونوتوب",
+      "name_hi": "कोनोतोप",
+      "name_bn": "কোনোতোপ",
+      "name_ja": "コノトープ"
     },
     {
       "oblast_en": "Sumy Oblast",
@@ -1322,7 +2042,12 @@
       "lat": 50.3069,
       "lon": 34.8994,
       "pop": 47000,
-      "name_ru": "Охтирка"
+      "name_ru": "Охтирка",
+      "name_zh": "奥赫蒂尔卡",
+      "name_ar": "أوختيركا",
+      "name_hi": "ओख्तिर्का",
+      "name_bn": "ওখতির্কা",
+      "name_ja": "オフティールカ"
     },
     {
       "oblast_en": "Sumy Oblast",
@@ -1331,7 +2056,12 @@
       "lat": 51.6789,
       "lon": 33.9011,
       "pop": 33000,
-      "name_ru": "Глухів"
+      "name_ru": "Глухів",
+      "name_zh": "格卢霍夫",
+      "name_ar": "هلوخيف",
+      "name_hi": "हलुखिव",
+      "name_bn": "হলুখিভ",
+      "name_ja": "フルーヒウ"
     },
     {
       "oblast_en": "Sumy Oblast",
@@ -1340,7 +2070,12 @@
       "lat": 50.7433,
       "lon": 33.4739,
       "pop": 39000,
-      "name_ru": "Ромни"
+      "name_ru": "Ромни",
+      "name_zh": "罗姆内",
+      "name_ar": "رومني",
+      "name_hi": "रोम्नी",
+      "name_bn": "রোমনি",
+      "name_ja": "ロームニ"
     },
     {
       "oblast_en": "Sumy Oblast",
@@ -1349,7 +2084,12 @@
       "lat": 50.5792,
       "lon": 34.4819,
       "pop": 25000,
-      "name_ru": "Лебедин"
+      "name_ru": "Лебедин",
+      "name_zh": "列别津",
+      "name_ar": "ليبيدين",
+      "name_hi": "लेबेदिन",
+      "name_bn": "লেবেদিন",
+      "name_ja": "レベジーン"
     },
     {
       "oblast_en": "Ternopil Oblast",
@@ -1359,7 +2099,12 @@
       "lon": 25.5948,
       "pop": 217000,
       "capital": true,
-      "name_ru": "Тернопіль"
+      "name_ru": "Тернопіль",
+      "name_zh": "捷尔诺波尔",
+      "name_ar": "تيرنوبيل",
+      "name_hi": "तेर्नोपिल",
+      "name_bn": "তেরনোপিল",
+      "name_ja": "テルノーピリ"
     },
     {
       "oblast_en": "Ternopil Oblast",
@@ -1368,7 +2113,12 @@
       "lat": 50.0958,
       "lon": 25.7278,
       "pop": 22000,
-      "name_ru": "Кременець"
+      "name_ru": "Кременець",
+      "name_zh": "克列梅涅茨",
+      "name_ar": "كريمينيتس",
+      "name_hi": "क्रेमेनेत्स",
+      "name_bn": "ক্রেমেনেতস",
+      "name_ja": "クレメネツィ"
     },
     {
       "oblast_en": "Ternopil Oblast",
@@ -1377,7 +2127,12 @@
       "lat": 49.0142,
       "lon": 25.7983,
       "pop": 29000,
-      "name_ru": "Чортків"
+      "name_ru": "Чортків",
+      "name_zh": "乔尔特基夫",
+      "name_ar": "تشورتكيف",
+      "name_hi": "चोर्तकिव",
+      "name_bn": "চোর্তকিভ",
+      "name_ja": "チョルトキウ"
     },
     {
       "oblast_en": "Ternopil Oblast",
@@ -1386,7 +2141,12 @@
       "lat": 49.4472,
       "lon": 24.9447,
       "pop": 17000,
-      "name_ru": "Бережани"
+      "name_ru": "Бережани",
+      "name_zh": "别列扎内",
+      "name_ar": "بيريجاني",
+      "name_hi": "बेरेजानी",
+      "name_bn": "বেরেঝানি",
+      "name_ja": "ベレジャーニ"
     },
     {
       "oblast_en": "Ternopil Oblast",
@@ -1395,7 +2155,12 @@
       "lat": 49.0553,
       "lon": 26.1883,
       "pop": 10000,
-      "name_ru": "Гусятин"
+      "name_ru": "Гусятин",
+      "name_zh": "胡夏京",
+      "name_ar": "هوسياتين",
+      "name_hi": "हुसियातिन",
+      "name_bn": "হুসিয়াতিন",
+      "name_ja": "フシャーティン"
     },
     {
       "oblast_en": "Ternopil Oblast",
@@ -1404,7 +2169,12 @@
       "lat": 49.2983,
       "lon": 25.69,
       "pop": 14000,
-      "name_ru": "Теребовля"
+      "name_ru": "Теребовля",
+      "name_zh": "捷列博夫利亚",
+      "name_ar": "تيريبوفليا",
+      "name_hi": "तेरेबोव्लिया",
+      "name_bn": "তেরেবোভলিয়া",
+      "name_ja": "テレボウリャ"
     },
     {
       "oblast_en": "Ternopil Oblast",
@@ -1413,7 +2183,12 @@
       "lat": 49.6647,
       "lon": 25.78,
       "pop": 13000,
-      "name_ru": "Збараж"
+      "name_ru": "Збараж",
+      "name_zh": "兹巴拉日",
+      "name_ar": "زباراج",
+      "name_hi": "ज़्बाराज़",
+      "name_bn": "জবারাঝ",
+      "name_ja": "ズバラージュ"
     },
     {
       "oblast_en": "Vinnytsia Oblast",
@@ -1423,7 +2198,12 @@
       "lon": 28.4682,
       "pop": 370000,
       "capital": true,
-      "name_ru": "Вінниця"
+      "name_ru": "Вінниця",
+      "name_zh": "文尼察",
+      "name_ar": "فينيتسيا",
+      "name_hi": "विन्निट्सिया",
+      "name_bn": "ভিনিতসিয়া",
+      "name_ja": "ヴィーンヌィツャ"
     },
     {
       "oblast_en": "Vinnytsia Oblast",
@@ -1432,7 +2212,12 @@
       "lat": 49.0353,
       "lon": 28.1131,
       "pop": 35000,
-      "name_ru": "Жмеринка"
+      "name_ru": "Жмеринка",
+      "name_zh": "日梅林卡",
+      "name_ar": "جميرينكا",
+      "name_hi": "ज़्मेरिन्का",
+      "name_bn": "ঝমেরিনকা",
+      "name_ja": "ジュメリンカ"
     },
     {
       "oblast_en": "Vinnytsia Oblast",
@@ -1441,7 +2226,12 @@
       "lat": 48.4472,
       "lon": 27.8006,
       "pop": 33000,
-      "name_ru": "Могилів-Подільський"
+      "name_ru": "Могилів-Подільський",
+      "name_zh": "莫吉廖夫-波多利斯基",
+      "name_ar": "موهيليف-بوديلسكي",
+      "name_hi": "मोहिलिव-पोदिल्स्की",
+      "name_bn": "মোহিলিভ-পোদিলস্কি",
+      "name_ja": "モヒリウ・ポジーリシクィイ"
     },
     {
       "oblast_en": "Vinnytsia Oblast",
@@ -1450,7 +2240,12 @@
       "lat": 48.3678,
       "lon": 29.5281,
       "pop": 15000,
-      "name_ru": "Бершадь"
+      "name_ru": "Бершадь",
+      "name_zh": "别尔沙德",
+      "name_ar": "بيرشاد",
+      "name_hi": "बेर्शाद",
+      "name_bn": "বের্শাদ",
+      "name_ja": "ベールシャド"
     },
     {
       "oblast_en": "Vinnytsia Oblast",
@@ -1459,7 +2254,12 @@
       "lat": 49.5561,
       "lon": 27.9506,
       "pop": 28000,
-      "name_ru": "Хмільник"
+      "name_ru": "Хмільник",
+      "name_zh": "赫米利尼克",
+      "name_ar": "خميلنيك",
+      "name_hi": "ख्मिलनिक",
+      "name_bn": "খমিলনিক",
+      "name_ja": "フミーリニク"
     },
     {
       "oblast_en": "Vinnytsia Oblast",
@@ -1468,7 +2268,12 @@
       "lat": 48.6736,
       "lon": 28.8428,
       "pop": 16000,
-      "name_ru": "Тульчин"
+      "name_ru": "Тульчин",
+      "name_zh": "图利钦",
+      "name_ar": "تولتشين",
+      "name_hi": "तुलचिन",
+      "name_bn": "তুলচিন",
+      "name_ja": "トゥールチン"
     },
     {
       "oblast_en": "Vinnytsia Oblast",
@@ -1477,7 +2282,12 @@
       "lat": 48.6803,
       "lon": 29.2328,
       "pop": 23000,
-      "name_ru": "Ладижин"
+      "name_ru": "Ладижин",
+      "name_zh": "拉季任",
+      "name_ar": "لاديجين",
+      "name_hi": "लादिजिन",
+      "name_bn": "লাদিঝিন",
+      "name_ja": "ラジジーン"
     },
     {
       "oblast_en": "Vinnytsia Oblast",
@@ -1486,7 +2296,12 @@
       "lat": 49.1047,
       "lon": 29.2119,
       "pop": 11000,
-      "name_ru": "Іллінці"
+      "name_ru": "Іллінці",
+      "name_zh": "伊林齐",
+      "name_ar": "إيلينتسي",
+      "name_hi": "इलिन्त्सी",
+      "name_bn": "ইলিন্তসি",
+      "name_ja": "イリンツィ"
     },
     {
       "oblast_en": "Volyn Oblast",
@@ -1496,7 +2311,12 @@
       "lon": 25.3254,
       "pop": 217000,
       "capital": true,
-      "name_ru": "Луцьк"
+      "name_ru": "Луцьк",
+      "name_zh": "卢茨克",
+      "name_ar": "لوتسك",
+      "name_hi": "लुट्स्क",
+      "name_bn": "লুৎস্ক",
+      "name_ja": "ルツク"
     },
     {
       "oblast_en": "Volyn Oblast",
@@ -1505,7 +2325,12 @@
       "lat": 51.2156,
       "lon": 24.7047,
       "pop": 68000,
-      "name_ru": "Ковель"
+      "name_ru": "Ковель",
+      "name_zh": "科韦尔",
+      "name_ar": "كوفيل",
+      "name_hi": "कोवेल",
+      "name_bn": "কোভেল",
+      "name_ja": "コーヴェリ"
     },
     {
       "oblast_en": "Volyn Oblast",
@@ -1514,7 +2339,12 @@
       "lat": 50.7289,
       "lon": 24.1611,
       "pop": 54000,
-      "name_ru": "Нововолинськ"
+      "name_ru": "Нововолинськ",
+      "name_zh": "新沃伦斯克",
+      "name_ar": "نوفوفولينسك",
+      "name_hi": "नोवोवोलिन्स्क",
+      "name_bn": "নোভোভোলিনস্ক",
+      "name_ja": "ノヴォヴォリンシク"
     },
     {
       "oblast_en": "Volyn Oblast",
@@ -1523,7 +2353,12 @@
       "lat": 50.8469,
       "lon": 24.3328,
       "pop": 40000,
-      "name_ru": "Володимир"
+      "name_ru": "Володимир",
+      "name_zh": "沃洛迪米尔",
+      "name_ar": "فولوديمير",
+      "name_hi": "वोलोदिमिर",
+      "name_bn": "ভোলোদিমির",
+      "name_ja": "ヴォロドィームィル"
     },
     {
       "oblast_en": "Volyn Oblast",
@@ -1532,7 +2367,12 @@
       "lat": 51.2244,
       "lon": 24.0378,
       "pop": 10000,
-      "name_ru": "Любомль"
+      "name_ru": "Любомль",
+      "name_zh": "柳博姆利",
+      "name_ar": "ليوبومل",
+      "name_hi": "ल्युबोम्ल",
+      "name_bn": "লিউবোমল",
+      "name_ja": "リュボムリ"
     },
     {
       "oblast_en": "Volyn Oblast",
@@ -1541,7 +2381,12 @@
       "lat": 50.9139,
       "lon": 25.2719,
       "pop": 14000,
-      "name_ru": "Рожище"
+      "name_ru": "Рожище",
+      "name_zh": "罗日谢",
+      "name_ar": "روجيشتشي",
+      "name_hi": "रोज़िशचे",
+      "name_bn": "রোঝিশচে",
+      "name_ja": "ロジシチェ"
     },
     {
       "oblast_en": "Volyn Oblast",
@@ -1550,7 +2395,12 @@
       "lat": 51.6272,
       "lon": 24.9911,
       "pop": 11000,
-      "name_ru": "Камінь-Каширський"
+      "name_ru": "Камінь-Каширський",
+      "name_zh": "卡明-卡希尔斯基",
+      "name_ar": "كامين-كاشيرسكي",
+      "name_hi": "कामिन-काशिर्स्की",
+      "name_bn": "কামিন-কাশির্স্কি",
+      "name_ja": "カーミニ・カシールシクィイ"
     },
     {
       "oblast_en": "Zakarpattia Oblast",
@@ -1560,7 +2410,12 @@
       "lon": 22.2947,
       "pop": 115000,
       "capital": true,
-      "name_ru": "Ужгород"
+      "name_ru": "Ужгород",
+      "name_zh": "乌日哥罗德",
+      "name_ar": "أوجهورود",
+      "name_hi": "उज्हगोरोद",
+      "name_bn": "উজহোরোড",
+      "name_ja": "ウジュホロド"
     },
     {
       "oblast_en": "Zakarpattia Oblast",
@@ -1569,7 +2424,12 @@
       "lat": 48.4411,
       "lon": 22.7208,
       "pop": 86000,
-      "name_ru": "Мукачево"
+      "name_ru": "Мукачево",
+      "name_zh": "穆卡切沃",
+      "name_ar": "موكاتشيفو",
+      "name_hi": "मुकाचेवो",
+      "name_bn": "মুকাচেভো",
+      "name_ja": "ムカチェヴォ"
     },
     {
       "oblast_en": "Zakarpattia Oblast",
@@ -1578,7 +2438,12 @@
       "lat": 48.1806,
       "lon": 23.2981,
       "pop": 29000,
-      "name_ru": "Хуст"
+      "name_ru": "Хуст",
+      "name_zh": "胡斯特",
+      "name_ar": "خوست",
+      "name_hi": "खुस्त",
+      "name_bn": "খুস্ত",
+      "name_ja": "フスト"
     },
     {
       "oblast_en": "Zakarpattia Oblast",
@@ -1587,7 +2452,12 @@
       "lat": 48.2058,
       "lon": 22.6419,
       "pop": 24000,
-      "name_ru": "Берегово"
+      "name_ru": "Берегово",
+      "name_zh": "别列霍沃",
+      "name_ar": "بيريهوفي",
+      "name_hi": "बेरेहोवे",
+      "name_bn": "বেরেহোভে",
+      "name_ja": "ベレホヴェ"
     },
     {
       "oblast_en": "Zakarpattia Oblast",
@@ -1596,7 +2466,12 @@
       "lat": 48.1456,
       "lon": 23.0339,
       "pop": 25000,
-      "name_ru": "Виноградів"
+      "name_ru": "Виноградів",
+      "name_zh": "维诺格拉季夫",
+      "name_ar": "فينوهراديف",
+      "name_hi": "विनोहराديव",
+      "name_bn": "ভিনোহরাদিভ",
+      "name_ja": "ヴィノフラジウ"
     },
     {
       "oblast_en": "Zakarpattia Oblast",
@@ -1605,7 +2480,12 @@
       "lat": 48.0089,
       "lon": 23.5711,
       "pop": 10000,
-      "name_ru": "Тячів"
+      "name_ru": "Тячів",
+      "name_zh": "佳奇夫",
+      "name_ar": "تياتشيف",
+      "name_hi": "त्याचिव",
+      "name_bn": "তিয়াচিভ",
+      "name_ja": "チャーチウ"
     },
     {
       "oblast_en": "Zakarpattia Oblast",
@@ -1614,7 +2494,12 @@
       "lat": 48.3167,
       "lon": 23.0325,
       "pop": 10000,
-      "name_ru": "Іршава"
+      "name_ru": "Іршава",
+      "name_zh": "伊尔沙瓦",
+      "name_ar": "إيرشافا",
+      "name_hi": "इर्शावा",
+      "name_bn": "ইর্শাভা",
+      "name_ja": "イルシャヴァ"
     },
     {
       "oblast_en": "Zaporizhzhia Oblast",
@@ -1624,7 +2509,12 @@
       "lon": 35.1396,
       "pop": 721000,
       "capital": true,
-      "name_ru": "Запоріжжя"
+      "name_ru": "Запоріжжя",
+      "name_zh": "扎波罗热",
+      "name_ar": "زاباروجيا",
+      "name_hi": "ज़ापोरिज्झिया",
+      "name_bn": "জাপোরিঝঝিয়া",
+      "name_ja": "ザポリージャ"
     },
     {
       "oblast_en": "Zaporizhzhia Oblast",
@@ -1633,7 +2523,12 @@
       "lat": 46.8497,
       "lon": 35.3686,
       "pop": 157000,
-      "name_ru": "Мелітополь"
+      "name_ru": "Мелітополь",
+      "name_zh": "梅利托波尔",
+      "name_ar": "ميليتوبول",
+      "name_hi": "मेलितोपोल",
+      "name_bn": "মেলিটোপল",
+      "name_ja": "メリトポリ"
     },
     {
       "oblast_en": "Zaporizhzhia Oblast",
@@ -1642,7 +2537,12 @@
       "lat": 46.7556,
       "lon": 36.7928,
       "pop": 117000,
-      "name_ru": "Бердянськ"
+      "name_ru": "Бердянськ",
+      "name_zh": "别尔江斯克",
+      "name_ar": "بيردیانسك",
+      "name_hi": "बेर्द्यान्स्क",
+      "name_bn": "বের্দিয়ানস্ক",
+      "name_ja": "ベルジャンシク"
     },
     {
       "oblast_en": "Zaporizhzhia Oblast",
@@ -1651,7 +2551,12 @@
       "lat": 47.4989,
       "lon": 34.6458,
       "pop": 54000,
-      "name_ru": "Енергодар"
+      "name_ru": "Енергодар",
+      "name_zh": "能源达尔",
+      "name_ar": "إينيرهودار",
+      "name_hi": "एनेर्होदार",
+      "name_bn": "এনের্হোদার",
+      "name_ja": "エネルホダール"
     },
     {
       "oblast_en": "Zaporizhzhia Oblast",
@@ -1660,7 +2565,12 @@
       "lat": 47.2578,
       "lon": 35.7019,
       "pop": 32000,
-      "name_ru": "Токмак"
+      "name_ru": "Токмак",
+      "name_zh": "托克马克",
+      "name_ar": "توكماك",
+      "name_hi": "तोकमाक",
+      "name_bn": "তোকমাক",
+      "name_ja": "トクマク"
     },
     {
       "oblast_en": "Zaporizhzhia Oblast",
@@ -1669,7 +2579,12 @@
       "lat": 47.4806,
       "lon": 36.2536,
       "pop": 22000,
-      "name_ru": "Пологи"
+      "name_ru": "Пологи",
+      "name_zh": "波洛吉",
+      "name_ar": "بولوهي",
+      "name_hi": "पोलोहि",
+      "name_bn": "পোলোহি",
+      "name_ja": "ポローヒ"
     },
     {
       "oblast_en": "Zaporizhzhia Oblast",
@@ -1678,7 +2593,12 @@
       "lat": 47.6603,
       "lon": 36.2581,
       "pop": 16000,
-      "name_ru": "Гуляйполе"
+      "name_ru": "Гуляйполе",
+      "name_zh": "古利艾波列",
+      "name_ar": "هولياي بولي",
+      "name_hi": "हुलयाइपोले",
+      "name_bn": "হুলিয়াইপোলে",
+      "name_ja": "フリャイポーレ"
     },
     {
       "oblast_en": "Zaporizhzhia Oblast",
@@ -1687,7 +2607,12 @@
       "lat": 47.4325,
       "lon": 35.2722,
       "pop": 13000,
-      "name_ru": "Василівка"
+      "name_ru": "Василівка",
+      "name_zh": "瓦西里夫卡",
+      "name_ar": "فاسيليفكا",
+      "name_hi": "वासिलिव्का",
+      "name_bn": "ভাসিলিভকা",
+      "name_ja": "ヴァスィリウカ"
     },
     {
       "oblast_en": "Zhytomyr Oblast",
@@ -1697,7 +2622,12 @@
       "lon": 28.6587,
       "pop": 265000,
       "capital": true,
-      "name_ru": "Житомир"
+      "name_ru": "Житомир",
+      "name_zh": "日托米尔",
+      "name_ar": "جيتومير",
+      "name_hi": "झिटोमिर",
+      "name_bn": "ঝিটোমির",
+      "name_ja": "ジトーミル"
     },
     {
       "oblast_en": "Zhytomyr Oblast",
@@ -1706,7 +2636,12 @@
       "lat": 49.8989,
       "lon": 28.5928,
       "pop": 78000,
-      "name_ru": "Бердичів"
+      "name_ru": "Бердичів",
+      "name_zh": "别尔季切夫",
+      "name_ar": "بيرديتشيف",
+      "name_hi": "बेर्दिचिव",
+      "name_bn": "বের্দিচিভ",
+      "name_ja": "ベルドィチウ"
     },
     {
       "oblast_en": "Zhytomyr Oblast",
@@ -1715,7 +2650,12 @@
       "lat": 50.95,
       "lon": 28.6478,
       "pop": 64000,
-      "name_ru": "Коростень"
+      "name_ru": "Коростень",
+      "name_zh": "科罗斯坚",
+      "name_ar": "كوروستين",
+      "name_hi": "कोरोस्तेन",
+      "name_bn": "কোরোস্তেন",
+      "name_ja": "コロステーニ"
     },
     {
       "oblast_en": "Zhytomyr Oblast",
@@ -1724,7 +2664,12 @@
       "lat": 50.5967,
       "lon": 27.6194,
       "pop": 54000,
-      "name_ru": "Новоград-Волинський"
+      "name_ru": "Новоград-Волинський",
+      "name_zh": "新格勒-沃伦斯基",
+      "name_ar": "نوفوهراد-فولينسكي",
+      "name_hi": "नोवोहराद-वोलिन्स्की",
+      "name_bn": "নোভোহরাদ-ভোলিনস্কি",
+      "name_ja": "ノヴォフラード・ヴォリンシクィイ"
     },
     {
       "oblast_en": "Zhytomyr Oblast",
@@ -1733,7 +2678,12 @@
       "lat": 50.7753,
       "lon": 29.2564,
       "pop": 25000,
-      "name_ru": "Малин"
+      "name_ru": "Малин",
+      "name_zh": "马林",
+      "name_ar": "مالين",
+      "name_hi": "मालिन",
+      "name_bn": "মালিন",
+      "name_ja": "マーリン"
     },
     {
       "oblast_en": "Zhytomyr Oblast",
@@ -1742,7 +2692,12 @@
       "lat": 51.3242,
       "lon": 28.8175,
       "pop": 16000,
-      "name_ru": "Овруч"
+      "name_ru": "Овруч",
+      "name_zh": "奥夫鲁奇",
+      "name_ar": "أوفروتش",
+      "name_hi": "ओव्रुच",
+      "name_bn": "ওভ্রুচ",
+      "name_ja": "オーヴルチ"
     },
     {
       "oblast_en": "Zhytomyr Oblast",
@@ -1751,7 +2706,12 @@
       "lat": 50.2864,
       "lon": 29.5264,
       "pop": 4000,
-      "name_ru": "Брусилів"
+      "name_ru": "Брусилів",
+      "name_zh": "布鲁西利夫",
+      "name_ar": "بروسيليف",
+      "name_hi": "ब्रुसिलिव",
+      "name_bn": "ব্রুসিলিভ",
+      "name_ja": "ブルスィリウ"
     }
   ]
 }
