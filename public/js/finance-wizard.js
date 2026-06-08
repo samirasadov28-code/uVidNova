@@ -496,12 +496,12 @@ function renderScopeDetail() {
 
     det.innerHTML = `
       <div class="fw-scope-summary">
-        <strong>${_assets.length} damaged assets</strong> across all documented regions
-        — Baseline rehabilitation: <strong>${fmtM(assetTotal)}</strong>
-        ${growthCount > 0 ? ` + <strong>${growthCount} growth project${growthCount !== 1 ? 's' : ''}</strong> (${fmtM(growthTotal)}) = <strong>${fmtM(grandTotal)} total</strong>` : ''}
+        <strong>${_assets.length} ${t('fw.scope.damaged_assets')||'damaged assets'}</strong> ${t('fw.scope.all_regions')||'across all documented regions'}
+        — ${t('fw.scope.baseline_rehab')||'Baseline rehabilitation'}: <strong>${fmtM(assetTotal)}</strong>
+        ${growthCount > 0 ? ` + <strong>${growthCount} ${t('fw.scope.growth_project')||'growth project'}${growthCount !== 1 ? (t('fw.scope.growth_projects_plural_suffix')||'s') : ''}</strong> (${fmtM(growthTotal)}) = <strong>${fmtM(grandTotal)} ${t('fw.scope.total')||'total'}</strong>` : ''}
       </div>
       <button class="fw-growth-toggle-btn" id="fwGrowthToggleBtn">
-        ${W.showGrowthPicker ? '▲ Hide growth projects' : `＋ Add growth sector projects${growthCount > 0 ? ` (${growthCount} selected)` : ''}`}
+        ${W.showGrowthPicker ? `▲ ${t('fw.scope.hide_growth')||'Hide growth projects'}` : `＋ ${t('fw.scope.add_growth')||'Add growth sector projects'}${growthCount > 0 ? ` (${growthCount} ${t('fw.scope.selected')||'selected'})` : ''}`}
       </button>
       <div id="fwGrowthPickerWrap" ${W.showGrowthPicker ? '' : 'hidden'}>
         <div class="fw-growth-mode-row">
@@ -509,20 +509,20 @@ function renderScopeDetail() {
             <input type="radio" name="growthMode" value="generic" ${W.growthMode === 'generic' ? 'checked' : ''} class="fw-sr">
             <span class="fw-gmo-icon">🌍</span>
             <span class="fw-gmo-text">
-              <strong>Generic sector recovery</strong>
-              <span class="fw-gmo-sub">Restore pre-war growth trajectory across a whole sector</span>
+              <strong>${t('fw.scope.generic_recovery')||'Generic sector recovery'}</strong>
+              <span class="fw-gmo-sub">${t('fw.scope.generic_recovery_desc')||'Restore pre-war growth trajectory across a whole sector'}</span>
             </span>
           </label>
           <label class="fw-growth-mode-opt ${W.growthMode === 'specific' ? 'fw-gmo-active' : ''}">
             <input type="radio" name="growthMode" value="specific" ${W.growthMode === 'specific' ? 'checked' : ''} class="fw-sr">
             <span class="fw-gmo-icon">📋</span>
             <span class="fw-gmo-text">
-              <strong>Specific projects</strong>
-              <span class="fw-gmo-sub">Select individual investment archetypes</span>
+              <strong>${t('fw.scope.specific_projects')||'Specific projects'}</strong>
+              <span class="fw-gmo-sub">${t('fw.scope.specific_projects_desc')||'Select individual investment archetypes'}</span>
             </span>
           </label>
         </div>
-        ${W.growthMode === 'generic' ? renderGenericGrowthPicker() : (_growthData ? renderPortfolioGrowthPicker(_growthData, W.growthProjects ?? []) : '<p class="fw-scope-summary">Loading growth sector data…</p>')}
+        ${W.growthMode === 'generic' ? renderGenericGrowthPicker() : (_growthData ? renderPortfolioGrowthPicker(_growthData, W.growthProjects ?? []) : `<p class="fw-scope-summary">${t('fw.scope.loading_growth')||'Loading growth sector data…'}</p>`)}
         <div id="fwGrowthChips" class="${W.growthProjects.length > 0 ? 'fw-growth-chips' : 'fw-growth-empty'}">
           ${W.growthProjects.length > 0
             ? W.growthProjects.map(p => {
@@ -533,8 +533,8 @@ function renderScopeDetail() {
                     <button class="fw-qty-btn fw-growth-qty-up" data-arch-id="${p.archetypeId}" type="button">+</button>
                   </span>` : '';
                 return `<span class="fw-growth-chip">${p.label}${qtyControls} <span class="fw-gc-scale">USD ${(+p.scale_usd_m).toLocaleString()}M</span></span>`;
-              }).join('') + `<span class="fw-growth-total-chip">Growth total: <strong>USD ${(W.growthProjects ?? []).reduce((s,p)=>s+p.scale_usd_m,0).toLocaleString()}M</strong></span>`
-            : 'No growth projects selected yet.'}
+              }).join('') + `<span class="fw-growth-total-chip">${t('fw.scope.growth_total')||'Growth total'}: <strong>USD ${(W.growthProjects ?? []).reduce((s,p)=>s+p.scale_usd_m,0).toLocaleString()}M</strong></span>`
+            : (t('fw.scope.no_growth_selected')||'No growth projects selected yet.')}
         </div>
       </div>`;
 
