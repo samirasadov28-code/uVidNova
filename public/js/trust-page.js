@@ -189,10 +189,12 @@ function renderCapitalFormation() {
           </button>
         </div>
         <div class="trust-infobox">
-          <strong>${state.scenario === 'A' ? 'Scenario A — Wartime (ERA + Multilateral)' : 'Scenario B — Hague Reparations + Full Asset Transfer'}</strong>
+          <strong>${state.scenario === 'A'
+            ? (t('trust.scenario_a_title')||'Scenario A — Wartime (ERA + Multilateral)')
+            : (t('trust.scenario_b_title')||'Scenario B — Hague Reparations + Full Asset Transfer')}</strong>
           ${state.scenario === 'A'
-            ? 'Trust capitalised from instruments legally available during active conflict. ~$280B in frozen Russian assets remain in G7/EU custodians; their windfall interest (~$3B/yr) backs the ERA loan. Multilateral and EU Facility pledges complete the corpus. Russia\'s principal liability is acknowledged — not yet transferred.'
-            : 'Trust capitalised post-ceasefire from two parallel tracks: (1) direct reparations from Russia awarded by the ICJ / Hague tribunal (Ukraine\'s documented claim: $486B per RDNA3); (2) full transfer of the frozen $280B principal under the US REPO Act and G7 framework. Larger corpus — mobilisation timeline 2–5 years from ceasefire.'}
+            ? (t('trust.scenario_a_desc')||'Trust capitalised from instruments legally available during active conflict. ~$280B in frozen Russian assets remain in G7/EU custodians; their windfall interest (~$3B/yr) backs the ERA loan. Multilateral and EU Facility pledges complete the corpus. Russia\'s principal liability is acknowledged — not yet transferred.')
+            : (t('trust.scenario_b_desc')||'Trust capitalised post-ceasefire from two parallel tracks: (1) direct reparations from Russia awarded by the ICJ / Hague tribunal (Ukraine\'s documented claim: $486B per RDNA3); (2) full transfer of the frozen $280B principal under the US REPO Act and G7 framework. Larger corpus — mobilisation timeline 2–5 years from ceasefire.')}
         </div>
         <div class="trust-sliders" id="m1-sliders">`;
 
@@ -202,7 +204,7 @@ function renderCapitalFormation() {
           <div class="trust-slider-row">
             <div>
               <span class="trust-slider-label">${src.label}</span>
-              <span class="trust-slider-source">Source: ${src.source_label}</span>
+              <span class="trust-slider-source">${t('trust.source_prefix')||'Source'}: ${src.source_label}</span>
             </div>
             <input type="range" class="trust-range"
               data-source="${src.id}"
@@ -220,7 +222,7 @@ function renderCapitalFormation() {
       </div>
       <div>
         <div class="trust-total-nav" id="m1-total-nav">${fmtBn(computeTotalNav())}</div>
-        <div class="trust-total-label">Total Trust NAV at formation</div>
+        <div class="trust-total-label">${t('trust.m1.total_nav_label')||'Total Trust NAV at formation'}</div>
         <div class="trust-stack-bar" id="m1-stack-bar"></div>
         <div class="trust-stack-legend" id="m1-stack-legend"></div>
       </div>
