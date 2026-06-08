@@ -333,17 +333,17 @@ function goBack() {
 
 function validate() {
   if (W.step === 1 && W.scope !== 'greenfield' && W.selectedIds.size === 0) {
-    showError('Select at least one project to continue.');
+    showError(t('fw.err.select_project')||'Select at least one project to continue.');
     return false;
   }
   if (W.step === 1 && W.scope === 'greenfield') {
-    if (!W.greenfield.sectorId) { showError('Select a growth sector to continue.'); return false; }
-    if (!W.greenfield.archetypeId) { showError('Select a project archetype to continue.'); return false; }
+    if (!W.greenfield.sectorId) { showError(t('fw.err.select_sector')||'Select a growth sector to continue.'); return false; }
+    if (!W.greenfield.archetypeId) { showError(t('fw.err.select_archetype')||'Select a project archetype to continue.'); return false; }
   }
   if (W.step === 3) {
     const sum = W.tranches.reduce((s, t) => s + (+t.pct || 0), 0);
     if (Math.abs(sum - 100) > 0.5) {
-      showError(`Tranche allocations must total 100%. Currently: ${sum.toFixed(1)}%.`);
+      showError(`${t('fw.err.tranche_total')||'Tranche allocations must total 100%. Currently'}: ${sum.toFixed(1)}%.`);
       return false;
     }
   }
@@ -977,9 +977,9 @@ function step3HTML() {
     const isSelected = selectedTypes.has(k);
     const desc = TRANCHE_DESCRIPTIONS[k] ?? '';
     const retLabel = k === 'reparations' || k === 'grant' || k === 'first_loss' || k === 'public_equity'
-      ? (k === 'reparations' ? 'No return · sovereign obligation' : k === 'first_loss' ? 'No return · risk absorber' : 'No return')
+      ? (k === 'reparations' ? (t('fw.s3.no_return_sovereign')||'No return · sovereign obligation') : k === 'first_loss' ? (t('fw.s3.no_return_risk_absorber')||'No return · risk absorber') : (t('fw.s3.no_return')||'No return'))
       : def.isFlag
-        ? `Premium ~${def.ret}%/yr · risk wrap`
+        ? `${t('fw.s3.help_premium')||'Premium'} ~${def.ret}%/yr · ${t('fw.s3.help_risk_wrap')||'risk wrap'}`
         : `${def.ret}% ${def.tenor ? `· ${def.tenor}yr` : ''}`;
     return `<button class="fw-catalog-card ${isSelected ? 'fw-catalog-active' : ''}${def.isFlag ? ' fw-catalog-flag' : ''}"
               data-tranche-type="${k}" type="button" title="${def.label}">
@@ -1058,9 +1058,9 @@ function trancheRowHTML(t, total) {
   // For Trust-mode reparations tranches, show Annual payment instead of % of project
   const annualTrust = trustAnnualPayment_usd_m();
   const displayAmt  = isTrustMode
-    ? `Annual: $${annualTrust.toLocaleString()}M/yr`
+    ? `${t('fw.s3.annual_label')||'Annual'}: $${annualTrust.toLocaleString()}M/yr`
     : isPriWrap
-      ? `Coverage: $${total > 0 ? (total * pct / 100).toFixed(1) : '-'}M`
+      ? `${t('fw.s3.coverage')||'Coverage'}: $${total > 0 ? (total * pct / 100).toFixed(1) : '-'}M`
       : `$${total > 0 ? (total * pct / 100).toFixed(1) : '-'}M`;
 
   const repNote = t.type === 'reparations' && total > 0 ? (() => {
@@ -1104,7 +1104,7 @@ function trancheRowHTML(t, total) {
   const isZeroReturn   = isReparations || t.type === 'grant' || t.type === 'first_loss' || t.type === 'public_equity';
   const allocationLabel = isPriWrap ? (t('fw.s3.coverage')||'Coverage') : (t('fw.s3.allocation')||'Allocation');
   const retLabel = isPriWrap
-    ? `<span class="fw-tr-rep-label">${t('fw.s3.pri_wrap_ret_label')||`Premium ~${def.ret}%/yr · reduces senior debt cost by ~2–3%`}</span>`
+    ? `<span class="fw-tr-rep-label">${t('fw.s3.pri_wrap_premium_prefix')||'Premium'} ~${def.ret}%/yr · ${t('fw.s3.pri_wrap_ret_suffix')||'reduces senior debt cost by ~2–3%'}</span>`
     : isZeroReturn
       ? `<span class="fw-tr-rep-label">${isReparations ? (t('fw.s3.no_return_sovereign')||'No return · sovereign obligation') : (t('fw.s3.no_return')||'No return')}</span>`
       : `<label class="fw-tr-lbl">${t('fw.s3.return_label')||'Return'}
@@ -1594,7 +1594,7 @@ function step4GreenfieldHTML() {
       ? ` <span class="trust-annual-chip">Annual: USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr †</span>`
       : '';
     // Use _labelOverride for seeded greenfield tranches if present
-    const trancheLabel = t._labelOverride ?? (isTrustMode ? (t2('fw.s4.trust_label')||'ERA/Trust — Availability Payment') : t.def.label);
+    const trancheLabel = t._labelOverride ?? (isTrustMode ? 'ERA/Trust — Availability Payment' : t.def.label);
     const displayPct   = isTrustMode ? '-' : `${t.pct.toFixed(0)}%`;
     const displayAmt   = isTrustMode ? `USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr` : fmtM(t.amt.toFixed(1));
     return `<tr>
