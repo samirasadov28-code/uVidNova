@@ -244,6 +244,14 @@ const TRANSLATIONS = {
     'trust.mod7.title':     'Precedent Comparison',
     'trust.mod7.subtitle':  'Norway GPFG · Temasek · ISIF · Marshall Plan · EU RRF · VidNova Trust at maturity',
     'trust.disclaimer':     '<strong>Disclaimer.</strong> The VidNova Trust is a <strong>modelled scenario</strong>, not a legal instrument, operating entity, or investment fund. All figures are estimates derived from published benchmarks: RDNA3 (World Bank / Government of Ukraine / EC / UN, February 2024), KSE Institute "Russia Will Pay" tracker, Norway GPFG / Norges Bank IM annual reports, Ireland ISIF / NTMA annual reports, Temasek Review 2023, MIGA Annual Report 2023, EBRD Ukraine country strategy 2023, EU Regulation 2024/792 (Ukraine Facility). Figures are not guarantees, not investment advice, not procurement quotes, and not a substitute for transaction-level due diligence. No LLM or AI model was involved in producing any numeric output on this page. All numbers are traceable to named published sources; source codes are displayed inline.<br><br>Capital source ranges, leverage multipliers, and precedent figures are reproduced from public institutional documents. Sovereign risk, geopolitical uncertainty, and legal resolution timelines are not modelled - they are user-controlled assumptions. <strong>This page is an analytical tool for development-finance professionals, not an advocacy instrument.</strong>',
+    // Trust hero stat cards
+    'trust.stat.initial_nav':       'Initial Trust NAV',
+    'trust.stat.initial_nav_note':  'Scenario A default - adjustable in Module 1',
+    'trust.stat.real_return':       'Real return target',
+    'trust.stat.real_return_note':  'Norway GPFG 25-yr average · adjustable in Module 2',
+    'trust.stat.deploy_rate':       'Annual deployment rate',
+    'trust.stat.deploy_rate_note':  'ISIF directed mandate model · adjustable in Module 2',
+    'trust.stat.annual_ap':         'Annual Availability Payment',
   },
 
   uk: {
@@ -429,6 +437,14 @@ const TRANSLATIONS = {
     'trust.mod7.title':     'Порівняння прецедентів',
     'trust.mod7.subtitle':  'Norway GPFG · Temasek · ISIF · План Маршалла · EU RRF · VidNova Trust на зрілому етапі',
     'trust.disclaimer':     '<strong>Застереження.</strong> VidNova Trust є <strong>модельованим сценарієм</strong>, а не юридичним інструментом, операційною організацією чи інвестиційним фондом. Усі цифри є оцінками, отриманими на основі опублікованих орієнтирів: RDNA3 (Світовий банк / Уряд України / ЄК / ООН, лютий 2024 р.), трекер KSE Institute «Росія заплатить», річні звіти Norway GPFG / Norges Bank IM, річні звіти Ireland ISIF / NTMA, Temasek Review 2023, MIGA Annual Report 2023, стратегія EBRD щодо України 2023 р., Регламент ЄС 2024/792 (Ukraine Facility). Цифри не є гарантіями, інвестиційними порадами, тендерними пропозиціями чи заміною транзакційного due diligence. Жоден LLM або модель ШІ не брала участі у створенні числових результатів на цій сторінці. Усі числа простежуються до іменованих опублікованих джерел; коди джерел відображаються безпосередньо.<br><br>Діапазони джерел капіталу, мультиплікатори залучення та прецедентні цифри відтворені з публічних інституційних документів. Суверенний ризик, геополітична невизначеність та строки правового врегулювання не моделюються — вони є контрольованими користувачем припущеннями. <strong>Ця сторінка є аналітичним інструментом для спеціалістів з розвиткового фінансування, а не інструментом адвокації.</strong>',
+    // Trust hero stat cards
+    'trust.stat.initial_nav':       'Початковий NAV Трасту',
+    'trust.stat.initial_nav_note':  'Сценарій A за замовчуванням — налаштовується в модулі 1',
+    'trust.stat.real_return':       'Цільова реальна дохідність',
+    'trust.stat.real_return_note':  'Середнє за 25 років Norway GPFG · налаштовується в модулі 2',
+    'trust.stat.deploy_rate':       'Річний темп розгортання',
+    'trust.stat.deploy_rate_note':  'Модель цільового мандату ISIF · налаштовується в модулі 2',
+    'trust.stat.annual_ap':         'Річний платіж доступності',
   },
 
   // ── Batch 1 ───────────────────────────────────────────────────────────────

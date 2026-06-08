@@ -17,6 +17,8 @@ import {
   fmtM
 } from '/js/trust-calculator.js';
 
+import { t } from '/js/lang.js';
+
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 const LS_KEY = 'uvidnova.trust_model.state.v4';
@@ -180,10 +182,10 @@ function renderCapitalFormation() {
       <div>
         <div class="trust-scenario-toggle" id="scenarioToggle">
           <button class="trust-scenario-btn ${state.scenario === 'A' ? 'active' : ''}" data-scenario="A">
-            Scenario A<br><small>Wartime</small>
+            ${t('trust.scenario_a_btn')||'Scenario A'}<br><small>${t('trust.scenario_a_sub')||'Wartime'}</small>
           </button>
           <button class="trust-scenario-btn ${state.scenario === 'B' ? 'active' : ''}" data-scenario="B">
-            Scenario B<br><small>Hague + Post-War</small>
+            ${t('trust.scenario_b_btn')||'Scenario B'}<br><small>${t('trust.scenario_b_sub')||'Hague + Post-War'}</small>
           </button>
         </div>
         <div class="trust-infobox">

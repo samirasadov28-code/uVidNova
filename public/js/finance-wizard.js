@@ -406,28 +406,28 @@ function introHTML() {
   return `<div class="fw-intro">
     <div class="fw-intro-header">
       <span class="fw-intro-icon">💰</span>
-      <h3 class="fw-intro-title">Finance It — how it works</h3>
+      <h3 class="fw-intro-title">${t('fw.intro.title')||'Finance It — how it works'}</h3>
     </div>
-    <p class="fw-intro-body">Build a deterministic capital stack for any damaged asset, group, or the entire 100-asset portfolio. Every figure traces to RDNA3 and KSE benchmarks — no AI-generated numbers.</p>
+    <p class="fw-intro-body">${t('fw.intro.body')||'Build a deterministic capital stack for any damaged asset, group, or the entire 100-asset portfolio. Every figure traces to RDNA3 and KSE benchmarks — no AI-generated numbers.'}</p>
     <div class="fw-intro-steps">
       <div class="fw-intro-step">
         <span class="fw-is-num">1</span>
-        <div><strong>Scope</strong> — one project, a region group, or the full portfolio with optional greenfield growth investments</div>
+        <div><strong>${t('fw.step.scope')||'Scope'}</strong> — ${t('fw.intro.step1_desc')||'one project, a region group, or the full portfolio with optional greenfield growth investments'}</div>
       </div>
       <div class="fw-intro-step">
         <span class="fw-is-num">2</span>
-        <div><strong>Scenario</strong> — choose reconstruction path (baseline / code-compliant / build-back-better) and financing timeline</div>
+        <div><strong>${t('fw.step.scenario')||'Scenario'}</strong> — ${t('fw.intro.step2_desc')||'choose reconstruction path (baseline / code-compliant / build-back-better) and financing timeline'}</div>
       </div>
       <div class="fw-intro-step">
         <span class="fw-is-num">3</span>
-        <div><strong>Structure</strong> — pick tranches from the catalog (grants, concessional debt, equity, Russian reparations) and set allocations</div>
+        <div><strong>${t('fw.step.structure')||'Structure'}</strong> — ${t('fw.intro.step3_desc')||'pick tranches from the catalog (grants, concessional debt, equity, Russian reparations) and set allocations'}</div>
       </div>
       <div class="fw-intro-step">
         <span class="fw-is-num">4</span>
-        <div><strong>Results</strong> — full capital stack analysis with blended CoC, mobilisation ratio, and an exportable financing brief</div>
+        <div><strong>${t('fw.step.results')||'Results'}</strong> — ${t('fw.intro.step4_desc')||'full capital stack analysis with blended CoC, mobilisation ratio, and an exportable financing brief'}</div>
       </div>
     </div>
-    <button class="fw-btn fw-btn-next fw-intro-start" id="fwIntroStart">Start — Step 1 →</button>
+    <button class="fw-btn fw-btn-next fw-intro-start" id="fwIntroStart">${t('fw.intro.start')||'Start — Step 1'} →</button>
   </div>`;
 }
 
@@ -447,7 +447,7 @@ function step1HTML() {
     <div class="fw-scope-row" id="fwScopeRow">
       ${scopeCard('single',     '🏗', t('fw.s1.single')||'One project',             t('fw.s1.single_desc')||'Finance a specific damaged asset')}
       ${scopeCard('group',      '🗂', t('fw.s1.group')||'Group of projects',       t('fw.s1.group_desc')||'Select by region or manually')}
-      ${scopeCard('all',        '🇺🇦', t('fw.s1.all')||'Entire portfolio',        `All ${_assets.length} documented assets`)}
+      ${scopeCard('all',        '🇺🇦', t('fw.s1.all')||'Entire portfolio',        `${t('fw.s1.all_desc_prefix')||'All'} ${_assets.length} ${t('fw.s1.all_desc_suffix')||'documented assets'}`)}
       ${scopeCard('greenfield', '🌱', t('fw.s1.greenfield')||'Growth sector project',   t('fw.s1.greenfield_desc')||'Model a new greenfield investment')}
     </div>
     <div id="fwScopeDetail"></div>
