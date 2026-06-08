@@ -313,42 +313,42 @@ function renderGrowthTrajectory() {
           <div class="trust-sliders">
             <div class="trust-slider-row">
               <div>
-                <span class="trust-slider-label">Real return (%)</span>
-                <span class="trust-slider-source">Source: NORGES_BANK_IM long-run 4%; TEMASEK 7%</span>
+                <span class="trust-slider-label">${t('trust.m2.real_return_label')||'Real return (%)'}</span>
+                <span class="trust-slider-source">${t('trust.source_prefix')||'Source'}: NORGES_BANK_IM long-run 4%; TEMASEK 7%</span>
               </div>
               <input type="range" class="trust-range" id="m2-return"
                 min="2" max="8" step="0.5" value="${state.real_return_pct}"
-                aria-label="Real return">
+                aria-label="${t('trust.m2.real_return_label')||'Real return'}">
               <span class="trust-range-val" id="m2-return-val">${state.real_return_pct.toFixed(1)}%</span>
             </div>
             <div class="trust-slider-row">
               <div>
-                <span class="trust-slider-label">Deployment rate (%/yr)</span>
-                <span class="trust-slider-source">Source: ISIF 2014 mandate; RDNA3 pacing estimate</span>
+                <span class="trust-slider-label">${t('trust.m2.deploy_rate_label')||'Deployment rate (%/yr)'}</span>
+                <span class="trust-slider-source">${t('trust.source_prefix')||'Source'}: ISIF 2014 mandate; RDNA3 pacing estimate</span>
               </div>
               <input type="range" class="trust-range" id="m2-deploy"
                 min="2" max="12" step="0.5" value="${state.deployment_rate_pct}"
-                aria-label="Deployment rate">
+                aria-label="${t('trust.m2.deploy_rate_label')||'Deployment rate'}">
               <span class="trust-range-val" id="m2-deploy-val">${state.deployment_rate_pct.toFixed(1)}%</span>
             </div>
             <div class="trust-slider-row">
               <div>
-                <span class="trust-slider-label">Horizon (years)</span>
-                <span class="trust-slider-source">Source: Norway GPFG perpetual mandate; ISIF 10-yr review</span>
+                <span class="trust-slider-label">${t('trust.m2.horizon_label')||'Horizon (years)'}</span>
+                <span class="trust-slider-source">${t('trust.source_prefix')||'Source'}: Norway GPFG perpetual mandate; ISIF 10-yr review</span>
               </div>
               <input type="range" class="trust-range" id="m2-horizon"
                 min="10" max="50" step="5" value="${state.horizon_years}"
-                aria-label="Horizon years">
-              <span class="trust-range-val" id="m2-horizon-val">${state.horizon_years} yrs</span>
+                aria-label="${t('trust.m2.horizon_label')||'Horizon years'}">
+              <span class="trust-range-val" id="m2-horizon-val">${state.horizon_years} ${t('trust.m2.yrs_suffix')||'yrs'}</span>
             </div>
             <div class="trust-slider-row">
               <div>
-                <span class="trust-slider-label">Recycling rate (%/yr)</span>
-                <span class="trust-slider-source">Source: ISIF portfolio repayment model 2023</span>
+                <span class="trust-slider-label">${t('trust.m2.recycle_label')||'Recycling rate (%/yr)'}</span>
+                <span class="trust-slider-source">${t('trust.source_prefix')||'Source'}: ISIF portfolio repayment model 2023</span>
               </div>
               <input type="range" class="trust-range" id="m2-recycle"
                 min="5" max="30" step="5" value="${state.recycling_rate_pct}"
-                aria-label="Recycling rate">
+                aria-label="${t('trust.m2.recycle_label')||'Recycling rate'}">
               <span class="trust-range-val" id="m2-recycle-val">${state.recycling_rate_pct.toFixed(0)}%</span>
             </div>
           </div>
@@ -373,7 +373,7 @@ function wireGrowthSliders() {
   const sliders = [
     { id: 'm2-return',  valId: 'm2-return-val',  key: 'real_return_pct',    fmt: v => `${v.toFixed(1)}%` },
     { id: 'm2-deploy',  valId: 'm2-deploy-val',  key: 'deployment_rate_pct', fmt: v => `${v.toFixed(1)}%` },
-    { id: 'm2-horizon', valId: 'm2-horizon-val', key: 'horizon_years',       fmt: v => `${v} yrs` },
+    { id: 'm2-horizon', valId: 'm2-horizon-val', key: 'horizon_years',       fmt: v => `${v} ${t('trust.m2.yrs_suffix')||'yrs'}` },
     { id: 'm2-recycle', valId: 'm2-recycle-val', key: 'recycling_rate_pct',  fmt: v => `${v.toFixed(0)}%` }
   ];
 
@@ -432,7 +432,7 @@ function drawGrowthChart() {
       labels,
       datasets: [
         {
-          label: 'Your scenario — NAV',
+          label: t('trust.chart.nav_label')||'Your scenario — NAV',
           data: navData,
           borderColor: NAVY,
           backgroundColor: 'rgba(26,58,107,0.08)',
@@ -443,7 +443,7 @@ function drawGrowthChart() {
           pointHoverRadius: 4
         },
         {
-          label: 'Baseline (4% return, 6% deploy)',
+          label: t('trust.chart.baseline_label')||'Baseline (4% return, 6% deploy)',
           data: baseData,
           borderColor: '#aaa',
           borderWidth: 1.5,
@@ -454,7 +454,7 @@ function drawGrowthChart() {
           pointHoverRadius: 3
         },
         {
-          label: 'Cumulative deployed',
+          label: t('trust.chart.deployed_label')||'Cumulative deployed',
           data: deployData,
           borderColor: GOLD,
           backgroundColor: 'rgba(201,162,39,0.07)',
@@ -514,12 +514,12 @@ function updateM2Infobox() {
   const suppDebt     = computeSupportableDebt(annualAP);
 
   box.innerHTML = `
-    <strong>Key outcomes at Year ${state.horizon_years}</strong>
-    NAV: <strong>${fmtBn(last.nav)}</strong> ·
-    Total deployed: <strong>${fmtBn(totalDeployed)}</strong> ·
-    Annual AP budget: <strong>${fmtBn(annualAP)}</strong> ·
-    Supportable concessional debt: <strong>${fmtBn(suppDebt)}</strong>
-    <span class="trust-source">Sources: RDNA3, KSE, NORGES_BANK_IM (4% rule), ISIF (1.6× leverage)</span>`;
+    <strong>${(t('trust.m2.key_outcomes')||'Key outcomes at Year {n}').replace('{n}', state.horizon_years)}</strong>
+    ${t('trust.m2.nav_label')||'NAV'}: <strong>${fmtBn(last.nav)}</strong> ·
+    ${t('trust.m2.total_deployed')||'Total deployed'}: <strong>${fmtBn(totalDeployed)}</strong> ·
+    ${t('trust.m2.annual_ap_budget')||'Annual AP budget'}: <strong>${fmtBn(annualAP)}</strong> ·
+    ${t('trust.m2.supportable_debt')||'Supportable concessional debt'}: <strong>${fmtBn(suppDebt)}</strong>
+    <span class="trust-source">${t('trust.source_prefix')||'Sources'}: RDNA3, KSE, NORGES_BANK_IM (4% rule), ISIF (1.6× leverage)</span>`;
 }
 
 // ── Module 3: Allocation Strategy ────────────────────────────────────────────
@@ -539,7 +539,7 @@ function renderAllocation() {
       </div>
       <div>
         <div class="trust-channel-list" id="m3-channels"></div>
-        <div class="trust-alloc-warning" id="m3-warning">Allocations must sum to 100% (currently <span id="m3-sum">—</span>%)</div>
+        <div class="trust-alloc-warning" id="m3-warning">${t('trust.m3.alloc_warning')||'Allocations must sum to 100% (currently'} <span id="m3-sum">—</span>%)</div>
         <div class="trust-infobox gold" style="margin-top:0.75rem" id="m3-ap-box"></div>
       </div>
     </div>`;
@@ -642,10 +642,10 @@ function updateAPBox() {
   const annualAP = computeAnnualAP(state.nav_usd_bn, apPct, state.deployment_rate_pct);
   const suppDebt = computeSupportableDebt(annualAP);
   box.innerHTML = `
-    <strong>Availability Payment channel (${apPct}%)</strong>
-    Annual AP budget: <strong>${fmtBn(annualAP)}</strong> supports
-    <strong>${fmtBn(suppDebt)}</strong> of 15-yr concessional debt at 2.5% coupon.
-    <span class="trust-source">Source: Standard project finance debt service constant — EBRD_CASE</span>`;
+    <strong>${(t('trust.m3.ap_channel_title')||'Availability Payment channel ({pct}%)').replace('{pct}', apPct)}</strong>
+    ${t('trust.m3.ap_budget_label')||'Annual AP budget'}: <strong>${fmtBn(annualAP)}</strong> ${t('trust.m3.ap_supports')||'supports'}
+    <strong>${fmtBn(suppDebt)}</strong> ${t('trust.m3.ap_debt_desc')||'of 15-yr concessional debt at 2.5% coupon'}.
+    <span class="trust-source">${t('trust.source_prefix')||'Source'}: Standard project finance debt service constant — EBRD_CASE</span>`;
 }
 
 // ── Module 4: Project Support Mapping ────────────────────────────────────────
@@ -664,7 +664,7 @@ function renderProjectSupport() {
     <div class="trust-tabs" id="m4-tabs">
       ${TAB_CHANNELS.map(ch => `
         <button class="trust-tab-btn ${ch === activeTab ? 'active' : ''}" data-tab="${ch}">
-          ${ch === 'all' ? 'All Assets' : ch === 'availability_payments' ? 'Availability Payments' : capitalise(ch)}
+          ${ch === 'all' ? (t('trust.m4.tab_all')||'All Assets') : ch === 'availability_payments' ? (t('trust.m4.tab_ap')||'Availability Payments') : capitalise(ch)}
           <small style="margin-left:4px;color:#aaa">(${filterAssets(assets, ch).length})</small>
         </button>`).join('')}
     </div>
@@ -709,12 +709,12 @@ function renderAssetGrid(assets, tab) {
   const filtered = filterAssets(assets, tab);
 
   if (filtered.length === 0) {
-    grid.innerHTML = `<div class="trust-loading">No assets match this filter.</div>`;
+    grid.innerHTML = `<div class="trust-loading">${t('trust.m4.no_assets')||'No assets match this filter.'}</div>`;
     return;
   }
 
   grid.innerHTML = filtered.map(asset => {
-    const name     = asset.name?.en ?? asset.asset_id ?? 'Unknown asset';
+    const name     = asset.name?.en ?? asset.asset_id ?? (t('trust.m4.unknown_asset')||'Unknown asset');
     const sector   = (asset.sector ?? '').replace(/_/g, ' ');
     const oblast   = asset.location?.oblast ?? '';
     const cost     = asset.cost_paths?.build_back_better?.central_usd_m
@@ -725,10 +725,10 @@ function renderAssetGrid(assets, tab) {
     // Tags
     const tags = [];
     const fs   = Object.values(asset.financing_structures ?? {});
-    if (fs.some(p => (p.grant_pct ?? 0) > 0))           tags.push('<span class="trust-asset-tag grant">Grant</span>');
-    if (fs.some(p => (p.concessional_pct ?? 0) > 0))     tags.push('<span class="trust-asset-tag concessional">Concessional</span>');
-    if (fs.some(p => (p.private_pct ?? 0) > 0))          tags.push('<span class="trust-asset-tag equity">Equity</span>');
-    if (deRisk.includes('MIGA_WAR') || deRisk.includes('EBRD_RSF')) tags.push('<span class="trust-asset-tag ap">AP</span>');
+    if (fs.some(p => (p.grant_pct ?? 0) > 0))           tags.push(`<span class="trust-asset-tag grant">${t('trust.m4.tag_grant')||'Grant'}</span>`);
+    if (fs.some(p => (p.concessional_pct ?? 0) > 0))     tags.push(`<span class="trust-asset-tag concessional">${t('trust.m4.tag_concessional')||'Concessional'}</span>`);
+    if (fs.some(p => (p.private_pct ?? 0) > 0))          tags.push(`<span class="trust-asset-tag equity">${t('trust.m4.tag_equity')||'Equity'}</span>`);
+    if (deRisk.includes('MIGA_WAR') || deRisk.includes('EBRD_RSF')) tags.push(`<span class="trust-asset-tag ap">${t('trust.m4.tag_ap')||'AP'}</span>`);
 
     return `
       <div class="trust-asset-card">
@@ -736,8 +736,8 @@ function renderAssetGrid(assets, tab) {
         <div class="trust-asset-meta">${tags.join('')}</div>
         <div class="trust-asset-cost">
           <strong>${oblast}</strong> · ${capitalise(sector.split('.').pop() ?? sector)}<br>
-          ${dl ? `Damage: <strong>${capitalise(dl)}</strong>` : ''}
-          ${cost ? ` · Cost: <strong>$${Math.round(cost).toLocaleString()}M</strong>` : ''}
+          ${dl ? `${t('trust.m4.damage_label')||'Damage'}: <strong>${capitalise(dl)}</strong>` : ''}
+          ${cost ? ` · ${t('trust.m4.cost_label')||'Cost'}: <strong>$${Math.round(cost).toLocaleString()}M</strong>` : ''}
         </div>
       </div>`;
   }).join('');
@@ -756,19 +756,19 @@ function renderLeverage() {
       <div>
         <div class="trust-slider-row" style="margin-bottom:1rem">
           <div>
-            <span class="trust-slider-label">Trust capital deployed ($M)</span>
-            <span class="trust-slider-source">Source: ISIF directed mandate 2014</span>
+            <span class="trust-slider-label">${t('trust.m5.capital_label')||'Trust capital deployed ($M)'}</span>
+            <span class="trust-slider-source">${t('trust.source_prefix')||'Source'}: ISIF directed mandate 2014</span>
           </div>
           <input type="range" class="trust-range" id="m5-capital"
             min="1" max="50" step="1" value="${state.leverage_capital_usd_bn}"
-            aria-label="Trust capital deployed">
+            aria-label="${t('trust.m5.capital_label')||'Trust capital deployed'}">
           <span class="trust-range-val" id="m5-capital-val">${fmtBn(state.leverage_capital_usd_bn)}</span>
         </div>
         <div class="trust-leverage-grid" id="m5-instruments"></div>
       </div>
       <div>
         <div class="trust-leverage-result" id="m5-result">
-          <div class="trust-leverage-result-label">Total capital mobilised</div>
+          <div class="trust-leverage-result-label">${t('trust.m5.total_mobilised')||'Total capital mobilised'}</div>
           <div class="trust-leverage-result-val" id="m5-total">—</div>
           <div class="trust-leverage-result-range" id="m5-range">—</div>
           <div style="margin-top:0.75rem;font-size:0.75rem;color:rgba(255,255,255,0.6)" id="m5-source"></div>
@@ -830,9 +830,9 @@ function updateLeverageResult(instruments) {
   const descEl   = document.getElementById('m5-desc');
 
   if (totalEl)  totalEl.textContent  = fmtBn(totalCentral);
-  if (rangeEl)  rangeEl.textContent  = `Range: ${fmtBn(totalLow)} – ${fmtBn(totalHigh)}`;
-  if (srcEl)    srcEl.textContent    = `Source: ${ins.source_label}`;
-  if (descEl)   descEl.innerHTML     = `<strong>${ins.mechanism}</strong><br><span class="trust-source">Applicable channels: ${ins.applicable_channels.join(', ')}</span>`;
+  if (rangeEl)  rangeEl.textContent  = `${t('trust.m5.range_label')||'Range'}: ${fmtBn(totalLow)} – ${fmtBn(totalHigh)}`;
+  if (srcEl)    srcEl.textContent    = `${t('trust.source_prefix')||'Source'}: ${ins.source_label}`;
+  if (descEl)   descEl.innerHTML     = `<strong>${ins.mechanism}</strong><br><span class="trust-source">${t('trust.m5.applicable_channels')||'Applicable channels'}: ${ins.applicable_channels.join(', ')}</span>`;
 }
 
 // ── Module 6: Strategic Equity ────────────────────────────────────────────────
@@ -846,10 +846,10 @@ function renderStrategicEquity() {
 
   container.innerHTML = `
     <div class="trust-infobox" style="margin-bottom:1rem">
-      <strong>Total indicative Trust equity portfolio: ${fmtBn(total)} across ${assets.length} strategic assets</strong>
-      Equity stakes preserve Ukrainian public interest while mobilising private co-investment under ISIF-style mandate.
-      All valuations are indicative modelling estimates — not offers or guarantees.
-      <span class="trust-source">Source: RDNA3 sector assessments, KSE Institute, EBRD Ukraine strategy 2023</span>
+      <strong>${(t('trust.m6.portfolio_title')||'Total indicative Trust equity portfolio: {total} across {n} strategic assets').replace('{total}', fmtBn(total)).replace('{n}', assets.length)}</strong>
+      ${t('trust.m6.equity_rationale')||'Equity stakes preserve Ukrainian public interest while mobilising private co-investment under ISIF-style mandate.'}
+      ${t('trust.m6.valuation_note')||'All valuations are indicative modelling estimates — not offers or guarantees.'}
+      <span class="trust-source">${t('trust.source_prefix')||'Source'}: RDNA3 sector assessments, KSE Institute, EBRD Ukraine strategy 2023</span>
     </div>
     <div class="trust-equity-grid">${assets.map(renderEquityCard).join('')}</div>`;
 }
@@ -860,20 +860,20 @@ function renderEquityCard(asset) {
     <div class="trust-equity-card">
       <div class="trust-equity-header">
         <div class="trust-equity-name">${asset.name}</div>
-        <div class="trust-equity-stake">${asset.indicative_equity_stake_pct}% stake</div>
+        <div class="trust-equity-stake">${asset.indicative_equity_stake_pct}% ${t('trust.m6.stake_suffix')||'stake'}</div>
       </div>
       <span class="trust-equity-sector">${capitalise(asset.sector)}</span>
       <p class="trust-equity-desc">${asset.description}</p>
       <div class="trust-equity-row">
-        <span class="trust-equity-row-label">Indicative valuation</span>
+        <span class="trust-equity-row-label">${t('trust.m6.indicative_val')||'Indicative valuation'}</span>
         <span class="trust-equity-row-val">${fmtBn(asset.indicative_valuation_usd_bn)}</span>
       </div>
       <div class="trust-equity-row">
-        <span class="trust-equity-row-label">Trust equity</span>
+        <span class="trust-equity-row-label">${t('trust.m6.trust_equity')||'Trust equity'}</span>
         <span class="trust-equity-row-val">${fmtBn(asset.trust_equity_usd_bn)}</span>
       </div>
       <div class="trust-equity-row">
-        <span class="trust-equity-row-label">Co-investors</span>
+        <span class="trust-equity-row-label">${t('trust.m6.co_investors')||'Co-investors'}</span>
         <span class="trust-equity-row-val" style="font-size:0.72rem">${asset.co_investor_target}</span>
       </div>
       <div class="trust-equity-status ${statusClass}">${asset.status}</div>
@@ -911,7 +911,7 @@ function renderPrecedentCard(p) {
   const currentStr= p.current_aum_usd_bn != null
     ? fmtBn(p.current_aum_usd_bn) : isTrust ? `${fmtBn(state.nav_usd_bn)} (initial)` : '-';
   const returnStr = p.real_return_pct != null
-    ? `${p.real_return_pct}% real` : 'N/A (grant vehicle)';
+    ? `${p.real_return_pct}% ${t('trust.m7.real_suffix')||'real'}` : (t('trust.m7.na_grant')||'N/A (grant vehicle)');
   const splitStr  = p.portfolio_split ?? '-';
   const drawStr   = p.drawdown_rule ?? '-';
 
@@ -920,27 +920,27 @@ function renderPrecedentCard(p) {
       <div class="trust-precedent-bar" style="background:${p.colour ?? '#ccc'}"></div>
       <div class="trust-precedent-head">
         <div class="trust-precedent-name">${p.name}</div>
-        <div class="trust-precedent-country">${p.country} · Est. ${p.established}</div>
+        <div class="trust-precedent-country">${p.country} · ${t('trust.m7.est_prefix')||'Est.'} ${p.established}</div>
       </div>
       <div class="trust-precedent-body">
         <div class="trust-precedent-stat">
-          <span class="trust-precedent-stat-label">Initial capitalisation</span>
+          <span class="trust-precedent-stat-label">${t('trust.m7.initial_cap')||'Initial capitalisation'}</span>
           <span class="trust-precedent-stat-val">${initStr}</span>
         </div>
         <div class="trust-precedent-stat">
-          <span class="trust-precedent-stat-label">Current AUM</span>
+          <span class="trust-precedent-stat-label">${t('trust.m7.current_aum')||'Current AUM'}</span>
           <span class="trust-precedent-stat-val">${currentStr}</span>
         </div>
         <div class="trust-precedent-stat">
-          <span class="trust-precedent-stat-label">Real return</span>
+          <span class="trust-precedent-stat-label">${t('trust.m7.real_return')||'Real return'}</span>
           <span class="trust-precedent-stat-val">${returnStr}</span>
         </div>
         <div class="trust-precedent-stat" style="flex-direction:column;gap:0.1rem;align-items:flex-start">
-          <span class="trust-precedent-stat-label">Portfolio</span>
+          <span class="trust-precedent-stat-label">${t('trust.m7.portfolio')||'Portfolio'}</span>
           <span class="trust-precedent-stat-val" style="font-size:0.72rem;font-weight:500;color:#1a1d23">${splitStr}</span>
         </div>
         <div class="trust-precedent-stat" style="flex-direction:column;gap:0.1rem;align-items:flex-start">
-          <span class="trust-precedent-stat-label">Drawdown rule</span>
+          <span class="trust-precedent-stat-label">${t('trust.m7.drawdown_rule')||'Drawdown rule'}</span>
           <span class="trust-precedent-stat-val" style="font-size:0.72rem;font-weight:500;color:#1a1d23">${drawStr}</span>
         </div>
       </div>
@@ -971,27 +971,27 @@ function renderNavBand() {
   band.innerHTML = `
     <div class="trust-nav-item">
       <span class="trust-nav-val" id="nav-val">${fmtBn(state.nav_usd_bn)}</span>
-      <span class="trust-nav-lbl">Initial NAV · Scenario ${state.scenario}</span>
+      <span class="trust-nav-lbl">${t('trust.nav.initial_nav')||'Initial NAV'} · ${t('trust.nav.scenario_prefix')||'Scenario'} ${state.scenario}</span>
     </div>
     <div class="trust-nav-separator"></div>
     <div class="trust-nav-item">
-      <span class="trust-nav-val">${fmtBn(annualAP)}/yr</span>
-      <span class="trust-nav-lbl">Annual AP budget</span>
+      <span class="trust-nav-val">${fmtBn(annualAP)}/${t('trust.nav.yr_suffix')||'yr'}</span>
+      <span class="trust-nav-lbl">${t('trust.nav.annual_ap')||'Annual AP budget'}</span>
     </div>
     <div class="trust-nav-separator"></div>
     <div class="trust-nav-item">
       <span class="trust-nav-val">${fmtBn(suppDebt)}</span>
-      <span class="trust-nav-lbl">Supportable concessional debt</span>
+      <span class="trust-nav-lbl">${t('trust.nav.supportable_debt')||'Supportable concessional debt'}</span>
     </div>
     <div class="trust-nav-separator"></div>
     <div class="trust-nav-item">
       <span class="trust-nav-val">${fmtBn(totalDeployed)}</span>
-      <span class="trust-nav-lbl">Total deployed · ${state.horizon_years}yr horizon</span>
+      <span class="trust-nav-lbl">${t('trust.nav.total_deployed')||'Total deployed'} · ${state.horizon_years}${t('trust.nav.yr_horizon_suffix')||'yr horizon'}</span>
     </div>
     <div class="trust-nav-separator"></div>
     <div class="trust-nav-item">
       <span class="trust-nav-val">${fmtBn(last.nav)}</span>
-      <span class="trust-nav-lbl">NAV at Year ${state.horizon_years}</span>
+      <span class="trust-nav-lbl">${(t('trust.nav.nav_at_year')||'NAV at Year {n}').replace('{n}', state.horizon_years)}</span>
     </div>`;
 }
 
@@ -1016,9 +1016,9 @@ function wireModuleToggles() {
 function renderHeroStats() {
   const annualAP = computeAnnualAP(state.nav_usd_bn, state.allocation.availability_payments, state.deployment_rate_pct);
   const el = document.getElementById('hero-ap-val');
-  if (el) el.textContent = `${fmtBn(annualAP)}/yr`;
+  if (el) el.textContent = `${fmtBn(annualAP)}/${t('trust.nav.yr_suffix')||'yr'}`;
   const note = document.getElementById('hero-ap-note');
-  if (note) note.textContent = `Scenario ${state.scenario} · ${state.real_return_pct}% real return · ${state.allocation.availability_payments}% AP channel`;
+  if (note) note.textContent = `${t('trust.nav.scenario_prefix')||'Scenario'} ${state.scenario} · ${state.real_return_pct}% ${t('trust.hero.real_return_note')||'real return'} · ${state.allocation.availability_payments}% ${t('trust.hero.ap_channel_note')||'AP channel'}`;
 
   const navEl = document.getElementById('hero-nav-val');
   if (navEl) navEl.textContent = fmtBn(state.nav_usd_bn);
