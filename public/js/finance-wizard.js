@@ -343,7 +343,7 @@ function validate() {
   if (W.step === 3) {
     const sum = W.tranches.reduce((s, t) => s + (+t.pct || 0), 0);
     if (Math.abs(sum - 100) > 0.5) {
-      showError(`${t('fw.err.tranche_total')||'Tranche allocations must total 100%. Currently'}: ${sum.toFixed(1)}%.`);
+      showError(`${t('fw.err.tranche_total_prefix')||'Tranche allocations must total 100%. Currently'}: ${sum.toFixed(1)}%.`);
       return false;
     }
   }
