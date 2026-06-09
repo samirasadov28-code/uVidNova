@@ -710,7 +710,7 @@ function showCityMarkers(oblastNameEn) {
   const lang = getLang();
 
   cities.forEach(city => {
-    const label = city[`name_${lang}`] ?? (lang === 'uk' ? city.name_uk : city.name_en);
+    const label = city[`name_${lang}`] ?? city.name_en;
     const radius = city.capital ? 7 : city.pop >= 200000 ? 6 : city.pop >= 50000 ? 5 : 4;
     const color  = city.capital ? '#c9a227' : '#4a90d9';
 
