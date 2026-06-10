@@ -218,7 +218,10 @@ function renderCapitalMarkers() {
     });
 
     const lang = getLang();
-    const capitalName = (lang === 'uk' && o.capital_uk) ? o.capital_uk : (o.capital_en ?? o.capital_uk ?? '');
+    const cityEntry = citiesData?.cities?.find(c => c.name_en === o.capital_en);
+    const capitalName = (cityEntry?.[`name_${lang}`])
+      ?? (lang === 'uk' ? o.capital_uk : null)
+      ?? o.capital_en ?? o.capital_uk ?? '';
     const marker = L.marker([o.capital_lat, o.capital_lon], { icon, interactive: false })
       .bindTooltip(`<span class="${labelClass}">${capitalName}</span>`, {
         permanent: true,
@@ -1419,6 +1422,7 @@ async function init() {
     allAssets = assets;
     initFilters();
     setMapView('ukraine');
+    renderCapitalMarkers(); // re-render with citiesData now loaded for translated labels
 
     if (assets.length > 0) {
       const latlngs = assets
