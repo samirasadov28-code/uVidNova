@@ -4,7 +4,7 @@
  * Strategy: cache-first for static assets; network-first for data files.
  */
 
-const CACHE_VERSION = 'uvidnova-v96';
+const CACHE_VERSION = 'uvidnova-v97';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const DATA_CACHE    = `${CACHE_VERSION}-data`;
 
@@ -129,18 +129,31 @@ self.addEventListener('fetch', event => {
   // Only intercept same-origin requests beyond this point
   if (url.origin !== self.location.origin) return;
 
-  // Data files: stale-while-revalidate (serve cache immediately, update in background)
+  // Data files: network-first for frequently-updated files (cities.json, oblasts),
+  // cache-first for static reference data. Falls back to cache when offline.
   if (url.pathname.startsWith('/data/')) {
-    event.respondWith(
-      caches.open(DATA_CACHE).then(async cache => {
-        const cached = await cache.match(request);
-        const networkFetch = fetch(request).then(response => {
-          if (response.ok) cache.put(request, response.clone());
-          return response;
-        }).catch(() => null);
-        return cached || networkFetch;
-      })
-    );
+    const isFrequentlyUpdated = /\/(cities|oblasts_info|development_opportunities)\.json$/.test(url.pathname);
+    if (isFrequentlyUpdated) {
+      event.respondWith(
+        fetch(request)
+          .then(response => {
+            if (response.ok) caches.open(DATA_CACHE).then(c => c.put(request, response.clone()));
+            return response;
+          })
+          .catch(() => caches.match(request))
+      );
+    } else {
+      event.respondWith(
+        caches.open(DATA_CACHE).then(async cache => {
+          const cached = await cache.match(request);
+          const networkFetch = fetch(request).then(response => {
+            if (response.ok) cache.put(request, response.clone());
+            return response;
+          }).catch(() => null);
+          return cached || networkFetch;
+        })
+      );
+    }
     return;
   }
 
