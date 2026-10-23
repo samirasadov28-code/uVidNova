@@ -19,18 +19,11 @@
     "incident_type": "ground_combat",
     "destruction_level": "severe",
     "re_damage_count": 2,
-    "verified_by": [
-      "KSE",
-      "UN_OCHA"
-    ],
+    "verified_by": [],
     "evidence_sources": [
       {
         "title": "KSE Ukraine damage assessment — Mykolaiv water crisis",
         "source_code": "KSE"
-      },
-      {
-        "title": "UN OCHA Ukraine Situation Report — Mykolaiv water access",
-        "source_code": "OCHA"
       }
     ]
   },
@@ -60,19 +53,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 194,
-      "central_usd_m": 527,
-      "high_usd_m": 860
+      "low_usd_m": 209.2,
+      "central_usd_m": 568.2,
+      "high_usd_m": 927.2
     },
     "code_compliant": {
-      "low_usd_m": 223,
-      "central_usd_m": 649,
-      "high_usd_m": 1075
+      "low_usd_m": 240.4,
+      "central_usd_m": 699.7,
+      "high_usd_m": 1159.1
     },
     "build_back_better": {
-      "low_usd_m": 253,
-      "central_usd_m": 814,
-      "high_usd_m": 1376
+      "low_usd_m": 272.8,
+      "central_usd_m": 877.6,
+      "high_usd_m": 1483.6
     }
   },
   "financing_structures": {
@@ -175,6 +168,7 @@
     "ground_combat",
     "infrastructure"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

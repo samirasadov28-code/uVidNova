@@ -20,24 +20,24 @@
     "destruction_level": "destroyed",
     "re_damage_count": 0,
     "verified_by": [
-      "UN_OCHA",
       "KSE",
-      "BELLINGCAT"
+      "PRESS",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update #50 — Kakhovka Dam Breach",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-50-kakhovka-dam-breach-7-june-2023",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Damage Assessment — Kakhovka HPP",
-        "url": "https://kse.ua/about-the-school/news/kse-institute-damage-assessment",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Kakhovka Dam Destruction Investigation",
-        "url": "https://www.bellingcat.com/news/2023/06/06/kakhovka-dam-destroyed",
+        "title": "Reuters: Evidence suggests Russia blew Kakhovka dam (June 2023)",
+        "url": "https://www.reuters.com/world/europe/evidence-suggests-russia-blew-kakhovka-dam-ukraine-new-york-times-2023-06-18/",
         "source_code": "BELLINGCAT"
       }
     ]
@@ -79,19 +79,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 525,
-      "central_usd_m": 1032,
-      "high_usd_m": 1538
+      "low_usd_m": 734.6,
+      "central_usd_m": 1444.0,
+      "high_usd_m": 2151.9
     },
     "code_compliant": {
-      "low_usd_m": 604,
-      "central_usd_m": 1263,
-      "high_usd_m": 1922
+      "low_usd_m": 845.1,
+      "central_usd_m": 1767.2,
+      "high_usd_m": 2689.2
     },
     "build_back_better": {
-      "low_usd_m": 683,
-      "central_usd_m": 1572,
-      "high_usd_m": 2461,
+      "low_usd_m": 955.6,
+      "central_usd_m": 2199.5,
+      "high_usd_m": 3443.4,
       "tech_overlays": [
         "run_of_river_redesign",
         "fish_passage",
@@ -213,6 +213,7 @@
     "occupied",
     "catastrophic"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

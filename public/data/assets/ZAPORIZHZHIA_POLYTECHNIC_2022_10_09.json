@@ -21,18 +21,18 @@
     "re_damage_count": 1,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update — October 2022 Zaporizhzhia Attacks",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-october-2022-zaporizhzhia",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Zaporizhzhia Oblast Education Infrastructure Damage",
-        "url": "https://kse.ua/wp-content/uploads/2022/11/KSE_Zaporizhzhia_Education_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 28,
-      "central_usd_m": 48,
-      "high_usd_m": 69
+      "low_usd_m": 30.2,
+      "central_usd_m": 51.8,
+      "high_usd_m": 74.4
     },
     "code_compliant": {
-      "low_usd_m": 32,
-      "central_usd_m": 59,
-      "high_usd_m": 86
+      "low_usd_m": 34.5,
+      "central_usd_m": 63.6,
+      "high_usd_m": 92.7
     },
     "build_back_better": {
-      "low_usd_m": 36,
-      "central_usd_m": 73,
-      "high_usd_m": 110,
+      "low_usd_m": 38.8,
+      "central_usd_m": 78.7,
+      "high_usd_m": 118.6,
       "tech_overlays": [
         "passive_house_standard",
         "microgrid",
@@ -183,6 +183,7 @@
     "missile_strike",
     "moderate"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

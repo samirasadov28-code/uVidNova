@@ -21,18 +21,17 @@
     "re_damage_count": 2,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "BELLINGCAT"
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Russia Will Pay — Donetsk residential damage database",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine Flash Update — Avdiivka October 2023",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-oct-2023",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -62,19 +61,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 184,
-      "central_usd_m": 339,
-      "high_usd_m": 493
+      "low_usd_m": 187.1,
+      "central_usd_m": 344.7,
+      "high_usd_m": 501.4
     },
     "code_compliant": {
-      "low_usd_m": 211,
-      "central_usd_m": 414,
-      "high_usd_m": 617
+      "low_usd_m": 214.6,
+      "central_usd_m": 421.0,
+      "high_usd_m": 627.5
     },
     "build_back_better": {
-      "low_usd_m": 239,
-      "central_usd_m": 514,
-      "high_usd_m": 790,
+      "low_usd_m": 243.1,
+      "central_usd_m": 522.7,
+      "high_usd_m": 803.4,
       "tech_overlays": [
         "passive_house_standard",
         "modular_construction",
@@ -183,6 +182,7 @@
     "re_damaged",
     "apartment_blocks"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -21,18 +21,17 @@
     "re_damage_count": 1,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "BELLINGCAT"
+      "PRESS"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Russia Will Pay — Donetsk residential database",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Lyman damage analysis 2022",
-        "url": "https://www.bellingcat.com/news/2022/10/lyman-ukraine-damage",
+        "title": "Associated Press: Destruction in Lyman, Donetsk Oblast (2022)",
+        "url": "https://apnews.com/article/russia-ukraine-business-war-crimes-donetsk-59c7e2747b3bde5fdf78ca94aca8bf54",
         "source_code": "BELLINGCAT"
       }
     ]
@@ -62,19 +61,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 136,
-      "central_usd_m": 291,
-      "high_usd_m": 446
+      "low_usd_m": 138.3,
+      "central_usd_m": 295.9,
+      "high_usd_m": 453.6
     },
     "code_compliant": {
-      "low_usd_m": 156,
-      "central_usd_m": 357,
-      "high_usd_m": 558
+      "low_usd_m": 158.6,
+      "central_usd_m": 363.1,
+      "high_usd_m": 567.5
     },
     "build_back_better": {
-      "low_usd_m": 177,
-      "central_usd_m": 445,
-      "high_usd_m": 714,
+      "low_usd_m": 180.0,
+      "central_usd_m": 452.5,
+      "high_usd_m": 726.1,
       "tech_overlays": [
         "passive_house_standard",
         "modular_construction",
@@ -183,6 +182,7 @@
     "re_damaged",
     "apartment_blocks"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

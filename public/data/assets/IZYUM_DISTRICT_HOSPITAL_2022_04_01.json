@@ -20,19 +20,19 @@
     "destruction_level": "severe",
     "re_damage_count": 0,
     "verified_by": [
+      "KSE",
       "UA_GOV",
-      "UN_OCHA",
-      "KSE"
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine: Izyum Post-Liberation Assessment",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-izyum-assessment-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Kharkiv Oblast Damage Assessment Post-Liberation",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-2022",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 17,
-      "central_usd_m": 37,
-      "high_usd_m": 56
+      "low_usd_m": 18.3,
+      "central_usd_m": 39.9,
+      "high_usd_m": 60.4
     },
     "code_compliant": {
-      "low_usd_m": 19,
-      "central_usd_m": 45,
-      "high_usd_m": 70
+      "low_usd_m": 20.5,
+      "central_usd_m": 48.5,
+      "high_usd_m": 75.5
     },
     "build_back_better": {
-      "low_usd_m": 22,
-      "central_usd_m": 56,
-      "high_usd_m": 90
+      "low_usd_m": 23.7,
+      "central_usd_m": 60.4,
+      "high_usd_m": 97.0
     }
   },
   "financing_structures": {
@@ -179,6 +179,7 @@
     "shelling",
     "liberated"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -21,18 +21,18 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Irpin Residential Damage Assessment",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-irpin",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine: Irpin Post-Liberation Situation Report",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-irpin-assessment-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 138,
-      "central_usd_m": 284,
-      "high_usd_m": 431
+      "low_usd_m": 140.3,
+      "central_usd_m": 288.8,
+      "high_usd_m": 438.3
     },
     "code_compliant": {
-      "low_usd_m": 158,
-      "central_usd_m": 349,
-      "high_usd_m": 539
+      "low_usd_m": 160.7,
+      "central_usd_m": 354.9,
+      "high_usd_m": 548.1
     },
     "build_back_better": {
-      "low_usd_m": 179,
-      "central_usd_m": 434,
-      "high_usd_m": 690
+      "low_usd_m": 182.0,
+      "central_usd_m": 441.4,
+      "high_usd_m": 701.7
     }
   },
   "financing_structures": {
@@ -176,6 +176,7 @@
     "ground_combat",
     "liberated"
   ],
-  "last_reviewed": "2026-05-17",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

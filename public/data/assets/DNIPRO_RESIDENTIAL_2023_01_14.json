@@ -20,25 +20,25 @@
     "destruction_level": "severe",
     "re_damage_count": 0,
     "verified_by": [
-      "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "PRESS",
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UA Ministry of Communities and Territories damage report — Dnipro January 2023",
-        "url": "https://www.minregion.gov.ua/napryamki-diyalnosti/dnipro-damage-jan-2023",
+        "title": "Associated Press: Dnipro apartment building strike death toll (Jan 2023)",
+        "url": "https://apnews.com/article/russia-ukraine-war-apartment-strike-death-toll-1b518f84fc4e70708d56e1a1ea708929",
         "source_code": "eRECOVERY"
       },
       {
-        "title": "UN OCHA Ukraine Flash Update — Dnipro residential strike January 2023",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-jan-2023",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "under_reconstruction",
     "rebuildability": "rebuildable",
     "de_risking": [
       "MIGA_WAR",
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 23,
-      "central_usd_m": 50,
-      "high_usd_m": 77
+      "low_usd_m": 23.4,
+      "central_usd_m": 50.8,
+      "high_usd_m": 78.3
     },
     "code_compliant": {
-      "low_usd_m": 27,
-      "central_usd_m": 61,
-      "high_usd_m": 96
+      "low_usd_m": 27.5,
+      "central_usd_m": 62.0,
+      "high_usd_m": 97.6
     },
     "build_back_better": {
-      "low_usd_m": 30,
-      "central_usd_m": 76,
-      "high_usd_m": 123,
+      "low_usd_m": 30.5,
+      "central_usd_m": 77.3,
+      "high_usd_m": 125.1,
       "tech_overlays": [
         "passive_house_standard",
         "energy_efficiency_envelope"
@@ -181,6 +181,7 @@
     "apartment_blocks",
     "single_building"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

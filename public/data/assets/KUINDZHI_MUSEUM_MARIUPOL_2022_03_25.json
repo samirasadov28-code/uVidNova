@@ -20,20 +20,13 @@
     "destruction_level": "destroyed",
     "re_damage_count": 0,
     "verified_by": [
-      "UN_OCHA",
-      "BELLINGCAT",
-      "KSE"
+      "UNESCO"
     ],
     "evidence_sources": [
       {
-        "title": "UNESCO: Kuindzhi Museum Mariupol Damage Report",
-        "url": "https://www.unesco.org/en/articles/kuindzhi-museum-mariupol",
+        "title": "UNESCO: Damaged cultural sites in Ukraine (verified list, incl. Kuindzhi Museum Mariupol)",
+        "url": "https://www.unesco.org/en/ukraine-war/damaged-cultural-sites",
         "source_code": "OCHA"
-      },
-      {
-        "title": "Bellingcat: Mariupol Cultural Heritage Damage Analysis",
-        "url": "https://www.bellingcat.com/news/2022/04/20/mariupol-cultural-damage",
-        "source_code": "BELLINGCAT"
       }
     ]
   },
@@ -61,19 +54,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 26,
-      "central_usd_m": 75,
-      "high_usd_m": 124
+      "low_usd_m": 28.0,
+      "central_usd_m": 80.9,
+      "high_usd_m": 133.7
     },
     "code_compliant": {
-      "low_usd_m": 29,
-      "central_usd_m": 93,
-      "high_usd_m": 156
+      "low_usd_m": 31.3,
+      "central_usd_m": 100.3,
+      "high_usd_m": 168.2
     },
     "build_back_better": {
-      "low_usd_m": 33,
-      "central_usd_m": 116,
-      "high_usd_m": 199
+      "low_usd_m": 35.6,
+      "central_usd_m": 125.1,
+      "high_usd_m": 214.6
     }
   },
   "financing_structures": {
@@ -179,6 +172,7 @@
     "occupied",
     "art_collection"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -20,24 +20,24 @@
     "destruction_level": "severe",
     "re_damage_count": 2,
     "verified_by": [
-      "UN_OCHA",
-      "BELLINGCAT",
-      "KSE"
+      "KSE",
+      "PRESS",
+      "UNESCO"
     ],
     "evidence_sources": [
       {
-        "title": "UNESCO: Statement on Damage to Sviatohirsk Lavra",
-        "url": "https://www.unesco.org/en/articles/sviatohirsk-lavra-damage",
+        "title": "UNESCO: Damaged cultural sites in Ukraine (verified list, incl. Sviatohirsk Lavra)",
+        "url": "https://www.unesco.org/en/ukraine-war/damaged-cultural-sites",
         "source_code": "OCHA"
       },
       {
-        "title": "Bellingcat: Sviatohirsk Lavra Satellite Damage Analysis",
-        "url": "https://www.bellingcat.com/news/2022/06/01/sviatohirsk-lavra-damage",
+        "title": "Reuters: Russian artillery hits Sviatohirsk monastery in east Ukraine (4 June 2022)",
+        "url": "https://www.reuters.com/world/europe/russian-artillery-hits-monastery-ukraines-east-says-zelenskiy-2022-06-04/",
         "source_code": "BELLINGCAT"
       },
       {
-        "title": "KSE Institute: Heritage Damage — Donetsk Oblast",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-heritage",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -66,19 +66,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 181,
-      "central_usd_m": 884,
-      "high_usd_m": 1587
+      "low_usd_m": 195.2,
+      "central_usd_m": 953.1,
+      "high_usd_m": 1711.1
     },
     "code_compliant": {
-      "low_usd_m": 208,
-      "central_usd_m": 1096,
-      "high_usd_m": 1984
+      "low_usd_m": 224.3,
+      "central_usd_m": 1181.7,
+      "high_usd_m": 2139.1
     },
     "build_back_better": {
-      "low_usd_m": 235,
-      "central_usd_m": 1388,
-      "high_usd_m": 2540
+      "low_usd_m": 253.4,
+      "central_usd_m": 1496.5,
+      "high_usd_m": 2738.6
     }
   },
   "financing_structures": {
@@ -184,6 +184,7 @@
     "re_damaged",
     "unesco_candidate"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

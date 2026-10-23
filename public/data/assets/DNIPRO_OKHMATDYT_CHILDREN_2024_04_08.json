@@ -20,18 +20,19 @@
     "destruction_level": "moderate",
     "re_damage_count": 1,
     "verified_by": [
+      "PRESS",
       "UA_GOV",
       "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "Ministry of Health Ukraine: Dnipro Oblast Medical Facilities Damage",
-        "url": "https://moz.gov.ua/article/news/dnipro-oblast-medical-facilities",
+        "title": "CNN: Dnipro medical facility attack (May 2023)",
+        "url": "https://edition.cnn.com/2023/05/26/europe/dnipro-medical-facility-attack-russia-ukraine-intl",
         "source_code": "eRECOVERY"
       },
       {
-        "title": "UN OCHA Ukraine Situation Report — April 2024",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-april-2024",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -62,19 +63,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 25,
-      "central_usd_m": 52,
-      "high_usd_m": 79
+      "low_usd_m": 27.0,
+      "central_usd_m": 56.1,
+      "high_usd_m": 85.2
     },
     "code_compliant": {
-      "low_usd_m": 29,
-      "central_usd_m": 64,
-      "high_usd_m": 99
+      "low_usd_m": 31.3,
+      "central_usd_m": 69.0,
+      "high_usd_m": 106.7
     },
     "build_back_better": {
-      "low_usd_m": 32,
-      "central_usd_m": 80,
-      "high_usd_m": 127
+      "low_usd_m": 34.5,
+      "central_usd_m": 86.3,
+      "high_usd_m": 136.9
     }
   },
   "financing_structures": {
@@ -178,6 +179,7 @@
     "missile_strike",
     "re_damaged"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -20,25 +20,25 @@
     "destruction_level": "severe",
     "re_damage_count": 0,
     "verified_by": [
-      "UN_OCHA",
+      "PRESS",
       "UA_GOV",
-      "KSE"
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Situation Report — 14 July 2022 Mass Casualty Attack",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-14-july-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "Ministry of Health Ukraine: Vinnytsia attack medical facilities damage",
-        "url": "https://moz.gov.ua/article/news/vinnytsia-attack-july-2022",
+        "title": "BBC: Vinnytsia missile strike (14 July 2022)",
+        "url": "https://www.bbc.com/news/world-europe-62163071",
         "source_code": "eRECOVERY"
       }
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "complete",
     "rebuildability": "rebuildable",
     "de_risking": [
       "MIGA_WAR",
@@ -63,19 +63,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 94,
-      "central_usd_m": 164,
-      "high_usd_m": 234
+      "low_usd_m": 101.3,
+      "central_usd_m": 176.8,
+      "high_usd_m": 252.3
     },
     "code_compliant": {
-      "low_usd_m": 109,
-      "central_usd_m": 201,
-      "high_usd_m": 293
+      "low_usd_m": 117.5,
+      "central_usd_m": 216.7,
+      "high_usd_m": 315.9
     },
     "build_back_better": {
-      "low_usd_m": 123,
-      "central_usd_m": 249,
-      "high_usd_m": 374
+      "low_usd_m": 132.6,
+      "central_usd_m": 268.5,
+      "high_usd_m": 403.2
     }
   },
   "financing_structures": {
@@ -179,6 +179,7 @@
     "missile_strike",
     "high_priority"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

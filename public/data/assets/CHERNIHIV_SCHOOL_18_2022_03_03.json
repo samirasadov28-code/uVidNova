@@ -20,25 +20,25 @@
     "destruction_level": "severe",
     "re_damage_count": 0,
     "verified_by": [
-      "UN_OCHA",
+      "KSE",
       "UA_GOV",
-      "KSE"
+      "UNICEF"
     ],
     "evidence_sources": [
       {
-        "title": "UNICEF Ukraine: School Damage Report — Chernihiv Oblast",
-        "url": "https://www.unicef.org/ukraine/reports/chernihiv-school-damage-2022",
+        "title": "UNICEF Ukraine: Children return to schools in ruins",
+        "url": "https://www.unicef.org/ukraine/en/stories/children-return-to-schools-in-ruins",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Education Infrastructure Damage — Chernihiv Oblast",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-education-2022",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "complete",
     "rebuildability": "rebuildable",
     "de_risking": [
       "MIGA_WAR",
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 4,
-      "central_usd_m": 9,
-      "high_usd_m": 14
+      "low_usd_m": 4.3,
+      "central_usd_m": 9.7,
+      "high_usd_m": 15.1
     },
     "code_compliant": {
-      "low_usd_m": 5,
-      "central_usd_m": 11,
-      "high_usd_m": 17
+      "low_usd_m": 5.4,
+      "central_usd_m": 11.9,
+      "high_usd_m": 18.3
     },
     "build_back_better": {
-      "low_usd_m": 5,
-      "central_usd_m": 14,
-      "high_usd_m": 22
+      "low_usd_m": 5.4,
+      "central_usd_m": 15.1,
+      "high_usd_m": 23.7
     }
   },
   "financing_structures": {
@@ -177,6 +177,7 @@
     "chernihiv",
     "shelling"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

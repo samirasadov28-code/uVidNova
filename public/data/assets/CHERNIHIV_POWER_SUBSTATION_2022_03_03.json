@@ -20,8 +20,7 @@
     "destruction_level": "moderate",
     "re_damage_count": 0,
     "verified_by": [
-      "KSE",
-      "UN_OCHA",
+      "IEA",
       "UA_GOV"
     ],
     "evidence_sources": [
@@ -31,8 +30,8 @@
         "source_code": "RDNA3"
       },
       {
-        "title": "Ukrenergo damage report — Chernihiv grid infrastructure 2022",
-        "url": "https://ukrenergo.energy.gov.ua/en/news/chernihiv-damage-2022",
+        "title": "IEA: Ukraine energy system under attack - Energy Security assessment",
+        "url": "https://www.iea.org/reports/ukraines-energy-security-and-the-coming-winter/ukraines-energy-system-under-attack",
         "source_code": "eRECOVERY"
       }
     ]
@@ -57,19 +56,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 6,
-      "central_usd_m": 18,
-      "high_usd_m": 30
+      "low_usd_m": 8.4,
+      "central_usd_m": 25.2,
+      "high_usd_m": 42.0
     },
     "code_compliant": {
-      "low_usd_m": 7,
-      "central_usd_m": 22,
-      "high_usd_m": 38
+      "low_usd_m": 9.8,
+      "central_usd_m": 30.8,
+      "high_usd_m": 53.2
     },
     "build_back_better": {
-      "low_usd_m": 8,
-      "central_usd_m": 28,
-      "high_usd_m": 49,
+      "low_usd_m": 11.2,
+      "central_usd_m": 39.2,
+      "high_usd_m": 68.6,
       "tech_overlays": [
         "smart_grid_automation",
         "digital_relay_protection"
@@ -185,6 +184,7 @@
     "grid_critical",
     "ukrenergo"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

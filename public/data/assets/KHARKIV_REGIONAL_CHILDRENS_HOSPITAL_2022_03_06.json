@@ -20,25 +20,25 @@
     "destruction_level": "moderate",
     "re_damage_count": 3,
     "verified_by": [
-      "UN_OCHA",
+      "KSE",
       "UA_GOV",
-      "KSE"
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine: Attacks on Healthcare Facilities 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-attacks-healthcare-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Kharkiv Healthcare Infrastructure Damage",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-health",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "funded",
     "rebuildability": "rebuildable",
     "de_risking": [
       "MIGA_WAR",
@@ -63,19 +63,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 33,
-      "central_usd_m": 71,
-      "high_usd_m": 109
+      "low_usd_m": 35.6,
+      "central_usd_m": 76.6,
+      "high_usd_m": 117.5
     },
     "code_compliant": {
-      "low_usd_m": 38,
-      "central_usd_m": 88,
-      "high_usd_m": 137
+      "low_usd_m": 41.0,
+      "central_usd_m": 94.9,
+      "high_usd_m": 147.7
     },
     "build_back_better": {
-      "low_usd_m": 43,
-      "central_usd_m": 109,
-      "high_usd_m": 175
+      "low_usd_m": 46.4,
+      "central_usd_m": 117.5,
+      "high_usd_m": 188.7
     }
   },
   "financing_structures": {
@@ -179,6 +179,7 @@
     "shelling",
     "re_damaged"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

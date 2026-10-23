@@ -25,13 +25,13 @@
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update — Bakhmut-Chasiv Yar Humanitarian Situation July 2023",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-chasiv-yar-july-2023",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Donetsk Oblast Healthcare Damage Tracker — 2023",
-        "url": "https://kse.ua/wp-content/uploads/2023/08/KSE_Donetsk_Healthcare_2023.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -61,19 +61,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 14,
-      "central_usd_m": 25,
-      "high_usd_m": 36
+      "low_usd_m": 15.1,
+      "central_usd_m": 27.0,
+      "high_usd_m": 38.8
     },
     "code_compliant": {
-      "low_usd_m": 16,
-      "central_usd_m": 31,
-      "high_usd_m": 45
+      "low_usd_m": 17.3,
+      "central_usd_m": 33.4,
+      "high_usd_m": 48.5
     },
     "build_back_better": {
-      "low_usd_m": 18,
-      "central_usd_m": 38,
-      "high_usd_m": 58,
+      "low_usd_m": 19.4,
+      "central_usd_m": 41.0,
+      "high_usd_m": 62.5,
       "tech_overlays": [
         "microgrid",
         "modular_clinical_units",
@@ -184,6 +184,7 @@
     "destroyed",
     "frontline_adjacent"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

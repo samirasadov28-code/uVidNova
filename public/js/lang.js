@@ -11,7 +11,7 @@ const TRANSLATIONS = {
     'name.vidnova.label': 'відновa — restoration · Nova, new star',
     // Landing
     'landing.sub':        'Ukraine Reconstruction Finance Atlas',
-    'landing.desc':       'An asset-level, project-finance-grade register of wartime damage and reconstruction opportunities. Every figure traceable to RDNA3, KSE Institute, and verified open-source intelligence.',
+    'landing.desc':       'An asset-level, project-finance-grade register of wartime damage and reconstruction opportunities. Every figure traceable to RDNA4, KSE Institute, and verified open-source intelligence.',
     'landing.feat1':      'Deterministic cost estimates — three reconstruction paths per asset',
     'landing.feat2':      'Defensible financing structures — grant, concessional, equity, private',
     'landing.feat3':      'Re-damage tracking and wartime risk classification',

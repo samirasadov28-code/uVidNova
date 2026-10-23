@@ -21,18 +21,18 @@
     "re_damage_count": 3,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update — Zaporizhzhia Water Infrastructure October 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-zaporizhzhia-water-october-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Zaporizhzhia Oblast Critical Infrastructure Damage",
-        "url": "https://kse.ua/wp-content/uploads/2022/11/KSE_Zaporizhzhia_Water_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -69,19 +69,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 58,
-      "central_usd_m": 96,
-      "high_usd_m": 134
+      "low_usd_m": 62.5,
+      "central_usd_m": 103.5,
+      "high_usd_m": 144.5
     },
     "code_compliant": {
-      "low_usd_m": 67,
-      "central_usd_m": 117,
-      "high_usd_m": 167
+      "low_usd_m": 72.2,
+      "central_usd_m": 126.1,
+      "high_usd_m": 180.1
     },
     "build_back_better": {
-      "low_usd_m": 76,
-      "central_usd_m": 144,
-      "high_usd_m": 212,
+      "low_usd_m": 81.9,
+      "central_usd_m": 155.3,
+      "high_usd_m": 228.6,
       "tech_overlays": [
         "smart_water_metering",
         "energy_efficient_pumping",
@@ -193,6 +193,7 @@
     "moderate",
     "re_damaged"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

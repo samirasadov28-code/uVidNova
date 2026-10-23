@@ -21,23 +21,23 @@
     "re_damage_count": 4,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "BELLINGCAT"
+      "UNESCO",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Situation Report — Kharkiv Heritage Damage March 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kharkiv-march-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Cultural Heritage Infrastructure Damage — Kharkiv Oblast",
-        "url": "https://kse.ua/wp-content/uploads/2022/08/KSE_Kharkiv_Heritage_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Kharkiv City Centre Strikes — Heritage Site Damage Verification",
-        "url": "https://www.bellingcat.com/news/2022/03/kharkiv-centre-heritage-damage",
+        "title": "UNESCO: Damaged cultural sites in Ukraine (verified list)",
+        "url": "https://www.unesco.org/en/ukraine-war/damaged-cultural-sites",
         "source_code": "BELLINGCAT"
       }
     ]
@@ -68,19 +68,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 184,
-      "central_usd_m": 346,
-      "high_usd_m": 508
+      "low_usd_m": 198.4,
+      "central_usd_m": 373.1,
+      "high_usd_m": 547.7
     },
     "code_compliant": {
-      "low_usd_m": 212,
-      "central_usd_m": 415,
-      "high_usd_m": 635
+      "low_usd_m": 228.6,
+      "central_usd_m": 447.4,
+      "high_usd_m": 684.7
     },
     "build_back_better": {
-      "low_usd_m": 276,
-      "central_usd_m": 554,
-      "high_usd_m": 914,
+      "low_usd_m": 297.6,
+      "central_usd_m": 597.3,
+      "high_usd_m": 985.5,
       "tech_overlays": [
         "heritage_conservation_premium",
         "digital_twin_documentation",
@@ -192,6 +192,7 @@
     "heritage_cluster",
     "re_damaged"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

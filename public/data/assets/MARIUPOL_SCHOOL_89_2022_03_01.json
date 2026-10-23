@@ -25,13 +25,13 @@
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update — Mariupol Siege March 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-mariupol-siege-march-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Mariupol City Damage Assessment — Educational Infrastructure",
-        "url": "https://kse.ua/wp-content/uploads/2022/07/KSE_Mariupol_Education_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -61,19 +61,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 6,
-      "central_usd_m": 11,
-      "high_usd_m": 16
+      "low_usd_m": 6.5,
+      "central_usd_m": 11.9,
+      "high_usd_m": 17.3
     },
     "code_compliant": {
-      "low_usd_m": 7,
-      "central_usd_m": 13,
-      "high_usd_m": 20
+      "low_usd_m": 7.5,
+      "central_usd_m": 14.0,
+      "high_usd_m": 21.6
     },
     "build_back_better": {
-      "low_usd_m": 8,
-      "central_usd_m": 16,
-      "high_usd_m": 24,
+      "low_usd_m": 8.6,
+      "central_usd_m": 17.3,
+      "high_usd_m": 25.9,
       "tech_overlays": [
         "passive_house_standard",
         "microgrid",
@@ -185,6 +185,7 @@
     "destroyed",
     "occupied"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

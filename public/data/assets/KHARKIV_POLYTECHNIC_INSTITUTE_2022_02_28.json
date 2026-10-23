@@ -20,19 +20,19 @@
     "destruction_level": "moderate",
     "re_damage_count": 6,
     "verified_by": [
-      "UN_OCHA",
       "KSE",
+      "PRESS",
       "UA_GOV"
     ],
     "evidence_sources": [
       {
-        "title": "NTU KhPI: Damage Assessment Reports 2022–2024",
-        "url": "https://www.kpi.kharkov.ua/en/news/damage-assessment",
+        "title": "Censor.NET: Missile strike damaged 12 buildings of Kharkiv Polytechnic Institute (Jan 2023)",
+        "url": "https://censor.net/en/photonews/3467157/as_result_of_missile_strike_on_january_10_12_buildings_of_kharkiv_polytechnic_institute_were_damaged",
         "source_code": "eRECOVERY"
       },
       {
-        "title": "KSE Institute: Kharkiv Education Infrastructure",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-education",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -56,19 +56,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 143,
-      "central_usd_m": 351,
-      "high_usd_m": 559
+      "low_usd_m": 154.2,
+      "central_usd_m": 378.4,
+      "high_usd_m": 602.7
     },
     "code_compliant": {
-      "low_usd_m": 164,
-      "central_usd_m": 432,
-      "high_usd_m": 699
+      "low_usd_m": 176.8,
+      "central_usd_m": 465.8,
+      "high_usd_m": 753.7
     },
     "build_back_better": {
-      "low_usd_m": 186,
-      "central_usd_m": 540,
-      "high_usd_m": 895
+      "low_usd_m": 200.5,
+      "central_usd_m": 582.2,
+      "high_usd_m": 965.0
     }
   },
   "financing_structures": {
@@ -173,6 +173,7 @@
     "re_damaged",
     "technical"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

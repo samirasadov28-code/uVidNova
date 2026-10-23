@@ -21,24 +21,24 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Russia Will Pay — Kharkiv residential damage tracker 2024",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine Situation Report — Kharkiv Oblast residential",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kharkiv-sitrep-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "funded",
     "rebuildability": "rebuildable",
     "de_risking": [
       "MIGA_WAR",
@@ -63,19 +63,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 217,
-      "central_usd_m": 559,
-      "high_usd_m": 900
+      "low_usd_m": 220.7,
+      "central_usd_m": 568.5,
+      "high_usd_m": 915.3
     },
     "code_compliant": {
-      "low_usd_m": 250,
-      "central_usd_m": 688,
-      "high_usd_m": 1125
+      "low_usd_m": 254.2,
+      "central_usd_m": 699.7,
+      "high_usd_m": 1144.1
     },
     "build_back_better": {
-      "low_usd_m": 282,
-      "central_usd_m": 861,
-      "high_usd_m": 1441,
+      "low_usd_m": 286.8,
+      "central_usd_m": 875.6,
+      "high_usd_m": 1465.4,
       "tech_overlays": [
         "passive_house_standard",
         "modular_construction",
@@ -186,6 +186,7 @@
     "apartment_blocks",
     "saltivka_adjacent"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -25,13 +25,13 @@
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Humanitarian Situation Report — Lyman May 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-situation-report-may-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Donetsk Oblast Residential Damage Tracker — Lyman",
-        "url": "https://kse.ua/wp-content/uploads/2022/10/KSE_Donetsk_Lyman_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -61,19 +61,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 72,
-      "central_usd_m": 126,
-      "high_usd_m": 180
+      "low_usd_m": 73.2,
+      "central_usd_m": 128.1,
+      "high_usd_m": 183.1
     },
     "code_compliant": {
-      "low_usd_m": 83,
-      "central_usd_m": 154,
-      "high_usd_m": 225
+      "low_usd_m": 84.4,
+      "central_usd_m": 156.6,
+      "high_usd_m": 228.8
     },
     "build_back_better": {
-      "low_usd_m": 94,
-      "central_usd_m": 189,
-      "high_usd_m": 284,
+      "low_usd_m": 95.6,
+      "central_usd_m": 192.2,
+      "high_usd_m": 288.8,
       "tech_overlays": [
         "passive_house_standard",
         "district_heat_metering",
@@ -185,6 +185,7 @@
     "severe",
     "recently_liberated"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

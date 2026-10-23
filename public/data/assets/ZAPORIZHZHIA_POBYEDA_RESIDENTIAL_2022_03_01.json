@@ -21,18 +21,18 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Russia Will Pay — Zaporizhzhia residential damage assessment",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine Situation Report — Zaporizhzhia Oblast",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 295,
-      "central_usd_m": 778,
-      "high_usd_m": 1262
+      "low_usd_m": 300.0,
+      "central_usd_m": 791.2,
+      "high_usd_m": 1283.4
     },
     "code_compliant": {
-      "low_usd_m": 339,
-      "central_usd_m": 958,
-      "high_usd_m": 1577
+      "low_usd_m": 344.7,
+      "central_usd_m": 974.2,
+      "high_usd_m": 1603.7
     },
     "build_back_better": {
-      "low_usd_m": 383,
-      "central_usd_m": 1201,
-      "high_usd_m": 2019,
+      "low_usd_m": 389.5,
+      "central_usd_m": 1221.4,
+      "high_usd_m": 2053.2,
       "tech_overlays": [
         "passive_house_standard",
         "modular_construction",
@@ -182,6 +182,7 @@
     "large_scale",
     "apartment_blocks"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

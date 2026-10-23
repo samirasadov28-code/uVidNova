@@ -21,23 +21,24 @@
     "re_damage_count": 2,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "PRESS",
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "Centrenergo: Zmiivska TPP destroyed by Russian strikes",
-        "url": "https://centrenergo.com/en/news/zmiivska-tpp",
+        "title": "Reuters: Centrenergo power firm hit by Russian attacks, repairs could take 18 months (March 2024)",
+        "url": "https://www.reuters.com/world/europe/ukraine-power-firm-hit-by-russian-attacks-warns-repairs-could-take-18-months-2024-03-30/",
         "source_code": "eRECOVERY"
       },
       {
-        "title": "KSE Institute: DTEK and Centrenergo Infrastructure Damage 2024",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-energy-2024",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine Situation Report — Energy Attacks March 2024",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-march-2024",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -62,19 +63,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 1206,
-      "central_usd_m": 2182,
-      "high_usd_m": 3157
+      "low_usd_m": 1687.4,
+      "central_usd_m": 3053.0,
+      "high_usd_m": 4417.2
     },
     "code_compliant": {
-      "low_usd_m": 1387,
-      "central_usd_m": 2667,
-      "high_usd_m": 3947
+      "low_usd_m": 1940.7,
+      "central_usd_m": 3731.6,
+      "high_usd_m": 5522.6
     },
     "build_back_better": {
-      "low_usd_m": 1568,
-      "central_usd_m": 3310,
-      "high_usd_m": 5052
+      "low_usd_m": 2193.9,
+      "central_usd_m": 4631.3,
+      "high_usd_m": 7068.6
     }
   },
   "financing_structures": {
@@ -191,6 +192,7 @@
     "re_damaged",
     "grid_critical"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

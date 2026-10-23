@@ -20,19 +20,19 @@
     "destruction_level": "severe",
     "re_damage_count": 1,
     "verified_by": [
-      "UN_OCHA",
+      "KSE",
       "UA_GOV",
-      "KSE"
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine: Kupyansk Post-Liberation Assessment",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kupyansk-assessment-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Kharkiv Oblast Education Infrastructure",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-education",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -56,19 +56,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 11,
-      "central_usd_m": 24,
-      "high_usd_m": 37
+      "low_usd_m": 11.9,
+      "central_usd_m": 25.9,
+      "high_usd_m": 39.9
     },
     "code_compliant": {
-      "low_usd_m": 13,
-      "central_usd_m": 29,
-      "high_usd_m": 46
+      "low_usd_m": 14.0,
+      "central_usd_m": 31.3,
+      "high_usd_m": 49.6
     },
     "build_back_better": {
-      "low_usd_m": 15,
-      "central_usd_m": 37,
-      "high_usd_m": 59
+      "low_usd_m": 16.2,
+      "central_usd_m": 39.9,
+      "high_usd_m": 63.6
     }
   },
   "financing_structures": {
@@ -173,6 +173,7 @@
     "shelling",
     "frontline"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

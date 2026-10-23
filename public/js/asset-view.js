@@ -215,7 +215,7 @@ function renderCostPaths(a) {
       <h2>Reconstruction Cost Estimates</h2>
       ${pending ? `<p class="pending-note">⏳ Cost methodology pending. Figures are illustrative placeholders; unit-cost table (Weekend 2) not yet populated.</p>` : ''}
       <div class="disclaimer-inline" id="costDisclaimer">
-        Cost figures are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and named comparable Ukrainian precedents.
+        Cost figures are estimates derived from published unit-cost benchmarks (RDNA4, KSE Institute) and named comparable Ukrainian precedents.
         They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence.
         All amounts in USD millions.
         <button class="disclaimer-inline-dismiss" onclick="this.closest('#costDisclaimer').remove()" aria-label="Dismiss">Understood</button>
@@ -370,7 +370,7 @@ function renderFinancing(a) {
   return `
     <section class="asset-section" id="financing">
       <h2>Financing Structures</h2>
-      <p class="section-note">Ten-tranche capital stack derived from sector × path templates (RDNA3, EU Facility, EBRD). All tranches sum to 100%.</p>
+      <p class="section-note">Ten-tranche capital stack derived from sector × path templates (RDNA4, EU Facility, EBRD). All tranches sum to 100%.</p>
       <div class="financing-grid">
         ${paths.map(path => {
           const s = fs?.[path];

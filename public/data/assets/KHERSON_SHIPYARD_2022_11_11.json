@@ -21,23 +21,23 @@
     "re_damage_count": 3,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "BELLINGCAT"
+      "UNOSAT",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Situation Report — Kherson Liberation and Industrial Damage November 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kherson-november-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Kherson Oblast Industrial Damage Assessment — November 2022",
-        "url": "https://kse.ua/wp-content/uploads/2023/01/KSE_Kherson_Industrial_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Kherson Industrial Zone — Satellite Damage Assessment",
-        "url": "https://www.bellingcat.com/news/2022/11/kherson-industrial-damage",
+        "title": "UNOSAT Damage Assessment - Kherson City (imagery analysis, published June 2023)",
+        "url": "https://reliefweb.int/map/ukraine/damage-assessment-over-kherson-city-khersonskyi-region-khersonska-oblast-ukraine-17-june-2023-imagery-analysis-17062023-published-26062023-v1",
         "source_code": "BELLINGCAT"
       }
     ]
@@ -68,19 +68,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 98,
-      "central_usd_m": 185,
-      "high_usd_m": 272
+      "low_usd_m": 92.2,
+      "central_usd_m": 174.1,
+      "high_usd_m": 256.0
     },
     "code_compliant": {
-      "low_usd_m": 113,
-      "central_usd_m": 226,
-      "high_usd_m": 340
+      "low_usd_m": 106.4,
+      "central_usd_m": 212.7,
+      "high_usd_m": 320.0
     },
     "build_back_better": {
-      "low_usd_m": 127,
-      "central_usd_m": 278,
-      "high_usd_m": 428,
+      "low_usd_m": 119.5,
+      "central_usd_m": 261.6,
+      "high_usd_m": 402.8,
       "tech_overlays": [
         "process_electrification",
         "modular_prefabrication",
@@ -199,6 +199,7 @@
     "severe",
     "re_damaged"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

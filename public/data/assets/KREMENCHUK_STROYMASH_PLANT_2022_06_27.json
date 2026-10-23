@@ -21,23 +21,23 @@
     "re_damage_count": 1,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "BELLINGCAT"
+      "PRESS",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Situation Report — June 2022 Kremenchuk Industrial Attacks",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-june-2022-kremenchuk",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Poltava Oblast Industrial Infrastructure Damage",
-        "url": "https://kse.ua/wp-content/uploads/2022/08/KSE_Poltava_Industrial_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Kremenchuk Industrial Zone Strikes — Verification June 2022",
-        "url": "https://www.bellingcat.com/news/2022/06/kremenchuk-industrial-strikes",
+        "title": "Reuters: Russian missiles hit crowded shopping mall in Kremenchuk (27 June 2022)",
+        "url": "https://www.reuters.com/world/europe/russian-missiles-hit-crowded-shopping-mall-central-ukraine-zelenskiy-2022-06-27/",
         "source_code": "BELLINGCAT"
       }
     ]
@@ -68,19 +68,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 52,
-      "central_usd_m": 105,
-      "high_usd_m": 158
+      "low_usd_m": 48.9,
+      "central_usd_m": 98.8,
+      "high_usd_m": 148.7
     },
     "code_compliant": {
-      "low_usd_m": 60,
-      "central_usd_m": 128,
-      "high_usd_m": 197
+      "low_usd_m": 56.5,
+      "central_usd_m": 120.5,
+      "high_usd_m": 185.4
     },
     "build_back_better": {
-      "low_usd_m": 68,
-      "central_usd_m": 157,
-      "high_usd_m": 246,
+      "low_usd_m": 64.0,
+      "central_usd_m": 147.8,
+      "high_usd_m": 231.5,
       "tech_overlays": [
         "process_electrification",
         "smart_manufacturing",
@@ -196,6 +196,7 @@
     "missile_strike",
     "destroyed"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Methodology and Sources — uVidNova Ukraine Reconstruction Finance Atlas</title>
-  <meta name="description" content="How uVidNova computes reconstruction costs and financing structures: deterministic formula, RDNA3/KSE sources, anti-hallucination architecture, Reconstruction Trust methodology, and full source bibliography.">
+  <meta name="description" content="How uVidNova computes reconstruction costs and financing structures: deterministic formula, RDNA4/KSE sources, anti-hallucination architecture, Reconstruction Trust methodology, and full source bibliography.">
   <meta name="theme-color" content="#1a3a6b">
   <meta name="app-version" content="0.2.7">
 
@@ -12,14 +12,14 @@
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="uVidNova">
   <meta property="og:title"       content="Methodology and Sources — uVidNova Ukraine Reconstruction Finance Atlas">
-  <meta property="og:description" content="Deterministic cost estimation against RDNA3 and KSE benchmarks. Every number traces to a named published source. No figures invented by AI.">
+  <meta property="og:description" content="Deterministic cost estimation against RDNA4 and KSE benchmarks. Every number traces to a named published source. No figures invented by AI.">
   <meta property="og:url"         content="https://atlasvidnova.org/about.html">
   <meta property="og:image"       content="https://atlasvidnova.org/assets/logo_512.png">
 
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary">
   <meta name="twitter:title"       content="Methodology — uVidNova">
-  <meta name="twitter:description" content="How uVidNova computes Ukraine reconstruction costs: deterministic formula, RDNA3/KSE sources, anti-hallucination gate, Reconstruction Trust model.">
+  <meta name="twitter:description" content="How uVidNova computes Ukraine reconstruction costs: deterministic formula, RDNA4/KSE sources, anti-hallucination gate, Reconstruction Trust model.">
   <meta name="twitter:image"       content="https://atlasvidnova.org/assets/logo_512.png">
 
   <link rel="manifest"         href="/manifest.webmanifest">
@@ -356,7 +356,11 @@
         <tbody>
           <tr>
             <td class="source-code-cell"><code>RDNA3</code></td>
-            <td>World Bank, Government of Ukraine, European Commission, United Nations. <em>Ukraine Rapid Damage and Needs Assessment, Third Edition.</em> February 2024. The canonical benchmark for sector-level unit costs, damage quantification methodology, and reconstruction path multipliers. Central finding: total recovery needs USD 486bn as of Q4 2023.</td>
+            <td>World Bank, Government of Ukraine, European Commission, United Nations. <em>Ukraine Rapid Damage and Needs Assessment, Third Edition.</em> February 2024. The canonical benchmark for sector-level unit costs, damage quantification methodology, and reconstruction path multipliers. Central finding: total recovery needs USD 486bn as of Q4 2023. Unit-cost vintage underlying asset estimates; re-based to RDNA4 via published sector needs ratios.</td>
+          </tr>
+          <tr>
+            <td class="source-code-cell"><code>RDNA4</code></td>
+            <td>World Bank, Government of Ukraine, European Commission, United Nations. <em>Ukraine Rapid Damage and Needs Assessment, Fourth Edition.</em> February 2025. Covers damage through 31 December 2024. Central finding: total recovery needs USD 524bn; direct damage USD 176bn. Sector needs ratios applied to RDNA3-era asset estimates: housing ×1.017, transport ×1.070, energy ×1.399, commerce &amp; industry ×0.941, agriculture ×0.943, other sectors ×1.078. <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/099022025114040022" target="_blank" rel="noopener">World Bank document portal ↗</a></td>
           </tr>
           <tr>
             <td class="source-code-cell"><code>KSE</code></td>
@@ -699,13 +703,13 @@
       <h2 class="about-section-title" id="disclaimer-title">5. Disclaimer</h2>
 
       <div class="disclaimer-box">
-        <p><strong>Cost and financing-structure estimates.</strong> Cost and financing-structure figures on this platform are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and named comparable Ukrainian precedents. They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence. Actual project costs will depend on scope, procurement, timing, site conditions, contractor market conditions, and the political and security environment at the time of execution.</p>
+        <p><strong>Cost and financing-structure estimates.</strong> Cost and financing-structure figures on this platform are estimates derived from published unit-cost benchmarks (RDNA4, KSE Institute) and named comparable Ukrainian precedents. They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence. Actual project costs will depend on scope, procurement, timing, site conditions, contractor market conditions, and the political and security environment at the time of execution.</p>
 
         <p><strong>Re-damaged assets.</strong> Assets with <code>re_damage_count &#8805; 2</code> are flagged with a warning indicator on the map and in the asset detail page. This is a <strong>material investor-information field</strong>: re-damage events affect insurance pricing, schedule risk, and the case for hardened build-back-better designs. Re-damaged assets are not hidden or downweighted — they are documented with full transparency because suppressing this information would undermine the platform's purpose.</p>
 
         <p><strong>Occupied and frontline-adjacent assets.</strong> Assets classified as <em>occupied</em> or <em>frontline-adjacent</em> are documented in the register as pipeline only. They are excluded from the default map view and from aggregate cost and financing-capacity figures. The Rebuildability filter exposes them for planning purposes. No reconstruction finance deployment is modelled for these assets in current conditions.</p>
 
-        <p><strong>Data vintage.</strong> RDNA3 is the February 2024 third edition; subsequent damage has not been incorporated into the unit-cost or regional-multiplier tables. The KSE "Russia Will Pay" tracker is updated periodically; figures cited reflect the version current at each asset record's <code>last_reviewed</code> date. No real-time damage feeds are used. This is a register, not a wire service.</p>
+        <p><strong>Data vintage.</strong> RDNA4 is the fourth edition from February 2025, covering damage through 31 December 2024. Asset-level cost estimates are RDNA3-era deterministic outputs re-based to RDNA4 via published sector needs ratios (housing +1.7%, transport +7.0%, energy +39.9%, commerce &amp; industry &minus;5.9%, agriculture &minus;5.7%, other sectors +7.8%); the sector ratios are documented in the repository. The KSE &ldquo;Russia Will Pay&rdquo; tracker is updated periodically; figures shown reflect the version current at the <code>last_reviewed</code> date of each asset record (all assets reviewed 22 Oct 2026). No real-time data feeds are used. This is a register, not a wire service.</p>
 
         <p><strong>Independence.</strong> uVidNova is a not-for-profit platform. It does not receive fees from any financing institution, donor, or government body. It has no affiliation with the Ukrainian government, the World Bank, EBRD, EIB, or any other institution whose data it cites. Citations do not imply endorsement by those institutions.</p>
 

@@ -21,24 +21,24 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
       "UA_GOV",
-      "BELLINGCAT"
+      "UNOSAT",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Borodyanka Residential Damage Assessment",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-borodyanka",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Borodyanka Satellite Analysis",
-        "url": "https://www.bellingcat.com/news/2022/04/05/borodyanka-satellite-imagery",
+        "title": "UNOSAT Damage Assessment Overview Map - Borodyanka City, Kyiv Oblast (May 2022)",
+        "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-borodyanka-city-kyiv-oblast-imagery-analysis-2-may-2022-published-14-may-2022-v1",
         "source_code": "BELLINGCAT"
       },
       {
-        "title": "UN OCHA Ukraine: Kyiv Oblast Liberation Assessment",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kyiv-oblast-liberation-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -68,19 +68,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 93,
-      "central_usd_m": 166,
-      "high_usd_m": 239
+      "low_usd_m": 94.6,
+      "central_usd_m": 168.8,
+      "high_usd_m": 243.1
     },
     "code_compliant": {
-      "low_usd_m": 107,
-      "central_usd_m": 203,
-      "high_usd_m": 299
+      "low_usd_m": 108.8,
+      "central_usd_m": 206.4,
+      "high_usd_m": 304.1
     },
     "build_back_better": {
-      "low_usd_m": 121,
-      "central_usd_m": 252,
-      "high_usd_m": 383
+      "low_usd_m": 123.1,
+      "central_usd_m": 256.3,
+      "high_usd_m": 389.5
     }
   },
   "financing_structures": {
@@ -183,6 +183,7 @@
     "liberated",
     "large_scale"
   ],
-  "last_reviewed": "2026-05-17",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -21,23 +21,24 @@
     "re_damage_count": 3,
     "verified_by": [
       "KSE",
+      "PRESS",
       "UA_GOV",
       "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "DTEK Energy: October 2022 infrastructure attack damage report",
-        "url": "https://dtek.com/en/media/news/october-2022-attack/",
+        "title": "Reuters: Ukrainian energy ministry halts energy exports due to Russian missile strikes (10 Oct 2022)",
+        "url": "https://www.reuters.com/business/energy/ukrainian-energy-ministry-halts-energy-exports-due-russian-missile-strikes-2022-10-10/",
         "source_code": "eRECOVERY"
       },
       {
-        "title": "KSE Institute: Ukraine Energy Infrastructure Damage Tracker",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine Flash Update — October 2022 Energy Attacks",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-october-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -62,19 +63,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 778,
-      "central_usd_m": 1602,
-      "high_usd_m": 2426
+      "low_usd_m": 1088.6,
+      "central_usd_m": 2241.5,
+      "high_usd_m": 3394.4
     },
     "code_compliant": {
-      "low_usd_m": 895,
-      "central_usd_m": 1964,
-      "high_usd_m": 3032
+      "low_usd_m": 1252.3,
+      "central_usd_m": 2748.0,
+      "high_usd_m": 4242.3
     },
     "build_back_better": {
-      "low_usd_m": 1012,
-      "central_usd_m": 2447,
-      "high_usd_m": 3881
+      "low_usd_m": 1416.0,
+      "central_usd_m": 3423.8,
+      "high_usd_m": 5430.2
     }
   },
   "financing_structures": {
@@ -190,6 +191,7 @@
     "large_scale",
     "re_damaged"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -21,18 +21,18 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update — July 2024 Mass Casualty Attacks",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-july-2024-attacks",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Dnipro City Infrastructure Damage — July 2024",
-        "url": "https://kse.ua/wp-content/uploads/2024/08/KSE_Dnipro_Infrastructure_July2024.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -63,19 +63,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 42,
-      "central_usd_m": 72,
-      "high_usd_m": 102
+      "low_usd_m": 44.9,
+      "central_usd_m": 77.0,
+      "high_usd_m": 109.1
     },
     "code_compliant": {
-      "low_usd_m": 48,
-      "central_usd_m": 88,
-      "high_usd_m": 128
+      "low_usd_m": 51.4,
+      "central_usd_m": 94.2,
+      "high_usd_m": 137.0
     },
     "build_back_better": {
-      "low_usd_m": 54,
-      "central_usd_m": 108,
-      "high_usd_m": 162,
+      "low_usd_m": 57.8,
+      "central_usd_m": 115.6,
+      "high_usd_m": 173.3,
       "tech_overlays": [
         "seismic_resilience",
         "smart_monitoring",
@@ -187,6 +187,7 @@
     "missile_strike",
     "moderate"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

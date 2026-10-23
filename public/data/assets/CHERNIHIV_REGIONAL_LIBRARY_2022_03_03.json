@@ -20,8 +20,7 @@
     "destruction_level": "severe",
     "re_damage_count": 0,
     "verified_by": [
-      "KSE",
-      "BELLINGCAT"
+      "KSE"
     ],
     "evidence_sources": [
       {
@@ -55,19 +54,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 7,
-      "central_usd_m": 16,
-      "high_usd_m": 24
+      "low_usd_m": 7.5,
+      "central_usd_m": 17.3,
+      "high_usd_m": 25.9
     },
     "code_compliant": {
-      "low_usd_m": 8,
-      "central_usd_m": 19,
-      "high_usd_m": 30
+      "low_usd_m": 8.6,
+      "central_usd_m": 20.5,
+      "high_usd_m": 32.3
     },
     "build_back_better": {
-      "low_usd_m": 9,
-      "central_usd_m": 24,
-      "high_usd_m": 39
+      "low_usd_m": 9.7,
+      "central_usd_m": 25.9,
+      "high_usd_m": 42.0
     }
   },
   "financing_structures": {
@@ -160,6 +159,7 @@
     "library",
     "air_strike"
   ],
-  "last_reviewed": "2026-05-17",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

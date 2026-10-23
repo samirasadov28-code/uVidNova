@@ -20,25 +20,25 @@
     "destruction_level": "moderate",
     "re_damage_count": 5,
     "verified_by": [
-      "UA_GOV",
       "KSE",
+      "UA_GOV",
       "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Kharkiv Transport Infrastructure Damage",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-transport-kharkiv",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine: Kharkiv Metro as Civilian Shelter and Infrastructure Damage",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kharkiv-metro-shelter",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "funded",
     "rebuildability": "rebuildable",
     "de_risking": [
       "MIGA_WAR",
@@ -63,19 +63,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 23,
-      "central_usd_m": 106,
-      "high_usd_m": 188
+      "low_usd_m": 24.6,
+      "central_usd_m": 113.4,
+      "high_usd_m": 201.2
     },
     "code_compliant": {
-      "low_usd_m": 26,
-      "central_usd_m": 131,
-      "high_usd_m": 236
+      "low_usd_m": 27.8,
+      "central_usd_m": 140.2,
+      "high_usd_m": 252.5
     },
     "build_back_better": {
-      "low_usd_m": 30,
-      "central_usd_m": 166,
-      "high_usd_m": 302
+      "low_usd_m": 32.1,
+      "central_usd_m": 177.6,
+      "high_usd_m": 323.1
     }
   },
   "financing_structures": {
@@ -180,6 +180,7 @@
     "re_damaged",
     "civilian_shelter"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -20,9 +20,9 @@
     "destruction_level": "destroyed",
     "re_damage_count": 0,
     "verified_by": [
-      "UN_OCHA",
       "KSE",
-      "UA_GOV"
+      "UA_GOV",
+      "UNESCO"
     ],
     "evidence_sources": [
       {
@@ -31,13 +31,13 @@
         "source_code": "eRECOVERY"
       },
       {
-        "title": "UNESCO: Cultural Heritage Damage in Ukraine — Kharkiv Oblast",
-        "url": "https://www.unesco.org/en/articles/ukraine-cultural-damage-kharkiv",
+        "title": "UNESCO: Damaged cultural sites in Ukraine (verified list)",
+        "url": "https://www.unesco.org/en/ukraine-war/damaged-cultural-sites",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Heritage Infrastructure Damage — Kharkiv Oblast",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-heritage-kharkiv",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -67,19 +67,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 19,
-      "central_usd_m": 54,
-      "high_usd_m": 90
+      "low_usd_m": 20.5,
+      "central_usd_m": 58.2,
+      "high_usd_m": 97.0
     },
     "code_compliant": {
-      "low_usd_m": 22,
-      "central_usd_m": 67,
-      "high_usd_m": 112
+      "low_usd_m": 23.7,
+      "central_usd_m": 72.2,
+      "high_usd_m": 120.8
     },
     "build_back_better": {
-      "low_usd_m": 25,
-      "central_usd_m": 84,
-      "high_usd_m": 144
+      "low_usd_m": 27.0,
+      "central_usd_m": 90.6,
+      "high_usd_m": 155.3
     }
   },
   "financing_structures": {
@@ -185,6 +185,7 @@
     "unique_asset",
     "philosopher"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

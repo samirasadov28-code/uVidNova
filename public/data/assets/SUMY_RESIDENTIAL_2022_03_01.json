@@ -21,24 +21,24 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Russia Will Pay — Sumy residential sector damage",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine Situation Report — Sumy Oblast 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-sumy-sitrep-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "funded",
     "rebuildability": "rebuildable",
     "de_risking": [
       "MIGA_WAR",
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 17,
-      "central_usd_m": 57,
-      "high_usd_m": 97
+      "low_usd_m": 17.3,
+      "central_usd_m": 58.0,
+      "high_usd_m": 98.6
     },
     "code_compliant": {
-      "low_usd_m": 20,
-      "central_usd_m": 70,
-      "high_usd_m": 121
+      "low_usd_m": 20.3,
+      "central_usd_m": 71.2,
+      "high_usd_m": 123.1
     },
     "build_back_better": {
-      "low_usd_m": 22,
-      "central_usd_m": 89,
-      "high_usd_m": 155,
+      "low_usd_m": 22.4,
+      "central_usd_m": 90.5,
+      "high_usd_m": 157.6,
       "tech_overlays": [
         "passive_house_standard",
         "energy_efficiency_envelope"
@@ -181,6 +181,7 @@
     "light_damage",
     "apartment_blocks"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

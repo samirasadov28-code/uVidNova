@@ -21,18 +21,17 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_MoE"
+      "UNICEF"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Russia Will Pay — education sector damage database",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UA Ministry of Education damage report — Mariupol higher education 2022",
-        "url": "https://mon.gov.ua/ua/news/mon-ukraine-damage-mariupol-2022",
+        "title": "UNICEF Ukraine: Children return to schools in ruins",
+        "url": "https://www.unicef.org/ukraine/en/stories/children-return-to-schools-in-ruins",
         "source_code": "eRECOVERY"
       }
     ]
@@ -61,19 +60,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 128,
-      "central_usd_m": 227,
-      "high_usd_m": 325
+      "low_usd_m": 138.0,
+      "central_usd_m": 244.7,
+      "high_usd_m": 350.4
     },
     "code_compliant": {
-      "low_usd_m": 147,
-      "central_usd_m": 277,
-      "high_usd_m": 407
+      "low_usd_m": 158.5,
+      "central_usd_m": 298.7,
+      "high_usd_m": 438.8
     },
     "build_back_better": {
-      "low_usd_m": 167,
-      "central_usd_m": 344,
-      "high_usd_m": 521,
+      "low_usd_m": 180.1,
+      "central_usd_m": 370.9,
+      "high_usd_m": 561.7,
       "tech_overlays": [
         "fibre",
         "digital_labs",
@@ -177,6 +176,7 @@
     "pipeline_only",
     "multiple"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

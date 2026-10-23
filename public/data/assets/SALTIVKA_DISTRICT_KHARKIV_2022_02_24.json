@@ -21,24 +21,24 @@
     "re_damage_count": 8,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Kharkiv Residential Damage Assessment — Saltivka District",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-saltivka",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine: Kharkiv Residential Damage Situation Report",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kharkiv-residential-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
   },
   "wartime_status": {
-    "lifecycle": "assessed",
+    "lifecycle": "under_reconstruction",
     "rebuildability": "rebuildable",
     "de_risking": [
       "MIGA_WAR",
@@ -63,19 +63,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 1339,
-      "central_usd_m": 3445,
-      "high_usd_m": 5550
+      "low_usd_m": 1361.7,
+      "central_usd_m": 3503.4,
+      "high_usd_m": 5644.1
     },
     "code_compliant": {
-      "low_usd_m": 1540,
-      "central_usd_m": 4239,
-      "high_usd_m": 6938
+      "low_usd_m": 1566.1,
+      "central_usd_m": 4310.8,
+      "high_usd_m": 7055.6
     },
     "build_back_better": {
-      "low_usd_m": 1741,
-      "central_usd_m": 5311,
-      "high_usd_m": 8880
+      "low_usd_m": 1770.5,
+      "central_usd_m": 5401.0,
+      "high_usd_m": 9030.5
     }
   },
   "financing_structures": {
@@ -179,6 +179,7 @@
     "re_damaged",
     "apartment_blocks"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

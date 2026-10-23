@@ -21,23 +21,23 @@
     "re_damage_count": 5,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "BELLINGCAT"
+      "PRESS",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update — Vuhledar Humanitarian Crisis February 2023",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-vuhledar-february-2023",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Donetsk Oblast Residential Damage — Vuhledar 2022–2023",
-        "url": "https://kse.ua/wp-content/uploads/2023/04/KSE_Vuhledar_Residential.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Vuhledar — Satellite Damage Assessment 2022–2023",
-        "url": "https://www.bellingcat.com/news/2023/02/vuhledar-damage-assessment",
+        "title": "CNN: Battle for Vuhledar, Donetsk Oblast (Feb 2023)",
+        "url": "https://www.cnn.com/2023/02/13/europe/russia-ukraine-vuhledar-donetsk-fiasco-intl",
         "source_code": "BELLINGCAT"
       }
     ]
@@ -67,19 +67,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 107,
-      "central_usd_m": 210,
-      "high_usd_m": 313
+      "low_usd_m": 108.8,
+      "central_usd_m": 213.6,
+      "high_usd_m": 318.3
     },
     "code_compliant": {
-      "low_usd_m": 123,
-      "central_usd_m": 257,
-      "high_usd_m": 391
+      "low_usd_m": 125.1,
+      "central_usd_m": 261.4,
+      "high_usd_m": 397.6
     },
     "build_back_better": {
-      "low_usd_m": 139,
-      "central_usd_m": 315,
-      "high_usd_m": 491,
+      "low_usd_m": 141.4,
+      "central_usd_m": 320.3,
+      "high_usd_m": 499.3,
       "tech_overlays": [
         "passive_house_standard",
         "microgrid",
@@ -191,6 +191,7 @@
     "destroyed",
     "occupied"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }
