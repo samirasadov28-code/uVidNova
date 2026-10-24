@@ -21,18 +21,18 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UA_GOV",
-      "BELLINGCAT"
+      "PRESS",
+      "UA_GOV"
     ],
     "evidence_sources": [
       {
-        "title": "DTEK Energy: Ladyzhynska TPP destroyed by missile strikes April 2024",
-        "url": "https://dtek.com/en/media/news/ladyzhynska-tpp-destroyed/",
+        "title": "NV: Russian missile attack severely damaged all power units of Burshtyn and Ladyzhyn TPPs (April 2024)",
+        "url": "https://english.nv.ua/nation/russian-missile-attack-severely-damaged-all-power-units-of-burshtyn-and-ladyzhyn-tpps-50405199.html",
         "source_code": "eRECOVERY"
       },
       {
-        "title": "KSE Institute: DTEK Energy Infrastructure Damage — April 2024",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-energy-2024",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -57,19 +57,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 747,
-      "central_usd_m": 1330,
-      "high_usd_m": 1913
+      "low_usd_m": 1045.2,
+      "central_usd_m": 1860.9,
+      "high_usd_m": 2676.6
     },
     "code_compliant": {
-      "low_usd_m": 859,
-      "central_usd_m": 1625,
-      "high_usd_m": 2391
+      "low_usd_m": 1201.9,
+      "central_usd_m": 2273.7,
+      "high_usd_m": 3345.4
     },
     "build_back_better": {
-      "low_usd_m": 971,
-      "central_usd_m": 2016,
-      "high_usd_m": 3060
+      "low_usd_m": 1358.6,
+      "central_usd_m": 2820.7,
+      "high_usd_m": 4281.5
     }
   },
   "financing_structures": {
@@ -185,6 +185,7 @@
     "large_scale",
     "grid_critical"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

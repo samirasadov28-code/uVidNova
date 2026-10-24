@@ -20,19 +20,19 @@
     "destruction_level": "severe",
     "re_damage_count": 2,
     "verified_by": [
+      "IEA",
       "KSE",
-      "UA_GOV",
-      "UN_OCHA"
+      "UA_GOV"
     ],
     "evidence_sources": [
       {
-        "title": "Ukrenergo: Northern power system damage assessment March 2024",
-        "url": "https://ukrenergo.energy.gov.ua/en/news/damage-march-2024",
+        "title": "IEA: Ukraine energy system under attack - Energy Security assessment",
+        "url": "https://www.iea.org/reports/ukraines-energy-security-and-the-coming-winter/ukraines-energy-system-under-attack",
         "source_code": "eRECOVERY"
       },
       {
-        "title": "KSE Institute: Grid Infrastructure Damage — March 2024",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-grid-2024",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -57,19 +57,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 39,
-      "central_usd_m": 97,
-      "high_usd_m": 154
+      "low_usd_m": 54.6,
+      "central_usd_m": 135.7,
+      "high_usd_m": 215.5
     },
     "code_compliant": {
-      "low_usd_m": 45,
-      "central_usd_m": 119,
-      "high_usd_m": 192
+      "low_usd_m": 63.0,
+      "central_usd_m": 166.5,
+      "high_usd_m": 268.6
     },
     "build_back_better": {
-      "low_usd_m": 51,
-      "central_usd_m": 149,
-      "high_usd_m": 246
+      "low_usd_m": 71.4,
+      "central_usd_m": 208.5,
+      "high_usd_m": 344.2
     }
   },
   "financing_structures": {
@@ -185,6 +185,7 @@
     "grid_critical",
     "re_damaged"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

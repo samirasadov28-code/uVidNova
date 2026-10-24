@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://uvidnova.netlify.app/sitemap.xml
+Sitemap: https://atlasvidnova.org/sitemap.xml

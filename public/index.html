@@ -3,117 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>uVidNova - Ukraine Reconstruction Finance Atlas</title>
-  <meta name="description" content="Asset-level register of Ukraine war damage and reconstruction finance. 100+ verified assets - energy, hospitals, housing, heritage, transport - with deterministic cost estimates (RDNA3/KSE) and bankable EBRD/EU financing structures. For DFI officers and policy researchers.">
-  <meta name="keywords" content="Ukraine reconstruction, war damage, reconstruction finance, RDNA3, KSE Institute, EBRD Ukraine, EIB Ukraine, DFI investment, Okhmatdyt, Kakhovka HPP, Mariupol, Kharkiv, infrastructure finance, Ukraine recovery, EU4Ukraine">
-  <meta name="author" content="Samir Asadov">
-  <meta name="theme-color" content="#1a3a6b">
-  <meta name="mobile-web-app-capable" content="yes">
+  <title>uVidNova — Ukraine Reconstruction Finance Atlas</title>
+  <meta name="description" content="Ukraine reconstruction atlas — 100+ documented damaged assets with deterministic cost estimates and bankable financing structures.">
+  <meta name="theme-color" content="#0d2248">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="uVidNova">
-  <meta name="app-version" content="0.7.27">
+  <meta name="app-version" content="0.4.0">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="uVidNova">
-  <meta property="og:title"       content="uVidNova - Ukraine Reconstruction Finance Atlas">
-  <meta property="og:description" content="Asset-level, project-finance-grade reconstruction opportunities in Ukraine. USD 41B+ pipeline across 100+ verified damaged assets. Every figure traceable to RDNA3 and KSE benchmarks.">
-  <meta property="og:url"         content="https://uvidnova.netlify.app/">
-  <meta property="og:image"       content="https://uvidnova.netlify.app/icons/icon-512.png">
+  <meta property="og:title"       content="uVidNova — Ukraine Reconstruction Finance Atlas">
+  <meta property="og:description" content="USD 63B documented pipeline across 100 verified assets. Every figure traceable to RDNA4 and KSE benchmarks.">
+  <meta property="og:url"         content="https://atlasvidnova.org/">
+  <meta property="og:image"       content="https://atlasvidnova.org/assets/logo_512.png">
 
   <!-- Twitter card -->
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="uVidNova - Ukraine Reconstruction Finance Atlas">
-  <meta name="twitter:description" content="100+ war-damaged assets. USD 41B+ pipeline. Deterministic cost estimates. EBRD/EU financing structures. Every number traceable to source.">
-  <meta name="twitter:image"       content="https://uvidnova.netlify.app/icons/icon-512.png">
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="uVidNova — Ukraine Reconstruction Finance Atlas">
+  <meta name="twitter:description" content="100 verified war-damaged assets. USD 63B documented pipeline.">
+  <meta name="twitter:image"       content="https://atlasvidnova.org/assets/logo_512.png">
 
   <link rel="manifest"         href="/manifest.webmanifest">
-  <link rel="icon"             href="/icons/icon-192.png" sizes="192x192" type="image/png">
-  <link rel="apple-touch-icon" href="/icons/icon-192.png">
-  <link rel="canonical"        href="https://uvidnova.netlify.app/">
-
-  <!-- Structured data: Dataset + WebSite -->
-  <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org/",
-      "@type": "Dataset",
-      "name": "uVidNova Ukraine Reconstruction Finance Atlas",
-      "description": "Asset-level register of wartime damage and reconstruction financing opportunities in Ukraine, covering 100+ verified assets across energy, healthcare, education, residential, heritage, transport, water, industrial, and public administration sectors. Cost estimates are derived deterministically from RDNA3 (World Bank/EC/UN, Feb 2024) and KSE Institute benchmarks.",
-      "url": "https://uvidnova.netlify.app",
-      "identifier": "https://uvidnova.netlify.app",
-      "keywords": [
-        "Ukraine reconstruction", "war damage assessment", "reconstruction finance",
-        "RDNA3", "KSE Institute", "DFI investment", "EBRD Ukraine", "EIB Ukraine",
-        "EU4Ukraine", "IFC", "Okhmatdyt", "Kakhovka HPP", "Mariupol Drama Theatre",
-        "infrastructure finance", "Ukraine recovery", "project finance", "MIGA"
-      ],
-      "isAccessibleForFree": true,
-      "license": "https://creativecommons.org/licenses/by/4.0/",
-      "creator": {
-        "@type": "Person",
-        "name": "Samir Asadov",
-        "url": "https://uvidnova.netlify.app/about.html"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "uVidNova",
-        "url": "https://uvidnova.netlify.app"
-      },
-      "temporalCoverage": "2022-02-24/..",
-      "spatialCoverage": {
-        "@type": "Place",
-        "name": "Ukraine",
-        "geo": {
-          "@type": "GeoShape",
-          "box": "44.0 22.0 52.4 40.2"
-        }
-      },
-      "variableMeasured": [
-        "Reconstruction cost - baseline (USD millions)",
-        "Reconstruction cost - code-compliant (USD millions)",
-        "Reconstruction cost - build-back-better (USD millions)",
-        "Financing structure - grant / concessional / public equity / private (%)",
-        "Wartime damage level (light / moderate / severe / destroyed)",
-        "Rebuildability classification",
-        "Re-damage count"
-      ],
-      "measurementTechnique": "Deterministic formula: unit_cost × physical_quantity × destruction_factor × regional_multiplier × path_multiplier × contingency. Unit costs sourced from RDNA3 and KSE Institute. No AI-generated numeric output.",
-      "dateModified": "2026-05-27",
-      "inLanguage": ["en", "uk", "fr", "es", "de"],
-      "citation": [
-        {
-          "@type": "CreativeWork",
-          "name": "Ukraine Rapid Damage and Needs Assessment, Third Edition (RDNA3)",
-          "author": "World Bank, European Commission, United Nations",
-          "datePublished": "2024-02"
-        },
-        {
-          "@type": "CreativeWork",
-          "name": "Russia Will Pay - Ukraine War Damage Tracker",
-          "author": "KSE Institute",
-          "url": "https://kse.ua/russia-will-pay/"
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "uVidNova",
-      "url": "https://uvidnova.netlify.app",
-      "description": "Ukraine Reconstruction Finance Atlas - asset-level wartime damage register with deterministic cost estimates and bankable financing structures"
-    }
-  ]
-  </script>
-
+  <link rel="icon"             href="/assets/logo_192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/assets/logo_192.png">
+  <link rel="canonical"        href="https://atlasvidnova.org/">
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js').catch(function() {});
     }
   </script>
 
-  <!-- Preload critical data - start fetching before JS parses -->
+  <!-- Preload critical data — start fetching before JS parses -->
   <link rel="preload" href="/data/assets/index.json" as="fetch" crossorigin>
   <link rel="preload" href="/data/geo/ua_oblasts.geojson" as="fetch" crossorigin>
 
@@ -123,20 +44,20 @@
   <link rel="dns-prefetch" href="https://c.basemaps.cartocdn.com">
   <link rel="dns-prefetch" href="https://d.basemaps.cartocdn.com">
 
-  <!-- Leaflet CSS - served locally for reliability -->
+  <!-- Leaflet CSS — served locally for reliability -->
   <link rel="stylesheet" href="/css/vendor/leaflet.css">
 
   <link rel="stylesheet" href="/css/app.css">
 
   <!-- Critical above-the-fold styles inlined to prevent FOUC before app.css loads -->
   <style>
-    :root{--header-h:56px;--viewbar-h:44px;--map-top:100px;--colour-navy:#1a3a6b;--colour-gold:#f0a500;--font-sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+    :root{--header-h:56px;--colour-navy:#1a3a6b;--colour-gold:#f0a500;--font-sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     [hidden]{display:none!important}
     body{font-family:var(--font-sans);background:#0a1628;color:#fff;min-height:100vh;overflow:hidden}
     .site-header{background:var(--colour-navy);position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--header-h);display:flex;align-items:center;padding:0 1rem}
-    #map{position:absolute;inset:0}
-    .map-layout{position:fixed;top:var(--map-top);left:0;right:0;bottom:0;overflow:hidden}
+    #map{position:fixed;top:var(--header-h);left:0;right:0;bottom:0}
+    .map-layout{position:fixed;top:var(--header-h);left:0;right:0;bottom:0;overflow:hidden}
   </style>
 
   <!-- Google Analytics -->
@@ -148,9 +69,9 @@
     gtag('config', 'G-MSQGC9TYQ5');
   </script>
 </head>
-<body class="map-page">
+<body>
 
-  <!-- ── Cache bypass - ?nocache in URL unregisters SW + clears all caches ── -->
+  <!-- ── Cache bypass — ?nocache in URL unregisters SW + clears all caches ── -->
   <script>
   (function () {
     if (window.location.search.indexOf('nocache') === -1) return;
@@ -194,7 +115,7 @@
         <!-- row 1: sources -->
         <div class="etym-source etym-source-u">Ukraine</div>
         <div class="etym-connector-top"></div>
-        <div class="etym-source etym-source-vid">Відновa - Restoration</div>
+        <div class="etym-source etym-source-vid">Відновa — Restoration</div>
 
         <!-- row 2: the wordmark (centre) -->
         <div class="etym-mark etym-mark-u"><span class="u">u</span></div>
@@ -204,17 +125,17 @@
         <!-- row 3: poetic meanings -->
         <div class="etym-meaning etym-meaning-u">you</div>
         <div class="etym-connector-bot"></div>
-        <div class="etym-meaning etym-meaning-nova"><span class="nova-star-inline">Nova</span><span class="etym-star">★</span> - New Star</div>
+        <div class="etym-meaning etym-meaning-nova"><span class="nova-star-inline">Nova</span><span class="etym-star">★</span> — New Star</div>
       </div>
 
       <p class="landing-sub" data-i18n="landing.sub">Ukraine Reconstruction Finance Atlas</p>
       <p class="landing-desc" data-i18n="landing.desc">
         An asset-level, project-finance-grade register of wartime damage and reconstruction opportunities.
-        Every figure traceable to RDNA3, KSE Institute, and verified open-source intelligence.
+        Every figure traceable to RDNA4, KSE Institute, and verified open-source intelligence.
       </p>
       <ul class="landing-features" aria-label="Key features">
-        <li data-i18n="landing.feat1">Deterministic cost estimates - three reconstruction paths per asset</li>
-        <li data-i18n="landing.feat2">Defensible financing structures - grant, concessional, equity, private</li>
+        <li data-i18n="landing.feat1">Deterministic cost estimates — three reconstruction paths per asset</li>
+        <li data-i18n="landing.feat2">Defensible financing structures — grant, concessional, equity, private</li>
         <li data-i18n="landing.feat3">Re-damage tracking and wartime risk classification</li>
       </ul>
       <button class="landing-cta" id="enterAtlas" data-i18n="landing.cta">Explore the atlas →</button>
@@ -225,33 +146,14 @@
         Not a fundraising platform. No political framing. Every figure independently sourced.
       </p>
       <div class="landing-actions">
-        <button class="lang-toggle landing-lang-toggle" id="landingLangToggle" aria-label="Switch language">🇺🇦 UK</button>
-        <span class="landing-version" id="versionLabel">v0.7.27</span>
+        <button class="lang-toggle landing-lang-toggle" id="landingLangToggle" aria-label="Switch language">🇺🇦 Українська</button>
+        <span class="landing-version">v0.4.0</span>
         <button class="landing-force-reload" id="landingForceReload" title="Clear cache and reload latest version">↻ Force update</button>
       </div>
-      <div class="landing-legal">
-        <a href="/privacy" class="landing-legal-link">Privacy Policy</a>
-        <a href="/about.html" class="landing-legal-link">Methodology</a>
-        <a href="mailto:finmodeloop@gmail.com" class="landing-legal-link">Contact</a>
-      </div>
-      <p class="landing-data-vintage" style="font-size:12px;opacity:.7;margin:8px 0 0;">Data as of RDNA3 (Feb 2024)</p>
-      <a class="landing-other-products" href="https://asadov-stack.netlify.app/" target="_blank" rel="noopener noreferrer">
-        <span class="lop-glow"></span>
-        <span class="lop-inner">
-          <span class="lop-icon">⬡</span>
-          <span class="lop-left">
-            <span class="lop-wordmark">ModeLoop</span>
-            <span class="lop-tagline">8 products · one portfolio</span>
-          </span>
-          <span class="lop-right">
-            <span class="lop-cta">Explore →</span>
-          </span>
-        </span>
-      </a>
     </div>
   </div>
 
-  <!-- ── Landing dismiss - inline script, never SW-cached ──────────────────── -->
+  <!-- ── Landing dismiss — inline script, never SW-cached ──────────────────── -->
   <script>
   (function () {
     var overlay = document.getElementById('landing');
@@ -267,6 +169,8 @@
     }
 
     function revealChrome() {
+      var warBtn = document.getElementById('warModeBtn');
+      if (warBtn) warBtn.hidden = false;
       document.body.classList.add('landed');
       // Show map hint strip on first-ever visit (localStorage, not session)
       try {
@@ -291,7 +195,7 @@
       revealChrome();
     }
 
-    // Already visited this session - hide immediately without animation
+    // Already visited this session — hide immediately without animation
     var alreadyLanded = false;
     try { alreadyLanded = !!sessionStorage.getItem('uvidnova_landed'); } catch(e) {}
     if (alreadyLanded) {
@@ -319,13 +223,13 @@
             return Promise.all(names.map(function (n) { return caches.delete(n); }));
           }));
         }
-        Promise.all(tasks).finally(function () { window.location.reload(true); });
+        Promise.all(tasks).finally(function () { window.location.reload(); });
       });
     }
   })();
   </script>
 
-  <!-- ── Global UI helpers - plain script, never SW-cached, always fresh ─────
+  <!-- ── Global UI helpers — plain script, never SW-cached, always fresh ─────
        These inline functions are the authoritative handlers for every critical
        button. They work even if the app.js ES module fails to load.           -->
   <script>
@@ -398,7 +302,7 @@
     var p = document.getElementById('chatPanel');
     if (p && !p.hasAttribute('hidden')) uvCloseChat();
   });
-  // Feedback form - AJAX submit (prevents browser navigation)
+  // Feedback form — AJAX submit (prevents browser navigation)
   function uvSubmitFeedback(e) {
     e.preventDefault();
     var form = document.getElementById('feedbackForm');
@@ -420,14 +324,12 @@
       if (submit) submit.disabled = false;
     });
   }
-  // War mode toggle - stub; app.js overwrites window._appWarToggle after module loads
+  // War mode toggle — stub; app.js overwrites window._appWarToggle after module loads
   function uvToggleWarMode() { if (window._appWarToggle) window._appWarToggle(); }
-  // Map view switch - stub; app.js overwrites window._appSetMapView after module loads
+  // Map view switch — stub; app.js overwrites window._appSetMapView after module loads
   function uvSetMapView(view) { if (window._appSetMapView) window._appSetMapView(view); }
-  // Finance wizard - stub; app.js overwrites window._appFinance after module loads
+  // Finance wizard — stub; app.js overwrites window._appFinance after module loads
   function uvOpenFinance() { if (window._appFinance) window._appFinance(); }
-  // Trust panel - stub; app.js overwrites window._appTrust after module loads
-  function uvOpenTrust() { if (window._appTrust) window._appTrust(); }
   // Force reload (version bar button)
   function uvForceReload() {
     var btn = document.getElementById('forceReloadBtn');
@@ -457,33 +359,35 @@
         <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
       </a>
 
-      <!-- Centre: Finance Projects + Create Trust -->
+      <!-- Centre: Finance It + Vidnova Trust -->
       <div class="header-centre">
-        <button class="header-action-btn header-action-finance" onclick="uvOpenFinance()" aria-label="Finance reconstruction projects" data-i18n="header.finance_btn">Finance Projects</button>
-        <button class="header-action-btn header-action-trust" onclick="uvOpenTrust()" aria-label="Create Vidnova Trust model" data-i18n="header.trust_btn">Create Trust</button>
+        <button class="header-action-btn header-action-finance" onclick="uvOpenFinance()" aria-label="Open Finance It">
+          💰 Finance It
+        </button>
+        <a href="/trust.html" class="header-action-btn header-action-trust" aria-label="Vidnova Trust">
+          🏛 Vidnova Trust
+        </a>
       </div>
 
       <!-- Right: About + lang toggle -->
       <nav class="site-nav">
-        <a href="/about.html" class="nav-link" data-page="about" data-i18n="nav.methodology">Methodology</a>
-        <a href="/privacy" class="nav-link" data-page="privacy" data-i18n="nav.privacy">Privacy</a>
+        <a href="/about.html" class="nav-link" data-page="about" data-i18n="nav.methodology">About</a>
         <button class="lang-toggle" id="langToggle" aria-label="Switch language">🇺🇦 Українська</button>
       </nav>
     </div>
 
+    <!-- Row 2: View mode tabs -->
+    <div class="view-tab-bar" id="mapViewTabs" role="tablist">
+      <button class="map-view-tab map-view-tab-active" id="tab-ukraine" role="tab" aria-selected="true"
+              onclick="uvSetMapView('ukraine')">🔱 Ukraine</button>
+      <button class="map-view-tab" id="tab-damaged" role="tab" aria-selected="false"
+              onclick="uvSetMapView('damaged')">⚡ Damaged</button>
+      <button class="map-view-tab" id="tab-reconstructed" role="tab" aria-selected="false"
+              onclick="uvSetMapView('reconstructed')">✅ Reconstructed</button>
+      <button class="map-view-tab" id="tab-development" role="tab" aria-selected="false"
+              onclick="uvSetMapView('development')">🔮 Development</button>
+    </div>
   </header>
-
-  <!-- ── Map view tab bar - sits between header and map ──────────────────── -->
-  <div class="map-view-bar" id="mapViewTabs" role="tablist">
-    <button class="map-view-tab map-view-tab-active" id="tab-ukraine" role="tab" aria-selected="true"
-            onclick="uvSetMapView('ukraine')"><span data-i18n="tab.ukraine">Ukraine</span></button>
-    <button class="map-view-tab" id="tab-damaged" role="tab" aria-selected="false"
-            onclick="uvSetMapView('damaged')"><span data-i18n="tab.damaged">Damaged</span></button>
-    <button class="map-view-tab" id="tab-reconstructed" role="tab" aria-selected="false"
-            onclick="uvSetMapView('reconstructed')"><span data-i18n="tab.reconstructed">Reconstructed</span></button>
-    <button class="map-view-tab" id="tab-development" role="tab" aria-selected="false"
-            onclick="uvSetMapView('development')"><span data-i18n="tab.development">Development</span></button>
-  </div>
 
   <!-- ── Map layout ────────────────────────────────────────────────────────── -->
   <main class="map-layout">
@@ -505,7 +409,7 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
     </button>
 
-    <!-- Filter panel - left overlay, hidden by default -->
+    <!-- Filter panel — left overlay, hidden by default -->
     <aside class="filter-panel" id="filterPanel">
       <div class="filter-header">
         <h2 class="panel-title" data-i18n="filter.title">Filters</h2>
@@ -566,7 +470,7 @@
       <div class="agg-panel" id="aggPanel" aria-live="polite" aria-relevant="additions text"></div>
     </aside>
 
-    <!-- Asset list panel - right overlay, hidden by default -->
+    <!-- Asset list panel — right overlay, hidden by default -->
     <div class="asset-list-panel" id="assetListPanel">
       <div class="asset-list-header">
         <div>
@@ -589,26 +493,35 @@
     </p>
   </div>
 
-  <!-- ── Bottom action bar - Feedback (left) · Occupied (centre) · Ask AI (right) ── -->
-  <div class="bottom-action-bar" id="bottomActionBar">
-    <button class="bab-btn bab-feedback" onclick="uvOpenFeedback()" aria-label="Send feedback" data-i18n="feedback.btn">Feedback</button>
-
-    <button class="bab-btn bab-occupied" id="warModeBtn" onclick="uvToggleWarMode()">
-      <span id="warModeBtnLabel" data-i18n="bar.occupied">Occupied territories</span>
-    </button>
-
-    <button class="bab-btn bab-ai" onclick="uvOpenChat()" aria-label="Ask AI about reconstruction" data-i18n="chat.btn">Ask AI</button>
+  <!-- ── Version bar — version label + SW update notification only ──────────── -->
+  <div class="version-bar" id="versionBar" role="status">
+    <span class="version-label" id="versionLabel">v0.4.0</span>
+    <span class="update-prompt" id="updatePrompt" hidden>
+      <span data-i18n="version.update_msg">· New version ready —</span>
+      <button class="update-reload-btn" id="updateReloadBtn" data-i18n="version.reload">reload</button>
+    </span>
   </div>
+
+  <!-- ── Occupied territories toggle (bottom-center) ─────────────────────── -->
+  <button class="war-mode-btn" id="warModeBtn" onclick="uvToggleWarMode()" title="Show occupied territories" hidden>🔴 Occupied territories</button>
 
   <!-- ── War-mode occupation legend ───────────────────────────────────────── -->
   <div class="war-legend" id="warLegend" hidden>
-    <div class="war-legend-title" data-i18n="bar.legend.title">Conflict status (2024–25)</div>
-    <div class="war-legend-row"><span class="war-legend-swatch" style="background:#3d0000;border:2px solid #cc0000"></span><span data-i18n="bar.legend.crimea">Crimea — Russian-controlled</span></div>
-    <div class="war-legend-row"><span class="war-legend-swatch" style="background:#5a0800;border:2px solid #cc2200"></span><span data-i18n="bar.legend.luhansk">Luhansk — largely Russian-controlled</span></div>
-    <div class="war-legend-row"><span class="war-legend-swatch" style="background:#7a1e08;border:2px dashed #cc4400"></span><span data-i18n="bar.legend.donetsk">Donetsk · Zaporizhzhia · Kherson — contested</span></div>
-    <div class="war-legend-note" data-i18n="bar.legend.note">Frontline indicative only.</div>
+    <div class="war-legend-title">Occupation status (2024–25)</div>
+    <div class="war-legend-row"><span class="war-legend-swatch" style="background:#3d0000;border:2px solid #cc0000"></span>Crimea — occupied since 2014</div>
+    <div class="war-legend-row"><span class="war-legend-swatch" style="background:#5a0800;border:2px solid #cc2200"></span>Luhansk — largely occupied</div>
+    <div class="war-legend-row"><span class="war-legend-swatch" style="background:#7a1e08;border:2px dashed #cc4400"></span>Donetsk · Zaporizhzhia · Kherson — contested</div>
+    <div class="war-legend-note">UA sovereign territory throughout. Frontline indicative only.</div>
   </div>
 
+  <!-- ── Feedback floating button ──────────────────────────────────────────── -->
+  <button class="fab fab-feedback" id="feedbackBtn" onclick="uvOpenFeedback()" aria-label="Send feedback" title="Send feedback">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    <span data-i18n="feedback.btn">Feedback</span>
+  </button>
 
   <!-- ── Feedback modal ────────────────────────────────────────────────────── -->
   <div class="modal-overlay" id="feedbackModal" hidden role="dialog" aria-modal="true" aria-labelledby="feedbackModalTitle">
@@ -617,8 +530,8 @@
         <h3 id="feedbackModalTitle" data-i18n="feedback.title">Send feedback</h3>
         <button class="modal-close" id="closeFeedbackModal" onclick="uvCloseFeedback()" aria-label="Close feedback form">×</button>
       </div>
-      <!-- Netlify Form - configure email notification in Netlify dashboard:
-           Forms → feedback → Notifications → Email notification → finmodelup@gmail.com -->
+      <!-- Netlify Form — configure email notification in Netlify dashboard:
+           Forms → feedback → Notifications → Email notification → samir.asadov.28@gmail.com -->
       <form name="feedback" method="POST" netlify netlify-honeypot="bot-field" id="feedbackForm" onsubmit="uvSubmitFeedback(event)">
         <input type="hidden" name="form-name" value="feedback">
         <p class="visually-hidden">
@@ -646,11 +559,18 @@
         <div class="form-actions">
           <button type="submit" class="form-submit" id="feedbackSubmit" data-i18n="feedback.submit">Send</button>
         </div>
-        <p class="form-sent" id="feedbackSent" hidden data-i18n="feedback.sent">Thank you - your message has been sent.</p>
+        <p class="form-sent" id="feedbackSent" hidden data-i18n="feedback.sent">Thank you — your message has been sent.</p>
       </form>
     </div>
   </div>
 
+  <!-- ── AI chat floating button ───────────────────────────────────────────── -->
+  <button class="fab fab-chat" id="chatBtn" onclick="uvOpenChat()" aria-label="Open AI assistant" title="Ask AI about reconstruction">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+    <span data-i18n="chat.btn">Ask AI</span>
+  </button>
 
   <!-- ── AI chat panel ─────────────────────────────────────────────────────── -->
   <div class="chat-panel" id="chatPanel" hidden role="complementary" aria-label="AI assistant">
@@ -691,12 +611,12 @@
   </div>
 
   <!-- ── Leaflet JS ─────────────────────────────────────────────────────────── -->
-  <!-- Leaflet JS - defer so it doesn't block HTML parsing; executes before app.js module -->
+  <!-- Leaflet JS — defer so it doesn't block HTML parsing; executes before app.js module -->
   <script src="/js/vendor/leaflet.js" defer></script>
 
   <script type="module" src="/js/app.js"></script>
   <script>
-  /* ── Force-reload button - clears ALL caches + SW, always gets fresh content ── */
+  /* ── Force-reload button — clears ALL caches + SW, always gets fresh content ── */
   (function () {
     var btn = document.getElementById('forceReloadBtn');
     if (!btn) return;

@@ -10,59 +10,49 @@ const BASE = '';
 export async function loadAssetsIndex() {
   const res = await fetch(`${BASE}/data/assets/index.json`);
   if (!res.ok) throw new Error(`Failed to load assets index: ${res.status}`);
-  const raw = await res.json();
-  // index.json is a flat array of full asset objects
-  return Array.isArray(raw) ? raw : (raw.assets ?? []);
+  const { assets } = await res.json();
+  return assets;
 }
 
 /**
- * Returns asset objects shaped for map display, popups, filters, and
- * aggregation — no individual asset fetches needed.
+ * Returns slim asset objects shaped to match the full schema well enough for
+ * map display, popups, filters, and aggregation — no individual asset fetches.
  * Full record is loaded lazily via loadAsset(id) when detail/finance is needed.
  */
 export async function loadAssetsForMap() {
   const index = await loadAssetsIndex();
   return index.map(item => {
-    // index.json contains full asset objects with nested structure
-    const cp = item.cost_paths ?? {};
-    const baseline = cp.baseline ?? null;
-    const cc       = cp.code_compliant ?? null;
-    const bbb      = cp.build_back_better ?? null;
-    const baselineFs = item.financing_structures?.baseline ?? {};
-    const financingClass =
-      baselineFs._financing_class ??
-      ((baselineFs.grant_pct ?? 0) >= 50 ? 'grant_led' : 'mixed');
-
+    function pathObj(low, cen, high) {
+      if (low == null && cen == null && high == null) return null;
+      return { low_usd_m: low ?? 0, central_usd_m: cen ?? 0, high_usd_m: high ?? 0 };
+    }
     return {
       asset_id: item.asset_id,
-      name: {
-        en: item.name?.en ?? item.asset_id,
-        uk: item.name?.uk ?? item.name?.en ?? item.asset_id,
-      },
+      name: { en: item.name_en, uk: item.name_uk ?? item.name_en },
       location: {
-        lat:    item.location?.lat,
-        lon:    item.location?.lon,
-        oblast: item.location?.oblast ?? '',
+        lat:    item.lat,
+        lon:    item.lon,
+        oblast: item.oblast ?? '',
       },
       sector: item.sector,
       wartime_status: {
-        lifecycle:      item.wartime_status?.lifecycle,
-        rebuildability: item.wartime_status?.rebuildability,
+        lifecycle:      item.lifecycle,
+        rebuildability: item.rebuildability,
       },
       damage: {
-        destruction_level: item.damage?.destruction_level,
-        re_damage_count:   item.damage?.re_damage_count ?? 0,
+        destruction_level: item.destruction_level,
+        re_damage_count:   item.re_damage_count ?? 0,
       },
       cost_paths: {
-        pending_methodology: cp.pending_methodology ?? false,
-        baseline,
-        code_compliant:    cc,
-        build_back_better: bbb,
+        pending_methodology: item.pending_methodology ?? false,
+        baseline:          pathObj(item.cost_baseline_low, item.cost_baseline_cen, item.cost_baseline_high),
+        code_compliant:    pathObj(item.cost_cc_low,       item.cost_cc_cen,       item.cost_cc_high),
+        build_back_better: pathObj(item.cost_bbb_low,      item.cost_bbb_cen,      item.cost_bbb_high),
       },
       financing_structures: {
-        baseline:          { _financing_class: financingClass },
-        code_compliant:    { _financing_class: financingClass },
-        build_back_better: { _financing_class: financingClass },
+        baseline:          { _financing_class: item.financing_class },
+        code_compliant:    { _financing_class: item.financing_class },
+        build_back_better: { _financing_class: item.financing_class },
       },
       _slim: true,
     };
@@ -77,8 +67,9 @@ export async function loadAsset(id) {
 
 export async function loadAllAssets() {
   const index = await loadAssetsIndex();
-  // index.json is already the full asset objects; no need for individual fetches
-  return index;
+  const ids = index.map(item => (typeof item === 'string' ? item : item.asset_id));
+  const assets = await Promise.all(ids.map(id => loadAsset(id)));
+  return assets;
 }
 
 export async function loadOblastsGeoJSON() {

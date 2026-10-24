@@ -4,7 +4,7 @@
  * Strategy: cache-first for static assets; network-first for data files.
  */
 
-const CACHE_VERSION = 'uvidnova-v98';
+const CACHE_VERSION = 'uvidnova-v34';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const DATA_CACHE    = `${CACHE_VERSION}-data`;
 
@@ -32,10 +32,7 @@ const STATIC_ASSETS = [
   '/js/growth-sectors.js',
   '/js/scenario-engine.js',
   '/js/aggregation.js',
-  '/manifest.webmanifest',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png',
-  '/icons/icon-512-maskable.png'
+  '/manifest.webmanifest'
 ];
 
 const DATA_ASSETS = [
@@ -129,46 +126,32 @@ self.addEventListener('fetch', event => {
   // Only intercept same-origin requests beyond this point
   if (url.origin !== self.location.origin) return;
 
-  // Data files: network-first for frequently-updated files (cities.json, oblasts),
-  // cache-first for static reference data. Falls back to cache when offline.
+  // Data files: stale-while-revalidate (serve cache immediately, update in background)
   if (url.pathname.startsWith('/data/')) {
-    const isFrequentlyUpdated = /\/(cities|oblasts_info|development_opportunities)\.json$/.test(url.pathname);
-    if (isFrequentlyUpdated) {
-      event.respondWith(
-        fetch(request)
-          .then(response => {
-            if (response.ok) caches.open(DATA_CACHE).then(c => c.put(request, response.clone()));
-            return response;
-          })
-          .catch(() => caches.match(request))
-      );
-    } else {
-      event.respondWith(
-        caches.open(DATA_CACHE).then(async cache => {
-          const cached = await cache.match(request);
-          const networkFetch = fetch(request).then(response => {
-            if (response.ok) cache.put(request, response.clone());
-            return response;
-          }).catch(() => null);
-          return cached || networkFetch;
-        })
-      );
-    }
+    event.respondWith(
+      caches.open(DATA_CACHE).then(async cache => {
+        const cached = await cache.match(request);
+        const networkFetch = fetch(request).then(response => {
+          if (response.ok) cache.put(request, response.clone());
+          return response;
+        }).catch(() => null);
+        return cached || networkFetch;
+      })
+    );
     return;
   }
 
-  // CSS and JS: network-first so updated translations/styles are never served stale.
-  // Falls back to cache only when offline.
+  // CSS and JS: cache-first, update in background (cache busted by SW version)
   if (url.pathname.endsWith('.css') || url.pathname.endsWith('.js')) {
     event.respondWith(
-      fetch(request)
-        .then(response => {
-          if (response.ok) {
-            caches.open(STATIC_CACHE).then(c => c.put(request, response.clone()));
-          }
+      caches.open(STATIC_CACHE).then(async cache => {
+        const cached = await cache.match(request);
+        const networkFetch = fetch(request).then(response => {
+          if (response.ok) cache.put(request, response.clone());
           return response;
-        })
-        .catch(() => caches.match(request))
+        }).catch(() => null);
+        return cached || networkFetch;
+      })
     );
     return;
   }

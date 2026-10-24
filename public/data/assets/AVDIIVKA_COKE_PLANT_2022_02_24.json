@@ -19,18 +19,11 @@
     "incident_type": "artillery_shelling",
     "destruction_level": "destroyed",
     "re_damage_count": 3,
-    "verified_by": [
-      "KSE",
-      "BELLINGCAT"
-    ],
+    "verified_by": [],
     "evidence_sources": [
       {
         "title": "KSE Russia Will Pay — Avdiivka Coke Plant",
         "source_code": "KSE"
-      },
-      {
-        "title": "Bellingcat Avdiivka destruction documentation",
-        "source_code": "BELLINGCAT"
       }
     ]
   },
@@ -58,19 +51,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 942,
-      "central_usd_m": 2074,
-      "high_usd_m": 3206
+      "low_usd_m": 886.6,
+      "central_usd_m": 1952.0,
+      "high_usd_m": 3017.4
     },
     "code_compliant": {
-      "low_usd_m": 1084,
-      "central_usd_m": 2546,
-      "high_usd_m": 4008
+      "low_usd_m": 1020.2,
+      "central_usd_m": 2396.2,
+      "high_usd_m": 3772.2
     },
     "build_back_better": {
-      "low_usd_m": 1225,
-      "central_usd_m": 3177,
-      "high_usd_m": 5130
+      "low_usd_m": 1152.9,
+      "central_usd_m": 2990.1,
+      "high_usd_m": 4828.2
     }
   },
   "financing_structures": {
@@ -185,6 +178,7 @@
     "avdiivka",
     "occupied"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

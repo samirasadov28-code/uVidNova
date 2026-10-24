@@ -46,10 +46,6 @@ function fmt(n) {
 }
 
 function fmtM(n) {
-  if (n >= 10000) {
-    const bn = n / 1000;
-    return bn >= 100 ? `$${Math.round(bn).toLocaleString()}B` : `$${bn.toFixed(1)}B`;
-  }
   return `$${n}M`;
 }
 
@@ -140,7 +136,7 @@ export async function renderCostWorking(asset, container) {
           <tr>
             <td>Physical quantity (<code>${qtyField}</code>)</td>
             <td colspan="2">${fmt(qty)} ${uc.physical_unit}</td>
-            <td>${asset.physical_specs?.[qtyField]?.ref ?? '-'}</td>
+            <td>${asset.physical_specs?.[qtyField]?.ref ?? '—'}</td>
           </tr>
           <tr>
             <td>Destruction factor (<code>${destructionLevel}</code>)</td>
@@ -150,8 +146,8 @@ export async function renderCostWorking(asset, container) {
           </tr>
           <tr>
             <td>Regional multiplier (<code>${oblast ?? 'default'}</code>)</td>
-            <td>${rm?.low ?? '-'}×</td>
-            <td>${rm?.high ?? '-'}×</td>
+            <td>${rm?.low ?? '—'}×</td>
+            <td>${rm?.high ?? '—'}×</td>
             <td>RDNA3 Annex B regional cost variation</td>
           </tr>
           <tr>

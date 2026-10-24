@@ -229,11 +229,10 @@ function round2(n) {
  * @returns {string}
  */
 export function fmtBn(usd_bn) {
-  if (usd_bn == null || isNaN(usd_bn)) return '-';
-  if (usd_bn === 0) return '$0';
-  if (usd_bn >= 100) return `$${Math.round(usd_bn).toLocaleString()}B`;
-  if (usd_bn >= 1)   return `$${usd_bn.toFixed(1)}B`;
-  return `$${Math.round(usd_bn * 1000).toLocaleString()}M`; // sub-$1B
+  if (usd_bn >= 1000) return `$${(usd_bn / 1000).toFixed(1)}T`;
+  if (usd_bn >= 100)  return `$${Math.round(usd_bn)}B`;
+  if (usd_bn >= 10)   return `$${usd_bn.toFixed(1)}B`;
+  return `$${usd_bn.toFixed(2)}B`;
 }
 
 /**
@@ -242,12 +241,6 @@ export function fmtBn(usd_bn) {
  * @returns {string}
  */
 export function fmtM(usd_m) {
-  if (usd_m == null || isNaN(usd_m)) return '-';
-  if (usd_m >= 10000) {
-    const bn = usd_m / 1000;
-    return bn >= 100
-      ? `$${Math.round(bn).toLocaleString()}B`
-      : `$${bn.toFixed(1)}B`;
-  }
-  return `$${Math.round(usd_m).toLocaleString()}M`;
+  if (usd_m >= 1000) return `$${(usd_m / 1000).toFixed(1)}B`;
+  return `$${usd_m.toFixed(0)}M`;
 }

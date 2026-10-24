@@ -14,7 +14,6 @@ import {
 import { computeAggregation, renderAggregation } from './aggregation.js';
 import { getLang, getName, initLangToggle, applyTranslations, t } from './lang.js';
 import { openFinanceWizard } from './finance-wizard.js';
-import { openTrustPanel } from './trust-panel.js';
 
 // ── Marker configuration ───────────────────────────────────────────────────────
 
@@ -69,20 +68,16 @@ function makeCompletedIcon() {
 // ── Popup content ─────────────────────────────────────────────────────────────
 
 function fmtUSD(m) {
-  if (m == null) return '-';
-  if (m >= 10000) {
-    const bn = m / 1000;
-    return bn >= 100 ? `USD ${Math.round(bn).toLocaleString()}B` : `USD ${bn.toFixed(1)}B`;
-  }
-  return `USD ${Math.round(m).toLocaleString()}M`;
+  if (m == null) return '—';
+  return `USD ${m}M`;
 }
 
 function makePopupHTML(asset) {
   const name           = getName(asset);
   const sector         = t(`sector.${asset.sector}`) || SECTOR_LABELS[asset.sector] || asset.sector;
-  const level          = asset.damage?.destruction_level ?? '-';
-  const lifecycle      = asset.wartime_status?.lifecycle ?? '-';
-  const rebuildability = asset.wartime_status?.rebuildability ?? '-';
+  const level          = asset.damage?.destruction_level ?? '—';
+  const lifecycle      = asset.wartime_status?.lifecycle ?? '—';
+  const rebuildability = asset.wartime_status?.rebuildability ?? '—';
   const central        = asset.cost_paths?.baseline?.central_usd_m;
   const pending        = asset.cost_paths?.pending_methodology;
   const reCount        = asset.damage?.re_damage_count ?? 0;
@@ -127,9 +122,8 @@ let citiesData = null;
 let devOppsData = null;
 let warMode = false;
 let warLayer = null;
-let mapViewMode = 'ukraine';
+let mapViewMode = 'damaged';
 let selectedOblast = null; // GeoJSON feature name of selected oblast in Damaged view
-let activeCityOblast = null; // tracks which oblast has city markers shown (for lang refresh)
 
 // Oblasts with significant current occupation (as of 2024-2025)
 // Names must match GeoJSON feature names exactly (apostrophe variants from Natural Earth)
@@ -143,7 +137,7 @@ const PARTIALLY_OCCUPIED_OBLASTS = new Set(["Donets'k", 'Zaporizhzhya', 'Kherson
 const OBLAST_INFO_MAP = {
   'Kyiv Oblast':   'Kyiv Oblast',
   'Kyiv City':     'Kyiv City',
-  'Autonomous Republic of Crimea': 'Crimea',
+  'Autonomous Republic of Crimea': 'Crimea (Temporarily Occupied)',
   "Donets'k":      'Donetsk Oblast',
   "Luhans'k":      'Luhansk Oblast',
   'Dnipropetrovs\'k': 'Dnipropetrovsk Oblast',
@@ -199,6 +193,7 @@ function findOblastInfo(featureName) {
 function renderCapitalMarkers() {
   if (!map || !oblastInfoData) return;
   if (capitalLayer) { capitalLayer.remove(); capitalLayer = null; }
+  if (mapViewMode !== 'ukraine') return;
 
   const oblasts = oblastInfoData.oblasts ?? oblastInfoData;
   capitalLayer = L.layerGroup();
@@ -217,13 +212,8 @@ function renderCapitalMarkers() {
       iconAnchor: [4, 4],
     });
 
-    const lang = getLang();
-    const cityEntry = citiesData?.cities?.find(c => c.name_en === o.capital_en);
-    const capitalName = (cityEntry?.[`name_${lang}`])
-      ?? (lang === 'uk' ? o.capital_uk : null)
-      ?? o.capital_en ?? o.capital_uk ?? '';
     const marker = L.marker([o.capital_lat, o.capital_lon], { icon, interactive: false })
-      .bindTooltip(`<span class="${labelClass}">${capitalName}</span>`, {
+      .bindTooltip(`<span class="${labelClass}">${o.capital_en ?? o.capital_uk ?? ''}</span>`, {
         permanent: true,
         direction: 'top',
         offset: [0, -6],
@@ -296,8 +286,8 @@ function showOblastPanel(info, featureName) {
   }
 
   const lang = getLang();
-  const name      = (lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName)).replace(/ \(Temporarily Occupied\)/g, '').replace(/ \(окупований\)/g, '');
-  const capital   = lang === 'uk' ? (info?.capital_uk ?? '-') : (info?.capital_en ?? '-');
+  const name      = lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName);
+  const capital   = lang === 'uk' ? (info?.capital_uk ?? '—') : (info?.capital_en ?? '—');
   const famous    = lang === 'uk' ? (info?.famous_for_uk ?? '') : (info?.famous_for_en ?? '');
   const recon     = lang === 'uk' ? (info?.reconstruction_uk ?? '') : (info?.reconstruction_en ?? '');
   const resources = lang === 'uk' ? (info?.resources_uk ?? '') : (info?.resources_en ?? '');
@@ -497,7 +487,7 @@ function showOblastWarPanel(info, featureName) {
   closeOblastWarPanel();
 
   const lang   = getLang();
-  const name   = (lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName)).replace(/ \(Temporarily Occupied\)/g, '').replace(/ \(окупований\)/g, '');
+  const name   = lang === 'uk' ? (info?.name_uk ?? featureName) : (info?.name_en ?? featureName);
   const risk   = info?.war_risk ?? 'unknown';
   const prox   = lang === 'uk' ? (info?.front_proximity_uk ?? '') : (info?.front_proximity_en ?? '');
   const freq   = lang === 'uk' ? (info?.attack_frequency_uk ?? '') : (info?.attack_frequency_en ?? '');
@@ -513,12 +503,9 @@ function showOblastWarPanel(info, featureName) {
 
   // Count assets in this oblast
   const fullName = OBLAST_INFO_MAP[featureName] ?? featureName;
-  const normObl  = s => s.replace(/\s*oblast$/i, '').trim().toLowerCase();
-  const featN    = normObl(featureName);
-  const fullN    = normObl(fullName);
   const oblastAssets = allAssets.filter(a => {
     const loc = a.location?.oblast ?? '';
-    return loc === fullName || loc === featureName || normObl(loc) === featN || normObl(loc) === fullN;
+    return loc === fullName || loc === featureName || loc.replace(' Oblast', '') === featureName;
   });
   const totalCost = oblastAssets.reduce((s, a) => s + (a.cost_paths?.baseline?.central_usd_m ?? 0), 0);
 
@@ -541,7 +528,7 @@ function showOblastWarPanel(info, featureName) {
     ${freq ? `<div class="owp-section"><div class="owp-section-label">Attack frequency</div><p>${freq}</p></div>` : ''}
     <div class="owp-stats">
       <div class="owp-stat"><span class="owp-stat-n">${oblastAssets.length}</span><span class="owp-stat-l">damaged assets</span></div>
-      ${totalCost > 0 ? `<div class="owp-stat"><span class="owp-stat-n">$${Math.round(totalCost).toLocaleString()}M</span><span class="owp-stat-l">est. baseline cost</span></div>` : ''}
+      ${totalCost > 0 ? `<div class="owp-stat"><span class="owp-stat-n">$${totalCost}M</span><span class="owp-stat-l">est. baseline cost</span></div>` : ''}
     </div>
     <p class="owp-hint">Click the region again to deselect</p>`;
 
@@ -602,14 +589,10 @@ function showReconstructedPanel(info, featureName) {
   const fullName = OBLAST_INFO_MAP[featureName] ?? featureName;
   const RECON_STAGES = new Set(['complete', 'under_reconstruction', 'funded', 'in_pipeline']);
   const STAGE_LABEL  = { complete: '✅ Complete', under_reconstruction: '🔨 Under reconstruction', funded: '💰 Funded', in_pipeline: '📋 In pipeline' };
-  const normOblast = s => s.replace(/\s*oblast$/i, '').trim().toLowerCase();
-  const featNorm   = normOblast(featureName);
-  const fullNorm   = normOblast(fullName);
   const completed = allAssets.filter(a => {
     if (!RECON_STAGES.has(a.wartime_status?.lifecycle)) return false;
     const loc = a.location?.oblast ?? '';
-    const locNorm = normOblast(loc);
-    return loc === fullName || loc === featureName || locNorm === featNorm || locNorm === fullNorm;
+    return loc === fullName || loc === featureName || loc.replace(' Oblast', '') === featureName;
   });
 
   const projectsHTML = completed.length === 0
@@ -627,14 +610,14 @@ function showReconstructedPanel(info, featureName) {
             <div class="orp-project-banner" style="background:${colour}22;border-left:3px solid ${colour}">
               <span class="orp-project-sector" style="color:${colour}">${SECTOR_LABELS[a.sector] ?? a.sector}</span>
               <span class="orp-project-stage">${stageLabel}</span>
-              ${totalCost != null ? `<span class="orp-project-cost">$${Math.round(totalCost).toLocaleString()}M</span>` : ''}
+              ${totalCost != null ? `<span class="orp-project-cost">$${totalCost}M</span>` : ''}
             </div>
             <div class="orp-project-body">
               <div class="orp-project-name">${aName}</div>
               <div class="orp-cost-row">
-                ${baseline != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">Baseline</span> $${Math.round(baseline).toLocaleString()}M</span>` : ''}
-                ${codeComp != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">Code+</span> $${Math.round(codeComp).toLocaleString()}M</span>` : ''}
-                ${bbb      != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">BBB</span> $${Math.round(bbb).toLocaleString()}M</span>` : ''}
+                ${baseline != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">Baseline</span> $${baseline}M</span>` : ''}
+                ${codeComp != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">Code+</span> $${codeComp}M</span>` : ''}
+                ${bbb      != null ? `<span class="orp-cost-item"><span class="orp-cost-lbl">BBB</span> $${bbb}M</span>` : ''}
               </div>
               <div class="orp-project-actions">
                 <button class="orp-detail-btn" data-id="${encodeURIComponent(a.asset_id)}">Details →</button>
@@ -701,19 +684,21 @@ async function loadCities() {
 }
 
 function showCityMarkers(oblastNameEn) {
-  activeCityOblast = oblastNameEn;
   clearCityMarkers();
   if (!map || !citiesData) return;
 
   // Filter cities for this oblast; exclude the capital if it duplicates the capital dot layer
-  const cities = citiesData.cities.filter(c => c.oblast_en === oblastNameEn && c.name_en !== 'Sevastopol');
+  const cities = citiesData.cities.filter(c => c.oblast_en === oblastNameEn);
   if (cities.length === 0) return;
+
+  // Hide capital dots while city markers are shown to avoid duplicate pins
+  if (capitalLayer) { capitalLayer.remove(); }
 
   cityMarkersLayer = L.layerGroup();
   const lang = getLang();
 
   cities.forEach(city => {
-    const label = city[`name_${lang}`] ?? city.name_en;
+    const label = lang === 'uk' ? city.name_uk : city.name_en;
     const radius = city.capital ? 7 : city.pop >= 200000 ? 6 : city.pop >= 50000 ? 5 : 4;
     const color  = city.capital ? '#c9a227' : '#4a90d9';
 
@@ -740,7 +725,7 @@ function showCityMarkers(oblastNameEn) {
 function clearCityMarkers() {
   if (cityMarkersLayer) { cityMarkersLayer.remove(); cityMarkersLayer = null; }
   // Restore capital dots (only relevant in Ukraine view)
-  if (oblastInfoData) renderCapitalMarkers();
+  if (mapViewMode === 'ukraine' && oblastInfoData) renderCapitalMarkers();
 }
 
 // ── Development view panel ────────────────────────────────────────────────────
@@ -764,68 +749,10 @@ const SECTOR_ICONS = {
   eu_logistics:         '🚢',
   carbon_credits:       '🌿',
   real_estate:          '🏙',
-  healthcare:           '🏥',
-  education:            '🎓',
-  water:                '💧',
-  agribusiness:         '🌾',
-  tourism:              '🏛',
-  logistics:            '🚛',
-  energy:               '🔋',
 };
-
-// Financing structure by sector — capital stack + return profile
-const SECTOR_FINANCING = {
-  renewables:           { grant:10, era:15, concessional:30, equity:25, private:20, irr:'12–18%', investors:'DFI equity, infrastructure funds, EBRD Green Energy', risk:'Medium' },
-  defense_technology:   { grant:20, era:10, concessional:20, equity:30, private:20, irr:'15–22%', investors:'NATO trust funds, defence-tech PE, bilateral grants', risk:'High' },
-  critical_minerals:    { grant:5, era:10, concessional:25, equity:30, private:30, irr:'14–20%', investors:'EU Critical Raw Materials Act funds, mining PE, DFI equity', risk:'High' },
-  green_steel:          { grant:15, era:10, concessional:35, equity:25, private:15, irr:'10–15%', investors:'EBRD, EU Just Transition, industrial-sector PE', risk:'Medium-High' },
-  it_services:          { grant:5, era:0, concessional:15, equity:35, private:45, irr:'18–28%', investors:'Venture capital, diaspora angels, EU startup funds', risk:'Medium' },
-  modular_construction: { grant:20, era:15, concessional:35, equity:20, private:10, irr:'8–12%', investors:'EU reconstruction grants, EBRD, municipal equity', risk:'Medium-Low' },
-  eu_logistics:         { grant:10, era:10, concessional:30, equity:25, private:25, irr:'9–14%', investors:'EBRD, EIB, Trans-European Network grants, infra funds', risk:'Medium' },
-  carbon_credits:       { grant:5, era:0, concessional:20, equity:30, private:45, irr:'12–18%', investors:'Carbon market funds, impact investors, agri-PE', risk:'Medium' },
-  real_estate:          { grant:10, era:15, concessional:35, equity:25, private:15, irr:'7–11%', investors:'EBRD, reconstruction funds, municipal equity', risk:'Medium-Low' },
-  healthcare:           { grant:45, era:10, concessional:35, equity:10, private:0,  irr:'N/A',   investors:'EU grants, bilateral donors, EBRD social sector', risk:'Low' },
-  education:            { grant:55, era:10, concessional:25, equity:10, private:0,  irr:'N/A',   investors:'EU / World Bank grants, bilateral donors', risk:'Low' },
-  water:                { grant:30, era:10, concessional:45, equity:15, private:0,  irr:'N/A',   investors:'KfW, EBRD, EIB, municipal equity', risk:'Low' },
-  agribusiness:         { grant:10, era:5,  concessional:30, equity:25, private:30, irr:'10–16%', investors:'EBRD AgriFinance, USAID, EU agri-funds, private equity', risk:'Medium' },
-  tourism:              { grant:25, era:5,  concessional:35, equity:20, private:15, irr:'8–13%', investors:'EBRD, EU heritage funds, diaspora capital', risk:'Medium' },
-  logistics:            { grant:10, era:10, concessional:35, equity:25, private:20, irr:'9–13%', investors:'EBRD, EIB TEN-T, logistics infrastructure funds', risk:'Medium' },
-  energy:               { grant:15, era:20, concessional:35, equity:20, private:10, irr:'8–12%', investors:'EBRD, EIB, EU energy grants, state equity', risk:'Medium' },
-};
-
-// Universal supplemental opportunities added for every oblast
-const UNIVERSAL_OPPS = [
-  { sector_id: 'healthcare',   archetype_id: 'clinic_rebuild',    label: 'Primary healthcare network rebuild',     rationale: 'Wartime damage to district hospitals and outpatient clinics creates a pipeline of grant-eligible healthcare infrastructure projects under EU social-sector conditionality.',                                size_usd_m_central: 35  },
-  { sector_id: 'logistics',    archetype_id: 'cold_chain',        label: 'Cold-chain logistics hub',               rationale: 'Export-quality agri-food logistics infrastructure — cold storage, customs clearance facilities, and rail connection to EU grain corridors — eligible for EBRD and TEN-T network funding.',  size_usd_m_central: 55  },
-  { sector_id: 'education',    archetype_id: 'vocational',        label: 'Vocational training & skills centre',    rationale: 'Reconstruction labour gap creates immediate demand for vocational training in construction trades, engineering, and digital skills. EU Just Transition Fund and bilateral grants available.',    size_usd_m_central: 18  },
-  { sector_id: 'it_services',  archetype_id: 'tech_hub',          label: 'Tech & innovation hub (Diia City node)', rationale: 'Ukraine\'s Diia City special tax zone for IT companies enables formation of regional tech hubs backed by venture capital and EU digital-transition co-financing.',                             size_usd_m_central: 22  },
-  { sector_id: 'agribusiness', archetype_id: 'food_processing',   label: 'Agricultural processing facility',       rationale: 'Value-added agri-processing (grain milling, oilseed, dairy) reduces raw-commodity export dependency and captures EU market premium. EBRD AgriFinance and EU agri-funds applicable.',          size_usd_m_central: 65  },
-  { sector_id: 'tourism',      archetype_id: 'heritage_tourism',  label: 'Heritage & cultural tourism corridor',   rationale: 'Post-war heritage tourism represents early-recovery economic activity with strong diaspora demand. UNESCO, EU heritage grants, and diaspora-backed impact capital available.',                  size_usd_m_central: 28  },
-];
-
-function buildFinancingDetailHTML(fin) {
-  const COLOURS = { grant:'#27ae60', era:'#8e44ad', concessional:'#2980b9', equity:'#e67e22', private:'#7f8c8d' };
-  const LABELS  = { grant:'Grants', era:'ERA/Frozen assets', concessional:'Concessional debt', equity:'DFI equity', private:'Private capital' };
-  const segs = Object.entries(fin)
-    .filter(([k]) => COLOURS[k] && fin[k] > 0)
-    .map(([k, v]) => `<div class="dev-fin-seg" style="flex:${v};background:${COLOURS[k]}" title="${LABELS[k]}: ${v}%"></div>`).join('');
-  const legend = Object.entries(fin)
-    .filter(([k]) => COLOURS[k] && fin[k] > 0)
-    .map(([k, v]) => `<div class="dev-fin-item"><div class="dev-fin-dot" style="background:${COLOURS[k]}"></div>${LABELS[k]}: ${v}%</div>`).join('');
-  return `
-    <div class="dev-opp-financing">
-      <div class="dev-fin-title">Financing structure</div>
-      <div class="dev-fin-stack">${segs}</div>
-      <div class="dev-fin-legend">${legend}</div>
-      <div class="dev-fin-stats">
-        <div class="dev-fin-stat"><div class="dev-fin-stat-val">${fin.irr}</div><div class="dev-fin-stat-lbl">Target IRR</div></div>
-        <div class="dev-fin-stat"><div class="dev-fin-stat-val">${fin.risk}</div><div class="dev-fin-stat-lbl">Risk profile</div></div>
-      </div>
-      <div class="dev-fin-investors">Key investors: ${fin.investors}</div>
-    </div>`;
-}
 
 function showDevelopmentPanel(oblastNameEn, info) {
+  // Remove any existing development panel
   const old = document.getElementById('devOppsPanel');
   if (old) { old.remove(); }
 
@@ -834,54 +761,39 @@ function showDevelopmentPanel(oblastNameEn, info) {
   panel.className = 'dev-opps-panel';
   document.body.appendChild(panel);
 
-  // Merge oblast-specific opportunities with universal ones
-  const specific = devOppsData?.opportunities?.[oblastNameEn] ?? [];
-  const allOpps = [...specific, ...UNIVERSAL_OPPS];
+  const opps = devOppsData?.opportunities?.[oblastNameEn] ?? [];
   const displayName = info?.name_en ?? oblastNameEn;
 
-  const cardsHTML = allOpps.map((o, idx) => {
+  const oppsHTML = opps.length > 0 ? opps.map(o => {
     const icon = SECTOR_ICONS[o.sector_id] ?? '📊';
-    const fin  = SECTOR_FINANCING[o.sector_id];
     const sizeFmt = o.size_usd_m_central >= 1000
       ? `USD ${(o.size_usd_m_central / 1000).toFixed(1)}B`
       : `USD ${o.size_usd_m_central}M`;
-    const finHTML = fin ? buildFinancingDetailHTML(fin) : '';
     return `
-      <div class="dev-opp-card" data-idx="${idx}">
+      <div class="dev-opp-card">
         <div class="dev-opp-header">
           <span class="dev-opp-icon">${icon}</span>
           <span class="dev-opp-label">${o.label}</span>
           <span class="dev-opp-size">${sizeFmt}</span>
         </div>
         <p class="dev-opp-rationale">${o.rationale}</p>
-        ${fin ? '<p class="dev-opp-expand-hint">Tap to see financing structure ▾</p>' : ''}
-        ${finHTML}
       </div>`;
-  }).join('');
+  }).join('') : `<p class="dev-opp-empty">Development opportunities for this region are being researched.</p>`;
 
   panel.innerHTML = `
     <div class="dev-opps-header">
       <div>
         <div class="dev-opps-region">${displayName}</div>
-        <div class="dev-opps-subtitle">${allOpps.length} investment opportunities</div>
+        <div class="dev-opps-subtitle">Investment opportunities</div>
       </div>
       <button class="dev-opps-close" aria-label="Close">×</button>
     </div>
-    <div class="dev-opps-body">${cardsHTML}</div>`;
+    <div class="dev-opps-body">
+      ${oppsHTML}
+    </div>`;
 
   panel.hidden = false;
   requestAnimationFrame(() => panel.classList.add('visible'));
-
-  // Click-to-expand financing detail
-  panel.querySelectorAll('.dev-opp-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const wasExpanded = card.classList.contains('expanded');
-      panel.querySelectorAll('.dev-opp-card').forEach(c => c.classList.remove('expanded'));
-      if (!wasExpanded) card.classList.add('expanded');
-      const hint = card.querySelector('.dev-opp-expand-hint');
-      if (hint) hint.textContent = card.classList.contains('expanded') ? 'Financing structure ▴' : 'Tap to see financing structure ▾';
-    });
-  });
 
   panel.querySelector('.dev-opps-close').addEventListener('click', () => {
     panel.classList.remove('visible');
@@ -895,8 +807,8 @@ function showDevelopmentPanel(oblastNameEn, info) {
 
 const VIEW_PALETTE = {
   ukraine:       { border: '#FFD700', fill: '#005BBB', bg: '#deeeff' },
-  damaged:       { border: '#1a6b32', fill: '#c0392b', bg: '#deeeff' },
-  reconstructed: { border: '#FFD700', fill: '#0d2b52', bg: '#deeeff' },
+  damaged:       { border: '#e74c3c', fill: '#c45050', bg: '#deeeff' },
+  reconstructed: { border: '#27ae60', fill: '#2d7a3a', bg: '#deeeff' },
   development:   { border: '#1a7a2e', fill: '#2d7a3a', bg: '#deeeff' },
 };
 
@@ -934,8 +846,7 @@ function toggleWarMode() {
   const btn = document.getElementById('warModeBtn');
   if (btn) {
     btn.classList.toggle('war-active', warMode);
-    const label = document.getElementById('warModeBtnLabel') ?? btn.querySelector('span');
-    if (label) label.textContent = warMode ? t('bar.hide_occupation') : t('bar.occupied');
+    btn.textContent = warMode ? '🗺 Hide occupation' : '🔴 Occupied territories';
   }
   const legend = document.getElementById('warLegend');
   if (legend) legend.hidden = !warMode;
@@ -952,9 +863,9 @@ async function addOblastLayer() {
         const isLuhansk  = name === "Luhans'k";
         const isPartialOcc = PARTIALLY_OCCUPIED_OBLASTS.has(name);
         let tooltipText = name;
-        if (isCrimea) tooltipText = 'Crimea';
-        else if (isLuhansk) tooltipText = 'Luhansk Oblast';
-        else if (isPartialOcc) tooltipText = `${name} Oblast`;
+        if (isCrimea) tooltipText = 'Autonomous Republic of Crimea — temporarily occupied since 2014 (UA territory, excl. Sevastopol City)';
+        else if (isLuhansk) tooltipText = 'Luhansk Oblast — temporarily occupied (UA territory)';
+        else if (isPartialOcc) tooltipText = `${name} Oblast — temporarily partially occupied (UA territory)`;
         if (name) layer.bindTooltip(tooltipText, { permanent: false, sticky: true, className: 'oblast-tooltip' });
 
         layer.on('mouseover', function () {
@@ -977,7 +888,7 @@ async function addOblastLayer() {
             handleReconstructedOblastClick(name, this, layer, info);
           } else if (mapViewMode === 'development') {
             oblastLayer.resetStyle();
-            this.setStyle({ fillColor: '#1a4070', fillOpacity: 0.85, weight: 2.5, color: '#FFD700' });
+            this.setStyle({ fillColor: '#d4edda', fillOpacity: 0.75, weight: 2.5, color: '#27ae60' });
             zoomToOblastFeature(this);
             const oblastNameEn = info?.name_en ?? OBLAST_INFO_MAP[name] ?? name;
             showCityMarkers(oblastNameEn);
@@ -1021,7 +932,7 @@ function setMapView(view) {
   closeReconstructedPanel();
   clearCityMarkers();
   const devPanel = document.getElementById('devOppsPanel');
-  if (devPanel && view !== 'ukraine') devPanel.remove();
+  if (devPanel) devPanel.remove();
   if (oblastLayer) oblastLayer.setStyle(oblastStyle);
 
   // Swap map background colour to match view palette
@@ -1132,7 +1043,7 @@ function renderAssetList(assets) {
 
     const name    = getName(asset);
     const sector  = t(`sector.${asset.sector}`) || SECTOR_LABELS[asset.sector] || asset.sector;
-    const level   = asset.damage?.destruction_level ?? '-';
+    const level   = asset.damage?.destruction_level ?? '—';
     const colour  = SECTOR_COLOURS[asset.sector] ?? '#555';
     const reCount = asset.damage?.re_damage_count ?? 0;
     const central = asset.cost_paths?.baseline?.central_usd_m;
@@ -1217,11 +1128,7 @@ function initFilters() {
   });
 
   document.addEventListener('filtersChanged', renderMarkers);
-  document.addEventListener('langChanged', () => {
-    renderMarkers();
-    renderCapitalMarkers();
-    if (activeCityOblast) showCityMarkers(activeCityOblast);
-  });
+  document.addEventListener('langChanged', renderMarkers);
 }
 
 // ── App version ───────────────────────────────────────────────────────────────
@@ -1422,7 +1329,6 @@ async function init() {
     allAssets = assets;
     initFilters();
     setMapView('ukraine');
-    renderCapitalMarkers(); // re-render with citiesData now loaded for translated labels
 
     if (assets.length > 0) {
       const latlngs = assets
@@ -1444,11 +1350,3 @@ window._appWarToggle   = toggleWarMode;
 window._appSetMapView  = setMapView;
 window._appFinance     = () => openFinanceWizard(allAssets);
 window._openFinanceWizard = (ids) => openFinanceWizard(allAssets, ids ?? []);
-window._appTrust       = () => openTrustPanel();
-
-// Auto-open finance wizard if navigated here with ?openFinance=1 (from trust/about pages)
-if (new URLSearchParams(window.location.search).get('openFinance') === '1') {
-  // Wait for app data to load before opening
-  setTimeout(() => openFinanceWizard(allAssets), 800);
-  history.replaceState({}, '', window.location.pathname);
-}

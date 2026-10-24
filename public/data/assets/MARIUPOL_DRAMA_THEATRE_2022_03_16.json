@@ -20,30 +20,12 @@
     "destruction_level": "destroyed",
     "re_damage_count": 0,
     "verified_by": [
-      "UN_OCHA",
-      "BELLINGCAT",
-      "HUMAN_RIGHTS_WATCH",
       "AMNESTY"
     ],
     "evidence_sources": [
       {
-        "title": "Amnesty International: Mariupol Theatre Strike — War Crime Investigation",
-        "url": "https://www.amnesty.org/en/latest/news/2022/06/ukraine-theatre-strike-in-mariupol-was-a-deliberate-attack-killing-hundreds-new-investigation/",
-        "source_code": "OCHA"
-      },
-      {
-        "title": "Human Rights Watch: Mariupol Theatre Attack",
-        "url": "https://www.hrw.org/news/2022/03/24/ukraine-russian-strike-mariupol-theater",
-        "source_code": "OCHA"
-      },
-      {
-        "title": "Bellingcat: Mariupol Theatre Satellite Imagery Analysis",
-        "url": "https://www.bellingcat.com/news/2022/03/17/mariupol-theatre-attack",
-        "source_code": "BELLINGCAT"
-      },
-      {
-        "title": "Associated Press: Mariupol Theatre Before and After Satellite Images",
-        "url": "https://apnews.com/article/russia-ukraine-mariupol-theater",
+        "title": "Amnesty International: Deadly Mariupol Theatre Strike a Clear War Crime - New Investigation (June 2022)",
+        "url": "https://www.amnesty.org/en/latest/news/2022/06/ukraine-deadly-mariupol-theatre-strike-a-clear-war-crime-by-russian-forces-new-investigation/",
         "source_code": "OCHA"
       }
     ]
@@ -78,19 +60,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 55,
-      "central_usd_m": 151,
-      "high_usd_m": 248
+      "low_usd_m": 59.3,
+      "central_usd_m": 162.8,
+      "high_usd_m": 267.4
     },
     "code_compliant": {
-      "low_usd_m": 64,
-      "central_usd_m": 187,
-      "high_usd_m": 310
+      "low_usd_m": 69.0,
+      "central_usd_m": 201.6,
+      "high_usd_m": 334.2
     },
     "build_back_better": {
-      "low_usd_m": 72,
-      "central_usd_m": 234,
-      "high_usd_m": 396,
+      "low_usd_m": 77.6,
+      "central_usd_m": 252.3,
+      "high_usd_m": 427.0,
       "tech_overlays": [
         "passive_building_standard",
         "cultural_heritage_bim",
@@ -202,6 +184,7 @@
     "occupied",
     "war_crime_documented"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

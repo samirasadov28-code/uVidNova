@@ -25,13 +25,13 @@
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update — Bakhmut-Chasiv Yar July 2023",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-chasiv-yar-2023",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Donetsk Oblast Residential Damage — Chasiv Yar 2023",
-        "url": "https://kse.ua/wp-content/uploads/2023/09/KSE_ChasivYar_Residential.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -61,19 +61,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 168,
-      "central_usd_m": 330,
-      "high_usd_m": 492
+      "low_usd_m": 170.8,
+      "central_usd_m": 335.6,
+      "high_usd_m": 500.3
     },
     "code_compliant": {
-      "low_usd_m": 193,
-      "central_usd_m": 403,
-      "high_usd_m": 615
+      "low_usd_m": 196.3,
+      "central_usd_m": 409.8,
+      "high_usd_m": 625.4
     },
     "build_back_better": {
-      "low_usd_m": 218,
-      "central_usd_m": 495,
-      "high_usd_m": 772,
+      "low_usd_m": 221.7,
+      "central_usd_m": 503.4,
+      "high_usd_m": 785.1,
       "tech_overlays": [
         "passive_house_standard",
         "microgrid",
@@ -184,6 +184,7 @@
     "destroyed",
     "frontline_adjacent"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

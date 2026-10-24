@@ -20,9 +20,8 @@
     "destruction_level": "moderate",
     "re_damage_count": 0,
     "verified_by": [
-      "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
@@ -31,8 +30,8 @@
         "source_code": "RDNA3"
       },
       {
-        "title": "UN OCHA Ukraine Flash Update — Kherson water infrastructure November 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-nov-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -57,19 +56,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 50,
-      "central_usd_m": 174,
-      "high_usd_m": 298
+      "low_usd_m": 53.9,
+      "central_usd_m": 187.6,
+      "high_usd_m": 321.3
     },
     "code_compliant": {
-      "low_usd_m": 57,
-      "central_usd_m": 215,
-      "high_usd_m": 372
+      "low_usd_m": 61.5,
+      "central_usd_m": 231.8,
+      "high_usd_m": 401.1
     },
     "build_back_better": {
-      "low_usd_m": 65,
-      "central_usd_m": 270,
-      "high_usd_m": 476,
+      "low_usd_m": 70.1,
+      "central_usd_m": 291.1,
+      "high_usd_m": 513.2,
       "tech_overlays": [
         "smart_water_metering",
         "energy_efficient_pumping",
@@ -179,6 +178,7 @@
     "liberated",
     "multiple"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

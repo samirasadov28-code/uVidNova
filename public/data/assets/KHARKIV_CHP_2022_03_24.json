@@ -20,19 +20,19 @@
     "destruction_level": "severe",
     "re_damage_count": 4,
     "verified_by": [
-      "UA_GOV",
       "KSE",
+      "UA_GOV",
       "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Kharkiv Energy Infrastructure Damage 2022–2024",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-energy",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine Situation Report — Kharkiv Energy Infrastructure",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kharkiv-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -56,19 +56,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 171,
-      "central_usd_m": 360,
-      "high_usd_m": 549
+      "low_usd_m": 239.3,
+      "central_usd_m": 503.7,
+      "high_usd_m": 768.1
     },
     "code_compliant": {
-      "low_usd_m": 197,
-      "central_usd_m": 442,
-      "high_usd_m": 686
+      "low_usd_m": 275.6,
+      "central_usd_m": 618.4,
+      "high_usd_m": 959.8
     },
     "build_back_better": {
-      "low_usd_m": 223,
-      "central_usd_m": 551,
-      "high_usd_m": 878
+      "low_usd_m": 312.0,
+      "central_usd_m": 770.9,
+      "high_usd_m": 1228.5
     }
   },
   "financing_structures": {
@@ -185,6 +185,7 @@
     "re_damaged",
     "municipal"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

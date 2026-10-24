@@ -20,19 +20,13 @@
     "destruction_level": "moderate",
     "re_damage_count": 2,
     "verified_by": [
-      "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update — October 2022 Attacks on Healthcare Facilities",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-october-2022-healthcare",
-        "source_code": "OCHA"
-      },
-      {
-        "title": "WHO Ukraine: Health Facility Attack Reporting — October 2022",
-        "url": "https://www.unocha.org/ukraine/who-health-facility-attacks-october-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -63,19 +57,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 58,
-      "central_usd_m": 101,
-      "high_usd_m": 144
+      "low_usd_m": 62.5,
+      "central_usd_m": 108.9,
+      "high_usd_m": 155.3
     },
     "code_compliant": {
-      "low_usd_m": 67,
-      "central_usd_m": 123,
-      "high_usd_m": 180
+      "low_usd_m": 72.2,
+      "central_usd_m": 132.6,
+      "high_usd_m": 194.1
     },
     "build_back_better": {
-      "low_usd_m": 76,
-      "central_usd_m": 152,
-      "high_usd_m": 228,
+      "low_usd_m": 81.9,
+      "central_usd_m": 163.9,
+      "high_usd_m": 245.8,
       "tech_overlays": [
         "microgrid",
         "modular_clinical_units",
@@ -185,6 +179,7 @@
     "missile_strike",
     "re_damaged"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

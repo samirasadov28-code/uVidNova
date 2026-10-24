@@ -21,24 +21,18 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "BELLINGCAT"
+      "UNOSAT"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Russia Will Pay — Mariupol residential sector damage estimate",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Mariupol City Council damage estimate 2022 (pre-occupation data)",
-        "url": "https://www.mariupol-city.gov.ua/news/damage-2022",
+        "title": "UNOSAT Damage Assessment Overview Map - Mariupolska Hromada, Donetsk Oblast",
+        "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-mariupolska-hromada-donetsk-oblast-0",
         "source_code": "eRECOVERY"
-      },
-      {
-        "title": "Bellingcat: Mariupol residential destruction satellite analysis",
-        "url": "https://www.bellingcat.com/news/2022/04/mariupol-residential",
-        "source_code": "BELLINGCAT"
       }
     ]
   },
@@ -66,19 +60,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 2449,
-      "central_usd_m": 4514,
-      "high_usd_m": 6579
+      "low_usd_m": 2490.5,
+      "central_usd_m": 4590.5,
+      "high_usd_m": 6690.5
     },
     "code_compliant": {
-      "low_usd_m": 2817,
-      "central_usd_m": 5520,
-      "high_usd_m": 8224
+      "low_usd_m": 2864.7,
+      "central_usd_m": 5613.6,
+      "high_usd_m": 8363.4
     },
     "build_back_better": {
-      "low_usd_m": 3184,
-      "central_usd_m": 6855,
-      "high_usd_m": 10527,
+      "low_usd_m": 3238.0,
+      "central_usd_m": 6971.2,
+      "high_usd_m": 10705.4,
       "tech_overlays": [
         "passive_house_standard",
         "modular_construction",
@@ -182,6 +176,7 @@
     "pipeline_only",
     "apartment_blocks"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

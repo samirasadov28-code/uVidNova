@@ -21,18 +21,18 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Situation Report — 14 July 2022 Mass Casualty Attack",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-14-july-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Vinnytsia Oblast Infrastructure Damage — July 2022",
-        "url": "https://kse.ua/wp-content/uploads/2022/08/KSE_Vinnytsia_July2022_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 38,
-      "central_usd_m": 62,
-      "high_usd_m": 86
+      "low_usd_m": 53.2,
+      "central_usd_m": 86.7,
+      "high_usd_m": 120.3
     },
     "code_compliant": {
-      "low_usd_m": 44,
-      "central_usd_m": 76,
-      "high_usd_m": 107
+      "low_usd_m": 61.6,
+      "central_usd_m": 106.3,
+      "high_usd_m": 149.7
     },
     "build_back_better": {
-      "low_usd_m": 50,
-      "central_usd_m": 93,
-      "high_usd_m": 136,
+      "low_usd_m": 70.0,
+      "central_usd_m": 130.1,
+      "high_usd_m": 190.3,
       "tech_overlays": [
         "combined_cycle_upgrade",
         "heat_pump_integration",
@@ -186,6 +186,7 @@
     "missile_strike",
     "district_heating"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

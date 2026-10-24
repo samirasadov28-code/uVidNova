@@ -196,9 +196,13 @@ async function classifyCandidate(item) {
 async function main() {
   log(`Starting weekly refresh (dry-run: ${DRY_RUN})`);
 
-  // Load index — index.json is a flat array of full asset objects
+  // Load index
   const indexData = loadJSON('public/data/assets/index.json');
-  const assets    = Array.isArray(indexData) ? indexData : (indexData.assets ?? []);
+  const assetIds  = indexData.assets ?? [];
+  const assets    = assetIds.map(id => {
+    try { return loadJSON(`public/data/assets/${id}.json`); }
+    catch { return null; }
+  }).filter(Boolean);
 
   log(`Loaded ${assets.length} assets.`);
 
@@ -213,26 +217,6 @@ async function main() {
   log(`Lifecycle signals: ${lifecycleSignals.length}`);
   log(`Candidate new assets: ${candidateItems.length}`);
 
-  // ── Local data-quality scan (runs even when RSS feeds are unavailable) ────
-  const STALE_DAYS = 30;
-  const cutoff = new Date(Date.now() - STALE_DAYS * 86_400_000).toISOString().slice(0, 10);
-  const staleAssets = assets
-    .filter(a => (a.last_reviewed ?? '2000-01-01') < cutoff)
-    .map(a => ({ asset_id: a.asset_id, last_reviewed: a.last_reviewed ?? 'never' }));
-
-  const pendingDataAssets = assets.filter(a => {
-    const specs = a.physical_specs ?? {};
-    return Object.values(specs).some(v => v?.source === 'pending_data');
-  }).map(a => ({ asset_id: a.asset_id, name: a.name?.en }));
-
-  const highReDamage = assets
-    .filter(a => (a.damage?.re_damage_count ?? 0) >= 2)
-    .map(a => ({ asset_id: a.asset_id, re_damage_count: a.damage.re_damage_count, name: a.name?.en }));
-
-  log(`Stale assets (>${STALE_DAYS}d): ${staleAssets.length}`);
-  log(`Pending-data specs: ${pendingDataAssets.length}`);
-  log(`High re-damage (≥2): ${highReDamage.length}`);
-
   // LLM classify top 5 candidates (rate-limit friendly)
   const candidates = [];
   for (const item of candidateItems.slice(0, 5)) {
@@ -246,14 +230,9 @@ async function main() {
     generated_at:   new Date().toISOString(),
     date:           today(),
     feed_items_fetched: allItems.length,
-    re_damage_signals:    reDamageSignals,
-    lifecycle_signals:    lifecycleSignals,
+    re_damage_signals:  reDamageSignals,
+    lifecycle_signals:  lifecycleSignals,
     candidate_new_assets: candidates,
-    data_quality: {
-      stale_assets:        staleAssets,
-      pending_data_assets: pendingDataAssets,
-      high_redamage_assets: highReDamage,
-    },
     note: 'All signals require human review. Nothing auto-merges.',
   };
 

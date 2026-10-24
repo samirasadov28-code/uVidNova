@@ -20,19 +20,18 @@
     "destruction_level": "destroyed",
     "re_damage_count": 0,
     "verified_by": [
-      "UN_OCHA",
       "KSE",
-      "BELLINGCAT"
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Mariupol Port and Industrial Damage Assessment",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-mariupol-port",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine: Mariupol Maritime Infrastructure",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mariupol-port-situation",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -67,19 +66,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 12,
-      "central_usd_m": 29,
-      "high_usd_m": 46
+      "low_usd_m": 12.8,
+      "central_usd_m": 31.0,
+      "high_usd_m": 49.2
     },
     "code_compliant": {
-      "low_usd_m": 14,
-      "central_usd_m": 36,
-      "high_usd_m": 58
+      "low_usd_m": 15.0,
+      "central_usd_m": 38.5,
+      "high_usd_m": 62.1
     },
     "build_back_better": {
-      "low_usd_m": 16,
-      "central_usd_m": 45,
-      "high_usd_m": 74
+      "low_usd_m": 17.1,
+      "central_usd_m": 48.1,
+      "high_usd_m": 79.2
     }
   },
   "financing_structures": {
@@ -196,6 +195,7 @@
     "occupied",
     "strategic"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -19,18 +19,11 @@
     "incident_type": "artillery_shelling",
     "destruction_level": "destroyed",
     "re_damage_count": 0,
-    "verified_by": [
-      "KSE",
-      "BELLINGCAT"
-    ],
+    "verified_by": [],
     "evidence_sources": [
       {
         "title": "KSE Russia Will Pay — Azovstal industrial damage",
         "source_code": "KSE"
-      },
-      {
-        "title": "Bellingcat Mariupol siege documentation",
-        "source_code": "BELLINGCAT"
       }
     ]
   },
@@ -64,19 +57,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 3551,
-      "central_usd_m": 7439,
-      "high_usd_m": 11326
+      "low_usd_m": 3342.1,
+      "central_usd_m": 7001.4,
+      "high_usd_m": 10659.8
     },
     "code_compliant": {
-      "low_usd_m": 4083,
-      "central_usd_m": 9121,
-      "high_usd_m": 14158
+      "low_usd_m": 3842.8,
+      "central_usd_m": 8584.5,
+      "high_usd_m": 13325.2
     },
     "build_back_better": {
-      "low_usd_m": 4616,
-      "central_usd_m": 11369,
-      "high_usd_m": 18122
+      "low_usd_m": 4344.5,
+      "central_usd_m": 10700.2,
+      "high_usd_m": 17056.0
     }
   },
   "financing_structures": {
@@ -191,6 +184,7 @@
     "mariupol",
     "occupied"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

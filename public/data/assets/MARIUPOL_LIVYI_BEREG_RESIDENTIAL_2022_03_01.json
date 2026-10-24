@@ -6,7 +6,7 @@
   },
   "location": {
     "lat": 47.0762,
-    "lon": 37.5980,
+    "lon": 37.598,
     "oblast": "Donetsk",
     "raion": "Mariupol",
     "settlement": "Mariupol",
@@ -21,23 +21,23 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "BELLINGCAT"
+      "UNOSAT",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update — Mariupol Siege March–April 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-mariupol-siege-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Mariupol Residential Damage Assessment — Full City Survey",
-        "url": "https://kse.ua/wp-content/uploads/2022/07/KSE_Mariupol_Residential_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Mariupol Siege — District-Level Satellite Analysis",
-        "url": "https://www.bellingcat.com/news/2022/04/mariupol-district-analysis",
+        "title": "UNOSAT Damage Assessment Overview Map - Mariupolska Hromada, Donetsk Oblast",
+        "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-mariupolska-hromada-donetsk-oblast-0",
         "source_code": "BELLINGCAT"
       }
     ]
@@ -67,19 +67,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 496,
-      "central_usd_m": 868,
-      "high_usd_m": 1240
+      "low_usd_m": 504.4,
+      "central_usd_m": 882.7,
+      "high_usd_m": 1261.0
     },
     "code_compliant": {
-      "low_usd_m": 570,
-      "central_usd_m": 1060,
-      "high_usd_m": 1550
+      "low_usd_m": 579.7,
+      "central_usd_m": 1078.0,
+      "high_usd_m": 1576.3
     },
     "build_back_better": {
-      "low_usd_m": 645,
-      "central_usd_m": 1300,
-      "high_usd_m": 1955,
+      "low_usd_m": 655.9,
+      "central_usd_m": 1322.0,
+      "high_usd_m": 1988.1,
       "tech_overlays": [
         "passive_house_standard",
         "district_heat_metering",
@@ -192,6 +192,7 @@
     "occupied",
     "large_scale"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

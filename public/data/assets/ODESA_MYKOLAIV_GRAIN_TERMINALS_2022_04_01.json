@@ -19,18 +19,11 @@
     "incident_type": "missile_strike",
     "destruction_level": "moderate",
     "re_damage_count": 4,
-    "verified_by": [
-      "KSE",
-      "UN_OCHA"
-    ],
+    "verified_by": [],
     "evidence_sources": [
       {
         "title": "KSE Russia Will Pay — Odesa port infrastructure",
         "source_code": "KSE"
-      },
-      {
-        "title": "UN OCHA Ukraine — Black Sea grain corridor impact",
-        "source_code": "OCHA"
       }
     ]
   },
@@ -66,19 +59,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 181,
-      "central_usd_m": 574,
-      "high_usd_m": 967
+      "low_usd_m": 170.8,
+      "central_usd_m": 541.5,
+      "high_usd_m": 912.3
     },
     "code_compliant": {
-      "low_usd_m": 208,
-      "central_usd_m": 709,
-      "high_usd_m": 1209
+      "low_usd_m": 196.2,
+      "central_usd_m": 668.9,
+      "high_usd_m": 1140.6
     },
     "build_back_better": {
-      "low_usd_m": 235,
-      "central_usd_m": 892,
-      "high_usd_m": 1548
+      "low_usd_m": 221.7,
+      "central_usd_m": 841.5,
+      "high_usd_m": 1460.4
     }
   },
   "financing_structures": {
@@ -193,6 +186,7 @@
     "port",
     "missile_strike"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

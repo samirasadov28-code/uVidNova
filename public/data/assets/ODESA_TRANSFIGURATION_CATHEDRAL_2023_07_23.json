@@ -20,25 +20,19 @@
     "destruction_level": "severe",
     "re_damage_count": 0,
     "verified_by": [
-      "UN_OCHA",
-      "BELLINGCAT",
       "KSE",
-      "UA_GOV"
+      "UA_GOV",
+      "UNESCO"
     ],
     "evidence_sources": [
       {
-        "title": "UNESCO: Statement on Attack on Odesa UNESCO World Heritage Site",
-        "url": "https://www.unesco.org/en/articles/odesa-world-heritage-attack-july-2023",
+        "title": "UNESCO: UNESCO strongly condemns repeated attacks against cultural heritage in Odesa, including World Heritage (July 2023)",
+        "url": "https://www.unesco.org/en/articles/odesa-unesco-strongly-condemns-repeated-attacks-against-cultural-heritage-including-world-heritage",
         "source_code": "OCHA"
       },
       {
-        "title": "Bellingcat: Odesa UNESCO World Heritage Attack Analysis",
-        "url": "https://www.bellingcat.com/news/2023/07/23/odesa-cathedral-attack",
-        "source_code": "BELLINGCAT"
-      },
-      {
-        "title": "KSE Institute: Heritage Damage — Odesa Oblast",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-heritage-odesa",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -68,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 19,
-      "central_usd_m": 90,
-      "high_usd_m": 162
+      "low_usd_m": 20.5,
+      "central_usd_m": 97.0,
+      "high_usd_m": 174.7
     },
     "code_compliant": {
-      "low_usd_m": 21,
-      "central_usd_m": 112,
-      "high_usd_m": 202
+      "low_usd_m": 22.6,
+      "central_usd_m": 120.8,
+      "high_usd_m": 217.8
     },
     "build_back_better": {
-      "low_usd_m": 24,
-      "central_usd_m": 142,
-      "high_usd_m": 259
+      "low_usd_m": 25.9,
+      "central_usd_m": 153.1,
+      "high_usd_m": 279.3
     }
   },
   "financing_structures": {
@@ -184,6 +178,7 @@
     "missile_strike",
     "unesco_world_heritage_city"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

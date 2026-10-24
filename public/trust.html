@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>uVidNova Trust - uVidNova Ukraine Reconstruction Finance Atlas</title>
-  <meta name="description" content="The uVidNova Trust: a structured sovereign-wealth-fund model converting frozen Russian assets into a predictable annual availability payment for Ukraine reconstruction project financing. 7 interactive modules.">
+  <title>VidNova Trust — uVidNova Ukraine Reconstruction Finance Atlas</title>
+  <meta name="description" content="The VidNova Trust: a structured sovereign-wealth-fund model converting frozen Russian assets into a predictable annual availability payment for Ukraine reconstruction project financing. 7 interactive modules.">
   <meta name="theme-color" content="#1a3a6b">
-  <meta name="app-version" content="0.7.27">
+  <meta name="app-version" content="0.2.4">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="uVidNova">
-  <meta property="og:title"       content="uVidNova Trust - uVidNova">
+  <meta property="og:title"       content="VidNova Trust — uVidNova">
   <meta property="og:description" content="$75B+ sovereign wealth fund model. Annual availability payments. 30-year NAV trajectory. Deterministic corpus simulation.">
-  <meta property="og:url"         content="https://uvidnova.netlify.app/trust.html">
-  <meta property="og:image"       content="https://uvidnova.netlify.app/assets/logo_512.png">
+  <meta property="og:url"         content="https://atlasvidnova.org/trust.html">
+  <meta property="og:image"       content="https://atlasvidnova.org/assets/logo_512.png">
 
   <link rel="manifest"         href="/manifest.webmanifest">
   <link rel="icon"             href="/assets/logo_192.png" sizes="192x192">
   <link rel="apple-touch-icon" href="/assets/logo_192.png">
-  <link rel="canonical"        href="https://uvidnova.netlify.app/trust.html">
+  <link rel="canonical"        href="https://atlasvidnova.org/trust.html">
 
   <!-- App styles -->
   <link rel="stylesheet" href="/css/app.css">
   <link rel="stylesheet" href="/css/trust.css">
 
-  <!-- Chart.js - loaded before trust-page.js boots -->
+  <!-- Chart.js — loaded before trust-page.js boots -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"
           crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -47,12 +47,12 @@
         <img src="/assets/logo_192.png" alt="" class="logo-img" width="36" height="36" loading="lazy">
         <span class="wordmark-text"><span class="u">u</span><span class="vid">Vid</span><span class="nova">Nova</span></span>
       </a>
-      <p class="tagline" data-i18n="header.tagline">Ukraine Reconstruction Finance Atlas</p>
+      <p class="tagline">Ukraine Reconstruction Finance Atlas</p>
       <nav class="site-nav">
-        <a href="/" onclick="try{sessionStorage.setItem('uvidnova_landed','1')}catch(e){}" data-i18n="trust.nav.back_map">← Map</a>
-        <a href="/?openFinance=1" class="nav-finance-link" data-i18n="nav.finance">Finance It</a>
-        <a href="/about.html" data-i18n="nav.methodology">Methodology</a>
-        <button class="lang-toggle" id="langToggle" aria-label="Switch language">🇬🇧 EN</button>
+        <a href="/">← Map</a>
+        <a href="/finance.html" class="nav-finance-link">Finance It</a>
+        <a href="/trust.html" class="nav-link" style="color:#f5c842;font-weight:700">VidNova Trust ↗</a>
+        <a href="/about.html">Methodology</a>
       </nav>
     </div>
   </header>
@@ -62,38 +62,38 @@
 
     <!-- ── Hero ──────────────────────────────────────────────────────────────── -->
     <div class="trust-hero">
-      <div class="trust-hero-eyebrow" data-i18n="trust.hero.eyebrow">uVidNova Trust - Reconstruction Finance Model</div>
-      <h1 class="trust-hero-title" data-i18n="trust.hero.title">A Structured Sovereign Wealth Fund Alternative to Lump-Sum Reparations</h1>
-      <p class="trust-hero-sub" data-i18n="trust.hero.sub">
+      <div class="trust-hero-eyebrow">VidNova Trust — Reconstruction Finance Model</div>
+      <h1 class="trust-hero-title">A Structured Sovereign Wealth Fund Alternative to Lump-Sum Reparations</h1>
+      <p class="trust-hero-sub">
         Ukraine's reparations claim against Russia (est. USD 500–700B) is unlikely to resolve as an immediate lump-sum.
-        A more durable mechanism places frozen assets and multilateral pledges into a sovereign wealth fund -
-        the <strong>uVidNova Trust</strong> - which pays a predictable annual availability payment stream
+        A more durable mechanism places frozen assets and multilateral pledges into a sovereign wealth fund —
+        the <strong>VidNova Trust</strong> — which pays a predictable annual availability payment stream
         that project financiers can use to service concessional debt <em>now</em>,
         without waiting for a final legal settlement. This page models the Trust corpus, NAV trajectory,
         capital allocation, and leverage mechanisms using published precedent benchmarks.
-        No LLM involvement in any numeric output - every figure is traceable to a named source.
+        No LLM involvement in any numeric output — every figure is traceable to a named source.
       </p>
 
       <!-- Hero stat cards -->
       <div class="trust-stat-cards">
         <div class="trust-stat-card">
-          <span class="tsc-value" id="hero-nav-val">$75,000M</span>
-          <span class="tsc-label" data-i18n="trust.stat.initial_nav">Initial Trust NAV</span>
-          <span class="tsc-note" data-i18n="trust.stat.initial_nav_note">Scenario A default - adjustable in Module 1</span>
+          <span class="tsc-value" id="hero-nav-val">$75B</span>
+          <span class="tsc-label">Initial Trust NAV</span>
+          <span class="tsc-note">Scenario A default — adjustable in Module 1</span>
         </div>
         <div class="trust-stat-card">
           <span class="tsc-value">4.0%</span>
-          <span class="tsc-label" data-i18n="trust.stat.real_return">Real return target</span>
-          <span class="tsc-note" data-i18n="trust.stat.real_return_note">Norway GPFG 25-yr average · adjustable in Module 2</span>
+          <span class="tsc-label">Real return target</span>
+          <span class="tsc-note">Norway GPFG 25-yr average · adjustable in Module 2</span>
         </div>
         <div class="trust-stat-card">
           <span class="tsc-value">6.0%</span>
-          <span class="tsc-label" data-i18n="trust.stat.deploy_rate">Annual deployment rate</span>
-          <span class="tsc-note" data-i18n="trust.stat.deploy_rate_note">ISIF directed mandate model · adjustable in Module 2</span>
+          <span class="tsc-label">Annual deployment rate</span>
+          <span class="tsc-note">ISIF directed mandate model · adjustable in Module 2</span>
         </div>
         <div class="trust-stat-card highlight">
-          <span class="tsc-value" id="hero-ap-val">-</span>
-          <span class="tsc-label" data-i18n="trust.stat.annual_ap">Annual Availability Payment</span>
+          <span class="tsc-value" id="hero-ap-val">—</span>
+          <span class="tsc-label">Annual Availability Payment</span>
           <span class="tsc-note" id="hero-ap-note">Loading…</span>
         </div>
       </div>
@@ -101,150 +101,150 @@
 
     <!-- ── NAV summary band ───────────────────────────────────────────────────── -->
     <div class="trust-nav-band" id="trust-nav-band" aria-label="Trust key metrics summary">
-      <div class="trust-loading" data-i18n="trust.loading.computing">Computing…</div>
+      <div class="trust-loading">Computing…</div>
     </div>
 
     <!-- ── First-visit explainer ─────────────────────────────────────────────── -->
     <div class="trust-explainer" id="trustExplainer">
       <div class="tx-inner">
-        <div class="tx-eyebrow" data-i18n="trust.tx.eyebrow">New to uVidNova Trust?</div>
-        <h2 class="tx-title" data-i18n="trust.tx.title">What this model does</h2>
-        <p class="tx-body" data-i18n="trust.tx.body1">uVidNova Trust models what happens if G7-frozen Russian assets (~$300,000M) are placed into a structured sovereign wealth fund instead of being paid out as a single lump sum. Operating at a 4% annual drawdown on a professionally managed corpus, the Trust generates a predictable <strong>$11,400M/year</strong> availability payment - enough to service the concessional debt on Ukraine's entire documented reconstruction pipeline, indefinitely, without depleting the principal.</p>
-        <p class="tx-body" data-i18n="trust.tx.body2">The seven interactive modules below let you stress-test every assumption: the capital base, return rate, deployment pace, allocation strategy, leverage multipliers, and scenario pathways. Every figure is deterministic and traceable to a named benchmark (Norway GPFG, Temasek, ISIF, EU RRF). No AI involvement in any numeric output.</p>
+        <div class="tx-eyebrow">New to VidNova Trust?</div>
+        <h2 class="tx-title">What this model does</h2>
+        <p class="tx-body">VidNova Trust models what happens if G7-frozen Russian assets (~$300B) are placed into a structured sovereign wealth fund instead of being paid out as a single lump sum. Operating at a 4% annual drawdown on a professionally managed corpus, the Trust generates a predictable <strong>$11.4 billion/year</strong> availability payment — enough to service the concessional debt on Ukraine's entire documented reconstruction pipeline, indefinitely, without depleting the principal.</p>
+        <p class="tx-body">The seven interactive modules below let you stress-test every assumption: the capital base, return rate, deployment pace, allocation strategy, leverage multipliers, and scenario pathways. Every figure is deterministic and traceable to a named benchmark (Norway GPFG, Temasek, ISIF, EU RRF). No AI involvement in any numeric output.</p>
         <div class="tx-steps">
-          <div class="tx-step" data-i18n="trust.tx.step1"><span class="tx-step-num">1</span><strong>Capital Formation</strong> - set the initial corpus across scenarios</div>
-          <div class="tx-step" data-i18n="trust.tx.step2"><span class="tx-step-num">2</span><strong>Growth Trajectory</strong> - adjust return and deployment rate, see NAV over time</div>
-          <div class="tx-step" data-i18n="trust.tx.step3"><span class="tx-step-num">3</span><strong>Allocation Strategy</strong> - distribute the corpus across grants, concessional debt, equity, and endowment reserve</div>
-          <div class="tx-step" data-i18n="trust.tx.step4"><span class="tx-step-num">4–7</span><strong>Leverage, AP, Assets, Scenarios</strong> - stress-test leverage multipliers, availability payments, asset coverage, and peace-state scenarios</div>
+          <div class="tx-step"><span class="tx-step-num">1</span><strong>Capital Formation</strong> — set the initial corpus across scenarios</div>
+          <div class="tx-step"><span class="tx-step-num">2</span><strong>Growth Trajectory</strong> — adjust return and deployment rate, see NAV over time</div>
+          <div class="tx-step"><span class="tx-step-num">3</span><strong>Allocation Strategy</strong> — distribute the corpus across grants, concessional debt, equity, and endowment reserve</div>
+          <div class="tx-step"><span class="tx-step-num">4–7</span><strong>Leverage, AP, Assets, Scenarios</strong> — stress-test leverage multipliers, availability payments, asset coverage, and peace-state scenarios</div>
         </div>
-        <button class="tx-btn" id="txDismiss" data-i18n="trust.tx.btn">Understood - show me the model →</button>
+        <button class="tx-btn" id="txDismiss">Understood — show me the model →</button>
       </div>
     </div>
 
     <!-- ══════════════════════════════════════════════════════════════════════════
-         Module 1 - Capital Formation
+         Module 1 — Capital Formation
     ══════════════════════════════════════════════════════════════════════════════ -->
     <section class="trust-module" id="mod-1" aria-labelledby="mod-1-title">
       <div class="trust-module-header" role="button" tabindex="0" aria-expanded="true">
         <div class="trust-module-num">1</div>
         <div>
-          <div class="trust-module-title" id="mod-1-title" data-i18n="trust.mod1.title">Capital Formation</div>
-          <div class="trust-module-subtitle" data-i18n="trust.mod1.subtitle">Scenario A (during war) vs Scenario B (post-war) · Stacked capital sources</div>
+          <div class="trust-module-title" id="mod-1-title">Capital Formation</div>
+          <div class="trust-module-subtitle">Scenario A (during war) vs Scenario B (post-war) · Stacked capital sources</div>
         </div>
         <div class="trust-module-chevron">▾</div>
       </div>
       <div class="trust-module-body" id="m1-body">
-        <div class="trust-loading" data-i18n="trust.loading.capital_sources">Loading capital sources…</div>
+        <div class="trust-loading">Loading capital sources…</div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════════════════════════
-         Module 2 - Growth Trajectory
+         Module 2 — Growth Trajectory
     ══════════════════════════════════════════════════════════════════════════════ -->
     <section class="trust-module" id="mod-2" aria-labelledby="mod-2-title">
       <div class="trust-module-header" role="button" tabindex="0" aria-expanded="true">
         <div class="trust-module-num">2</div>
         <div>
-          <div class="trust-module-title" id="mod-2-title" data-i18n="trust.mod2.title">Growth Trajectory</div>
-          <div class="trust-module-subtitle" data-i18n="trust.mod2.subtitle">NAV over time · Real return / deployment rate / horizon sliders · vs baseline</div>
+          <div class="trust-module-title" id="mod-2-title">Growth Trajectory</div>
+          <div class="trust-module-subtitle">NAV over time · Real return / deployment rate / horizon sliders · vs baseline</div>
         </div>
         <div class="trust-module-chevron">▾</div>
       </div>
       <div class="trust-module-body" id="m2-body">
-        <div class="trust-loading" data-i18n="trust.loading.trajectory">Loading trajectory model…</div>
+        <div class="trust-loading">Loading trajectory model…</div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════════════════════════
-         Module 3 - Allocation Strategy
+         Module 3 — Allocation Strategy
     ══════════════════════════════════════════════════════════════════════════════ -->
     <section class="trust-module" id="mod-3" aria-labelledby="mod-3-title">
       <div class="trust-module-header" role="button" tabindex="0" aria-expanded="true">
         <div class="trust-module-num">3</div>
         <div>
-          <div class="trust-module-title" id="mod-3-title" data-i18n="trust.mod3.title">Allocation Strategy</div>
-          <div class="trust-module-subtitle" data-i18n="trust.mod3.subtitle">Grants / Concessional / Equity / Availability Payments / Endowment Reserve</div>
+          <div class="trust-module-title" id="mod-3-title">Allocation Strategy</div>
+          <div class="trust-module-subtitle">Grants / Concessional / Equity / Availability Payments / Endowment Reserve</div>
         </div>
         <div class="trust-module-chevron">▾</div>
       </div>
       <div class="trust-module-body" id="m3-body">
-        <div class="trust-loading" data-i18n="trust.loading.allocation">Loading allocation model…</div>
+        <div class="trust-loading">Loading allocation model…</div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════════════════════════
-         Module 4 - Project Support Mapping
+         Module 4 — Project Support Mapping
     ══════════════════════════════════════════════════════════════════════════════ -->
     <section class="trust-module" id="mod-4" aria-labelledby="mod-4-title">
       <div class="trust-module-header" role="button" tabindex="0" aria-expanded="true">
         <div class="trust-module-num">4</div>
         <div>
-          <div class="trust-module-title" id="mod-4-title" data-i18n="trust.mod4.title">Project Support Mapping</div>
-          <div class="trust-module-subtitle" data-i18n="trust.mod4.subtitle">Atlas assets mapped to Trust financing channels</div>
+          <div class="trust-module-title" id="mod-4-title">Project Support Mapping</div>
+          <div class="trust-module-subtitle">Atlas assets mapped to Trust financing channels</div>
         </div>
         <div class="trust-module-chevron">▾</div>
       </div>
       <div class="trust-module-body" id="m4-body">
-        <div class="trust-loading" data-i18n="trust.loading.assets">Loading asset index…</div>
+        <div class="trust-loading">Loading asset index…</div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════════════════════════
-         Module 5 - Leverage Multiplier
+         Module 5 — Leverage Multiplier
     ══════════════════════════════════════════════════════════════════════════════ -->
     <section class="trust-module" id="mod-5" aria-labelledby="mod-5-title">
       <div class="trust-module-header" role="button" tabindex="0" aria-expanded="true">
         <div class="trust-module-num">5</div>
         <div>
-          <div class="trust-module-title" id="mod-5-title" data-i18n="trust.mod5.title">Leverage Multiplier</div>
-          <div class="trust-module-subtitle" data-i18n="trust.mod5.subtitle">Trust capital × instrument type → crowded-in capital (ISIF 1.6×, MIGA 5–10×, EBRD 3–4×)</div>
+          <div class="trust-module-title" id="mod-5-title">Leverage Multiplier</div>
+          <div class="trust-module-subtitle">Trust capital × instrument type → crowded-in capital (ISIF 1.6×, MIGA 5–10×, EBRD 3–4×)</div>
         </div>
         <div class="trust-module-chevron">▾</div>
       </div>
       <div class="trust-module-body" id="m5-body">
-        <div class="trust-loading" data-i18n="trust.loading.leverage">Loading leverage data…</div>
+        <div class="trust-loading">Loading leverage data…</div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════════════════════════
-         Module 6 - Strategic Equity
+         Module 6 — Strategic Equity
     ══════════════════════════════════════════════════════════════════════════════ -->
     <section class="trust-module" id="mod-6" aria-labelledby="mod-6-title">
       <div class="trust-module-header" role="button" tabindex="0" aria-expanded="true">
         <div class="trust-module-num">6</div>
         <div>
-          <div class="trust-module-title" id="mod-6-title" data-i18n="trust.mod6.title">Strategic Equity Holdings</div>
-          <div class="trust-module-subtitle" data-i18n="trust.mod6.subtitle">Nationally strategic Ukrainian assets the Trust would hold equity in</div>
+          <div class="trust-module-title" id="mod-6-title">Strategic Equity Holdings</div>
+          <div class="trust-module-subtitle">Nationally strategic Ukrainian assets the Trust would hold equity in</div>
         </div>
         <div class="trust-module-chevron">▾</div>
       </div>
       <div class="trust-module-body" id="m6-body">
-        <div class="trust-loading" data-i18n="trust.loading.strategic">Loading strategic asset register…</div>
+        <div class="trust-loading">Loading strategic asset register…</div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════════════════════════════════════════
-         Module 7 - Precedent Comparison
+         Module 7 — Precedent Comparison
     ══════════════════════════════════════════════════════════════════════════════ -->
     <section class="trust-module" id="mod-7" aria-labelledby="mod-7-title">
       <div class="trust-module-header" role="button" tabindex="0" aria-expanded="true">
         <div class="trust-module-num">7</div>
         <div>
-          <div class="trust-module-title" id="mod-7-title" data-i18n="trust.mod7.title">Precedent Comparison</div>
-          <div class="trust-module-subtitle" data-i18n="trust.mod7.subtitle">Norway GPFG · Temasek · ISIF · Marshall Plan · EU RRF · uVidNova Trust at maturity</div>
+          <div class="trust-module-title" id="mod-7-title">Precedent Comparison</div>
+          <div class="trust-module-subtitle">Norway GPFG · Temasek · ISIF · Marshall Plan · EU RRF · VidNova Trust at maturity</div>
         </div>
         <div class="trust-module-chevron">▾</div>
       </div>
       <div class="trust-module-body" id="m7-body">
-        <div class="trust-loading" data-i18n="trust.loading.precedents">Loading precedent data…</div>
+        <div class="trust-loading">Loading precedent data…</div>
       </div>
     </section>
 
     <!-- ── Disclaimer ─────────────────────────────────────────────────────────── -->
-    <div class="trust-disclaimer" data-i18n="trust.disclaimer">
+    <div class="trust-disclaimer">
       <strong>Disclaimer.</strong>
-      The uVidNova Trust is a <strong>modelled scenario</strong>, not a legal instrument, operating entity, or investment fund.
-      All figures are estimates derived from published benchmarks: RDNA3 (World Bank / Government of Ukraine / EC / UN, February 2024),
+      The VidNova Trust is a <strong>modelled scenario</strong>, not a legal instrument, operating entity, or investment fund.
+      All figures are estimates derived from published benchmarks: RDNA4 (World Bank / Government of Ukraine / EC / UN, February 2025 — USD 524B decade recovery needs, USD 176B direct damage as of 31 Dec 2024),
       KSE Institute "Russia Will Pay" tracker, Norway GPFG / Norges Bank IM annual reports, Ireland ISIF / NTMA annual reports,
       Temasek Review 2023, MIGA Annual Report 2023, EBRD Ukraine country strategy 2023, EU Regulation 2024/792 (Ukraine Facility).
       Figures are not guarantees, not investment advice, not procurement quotes, and not a substitute for transaction-level due diligence.
@@ -252,7 +252,7 @@
       All numbers are traceable to named published sources; source codes are displayed inline.
       <br><br>
       Capital source ranges, leverage multipliers, and precedent figures are reproduced from public institutional documents.
-      Sovereign risk, geopolitical uncertainty, and legal resolution timelines are not modelled - they are user-controlled assumptions.
+      Sovereign risk, geopolitical uncertainty, and legal resolution timelines are not modelled — they are user-controlled assumptions.
       <strong>This page is an analytical tool for development-finance professionals, not an advocacy instrument.</strong>
     </div>
 
@@ -265,7 +265,7 @@
   }
   </script>
 
-  <!-- ── Trust explainer - show once, dismiss to localStorage ─────────────── -->
+  <!-- ── Trust explainer — show once, dismiss to localStorage ─────────────── -->
   <script>
   (function() {
     var KEY = 'uvidnova.hint.trust.v1';
@@ -274,7 +274,7 @@
     try {
       if (localStorage.getItem(KEY)) { el.hidden = true; return; }
     } catch(e) {}
-    // Visible - wire dismiss button
+    // Visible — wire dismiss button
     var btn = document.getElementById('txDismiss');
     if (btn) btn.addEventListener('click', function() {
       try { localStorage.setItem(KEY, '1'); } catch(e) {}
@@ -296,23 +296,6 @@
   </script>
 
   <script type="module" src="/js/trust-page.js"></script>
-
-  <!-- ── Trust page i18n ───────────────────────────────────────────────────── -->
-  <script type="module">
-  import { t } from '/js/lang.js';
-
-  function applyTrustI18n() {
-    for (const el of document.querySelectorAll('[data-i18n]')) {
-      const val = t(el.dataset.i18n);
-      if (val !== el.dataset.i18n) {
-        el.innerHTML = val;
-      }
-    }
-  }
-
-  applyTrustI18n();
-  document.addEventListener('langChanged', applyTrustI18n);
-  </script>
 
 </body>
 </html>

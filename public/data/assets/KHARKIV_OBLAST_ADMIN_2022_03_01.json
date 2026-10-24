@@ -20,8 +20,7 @@
     "destruction_level": "severe",
     "re_damage_count": 1,
     "verified_by": [
-      "KSE",
-      "BELLINGCAT"
+      "KSE"
     ],
     "evidence_sources": [
       {
@@ -55,19 +54,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 40,
-      "central_usd_m": 84,
-      "high_usd_m": 128
+      "low_usd_m": 43.1,
+      "central_usd_m": 90.6,
+      "high_usd_m": 138.0
     },
     "code_compliant": {
-      "low_usd_m": 46,
-      "central_usd_m": 103,
-      "high_usd_m": 160
+      "low_usd_m": 49.6,
+      "central_usd_m": 111.1,
+      "high_usd_m": 172.5
     },
     "build_back_better": {
-      "low_usd_m": 52,
-      "central_usd_m": 128,
-      "high_usd_m": 205
+      "low_usd_m": 56.1,
+      "central_usd_m": 138.0,
+      "high_usd_m": 221.0
     }
   },
   "financing_structures": {
@@ -160,6 +159,7 @@
     "government",
     "missile_strike"
   ],
-  "last_reviewed": "2026-05-17",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -20,19 +20,19 @@
     "destruction_level": "destroyed",
     "re_damage_count": 3,
     "verified_by": [
-      "UA_GOV",
-      "BELLINGCAT",
-      "KSE"
+      "KSE",
+      "PRESS",
+      "UA_GOV"
     ],
     "evidence_sources": [
       {
-        "title": "Bellingcat: Antonivka Bridge HIMARS Strike Analysis",
-        "url": "https://www.bellingcat.com/news/2022/07/27/antonivka-bridge-himars-strikes",
+        "title": "Associated Press: Antonivskyi bridge in Kherson region struck and damaged (July 2022)",
+        "url": "https://apnews.com/article/russia-ukraine-moscow-6a927f75ac4fdb854999d65139b9bd80",
         "source_code": "BELLINGCAT"
       },
       {
-        "title": "KSE Institute: Kherson Oblast Transport Infrastructure",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-transport-kherson",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 470,
-      "central_usd_m": 1188,
-      "high_usd_m": 1906
+      "low_usd_m": 502.9,
+      "central_usd_m": 1271.1,
+      "high_usd_m": 2039.3
     },
     "code_compliant": {
-      "low_usd_m": 541,
-      "central_usd_m": 1461,
-      "high_usd_m": 2382
+      "low_usd_m": 578.8,
+      "central_usd_m": 1563.2,
+      "high_usd_m": 2548.6
     },
     "build_back_better": {
-      "low_usd_m": 611,
-      "central_usd_m": 1830,
-      "high_usd_m": 3049
+      "low_usd_m": 653.7,
+      "central_usd_m": 1958.0,
+      "high_usd_m": 3262.3
     }
   },
   "financing_structures": {
@@ -179,6 +179,7 @@
     "strategic",
     "re_damaged"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

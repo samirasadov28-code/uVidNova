@@ -19,18 +19,11 @@
     "incident_type": "artillery_shelling",
     "destruction_level": "destroyed",
     "re_damage_count": 0,
-    "verified_by": [
-      "KSE",
-      "BELLINGCAT"
-    ],
+    "verified_by": [],
     "evidence_sources": [
       {
         "title": "KSE Russia Will Pay — Bakhmut damage assessment",
         "source_code": "KSE"
-      },
-      {
-        "title": "Bellingcat Bakhmut city destruction documentation",
-        "source_code": "BELLINGCAT"
       }
     ]
   },
@@ -58,19 +51,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 80,
-      "central_usd_m": 187,
-      "high_usd_m": 295
+      "low_usd_m": 86.3,
+      "central_usd_m": 201.6,
+      "high_usd_m": 318.1
     },
     "code_compliant": {
-      "low_usd_m": 92,
-      "central_usd_m": 230,
-      "high_usd_m": 368
+      "low_usd_m": 99.2,
+      "central_usd_m": 248.0,
+      "high_usd_m": 396.8
     },
     "build_back_better": {
-      "low_usd_m": 104,
-      "central_usd_m": 288,
-      "high_usd_m": 471
+      "low_usd_m": 112.1,
+      "central_usd_m": 310.5,
+      "high_usd_m": 507.8
     }
   },
   "financing_structures": {
@@ -174,6 +167,7 @@
     "artillery_strike",
     "occupied"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

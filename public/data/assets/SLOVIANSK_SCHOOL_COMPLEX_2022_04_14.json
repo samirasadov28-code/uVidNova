@@ -25,13 +25,13 @@
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Humanitarian Situation Report — April 2022 Donetsk",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-situation-report-april-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Donetsk Oblast Education Infrastructure Damage — 2022",
-        "url": "https://kse.ua/wp-content/uploads/2022/09/KSE_Donetsk_Education_Damage_2022.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -61,19 +61,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 14,
-      "central_usd_m": 24,
-      "high_usd_m": 35
+      "low_usd_m": 15.1,
+      "central_usd_m": 25.9,
+      "high_usd_m": 37.7
     },
     "code_compliant": {
-      "low_usd_m": 16,
-      "central_usd_m": 29,
-      "high_usd_m": 43
+      "low_usd_m": 17.3,
+      "central_usd_m": 31.3,
+      "high_usd_m": 46.4
     },
     "build_back_better": {
-      "low_usd_m": 18,
-      "central_usd_m": 36,
-      "high_usd_m": 54,
+      "low_usd_m": 19.4,
+      "central_usd_m": 38.8,
+      "high_usd_m": 58.2,
       "tech_overlays": [
         "passive_house_standard",
         "microgrid",
@@ -184,6 +184,7 @@
     "artillery_strike",
     "severe"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -19,19 +19,11 @@
     "incident_type": "artillery_shelling",
     "destruction_level": "destroyed",
     "re_damage_count": 0,
-    "verified_by": [
-      "KSE",
-      "UN_OCHA",
-      "BELLINGCAT"
-    ],
+    "verified_by": [],
     "evidence_sources": [
       {
         "title": "KSE Russia Will Pay — Mariupol infrastructure",
         "source_code": "KSE"
-      },
-      {
-        "title": "UN OCHA Ukraine Situation Reports — Mariupol siege",
-        "source_code": "OCHA"
       }
     ]
   },
@@ -59,19 +51,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 470,
-      "central_usd_m": 1102,
-      "high_usd_m": 1735
+      "low_usd_m": 506.7,
+      "central_usd_m": 1188.2,
+      "high_usd_m": 1870.7
     },
     "code_compliant": {
-      "low_usd_m": 540,
-      "central_usd_m": 1355,
-      "high_usd_m": 2169
+      "low_usd_m": 582.2,
+      "central_usd_m": 1460.9,
+      "high_usd_m": 2338.6
     },
     "build_back_better": {
-      "low_usd_m": 611,
-      "central_usd_m": 1694,
-      "high_usd_m": 2776
+      "low_usd_m": 658.8,
+      "central_usd_m": 1826.5,
+      "high_usd_m": 2993.1
     }
   },
   "financing_structures": {
@@ -175,6 +167,7 @@
     "artillery_strike",
     "occupied"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

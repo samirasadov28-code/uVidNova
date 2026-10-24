@@ -3,7 +3,7 @@
  * Pure deterministic calculations; no AI involvement in numeric output.
  */
 
-import { getName, t } from './lang.js';
+import { getName } from './lang.js';
 import { SECTOR_LABELS } from './filters.js';
 import { loadGrowthSectors, renderWizardSectorPicker, renderPortfolioGrowthPicker, getGreenfieldsTemplates } from './growth-sectors.js';
 
@@ -11,18 +11,18 @@ import { loadGrowthSectors, renderWizardSectorPicker, renderPortfolioGrowthPicke
 
 const TRANCHE_DEFS = {
   reparations:       { label: 'Russian Reparations / ERA Proceeds',   ret: 0,    tenor: null, col: '#9b59b6' },
-  grant:             { label: 'Pure grants (EU / Bilateral Donors)',    ret: 0,    tenor: null, col: '#27ae60' },
+  grant:             { label: 'Grants (EU / Bilateral Donors)',        ret: 0,    tenor: null, col: '#27ae60' },
   first_loss:        { label: 'First-loss / Guarantee Facility',       ret: 0,    tenor: null, col: '#52be80' },
   concessional_ifi:  { label: 'Concessional IFI Loan',                 ret: 1.5,  tenor: 20,   col: '#2980b9' },
   senior_ifi:        { label: 'Senior IFI Near-market',                ret: 3.5,  tenor: 15,   col: '#1a6aa1' },
   eca:               { label: 'ECA Buyer Credit / Direct Lending',     ret: 4.0,  tenor: 10,   col: '#8e44ad' },
   pri_wrap:          { label: 'PRI / War-risk Insurance Wrap',         ret: 1.5,  tenor: null, col: '#e67e22', isFlag: true },
-  dfi_equity:        { label: 'DFI equity & quasi-equity',              ret: 8.0,  tenor: null, col: '#5dade2' },
-  public_equity:     { label: 'Sovereign & municipal counterpart equity', ret: 0,  tenor: null, col: '#7f8c8d' },
+  dfi_equity:        { label: 'DFI Equity',                            ret: 8.0,  tenor: null, col: '#5dade2' },
+  public_equity:     { label: 'Public Counterpart Equity',             ret: 0,    tenor: null, col: '#7f8c8d' },
   diaspora:          { label: 'Diaspora / Patriotic Bonds',            ret: 5.0,  tenor: 10,   col: '#a9cce3' },
-  commercial_bank:   { label: 'Commercial bank senior debt',            ret: 9.0,  tenor: 10,   col: '#884ea0' },
+  commercial_bank:   { label: 'Commercial Bank Debt',                  ret: 9.0,  tenor: 10,   col: '#884ea0' },
   institutional_debt:{ label: 'Institutional / Capital Markets Debt',  ret: 6.5,  tenor: 12,   col: '#2c3e50' },
-  private_equity:    { label: 'Private equity & infrastructure equity funds', ret: 18.0, tenor: null, col: '#e74c3c' },
+  private_equity:    { label: 'Private Equity / Infra Funds',          ret: 18.0, tenor: null, col: '#e74c3c' },
 };
 
 // Confidence levels derived from funding_envelope.json — keyed by tranche type.
@@ -84,21 +84,21 @@ const GENERIC_SECTOR_RECOVERY = [
 ];
 
 const PATH_LABELS = {
-  baseline:          t('fw.path.baseline')||'Baseline reconstruction',
-  code_compliant:    t('fw.path.code_compliant')||'Code-compliant rebuild',
-  build_back_better: t('fw.path.build_back_better')||'Build Back Better',
+  baseline:          'Baseline reconstruction',
+  code_compliant:    'Code-compliant rebuild',
+  build_back_better: 'Build Back Better',
 };
 
 const PATH_DESC = {
-  baseline:          t('fw.path.baseline_desc')||'Restore to pre-war condition',
-  code_compliant:    t('fw.path.code_compliant_desc')||'+15–25% · meets current EU building codes',
-  build_back_better: t('fw.path.build_back_better_desc')||'+30–60% · modern systems, energy efficiency, resilience',
+  baseline:          'Restore to pre-war condition',
+  code_compliant:    '+15–25% · meets current EU building codes',
+  build_back_better: '+30–60% · modern systems, energy efficiency, resilience',
 };
 
 const TIMING_LABELS = {
-  during: t('fw.timing.during')||'During the war',
-  after:  t('fw.timing.after')||'Post-war only',
-  phased: t('fw.timing.phased')||'Phased — start during, close post-war',
+  during: 'During the war',
+  after:  'Post-war only',
+  phased: 'Phased — start during, close post-war',
 };
 
 // ── Wizard state ──────────────────────────────────────────────────────────────
@@ -131,7 +131,6 @@ function reset(preselected = []) {
     growthProjects: [],   // Array<{ sectorId, archetypeId, label, sector, scale_usd_m }>
     showGrowthPicker: false,
     growthMode: 'specific',  // 'generic' | 'specific'
-    minPrivateReturn: 18,
   };
   _trustModes = new Map();
 }
@@ -194,14 +193,14 @@ function shell() {
     <div class="fw-modal" role="dialog" aria-modal="true" aria-label="Finance It wizard">
       <div class="fw-header">
         <div class="fw-header-left">
-          <h2 class="fw-title">💰 ${t('fw.title') || 'Finance It'}</h2>
+          <h2 class="fw-title">💰 Finance It</h2>
           <div class="fw-progress" id="fwProgress"></div>
         </div>
         <button class="fw-close" id="fwClose" aria-label="Close wizard">×</button>
       </div>
       <div class="fw-body" id="fwBody"></div>
       <div class="fw-footer">
-        <button class="fw-btn fw-btn-back" id="fwBack">← ${t('fw.back') || 'Back'}</button>
+        <button class="fw-btn fw-btn-back" id="fwBack">← Back</button>
         <span class="fw-step-label" id="fwStepLabel"></span>
         <button class="fw-btn fw-btn-next" id="fwNext">Next →</button>
       </div>
@@ -224,7 +223,7 @@ function render() {
 }
 
 function updateChrome() {
-  const STEPS = [t('fw.step.scope')||'Scope', t('fw.step.scenario')||'Scenario', t('fw.step.structure')||'Structure', t('fw.step.results')||'Results'];
+  const STEPS = ['Scope', 'Scenario', 'Structure', 'Results'];
   const prog = document.getElementById('fwProgress');
   if (prog) {
     prog.innerHTML = STEPS.map((s, i) =>
@@ -233,7 +232,7 @@ function updateChrome() {
   }
 
   const sl = document.getElementById('fwStepLabel');
-  if (sl) sl.textContent = `${t('fw.step_label')||'Step'} ${W.step} ${t('fw.step_of')||'of'} 4`;
+  if (sl) sl.textContent = `Step ${W.step} of 4`;
 
   const back = document.getElementById('fwBack');
   const next = document.getElementById('fwNext');
@@ -242,10 +241,10 @@ function updateChrome() {
     next.hidden = !!W._showIntro;
     if (!W._showIntro) {
       if (W.step === 4) {
-        next.textContent = `↗ ${t('fw.export')||'Export Brief'}`;
+        next.textContent = '↗ Export Brief';
         next.onclick = exportBrief;
       } else {
-        next.textContent = W.step === 3 ? `${t('fw.see_results')||'See Results'} →` : `${t('fw.next')||'Next'} →`;
+        next.textContent = W.step === 3 ? 'See Results →' : 'Next →';
         next.onclick = goNext;
       }
     }
@@ -316,34 +315,26 @@ function seedTranchesFromAssets() {
 function goNext() {
   if (!validate()) return;
   if (W.step === 2 && W.scope !== 'greenfield') seedTranchesFromAssets();
-  if (W.step < 4) {
-    W.step++;
-    render();
-    document.querySelector('.fw-body')?.scrollTo({ top: 0, behavior: 'instant' });
-  }
+  if (W.step < 4) { W.step++; render(); }
 }
 
 function goBack() {
-  if (W.step > 1) {
-    W.step--;
-    render();
-    document.querySelector('.fw-body')?.scrollTo({ top: 0, behavior: 'instant' });
-  }
+  if (W.step > 1) { W.step--; render(); }
 }
 
 function validate() {
   if (W.step === 1 && W.scope !== 'greenfield' && W.selectedIds.size === 0) {
-    showError(t('fw.err.select_project')||'Select at least one project to continue.');
+    showError('Select at least one project to continue.');
     return false;
   }
   if (W.step === 1 && W.scope === 'greenfield') {
-    if (!W.greenfield.sectorId) { showError(t('fw.err.select_sector')||'Select a growth sector to continue.'); return false; }
-    if (!W.greenfield.archetypeId) { showError(t('fw.err.select_archetype')||'Select a project archetype to continue.'); return false; }
+    if (!W.greenfield.sectorId) { showError('Select a growth sector to continue.'); return false; }
+    if (!W.greenfield.archetypeId) { showError('Select a project archetype to continue.'); return false; }
   }
   if (W.step === 3) {
     const sum = W.tranches.reduce((s, t) => s + (+t.pct || 0), 0);
     if (Math.abs(sum - 100) > 0.5) {
-      showError(`${t('fw.err.tranche_total_prefix')||'Tranche allocations must total 100%. Currently'}: ${sum.toFixed(1)}%.`);
+      showError(`Tranche allocations must total 100%. Currently: ${sum.toFixed(1)}%.`);
       return false;
     }
   }
@@ -391,14 +382,7 @@ function portfolioCost(path) {
   return assetCost + growthCost;
 }
 
-function fmtM(n) {
-  if (n == null) return '-';
-  if (+n >= 10000) {
-    const bn = +n / 1000;
-    return bn >= 100 ? `$${Math.round(bn).toLocaleString()}B` : `$${bn.toFixed(1)}B`;
-  }
-  return `$${(+n).toLocaleString()}M`;
-}
+function fmtM(n) { return n != null ? `$${(+n).toLocaleString()}M` : '—'; }
 
 // ── Intro screen (first open only) ───────────────────────────────────────────
 
@@ -406,28 +390,28 @@ function introHTML() {
   return `<div class="fw-intro">
     <div class="fw-intro-header">
       <span class="fw-intro-icon">💰</span>
-      <h3 class="fw-intro-title">${t('fw.intro.title')||'Finance It — how it works'}</h3>
+      <h3 class="fw-intro-title">Finance It — how it works</h3>
     </div>
-    <p class="fw-intro-body">${t('fw.intro.body')||'Build a deterministic capital stack for any damaged asset, group, or the entire 100-asset portfolio. Every figure traces to RDNA3 and KSE benchmarks — no AI-generated numbers.'}</p>
+    <p class="fw-intro-body">Build a deterministic capital stack for any damaged asset, group, or the entire 100-asset portfolio. Every figure traces to RDNA3 and KSE benchmarks — no AI-generated numbers.</p>
     <div class="fw-intro-steps">
       <div class="fw-intro-step">
         <span class="fw-is-num">1</span>
-        <div><strong>${t('fw.step.scope')||'Scope'}</strong> — ${t('fw.intro.step1_desc')||'one project, a region group, or the full portfolio with optional greenfield growth investments'}</div>
+        <div><strong>Scope</strong> — one project, a region group, or the full portfolio with optional greenfield growth investments</div>
       </div>
       <div class="fw-intro-step">
         <span class="fw-is-num">2</span>
-        <div><strong>${t('fw.step.scenario')||'Scenario'}</strong> — ${t('fw.intro.step2_desc')||'choose reconstruction path (baseline / code-compliant / build-back-better) and financing timeline'}</div>
+        <div><strong>Scenario</strong> — choose reconstruction path (baseline / code-compliant / build-back-better) and financing timeline</div>
       </div>
       <div class="fw-intro-step">
         <span class="fw-is-num">3</span>
-        <div><strong>${t('fw.step.structure')||'Structure'}</strong> — ${t('fw.intro.step3_desc')||'pick tranches from the catalog (grants, concessional debt, equity, Russian reparations) and set allocations'}</div>
+        <div><strong>Structure</strong> — pick tranches from the catalog (grants, concessional debt, equity, Russian reparations) and set allocations</div>
       </div>
       <div class="fw-intro-step">
         <span class="fw-is-num">4</span>
-        <div><strong>${t('fw.step.results')||'Results'}</strong> — ${t('fw.intro.step4_desc')||'full capital stack analysis with blended CoC, mobilisation ratio, and an exportable financing brief'}</div>
+        <div><strong>Results</strong> — full capital stack analysis with blended CoC, mobilisation ratio, and an exportable financing brief</div>
       </div>
     </div>
-    <button class="fw-btn fw-btn-next fw-intro-start" id="fwIntroStart">${t('fw.intro.start')||'Start — Step 1'} →</button>
+    <button class="fw-btn fw-btn-next fw-intro-start" id="fwIntroStart">Start — Step 1 →</button>
   </div>`;
 }
 
@@ -443,12 +427,12 @@ function wireIntro() {
 
 function step1HTML() {
   return `<div class="fw-step">
-    <h3 class="fw-sh">${t('fw.s1.title')||'What would you like to finance?'}</h3>
+    <h3 class="fw-sh">What would you like to finance?</h3>
     <div class="fw-scope-row" id="fwScopeRow">
-      ${scopeCard('single',     '🏗', t('fw.s1.single')||'One project',             t('fw.s1.single_desc')||'Finance a specific damaged asset')}
-      ${scopeCard('group',      '🗂', t('fw.s1.group')||'Group of projects',       t('fw.s1.group_desc')||'Select by region or manually')}
-      ${scopeCard('all',        '🇺🇦', t('fw.s1.all')||'Entire portfolio',        `${t('fw.s1.all_desc_prefix')||'All'} ${_assets.length} ${t('fw.s1.all_desc_suffix')||'documented assets'}`)}
-      ${scopeCard('greenfield', '🌱', t('fw.s1.greenfield')||'Growth sector project',   t('fw.s1.greenfield_desc')||'Model a new greenfield investment')}
+      ${scopeCard('single',     '🏗', 'One project',             'Finance a specific damaged asset')}
+      ${scopeCard('group',      '🗂', 'Group of projects',       'Select by region or manually')}
+      ${scopeCard('all',        '🇺🇦', 'Entire portfolio',        `All ${_assets.length} documented assets`)}
+      ${scopeCard('greenfield', '🌱', 'Growth sector project',   'Model a new greenfield investment')}
     </div>
     <div id="fwScopeDetail"></div>
   </div>`;
@@ -496,12 +480,12 @@ function renderScopeDetail() {
 
     det.innerHTML = `
       <div class="fw-scope-summary">
-        <strong>${_assets.length} ${t('fw.scope.damaged_assets')||'damaged assets'}</strong> ${t('fw.scope.all_regions')||'across all documented regions'}
-        — ${t('fw.scope.baseline_rehab')||'Baseline rehabilitation'}: <strong>${fmtM(assetTotal)}</strong>
-        ${growthCount > 0 ? ` + <strong>${growthCount} ${t('fw.scope.growth_project')||'growth project'}${growthCount !== 1 ? (t('fw.scope.growth_projects_plural_suffix')||'s') : ''}</strong> (${fmtM(growthTotal)}) = <strong>${fmtM(grandTotal)} ${t('fw.scope.total')||'total'}</strong>` : ''}
+        <strong>${_assets.length} damaged assets</strong> across all documented regions
+        — Baseline rehabilitation: <strong>${fmtM(assetTotal)}</strong>
+        ${growthCount > 0 ? ` + <strong>${growthCount} growth project${growthCount !== 1 ? 's' : ''}</strong> (${fmtM(growthTotal)}) = <strong>${fmtM(grandTotal)} total</strong>` : ''}
       </div>
       <button class="fw-growth-toggle-btn" id="fwGrowthToggleBtn">
-        ${W.showGrowthPicker ? `▲ ${t('fw.scope.hide_growth')||'Hide growth projects'}` : `＋ ${t('fw.scope.add_growth')||'Add growth sector projects'}${growthCount > 0 ? ` (${growthCount} ${t('fw.scope.selected')||'selected'})` : ''}`}
+        ${W.showGrowthPicker ? '▲ Hide growth projects' : `＋ Add growth sector projects${growthCount > 0 ? ` (${growthCount} selected)` : ''}`}
       </button>
       <div id="fwGrowthPickerWrap" ${W.showGrowthPicker ? '' : 'hidden'}>
         <div class="fw-growth-mode-row">
@@ -509,20 +493,20 @@ function renderScopeDetail() {
             <input type="radio" name="growthMode" value="generic" ${W.growthMode === 'generic' ? 'checked' : ''} class="fw-sr">
             <span class="fw-gmo-icon">🌍</span>
             <span class="fw-gmo-text">
-              <strong>${t('fw.scope.generic_recovery')||'Generic sector recovery'}</strong>
-              <span class="fw-gmo-sub">${t('fw.scope.generic_recovery_desc')||'Restore pre-war growth trajectory across a whole sector'}</span>
+              <strong>Generic sector recovery</strong>
+              <span class="fw-gmo-sub">Restore pre-war growth trajectory across a whole sector</span>
             </span>
           </label>
           <label class="fw-growth-mode-opt ${W.growthMode === 'specific' ? 'fw-gmo-active' : ''}">
             <input type="radio" name="growthMode" value="specific" ${W.growthMode === 'specific' ? 'checked' : ''} class="fw-sr">
             <span class="fw-gmo-icon">📋</span>
             <span class="fw-gmo-text">
-              <strong>${t('fw.scope.specific_projects')||'Specific projects'}</strong>
-              <span class="fw-gmo-sub">${t('fw.scope.specific_projects_desc')||'Select individual investment archetypes'}</span>
+              <strong>Specific projects</strong>
+              <span class="fw-gmo-sub">Select individual investment archetypes</span>
             </span>
           </label>
         </div>
-        ${W.growthMode === 'generic' ? renderGenericGrowthPicker() : (_growthData ? renderPortfolioGrowthPicker(_growthData, W.growthProjects ?? []) : `<p class="fw-scope-summary">${t('fw.scope.loading_growth')||'Loading growth sector data…'}</p>`)}
+        ${W.growthMode === 'generic' ? renderGenericGrowthPicker() : (_growthData ? renderPortfolioGrowthPicker(_growthData, W.growthProjects ?? []) : '<p class="fw-scope-summary">Loading growth sector data…</p>')}
         <div id="fwGrowthChips" class="${W.growthProjects.length > 0 ? 'fw-growth-chips' : 'fw-growth-empty'}">
           ${W.growthProjects.length > 0
             ? W.growthProjects.map(p => {
@@ -533,16 +517,10 @@ function renderScopeDetail() {
                     <button class="fw-qty-btn fw-growth-qty-up" data-arch-id="${p.archetypeId}" type="button">+</button>
                   </span>` : '';
                 return `<span class="fw-growth-chip">${p.label}${qtyControls} <span class="fw-gc-scale">USD ${(+p.scale_usd_m).toLocaleString()}M</span></span>`;
-              }).join('') + `<span class="fw-growth-total-chip">${t('fw.scope.growth_total')||'Growth total'}: <strong>USD ${(W.growthProjects ?? []).reduce((s,p)=>s+p.scale_usd_m,0).toLocaleString()}M</strong></span>`
-            : (t('fw.scope.no_growth_selected')||'No growth projects selected yet.')}
+              }).join('') + `<span class="fw-growth-total-chip">Growth total: <strong>USD ${(W.growthProjects ?? []).reduce((s,p)=>s+p.scale_usd_m,0).toLocaleString()}M</strong></span>`
+            : 'No growth projects selected yet.'}
         </div>
       </div>`;
-
-    // If renderPortfolioGrowthPicker created its own fwGrowthChips, remove it to avoid duplicates
-    if (W.growthMode !== 'generic') {
-      const allChips = det.querySelectorAll('#fwGrowthChips');
-      if (allChips.length > 1) allChips[0].remove();
-    }
 
     document.getElementById('fwGrowthToggleBtn')?.addEventListener('click', () => {
       W.showGrowthPicker = !W.showGrowthPicker;
@@ -559,8 +537,8 @@ function renderScopeDetail() {
   if (W.scope === 'single') {
     det.innerHTML = `
       <div class="fw-field-group">
-        <label class="fw-label">${t('fw.scope.search_projects')||'Search projects'}</label>
-        <input id="fwSearch" type="text" class="fw-input" placeholder="${t('fw.scope.search_placeholder')||'Type project name…'}" autocomplete="off">
+        <label class="fw-label">Search projects</label>
+        <input id="fwSearch" type="text" class="fw-input" placeholder="Type project name…" autocomplete="off">
       </div>
       <div id="fwProjList" class="fw-asset-list"></div>`;
     const inp = document.getElementById('fwSearch');
@@ -572,9 +550,9 @@ function renderScopeDetail() {
   // Greenfield growth sector
   if (W.scope === 'greenfield') {
     if (!_growthData) {
-      det.innerHTML = `<p class="fw-scope-summary">${t('fw.scope.loading_growth')||'Loading growth sector data…'}</p>`;
+      det.innerHTML = `<p class="fw-scope-summary">Loading growth sector data…</p>`;
       loadGrowthSectors().then(d => { _growthData = d; renderScopeDetail(); }).catch(() => {
-        det.innerHTML = `<p class="fw-scope-summary">${t('fw.scope.loading_growth_error')||'Could not load growth sector data.'}</p>`;
+        det.innerHTML = `<p class="fw-scope-summary">Could not load growth sector data.</p>`;
       });
       return;
     }
@@ -602,19 +580,19 @@ function renderScopeDetail() {
   det.innerHTML = `
     <div class="fw-group-bar">
       <div class="fw-field-group fw-fg-inline">
-        <label class="fw-label">${t('fw.scope.region')||'Region'}</label>
+        <label class="fw-label">Region</label>
         <select id="fwOblastSel" class="fw-select fw-select-sm">
-          <option value="">${t('fw.scope.all_regions')||'All regions'}</option>
+          <option value="">All regions</option>
           ${oblasts.map(o => `<option>${o}</option>`).join('')}
         </select>
       </div>
       <div class="fw-group-links">
-        <button class="fw-link-btn" id="fwSelAll">${t('fw.scope.select_all')||'Select all'}</button>
-        <button class="fw-link-btn" id="fwClrAll">${t('fw.scope.clear_all')||'Clear all'}</button>
+        <button class="fw-link-btn" id="fwSelAll">Select all</button>
+        <button class="fw-link-btn" id="fwClrAll">Clear all</button>
       </div>
     </div>
     <div id="fwGroupList" class="fw-asset-list"></div>
-    <div class="fw-sel-count" id="fwSelCount">${W.selectedIds.size} ${t('fw.scope.selected')||'selected'}</div>`;
+    <div class="fw-sel-count" id="fwSelCount">${W.selectedIds.size} selected</div>`;
 
   const oblSel = document.getElementById('fwOblastSel');
   oblSel.addEventListener('change', () => renderGroupList(oblSel.value));
@@ -633,7 +611,7 @@ function renderScopeDetail() {
 
 function updateSelCount() {
   const el = document.getElementById('fwSelCount');
-  if (el) el.textContent = `${W.selectedIds.size} ${t('fw.scope.selected')||'selected'}`;
+  if (el) el.textContent = `${W.selectedIds.size} selected`;
 }
 
 function renderGenericGrowthPicker() {
@@ -716,9 +694,9 @@ function updateGrowthChips() {
   const growthCount = W.growthProjects.length;
   const summaryEl = document.querySelector('.fw-scope-summary');
   if (summaryEl) {
-    summaryEl.innerHTML = `<strong>${_assets.length} ${t('fw.scope.damaged_assets')||'damaged assets'}</strong> ${t('fw.scope.all_regions')||'across all documented regions'}
-      — ${t('fw.scope.baseline_rehab')||'Baseline rehabilitation'}: <strong>${fmtM(assetTotal)}</strong>
-      ${growthCount > 0 ? ` + <strong>${growthCount} ${t('fw.scope.growth_project')||'growth project'}${growthCount !== 1 ? (t('fw.scope.growth_projects_plural_suffix')||'s') : ''}</strong> (${fmtM(growthTotal)}) = <strong>${fmtM(grandTotal)} ${t('fw.scope.total')||'total'}</strong>` : ''}`;
+    summaryEl.innerHTML = `<strong>${_assets.length} damaged assets</strong> across all documented regions
+      — Baseline rehabilitation: <strong>${fmtM(assetTotal)}</strong>
+      ${growthCount > 0 ? ` + <strong>${growthCount} growth project${growthCount !== 1 ? 's' : ''}</strong> (${fmtM(growthTotal)}) = <strong>${fmtM(grandTotal)} total</strong>` : ''}`;
   }
   const chipsEl = document.getElementById('fwGrowthChips');
   if (chipsEl) {
@@ -732,10 +710,10 @@ function updateGrowthChips() {
             <button class="fw-qty-btn fw-growth-qty-up" data-arch-id="${p.archetypeId}" type="button">+</button>
           </span>` : '';
         return `<span class="fw-growth-chip">${p.label}${qtyControls} <span class="fw-gc-scale">USD ${(+p.scale_usd_m).toLocaleString()}M</span></span>`;
-      }).join('') + `<span class="fw-growth-total-chip">${t('fw.scope.growth_total')||'Growth total'}: <strong>USD ${growthTotal.toLocaleString()}M</strong></span>`;
+      }).join('') + `<span class="fw-growth-total-chip">Growth total: <strong>USD ${growthTotal.toLocaleString()}M</strong></span>`;
     } else {
       chipsEl.className = 'fw-growth-empty';
-      chipsEl.innerHTML = t('fw.scope.no_growth_selected')||'No growth projects selected yet.';
+      chipsEl.innerHTML = 'No growth projects selected yet.';
     }
     // Re-wire qty buttons after chips update
     chipsEl.querySelectorAll('.fw-growth-qty-up').forEach(btn => {
@@ -829,35 +807,24 @@ function step2HTML() {
       <input type="radio" name="timing" value="${k}" ${W.timing === k ? 'checked' : ''} class="fw-sr">
       <span class="fw-rc-label">${TIMING_LABELS[k]}</span>
       <span class="fw-rc-desc">${
-        k === 'during' ? `⚡ +${WAR_PREMIUM}% ${t('fw.s2.timing_during_desc')||'wartime premium on commercial tranches'}` :
-        k === 'after'  ? (t('fw.s2.timing_after_desc')||'Normal rates; reparations available as a funding source') :
-                         (t('fw.s2.timing_phased_desc')||'Phased disbursement; reparations close the post-war tranche')
+        k === 'during' ? `⚡ +${WAR_PREMIUM}% wartime premium on commercial tranches` :
+        k === 'after'  ? 'Normal rates; reparations available as a funding source' :
+                         'Phased disbursement; reparations close the post-war tranche'
       }</span>
     </label>`).join('');
 
   return `<div class="fw-step">
-    <h3 class="fw-sh">${t('fw.s2.title')||'Cost path & financing timeline'}</h3>
-    <div class="fw-selection-pill">${sel.length} ${t('fw.s2.project')||'project'}${sel.length !== 1 ? (t('fw.s2.projects_plural_suffix')||'s') : ''}: ${summary}</div>
+    <h3 class="fw-sh">Cost path &amp; financing timeline</h3>
+    <div class="fw-selection-pill">${sel.length} project${sel.length !== 1 ? 's' : ''}: ${summary}</div>
     <div class="fw-field-group">
-      <label class="fw-label">${t('fw.s2.recon_path')||'Reconstruction path'}</label>
+      <label class="fw-label">Reconstruction path</label>
       <div class="fw-radio-row" id="fwPathRow">${pathCards}</div>
     </div>
     <div class="fw-field-group">
-      <label class="fw-label">${t('fw.s2.fin_timeline')||'Financing timeline'}</label>
+      <label class="fw-label">Financing timeline</label>
       <div class="fw-radio-row" id="fwTimingRow">${timingCards}</div>
     </div>
-    <div class="fw-field-group">
-      <label class="fw-label">${t('fw.s2.priv_return_label')||'Private capital minimum return (pre-war equivalent)'}</label>
-      <div class="fw-radio-row" id="fwPrivRetRow">
-        ${['10','15','18','25'].map(v => `
-          <label class="fw-radio-card ${(W.minPrivateReturn ?? 18) == v ? 'fw-rc-checked' : ''}">
-            <input type="radio" name="minPrivRet" value="${v}" ${(W.minPrivateReturn ?? 18) == v ? 'checked' : ''} class="fw-sr">
-            <span class="fw-rc-label">${v}% IRR</span>
-            <span class="fw-rc-desc">${v == 10 ? (t('fw.s2.irr_dfi')||'DFI/concessional only') : v == 15 ? (t('fw.s2.irr_conservative')||'Conservative infrastructure') : v == 18 ? (t('fw.s2.irr_wartime')||'Wartime adjusted (default)') : (t('fw.s2.irr_highrisk')||'High-risk private equity')}</span>
-          </label>`).join('')}
-      </div>
-    </div>
-    ${W.timing !== 'during' ? `<div class="fw-info-note">${t('fw.s2.reparations_note')||'Russian Reparations will be available as a tranche type in Step 3.'}</div>` : ''}
+    ${W.timing !== 'during' ? `<div class="fw-info-note">Russian Reparations will be available as a tranche type in Step 3.</div>` : ''}
   </div>`;
 }
 
@@ -890,33 +857,33 @@ function step2GreenfieldHTML() {
       <div class="fw-gf-summary-body">
         <p class="fw-gf-thesis">${sector.thesis_one_line}</p>
         <div class="fw-gf-meta-row">
-          <span class="fw-gf-meta-item"><strong>${t('fw.s2.gf_project_scale')||'Project scale'}:</strong> USD ${arch.scale_usd_m.toLocaleString()}M</span>
-          <span class="fw-gf-meta-item"><strong>${t('fw.s2.gf_cap_template')||'Capital structure template'}:</strong> ${arch.template_id}</span>
+          <span class="fw-gf-meta-item"><strong>Project scale:</strong> USD ${arch.scale_usd_m.toLocaleString()}M</span>
+          <span class="fw-gf-meta-item"><strong>Capital structure template:</strong> ${arch.template_id}</span>
         </div>
         ${arch.scale_note ? `<p class="fw-gf-scale-note">${arch.scale_note}</p>` : ''}
-        ${!tmpl ? `<p class="fw-gf-tmpl-warn">${t('fw.s2.gf_tmpl_warn_prefix')||'Note: financing template'} "${arch.template_id}" ${t('fw.s2.gf_tmpl_warn_suffix')||'not found in growth_sectors.json — tranches will use wizard defaults.'}</p>` : ''}
+        ${!tmpl ? `<p class="fw-gf-tmpl-warn">Note: financing template "${arch.template_id}" not found in growth_sectors.json — tranches will use wizard defaults.</p>` : ''}
       </div>
-    </div>` : `<p class="fw-gf-no-arch">${t('fw.s2.gf_no_arch')||'No archetype selected. Go back to Step 1.'}</p>`;
+    </div>` : `<p class="fw-gf-no-arch">No archetype selected. Go back to Step 1.</p>`;
 
   const timingCards = Object.keys(TIMING_LABELS).map(k => `
     <label class="fw-radio-card ${W.timing === k ? 'fw-rc-checked' : ''}">
       <input type="radio" name="timing" value="${k}" ${W.timing === k ? 'checked' : ''} class="fw-sr">
       <span class="fw-rc-label">${TIMING_LABELS[k]}</span>
       <span class="fw-rc-desc">${
-        k === 'during' ? `⚡ +${WAR_PREMIUM}% ${t('fw.s2.timing_during_desc')||'wartime premium on commercial tranches'}` :
-        k === 'after'  ? (t('fw.s2.timing_after_desc')||'Normal rates; reparations available as a funding source') :
-                         (t('fw.s2.timing_phased_desc')||'Phased disbursement; reparations close the post-war tranche')
+        k === 'during' ? `⚡ +${WAR_PREMIUM}% wartime premium on commercial tranches` :
+        k === 'after'  ? 'Normal rates; reparations available as a funding source' :
+                         'Phased disbursement; reparations close the post-war tranche'
       }</span>
     </label>`).join('');
 
   return `<div class="fw-step">
-    <h3 class="fw-sh">${t('fw.s2.gf_title')||'Project overview & financing timeline'}</h3>
+    <h3 class="fw-sh">Project overview &amp; financing timeline</h3>
     ${summaryCard}
     <div class="fw-field-group">
-      <label class="fw-label">${t('fw.s2.fin_timeline')||'Financing timeline'}</label>
+      <label class="fw-label">Financing timeline</label>
       <div class="fw-radio-row" id="fwTimingRow">${timingCards}</div>
     </div>
-    ${W.timing !== 'during' ? `<div class="fw-info-note">${t('fw.s2.reparations_note')||'Russian Reparations will be available as a tranche type in Step 3.'}</div>` : ''}
+    ${W.timing !== 'during' ? `<div class="fw-info-note">Russian Reparations will be available as a tranche type in Step 3.</div>` : ''}
   </div>`;
 }
 
@@ -934,13 +901,6 @@ function wireStep2() {
       document.querySelectorAll('#fwTimingRow .fw-radio-card').forEach(c => c.classList.remove('fw-rc-checked'));
       e.target.closest('.fw-radio-card').classList.add('fw-rc-checked');
       render();  // refresh to show/hide reparations note
-    });
-  });
-  document.querySelectorAll('input[name="minPrivRet"]').forEach(r => {
-    r.addEventListener('change', e => {
-      W.minPrivateReturn = +e.target.value;
-      document.querySelectorAll('#fwPrivRetRow .fw-radio-card').forEach(c => c.classList.remove('fw-rc-checked'));
-      e.target.closest('.fw-radio-card').classList.add('fw-rc-checked');
     });
   });
 }
@@ -977,9 +937,9 @@ function step3HTML() {
     const isSelected = selectedTypes.has(k);
     const desc = TRANCHE_DESCRIPTIONS[k] ?? '';
     const retLabel = k === 'reparations' || k === 'grant' || k === 'first_loss' || k === 'public_equity'
-      ? (k === 'reparations' ? (t('fw.s3.no_return_sovereign')||'No return · sovereign obligation') : k === 'first_loss' ? (t('fw.s3.no_return_risk_absorber')||'No return · risk absorber') : (t('fw.s3.no_return')||'No return'))
+      ? (k === 'reparations' ? 'No return · sovereign obligation' : k === 'first_loss' ? 'No return · risk absorber' : 'No return')
       : def.isFlag
-        ? `${t('fw.s3.help_premium')||'Premium'} ~${def.ret}%/yr · ${t('fw.s3.help_risk_wrap')||'risk wrap'}`
+        ? `Premium ~${def.ret}%/yr · risk wrap`
         : `${def.ret}% ${def.tenor ? `· ${def.tenor}yr` : ''}`;
     return `<button class="fw-catalog-card ${isSelected ? 'fw-catalog-active' : ''}${def.isFlag ? ' fw-catalog-flag' : ''}"
               data-tranche-type="${k}" type="button" title="${def.label}">
@@ -993,37 +953,37 @@ function step3HTML() {
 
   return `<div class="fw-step">
     <div class="fw-step3-header">
-      <h3 class="fw-sh">${t('fw.s3.title')||'Capital structure'}</h3>
-      <button class="fw-help-btn" id="fwHelpBtn" type="button" title="${t('fw.s3.tranche_guide')||'Tranche guide'}">? ${t('fw.s3.help')||'Help'}</button>
+      <h3 class="fw-sh">Build your financing structure</h3>
+      <button class="fw-help-btn" id="fwHelpBtn" type="button" title="Tranche guide">? Help</button>
     </div>
-    ${W.timing === 'during' ? `<div class="fw-war-note">⚡ ${t('fw.s3.wartime_note_prefix')||'Wartime'}: +${WAR_PREMIUM}% ${t('fw.s3.wartime_note_suffix')||'applied to commercial tranches in Results.'}</div>` : ''}
+    ${W.timing === 'during' ? `<div class="fw-war-note">⚡ Wartime: +${WAR_PREMIUM}% applied to commercial tranches in Results.</div>` : ''}
 
     <div class="fw-catalog-section">
-      <div class="fw-catalog-label">${t('fw.s3.select_tranches')||'Select tranches to include:'}</div>
+      <div class="fw-catalog-label">Select tranches to include:</div>
       <div class="fw-catalog-grid" id="fwCatalogGrid">${catalogHTML}</div>
     </div>
 
     <div class="fw-tranche-hdr">
-      <span class="fw-total-lbl">${t('fw.s3.total_cost')||'Total cost'}: <strong>${fmtM(total)}</strong> (${PATH_LABELS[W.path]})</span>
-      <span class="fw-alloc-sum ${ok ? 'fw-alloc-ok' : 'fw-alloc-warn'}" id="fwAllocSum">${t('fw.s3.allocated')||'Allocated'}: ${sumPct.toFixed(0)}%</span>
+      <span class="fw-total-lbl">Total cost: <strong>${fmtM(total)}</strong> (${PATH_LABELS[W.path]})</span>
+      <span class="fw-alloc-sum ${ok ? 'fw-alloc-ok' : 'fw-alloc-warn'}" id="fwAllocSum">Allocated: ${sumPct.toFixed(0)}%</span>
     </div>
     ${allocBar(total)}
     <div id="fwTranches">${W.tranches.map(t => trancheRowHTML(t, total)).join('')}</div>
     <div class="fw-metrics-row">
-      <div class="fw-mini-metric"><span class="fw-mm-val">${blended.toFixed(2)}%</span><span class="fw-mm-lbl">${t('fw.metrics.blended_coc')||'Blended cost of capital'}</span></div>
-      <div class="fw-mini-metric"><span class="fw-mm-val">${mobRatio}</span><span class="fw-mm-lbl">${t('fw.metrics.mob_ratio')||'Private mobilisation ratio'}</span></div>
+      <div class="fw-mini-metric"><span class="fw-mm-val">${blended.toFixed(2)}%</span><span class="fw-mm-lbl">Blended cost of capital</span></div>
+      <div class="fw-mini-metric"><span class="fw-mm-val">${mobRatio}</span><span class="fw-mm-lbl">Private mobilisation ratio</span></div>
     </div>
 
     <!-- Tranche help overlay -->
     <div class="fw-help-panel" id="fwHelpPanel" hidden>
       <div class="fw-help-inner">
-        <div class="fw-help-hdr"><strong>${t('fw.s3.tranche_guide')||'Tranche Guide'}</strong><button class="fw-help-close" id="fwHelpClose" type="button">×</button></div>
+        <div class="fw-help-hdr"><strong>Tranche Guide</strong><button class="fw-help-close" id="fwHelpClose" type="button">×</button></div>
         ${Object.entries(TRANCHE_DEFS).map(([k, def]) => {
           const noRetTypes = new Set(['reparations', 'grant', 'first_loss', 'public_equity']);
           const retStr = noRetTypes.has(k)
             ? ''
             : def.isFlag
-              ? ` — ${t('fw.s3.help_premium')||'Premium'} ~${def.ret}%/yr · ${t('fw.s3.help_risk_wrap')||'risk wrap'}`
+              ? ` — Premium ~${def.ret}%/yr · risk wrap`
               : ` — ${def.ret}% ${def.tenor ? `/ ${def.tenor}yr` : ''}`;
           return `
           <div class="fw-help-row">
@@ -1045,7 +1005,7 @@ function allocBar(total) {
     return `<div class="fw-bar-seg" style="width:${+t.pct||0}%;background:${def.col}" title="${def.label}: ${t.pct}%"></div>`;
   }).join('');
   const gap = Math.max(0, 100 - sumPct);
-  const gapSeg = gap > 0.5 ? `<div class="fw-bar-seg fw-bar-gap" style="width:${gap}%" title="${t('fw.s3.unfunded_gap')||'Unfunded gap'}: ${gap.toFixed(1)}%"></div>` : '';
+  const gapSeg = gap > 0.5 ? `<div class="fw-bar-seg fw-bar-gap" style="width:${gap}%" title="Unfunded gap: ${gap.toFixed(1)}%"></div>` : '';
   return `<div class="fw-alloc-bar">${segs}${gapSeg}</div>`;
 }
 
@@ -1058,21 +1018,21 @@ function trancheRowHTML(t, total) {
   // For Trust-mode reparations tranches, show Annual payment instead of % of project
   const annualTrust = trustAnnualPayment_usd_m();
   const displayAmt  = isTrustMode
-    ? `${t('fw.s3.annual_label')||'Annual'}: $${annualTrust.toLocaleString()}M/yr`
+    ? `Annual: $${annualTrust.toLocaleString()}M/yr`
     : isPriWrap
-      ? `${t('fw.s3.coverage')||'Coverage'}: $${total > 0 ? (total * pct / 100).toFixed(1) : '-'}M`
-      : `$${total > 0 ? (total * pct / 100).toFixed(1) : '-'}M`;
+      ? `Coverage: $${total > 0 ? (total * pct / 100).toFixed(1) : '—'}M`
+      : `$${total > 0 ? (total * pct / 100).toFixed(1) : '—'}M`;
 
   const repNote = t.type === 'reparations' && total > 0 ? (() => {
     const repAmt = total * pct / 100;
-    return `<div class="fw-rep-note">= ${(repAmt / KSE_CLAIM_USD_M * 100).toFixed(3)}% ${t('fw.s3.of_kse_claim')||'of $486B KSE claim'} · ${(repAmt / FROZEN_USD_M * 100).toFixed(3)}% ${t('fw.s3.of_frozen')||'of $300B frozen assets'}</div>`;
+    return `<div class="fw-rep-note">= ${(repAmt / KSE_CLAIM_USD_M * 100).toFixed(3)}% of $486B KSE claim · ${(repAmt / FROZEN_USD_M * 100).toFixed(3)}% of $300B frozen assets</div>`;
   })() : '';
 
   const priWrapNote = isPriWrap ? `
     <div class="fw-pri-wrap-note">
       <span class="fw-pri-icon">🛡</span>
-      ${t('fw.s3.pri_wrap_note')||'Risk-mitigation instrument — not a capital source. Coverage % = share of portfolio insured.'}
-      ${t('fw.s3.pri_wrap_premium_prefix')||'Premium'} ~${def.ret}%/yr · ${t('fw.s3.pri_wrap_premium_suffix')||'reduces senior debt required return by ~2–3%.'}
+      Risk-mitigation instrument — not a capital source. Coverage % = share of portfolio insured.
+      Premium ~${def.ret}%/yr · reduces senior debt required return by ~2–3%.
     </div>` : '';
 
   // Trust toggle: only shown when tranche is 'reparations' AND timing allows reparations
@@ -1082,32 +1042,33 @@ function trancheRowHTML(t, total) {
       <div class="fw-trust-mode-btns">
         <button type="button" class="fw-trust-mode-btn ${!isTrustMode ? 'active' : ''}"
                 data-trust-id="${t.id}" data-trust-mode="lump_sum">
-          ${t('fw.s3.trust_lump_sum')||'Lump-sum reparations'}
+          Lump-sum reparations
         </button>
         <button type="button" class="fw-trust-mode-btn ${isTrustMode ? 'active' : ''}"
                 data-trust-id="${t.id}" data-trust-mode="trust">
-          ${t('fw.s3.trust_availability')||'Trust availability payment'}
+          Trust availability payment
         </button>
       </div>
       ${isTrustMode ? `
         <div class="fw-trust-computed">
-          ${t('fw.s3.trust_annual_payment')||'Annual payment'}: <strong>USD ${annualTrust.toLocaleString()}M/yr</strong>
-          <span style="font-size:0.72rem;color:var(--colour-text-muted)">${t('fw.s3.trust_corpus_note')||'(4% drawdown · USD 286B corpus)'}</span>
+          Annual payment: <strong>USD ${annualTrust.toLocaleString()}M/yr</strong>
+          <span style="font-size:0.72rem;color:var(--colour-text-muted)">(4% drawdown · USD 286B corpus)</span>
         </div>
         <p class="fw-trust-note">
-          ${t('fw.s3.trust_desc')||'This replaces a single capital contribution with an annual cashflow. Useful for debt service rather than equity injection.'}
-          <a href="/trust.html" target="_blank" rel="noopener">${t('fw.s3.trust_link')||'See Trust model ↗'}</a>
+          This replaces a single capital contribution with an annual cashflow.
+          Useful for debt service rather than equity injection.
+          <a href="/trust.html" target="_blank" rel="noopener">See Trust model ↗</a>
         </p>` : ''}
     </div>` : '';
 
   const isReparations  = t.type === 'reparations';
   const isZeroReturn   = isReparations || t.type === 'grant' || t.type === 'first_loss' || t.type === 'public_equity';
-  const allocationLabel = isPriWrap ? (t('fw.s3.coverage')||'Coverage') : (t('fw.s3.allocation')||'Allocation');
+  const allocationLabel = isPriWrap ? 'Coverage' : 'Allocation';
   const retLabel = isPriWrap
-    ? `<span class="fw-tr-rep-label">${t('fw.s3.pri_wrap_premium_prefix')||'Premium'} ~${def.ret}%/yr · ${t('fw.s3.pri_wrap_ret_suffix')||'reduces senior debt cost by ~2–3%'}</span>`
+    ? `<span class="fw-tr-rep-label">Premium ~${def.ret}%/yr · reduces senior debt cost by ~2–3%</span>`
     : isZeroReturn
-      ? `<span class="fw-tr-rep-label">${isReparations ? (t('fw.s3.no_return_sovereign')||'No return · sovereign obligation') : (t('fw.s3.no_return')||'No return')}</span>`
-      : `<label class="fw-tr-lbl">${t('fw.s3.return_label')||'Return'}
+      ? `<span class="fw-tr-rep-label">${isReparations ? 'No return · sovereign obligation' : 'No return'}</span>`
+      : `<label class="fw-tr-lbl">Return
           <div class="fw-tr-input-wrap">
             <input class="fw-input fw-tr-num fw-tr-ret" type="number" min="0" max="50" step="0.1" value="${+t.ret}" data-id="${t.id}" data-field="ret">
             <span class="fw-tr-unit">%</span>
@@ -1117,7 +1078,7 @@ function trancheRowHTML(t, total) {
   return `<div class="fw-tranche-row" data-id="${t.id}">
     <div class="fw-tr-dot" style="background:${def.col}"></div>
     <div class="fw-tr-fields">
-      <div class="fw-tr-name">${def.label}${confidenceBadge(t.type)}${isPriWrap ? ` <span class="fw-flag-badge">${t('fw.s3.risk_wrap_badge')||'Risk wrap'}</span>` : ''}</div>
+      <div class="fw-tr-name">${def.label}${confidenceBadge(t.type)}${isPriWrap ? ' <span class="fw-flag-badge">Risk wrap</span>' : ''}</div>
       <div class="fw-tr-nums">
         <label class="fw-tr-lbl">${allocationLabel}
           <div class="fw-tr-input-wrap">
@@ -1126,7 +1087,7 @@ function trancheRowHTML(t, total) {
           </div>
         </label>
         ${retLabel}
-        ${def.tenor != null && !isReparations && !isPriWrap ? `<label class="fw-tr-lbl">${t('fw.s3.tenor_label')||'Tenor'}
+        ${def.tenor != null && !isReparations && !isPriWrap ? `<label class="fw-tr-lbl">Tenor
           <div class="fw-tr-input-wrap">
             <input class="fw-input fw-tr-num fw-tr-ten" type="number" min="1" max="40" step="1" value="${t.tenor ?? def.tenor}" data-id="${t.id}" data-field="tenor">
             <span class="fw-tr-unit">yr</span>
@@ -1138,7 +1099,7 @@ function trancheRowHTML(t, total) {
       ${priWrapNote}
       ${trustToggleHTML}
     </div>
-    <button class="fw-tr-remove" data-id="${t.id}" aria-label="${t('fw.s3.remove_tranche')||'Remove tranche'}">×</button>
+    <button class="fw-tr-remove" data-id="${t.id}" aria-label="Remove tranche">×</button>
   </div>`;
 }
 
@@ -1266,7 +1227,7 @@ function wireStep3() {
       const ok     = Math.abs(sumPct - 100) <= 0.5;
       const allocEl = document.getElementById('fwAllocSum');
       if (allocEl) {
-        allocEl.textContent = `${t('fw.s3.allocated')||'Allocated'}: ${sumPct.toFixed(0)}%`;
+        allocEl.textContent = `Allocated: ${sumPct.toFixed(0)}%`;
         allocEl.className = `fw-alloc-sum ${ok ? 'fw-alloc-ok' : 'fw-alloc-warn'}`;
       }
       const barEl = document.querySelector('.fw-alloc-bar');
@@ -1360,33 +1321,33 @@ function step4HTML() {
     const trustLabel  = isTrustMode
       ? ` <span class="trust-annual-chip">Annual: USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr †</span>`
       : '';
-    const displayPct  = isTrustMode ? '-' : `${t.pct.toFixed(0)}%`;
+    const displayPct  = isTrustMode ? '—' : `${t.pct.toFixed(0)}%`;
     const displayAmt  = isTrustMode ? `USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr` : fmtM(t.amt.toFixed(1));
     return `<tr>
       <td><span class="fw-type-dot" style="background:${t.def.col}"></span>${isTrustMode ? 'ERA/Trust — Availability Payment' : t.def.label}${confidenceBadge(t.type)}${trustLabel}</td>
       <td>${displayPct}</td>
       <td>${displayAmt}</td>
       <td>${t.effR.toFixed(1)}% ${warTag}</td>
-      <td>${t.tenor ?? '-'}</td>
+      <td>${t.tenor ?? '—'}</td>
     </tr>`;
   }).join('');
 
   const repSection = r.repAmt > 0 && W.timing !== 'during' ? `
     <div class="fw-results-sect">
-      <h4 class="fw-results-h4">${t('fw.s4.rep_scenario_title')||'Russian reparations scenario'}</h4>
-      <p class="fw-rep-ctx">${t('fw.s4.rep_source')||'Source: KSE Institute "Russia Will Pay" ($486B total claim); G7-frozen assets ~$300B.'}</p>
+      <h4 class="fw-results-h4">Russian reparations scenario</h4>
+      <p class="fw-rep-ctx">Source: KSE Institute "Russia Will Pay" ($486B total claim); G7-frozen assets ~$300B.</p>
       <div class="fw-rep-bar-wrap">
         <div class="fw-rep-bar-track">
           <div class="fw-rep-bar-fill" style="width:${Math.min(r.repPctFrozen, 100).toFixed(3)}%"></div>
         </div>
         <div class="fw-rep-bar-labels">
-          <span>${t('fw.s4.this_portfolio')||'This portfolio'}: ${fmtM(r.repAmt.toFixed(0))}</span>
-          <span>${t('fw.s4.frozen_assets')||'Frozen assets'}: $300B</span>
+          <span>This portfolio: ${fmtM(r.repAmt.toFixed(0))}</span>
+          <span>Frozen assets: $300B</span>
         </div>
       </div>
       <div class="fw-rep-stats">
-        <span><strong>${r.repPctClaim.toFixed(3)}%</strong> ${t('fw.s4.of_kse_claim_short')||'of $486B claim'}</span>
-        <span><strong>${r.repPctFrozen.toFixed(3)}%</strong> ${t('fw.s4.of_frozen_short')||'of $300B frozen'}</span>
+        <span><strong>${r.repPctClaim.toFixed(3)}%</strong> of $486B claim</span>
+        <span><strong>${r.repPctFrozen.toFixed(3)}%</strong> of $300B frozen</span>
       </div>
     </div>` : '';
 
@@ -1395,67 +1356,39 @@ function step4HTML() {
   const russiaPct    = r.total > 0 ? (r.repAmt / r.total * 100).toFixed(0) : 0;
 
   return `<div class="fw-step fw-results">
-    <h3 class="fw-sh">${t('fw.s4.title')||'Financing structure analysis'}</h3>
-    <div class="fw-results-meta">${r.sel.length} ${t('fw.s2.project')||'project'}${r.sel.length !== 1 ? (t('fw.s2.projects_plural_suffix')||'s') : ''} · ${PATH_LABELS[W.path]} · ${TIMING_LABELS[W.timing]}</div>
-
-    <!-- Russian obligation headline box — the key output -->
-    ${r.totalRussianNeeded > 0 ? `
-    <div class="fw-russia-headline">
-      <div class="fw-rh-row">
-        <div class="fw-rh-item fw-rh-russia">
-          <span class="fw-rh-label">🇷🇺 ${t('fw.s4.russia_must_contribute')||'Russia must contribute'}</span>
-          <span class="fw-rh-value">${fmtM(r.totalRussianNeeded.toFixed(0))}</span>
-          <span class="fw-rh-sub">${r.repPctFrozen.toFixed(2)}% ${t('fw.s4.of_frozen_short')||'of $300B frozen'} · ${(r.totalRussianNeeded / KSE_CLAIM_USD_M * 100).toFixed(2)}% ${t('fw.s4.of_kse_claim_short')||'of $486B claim'}</span>
-        </div>
-        <div class="fw-rh-item fw-rh-dscr">
-          <span class="fw-rh-label">📊 ${t('fw.s4.can_projects_deliver')||'Can projects deliver returns?'}</span>
-          <span class="fw-rh-value" style="color:${r.dscr == null ? '#888' : r.dscr >= 1.2 ? '#27ae60' : r.dscr >= 0.8 ? '#e67e22' : '#e74c3c'}">${r.dscr != null ? r.dscr.toFixed(2) + '× DSCR' : 'N/A'}</span>
-          <span class="fw-rh-sub">${r.dscr == null ? (t('fw.s4.dscr_no_tranches')||'No return-bearing tranches') : r.dscr >= 1.2 ? (t('fw.s4.dscr_sustaining')||'Self-sustaining — revenues cover debt service') : r.dscr >= 0.8 ? (t('fw.s4.dscr_marginal')||'Marginal — needs concessional support') : (t('fw.s4.dscr_not_sustaining')||'Not self-sustaining — Russian reparations bridge the gap')}</span>
-        </div>
-        <div class="fw-rh-item fw-rh-market">
-          <span class="fw-rh-label">💼 ${t('fw.s4.market_donor_raise')||'Market / donor raise'}</span>
-          <span class="fw-rh-value">${fmtM((r.total - r.repAmt).toFixed(0))}</span>
-          <span class="fw-rh-sub">${t('fw.s4.grants_conc_private')||'Grants + concessional + private capital'}</span>
-        </div>
-      </div>
-      ${r.revenueShortfall > 0 ? `<div class="fw-rh-gap-note">⚠ ${t('fw.s4.revenue_shortfall_prefix')||'Revenue shortfall of'} ${fmtM(r.revenueShortfall.toFixed(0))}/yr → ${t('fw.s4.revenue_shortfall_suffix')||'needs additional'} ${fmtM(r.extraRussianNeeded.toFixed(0))} ${t('fw.s4.russian_rep_service')||'Russian reparations to service debt'}</div>` : `<div class="fw-rh-gap-note fw-rh-ok">✓ ${t('fw.s4.revenue_ok')||'Selected projects generate enough revenue to service the capital stack — Russian reparations are structural, not required for debt service'}</div>`}
-    </div>` : `
-    <div class="fw-russia-headline fw-rh-no-russia">
-      <span class="fw-rh-label">💼 ${t('fw.s4.no_russia_tranche')||'No Russian reparations tranche — market/donor raise only'}</span>
-      <span class="fw-rh-value">${fmtM(r.total)}</span>
-      ${r.dscr != null ? `<span class="fw-rh-sub">DSCR: ${r.dscr.toFixed(2)}× — ${r.dscr >= 1.2 ? (t('fw.s4.dscr_self_sustaining')||'Projects are self-sustaining') : (t('fw.s4.dscr_need_conc')||'Projects need concessional support')}</span>` : ''}
-    </div>`}
+    <h3 class="fw-sh">Financing structure analysis</h3>
+    <div class="fw-results-meta">${r.sel.length} project${r.sel.length !== 1 ? 's' : ''} · ${PATH_LABELS[W.path]} · ${TIMING_LABELS[W.timing]}</div>
 
     <!-- Summary banner -->
     <div class="fw-summary-banner">
       <div class="fw-sb-item fw-sb-raise">
-        <span class="fw-sb-label">${t('fw.s4.total_to_raise')||'Total to raise'}</span>
+        <span class="fw-sb-label">Total to raise</span>
         <span class="fw-sb-value">${fmtM(r.total)}</span>
-        <span class="fw-sb-sub">${t('fw.s4.range')||'Range'}: ${fmtM(r.low)} – ${fmtM(r.high)}</span>
+        <span class="fw-sb-sub">Range: ${fmtM(r.low)} – ${fmtM(r.high)}</span>
       </div>
       ${r.repAmt > 0 ? `
       <div class="fw-sb-item fw-sb-russia">
-        <span class="fw-sb-label">${t('fw.s4.russia_must_pay')||'Russia must pay'}</span>
+        <span class="fw-sb-label">Russia must pay</span>
         <span class="fw-sb-value">${fmtM(r.repAmt.toFixed(0))}</span>
-        <span class="fw-sb-sub">${russiaPct}% ${t('fw.s4.of_total')||'of total'} · ${r.repPctFrozen.toFixed(2)}% ${t('fw.s4.of_frozen_short')||'of $300B frozen'}</span>
+        <span class="fw-sb-sub">${russiaPct}% of total · ${r.repPctFrozen.toFixed(2)}% of $300B frozen</span>
       </div>
       <div class="fw-sb-item fw-sb-market">
-        <span class="fw-sb-label">${t('fw.s4.market_donor_raise')||'Market / donor raise'}</span>
+        <span class="fw-sb-label">Market / donor raise</span>
         <span class="fw-sb-value">${fmtM(toRaise.toFixed(0))}</span>
-        <span class="fw-sb-sub">${t('fw.s4.grants_conc_private_short')||'Grants + concessional + private'}</span>
+        <span class="fw-sb-sub">Grants + concessional + private</span>
       </div>` : ''}
     </div>
 
     <div class="fw-results-sect">
-      <h4 class="fw-results-h4">${t('fw.s4.portfolio_cost')||'Portfolio cost'}</h4>
+      <h4 class="fw-results-h4">Portfolio cost</h4>
       <div class="fw-cost-display">
-        <span class="fw-cost-central">${fmtM(r.total)} <span class="fw-cost-lbl">${t('fw.s4.central')||'central'}</span></span>
-        <span class="fw-cost-range">${t('fw.s4.range')||'Range'}: ${fmtM(r.low)} – ${fmtM(r.high)}</span>
+        <span class="fw-cost-central">${fmtM(r.total)} <span class="fw-cost-lbl">central</span></span>
+        <span class="fw-cost-range">Range: ${fmtM(r.low)} – ${fmtM(r.high)}</span>
       </div>
       ${r.growthProjects.length > 0 ? `
       <div class="fw-cost-breakdown">
         <div class="fw-cb-row">
-          <span class="fw-cb-lbl">🔴 ${t('fw.s4.damage_rehab')||'Damage rehabilitation'} (${r.sel.length} ${t('fw.s4.assets')||'assets'})</span>
+          <span class="fw-cb-lbl">🔴 Damage rehabilitation (${r.sel.length} assets)</span>
           <span class="fw-cb-val">${fmtM(r.assetTotal)}</span>
         </div>
         ${r.growthProjects.map(p => `
@@ -1464,17 +1397,17 @@ function step4HTML() {
           <span class="fw-cb-val">${fmtM(p.scale_usd_m)}</span>
         </div>`).join('')}
         <div class="fw-cb-row fw-cb-total">
-          <span class="fw-cb-lbl">${t('fw.s4.total_investment')||'Total investment programme'}</span>
+          <span class="fw-cb-lbl">Total investment programme</span>
           <span class="fw-cb-val">${fmtM(r.total)}</span>
         </div>
       </div>` : ''}
     </div>
 
     <div class="fw-results-sect">
-      <h4 class="fw-results-h4">${t('fw.s4.capital_stack')||'Capital stack'}</h4>
+      <h4 class="fw-results-h4">Capital stack</h4>
       ${allocBar(r.total)}
       <table class="fw-results-table">
-        <thead><tr><th>${t('fw.s4.th_tranche')||'Tranche'}</th><th>%</th><th>${t('fw.s4.th_amount')||'Amount'}</th><th>${t('fw.s4.th_return')||'Return'}</th><th>${t('fw.s4.th_tenor')||'Tenor'}</th></tr></thead>
+        <thead><tr><th>Tranche</th><th>%</th><th>Amount</th><th>Return</th><th>Tenor</th></tr></thead>
         <tbody>${trancheRows}</tbody>
       </table>
     </div>
@@ -1482,20 +1415,20 @@ function step4HTML() {
     ${(() => {
       const { dscr, portfolioRevenue, annualDebtSvc, revenueShortfall, extraRussianNeeded, repAmt: repAmtV, totalRussianNeeded } = r;
       const dscrColor = dscr == null ? '#888' : dscr >= 1.2 ? '#27ae60' : dscr >= 0.8 ? '#e67e22' : '#e74c3c';
-      const dscrLabel = dscr == null ? 'N/A' : dscr >= 1.2 ? (t('fw.s4.dscr_viable')||'Commercially viable') : dscr >= 0.8 ? (t('fw.s4.dscr_marginal_short')||'Marginal — needs support') : (t('fw.s4.dscr_not_sustaining_short')||'Not self-sustaining');
+      const dscrLabel = dscr == null ? 'N/A' : dscr >= 1.2 ? 'Commercially viable' : dscr >= 0.8 ? 'Marginal — needs support' : 'Not self-sustaining';
       return `
     <div class="fw-results-sect fw-viability-sect">
-      <h4 class="fw-results-h4">${t('fw.s4.viability_title')||'Return viability & Russian funding requirement'}</h4>
+      <h4 class="fw-results-h4">Return viability &amp; Russian funding requirement</h4>
       <div class="fw-viability-grid">
         <div class="fw-vg-item">
           <span class="fw-vg-val">${fmtM(portfolioRevenue.toFixed(0))}/yr</span>
-          <span class="fw-vg-lbl">${t('fw.s4.portfolio_revenue')||'Est. portfolio annual revenue'}</span>
-          <span class="fw-vg-note">${t('fw.s4.portfolio_revenue_note')||'Based on sector revenue yield assumptions'}</span>
+          <span class="fw-vg-lbl">Est. portfolio annual revenue</span>
+          <span class="fw-vg-note">Based on sector revenue yield assumptions</span>
         </div>
         <div class="fw-vg-item">
           <span class="fw-vg-val">${fmtM(annualDebtSvc.toFixed(0))}/yr</span>
-          <span class="fw-vg-lbl">${t('fw.s4.annual_debt_svc')||'Required annual debt service'}</span>
-          <span class="fw-vg-note">${t('fw.s4.annual_debt_svc_note')||'Return-bearing tranches only'}</span>
+          <span class="fw-vg-lbl">Required annual debt service</span>
+          <span class="fw-vg-note">Return-bearing tranches only</span>
         </div>
         ${dscr != null ? `<div class="fw-vg-item fw-vg-dscr">
           <span class="fw-vg-val" style="color:${dscrColor}">${dscr.toFixed(2)}×</span>
@@ -1505,71 +1438,73 @@ function step4HTML() {
       </div>
       ${extraRussianNeeded > 0 ? `
       <div class="fw-russia-gap">
-        <div class="fw-rg-header">${t('fw.s4.shortfall_header')||'Revenue shortfall → additional Russian contribution needed'}</div>
+        <div class="fw-rg-header">Revenue shortfall → additional Russian contribution needed</div>
         <div class="fw-rg-calc">
-          ${t('fw.s4.shortfall_label')||'Shortfall'}: <strong>${fmtM(revenueShortfall.toFixed(0))}/yr</strong>
-          ${t('fw.s4.capitalised_at')||'capitalised at'} ${(TRUST_DRAWDOWN_PCT*100).toFixed(0)}% =
-          <strong class="fw-rg-extra">${fmtM(extraRussianNeeded.toFixed(0))}</strong> ${t('fw.s4.additional_reparations')||'additional reparations'}
+          Shortfall: <strong>${fmtM(revenueShortfall.toFixed(0))}/yr</strong>
+          capitalised at ${(TRUST_DRAWDOWN_PCT*100).toFixed(0)}% =
+          <strong class="fw-rg-extra">${fmtM(extraRussianNeeded.toFixed(0))}</strong> additional reparations
         </div>
         <div class="fw-rg-total">
-          ${t('fw.s4.total_russian_obligation')||'Total Russian obligation for this portfolio'}:
+          Total Russian obligation for this portfolio:
           <strong class="fw-rg-total-val">${fmtM(totalRussianNeeded.toFixed(0))}</strong>
-          <span class="fw-rg-breakdown">(${fmtM(repAmtV.toFixed(0))} ${t('fw.s4.allocated')||'allocated'} + ${fmtM(extraRussianNeeded.toFixed(0))} ${t('fw.s4.gap_coverage')||'gap coverage'})</span>
+          <span class="fw-rg-breakdown">(${fmtM(repAmtV.toFixed(0))} allocated + ${fmtM(extraRussianNeeded.toFixed(0))} gap coverage)</span>
         </div>
       </div>` : `
       <div class="fw-russia-gap fw-rg-green">
-        <div class="fw-rg-header">✓ ${t('fw.s4.revenue_sufficient')||'Project revenues sufficient to service selected tranches'}</div>
-        ${repAmtV > 0 ? `<div class="fw-rg-calc">${t('fw.s4.rep_structural_prefix')||'Russian reparations allocated'} (${fmtM(repAmtV.toFixed(0))}) ${t('fw.s4.rep_structural_suffix')||'are structural, not required for debt service in this scenario.'}</div>` : ''}
+        <div class="fw-rg-header">✓ Project revenues sufficient to service selected tranches</div>
+        ${repAmtV > 0 ? `<div class="fw-rg-calc">Russian reparations allocated (${fmtM(repAmtV.toFixed(0))}) are structural, not required for debt service in this scenario.</div>` : ''}
       </div>`}
     </div>`;
     })()}
 
     <div class="fw-results-sect">
-      <h4 class="fw-results-h4">${t('fw.s4.key_metrics')||'Key metrics'}</h4>
+      <h4 class="fw-results-h4">Key metrics</h4>
       <div class="fw-metrics-grid">
-        <div class="fw-mc"><span class="fw-mc-val">${r.blended.toFixed(2)}%</span><span class="fw-mc-lbl">${t('fw.metrics.blended_coc')||'Blended cost of capital'}</span></div>
-        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.pubTotal.toFixed(0))}</span><span class="fw-mc-lbl">${t('fw.metrics.public_support')||'Public support needed'}</span></div>
-        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.grantAmt.toFixed(0))}</span><span class="fw-mc-lbl">${t('fw.metrics.grant_req')||'Grant requirement'}</span></div>
-        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.debtSvc.toFixed(1))}/yr</span><span class="fw-mc-lbl">${t('fw.metrics.annual_debt_svc')||'Annual debt service'}</span></div>
-        ${r.mobRatio ? `<div class="fw-mc fw-mc-hl"><span class="fw-mc-val">${r.mobRatio}×</span><span class="fw-mc-lbl">${t('fw.metrics.mob_ratio')||'Private mobilisation ratio'}</span></div>` : ''}
+        <div class="fw-mc"><span class="fw-mc-val">${r.blended.toFixed(2)}%</span><span class="fw-mc-lbl">Blended cost of capital</span></div>
+        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.pubTotal.toFixed(0))}</span><span class="fw-mc-lbl">Public support needed</span></div>
+        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.grantAmt.toFixed(0))}</span><span class="fw-mc-lbl">Grant requirement</span></div>
+        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.debtSvc.toFixed(1))}/yr</span><span class="fw-mc-lbl">Annual debt service</span></div>
+        ${r.mobRatio ? `<div class="fw-mc fw-mc-hl"><span class="fw-mc-val">${r.mobRatio}×</span><span class="fw-mc-lbl">Private mobilisation ratio</span></div>` : ''}
       </div>
-      ${r.mobRatio ? `<p class="fw-mob-note">${t('fw.s4.mob_note_prefix')||'For every $1 of grant, this structure mobilises'} <strong>$${r.mobRatio}</strong> ${t('fw.s4.mob_note_suffix')||'of private capital.'}</p>` : ''}
+      ${r.mobRatio ? `<p class="fw-mob-note">For every $1 of grant, this structure mobilises <strong>$${r.mobRatio}</strong> of private capital.</p>` : ''}
     </div>
 
     <div class="fw-results-sect">
-      <h4 class="fw-results-h4">${t('fw.s4.support_by_phase')||'Support needed by phase'}</h4>
+      <h4 class="fw-results-h4">Support needed by phase</h4>
       <div class="fw-support-row">
         <div class="fw-support-card fw-sc-during">
-          <span class="fw-sc-lbl">⚡ ${t('fw.s4.during_war')||'During war'}</span>
+          <span class="fw-sc-lbl">⚡ During war</span>
           <span class="fw-sc-val">${fmtM(r.duringSupport.toFixed(0))}</span>
-          <span class="fw-sc-note">${W.timing === 'after' ? (t('fw.s4.deferred_post_war')||'Deferred to post-war') : (t('fw.s4.grants_required_now')||'Grants + concessional required now')}</span>
+          <span class="fw-sc-note">${W.timing === 'after' ? 'Deferred to post-war' : 'Grants + concessional required now'}</span>
         </div>
         <div class="fw-support-card fw-sc-after">
-          <span class="fw-sc-lbl">🕊 ${t('fw.s4.post_war')||'Post-war'}</span>
+          <span class="fw-sc-lbl">🕊 Post-war</span>
           <span class="fw-sc-val">${fmtM(r.postSupport.toFixed(0))}</span>
-          <span class="fw-sc-note">${W.timing === 'during' ? (t('fw.s4.not_modelled')||'Not modelled') : (t('fw.s4.requires_peace')||'Requires peace settlement')}</span>
+          <span class="fw-sc-note">${W.timing === 'during' ? 'Not modelled' : 'Requires peace settlement'}</span>
         </div>
       </div>
-      ${r.warExtra > 0 ? `<p class="fw-war-note">⚡ ${t('fw.s4.war_premium_note_prefix')||'Wartime premium adds'} +${fmtM(r.warExtra.toFixed(1))}/yr ${t('fw.s4.war_premium_note_suffix')||'to annual debt service.'}</p>` : ''}
+      ${r.warExtra > 0 ? `<p class="fw-war-note">⚡ Wartime premium adds +${fmtM(r.warExtra.toFixed(1))}/yr to annual debt service.</p>` : ''}
     </div>
 
     ${repSection}
 
     ${r.tranches.some(t => t.type === 'reparations' && _trustModes.get(t.id) === 'trust') ? `
     <div class="fw-disclaimer trust-footnote">
-      ${t('fw.s4.trust_footnote')||`† ERA/Trust replaces a lump-sum Russian reparations tranche with annual availability payments from a Reconstruction Trust (4% drawdown · USD 286B corpus · ~USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr). Annual payment services concessional debt rather than acting as an equity injection.`}
-      <a href="/trust.html" target="_blank" rel="noopener">${t('fw.s4.trust_link_full')||'See full Trust model and corpus trajectory →'}</a>
+      † ERA/Trust replaces a lump-sum Russian reparations tranche with annual availability payments
+      from a Reconstruction Trust (4% drawdown · USD 286B corpus · ~USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr).
+      Annual payment services concessional debt rather than acting as an equity injection.
+      <a href="/trust.html" target="_blank" rel="noopener">See full Trust model and corpus trajectory →</a>
     </div>` : ''}
 
     <div class="fw-disclaimer">
-      ${t('fw.s4.disclaimer')||'Cost and financing figures are estimates derived from published benchmarks (RDNA3, KSE Institute). Not guarantees, procurement quotes, or substitutes for transaction-level due diligence.'}
+      Cost and financing figures are estimates derived from published benchmarks (RDNA3, KSE Institute). Not guarantees, procurement quotes, or substitutes for transaction-level due diligence.
     </div>
 
     <!-- AI memo (loaded asynchronously after render) -->
     <div class="fw-results-sect" id="fwMemoSection">
-      <h4 class="fw-results-h4">${t('fw.s4.financing_memo')||'Financing memo'}</h4>
+      <h4 class="fw-results-h4">Financing memo</h4>
       <div id="fwMemoContent" class="fw-memo-loading">
-        <span class="fw-memo-spinner"></span> ${t('fw.s4.memo_generating')||'Generating institutional financing memo…'}
+        <span class="fw-memo-spinner"></span> Generating institutional financing memo…
       </div>
     </div>
 
@@ -1583,8 +1518,8 @@ function step4GreenfieldHTML() {
   const tmpl   = greenfieldTemplate();
 
   const memoTitle = arch && sector
-    ? `${sector.icon} ${arch.label} — ${t('fw.s4.financing_memo')||'Financing Memo'}`
-    : (t('fw.s4.gf_financing_memo')||'Greenfield Project — Financing Memo');
+    ? `${sector.icon} ${arch.label} — Financing Memo`
+    : 'Greenfield Project — Financing Memo';
 
   const trancheRows = r.tranches.map(t => {
     const warTag = COMMERCIAL_TYPES.has(t.type) && (W.timing === 'during' || W.timing === 'phased')
@@ -1595,106 +1530,108 @@ function step4GreenfieldHTML() {
       : '';
     // Use _labelOverride for seeded greenfield tranches if present
     const trancheLabel = t._labelOverride ?? (isTrustMode ? 'ERA/Trust — Availability Payment' : t.def.label);
-    const displayPct   = isTrustMode ? '-' : `${t.pct.toFixed(0)}%`;
+    const displayPct   = isTrustMode ? '—' : `${t.pct.toFixed(0)}%`;
     const displayAmt   = isTrustMode ? `USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr` : fmtM(t.amt.toFixed(1));
     return `<tr>
       <td><span class="fw-type-dot" style="background:${t.def.col}"></span>${trancheLabel}${confidenceBadge(t.type)}${trustLabel}</td>
       <td>${displayPct}</td>
       <td>${displayAmt}</td>
       <td>${t.effR.toFixed(1)}% ${warTag}</td>
-      <td>${t.tenor ?? '-'}</td>
+      <td>${t.tenor ?? '—'}</td>
     </tr>`;
   }).join('');
 
   const repSection = r.repAmt > 0 && W.timing !== 'during' ? `
     <div class="fw-results-sect">
-      <h4 class="fw-results-h4">${t('fw.s4.rep_scenario_title')||'Russian reparations scenario'}</h4>
-      <p class="fw-rep-ctx">${t('fw.s4.rep_source')||'Source: KSE Institute "Russia Will Pay" ($486B total claim); G7-frozen assets ~$300B.'}</p>
+      <h4 class="fw-results-h4">Russian reparations scenario</h4>
+      <p class="fw-rep-ctx">Source: KSE Institute "Russia Will Pay" ($486B total claim); G7-frozen assets ~$300B.</p>
       <div class="fw-rep-bar-wrap">
         <div class="fw-rep-bar-track">
           <div class="fw-rep-bar-fill" style="width:${Math.min(r.repPctFrozen, 100).toFixed(3)}%"></div>
         </div>
         <div class="fw-rep-bar-labels">
-          <span>${t('fw.s4.this_project')||'This project'}: ${fmtM(r.repAmt.toFixed(0))}</span>
-          <span>${t('fw.s4.frozen_assets')||'Frozen assets'}: $300B</span>
+          <span>This project: ${fmtM(r.repAmt.toFixed(0))}</span>
+          <span>Frozen assets: $300B</span>
         </div>
       </div>
       <div class="fw-rep-stats">
-        <span><strong>${r.repPctClaim.toFixed(3)}%</strong> ${t('fw.s4.of_kse_claim_short')||'of $486B claim'}</span>
-        <span><strong>${r.repPctFrozen.toFixed(3)}%</strong> ${t('fw.s4.of_frozen_short')||'of $300B frozen'}</span>
+        <span><strong>${r.repPctClaim.toFixed(3)}%</strong> of $486B claim</span>
+        <span><strong>${r.repPctFrozen.toFixed(3)}%</strong> of $300B frozen</span>
       </div>
     </div>` : '';
 
   return `<div class="fw-step fw-results fw-results-greenfield">
     <h3 class="fw-sh">${memoTitle}</h3>
-    <div class="fw-results-meta">${t('fw.s4.gf_meta_prefix')||'Greenfield'} ${sector ? sector.label : ''} · ${TIMING_LABELS[W.timing]}</div>
+    <div class="fw-results-meta">Greenfield ${sector ? sector.label : ''} · ${TIMING_LABELS[W.timing]}</div>
 
     ${sector ? `<p class="fw-gf-results-thesis">${sector.thesis_one_line}</p>` : ''}
 
     <div class="fw-results-sect">
-      <h4 class="fw-results-h4">${t('fw.s4.gf_project_type_scale')||'Project type & scale'}</h4>
+      <h4 class="fw-results-h4">Project type &amp; scale</h4>
       <div class="fw-cost-display">
-        <span class="fw-cost-central">${fmtM(r.total)} <span class="fw-cost-lbl">${t('fw.s4.fixed_project_scale')||'fixed project scale'}</span></span>
+        <span class="fw-cost-central">${fmtM(r.total)} <span class="fw-cost-lbl">fixed project scale</span></span>
       </div>
-      <p class="fw-gf-type-note">${t('fw.s4.project_type_prefix')||'Project type: Greenfield'} ${sector ? sector.label : ''}</p>
-      ${tmpl ? `<p class="fw-gf-tmpl-note">${t('fw.s4.gf_tmpl_note_prefix')||'Capital structure pre-populated from uVidNova greenfield template'} ${tmpl.template_id}. ${t('fw.s4.gf_tmpl_note_suffix')||'Adjust tranches in Step 3.'}</p>` : ''}
+      <p class="fw-gf-type-note">Project type: Greenfield ${sector ? sector.label : ''}</p>
+      ${tmpl ? `<p class="fw-gf-tmpl-note">Capital structure pre-populated from uVidNova greenfield template ${tmpl.template_id}. Adjust tranches in Step 3.</p>` : ''}
     </div>
 
     <div class="fw-results-sect">
-      <h4 class="fw-results-h4">${t('fw.s4.capital_stack')||'Capital stack'}</h4>
+      <h4 class="fw-results-h4">Capital stack</h4>
       ${allocBar(r.total)}
       <table class="fw-results-table">
-        <thead><tr><th>${t('fw.s4.th_tranche')||'Tranche'}</th><th>%</th><th>${t('fw.s4.th_amount')||'Amount'}</th><th>${t('fw.s4.th_return')||'Return'}</th><th>${t('fw.s4.th_tenor')||'Tenor'}</th></tr></thead>
+        <thead><tr><th>Tranche</th><th>%</th><th>Amount</th><th>Return</th><th>Tenor</th></tr></thead>
         <tbody>${trancheRows}</tbody>
       </table>
     </div>
 
     <div class="fw-results-sect">
-      <h4 class="fw-results-h4">${t('fw.s4.key_metrics')||'Key metrics'}</h4>
+      <h4 class="fw-results-h4">Key metrics</h4>
       <div class="fw-metrics-grid">
-        <div class="fw-mc"><span class="fw-mc-val">${r.blended.toFixed(2)}%</span><span class="fw-mc-lbl">${t('fw.metrics.blended_coc')||'Blended cost of capital'}</span></div>
-        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.pubTotal.toFixed(0))}</span><span class="fw-mc-lbl">${t('fw.metrics.public_support')||'Public support needed'}</span></div>
-        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.grantAmt.toFixed(0))}</span><span class="fw-mc-lbl">${t('fw.metrics.grant_req')||'Grant requirement'}</span></div>
-        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.debtSvc.toFixed(1))}/yr</span><span class="fw-mc-lbl">${t('fw.metrics.annual_debt_svc')||'Annual debt service'}</span></div>
-        ${r.mobRatio ? `<div class="fw-mc fw-mc-hl"><span class="fw-mc-val">${r.mobRatio}×</span><span class="fw-mc-lbl">${t('fw.metrics.mob_ratio')||'Private mobilisation ratio'}</span></div>` : ''}
+        <div class="fw-mc"><span class="fw-mc-val">${r.blended.toFixed(2)}%</span><span class="fw-mc-lbl">Blended cost of capital</span></div>
+        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.pubTotal.toFixed(0))}</span><span class="fw-mc-lbl">Public support needed</span></div>
+        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.grantAmt.toFixed(0))}</span><span class="fw-mc-lbl">Grant requirement</span></div>
+        <div class="fw-mc"><span class="fw-mc-val">${fmtM(r.debtSvc.toFixed(1))}/yr</span><span class="fw-mc-lbl">Annual debt service</span></div>
+        ${r.mobRatio ? `<div class="fw-mc fw-mc-hl"><span class="fw-mc-val">${r.mobRatio}×</span><span class="fw-mc-lbl">Private mobilisation ratio</span></div>` : ''}
       </div>
-      ${r.mobRatio ? `<p class="fw-mob-note">${t('fw.s4.mob_note_prefix')||'For every $1 of grant, this structure mobilises'} <strong>$${r.mobRatio}</strong> ${t('fw.s4.mob_note_suffix')||'of private capital.'}</p>` : ''}
+      ${r.mobRatio ? `<p class="fw-mob-note">For every $1 of grant, this structure mobilises <strong>$${r.mobRatio}</strong> of private capital.</p>` : ''}
     </div>
 
     <div class="fw-results-sect">
-      <h4 class="fw-results-h4">${t('fw.s4.support_by_phase')||'Support needed by phase'}</h4>
+      <h4 class="fw-results-h4">Support needed by phase</h4>
       <div class="fw-support-row">
         <div class="fw-support-card fw-sc-during">
-          <span class="fw-sc-lbl">⚡ ${t('fw.s4.during_war')||'During war'}</span>
+          <span class="fw-sc-lbl">⚡ During war</span>
           <span class="fw-sc-val">${fmtM(r.duringSupport.toFixed(0))}</span>
-          <span class="fw-sc-note">${W.timing === 'after' ? (t('fw.s4.deferred_post_war')||'Deferred to post-war') : (t('fw.s4.grants_required_now')||'Grants + concessional required now')}</span>
+          <span class="fw-sc-note">${W.timing === 'after' ? 'Deferred to post-war' : 'Grants + concessional required now'}</span>
         </div>
         <div class="fw-support-card fw-sc-after">
-          <span class="fw-sc-lbl">🕊 ${t('fw.s4.post_war')||'Post-war'}</span>
+          <span class="fw-sc-lbl">🕊 Post-war</span>
           <span class="fw-sc-val">${fmtM(r.postSupport.toFixed(0))}</span>
-          <span class="fw-sc-note">${W.timing === 'during' ? (t('fw.s4.not_modelled')||'Not modelled') : (t('fw.s4.requires_peace')||'Requires peace settlement')}</span>
+          <span class="fw-sc-note">${W.timing === 'during' ? 'Not modelled' : 'Requires peace settlement'}</span>
         </div>
       </div>
-      ${r.warExtra > 0 ? `<p class="fw-war-note">⚡ ${t('fw.s4.war_premium_note_prefix')||'Wartime premium adds'} +${fmtM(r.warExtra.toFixed(1))}/yr ${t('fw.s4.war_premium_note_suffix')||'to annual debt service.'}</p>` : ''}
+      ${r.warExtra > 0 ? `<p class="fw-war-note">⚡ Wartime premium adds +${fmtM(r.warExtra.toFixed(1))}/yr to annual debt service.</p>` : ''}
     </div>
 
     ${repSection}
 
     ${r.tranches.some(t => t.type === 'reparations' && _trustModes.get(t.id) === 'trust') ? `
     <div class="fw-disclaimer trust-footnote">
-      ${t('fw.s4.trust_footnote')||`† ERA/Trust replaces a lump-sum Russian reparations tranche with annual availability payments from a Reconstruction Trust (4% drawdown · USD 286B corpus · ~USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr). Annual payment services concessional debt rather than acting as an equity injection.`}
-      <a href="/trust.html" target="_blank" rel="noopener">${t('fw.s4.trust_link_full')||'See full Trust model and corpus trajectory →'}</a>
+      † ERA/Trust replaces a lump-sum Russian reparations tranche with annual availability payments
+      from a Reconstruction Trust (4% drawdown · USD 286B corpus · ~USD ${trustAnnualPayment_usd_m().toLocaleString()}M/yr).
+      Annual payment services concessional debt rather than acting as an equity injection.
+      <a href="/trust.html" target="_blank" rel="noopener">See full Trust model and corpus trajectory →</a>
     </div>` : ''}
 
     <div class="fw-disclaimer">
-      ${t('fw.s4.gf_disclaimer')||'Project scale and capital structure are indicative estimates pre-populated from the uVidNova greenfield template library. Not guarantees, procurement quotes, or substitutes for transaction-level due diligence.'}
+      Project scale and capital structure are indicative estimates pre-populated from the uVidNova greenfield template library. Not guarantees, procurement quotes, or substitutes for transaction-level due diligence.
     </div>
 
     <!-- AI memo (loaded asynchronously after render) -->
     <div class="fw-results-sect" id="fwMemoSection">
-      <h4 class="fw-results-h4">${t('fw.s4.financing_memo')||'Financing memo'}</h4>
+      <h4 class="fw-results-h4">Financing memo</h4>
       <div id="fwMemoContent" class="fw-memo-loading">
-        <span class="fw-memo-spinner"></span> ${t('fw.s4.memo_generating')||'Generating institutional financing memo…'}
+        <span class="fw-memo-spinner"></span> Generating institutional financing memo…
       </div>
     </div>
   </div>`;
@@ -1815,7 +1752,7 @@ Write in formal, economical prose. No bullet points. No markdown formatting.`;
   } catch (err) {
     if (memoEl) {
       memoEl.className = 'fw-memo-error';
-      memoEl.textContent = `${t('fw.s4.memo_error_prefix')||'Memo unavailable'}: ${err.message}. ${t('fw.s4.memo_error_suffix')||'You can still download the numeric brief above.'}`;
+      memoEl.textContent = `Memo unavailable: ${err.message}. You can still download the numeric brief above.`;
     }
   }
 }
@@ -1869,7 +1806,7 @@ function exportBrief() {
       <td>${t.pct.toFixed(0)}%</td>
       <td>${fmtM(t.amt.toFixed(1))}</td>
       <td>${t.effR.toFixed(1)}%${COMMERCIAL_TYPES.has(t.type) && W.timing !== 'after' ? ' (incl. wartime +' + WAR_PREMIUM + '%)' : ''}</td>
-      <td>${t.tenor ?? '-'}</td>
+      <td>${t.tenor ?? '—'}</td>
     </tr>`).join('')}
   </tbody>
 </table>
@@ -1904,7 +1841,7 @@ ${r.repAmt > 0 ? `
 = <strong>${r.repPctFrozen.toFixed(3)}%</strong> of G7-frozen Russian assets (~$300B)<br>
 Source: KSE Institute "Russia Will Pay" tracker.</p>` : ''}
 
-<div class="disclaimer">Cost and financing-structure figures are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and comparable Ukrainian precedents. They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence. uVidNova — uvidnova.netlify.app</div>
+<div class="disclaimer">Cost and financing-structure figures are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and comparable Ukrainian precedents. They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence. uVidNova — atlasvidnova.org</div>
 </body></html>`;
 
   const blob = new Blob([html], { type: 'text/html' });

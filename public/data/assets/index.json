@@ -27,13 +27,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "Bellingcat: Antonivka Bridge HIMARS Strike Analysis",
-          "url": "https://www.bellingcat.com/news/2022/07/27/antonivka-bridge-himars-strikes",
+          "title": "Associated Press: Antonivskyi bridge in Kherson region struck and damaged (July 2022)",
+          "url": "https://apnews.com/article/russia-ukraine-moscow-6a927f75ac4fdb854999d65139b9bd80",
           "source_code": "BELLINGCAT"
         },
         {
-          "title": "KSE Institute: Kherson Oblast Transport Infrastructure",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-transport-kherson",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -63,19 +63,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 470,
-        "central_usd_m": 1188,
-        "high_usd_m": 1906
+        "low_usd_m": 502.9,
+        "central_usd_m": 1271.1,
+        "high_usd_m": 2039.3
       },
       "code_compliant": {
-        "low_usd_m": 541,
-        "central_usd_m": 1461,
-        "high_usd_m": 2382
+        "low_usd_m": 578.8,
+        "central_usd_m": 1563.2,
+        "high_usd_m": 2548.6
       },
       "build_back_better": {
-        "low_usd_m": 611,
-        "central_usd_m": 1830,
-        "high_usd_m": 3049
+        "low_usd_m": 653.7,
+        "central_usd_m": 1958.0,
+        "high_usd_m": 3262.3
       }
     },
     "financing_structures": {
@@ -180,8 +180,9 @@
       "strategic",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ANTONOV_AN225_2022_02_27",
@@ -211,23 +212,23 @@
       ],
       "evidence_sources": [
         {
-          "title": "Antonov Company statement on An-225 Mriya destruction",
-          "url": "https://www.antonov.com/en/news/an-225-mriya-has-been-destroyed",
+          "title": "CNN: Antonov An-225 Mriya, world largest plane, destroyed in Ukraine",
+          "url": "https://www.cnn.com/travel/article/antonov-an-225-largest-plane-destroyed-ukraine-scli-intl",
           "source_code": "eRECOVERY"
         },
         {
-          "title": "KSE Institute: An-225 Mriya Damage Assessment",
-          "url": "https://kse.ua/about-the-school/news/kse-russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Hostomel Airport Satellite Imagery — An-225 Hangar Destruction",
-          "url": "https://www.bellingcat.com/news/2022/02/28/hostomel-airport-satellite-imagery-analysis",
+          "title": "UNOSAT Damage Assessment Overview Map - Hostomel City, Kyiv Oblast (Mar 2022)",
+          "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-hostomel-city-kyiv-oblast-imagery-analysis-31-march-2022-published-26-april-2022-v1",
           "source_code": "BELLINGCAT"
         },
         {
-          "title": "Reuters: Ukraine says iconic An-225 Mriya plane destroyed at Hostomel airport",
-          "url": "https://www.reuters.com/world/europe/ukraine-says-iconic-an-225-mriya-plane-destroyed-hostomel-airport-2022-04-02/",
+          "title": "Reuters: Ukraine giant air cargo Mriya burnt in Russian shelling (27 Feb 2022)",
+          "url": "https://www.reuters.com/world/europe/ukraine-made-giant-air-cargo-mriya-burnt-russian-shelling-2022-02-27/",
           "source_code": "OCHA"
         }
       ]
@@ -263,19 +264,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 291,
-        "central_usd_m": 610,
-        "high_usd_m": 930
+        "low_usd_m": 311.4,
+        "central_usd_m": 652.7,
+        "high_usd_m": 995.1
       },
       "code_compliant": {
-        "low_usd_m": 334,
-        "central_usd_m": 748,
-        "high_usd_m": 1162
+        "low_usd_m": 357.4,
+        "central_usd_m": 800.3,
+        "high_usd_m": 1243.3
       },
       "build_back_better": {
-        "low_usd_m": 378,
-        "central_usd_m": 933,
-        "high_usd_m": 1488,
+        "low_usd_m": 404.4,
+        "central_usd_m": 998.3,
+        "high_usd_m": 1592.1,
         "tech_overlays": [
           "hydrogen_propulsion_readiness",
           "advanced_avionics",
@@ -386,8 +387,9 @@
       "industrial_heritage",
       "unique_asset"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "AVDIIVKA_COKE_PLANT_2022_02_24",
@@ -418,10 +420,6 @@
         {
           "title": "KSE Russia Will Pay — Avdiivka Coke Plant",
           "source_code": "KSE"
-        },
-        {
-          "title": "Bellingcat Avdiivka destruction documentation",
-          "source_code": "BELLINGCAT"
         }
       ]
     },
@@ -449,19 +447,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 942,
-        "central_usd_m": 2074,
-        "high_usd_m": 3206
+        "low_usd_m": 886.6,
+        "central_usd_m": 1952.0,
+        "high_usd_m": 3017.4
       },
       "code_compliant": {
-        "low_usd_m": 1084,
-        "central_usd_m": 2546,
-        "high_usd_m": 4008
+        "low_usd_m": 1020.2,
+        "central_usd_m": 2396.2,
+        "high_usd_m": 3772.2
       },
       "build_back_better": {
-        "low_usd_m": 1225,
-        "central_usd_m": 3177,
-        "high_usd_m": 5130
+        "low_usd_m": 1152.9,
+        "central_usd_m": 2990.1,
+        "high_usd_m": 4828.2
       }
     },
     "financing_structures": {
@@ -576,8 +574,9 @@
       "avdiivka",
       "occupied"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "AVDIIVKA_RESIDENTIAL_2023_10_01",
@@ -607,13 +606,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Donetsk residential damage database",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Flash Update — Avdiivka October 2023",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-oct-2023",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -643,19 +642,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 184,
-        "central_usd_m": 339,
-        "high_usd_m": 493
+        "low_usd_m": 187.1,
+        "central_usd_m": 344.7,
+        "high_usd_m": 501.4
       },
       "code_compliant": {
-        "low_usd_m": 211,
-        "central_usd_m": 414,
-        "high_usd_m": 617
+        "low_usd_m": 214.6,
+        "central_usd_m": 421.0,
+        "high_usd_m": 627.5
       },
       "build_back_better": {
-        "low_usd_m": 239,
-        "central_usd_m": 514,
-        "high_usd_m": 790,
+        "low_usd_m": 243.1,
+        "central_usd_m": 522.7,
+        "high_usd_m": 803.4,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction",
@@ -764,8 +763,9 @@
       "re_damaged",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "AZOVSTAL_STEEL_2022_03_01",
@@ -796,10 +796,6 @@
         {
           "title": "KSE Russia Will Pay — Azovstal industrial damage",
           "source_code": "KSE"
-        },
-        {
-          "title": "Bellingcat Mariupol siege documentation",
-          "source_code": "BELLINGCAT"
         }
       ]
     },
@@ -833,19 +829,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 3551,
-        "central_usd_m": 7439,
-        "high_usd_m": 11326
+        "low_usd_m": 3342.1,
+        "central_usd_m": 7001.4,
+        "high_usd_m": 10659.8
       },
       "code_compliant": {
-        "low_usd_m": 4083,
-        "central_usd_m": 9121,
-        "high_usd_m": 14158
+        "low_usd_m": 3842.8,
+        "central_usd_m": 8584.5,
+        "high_usd_m": 13325.2
       },
       "build_back_better": {
-        "low_usd_m": 4616,
-        "central_usd_m": 11369,
-        "high_usd_m": 18122
+        "low_usd_m": 4344.5,
+        "central_usd_m": 10700.2,
+        "high_usd_m": 17056.0
       }
     },
     "financing_structures": {
@@ -960,8 +956,9 @@
       "mariupol",
       "occupied"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "BAKHMUT_WATER_SANITATION_2022_08_01",
@@ -992,10 +989,6 @@
         {
           "title": "KSE Russia Will Pay — Bakhmut damage assessment",
           "source_code": "KSE"
-        },
-        {
-          "title": "Bellingcat Bakhmut city destruction documentation",
-          "source_code": "BELLINGCAT"
         }
       ]
     },
@@ -1023,19 +1016,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 80,
-        "central_usd_m": 187,
-        "high_usd_m": 295
+        "low_usd_m": 86.3,
+        "central_usd_m": 201.6,
+        "high_usd_m": 318.1
       },
       "code_compliant": {
-        "low_usd_m": 92,
-        "central_usd_m": 230,
-        "high_usd_m": 368
+        "low_usd_m": 99.2,
+        "central_usd_m": 248.0,
+        "high_usd_m": 396.8
       },
       "build_back_better": {
-        "low_usd_m": 104,
-        "central_usd_m": 288,
-        "high_usd_m": 471
+        "low_usd_m": 112.1,
+        "central_usd_m": 310.5,
+        "high_usd_m": 507.8
       }
     },
     "financing_structures": {
@@ -1139,8 +1132,9 @@
       "artillery_strike",
       "occupied"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "BORODYANKA_RESIDENTIAL_2022_03_27",
@@ -1171,18 +1165,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Borodyanka Residential Damage Assessment",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-borodyanka",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Borodyanka Satellite Analysis",
-          "url": "https://www.bellingcat.com/news/2022/04/05/borodyanka-satellite-imagery",
+          "title": "UNOSAT Damage Assessment Overview Map - Borodyanka City, Kyiv Oblast (May 2022)",
+          "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-borodyanka-city-kyiv-oblast-imagery-analysis-2-may-2022-published-14-may-2022-v1",
           "source_code": "BELLINGCAT"
         },
         {
-          "title": "UN OCHA Ukraine: Kyiv Oblast Liberation Assessment",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kyiv-oblast-liberation-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -1212,19 +1206,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 93,
-        "central_usd_m": 166,
-        "high_usd_m": 239
+        "low_usd_m": 94.6,
+        "central_usd_m": 168.8,
+        "high_usd_m": 243.1
       },
       "code_compliant": {
-        "low_usd_m": 107,
-        "central_usd_m": 203,
-        "high_usd_m": 299
+        "low_usd_m": 108.8,
+        "central_usd_m": 206.4,
+        "high_usd_m": 304.1
       },
       "build_back_better": {
-        "low_usd_m": 121,
-        "central_usd_m": 252,
-        "high_usd_m": 383
+        "low_usd_m": 123.1,
+        "central_usd_m": 256.3,
+        "high_usd_m": 389.5
       }
     },
     "financing_structures": {
@@ -1327,8 +1321,9 @@
       "liberated",
       "large_scale"
     ],
-    "last_reviewed": "2026-05-17",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "BUCHA_RESIDENTIAL_2022_03_05",
@@ -1359,8 +1354,8 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Bucha Residential and Infrastructure Damage Assessment",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-bucha",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
@@ -1369,8 +1364,8 @@
           "source_code": "OCHA"
         },
         {
-          "title": "UN OCHA Ukraine: Bucha Post-Liberation Assessment",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-bucha-assessment-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -1400,19 +1395,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 172,
-        "central_usd_m": 355,
-        "high_usd_m": 539
+        "low_usd_m": 174.9,
+        "central_usd_m": 361.0,
+        "high_usd_m": 548.1
       },
       "code_compliant": {
-        "low_usd_m": 198,
-        "central_usd_m": 436,
-        "high_usd_m": 674
+        "low_usd_m": 201.4,
+        "central_usd_m": 443.4,
+        "high_usd_m": 685.4
       },
       "build_back_better": {
-        "low_usd_m": 224,
-        "central_usd_m": 543,
-        "high_usd_m": 862
+        "low_usd_m": 227.8,
+        "central_usd_m": 552.2,
+        "high_usd_m": 876.6
       }
     },
     "financing_structures": {
@@ -1515,8 +1510,9 @@
       "liberated",
       "war_crime_documented"
     ],
-    "last_reviewed": "2026-05-17",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "CHASIV_YAR_DISTRICT_HOSPITAL_2023_07_09",
@@ -1545,13 +1541,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — Bakhmut-Chasiv Yar Humanitarian Situation July 2023",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-chasiv-yar-july-2023",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Donetsk Oblast Healthcare Damage Tracker — 2023",
-          "url": "https://kse.ua/wp-content/uploads/2023/08/KSE_Donetsk_Healthcare_2023.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -1581,19 +1577,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 14,
-        "central_usd_m": 25,
-        "high_usd_m": 36
+        "low_usd_m": 15.1,
+        "central_usd_m": 27.0,
+        "high_usd_m": 38.8
       },
       "code_compliant": {
-        "low_usd_m": 16,
-        "central_usd_m": 31,
-        "high_usd_m": 45
+        "low_usd_m": 17.3,
+        "central_usd_m": 33.4,
+        "high_usd_m": 48.5
       },
       "build_back_better": {
-        "low_usd_m": 18,
-        "central_usd_m": 38,
-        "high_usd_m": 58,
+        "low_usd_m": 19.4,
+        "central_usd_m": 41.0,
+        "high_usd_m": 62.5,
         "tech_overlays": [
           "microgrid",
           "modular_clinical_units",
@@ -1704,8 +1700,9 @@
       "destroyed",
       "frontline_adjacent"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "CHASIV_YAR_RESIDENTIAL_2023_07_01",
@@ -1734,13 +1731,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — Bakhmut-Chasiv Yar July 2023",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-chasiv-yar-2023",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Donetsk Oblast Residential Damage — Chasiv Yar 2023",
-          "url": "https://kse.ua/wp-content/uploads/2023/09/KSE_ChasivYar_Residential.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -1770,19 +1767,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 168,
-        "central_usd_m": 330,
-        "high_usd_m": 492
+        "low_usd_m": 170.8,
+        "central_usd_m": 335.6,
+        "high_usd_m": 500.3
       },
       "code_compliant": {
-        "low_usd_m": 193,
-        "central_usd_m": 403,
-        "high_usd_m": 615
+        "low_usd_m": 196.3,
+        "central_usd_m": 409.8,
+        "high_usd_m": 625.4
       },
       "build_back_better": {
-        "low_usd_m": 218,
-        "central_usd_m": 495,
-        "high_usd_m": 772,
+        "low_usd_m": 221.7,
+        "central_usd_m": 503.4,
+        "high_usd_m": 785.1,
         "tech_overlays": [
           "passive_house_standard",
           "microgrid",
@@ -1893,8 +1890,9 @@
       "destroyed",
       "frontline_adjacent"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "CHERNIHIV_NORTH_RESIDENTIAL_2022_03_09",
@@ -1924,13 +1922,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Chernihiv Oblast Damage Assessment",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-chernihiv",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine: Chernihiv Situation Report March 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-chernihiv-march-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -1960,19 +1958,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 228,
-        "central_usd_m": 484,
-        "high_usd_m": 739
+        "low_usd_m": 231.9,
+        "central_usd_m": 492.2,
+        "high_usd_m": 751.5
       },
       "code_compliant": {
-        "low_usd_m": 262,
-        "central_usd_m": 593,
-        "high_usd_m": 924
+        "low_usd_m": 266.4,
+        "central_usd_m": 603.1,
+        "high_usd_m": 939.7
       },
       "build_back_better": {
-        "low_usd_m": 297,
-        "central_usd_m": 740,
-        "high_usd_m": 1182
+        "low_usd_m": 302.0,
+        "central_usd_m": 752.5,
+        "high_usd_m": 1202.0
       }
     },
     "financing_structures": {
@@ -2074,8 +2072,9 @@
       "aerial_bomb",
       "liberated"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "CHERNIHIV_POWER_SUBSTATION_2022_03_03",
@@ -2110,8 +2109,8 @@
           "source_code": "RDNA3"
         },
         {
-          "title": "Ukrenergo damage report — Chernihiv grid infrastructure 2022",
-          "url": "https://ukrenergo.energy.gov.ua/en/news/chernihiv-damage-2022",
+          "title": "IEA: Ukraine energy system under attack - Energy Security assessment",
+          "url": "https://www.iea.org/reports/ukraines-energy-security-and-the-coming-winter/ukraines-energy-system-under-attack",
           "source_code": "eRECOVERY"
         }
       ]
@@ -2136,19 +2135,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 6,
-        "central_usd_m": 18,
-        "high_usd_m": 30
+        "low_usd_m": 8.4,
+        "central_usd_m": 25.2,
+        "high_usd_m": 42.0
       },
       "code_compliant": {
-        "low_usd_m": 7,
-        "central_usd_m": 22,
-        "high_usd_m": 38
+        "low_usd_m": 9.8,
+        "central_usd_m": 30.8,
+        "high_usd_m": 53.2
       },
       "build_back_better": {
-        "low_usd_m": 8,
-        "central_usd_m": 28,
-        "high_usd_m": 49,
+        "low_usd_m": 11.2,
+        "central_usd_m": 39.2,
+        "high_usd_m": 68.6,
         "tech_overlays": [
           "smart_grid_automation",
           "digital_relay_protection"
@@ -2264,8 +2263,9 @@
       "grid_critical",
       "ukrenergo"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "CHERNIHIV_REGIONAL_LIBRARY_2022_03_03",
@@ -2324,19 +2324,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 7,
-        "central_usd_m": 16,
-        "high_usd_m": 24
+        "low_usd_m": 7.5,
+        "central_usd_m": 17.3,
+        "high_usd_m": 25.9
       },
       "code_compliant": {
-        "low_usd_m": 8,
-        "central_usd_m": 19,
-        "high_usd_m": 30
+        "low_usd_m": 8.6,
+        "central_usd_m": 20.5,
+        "high_usd_m": 32.3
       },
       "build_back_better": {
-        "low_usd_m": 9,
-        "central_usd_m": 24,
-        "high_usd_m": 39
+        "low_usd_m": 9.7,
+        "central_usd_m": 25.9,
+        "high_usd_m": 42.0
       }
     },
     "financing_structures": {
@@ -2429,8 +2429,9 @@
       "library",
       "air_strike"
     ],
-    "last_reviewed": "2026-05-17",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "CHERNIHIV_RESIDENTIAL_2022_03_10",
@@ -2461,13 +2462,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Chernihiv residential damage",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Chernihiv verified damage map 2022",
-          "url": "https://www.bellingcat.com/news/2022/04/chernihiv-damage-analysis",
+          "title": "Human Rights Watch: Russian Strikes Killed Scores of Civilians in Chernihiv (June 2022)",
+          "url": "https://www.hrw.org/news/2022/06/10/ukraine-russian-strikes-killed-scores-civilians-chernihiv",
           "source_code": "BELLINGCAT"
         }
       ]
@@ -2497,19 +2498,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 111,
-        "central_usd_m": 289,
-        "high_usd_m": 467
+        "low_usd_m": 112.9,
+        "central_usd_m": 293.9,
+        "high_usd_m": 474.9
       },
       "code_compliant": {
-        "low_usd_m": 128,
-        "central_usd_m": 356,
-        "high_usd_m": 583
+        "low_usd_m": 130.2,
+        "central_usd_m": 362.0,
+        "high_usd_m": 592.9
       },
       "build_back_better": {
-        "low_usd_m": 145,
-        "central_usd_m": 446,
-        "high_usd_m": 747,
+        "low_usd_m": 147.5,
+        "central_usd_m": 453.6,
+        "high_usd_m": 759.7,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction",
@@ -2618,8 +2619,9 @@
       "large_scale",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "CHERNIHIV_SCHOOL_18_2022_03_03",
@@ -2649,13 +2651,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UNICEF Ukraine: School Damage Report — Chernihiv Oblast",
-          "url": "https://www.unicef.org/ukraine/reports/chernihiv-school-damage-2022",
+          "title": "UNICEF Ukraine: Children return to schools in ruins",
+          "url": "https://www.unicef.org/ukraine/en/stories/children-return-to-schools-in-ruins",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Education Infrastructure Damage — Chernihiv Oblast",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-education-2022",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -2685,19 +2687,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 4,
-        "central_usd_m": 9,
-        "high_usd_m": 14
+        "low_usd_m": 4.3,
+        "central_usd_m": 9.7,
+        "high_usd_m": 15.1
       },
       "code_compliant": {
-        "low_usd_m": 5,
-        "central_usd_m": 11,
-        "high_usd_m": 17
+        "low_usd_m": 5.4,
+        "central_usd_m": 11.9,
+        "high_usd_m": 18.3
       },
       "build_back_better": {
-        "low_usd_m": 5,
-        "central_usd_m": 14,
-        "high_usd_m": 22
+        "low_usd_m": 5.4,
+        "central_usd_m": 15.1,
+        "high_usd_m": 23.7
       }
     },
     "financing_structures": {
@@ -2800,8 +2802,9 @@
       "chernihiv",
       "shelling"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "DNIPRO_AMUR_NIZHNODNIPROVSKYI_BRIDGE_2024_07_08",
@@ -2831,13 +2834,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — July 2024 Mass Casualty Attacks",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-july-2024-attacks",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Dnipro City Infrastructure Damage — July 2024",
-          "url": "https://kse.ua/wp-content/uploads/2024/08/KSE_Dnipro_Infrastructure_July2024.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -2868,19 +2871,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 42,
-        "central_usd_m": 72,
-        "high_usd_m": 102
+        "low_usd_m": 44.9,
+        "central_usd_m": 77.0,
+        "high_usd_m": 109.1
       },
       "code_compliant": {
-        "low_usd_m": 48,
-        "central_usd_m": 88,
-        "high_usd_m": 128
+        "low_usd_m": 51.4,
+        "central_usd_m": 94.2,
+        "high_usd_m": 137.0
       },
       "build_back_better": {
-        "low_usd_m": 54,
-        "central_usd_m": 108,
-        "high_usd_m": 162,
+        "low_usd_m": 57.8,
+        "central_usd_m": 115.6,
+        "high_usd_m": 173.3,
         "tech_overlays": [
           "seismic_resilience",
           "smart_monitoring",
@@ -2992,8 +2995,9 @@
       "missile_strike",
       "moderate"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "DNIPRO_OKHMATDYT_CHILDREN_2024_04_08",
@@ -3022,13 +3026,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "Ministry of Health Ukraine: Dnipro Oblast Medical Facilities Damage",
-          "url": "https://moz.gov.ua/article/news/dnipro-oblast-medical-facilities",
+          "title": "CNN: Dnipro medical facility attack (May 2023)",
+          "url": "https://edition.cnn.com/2023/05/26/europe/dnipro-medical-facility-attack-russia-ukraine-intl",
           "source_code": "eRECOVERY"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — April 2024",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-april-2024",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -3059,19 +3063,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 25,
-        "central_usd_m": 52,
-        "high_usd_m": 79
+        "low_usd_m": 27.0,
+        "central_usd_m": 56.1,
+        "high_usd_m": 85.2
       },
       "code_compliant": {
-        "low_usd_m": 29,
-        "central_usd_m": 64,
-        "high_usd_m": 99
+        "low_usd_m": 31.3,
+        "central_usd_m": 69.0,
+        "high_usd_m": 106.7
       },
       "build_back_better": {
-        "low_usd_m": 32,
-        "central_usd_m": 80,
-        "high_usd_m": 127
+        "low_usd_m": 34.5,
+        "central_usd_m": 86.3,
+        "high_usd_m": 136.9
       }
     },
     "financing_structures": {
@@ -3175,8 +3179,9 @@
       "missile_strike",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "DNIPRO_RESIDENTIAL_2023_01_14",
@@ -3206,13 +3211,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UA Ministry of Communities and Territories damage report — Dnipro January 2023",
-          "url": "https://www.minregion.gov.ua/napryamki-diyalnosti/dnipro-damage-jan-2023",
+          "title": "Associated Press: Dnipro apartment building strike death toll (Jan 2023)",
+          "url": "https://apnews.com/article/russia-ukraine-war-apartment-strike-death-toll-1b518f84fc4e70708d56e1a1ea708929",
           "source_code": "eRECOVERY"
         },
         {
-          "title": "UN OCHA Ukraine Flash Update — Dnipro residential strike January 2023",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-jan-2023",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -3242,19 +3247,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 23,
-        "central_usd_m": 50,
-        "high_usd_m": 77
+        "low_usd_m": 23.4,
+        "central_usd_m": 50.8,
+        "high_usd_m": 78.3
       },
       "code_compliant": {
-        "low_usd_m": 27,
-        "central_usd_m": 61,
-        "high_usd_m": 96
+        "low_usd_m": 27.5,
+        "central_usd_m": 62.0,
+        "high_usd_m": 97.6
       },
       "build_back_better": {
-        "low_usd_m": 30,
-        "central_usd_m": 76,
-        "high_usd_m": 123,
+        "low_usd_m": 30.5,
+        "central_usd_m": 77.3,
+        "high_usd_m": 125.1,
         "tech_overlays": [
           "passive_house_standard",
           "energy_efficiency_envelope"
@@ -3361,8 +3366,9 @@
       "apartment_blocks",
       "single_building"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "HOSTOMEL_AIRPORT_2022_02_24",
@@ -3392,13 +3398,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "Bellingcat: Hostomel Airport Satellite Imagery Analysis",
-          "url": "https://www.bellingcat.com/news/2022/04/05/hostomel-airport-damage-analysis",
+          "title": "UNOSAT Damage Assessment Overview Map - Hostomel City, Kyiv Oblast (Mar 2022)",
+          "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-hostomel-city-kyiv-oblast-imagery-analysis-31-march-2022-published-26-april-2022-v1",
           "source_code": "BELLINGCAT"
         },
         {
-          "title": "KSE Institute: Transport Infrastructure Damage — Kyiv Oblast",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-transport",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -3435,19 +3441,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 17,
-        "central_usd_m": 35,
-        "high_usd_m": 53
+        "low_usd_m": 18.2,
+        "central_usd_m": 37.4,
+        "high_usd_m": 56.7
       },
       "code_compliant": {
-        "low_usd_m": 19,
-        "central_usd_m": 43,
-        "high_usd_m": 66
+        "low_usd_m": 20.3,
+        "central_usd_m": 46.0,
+        "high_usd_m": 70.6
       },
       "build_back_better": {
-        "low_usd_m": 22,
-        "central_usd_m": 53,
-        "high_usd_m": 85
+        "low_usd_m": 23.5,
+        "central_usd_m": 56.7,
+        "high_usd_m": 90.9
       }
     },
     "financing_structures": {
@@ -3563,8 +3569,9 @@
       "ground_combat",
       "strategic"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ILLICH_STEEL_MARIUPOL_2022_03_01",
@@ -3595,10 +3602,6 @@
         {
           "title": "KSE Russia Will Pay — Illich industrial damage",
           "source_code": "KSE"
-        },
-        {
-          "title": "Bellingcat Mariupol siege documentation",
-          "source_code": "BELLINGCAT"
         }
       ]
     },
@@ -3626,19 +3629,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 2294,
-        "central_usd_m": 4806,
-        "high_usd_m": 7319
+        "low_usd_m": 2159.1,
+        "central_usd_m": 4523.3,
+        "high_usd_m": 6888.5
       },
       "code_compliant": {
-        "low_usd_m": 2638,
-        "central_usd_m": 5893,
-        "high_usd_m": 9148
+        "low_usd_m": 2482.8,
+        "central_usd_m": 5546.4,
+        "high_usd_m": 8609.9
       },
       "build_back_better": {
-        "low_usd_m": 2983,
-        "central_usd_m": 7346,
-        "high_usd_m": 11710
+        "low_usd_m": 2807.5,
+        "central_usd_m": 6913.9,
+        "high_usd_m": 11021.2
       }
     },
     "financing_structures": {
@@ -3753,8 +3756,9 @@
       "mariupol",
       "occupied"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "INHULETS_MYKOLAIV_WATER_2022_03_01",
@@ -3785,10 +3789,6 @@
         {
           "title": "KSE Ukraine damage assessment — Mykolaiv water crisis",
           "source_code": "KSE"
-        },
-        {
-          "title": "UN OCHA Ukraine Situation Report — Mykolaiv water access",
-          "source_code": "OCHA"
         }
       ]
     },
@@ -3818,19 +3818,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 194,
-        "central_usd_m": 527,
-        "high_usd_m": 860
+        "low_usd_m": 209.2,
+        "central_usd_m": 568.2,
+        "high_usd_m": 927.2
       },
       "code_compliant": {
-        "low_usd_m": 223,
-        "central_usd_m": 649,
-        "high_usd_m": 1075
+        "low_usd_m": 240.4,
+        "central_usd_m": 699.7,
+        "high_usd_m": 1159.1
       },
       "build_back_better": {
-        "low_usd_m": 253,
-        "central_usd_m": 814,
-        "high_usd_m": 1376
+        "low_usd_m": 272.8,
+        "central_usd_m": 877.6,
+        "high_usd_m": 1483.6
       }
     },
     "financing_structures": {
@@ -3933,8 +3933,9 @@
       "ground_combat",
       "infrastructure"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "IRPIN_RESIDENTIAL_2022_02_27",
@@ -3964,13 +3965,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Irpin Residential Damage Assessment",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-irpin",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine: Irpin Post-Liberation Situation Report",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-irpin-assessment-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -4000,19 +4001,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 138,
-        "central_usd_m": 284,
-        "high_usd_m": 431
+        "low_usd_m": 140.3,
+        "central_usd_m": 288.8,
+        "high_usd_m": 438.3
       },
       "code_compliant": {
-        "low_usd_m": 158,
-        "central_usd_m": 349,
-        "high_usd_m": 539
+        "low_usd_m": 160.7,
+        "central_usd_m": 354.9,
+        "high_usd_m": 548.1
       },
       "build_back_better": {
-        "low_usd_m": 179,
-        "central_usd_m": 434,
-        "high_usd_m": 690
+        "low_usd_m": 182.0,
+        "central_usd_m": 441.4,
+        "high_usd_m": 701.7
       }
     },
     "financing_structures": {
@@ -4114,8 +4115,9 @@
       "ground_combat",
       "liberated"
     ],
-    "last_reviewed": "2026-05-17",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "IZMAIL_GRAIN_TERMINAL_2023_07_26",
@@ -4145,13 +4147,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UA Ministry of Agrarian Policy report — Izmail grain terminal drone strike July 2023",
-          "url": "https://minagro.gov.ua/en/news/izmail-grain-terminal-july-2023",
+          "title": "BBC: Russia hits port grain silo in Ukraine Odesa region (Izmail, Aug 2023)",
+          "url": "https://www.bbc.com/news/world-europe-66379561",
           "source_code": "eRECOVERY"
         },
         {
-          "title": "UN OCHA Ukraine Flash Update — Izmail Danube port attack 2023",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-jul-2023",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -4175,19 +4177,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 8,
-        "central_usd_m": 25,
-        "high_usd_m": 41
+        "low_usd_m": 7.5,
+        "central_usd_m": 23.6,
+        "high_usd_m": 38.7
       },
       "code_compliant": {
-        "low_usd_m": 9,
-        "central_usd_m": 30,
-        "high_usd_m": 52
+        "low_usd_m": 8.5,
+        "central_usd_m": 28.3,
+        "high_usd_m": 49.1
       },
       "build_back_better": {
-        "low_usd_m": 10,
-        "central_usd_m": 38,
-        "high_usd_m": 66,
+        "low_usd_m": 9.4,
+        "central_usd_m": 35.8,
+        "high_usd_m": 62.3,
         "tech_overlays": [
           "automated_handling",
           "dust_suppression",
@@ -4298,8 +4300,9 @@
       "re_damaged",
       "food_security"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "IZMAIL_SUVOROV_MUSEUM_2024_07_14",
@@ -4329,13 +4332,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — July 2024 Danube Region Strikes",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-july-2024-danube",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Odesa Oblast Cultural Heritage Damage 2024",
-          "url": "https://kse.ua/wp-content/uploads/2024/09/KSE_Odesa_Heritage_Damage_2024.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -4365,19 +4368,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 5,
-        "central_usd_m": 9,
-        "high_usd_m": 13
+        "low_usd_m": 5.4,
+        "central_usd_m": 9.7,
+        "high_usd_m": 14.0
       },
       "code_compliant": {
-        "low_usd_m": 6,
-        "central_usd_m": 11,
-        "high_usd_m": 16
+        "low_usd_m": 6.5,
+        "central_usd_m": 11.9,
+        "high_usd_m": 17.3
       },
       "build_back_better": {
-        "low_usd_m": 8,
-        "central_usd_m": 15,
-        "high_usd_m": 22,
+        "low_usd_m": 8.6,
+        "central_usd_m": 16.2,
+        "high_usd_m": 23.7,
         "tech_overlays": [
           "heritage_conservation_premium",
           "digital_twin_documentation",
@@ -4486,8 +4489,9 @@
       "drone_strike",
       "moderate"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "IZYUM_DISTRICT_HOSPITAL_2022_04_01",
@@ -4517,13 +4521,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine: Izyum Post-Liberation Assessment",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-izyum-assessment-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Kharkiv Oblast Damage Assessment Post-Liberation",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-2022",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -4553,19 +4557,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 17,
-        "central_usd_m": 37,
-        "high_usd_m": 56
+        "low_usd_m": 18.3,
+        "central_usd_m": 39.9,
+        "high_usd_m": 60.4
       },
       "code_compliant": {
-        "low_usd_m": 19,
-        "central_usd_m": 45,
-        "high_usd_m": 70
+        "low_usd_m": 20.5,
+        "central_usd_m": 48.5,
+        "high_usd_m": 75.5
       },
       "build_back_better": {
-        "low_usd_m": 22,
-        "central_usd_m": 56,
-        "high_usd_m": 90
+        "low_usd_m": 23.7,
+        "central_usd_m": 60.4,
+        "high_usd_m": 97.0
       }
     },
     "financing_structures": {
@@ -4670,8 +4674,9 @@
       "shelling",
       "liberated"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KAKHOVKA_HPP_2023_06_06",
@@ -4701,18 +4706,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update #50 — Kakhovka Dam Breach",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-50-kakhovka-dam-breach-7-june-2023",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Damage Assessment — Kakhovka HPP",
-          "url": "https://kse.ua/about-the-school/news/kse-institute-damage-assessment",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Kakhovka Dam Destruction Investigation",
-          "url": "https://www.bellingcat.com/news/2023/06/06/kakhovka-dam-destroyed",
+          "title": "Reuters: Evidence suggests Russia blew Kakhovka dam (June 2023)",
+          "url": "https://www.reuters.com/world/europe/evidence-suggests-russia-blew-kakhovka-dam-ukraine-new-york-times-2023-06-18/",
           "source_code": "BELLINGCAT"
         }
       ]
@@ -4754,19 +4759,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 525,
-        "central_usd_m": 1032,
-        "high_usd_m": 1538
+        "low_usd_m": 734.6,
+        "central_usd_m": 1444.0,
+        "high_usd_m": 2151.9
       },
       "code_compliant": {
-        "low_usd_m": 604,
-        "central_usd_m": 1263,
-        "high_usd_m": 1922
+        "low_usd_m": 845.1,
+        "central_usd_m": 1767.2,
+        "high_usd_m": 2689.2
       },
       "build_back_better": {
-        "low_usd_m": 683,
-        "central_usd_m": 1572,
-        "high_usd_m": 2461,
+        "low_usd_m": 955.6,
+        "central_usd_m": 2199.5,
+        "high_usd_m": 3443.4,
         "tech_overlays": [
           "run_of_river_redesign",
           "fish_passage",
@@ -4888,8 +4893,9 @@
       "occupied",
       "catastrophic"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KARAZIN_KHARKIV_UNIVERSITY_2022_03_01",
@@ -4919,13 +4925,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Kharkiv Education Infrastructure Damage 2022–2024",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-education",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine: Education Facility Attacks 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-education-attacks-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -4955,19 +4961,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 86,
-        "central_usd_m": 211,
-        "high_usd_m": 335
+        "low_usd_m": 92.7,
+        "central_usd_m": 227.5,
+        "high_usd_m": 361.2
       },
       "code_compliant": {
-        "low_usd_m": 99,
-        "central_usd_m": 259,
-        "high_usd_m": 419
+        "low_usd_m": 106.7,
+        "central_usd_m": 279.3,
+        "high_usd_m": 451.8
       },
       "build_back_better": {
-        "low_usd_m": 111,
-        "central_usd_m": 324,
-        "high_usd_m": 537
+        "low_usd_m": 119.7,
+        "central_usd_m": 349.3,
+        "high_usd_m": 579.0
       }
     },
     "financing_structures": {
@@ -5072,8 +5078,9 @@
       "heritage",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHARKIV_CHP_2022_03_24",
@@ -5103,13 +5110,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Kharkiv Energy Infrastructure Damage 2022–2024",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-energy",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — Kharkiv Energy Infrastructure",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kharkiv-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -5133,19 +5140,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 171,
-        "central_usd_m": 360,
-        "high_usd_m": 549
+        "low_usd_m": 239.3,
+        "central_usd_m": 503.7,
+        "high_usd_m": 768.1
       },
       "code_compliant": {
-        "low_usd_m": 197,
-        "central_usd_m": 442,
-        "high_usd_m": 686
+        "low_usd_m": 275.6,
+        "central_usd_m": 618.4,
+        "high_usd_m": 959.8
       },
       "build_back_better": {
-        "low_usd_m": 223,
-        "central_usd_m": 551,
-        "high_usd_m": 878
+        "low_usd_m": 312.0,
+        "central_usd_m": 770.9,
+        "high_usd_m": 1228.5
       }
     },
     "financing_structures": {
@@ -5262,8 +5269,9 @@
       "re_damaged",
       "municipal"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHARKIV_HISTORICAL_CENTRE_2022_03_01",
@@ -5293,18 +5301,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Situation Report — Kharkiv Heritage Damage March 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kharkiv-march-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Cultural Heritage Infrastructure Damage — Kharkiv Oblast",
-          "url": "https://kse.ua/wp-content/uploads/2022/08/KSE_Kharkiv_Heritage_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Kharkiv City Centre Strikes — Heritage Site Damage Verification",
-          "url": "https://www.bellingcat.com/news/2022/03/kharkiv-centre-heritage-damage",
+          "title": "UNESCO: Damaged cultural sites in Ukraine (verified list)",
+          "url": "https://www.unesco.org/en/ukraine-war/damaged-cultural-sites",
           "source_code": "BELLINGCAT"
         }
       ]
@@ -5335,19 +5343,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 184,
-        "central_usd_m": 346,
-        "high_usd_m": 508
+        "low_usd_m": 198.4,
+        "central_usd_m": 373.1,
+        "high_usd_m": 547.7
       },
       "code_compliant": {
-        "low_usd_m": 212,
-        "central_usd_m": 415,
-        "high_usd_m": 635
+        "low_usd_m": 228.6,
+        "central_usd_m": 447.4,
+        "high_usd_m": 684.7
       },
       "build_back_better": {
-        "low_usd_m": 276,
-        "central_usd_m": 554,
-        "high_usd_m": 914,
+        "low_usd_m": 297.6,
+        "central_usd_m": 597.3,
+        "high_usd_m": 985.5,
         "tech_overlays": [
           "heritage_conservation_premium",
           "digital_twin_documentation",
@@ -5459,8 +5467,9 @@
       "heritage_cluster",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHARKIV_INDUSTRIAL_DISTRICT_RESIDENTIAL_2022_04_01",
@@ -5489,13 +5498,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Situation Report — Kharkiv Oblast April 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kharkiv-april-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Kharkiv Oblast Residential Damage Assessment — 2022 Full Year",
-          "url": "https://kse.ua/wp-content/uploads/2023/01/KSE_Kharkiv_Residential_2022.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -5526,19 +5535,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 195,
-        "central_usd_m": 342,
-        "high_usd_m": 490
+        "low_usd_m": 198.3,
+        "central_usd_m": 347.8,
+        "high_usd_m": 498.3
       },
       "code_compliant": {
-        "low_usd_m": 224,
-        "central_usd_m": 418,
-        "high_usd_m": 612
+        "low_usd_m": 227.8,
+        "central_usd_m": 425.1,
+        "high_usd_m": 622.4
       },
       "build_back_better": {
-        "low_usd_m": 253,
-        "central_usd_m": 513,
-        "high_usd_m": 773,
+        "low_usd_m": 257.3,
+        "central_usd_m": 521.7,
+        "high_usd_m": 786.1,
         "tech_overlays": [
           "passive_house_standard",
           "district_heat_metering",
@@ -5649,8 +5658,9 @@
       "severe",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHARKIV_METRO_2022_03_01",
@@ -5680,13 +5690,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Kharkiv Transport Infrastructure Damage",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-transport-kharkiv",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine: Kharkiv Metro as Civilian Shelter and Infrastructure Damage",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kharkiv-metro-shelter",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -5717,19 +5727,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 23,
-        "central_usd_m": 106,
-        "high_usd_m": 188
+        "low_usd_m": 24.6,
+        "central_usd_m": 113.4,
+        "high_usd_m": 201.2
       },
       "code_compliant": {
-        "low_usd_m": 26,
-        "central_usd_m": 131,
-        "high_usd_m": 236
+        "low_usd_m": 27.8,
+        "central_usd_m": 140.2,
+        "high_usd_m": 252.5
       },
       "build_back_better": {
-        "low_usd_m": 30,
-        "central_usd_m": 166,
-        "high_usd_m": 302
+        "low_usd_m": 32.1,
+        "central_usd_m": 177.6,
+        "high_usd_m": 323.1
       }
     },
     "financing_structures": {
@@ -5834,8 +5844,9 @@
       "re_damaged",
       "civilian_shelter"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHARKIV_METRO_LINE1_2022_04_01",
@@ -5865,13 +5876,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "Kharkiv Metro engineering report — Line 1 infrastructure damage 2022",
-          "url": "https://www.metro.kharkov.ua/en/news/damage-2022",
+          "title": "Ukrainska Pravda: Kharkiv metro infrastructure damaged by strikes (June 2022)",
+          "url": "https://www.pravda.com.ua/eng/news/2022/06/21/7353791/",
           "source_code": "eRECOVERY"
         },
         {
-          "title": "KSE Institute: Russia Will Pay — Kharkiv transport sector damage",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -5902,19 +5913,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 10,
-        "central_usd_m": 48,
-        "high_usd_m": 85
+        "low_usd_m": 10.7,
+        "central_usd_m": 51.4,
+        "high_usd_m": 90.9
       },
       "code_compliant": {
-        "low_usd_m": 12,
-        "central_usd_m": 59,
-        "high_usd_m": 107
+        "low_usd_m": 12.8,
+        "central_usd_m": 63.1,
+        "high_usd_m": 114.5
       },
       "build_back_better": {
-        "low_usd_m": 13,
-        "central_usd_m": 75,
-        "high_usd_m": 137,
+        "low_usd_m": 13.9,
+        "central_usd_m": 80.2,
+        "high_usd_m": 146.6,
         "tech_overlays": [
           "etcs_signalling",
           "smart_station_systems",
@@ -6026,8 +6037,9 @@
       "shelling",
       "under_reconstruction"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHARKIV_NATIONAL_AEROSPACE_UNIVERSITY_2022_03_01",
@@ -6057,13 +6069,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Situation Report — March 2022 Higher Education Damage",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-march-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Kharkiv Higher Education Infrastructure Damage Assessment",
-          "url": "https://kse.ua/wp-content/uploads/2022/07/KSE_Kharkiv_Education_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -6094,19 +6106,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 68,
-        "central_usd_m": 120,
-        "high_usd_m": 173
+        "low_usd_m": 73.3,
+        "central_usd_m": 129.4,
+        "high_usd_m": 186.5
       },
       "code_compliant": {
-        "low_usd_m": 78,
-        "central_usd_m": 146,
-        "high_usd_m": 216
+        "low_usd_m": 84.1,
+        "central_usd_m": 157.4,
+        "high_usd_m": 232.9
       },
       "build_back_better": {
-        "low_usd_m": 88,
-        "central_usd_m": 181,
-        "high_usd_m": 274,
+        "low_usd_m": 94.9,
+        "central_usd_m": 195.2,
+        "high_usd_m": 295.4,
         "tech_overlays": [
           "passive_house_standard",
           "microgrid",
@@ -6217,8 +6229,9 @@
       "severe",
       "aerospace"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHARKIV_OBLAST_ADMIN_2022_03_01",
@@ -6277,19 +6290,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 40,
-        "central_usd_m": 84,
-        "high_usd_m": 128
+        "low_usd_m": 43.1,
+        "central_usd_m": 90.6,
+        "high_usd_m": 138.0
       },
       "code_compliant": {
-        "low_usd_m": 46,
-        "central_usd_m": 103,
-        "high_usd_m": 160
+        "low_usd_m": 49.6,
+        "central_usd_m": 111.1,
+        "high_usd_m": 172.5
       },
       "build_back_better": {
-        "low_usd_m": 52,
-        "central_usd_m": 128,
-        "high_usd_m": 205
+        "low_usd_m": 56.1,
+        "central_usd_m": 138.0,
+        "high_usd_m": 221.0
       }
     },
     "financing_structures": {
@@ -6382,8 +6395,9 @@
       "government",
       "missile_strike"
     ],
-    "last_reviewed": "2026-05-17",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHARKIV_POLYTECHNIC_INSTITUTE_2022_02_28",
@@ -6413,13 +6427,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "NTU KhPI: Damage Assessment Reports 2022–2024",
-          "url": "https://www.kpi.kharkov.ua/en/news/damage-assessment",
+          "title": "Censor.NET: Missile strike damaged 12 buildings of Kharkiv Polytechnic Institute (Jan 2023)",
+          "url": "https://censor.net/en/photonews/3467157/as_result_of_missile_strike_on_january_10_12_buildings_of_kharkiv_polytechnic_institute_were_damaged",
           "source_code": "eRECOVERY"
         },
         {
-          "title": "KSE Institute: Kharkiv Education Infrastructure",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-education",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -6443,19 +6457,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 143,
-        "central_usd_m": 351,
-        "high_usd_m": 559
+        "low_usd_m": 154.2,
+        "central_usd_m": 378.4,
+        "high_usd_m": 602.7
       },
       "code_compliant": {
-        "low_usd_m": 164,
-        "central_usd_m": 432,
-        "high_usd_m": 699
+        "low_usd_m": 176.8,
+        "central_usd_m": 465.8,
+        "high_usd_m": 753.7
       },
       "build_back_better": {
-        "low_usd_m": 186,
-        "central_usd_m": 540,
-        "high_usd_m": 895
+        "low_usd_m": 200.5,
+        "central_usd_m": 582.2,
+        "high_usd_m": 965.0
       }
     },
     "financing_structures": {
@@ -6560,8 +6574,9 @@
       "re_damaged",
       "technical"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHARKIV_REGIONAL_CHILDRENS_HOSPITAL_2022_03_06",
@@ -6591,13 +6606,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine: Attacks on Healthcare Facilities 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-attacks-healthcare-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Kharkiv Healthcare Infrastructure Damage",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-health",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -6628,19 +6643,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 33,
-        "central_usd_m": 71,
-        "high_usd_m": 109
+        "low_usd_m": 35.6,
+        "central_usd_m": 76.6,
+        "high_usd_m": 117.5
       },
       "code_compliant": {
-        "low_usd_m": 38,
-        "central_usd_m": 88,
-        "high_usd_m": 137
+        "low_usd_m": 41.0,
+        "central_usd_m": 94.9,
+        "high_usd_m": 147.7
       },
       "build_back_better": {
-        "low_usd_m": 43,
-        "central_usd_m": 109,
-        "high_usd_m": 175
+        "low_usd_m": 46.4,
+        "central_usd_m": 117.5,
+        "high_usd_m": 188.7
       }
     },
     "financing_structures": {
@@ -6744,8 +6759,9 @@
       "shelling",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHARKIV_REGIONAL_HOSPITAL_2022_03_01",
@@ -6775,13 +6791,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Kharkiv healthcare damage assessment",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — Kharkiv health infrastructure",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kharkiv-health-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -6811,19 +6827,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 67,
-        "central_usd_m": 154,
-        "high_usd_m": 242
+        "low_usd_m": 72.2,
+        "central_usd_m": 166.0,
+        "high_usd_m": 260.9
       },
       "code_compliant": {
-        "low_usd_m": 77,
-        "central_usd_m": 189,
-        "high_usd_m": 302
+        "low_usd_m": 83.0,
+        "central_usd_m": 203.8,
+        "high_usd_m": 325.6
       },
       "build_back_better": {
-        "low_usd_m": 87,
-        "central_usd_m": 237,
-        "high_usd_m": 387,
+        "low_usd_m": 93.8,
+        "central_usd_m": 255.5,
+        "high_usd_m": 417.3,
         "tech_overlays": [
           "microgrid",
           "telemedicine",
@@ -6931,8 +6947,9 @@
       "kharkiv_oblast",
       "shelling"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHARKIV_SALTIVKA_PHASE2_2022_09_01",
@@ -6962,13 +6979,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Kharkiv residential damage tracker 2024",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — Kharkiv Oblast residential",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kharkiv-sitrep-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -6999,19 +7016,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 217,
-        "central_usd_m": 559,
-        "high_usd_m": 900
+        "low_usd_m": 220.7,
+        "central_usd_m": 568.5,
+        "high_usd_m": 915.3
       },
       "code_compliant": {
-        "low_usd_m": 250,
-        "central_usd_m": 688,
-        "high_usd_m": 1125
+        "low_usd_m": 254.2,
+        "central_usd_m": 699.7,
+        "high_usd_m": 1144.1
       },
       "build_back_better": {
-        "low_usd_m": 282,
-        "central_usd_m": 861,
-        "high_usd_m": 1441,
+        "low_usd_m": 286.8,
+        "central_usd_m": 875.6,
+        "high_usd_m": 1465.4,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction",
@@ -7122,8 +7139,9 @@
       "apartment_blocks",
       "saltivka_adjacent"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHERSON_ANTONIVSKYI_RAILWAY_BRIDGE_2022_08_27",
@@ -7153,18 +7171,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Situation Report — Kherson Oblast August 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kherson-august-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Kherson Oblast Transport Infrastructure Damage Assessment",
-          "url": "https://kse.ua/wp-content/uploads/2022/10/KSE_Kherson_Transport_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Antonivka Bridge Strikes — Damage Verification August 2022",
-          "url": "https://www.bellingcat.com/news/2022/08/antonivka-bridge-damage-verification",
+          "title": "Associated Press: Antonivskyi bridge in Kherson region struck and damaged (July 2022)",
+          "url": "https://apnews.com/article/russia-ukraine-moscow-6a927f75ac4fdb854999d65139b9bd80",
           "source_code": "BELLINGCAT"
         }
       ]
@@ -7195,19 +7213,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 68,
-        "central_usd_m": 121,
-        "high_usd_m": 174
+        "low_usd_m": 72.8,
+        "central_usd_m": 129.5,
+        "high_usd_m": 186.2
       },
       "code_compliant": {
-        "low_usd_m": 78,
-        "central_usd_m": 148,
-        "high_usd_m": 217
+        "low_usd_m": 83.5,
+        "central_usd_m": 158.4,
+        "high_usd_m": 232.2
       },
       "build_back_better": {
-        "low_usd_m": 88,
-        "central_usd_m": 181,
-        "high_usd_m": 274,
+        "low_usd_m": 94.2,
+        "central_usd_m": 193.7,
+        "high_usd_m": 293.2,
         "tech_overlays": [
           "seismic_resilience",
           "smart_monitoring",
@@ -7318,8 +7336,9 @@
       "precision_strike",
       "destroyed"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHERSON_CENTRAL_RESIDENTIAL_2022_11_11",
@@ -7349,13 +7368,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Kherson residential damage assessment",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — Kherson Oblast November 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-nov-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -7386,19 +7405,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 385,
-        "central_usd_m": 829,
-        "high_usd_m": 1273
+        "low_usd_m": 391.5,
+        "central_usd_m": 843.1,
+        "high_usd_m": 1294.6
       },
       "code_compliant": {
-        "low_usd_m": 443,
-        "central_usd_m": 1017,
-        "high_usd_m": 1591
+        "low_usd_m": 450.5,
+        "central_usd_m": 1034.2,
+        "high_usd_m": 1618.0
       },
       "build_back_better": {
-        "low_usd_m": 501,
-        "central_usd_m": 1268,
-        "high_usd_m": 2036,
+        "low_usd_m": 509.5,
+        "central_usd_m": 1289.5,
+        "high_usd_m": 2070.5,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction",
@@ -7508,8 +7527,9 @@
       "re_damaged",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHERSON_OLESHKY_WATER_PLANT_2022_11_01",
@@ -7544,8 +7564,8 @@
           "source_code": "RDNA3"
         },
         {
-          "title": "UN OCHA Ukraine Flash Update — Kherson water infrastructure November 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-nov-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -7570,19 +7590,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 50,
-        "central_usd_m": 174,
-        "high_usd_m": 298
+        "low_usd_m": 53.9,
+        "central_usd_m": 187.6,
+        "high_usd_m": 321.3
       },
       "code_compliant": {
-        "low_usd_m": 57,
-        "central_usd_m": 215,
-        "high_usd_m": 372
+        "low_usd_m": 61.5,
+        "central_usd_m": 231.8,
+        "high_usd_m": 401.1
       },
       "build_back_better": {
-        "low_usd_m": 65,
-        "central_usd_m": 270,
-        "high_usd_m": 476,
+        "low_usd_m": 70.1,
+        "central_usd_m": 291.1,
+        "high_usd_m": 513.2,
         "tech_overlays": [
           "smart_water_metering",
           "energy_efficient_pumping",
@@ -7692,8 +7712,9 @@
       "liberated",
       "multiple"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHERSON_POST_KAKHOVKA_WATER_2023_06_06",
@@ -7724,10 +7745,6 @@
         {
           "title": "UN OCHA Ukraine Flash Update #49 — Kakhovka dam collapse",
           "source_code": "OCHA"
-        },
-        {
-          "title": "KSE damage assessment — Kherson water infrastructure post-dam collapse",
-          "source_code": "KSE"
         }
       ]
     },
@@ -7756,19 +7773,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 192,
-        "central_usd_m": 533,
-        "high_usd_m": 873
+        "low_usd_m": 207.0,
+        "central_usd_m": 574.7,
+        "high_usd_m": 941.3
       },
       "code_compliant": {
-        "low_usd_m": 221,
-        "central_usd_m": 656,
-        "high_usd_m": 1091
+        "low_usd_m": 238.3,
+        "central_usd_m": 707.3,
+        "high_usd_m": 1176.3
       },
       "build_back_better": {
-        "low_usd_m": 250,
-        "central_usd_m": 823,
-        "high_usd_m": 1397
+        "low_usd_m": 269.5,
+        "central_usd_m": 887.3,
+        "high_usd_m": 1506.2
       }
     },
     "financing_structures": {
@@ -7871,8 +7888,9 @@
       "kakhovka",
       "sabotage"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHERSON_REGIONAL_HOSPITAL_2022_11_11",
@@ -7902,18 +7920,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "Human Rights Watch: Attacks on Kherson Hospital and Medical Facilities",
-          "url": "https://www.hrw.org/news/2023/02/10/ukraine-attacks-kherson-medical-facilities",
+          "title": "MSF: Ukraine - MSF denounces repeated shelling of Kherson hospital",
+          "url": "https://www.doctorswithoutborders.org/latest/ukraine-msf-denounces-repeated-shelling-kherson-hospital",
           "source_code": "OCHA"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — Kherson Post-Liberation",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kherson-liberation",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Kherson Oblast Infrastructure Damage",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-kherson",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -7943,19 +7961,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 89,
-        "central_usd_m": 162,
-        "high_usd_m": 234
+        "low_usd_m": 96.0,
+        "central_usd_m": 174.7,
+        "high_usd_m": 252.3
       },
       "code_compliant": {
-        "low_usd_m": 103,
-        "central_usd_m": 198,
-        "high_usd_m": 293
+        "low_usd_m": 111.1,
+        "central_usd_m": 213.5,
+        "high_usd_m": 315.9
       },
       "build_back_better": {
-        "low_usd_m": 116,
-        "central_usd_m": 245,
-        "high_usd_m": 374
+        "low_usd_m": 125.1,
+        "central_usd_m": 264.2,
+        "high_usd_m": 403.2
       }
     },
     "financing_structures": {
@@ -8061,8 +8079,9 @@
       "re_damaged",
       "high_priority"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHERSON_SHIPYARD_2022_11_11",
@@ -8092,18 +8111,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Situation Report — Kherson Liberation and Industrial Damage November 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kherson-november-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Kherson Oblast Industrial Damage Assessment — November 2022",
-          "url": "https://kse.ua/wp-content/uploads/2023/01/KSE_Kherson_Industrial_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Kherson Industrial Zone — Satellite Damage Assessment",
-          "url": "https://www.bellingcat.com/news/2022/11/kherson-industrial-damage",
+          "title": "UNOSAT Damage Assessment - Kherson City (imagery analysis, published June 2023)",
+          "url": "https://reliefweb.int/map/ukraine/damage-assessment-over-kherson-city-khersonskyi-region-khersonska-oblast-ukraine-17-june-2023-imagery-analysis-17062023-published-26062023-v1",
           "source_code": "BELLINGCAT"
         }
       ]
@@ -8134,19 +8153,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 98,
-        "central_usd_m": 185,
-        "high_usd_m": 272
+        "low_usd_m": 92.2,
+        "central_usd_m": 174.1,
+        "high_usd_m": 256.0
       },
       "code_compliant": {
-        "low_usd_m": 113,
-        "central_usd_m": 226,
-        "high_usd_m": 340
+        "low_usd_m": 106.4,
+        "central_usd_m": 212.7,
+        "high_usd_m": 320.0
       },
       "build_back_better": {
-        "low_usd_m": 127,
-        "central_usd_m": 278,
-        "high_usd_m": 428,
+        "low_usd_m": 119.5,
+        "central_usd_m": 261.6,
+        "high_usd_m": 402.8,
         "tech_overlays": [
           "process_electrification",
           "modular_prefabrication",
@@ -8265,8 +8284,9 @@
       "severe",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KHERSON_STATE_UNIVERSITY_2022_03_02",
@@ -8296,13 +8316,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine: Kherson Post-Liberation Education Assessment",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kherson-education-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Kherson Oblast Education Damage",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-kherson-education",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -8326,19 +8346,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 26,
-        "central_usd_m": 66,
-        "high_usd_m": 105
+        "low_usd_m": 28.0,
+        "central_usd_m": 71.2,
+        "high_usd_m": 113.2
       },
       "code_compliant": {
-        "low_usd_m": 30,
-        "central_usd_m": 81,
-        "high_usd_m": 132
+        "low_usd_m": 32.3,
+        "central_usd_m": 87.3,
+        "high_usd_m": 142.3
       },
       "build_back_better": {
-        "low_usd_m": 34,
-        "central_usd_m": 101,
-        "high_usd_m": 169
+        "low_usd_m": 36.7,
+        "central_usd_m": 108.9,
+        "high_usd_m": 182.2
       }
     },
     "financing_structures": {
@@ -8443,8 +8463,9 @@
       "frontline",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KRAMATORSK_RESIDENTIAL_2022_04_08",
@@ -8474,13 +8495,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Donetsk residential damage assessment",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Flash Update — Kramatorsk station attack April 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -8510,19 +8531,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 103,
-        "central_usd_m": 272,
-        "high_usd_m": 440
+        "low_usd_m": 104.7,
+        "central_usd_m": 276.6,
+        "high_usd_m": 447.5
       },
       "code_compliant": {
-        "low_usd_m": 119,
-        "central_usd_m": 335,
-        "high_usd_m": 550
+        "low_usd_m": 121.0,
+        "central_usd_m": 340.7,
+        "high_usd_m": 559.3
       },
       "build_back_better": {
-        "low_usd_m": 135,
-        "central_usd_m": 419,
-        "high_usd_m": 704,
+        "low_usd_m": 137.3,
+        "central_usd_m": 426.1,
+        "high_usd_m": 715.9,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction",
@@ -8629,8 +8650,9 @@
       "missile_strike",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KREMENCHUK_KREMEN_OIL_REFINERY_2022_06_27",
@@ -8660,18 +8682,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Situation Report — June 2022 Kremenchuk Attacks",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-june-2022-kremenchuk",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Industrial Infrastructure Damage — Poltava Oblast",
-          "url": "https://kse.ua/wp-content/uploads/2022/08/KSE_Poltava_Industrial_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Kremenchuk Strike Verification — June 2022",
-          "url": "https://www.bellingcat.com/news/2022/06/27/kremenchuk-strikes-verification",
+          "title": "Human Rights Watch: Russian Missile Kills Civilians in Kremenchuk Shopping Center (June 2022)",
+          "url": "https://www.hrw.org/news/2022/06/30/ukraine-russian-missile-kills-civilians-shopping-center",
           "source_code": "BELLINGCAT"
         }
       ]
@@ -8702,19 +8724,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 780,
-        "central_usd_m": 1240,
-        "high_usd_m": 1700
+        "low_usd_m": 1091.4,
+        "central_usd_m": 1735.0,
+        "high_usd_m": 2378.6
       },
       "code_compliant": {
-        "low_usd_m": 897,
-        "central_usd_m": 1488,
-        "high_usd_m": 2125
+        "low_usd_m": 1255.1,
+        "central_usd_m": 2082.0,
+        "high_usd_m": 2973.3
       },
       "build_back_better": {
-        "low_usd_m": 1014,
-        "central_usd_m": 1790,
-        "high_usd_m": 2550,
+        "low_usd_m": 1418.8,
+        "central_usd_m": 2504.5,
+        "high_usd_m": 3567.9,
         "tech_overlays": [
           "low_sulphur_compliance",
           "waste_heat_recovery",
@@ -8833,8 +8855,9 @@
       "missile_strike",
       "industrial"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KREMENCHUK_STROYMASH_PLANT_2022_06_27",
@@ -8864,18 +8887,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Situation Report — June 2022 Kremenchuk Industrial Attacks",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-june-2022-kremenchuk",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Poltava Oblast Industrial Infrastructure Damage",
-          "url": "https://kse.ua/wp-content/uploads/2022/08/KSE_Poltava_Industrial_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Kremenchuk Industrial Zone Strikes — Verification June 2022",
-          "url": "https://www.bellingcat.com/news/2022/06/kremenchuk-industrial-strikes",
+          "title": "Reuters: Russian missiles hit crowded shopping mall in Kremenchuk (27 June 2022)",
+          "url": "https://www.reuters.com/world/europe/russian-missiles-hit-crowded-shopping-mall-central-ukraine-zelenskiy-2022-06-27/",
           "source_code": "BELLINGCAT"
         }
       ]
@@ -8906,19 +8929,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 52,
-        "central_usd_m": 105,
-        "high_usd_m": 158
+        "low_usd_m": 48.9,
+        "central_usd_m": 98.8,
+        "high_usd_m": 148.7
       },
       "code_compliant": {
-        "low_usd_m": 60,
-        "central_usd_m": 128,
-        "high_usd_m": 197
+        "low_usd_m": 56.5,
+        "central_usd_m": 120.5,
+        "high_usd_m": 185.4
       },
       "build_back_better": {
-        "low_usd_m": 68,
-        "central_usd_m": 157,
-        "high_usd_m": 246,
+        "low_usd_m": 64.0,
+        "central_usd_m": 147.8,
+        "high_usd_m": 231.5,
         "tech_overlays": [
           "process_electrification",
           "smart_manufacturing",
@@ -9034,8 +9057,9 @@
       "missile_strike",
       "destroyed"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KRYVORIZKA_TPP_2022_10_18",
@@ -9065,18 +9089,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "DTEK Energy: October 2022 infrastructure attack damage report",
-          "url": "https://dtek.com/en/media/news/october-2022-attack/",
+          "title": "Reuters: Ukrainian energy ministry halts energy exports due to Russian missile strikes (10 Oct 2022)",
+          "url": "https://www.reuters.com/business/energy/ukrainian-energy-ministry-halts-energy-exports-due-russian-missile-strikes-2022-10-10/",
           "source_code": "eRECOVERY"
         },
         {
-          "title": "KSE Institute: Ukraine Energy Infrastructure Damage Tracker",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Flash Update — October 2022 Energy Attacks",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-october-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -9101,19 +9125,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 778,
-        "central_usd_m": 1602,
-        "high_usd_m": 2426
+        "low_usd_m": 1088.6,
+        "central_usd_m": 2241.5,
+        "high_usd_m": 3394.4
       },
       "code_compliant": {
-        "low_usd_m": 895,
-        "central_usd_m": 1964,
-        "high_usd_m": 3032
+        "low_usd_m": 1252.3,
+        "central_usd_m": 2748.0,
+        "high_usd_m": 4242.3
       },
       "build_back_better": {
-        "low_usd_m": 1012,
-        "central_usd_m": 2447,
-        "high_usd_m": 3881
+        "low_usd_m": 1416.0,
+        "central_usd_m": 3423.8,
+        "high_usd_m": 5430.2
       }
     },
     "financing_structures": {
@@ -9229,8 +9253,9 @@
       "large_scale",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KUINDZHI_MUSEUM_MARIUPOL_2022_03_25",
@@ -9260,14 +9285,9 @@
       ],
       "evidence_sources": [
         {
-          "title": "UNESCO: Kuindzhi Museum Mariupol Damage Report",
-          "url": "https://www.unesco.org/en/articles/kuindzhi-museum-mariupol",
+          "title": "UNESCO: Damaged cultural sites in Ukraine (verified list, incl. Kuindzhi Museum Mariupol)",
+          "url": "https://www.unesco.org/en/ukraine-war/damaged-cultural-sites",
           "source_code": "OCHA"
-        },
-        {
-          "title": "Bellingcat: Mariupol Cultural Heritage Damage Analysis",
-          "url": "https://www.bellingcat.com/news/2022/04/20/mariupol-cultural-damage",
-          "source_code": "BELLINGCAT"
         }
       ]
     },
@@ -9295,19 +9315,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 26,
-        "central_usd_m": 75,
-        "high_usd_m": 124
+        "low_usd_m": 28.0,
+        "central_usd_m": 80.9,
+        "high_usd_m": 133.7
       },
       "code_compliant": {
-        "low_usd_m": 29,
-        "central_usd_m": 93,
-        "high_usd_m": 156
+        "low_usd_m": 31.3,
+        "central_usd_m": 100.3,
+        "high_usd_m": 168.2
       },
       "build_back_better": {
-        "low_usd_m": 33,
-        "central_usd_m": 116,
-        "high_usd_m": 199
+        "low_usd_m": 35.6,
+        "central_usd_m": 125.1,
+        "high_usd_m": 214.6
       }
     },
     "financing_structures": {
@@ -9413,8 +9433,9 @@
       "occupied",
       "art_collection"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KUPYANSK_RESIDENTIAL_2022_02_28",
@@ -9444,13 +9465,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine: Kupyansk Post-Liberation Assessment",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kupyansk-assessment",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Kharkiv Oblast Residential Damage",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -9479,19 +9500,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 107,
-        "central_usd_m": 225,
-        "high_usd_m": 343
+        "low_usd_m": 108.8,
+        "central_usd_m": 228.8,
+        "high_usd_m": 348.8
       },
       "code_compliant": {
-        "low_usd_m": 123,
-        "central_usd_m": 276,
-        "high_usd_m": 429
+        "low_usd_m": 125.1,
+        "central_usd_m": 280.7,
+        "high_usd_m": 436.3
       },
       "build_back_better": {
-        "low_usd_m": 139,
-        "central_usd_m": 344,
-        "high_usd_m": 549
+        "low_usd_m": 141.4,
+        "central_usd_m": 349.8,
+        "high_usd_m": 558.3
       }
     },
     "financing_structures": {
@@ -9595,8 +9616,9 @@
       "frontline",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "KUPYANSK_SCHOOL_COMPLEX_2022_09_10",
@@ -9626,13 +9648,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine: Kupyansk Post-Liberation Assessment",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kupyansk-assessment-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Kharkiv Oblast Education Infrastructure",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-education",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -9656,19 +9678,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 11,
-        "central_usd_m": 24,
-        "high_usd_m": 37
+        "low_usd_m": 11.9,
+        "central_usd_m": 25.9,
+        "high_usd_m": 39.9
       },
       "code_compliant": {
-        "low_usd_m": 13,
-        "central_usd_m": 29,
-        "high_usd_m": 46
+        "low_usd_m": 14.0,
+        "central_usd_m": 31.3,
+        "high_usd_m": 49.6
       },
       "build_back_better": {
-        "low_usd_m": 15,
-        "central_usd_m": 37,
-        "high_usd_m": 59
+        "low_usd_m": 16.2,
+        "central_usd_m": 39.9,
+        "high_usd_m": 63.6
       }
     },
     "financing_structures": {
@@ -9773,8 +9795,9 @@
       "shelling",
       "frontline"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "LADYZHYNSKA_TPP_2024_04_11",
@@ -9804,13 +9827,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "DTEK Energy: Ladyzhynska TPP destroyed by missile strikes April 2024",
-          "url": "https://dtek.com/en/media/news/ladyzhynska-tpp-destroyed/",
+          "title": "NV: Russian missile attack severely damaged all power units of Burshtyn and Ladyzhyn TPPs (April 2024)",
+          "url": "https://english.nv.ua/nation/russian-missile-attack-severely-damaged-all-power-units-of-burshtyn-and-ladyzhyn-tpps-50405199.html",
           "source_code": "eRECOVERY"
         },
         {
-          "title": "KSE Institute: DTEK Energy Infrastructure Damage — April 2024",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-energy-2024",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -9835,19 +9858,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 747,
-        "central_usd_m": 1330,
-        "high_usd_m": 1913
+        "low_usd_m": 1045.2,
+        "central_usd_m": 1860.9,
+        "high_usd_m": 2676.6
       },
       "code_compliant": {
-        "low_usd_m": 859,
-        "central_usd_m": 1625,
-        "high_usd_m": 2391
+        "low_usd_m": 1201.9,
+        "central_usd_m": 2273.7,
+        "high_usd_m": 3345.4
       },
       "build_back_better": {
-        "low_usd_m": 971,
-        "central_usd_m": 2016,
-        "high_usd_m": 3060
+        "low_usd_m": 1358.6,
+        "central_usd_m": 2820.7,
+        "high_usd_m": 4281.5
       }
     },
     "financing_structures": {
@@ -9963,8 +9986,9 @@
       "large_scale",
       "grid_critical"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "LYMAN_DISTRICT_HOSPITAL_2022_05_20",
@@ -9993,13 +10017,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Humanitarian Situation Report — May–June 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-situation-report-may-june-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Donetsk Oblast Damage Tracker — Healthcare Facilities",
-          "url": "https://kse.ua/wp-content/uploads/2022/09/KSE_Donetsk_Healthcare_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -10029,19 +10053,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 18,
-        "central_usd_m": 34,
-        "high_usd_m": 50
+        "low_usd_m": 19.4,
+        "central_usd_m": 36.7,
+        "high_usd_m": 53.9
       },
       "code_compliant": {
-        "low_usd_m": 21,
-        "central_usd_m": 41,
-        "high_usd_m": 63
+        "low_usd_m": 22.6,
+        "central_usd_m": 44.2,
+        "high_usd_m": 67.9
       },
       "build_back_better": {
-        "low_usd_m": 24,
-        "central_usd_m": 51,
-        "high_usd_m": 78,
+        "low_usd_m": 25.9,
+        "central_usd_m": 55.0,
+        "high_usd_m": 84.1,
         "tech_overlays": [
           "microgrid",
           "modular_clinical_units",
@@ -10153,8 +10177,9 @@
       "destroyed",
       "recently_liberated"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "LYMAN_RESIDENTIAL_2022_05_20",
@@ -10184,13 +10209,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Donetsk residential database",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Lyman damage analysis 2022",
-          "url": "https://www.bellingcat.com/news/2022/10/lyman-ukraine-damage",
+          "title": "Associated Press: Destruction in Lyman, Donetsk Oblast (2022)",
+          "url": "https://apnews.com/article/russia-ukraine-business-war-crimes-donetsk-59c7e2747b3bde5fdf78ca94aca8bf54",
           "source_code": "BELLINGCAT"
         }
       ]
@@ -10220,19 +10245,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 136,
-        "central_usd_m": 291,
-        "high_usd_m": 446
+        "low_usd_m": 138.3,
+        "central_usd_m": 295.9,
+        "high_usd_m": 453.6
       },
       "code_compliant": {
-        "low_usd_m": 156,
-        "central_usd_m": 357,
-        "high_usd_m": 558
+        "low_usd_m": 158.6,
+        "central_usd_m": 363.1,
+        "high_usd_m": 567.5
       },
       "build_back_better": {
-        "low_usd_m": 177,
-        "central_usd_m": 445,
-        "high_usd_m": 714,
+        "low_usd_m": 180.0,
+        "central_usd_m": 452.5,
+        "high_usd_m": 726.1,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction",
@@ -10341,8 +10366,9 @@
       "re_damaged",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "LYMAN_RESIDENTIAL_DISTRICT_2022_05_20",
@@ -10371,13 +10397,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Humanitarian Situation Report — Lyman May 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-situation-report-may-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Donetsk Oblast Residential Damage Tracker — Lyman",
-          "url": "https://kse.ua/wp-content/uploads/2022/10/KSE_Donetsk_Lyman_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -10407,19 +10433,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 72,
-        "central_usd_m": 126,
-        "high_usd_m": 180
+        "low_usd_m": 73.2,
+        "central_usd_m": 128.1,
+        "high_usd_m": 183.1
       },
       "code_compliant": {
-        "low_usd_m": 83,
-        "central_usd_m": 154,
-        "high_usd_m": 225
+        "low_usd_m": 84.4,
+        "central_usd_m": 156.6,
+        "high_usd_m": 228.8
       },
       "build_back_better": {
-        "low_usd_m": 94,
-        "central_usd_m": 189,
-        "high_usd_m": 284,
+        "low_usd_m": 95.6,
+        "central_usd_m": 192.2,
+        "high_usd_m": 288.8,
         "tech_overlays": [
           "passive_house_standard",
           "district_heat_metering",
@@ -10531,8 +10557,9 @@
       "severe",
       "recently_liberated"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "LYMAN_WATER_TREATMENT_2022_05_01",
@@ -10561,13 +10588,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Humanitarian Situation Report — Water Infrastructure Donetsk May 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-water-donetsk-may-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Donetsk Oblast Water Infrastructure Damage — 2022",
-          "url": "https://kse.ua/wp-content/uploads/2022/09/KSE_Donetsk_Water_Damage_2022.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -10597,19 +10624,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 14,
-        "central_usd_m": 25,
-        "high_usd_m": 36
+        "low_usd_m": 15.1,
+        "central_usd_m": 27.0,
+        "high_usd_m": 38.8
       },
       "code_compliant": {
-        "low_usd_m": 16,
-        "central_usd_m": 31,
-        "high_usd_m": 45
+        "low_usd_m": 17.3,
+        "central_usd_m": 33.4,
+        "high_usd_m": 48.5
       },
       "build_back_better": {
-        "low_usd_m": 18,
-        "central_usd_m": 38,
-        "high_usd_m": 58,
+        "low_usd_m": 19.4,
+        "central_usd_m": 41.0,
+        "high_usd_m": 62.5,
         "tech_overlays": [
           "smart_water_metering",
           "energy_efficient_pumping",
@@ -10721,8 +10748,9 @@
       "destroyed",
       "recently_liberated"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MARIUPOL_DRAMA_THEATRE_2022_03_16",
@@ -10753,23 +10781,8 @@
       ],
       "evidence_sources": [
         {
-          "title": "Amnesty International: Mariupol Theatre Strike — War Crime Investigation",
-          "url": "https://www.amnesty.org/en/latest/news/2022/06/ukraine-theatre-strike-in-mariupol-was-a-deliberate-attack-killing-hundreds-new-investigation/",
-          "source_code": "OCHA"
-        },
-        {
-          "title": "Human Rights Watch: Mariupol Theatre Attack",
-          "url": "https://www.hrw.org/news/2022/03/24/ukraine-russian-strike-mariupol-theater",
-          "source_code": "OCHA"
-        },
-        {
-          "title": "Bellingcat: Mariupol Theatre Satellite Imagery Analysis",
-          "url": "https://www.bellingcat.com/news/2022/03/17/mariupol-theatre-attack",
-          "source_code": "BELLINGCAT"
-        },
-        {
-          "title": "Associated Press: Mariupol Theatre Before and After Satellite Images",
-          "url": "https://apnews.com/article/russia-ukraine-mariupol-theater",
+          "title": "Amnesty International: Deadly Mariupol Theatre Strike a Clear War Crime - New Investigation (June 2022)",
+          "url": "https://www.amnesty.org/en/latest/news/2022/06/ukraine-deadly-mariupol-theatre-strike-a-clear-war-crime-by-russian-forces-new-investigation/",
           "source_code": "OCHA"
         }
       ]
@@ -10804,19 +10817,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 55,
-        "central_usd_m": 151,
-        "high_usd_m": 248
+        "low_usd_m": 59.3,
+        "central_usd_m": 162.8,
+        "high_usd_m": 267.4
       },
       "code_compliant": {
-        "low_usd_m": 64,
-        "central_usd_m": 187,
-        "high_usd_m": 310
+        "low_usd_m": 69.0,
+        "central_usd_m": 201.6,
+        "high_usd_m": 334.2
       },
       "build_back_better": {
-        "low_usd_m": 72,
-        "central_usd_m": 234,
-        "high_usd_m": 396,
+        "low_usd_m": 77.6,
+        "central_usd_m": 252.3,
+        "high_usd_m": 427.0,
         "tech_overlays": [
           "passive_building_standard",
           "cultural_heritage_bim",
@@ -10928,8 +10941,9 @@
       "occupied",
       "war_crime_documented"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MARIUPOL_LIVOBEREZHNYI_RESIDENTIAL_2022_03_01",
@@ -10959,19 +10973,14 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Mariupol Total Damage Assessment — Residential",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-mariupol-residential",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN Habitat: Mariupol City Damage Survey",
-          "url": "https://unhabitat.org/ukraine/mariupol",
+          "title": "UNOSAT Damage Assessment Overview Map - Mariupolska Hromada, Donetsk Oblast",
+          "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-mariupolska-hromada-donetsk-oblast-0",
           "source_code": "OCHA"
-        },
-        {
-          "title": "Bellingcat: Mariupol Residential District Satellite Analysis",
-          "url": "https://www.bellingcat.com/news/2022/05/15/mariupol-residential-damage",
-          "source_code": "BELLINGCAT"
         }
       ]
     },
@@ -10999,19 +11008,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 3117,
-        "central_usd_m": 5745,
-        "high_usd_m": 8374
+        "low_usd_m": 3169.8,
+        "central_usd_m": 5842.4,
+        "high_usd_m": 8515.9
       },
       "code_compliant": {
-        "low_usd_m": 3585,
-        "central_usd_m": 7026,
-        "high_usd_m": 10467
+        "low_usd_m": 3645.8,
+        "central_usd_m": 7145.1,
+        "high_usd_m": 10644.4
       },
       "build_back_better": {
-        "low_usd_m": 4052,
-        "central_usd_m": 8725,
-        "high_usd_m": 13398
+        "low_usd_m": 4120.7,
+        "central_usd_m": 8872.9,
+        "high_usd_m": 13625.1
       }
     },
     "financing_structures": {
@@ -11115,8 +11124,9 @@
       "occupied",
       "large_scale"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MARIUPOL_LIVYI_BEREG_RESIDENTIAL_2022_03_01",
@@ -11146,18 +11156,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — Mariupol Siege March–April 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-mariupol-siege-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Mariupol Residential Damage Assessment — Full City Survey",
-          "url": "https://kse.ua/wp-content/uploads/2022/07/KSE_Mariupol_Residential_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Mariupol Siege — District-Level Satellite Analysis",
-          "url": "https://www.bellingcat.com/news/2022/04/mariupol-district-analysis",
+          "title": "UNOSAT Damage Assessment Overview Map - Mariupolska Hromada, Donetsk Oblast",
+          "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-mariupolska-hromada-donetsk-oblast-0",
           "source_code": "BELLINGCAT"
         }
       ]
@@ -11187,19 +11197,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 496,
-        "central_usd_m": 868,
-        "high_usd_m": 1240
+        "low_usd_m": 504.4,
+        "central_usd_m": 882.7,
+        "high_usd_m": 1261.0
       },
       "code_compliant": {
-        "low_usd_m": 570,
-        "central_usd_m": 1060,
-        "high_usd_m": 1550
+        "low_usd_m": 579.7,
+        "central_usd_m": 1078.0,
+        "high_usd_m": 1576.3
       },
       "build_back_better": {
-        "low_usd_m": 645,
-        "central_usd_m": 1300,
-        "high_usd_m": 1955,
+        "low_usd_m": 655.9,
+        "central_usd_m": 1322.0,
+        "high_usd_m": 1988.1,
         "tech_overlays": [
           "passive_house_standard",
           "district_heat_metering",
@@ -11312,8 +11322,9 @@
       "occupied",
       "large_scale"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MARIUPOL_MATERNITY_HOSPITAL_3_2022_03_09",
@@ -11342,18 +11353,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "Human Rights Watch: Mariupol Hospital Attack",
-          "url": "https://www.hrw.org/news/2022/03/24/ukraine-russian-strike-mariupol-maternity-hospital",
+          "title": "Associated Press: Mariupol maternity hospital attack (March 2022)",
+          "url": "https://apnews.com/article/russia-ukraine-war-maternity-hospital-pregnant-woman-dead-c0f2f859296f9f02be24fc9edfca1085",
           "source_code": "OCHA"
         },
         {
-          "title": "Bellingcat: Mariupol Maternity Hospital Bombing Investigation",
-          "url": "https://www.bellingcat.com/news/2022/03/09/mariupol-maternity-hospital-bombing",
-          "source_code": "BELLINGCAT"
-        },
-        {
-          "title": "UN OCHA Ukraine Flash Update #8 — Mariupol Attacks",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-8-march-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -11382,19 +11388,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 28,
-        "central_usd_m": 45,
-        "high_usd_m": 63
+        "low_usd_m": 30.2,
+        "central_usd_m": 48.5,
+        "high_usd_m": 67.9
       },
       "code_compliant": {
-        "low_usd_m": 32,
-        "central_usd_m": 55,
-        "high_usd_m": 79
+        "low_usd_m": 34.5,
+        "central_usd_m": 59.3,
+        "high_usd_m": 85.2
       },
       "build_back_better": {
-        "low_usd_m": 36,
-        "central_usd_m": 68,
-        "high_usd_m": 100
+        "low_usd_m": 38.8,
+        "central_usd_m": 73.3,
+        "high_usd_m": 107.8
       }
     },
     "financing_structures": {
@@ -11500,8 +11506,9 @@
       "occupied",
       "war_crime_documented"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MARIUPOL_PRIMORSKY_RESIDENTIAL_2022_03_01",
@@ -11531,19 +11538,14 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Mariupol residential sector damage estimate",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Mariupol City Council damage estimate 2022 (pre-occupation data)",
-          "url": "https://www.mariupol-city.gov.ua/news/damage-2022",
+          "title": "UNOSAT Damage Assessment Overview Map - Mariupolska Hromada, Donetsk Oblast",
+          "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-mariupolska-hromada-donetsk-oblast-0",
           "source_code": "eRECOVERY"
-        },
-        {
-          "title": "Bellingcat: Mariupol residential destruction satellite analysis",
-          "url": "https://www.bellingcat.com/news/2022/04/mariupol-residential",
-          "source_code": "BELLINGCAT"
         }
       ]
     },
@@ -11571,19 +11573,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 2449,
-        "central_usd_m": 4514,
-        "high_usd_m": 6579
+        "low_usd_m": 2490.5,
+        "central_usd_m": 4590.5,
+        "high_usd_m": 6690.5
       },
       "code_compliant": {
-        "low_usd_m": 2817,
-        "central_usd_m": 5520,
-        "high_usd_m": 8224
+        "low_usd_m": 2864.7,
+        "central_usd_m": 5613.6,
+        "high_usd_m": 8363.4
       },
       "build_back_better": {
-        "low_usd_m": 3184,
-        "central_usd_m": 6855,
-        "high_usd_m": 10527,
+        "low_usd_m": 3238.0,
+        "central_usd_m": 6971.2,
+        "high_usd_m": 10705.4,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction",
@@ -11687,8 +11689,9 @@
       "pipeline_only",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MARIUPOL_ROAD_NETWORK_2022_03_01",
@@ -11717,13 +11720,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — Mariupol Siege Infrastructure Damage",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-mariupol-infrastructure-march-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Mariupol Transport Infrastructure Damage Assessment 2022",
-          "url": "https://kse.ua/wp-content/uploads/2022/07/KSE_Mariupol_Transport_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -11753,19 +11756,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 195,
-        "central_usd_m": 342,
-        "high_usd_m": 490
+        "low_usd_m": 208.6,
+        "central_usd_m": 365.9,
+        "high_usd_m": 524.3
       },
       "code_compliant": {
-        "low_usd_m": 224,
-        "central_usd_m": 418,
-        "high_usd_m": 612
+        "low_usd_m": 239.7,
+        "central_usd_m": 447.2,
+        "high_usd_m": 654.8
       },
       "build_back_better": {
-        "low_usd_m": 253,
-        "central_usd_m": 513,
-        "high_usd_m": 773,
+        "low_usd_m": 270.7,
+        "central_usd_m": 548.9,
+        "high_usd_m": 827.1,
         "tech_overlays": [
           "smart_traffic_management",
           "ev_charging_infrastructure",
@@ -11877,8 +11880,9 @@
       "severe",
       "occupied"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MARIUPOL_SCHOOL_89_2022_03_01",
@@ -11907,13 +11911,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — Mariupol Siege March 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-mariupol-siege-march-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Mariupol City Damage Assessment — Educational Infrastructure",
-          "url": "https://kse.ua/wp-content/uploads/2022/07/KSE_Mariupol_Education_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -11943,19 +11947,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 6,
-        "central_usd_m": 11,
-        "high_usd_m": 16
+        "low_usd_m": 6.5,
+        "central_usd_m": 11.9,
+        "high_usd_m": 17.3
       },
       "code_compliant": {
-        "low_usd_m": 7,
-        "central_usd_m": 13,
-        "high_usd_m": 20
+        "low_usd_m": 7.5,
+        "central_usd_m": 14.0,
+        "high_usd_m": 21.6
       },
       "build_back_better": {
-        "low_usd_m": 8,
-        "central_usd_m": 16,
-        "high_usd_m": 24,
+        "low_usd_m": 8.6,
+        "central_usd_m": 17.3,
+        "high_usd_m": 25.9,
         "tech_overlays": [
           "passive_house_standard",
           "microgrid",
@@ -12067,8 +12071,9 @@
       "destroyed",
       "occupied"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MARIUPOL_SEA_PORT_2022_03_01",
@@ -12098,13 +12103,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Mariupol Port and Industrial Damage Assessment",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-mariupol-port",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine: Mariupol Maritime Infrastructure",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mariupol-port-situation",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -12139,19 +12144,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 12,
-        "central_usd_m": 29,
-        "high_usd_m": 46
+        "low_usd_m": 12.8,
+        "central_usd_m": 31.0,
+        "high_usd_m": 49.2
       },
       "code_compliant": {
-        "low_usd_m": 14,
-        "central_usd_m": 36,
-        "high_usd_m": 58
+        "low_usd_m": 15.0,
+        "central_usd_m": 38.5,
+        "high_usd_m": 62.1
       },
       "build_back_better": {
-        "low_usd_m": 16,
-        "central_usd_m": 45,
-        "high_usd_m": 74
+        "low_usd_m": 17.1,
+        "central_usd_m": 48.1,
+        "high_usd_m": 79.2
       }
     },
     "financing_structures": {
@@ -12268,8 +12273,9 @@
       "occupied",
       "strategic"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MARIUPOL_STATE_UNIVERSITY_2022_03_15",
@@ -12299,13 +12305,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "Bellingcat: Mariupol Educational Institutions Satellite Analysis",
-          "url": "https://www.bellingcat.com/news/2022/04/15/mariupol-infrastructure-damage",
+          "title": "UNOSAT Damage Assessment Overview Map - Mariupolska Hromada, Donetsk Oblast",
+          "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-mariupolska-hromada-donetsk-oblast-0",
           "source_code": "BELLINGCAT"
         },
         {
-          "title": "UN OCHA Ukraine: Mariupol Situation Report",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mariupol-situation-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -12334,19 +12340,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 227,
-        "central_usd_m": 402,
-        "high_usd_m": 576
+        "low_usd_m": 244.7,
+        "central_usd_m": 433.4,
+        "high_usd_m": 621.0
       },
       "code_compliant": {
-        "low_usd_m": 261,
-        "central_usd_m": 491,
-        "high_usd_m": 720
+        "low_usd_m": 281.4,
+        "central_usd_m": 529.4,
+        "high_usd_m": 776.3
       },
       "build_back_better": {
-        "low_usd_m": 295,
-        "central_usd_m": 609,
-        "high_usd_m": 922
+        "low_usd_m": 318.1,
+        "central_usd_m": 656.6,
+        "high_usd_m": 994.1
       }
     },
     "financing_structures": {
@@ -12451,8 +12457,9 @@
       "shelling",
       "occupied"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MARIUPOL_TECHNICAL_UNIVERSITY_2022_03_01",
@@ -12482,13 +12489,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — education sector damage database",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UA Ministry of Education damage report — Mariupol higher education 2022",
-          "url": "https://mon.gov.ua/ua/news/mon-ukraine-damage-mariupol-2022",
+          "title": "UNICEF Ukraine: Children return to schools in ruins",
+          "url": "https://www.unicef.org/ukraine/en/stories/children-return-to-schools-in-ruins",
           "source_code": "eRECOVERY"
         }
       ]
@@ -12517,19 +12524,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 128,
-        "central_usd_m": 227,
-        "high_usd_m": 325
+        "low_usd_m": 138.0,
+        "central_usd_m": 244.7,
+        "high_usd_m": 350.4
       },
       "code_compliant": {
-        "low_usd_m": 147,
-        "central_usd_m": 277,
-        "high_usd_m": 407
+        "low_usd_m": 158.5,
+        "central_usd_m": 298.7,
+        "high_usd_m": 438.8
       },
       "build_back_better": {
-        "low_usd_m": 167,
-        "central_usd_m": 344,
-        "high_usd_m": 521,
+        "low_usd_m": 180.1,
+        "central_usd_m": 370.9,
+        "high_usd_m": 561.7,
         "tech_overlays": [
           "fibre",
           "digital_labs",
@@ -12633,8 +12640,9 @@
       "pipeline_only",
       "multiple"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MARIUPOL_WATER_WASTEWATER_2022_03_01",
@@ -12666,10 +12674,6 @@
         {
           "title": "KSE Russia Will Pay — Mariupol infrastructure",
           "source_code": "KSE"
-        },
-        {
-          "title": "UN OCHA Ukraine Situation Reports — Mariupol siege",
-          "source_code": "OCHA"
         }
       ]
     },
@@ -12697,19 +12701,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 470,
-        "central_usd_m": 1102,
-        "high_usd_m": 1735
+        "low_usd_m": 506.7,
+        "central_usd_m": 1188.2,
+        "high_usd_m": 1870.7
       },
       "code_compliant": {
-        "low_usd_m": 540,
-        "central_usd_m": 1355,
-        "high_usd_m": 2169
+        "low_usd_m": 582.2,
+        "central_usd_m": 1460.9,
+        "high_usd_m": 2338.6
       },
       "build_back_better": {
-        "low_usd_m": 611,
-        "central_usd_m": 1694,
-        "high_usd_m": 2776
+        "low_usd_m": 658.8,
+        "central_usd_m": 1826.5,
+        "high_usd_m": 2993.1
       }
     },
     "financing_structures": {
@@ -12813,8 +12817,9 @@
       "artillery_strike",
       "occupied"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MYKOLAIV_NORTH_RESIDENTIAL_2022_04_01",
@@ -12844,13 +12849,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Mykolaiv residential damage assessment",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — Mykolaiv Oblast",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mykolaiv-sitrep-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -12880,19 +12885,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 137,
-        "central_usd_m": 353,
-        "high_usd_m": 569
+        "low_usd_m": 139.3,
+        "central_usd_m": 359.0,
+        "high_usd_m": 578.6
       },
       "code_compliant": {
-        "low_usd_m": 157,
-        "central_usd_m": 434,
-        "high_usd_m": 712
+        "low_usd_m": 159.7,
+        "central_usd_m": 441.4,
+        "high_usd_m": 724.1
       },
       "build_back_better": {
-        "low_usd_m": 178,
-        "central_usd_m": 544,
-        "high_usd_m": 911,
+        "low_usd_m": 181.0,
+        "central_usd_m": 553.2,
+        "high_usd_m": 926.4,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction",
@@ -13000,8 +13005,9 @@
       "large_scale",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MYKOLAIV_REGIONAL_HOSPITAL_2022_04_15",
@@ -13031,13 +13037,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Humanitarian Situation Report — April 2022 Healthcare Attacks",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-situation-report-april-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Mykolaiv Oblast Damage Assessment — 2022",
-          "url": "https://kse.ua/wp-content/uploads/2022/09/KSE_Mykolaiv_Damage_2022.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -13068,19 +13074,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 97,
-        "central_usd_m": 171,
-        "high_usd_m": 245
+        "low_usd_m": 104.6,
+        "central_usd_m": 184.4,
+        "high_usd_m": 264.2
       },
       "code_compliant": {
-        "low_usd_m": 112,
-        "central_usd_m": 208,
-        "high_usd_m": 306
+        "low_usd_m": 120.8,
+        "central_usd_m": 224.3,
+        "high_usd_m": 329.9
       },
       "build_back_better": {
-        "low_usd_m": 126,
-        "central_usd_m": 257,
-        "high_usd_m": 388,
+        "low_usd_m": 135.9,
+        "central_usd_m": 277.1,
+        "high_usd_m": 418.3,
         "tech_overlays": [
           "microgrid",
           "modular_clinical_units",
@@ -13191,8 +13197,9 @@
       "missile_strike",
       "severe"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MYKOLAIV_RESIDENTIAL_2022_08_01",
@@ -13222,13 +13229,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Mykolaiv Oblast Residential Damage",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-mykolaiv",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine: Mykolaiv Situation Report",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mykolaiv-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -13258,19 +13265,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 185,
-        "central_usd_m": 478,
-        "high_usd_m": 771
+        "low_usd_m": 188.1,
+        "central_usd_m": 486.1,
+        "high_usd_m": 784.1
       },
       "code_compliant": {
-        "low_usd_m": 213,
-        "central_usd_m": 588,
-        "high_usd_m": 964
+        "low_usd_m": 216.6,
+        "central_usd_m": 598.0,
+        "high_usd_m": 980.3
       },
       "build_back_better": {
-        "low_usd_m": 241,
-        "central_usd_m": 737,
-        "high_usd_m": 1233
+        "low_usd_m": 245.1,
+        "central_usd_m": 749.5,
+        "high_usd_m": 1253.9
       }
     },
     "financing_structures": {
@@ -13372,8 +13379,9 @@
       "shelling",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MYKOLAIV_SHIPYARDS_2022_03_01",
@@ -13403,13 +13411,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Mykolaiv Industrial and Transport Infrastructure Damage",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-mykolaiv-industrial",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine: Mykolaiv Situation Report",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mykolaiv-situation-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -13439,19 +13447,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 4,
-        "central_usd_m": 10,
-        "high_usd_m": 17
+        "low_usd_m": 4.3,
+        "central_usd_m": 10.7,
+        "high_usd_m": 18.2
       },
       "code_compliant": {
-        "low_usd_m": 4,
-        "central_usd_m": 13,
-        "high_usd_m": 21
+        "low_usd_m": 4.3,
+        "central_usd_m": 13.9,
+        "high_usd_m": 22.5
       },
       "build_back_better": {
-        "low_usd_m": 5,
-        "central_usd_m": 16,
-        "high_usd_m": 27
+        "low_usd_m": 5.3,
+        "central_usd_m": 17.1,
+        "high_usd_m": 28.9
       }
     },
     "financing_structures": {
@@ -13556,8 +13564,9 @@
       "re_damaged",
       "industrial"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "MYKOLAIV_WATER_SUPPLY_2022_03_01",
@@ -13592,13 +13601,13 @@
           "source_code": "RDNA3"
         },
         {
-          "title": "UNICEF WASH Ukraine — Mykolaiv water supply disruption report 2022",
-          "url": "https://www.unicef.org/ukraine/reports/mykolaiv-wash-2022",
+          "title": "BBC: Mykolaiv residents without water supply after Russian bombardments",
+          "url": "https://www.bbc.co.uk/news/world-europe-63383605",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Russia Will Pay — Mykolaiv water infrastructure",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -13623,19 +13632,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 61,
-        "central_usd_m": 204,
-        "high_usd_m": 348
+        "low_usd_m": 65.8,
+        "central_usd_m": 220.0,
+        "high_usd_m": 375.2
       },
       "code_compliant": {
-        "low_usd_m": 70,
-        "central_usd_m": 252,
-        "high_usd_m": 435
+        "low_usd_m": 75.5,
+        "central_usd_m": 271.7,
+        "high_usd_m": 469.0
       },
       "build_back_better": {
-        "low_usd_m": 79,
-        "central_usd_m": 318,
-        "high_usd_m": 557,
+        "low_usd_m": 85.2,
+        "central_usd_m": 342.9,
+        "high_usd_m": 600.6,
         "tech_overlays": [
           "smart_water_metering",
           "energy_efficient_pumping",
@@ -13748,8 +13757,9 @@
       "early_reconstruction_precedent",
       "canal"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "NIKOPOL_RESIDENTIAL_2022_08_01",
@@ -13779,13 +13789,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Dnipropetrovsk residential damage database",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — Nikopol shelling from NPP area 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-nikopol-sitrep-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -13815,19 +13825,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 72,
-        "central_usd_m": 182,
-        "high_usd_m": 292
+        "low_usd_m": 73.2,
+        "central_usd_m": 185.1,
+        "high_usd_m": 296.9
       },
       "code_compliant": {
-        "low_usd_m": 83,
-        "central_usd_m": 224,
-        "high_usd_m": 365
+        "low_usd_m": 84.4,
+        "central_usd_m": 227.8,
+        "high_usd_m": 371.2
       },
       "build_back_better": {
-        "low_usd_m": 94,
-        "central_usd_m": 281,
-        "high_usd_m": 468,
+        "low_usd_m": 95.6,
+        "central_usd_m": 285.8,
+        "high_usd_m": 475.9,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction"
@@ -13935,8 +13945,9 @@
       "nuclear_adjacent",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ODESA_FINE_ARTS_MUSEUM_2023_07_23",
@@ -13966,8 +13977,8 @@
       ],
       "evidence_sources": [
         {
-          "title": "UNESCO: Odesa Cultural Heritage Damage July 2023",
-          "url": "https://www.unesco.org/en/articles/odesa-cultural-damage-july-2023",
+          "title": "UNESCO: UNESCO strongly condemns repeated attacks against cultural heritage in Odesa, including World Heritage (July 2023)",
+          "url": "https://www.unesco.org/en/articles/odesa-unesco-strongly-condemns-repeated-attacks-against-cultural-heritage-including-world-heritage",
           "source_code": "OCHA"
         },
         {
@@ -14002,19 +14013,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 16,
-        "central_usd_m": 68,
-        "high_usd_m": 121
+        "low_usd_m": 17.3,
+        "central_usd_m": 73.3,
+        "high_usd_m": 130.5
       },
       "code_compliant": {
-        "low_usd_m": 18,
-        "central_usd_m": 84,
-        "high_usd_m": 151
+        "low_usd_m": 19.4,
+        "central_usd_m": 90.6,
+        "high_usd_m": 162.8
       },
       "build_back_better": {
-        "low_usd_m": 21,
-        "central_usd_m": 107,
-        "high_usd_m": 193
+        "low_usd_m": 22.6,
+        "central_usd_m": 115.4,
+        "high_usd_m": 208.1
       }
     },
     "financing_structures": {
@@ -14120,8 +14131,9 @@
       "art_collection",
       "unesco_world_heritage_city"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ODESA_MYKOLAIV_GRAIN_TERMINALS_2022_04_01",
@@ -14152,10 +14164,6 @@
         {
           "title": "KSE Russia Will Pay — Odesa port infrastructure",
           "source_code": "KSE"
-        },
-        {
-          "title": "UN OCHA Ukraine — Black Sea grain corridor impact",
-          "source_code": "OCHA"
         }
       ]
     },
@@ -14191,19 +14199,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 181,
-        "central_usd_m": 574,
-        "high_usd_m": 967
+        "low_usd_m": 170.8,
+        "central_usd_m": 541.5,
+        "high_usd_m": 912.3
       },
       "code_compliant": {
-        "low_usd_m": 208,
-        "central_usd_m": 709,
-        "high_usd_m": 1209
+        "low_usd_m": 196.2,
+        "central_usd_m": 668.9,
+        "high_usd_m": 1140.6
       },
       "build_back_better": {
-        "low_usd_m": 235,
-        "central_usd_m": 892,
-        "high_usd_m": 1548
+        "low_usd_m": 221.7,
+        "central_usd_m": 841.5,
+        "high_usd_m": 1460.4
       }
     },
     "financing_structures": {
@@ -14318,8 +14326,9 @@
       "port",
       "missile_strike"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ODESA_RESIDENTIAL_2023_07_23",
@@ -14349,8 +14358,8 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — Odesa missile strike July 2023",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-jul-2023",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
@@ -14385,19 +14394,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 10,
-        "central_usd_m": 26,
-        "high_usd_m": 41
+        "low_usd_m": 10.2,
+        "central_usd_m": 26.4,
+        "high_usd_m": 41.7
       },
       "code_compliant": {
-        "low_usd_m": 11,
-        "central_usd_m": 32,
-        "high_usd_m": 52
+        "low_usd_m": 11.2,
+        "central_usd_m": 32.5,
+        "high_usd_m": 52.9
       },
       "build_back_better": {
-        "low_usd_m": 13,
-        "central_usd_m": 40,
-        "high_usd_m": 66,
+        "low_usd_m": 13.2,
+        "central_usd_m": 40.7,
+        "high_usd_m": 67.1,
         "tech_overlays": [
           "heritage_conservation_materials",
           "energy_efficiency_envelope"
@@ -14507,8 +14516,9 @@
       "apartment_blocks",
       "unesco_adjacent"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ODESA_TRANSFIGURATION_CATHEDRAL_2023_07_23",
@@ -14539,18 +14549,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UNESCO: Statement on Attack on Odesa UNESCO World Heritage Site",
-          "url": "https://www.unesco.org/en/articles/odesa-world-heritage-attack-july-2023",
+          "title": "UNESCO: UNESCO strongly condemns repeated attacks against cultural heritage in Odesa, including World Heritage (July 2023)",
+          "url": "https://www.unesco.org/en/articles/odesa-unesco-strongly-condemns-repeated-attacks-against-cultural-heritage-including-world-heritage",
           "source_code": "OCHA"
         },
         {
-          "title": "Bellingcat: Odesa UNESCO World Heritage Attack Analysis",
-          "url": "https://www.bellingcat.com/news/2023/07/23/odesa-cathedral-attack",
-          "source_code": "BELLINGCAT"
-        },
-        {
-          "title": "KSE Institute: Heritage Damage — Odesa Oblast",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-heritage-odesa",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -14580,19 +14585,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 19,
-        "central_usd_m": 90,
-        "high_usd_m": 162
+        "low_usd_m": 20.5,
+        "central_usd_m": 97.0,
+        "high_usd_m": 174.7
       },
       "code_compliant": {
-        "low_usd_m": 21,
-        "central_usd_m": 112,
-        "high_usd_m": 202
+        "low_usd_m": 22.6,
+        "central_usd_m": 120.8,
+        "high_usd_m": 217.8
       },
       "build_back_better": {
-        "low_usd_m": 24,
-        "central_usd_m": 142,
-        "high_usd_m": 259
+        "low_usd_m": 25.9,
+        "central_usd_m": 153.1,
+        "high_usd_m": 279.3
       }
     },
     "financing_structures": {
@@ -14696,8 +14701,9 @@
       "missile_strike",
       "unesco_world_heritage_city"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "OKHMATDYT_2024_07_08",
@@ -14728,24 +14734,19 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — 8 July 2024 Mass Casualty Attacks",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-8-july-2024",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "Human Rights Watch: Ukraine: Russian Missile Strikes Hit Children's Hospital",
-          "url": "https://www.hrw.org/news/2024/07/08/ukraine-russian-missile-strikes-hit-childrens-hospital",
+          "title": "Human Rights Watch: Russia July 8 Attack on Children Hospital in Ukraine (Okhmatdyt)",
+          "url": "https://www.hrw.org/news/2024/07/11/russias-july-8-attack-childrens-hospital-ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Damage to Healthcare Infrastructure — July 2024",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
-        },
-        {
-          "title": "Ministry of Health of Ukraine: Okhmatdyt Damage Report",
-          "url": "https://moz.gov.ua/article/news/ohmatdit",
-          "source_code": "eRECOVERY"
         }
       ]
     },
@@ -14781,19 +14782,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 33,
-        "central_usd_m": 57,
-        "high_usd_m": 82
+        "low_usd_m": 35.6,
+        "central_usd_m": 61.5,
+        "high_usd_m": 88.4
       },
       "code_compliant": {
-        "low_usd_m": 38,
-        "central_usd_m": 70,
-        "high_usd_m": 102
+        "low_usd_m": 41.0,
+        "central_usd_m": 75.5,
+        "high_usd_m": 110.0
       },
       "build_back_better": {
-        "low_usd_m": 43,
-        "central_usd_m": 87,
-        "high_usd_m": 131,
+        "low_usd_m": 46.4,
+        "central_usd_m": 93.8,
+        "high_usd_m": 141.2,
         "tech_overlays": [
           "microgrid",
           "modular_clinical_units",
@@ -14909,8 +14910,9 @@
       "tertiary_hospital",
       "high_priority"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ORIKHIV_RESIDENTIAL_2022_08_01",
@@ -14940,13 +14942,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Zaporizhzhia frontline communities",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — Zaporizhzhia frontline 2023",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-zaporizhzhia-frontline-2023",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -14976,19 +14978,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 59,
-        "central_usd_m": 127,
-        "high_usd_m": 195
+        "low_usd_m": 60.0,
+        "central_usd_m": 129.2,
+        "high_usd_m": 198.3
       },
       "code_compliant": {
-        "low_usd_m": 68,
-        "central_usd_m": 156,
-        "high_usd_m": 244
+        "low_usd_m": 69.2,
+        "central_usd_m": 158.6,
+        "high_usd_m": 248.1
       },
       "build_back_better": {
-        "low_usd_m": 77,
-        "central_usd_m": 194,
-        "high_usd_m": 312,
+        "low_usd_m": 78.3,
+        "central_usd_m": 197.3,
+        "high_usd_m": 317.3,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction",
@@ -15097,8 +15099,9 @@
       "re_damaged",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "PRYDNIPROVSKA_CHP_2024_03_22",
@@ -15128,13 +15131,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — March 2024 Energy Infrastructure Attacks",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-march-2024-energy-attacks",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Damage to Energy Infrastructure — Q1 2024 Assessment",
-          "url": "https://kse.ua/wp-content/uploads/2024/04/KSE_Energy_Damage_Q1_2024.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -15165,19 +15168,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 312,
-        "central_usd_m": 492,
-        "high_usd_m": 672
+        "low_usd_m": 436.5,
+        "central_usd_m": 688.4,
+        "high_usd_m": 940.2
       },
       "code_compliant": {
-        "low_usd_m": 359,
-        "central_usd_m": 601,
-        "high_usd_m": 843
+        "low_usd_m": 502.3,
+        "central_usd_m": 840.9,
+        "high_usd_m": 1179.5
       },
       "build_back_better": {
-        "low_usd_m": 406,
-        "central_usd_m": 738,
-        "high_usd_m": 1070,
+        "low_usd_m": 568.1,
+        "central_usd_m": 1032.6,
+        "high_usd_m": 1497.1,
         "tech_overlays": [
           "combined_cycle_upgrade",
           "heat_pump_integration",
@@ -15294,8 +15297,9 @@
       "missile_strike",
       "district_heating"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "SALTIVKA_DISTRICT_KHARKIV_2022_02_24",
@@ -15325,13 +15329,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Kharkiv Residential Damage Assessment — Saltivka District",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-saltivka",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine: Kharkiv Residential Damage Situation Report",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kharkiv-residential-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -15362,19 +15366,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 1339,
-        "central_usd_m": 3445,
-        "high_usd_m": 5550
+        "low_usd_m": 1361.7,
+        "central_usd_m": 3503.4,
+        "high_usd_m": 5644.1
       },
       "code_compliant": {
-        "low_usd_m": 1540,
-        "central_usd_m": 4239,
-        "high_usd_m": 6938
+        "low_usd_m": 1566.1,
+        "central_usd_m": 4310.8,
+        "high_usd_m": 7055.6
       },
       "build_back_better": {
-        "low_usd_m": 1741,
-        "central_usd_m": 5311,
-        "high_usd_m": 8880
+        "low_usd_m": 1770.5,
+        "central_usd_m": 5401.0,
+        "high_usd_m": 9030.5
       }
     },
     "financing_structures": {
@@ -15478,8 +15482,9 @@
       "re_damaged",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "SIEVIERODONETSK_RESIDENTIAL_2022_06_24",
@@ -15509,13 +15514,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Luhansk residential sector damage",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Sievierodonetsk destruction analysis 2022",
-          "url": "https://www.bellingcat.com/news/2022/07/sievierodonetsk-damage",
+          "title": "Reuters: All critical infrastructure in Sievierodonetsk destroyed (May 2022)",
+          "url": "https://www.reuters.com/world/europe/all-critical-infrastructure-ukraines-sievierodonetsk-destroyed-president-2022-05-29/",
           "source_code": "BELLINGCAT"
         }
       ]
@@ -15545,19 +15550,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 991,
-        "central_usd_m": 1826,
-        "high_usd_m": 2662
+        "low_usd_m": 1007.8,
+        "central_usd_m": 1856.9,
+        "high_usd_m": 2707.1
       },
       "code_compliant": {
-        "low_usd_m": 1139,
-        "central_usd_m": 2233,
-        "high_usd_m": 3327
+        "low_usd_m": 1158.3,
+        "central_usd_m": 2270.8,
+        "high_usd_m": 3383.4
       },
       "build_back_better": {
-        "low_usd_m": 1288,
-        "central_usd_m": 2773,
-        "high_usd_m": 4259,
+        "low_usd_m": 1309.8,
+        "central_usd_m": 2820.0,
+        "high_usd_m": 4331.2,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction",
@@ -15667,8 +15672,9 @@
       "re_damaged",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "SKOVORODA_MUSEUM_2022_05_06",
@@ -15703,13 +15709,13 @@
           "source_code": "eRECOVERY"
         },
         {
-          "title": "UNESCO: Cultural Heritage Damage in Ukraine — Kharkiv Oblast",
-          "url": "https://www.unesco.org/en/articles/ukraine-cultural-damage-kharkiv",
+          "title": "UNESCO: Damaged cultural sites in Ukraine (verified list)",
+          "url": "https://www.unesco.org/en/ukraine-war/damaged-cultural-sites",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Heritage Infrastructure Damage — Kharkiv Oblast",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-heritage-kharkiv",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -15739,19 +15745,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 19,
-        "central_usd_m": 54,
-        "high_usd_m": 90
+        "low_usd_m": 20.5,
+        "central_usd_m": 58.2,
+        "high_usd_m": 97.0
       },
       "code_compliant": {
-        "low_usd_m": 22,
-        "central_usd_m": 67,
-        "high_usd_m": 112
+        "low_usd_m": 23.7,
+        "central_usd_m": 72.2,
+        "high_usd_m": 120.8
       },
       "build_back_better": {
-        "low_usd_m": 25,
-        "central_usd_m": 84,
-        "high_usd_m": 144
+        "low_usd_m": 27.0,
+        "central_usd_m": 90.6,
+        "high_usd_m": 155.3
       }
     },
     "financing_structures": {
@@ -15857,8 +15863,9 @@
       "unique_asset",
       "philosopher"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "SLOVIANSK_CHP_2022_04_14",
@@ -15887,13 +15894,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Humanitarian Situation Report — April 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-situation-report-april-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Donetsk Oblast Energy Infrastructure Damage Assessment",
-          "url": "https://kse.ua/wp-content/uploads/2022/09/KSE_Donetsk_Energy_Damage_2022.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -15923,19 +15930,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 108,
-        "central_usd_m": 189,
-        "high_usd_m": 270
+        "low_usd_m": 151.1,
+        "central_usd_m": 264.4,
+        "high_usd_m": 377.8
       },
       "code_compliant": {
-        "low_usd_m": 124,
-        "central_usd_m": 231,
-        "high_usd_m": 337
+        "low_usd_m": 173.5,
+        "central_usd_m": 323.2,
+        "high_usd_m": 471.5
       },
       "build_back_better": {
-        "low_usd_m": 140,
-        "central_usd_m": 284,
-        "high_usd_m": 428,
+        "low_usd_m": 195.9,
+        "central_usd_m": 397.4,
+        "high_usd_m": 598.8,
         "tech_overlays": [
           "combined_cycle_upgrade",
           "smart_grid_integration",
@@ -16053,8 +16060,9 @@
       "artillery_strike",
       "destroyed"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "SLOVIANSK_SCHOOL_COMPLEX_2022_04_14",
@@ -16083,13 +16091,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Humanitarian Situation Report — April 2022 Donetsk",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-situation-report-april-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Donetsk Oblast Education Infrastructure Damage — 2022",
-          "url": "https://kse.ua/wp-content/uploads/2022/09/KSE_Donetsk_Education_Damage_2022.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -16119,19 +16127,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 14,
-        "central_usd_m": 24,
-        "high_usd_m": 35
+        "low_usd_m": 15.1,
+        "central_usd_m": 25.9,
+        "high_usd_m": 37.7
       },
       "code_compliant": {
-        "low_usd_m": 16,
-        "central_usd_m": 29,
-        "high_usd_m": 43
+        "low_usd_m": 17.3,
+        "central_usd_m": 31.3,
+        "high_usd_m": 46.4
       },
       "build_back_better": {
-        "low_usd_m": 18,
-        "central_usd_m": 36,
-        "high_usd_m": 54,
+        "low_usd_m": 19.4,
+        "central_usd_m": 38.8,
+        "high_usd_m": 58.2,
         "tech_overlays": [
           "passive_house_standard",
           "microgrid",
@@ -16242,8 +16250,9 @@
       "artillery_strike",
       "severe"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "SUMY_RESIDENTIAL_2022_03_01",
@@ -16273,13 +16282,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Sumy residential sector damage",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — Sumy Oblast 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-sumy-sitrep-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -16309,19 +16318,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 17,
-        "central_usd_m": 57,
-        "high_usd_m": 97
+        "low_usd_m": 17.3,
+        "central_usd_m": 58.0,
+        "high_usd_m": 98.6
       },
       "code_compliant": {
-        "low_usd_m": 20,
-        "central_usd_m": 70,
-        "high_usd_m": 121
+        "low_usd_m": 20.3,
+        "central_usd_m": 71.2,
+        "high_usd_m": 123.1
       },
       "build_back_better": {
-        "low_usd_m": 22,
-        "central_usd_m": 89,
-        "high_usd_m": 155,
+        "low_usd_m": 22.4,
+        "central_usd_m": 90.5,
+        "high_usd_m": 157.6,
         "tech_overlays": [
           "passive_house_standard",
           "energy_efficiency_envelope"
@@ -16428,8 +16437,9 @@
       "light_damage",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "SVIATOHIRSK_LAVRA_2022_05_30",
@@ -16459,18 +16469,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "UNESCO: Statement on Damage to Sviatohirsk Lavra",
-          "url": "https://www.unesco.org/en/articles/sviatohirsk-lavra-damage",
+          "title": "UNESCO: Damaged cultural sites in Ukraine (verified list, incl. Sviatohirsk Lavra)",
+          "url": "https://www.unesco.org/en/ukraine-war/damaged-cultural-sites",
           "source_code": "OCHA"
         },
         {
-          "title": "Bellingcat: Sviatohirsk Lavra Satellite Damage Analysis",
-          "url": "https://www.bellingcat.com/news/2022/06/01/sviatohirsk-lavra-damage",
+          "title": "Reuters: Russian artillery hits Sviatohirsk monastery in east Ukraine (4 June 2022)",
+          "url": "https://www.reuters.com/world/europe/russian-artillery-hits-monastery-ukraines-east-says-zelenskiy-2022-06-04/",
           "source_code": "BELLINGCAT"
         },
         {
-          "title": "KSE Institute: Heritage Damage — Donetsk Oblast",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-heritage",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -16499,19 +16509,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 181,
-        "central_usd_m": 884,
-        "high_usd_m": 1587
+        "low_usd_m": 195.2,
+        "central_usd_m": 953.1,
+        "high_usd_m": 1711.1
       },
       "code_compliant": {
-        "low_usd_m": 208,
-        "central_usd_m": 1096,
-        "high_usd_m": 1984
+        "low_usd_m": 224.3,
+        "central_usd_m": 1181.7,
+        "high_usd_m": 2139.1
       },
       "build_back_better": {
-        "low_usd_m": 235,
-        "central_usd_m": 1388,
-        "high_usd_m": 2540
+        "low_usd_m": 253.4,
+        "central_usd_m": 1496.5,
+        "high_usd_m": 2738.6
       }
     },
     "financing_structures": {
@@ -16617,8 +16627,9 @@
       "re_damaged",
       "unesco_candidate"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "TRYPILSKA_TPP_2024_04_11",
@@ -16649,23 +16660,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "DTEK Energy: Trypilska TPP totally destroyed by Russian missile strikes",
-          "url": "https://dtek.com/en/media/news/trypilska-tpp-totally-destroyed-by-russian-missile-strikes/",
+          "title": "CNN: Trypilska power plant destroyed in Russian strike (11 April 2024)",
+          "url": "https://www.cnn.com/2024/04/11/europe/ukraine-power-plant-destroyed-russia-intl",
           "source_code": "eRECOVERY"
         },
         {
-          "title": "KSE Institute: DTEK Energy Infrastructure Damage — April 2024",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-damage-to-energy",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — Energy Infrastructure Attacks April 2024",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-april-2024",
-          "source_code": "OCHA"
-        },
-        {
-          "title": "Reuters: Ukraine's Trypilska power plant completely destroyed in Russian strikes",
-          "url": "https://www.reuters.com/world/europe/ukraines-trypilska-power-plant-destroyed-russian-missile-strikes-2024-04-11/",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -16702,19 +16708,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 747,
-        "central_usd_m": 1330,
-        "high_usd_m": 1913
+        "low_usd_m": 1045.2,
+        "central_usd_m": 1860.9,
+        "high_usd_m": 2676.6
       },
       "code_compliant": {
-        "low_usd_m": 859,
-        "central_usd_m": 1625,
-        "high_usd_m": 2391
+        "low_usd_m": 1201.9,
+        "central_usd_m": 2273.7,
+        "high_usd_m": 3345.4
       },
       "build_back_better": {
-        "low_usd_m": 971,
-        "central_usd_m": 2016,
-        "high_usd_m": 3060,
+        "low_usd_m": 1358.6,
+        "central_usd_m": 2820.7,
+        "high_usd_m": 4281.5,
         "tech_overlays": [
           "combined_cycle_gas",
           "carbon_capture_ready",
@@ -16837,8 +16843,9 @@
       "large_scale",
       "grid_critical"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "UKRENERGO_PIVNICHNA_SUBSTATION_2024_03_22",
@@ -16868,13 +16875,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "Ukrenergo: Northern power system damage assessment March 2024",
-          "url": "https://ukrenergo.energy.gov.ua/en/news/damage-march-2024",
+          "title": "IEA: Ukraine energy system under attack - Energy Security assessment",
+          "url": "https://www.iea.org/reports/ukraines-energy-security-and-the-coming-winter/ukraines-energy-system-under-attack",
           "source_code": "eRECOVERY"
         },
         {
-          "title": "KSE Institute: Grid Infrastructure Damage — March 2024",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-grid-2024",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -16899,19 +16906,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 39,
-        "central_usd_m": 97,
-        "high_usd_m": 154
+        "low_usd_m": 54.6,
+        "central_usd_m": 135.7,
+        "high_usd_m": 215.5
       },
       "code_compliant": {
-        "low_usd_m": 45,
-        "central_usd_m": 119,
-        "high_usd_m": 192
+        "low_usd_m": 63.0,
+        "central_usd_m": 166.5,
+        "high_usd_m": 268.6
       },
       "build_back_better": {
-        "low_usd_m": 51,
-        "central_usd_m": 149,
-        "high_usd_m": 246
+        "low_usd_m": 71.4,
+        "central_usd_m": 208.5,
+        "high_usd_m": 344.2
       }
     },
     "financing_structures": {
@@ -17027,8 +17034,9 @@
       "grid_critical",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "VINNYTSIA_CHPP_2022_07_14",
@@ -17058,13 +17066,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Situation Report — 14 July 2022 Mass Casualty Attack",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-14-july-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Vinnytsia Oblast Infrastructure Damage — July 2022",
-          "url": "https://kse.ua/wp-content/uploads/2022/08/KSE_Vinnytsia_July2022_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -17094,19 +17102,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 38,
-        "central_usd_m": 62,
-        "high_usd_m": 86
+        "low_usd_m": 53.2,
+        "central_usd_m": 86.7,
+        "high_usd_m": 120.3
       },
       "code_compliant": {
-        "low_usd_m": 44,
-        "central_usd_m": 76,
-        "high_usd_m": 107
+        "low_usd_m": 61.6,
+        "central_usd_m": 106.3,
+        "high_usd_m": 149.7
       },
       "build_back_better": {
-        "low_usd_m": 50,
-        "central_usd_m": 93,
-        "high_usd_m": 136,
+        "low_usd_m": 70.0,
+        "central_usd_m": 130.1,
+        "high_usd_m": 190.3,
         "tech_overlays": [
           "combined_cycle_upgrade",
           "heat_pump_integration",
@@ -17218,8 +17226,9 @@
       "missile_strike",
       "district_heating"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "VINNYTSIA_REGIONAL_HOSPITAL_2022_07_14",
@@ -17249,13 +17258,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Situation Report — 14 July 2022 Mass Casualty Attack",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-14-july-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "Ministry of Health Ukraine: Vinnytsia attack medical facilities damage",
-          "url": "https://moz.gov.ua/article/news/vinnytsia-attack-july-2022",
+          "title": "BBC: Vinnytsia missile strike (14 July 2022)",
+          "url": "https://www.bbc.com/news/world-europe-62163071",
           "source_code": "eRECOVERY"
         }
       ]
@@ -17286,19 +17295,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 94,
-        "central_usd_m": 164,
-        "high_usd_m": 234
+        "low_usd_m": 101.3,
+        "central_usd_m": 176.8,
+        "high_usd_m": 252.3
       },
       "code_compliant": {
-        "low_usd_m": 109,
-        "central_usd_m": 201,
-        "high_usd_m": 293
+        "low_usd_m": 117.5,
+        "central_usd_m": 216.7,
+        "high_usd_m": 315.9
       },
       "build_back_better": {
-        "low_usd_m": 123,
-        "central_usd_m": 249,
-        "high_usd_m": 374
+        "low_usd_m": 132.6,
+        "central_usd_m": 268.5,
+        "high_usd_m": 403.2
       }
     },
     "financing_structures": {
@@ -17402,8 +17411,9 @@
       "missile_strike",
       "high_priority"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "VOLNOVAKHA_RESIDENTIAL_2022_03_12",
@@ -17433,13 +17443,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Donetsk residential damage database",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Flash Update — Volnovakha 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-volnovakha-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -17469,19 +17479,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 156,
-        "central_usd_m": 287,
-        "high_usd_m": 419
+        "low_usd_m": 158.6,
+        "central_usd_m": 291.9,
+        "high_usd_m": 426.1
       },
       "code_compliant": {
-        "low_usd_m": 179,
-        "central_usd_m": 351,
-        "high_usd_m": 523
+        "low_usd_m": 182.0,
+        "central_usd_m": 356.9,
+        "high_usd_m": 531.9
       },
       "build_back_better": {
-        "low_usd_m": 203,
-        "central_usd_m": 436,
-        "high_usd_m": 670,
+        "low_usd_m": 206.4,
+        "central_usd_m": 443.4,
+        "high_usd_m": 681.4,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction",
@@ -17590,8 +17600,9 @@
       "large_scale",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "VUHLEDAR_RESIDENTIAL_2023_02_01",
@@ -17621,18 +17632,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — Vuhledar Humanitarian Crisis February 2023",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-vuhledar-february-2023",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Donetsk Oblast Residential Damage — Vuhledar 2022–2023",
-          "url": "https://kse.ua/wp-content/uploads/2023/04/KSE_Vuhledar_Residential.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "Bellingcat: Vuhledar — Satellite Damage Assessment 2022–2023",
-          "url": "https://www.bellingcat.com/news/2023/02/vuhledar-damage-assessment",
+          "title": "CNN: Battle for Vuhledar, Donetsk Oblast (Feb 2023)",
+          "url": "https://www.cnn.com/2023/02/13/europe/russia-ukraine-vuhledar-donetsk-fiasco-intl",
           "source_code": "BELLINGCAT"
         }
       ]
@@ -17662,19 +17673,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 107,
-        "central_usd_m": 210,
-        "high_usd_m": 313
+        "low_usd_m": 108.8,
+        "central_usd_m": 213.6,
+        "high_usd_m": 318.3
       },
       "code_compliant": {
-        "low_usd_m": 123,
-        "central_usd_m": 257,
-        "high_usd_m": 391
+        "low_usd_m": 125.1,
+        "central_usd_m": 261.4,
+        "high_usd_m": 397.6
       },
       "build_back_better": {
-        "low_usd_m": 139,
-        "central_usd_m": 315,
-        "high_usd_m": 491,
+        "low_usd_m": 141.4,
+        "central_usd_m": 320.3,
+        "high_usd_m": 499.3,
         "tech_overlays": [
           "passive_house_standard",
           "microgrid",
@@ -17786,8 +17797,9 @@
       "destroyed",
       "occupied"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ZAPORIZHZHIA_ANTONIVKA_BRIDGE_2022_10_20",
@@ -17816,13 +17828,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — Zaporizhzhia Infrastructure October 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-zaporizhzhia-october-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Zaporizhzhia Oblast Transport Infrastructure Damage",
-          "url": "https://kse.ua/wp-content/uploads/2022/11/KSE_Zaporizhzhia_Transport_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -17853,19 +17865,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 35,
-        "central_usd_m": 58,
-        "high_usd_m": 81
+        "low_usd_m": 37.4,
+        "central_usd_m": 62.1,
+        "high_usd_m": 86.7
       },
       "code_compliant": {
-        "low_usd_m": 40,
-        "central_usd_m": 71,
-        "high_usd_m": 101
+        "low_usd_m": 42.8,
+        "central_usd_m": 76.0,
+        "high_usd_m": 108.1
       },
       "build_back_better": {
-        "low_usd_m": 46,
-        "central_usd_m": 87,
-        "high_usd_m": 128,
+        "low_usd_m": 49.2,
+        "central_usd_m": 93.1,
+        "high_usd_m": 137.0,
         "tech_overlays": [
           "seismic_resilience",
           "smart_monitoring",
@@ -17976,8 +17988,9 @@
       "missile_strike",
       "moderate"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ZAPORIZHZHIA_POBYEDA_RESIDENTIAL_2022_03_01",
@@ -18007,13 +18020,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "KSE Institute: Russia Will Pay — Zaporizhzhia residential damage assessment",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — Zaporizhzhia Oblast",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -18043,19 +18056,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 295,
-        "central_usd_m": 778,
-        "high_usd_m": 1262
+        "low_usd_m": 300.0,
+        "central_usd_m": 791.2,
+        "high_usd_m": 1283.4
       },
       "code_compliant": {
-        "low_usd_m": 339,
-        "central_usd_m": 958,
-        "high_usd_m": 1577
+        "low_usd_m": 344.7,
+        "central_usd_m": 974.2,
+        "high_usd_m": 1603.7
       },
       "build_back_better": {
-        "low_usd_m": 383,
-        "central_usd_m": 1201,
-        "high_usd_m": 2019,
+        "low_usd_m": 389.5,
+        "central_usd_m": 1221.4,
+        "high_usd_m": 2053.2,
         "tech_overlays": [
           "passive_house_standard",
           "modular_construction",
@@ -18163,8 +18176,9 @@
       "large_scale",
       "apartment_blocks"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ZAPORIZHZHIA_POLYTECHNIC_2022_10_09",
@@ -18194,13 +18208,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — October 2022 Zaporizhzhia Attacks",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-october-2022-zaporizhzhia",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Zaporizhzhia Oblast Education Infrastructure Damage",
-          "url": "https://kse.ua/wp-content/uploads/2022/11/KSE_Zaporizhzhia_Education_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -18230,19 +18244,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 28,
-        "central_usd_m": 48,
-        "high_usd_m": 69
+        "low_usd_m": 30.2,
+        "central_usd_m": 51.8,
+        "high_usd_m": 74.4
       },
       "code_compliant": {
-        "low_usd_m": 32,
-        "central_usd_m": 59,
-        "high_usd_m": 86
+        "low_usd_m": 34.5,
+        "central_usd_m": 63.6,
+        "high_usd_m": 92.7
       },
       "build_back_better": {
-        "low_usd_m": 36,
-        "central_usd_m": 73,
-        "high_usd_m": 110,
+        "low_usd_m": 38.8,
+        "central_usd_m": 78.7,
+        "high_usd_m": 118.6,
         "tech_overlays": [
           "passive_house_standard",
           "microgrid",
@@ -18351,8 +18365,9 @@
       "missile_strike",
       "moderate"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ZAPORIZHZHIA_REGIONAL_HOSPITAL_2022_10_09",
@@ -18382,13 +18397,8 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — October 2022 Attacks on Healthcare Facilities",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-october-2022-healthcare",
-          "source_code": "OCHA"
-        },
-        {
-          "title": "WHO Ukraine: Health Facility Attack Reporting — October 2022",
-          "url": "https://www.unocha.org/ukraine/who-health-facility-attacks-october-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -18419,19 +18429,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 58,
-        "central_usd_m": 101,
-        "high_usd_m": 144
+        "low_usd_m": 62.5,
+        "central_usd_m": 108.9,
+        "high_usd_m": 155.3
       },
       "code_compliant": {
-        "low_usd_m": 67,
-        "central_usd_m": 123,
-        "high_usd_m": 180
+        "low_usd_m": 72.2,
+        "central_usd_m": 132.6,
+        "high_usd_m": 194.1
       },
       "build_back_better": {
-        "low_usd_m": 76,
-        "central_usd_m": 152,
-        "high_usd_m": 228,
+        "low_usd_m": 81.9,
+        "central_usd_m": 163.9,
+        "high_usd_m": 245.8,
         "tech_overlays": [
           "microgrid",
           "modular_clinical_units",
@@ -18541,8 +18551,9 @@
       "missile_strike",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ZAPORIZHZHIA_WATER_SUPPLY_2022_10_01",
@@ -18572,13 +18583,13 @@
       ],
       "evidence_sources": [
         {
-          "title": "UN OCHA Ukraine Flash Update — Zaporizhzhia Water Infrastructure October 2022",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-zaporizhzhia-water-october-2022",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         },
         {
-          "title": "KSE Institute: Zaporizhzhia Oblast Critical Infrastructure Damage",
-          "url": "https://kse.ua/wp-content/uploads/2022/11/KSE_Zaporizhzhia_Water_Damage.pdf",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         }
       ]
@@ -18615,19 +18626,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 58,
-        "central_usd_m": 96,
-        "high_usd_m": 134
+        "low_usd_m": 62.5,
+        "central_usd_m": 103.5,
+        "high_usd_m": 144.5
       },
       "code_compliant": {
-        "low_usd_m": 67,
-        "central_usd_m": 117,
-        "high_usd_m": 167
+        "low_usd_m": 72.2,
+        "central_usd_m": 126.1,
+        "high_usd_m": 180.1
       },
       "build_back_better": {
-        "low_usd_m": 76,
-        "central_usd_m": 144,
-        "high_usd_m": 212,
+        "low_usd_m": 81.9,
+        "central_usd_m": 155.3,
+        "high_usd_m": 228.6,
         "tech_overlays": [
           "smart_water_metering",
           "energy_efficient_pumping",
@@ -18739,8 +18750,9 @@
       "moderate",
       "re_damaged"
     ],
-    "last_reviewed": "2026-05-19",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   },
   {
     "asset_id": "ZMIIVSKA_TPP_2024_03_22",
@@ -18770,18 +18782,18 @@
       ],
       "evidence_sources": [
         {
-          "title": "Centrenergo: Zmiivska TPP destroyed by Russian strikes",
-          "url": "https://centrenergo.com/en/news/zmiivska-tpp",
+          "title": "Reuters: Centrenergo power firm hit by Russian attacks, repairs could take 18 months (March 2024)",
+          "url": "https://www.reuters.com/world/europe/ukraine-power-firm-hit-by-russian-attacks-warns-repairs-could-take-18-months-2024-03-30/",
           "source_code": "eRECOVERY"
         },
         {
-          "title": "KSE Institute: DTEK and Centrenergo Infrastructure Damage 2024",
-          "url": "https://kse.ua/about-the-school/news/russia-will-pay-energy-2024",
+          "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+          "url": "https://kse.ua/russia-will-pay/",
           "source_code": "KSE"
         },
         {
-          "title": "UN OCHA Ukraine Situation Report — Energy Attacks March 2024",
-          "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-march-2024",
+          "title": "UN OCHA - Ukraine",
+          "url": "https://www.unocha.org/ukraine",
           "source_code": "OCHA"
         }
       ]
@@ -18806,19 +18818,19 @@
     },
     "cost_paths": {
       "baseline": {
-        "low_usd_m": 1206,
-        "central_usd_m": 2182,
-        "high_usd_m": 3157
+        "low_usd_m": 1687.4,
+        "central_usd_m": 3053.0,
+        "high_usd_m": 4417.2
       },
       "code_compliant": {
-        "low_usd_m": 1387,
-        "central_usd_m": 2667,
-        "high_usd_m": 3947
+        "low_usd_m": 1940.7,
+        "central_usd_m": 3731.6,
+        "high_usd_m": 5522.6
       },
       "build_back_better": {
-        "low_usd_m": 1568,
-        "central_usd_m": 3310,
-        "high_usd_m": 5052
+        "low_usd_m": 2193.9,
+        "central_usd_m": 4631.3,
+        "high_usd_m": 7068.6
       }
     },
     "financing_structures": {
@@ -18935,7 +18947,8 @@
       "re_damaged",
       "grid_critical"
     ],
-    "last_reviewed": "2026-05-14",
-    "version": "1.0.0"
+    "last_reviewed": "2026-10-22",
+    "version": "1.0.0",
+    "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
   }
 ]

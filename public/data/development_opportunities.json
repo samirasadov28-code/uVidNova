@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "source": "Derived from RDNA3, KSE Institute, EU4Reconstruction programme documents, EIB EU4Ukraine platform",
+  "source": "Derived from RDNA4, KSE Institute, EU4Reconstruction programme documents, EIB EU4Ukraine platform",
   "opportunities": {
     "Cherkasy Oblast": [
       { "sector_id": "renewables", "archetype_id": "solar_100mw", "label": "Solar + agricultural co-location", "rationale": "Flat terrain and high solar irradiance (1,400+ kWh/m²/yr) suit agri-PV installations over existing farmland. Proximity to Kremenchuk Reservoir offers complementary hydro balancing.", "size_usd_m_central": 80 },

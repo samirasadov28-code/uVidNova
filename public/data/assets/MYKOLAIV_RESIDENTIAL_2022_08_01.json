@@ -21,18 +21,18 @@
     "re_damage_count": 6,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Mykolaiv Oblast Residential Damage",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-mykolaiv",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine: Mykolaiv Situation Report",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mykolaiv-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 185,
-      "central_usd_m": 478,
-      "high_usd_m": 771
+      "low_usd_m": 188.1,
+      "central_usd_m": 486.1,
+      "high_usd_m": 784.1
     },
     "code_compliant": {
-      "low_usd_m": 213,
-      "central_usd_m": 588,
-      "high_usd_m": 964
+      "low_usd_m": 216.6,
+      "central_usd_m": 598.0,
+      "high_usd_m": 980.3
     },
     "build_back_better": {
-      "low_usd_m": 241,
-      "central_usd_m": 737,
-      "high_usd_m": 1233
+      "low_usd_m": 245.1,
+      "central_usd_m": 749.5,
+      "high_usd_m": 1253.9
     }
   },
   "financing_structures": {
@@ -176,6 +176,7 @@
     "shelling",
     "re_damaged"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

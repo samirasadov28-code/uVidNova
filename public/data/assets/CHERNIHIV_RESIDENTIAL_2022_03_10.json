@@ -20,20 +20,19 @@
     "destruction_level": "moderate",
     "re_damage_count": 0,
     "verified_by": [
+      "HRW",
       "KSE",
-      "UN_OCHA",
-      "UA_GOV",
-      "BELLINGCAT"
+      "UA_GOV"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Russia Will Pay — Chernihiv residential damage",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Chernihiv verified damage map 2022",
-        "url": "https://www.bellingcat.com/news/2022/04/chernihiv-damage-analysis",
+        "title": "Human Rights Watch: Russian Strikes Killed Scores of Civilians in Chernihiv (June 2022)",
+        "url": "https://www.hrw.org/news/2022/06/10/ukraine-russian-strikes-killed-scores-civilians-chernihiv",
         "source_code": "BELLINGCAT"
       }
     ]
@@ -63,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 111,
-      "central_usd_m": 289,
-      "high_usd_m": 467
+      "low_usd_m": 112.9,
+      "central_usd_m": 293.9,
+      "high_usd_m": 474.9
     },
     "code_compliant": {
-      "low_usd_m": 128,
-      "central_usd_m": 356,
-      "high_usd_m": 583
+      "low_usd_m": 130.2,
+      "central_usd_m": 362.0,
+      "high_usd_m": 592.9
     },
     "build_back_better": {
-      "low_usd_m": 145,
-      "central_usd_m": 446,
-      "high_usd_m": 747,
+      "low_usd_m": 147.5,
+      "central_usd_m": 453.6,
+      "high_usd_m": 759.7,
       "tech_overlays": [
         "passive_house_standard",
         "modular_construction",
@@ -184,6 +183,7 @@
     "large_scale",
     "apartment_blocks"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }
