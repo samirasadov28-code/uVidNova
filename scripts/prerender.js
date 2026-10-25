@@ -3,11 +3,8 @@
  * prerender.js — Build-time static HTML generation for asset pages.
  *
  * Reads every asset JSON from public/data/assets/ and writes a pre-rendered
- * HTML page to public/assets/<ASSET_ID>/index.html. These pages contain the
- * full asset content in plain HTML so search engines index it without JS.
- *
- * The existing asset.html?id= SPA continues to work; Netlify redirects
- * /assets/<ID>/ to the pre-rendered file (served statically).
+ * HTML page to public/assets/<asset_id>/index.html (lowercase paths).
+ * Also injects the CARTO_BASEMAPS_KEY env var into public/js/carto-config.js.
  *
  * Run: node scripts/prerender.js
  */
@@ -20,6 +17,23 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT      = join(__dirname, '..');
 const ASSETS_DIR = join(ROOT, 'public', 'data', 'assets');
 const OUT_DIR    = join(ROOT, 'public', 'assets');
+
+const SITE_URL = 'https://uvidnova.netlify.app';
+
+// ── CARTO key injection ────────────────────────────────────────────────────────
+const cartoKey = process.env.CARTO_BASEMAPS_KEY;
+if (!cartoKey) {
+  console.error('FATAL: CARTO_BASEMAPS_KEY environment variable is not set.');
+  console.error('Set it in Netlify environment variables before deploying.');
+  process.exit(1);
+}
+const cartoConfigPath = join(ROOT, 'public', 'js', 'carto-config.js');
+writeFileSync(
+  cartoConfigPath,
+  `// Generated at build time — do not commit\nwindow.CARTO_BASEMAPS_KEY = ${JSON.stringify(cartoKey)};\n`,
+  'utf8'
+);
+console.log('Wrote public/js/carto-config.js (CARTO key injected)');
 
 // ── Helpers (mirrors asset-view.js) ──────────────────────────────────────────
 
@@ -309,7 +323,7 @@ function renderPage(a) {
   const central = a.cost_paths?.baseline?.central_usd_m;
   const costStr = central ? `USD ${central}M baseline` : 'cost estimate pending';
   const desc    = `${name} — ${sector}, ${oblast}. ${costStr}. Ukraine reconstruction finance data: three cost paths, financing structure, wartime status. uVidNova.`;
-  const canonicalUrl = `https://uvidnova.netlify.app/assets/${a.asset_id}/`;
+  const canonicalUrl = `${SITE_URL}/assets/${a.asset_id.toLowerCase()}/`;
 
   // JSON-LD structured data
   const jsonLd = {
@@ -322,7 +336,7 @@ function renderPage(a) {
     publisher: {
       '@type': 'Organization',
       name: 'uVidNova',
-      url: 'https://uvidnova.netlify.app'
+      url: SITE_URL
     },
     about: {
       '@type': 'Place',
@@ -443,11 +457,12 @@ let errors = 0;
 
 for (const file of files) {
   const assetId = file.replace('.json', '');
+  const assetIdLower = assetId.toLowerCase();
   try {
     const raw  = readFileSync(join(ASSETS_DIR, file), 'utf8');
     const asset = JSON.parse(raw);
 
-    const dir  = join(OUT_DIR, assetId);
+    const dir  = join(OUT_DIR, assetIdLower);
     mkdirSync(dir, { recursive: true });
 
     const html = renderPage(asset);
