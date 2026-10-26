@@ -21,18 +21,18 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Russia Will Pay — Mykolaiv residential damage assessment",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine Situation Report — Mykolaiv Oblast",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mykolaiv-sitrep-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 137,
-      "central_usd_m": 353,
-      "high_usd_m": 569
+      "low_usd_m": 139.3,
+      "central_usd_m": 359.0,
+      "high_usd_m": 578.6
     },
     "code_compliant": {
-      "low_usd_m": 157,
-      "central_usd_m": 434,
-      "high_usd_m": 712
+      "low_usd_m": 159.7,
+      "central_usd_m": 441.4,
+      "high_usd_m": 724.1
     },
     "build_back_better": {
-      "low_usd_m": 178,
-      "central_usd_m": 544,
-      "high_usd_m": 911,
+      "low_usd_m": 181.0,
+      "central_usd_m": 553.2,
+      "high_usd_m": 926.4,
       "tech_overlays": [
         "passive_house_standard",
         "modular_construction",
@@ -182,6 +182,7 @@
     "large_scale",
     "apartment_blocks"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

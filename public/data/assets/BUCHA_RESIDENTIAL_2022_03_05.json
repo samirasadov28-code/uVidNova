@@ -20,15 +20,15 @@
     "destruction_level": "severe",
     "re_damage_count": 0,
     "verified_by": [
+      "HRW",
       "KSE",
-      "UN_OCHA",
       "UA_GOV",
-      "BELLINGCAT"
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Bucha Residential and Infrastructure Damage Assessment",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-bucha",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
@@ -37,8 +37,8 @@
         "source_code": "OCHA"
       },
       {
-        "title": "UN OCHA Ukraine: Bucha Post-Liberation Assessment",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-bucha-assessment-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -68,19 +68,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 172,
-      "central_usd_m": 355,
-      "high_usd_m": 539
+      "low_usd_m": 174.9,
+      "central_usd_m": 361.0,
+      "high_usd_m": 548.1
     },
     "code_compliant": {
-      "low_usd_m": 198,
-      "central_usd_m": 436,
-      "high_usd_m": 674
+      "low_usd_m": 201.4,
+      "central_usd_m": 443.4,
+      "high_usd_m": 685.4
     },
     "build_back_better": {
-      "low_usd_m": 224,
-      "central_usd_m": 543,
-      "high_usd_m": 862
+      "low_usd_m": 227.8,
+      "central_usd_m": 552.2,
+      "high_usd_m": 876.6
     }
   },
   "financing_structures": {
@@ -183,6 +183,7 @@
     "liberated",
     "war_crime_documented"
   ],
-  "last_reviewed": "2026-05-17",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

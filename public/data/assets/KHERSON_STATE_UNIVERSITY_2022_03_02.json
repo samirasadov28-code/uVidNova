@@ -20,19 +20,19 @@
     "destruction_level": "moderate",
     "re_damage_count": 2,
     "verified_by": [
-      "UN_OCHA",
+      "KSE",
       "UA_GOV",
-      "KSE"
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine: Kherson Post-Liberation Education Assessment",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-kherson-education-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Kherson Oblast Education Damage",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kherson-education",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -56,19 +56,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 26,
-      "central_usd_m": 66,
-      "high_usd_m": 105
+      "low_usd_m": 28.0,
+      "central_usd_m": 71.2,
+      "high_usd_m": 113.2
     },
     "code_compliant": {
-      "low_usd_m": 30,
-      "central_usd_m": 81,
-      "high_usd_m": 132
+      "low_usd_m": 32.3,
+      "central_usd_m": 87.3,
+      "high_usd_m": 142.3
     },
     "build_back_better": {
-      "low_usd_m": 34,
-      "central_usd_m": 101,
-      "high_usd_m": 169
+      "low_usd_m": 36.7,
+      "central_usd_m": 108.9,
+      "high_usd_m": 182.2
     }
   },
   "financing_structures": {
@@ -173,6 +173,7 @@
     "frontline",
     "re_damaged"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

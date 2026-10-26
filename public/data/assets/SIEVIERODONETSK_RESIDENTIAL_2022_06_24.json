@@ -21,18 +21,17 @@
     "re_damage_count": 2,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "BELLINGCAT"
+      "PRESS"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Russia Will Pay — Luhansk residential sector damage",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Sievierodonetsk destruction analysis 2022",
-        "url": "https://www.bellingcat.com/news/2022/07/sievierodonetsk-damage",
+        "title": "Reuters: All critical infrastructure in Sievierodonetsk destroyed (May 2022)",
+        "url": "https://www.reuters.com/world/europe/all-critical-infrastructure-ukraines-sievierodonetsk-destroyed-president-2022-05-29/",
         "source_code": "BELLINGCAT"
       }
     ]
@@ -62,19 +61,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 991,
-      "central_usd_m": 1826,
-      "high_usd_m": 2662
+      "low_usd_m": 1007.8,
+      "central_usd_m": 1856.9,
+      "high_usd_m": 2707.1
     },
     "code_compliant": {
-      "low_usd_m": 1139,
-      "central_usd_m": 2233,
-      "high_usd_m": 3327
+      "low_usd_m": 1158.3,
+      "central_usd_m": 2270.8,
+      "high_usd_m": 3383.4
     },
     "build_back_better": {
-      "low_usd_m": 1288,
-      "central_usd_m": 2773,
-      "high_usd_m": 4259,
+      "low_usd_m": 1309.8,
+      "central_usd_m": 2820.0,
+      "high_usd_m": 4331.2,
       "tech_overlays": [
         "passive_house_standard",
         "modular_construction",
@@ -184,6 +183,7 @@
     "re_damaged",
     "apartment_blocks"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

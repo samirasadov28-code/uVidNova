@@ -20,19 +20,19 @@
     "destruction_level": "moderate",
     "re_damage_count": 2,
     "verified_by": [
-      "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "PRESS",
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UA Ministry of Agrarian Policy report — Izmail grain terminal drone strike July 2023",
-        "url": "https://minagro.gov.ua/en/news/izmail-grain-terminal-july-2023",
+        "title": "BBC: Russia hits port grain silo in Ukraine Odesa region (Izmail, Aug 2023)",
+        "url": "https://www.bbc.com/news/world-europe-66379561",
         "source_code": "eRECOVERY"
       },
       {
-        "title": "UN OCHA Ukraine Flash Update — Izmail Danube port attack 2023",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-jul-2023",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -56,19 +56,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 8,
-      "central_usd_m": 25,
-      "high_usd_m": 41
+      "low_usd_m": 7.5,
+      "central_usd_m": 23.6,
+      "high_usd_m": 38.7
     },
     "code_compliant": {
-      "low_usd_m": 9,
-      "central_usd_m": 30,
-      "high_usd_m": 52
+      "low_usd_m": 8.5,
+      "central_usd_m": 28.3,
+      "high_usd_m": 49.1
     },
     "build_back_better": {
-      "low_usd_m": 10,
-      "central_usd_m": 38,
-      "high_usd_m": 66,
+      "low_usd_m": 9.4,
+      "central_usd_m": 35.8,
+      "high_usd_m": 62.3,
       "tech_overlays": [
         "automated_handling",
         "dust_suppression",
@@ -179,6 +179,7 @@
     "re_damaged",
     "food_security"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

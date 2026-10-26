@@ -20,14 +20,13 @@
     "destruction_level": "moderate",
     "re_damage_count": 1,
     "verified_by": [
-      "UN_OCHA",
       "UA_GOV",
-      "KSE"
+      "UNESCO"
     ],
     "evidence_sources": [
       {
-        "title": "UNESCO: Odesa Cultural Heritage Damage July 2023",
-        "url": "https://www.unesco.org/en/articles/odesa-cultural-damage-july-2023",
+        "title": "UNESCO: UNESCO strongly condemns repeated attacks against cultural heritage in Odesa, including World Heritage (July 2023)",
+        "url": "https://www.unesco.org/en/articles/odesa-unesco-strongly-condemns-repeated-attacks-against-cultural-heritage-including-world-heritage",
         "source_code": "OCHA"
       },
       {
@@ -62,19 +61,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 16,
-      "central_usd_m": 68,
-      "high_usd_m": 121
+      "low_usd_m": 17.3,
+      "central_usd_m": 73.3,
+      "high_usd_m": 130.5
     },
     "code_compliant": {
-      "low_usd_m": 18,
-      "central_usd_m": 84,
-      "high_usd_m": 151
+      "low_usd_m": 19.4,
+      "central_usd_m": 90.6,
+      "high_usd_m": 162.8
     },
     "build_back_better": {
-      "low_usd_m": 21,
-      "central_usd_m": 107,
-      "high_usd_m": 193
+      "low_usd_m": 22.6,
+      "central_usd_m": 115.4,
+      "high_usd_m": 208.1
     }
   },
   "financing_structures": {
@@ -180,6 +179,7 @@
     "art_collection",
     "unesco_world_heritage_city"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

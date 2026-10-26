@@ -20,24 +20,24 @@
     "destruction_level": "severe",
     "re_damage_count": 2,
     "verified_by": [
+      "HRW",
       "KSE",
-      "UN_OCHA",
-      "BELLINGCAT"
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Situation Report — June 2022 Kremenchuk Attacks",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-june-2022-kremenchuk",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Industrial Infrastructure Damage — Poltava Oblast",
-        "url": "https://kse.ua/wp-content/uploads/2022/08/KSE_Poltava_Industrial_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Kremenchuk Strike Verification — June 2022",
-        "url": "https://www.bellingcat.com/news/2022/06/27/kremenchuk-strikes-verification",
+        "title": "Human Rights Watch: Russian Missile Kills Civilians in Kremenchuk Shopping Center (June 2022)",
+        "url": "https://www.hrw.org/news/2022/06/30/ukraine-russian-missile-kills-civilians-shopping-center",
         "source_code": "BELLINGCAT"
       }
     ]
@@ -68,19 +68,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 780,
-      "central_usd_m": 1240,
-      "high_usd_m": 1700
+      "low_usd_m": 1091.4,
+      "central_usd_m": 1735.0,
+      "high_usd_m": 2378.6
     },
     "code_compliant": {
-      "low_usd_m": 897,
-      "central_usd_m": 1488,
-      "high_usd_m": 2125
+      "low_usd_m": 1255.1,
+      "central_usd_m": 2082.0,
+      "high_usd_m": 2973.3
     },
     "build_back_better": {
-      "low_usd_m": 1014,
-      "central_usd_m": 1790,
-      "high_usd_m": 2550,
+      "low_usd_m": 1418.8,
+      "central_usd_m": 2504.5,
+      "high_usd_m": 3567.9,
       "tech_overlays": [
         "low_sulphur_compliance",
         "waste_heat_recovery",
@@ -199,6 +199,7 @@
     "missile_strike",
     "industrial"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

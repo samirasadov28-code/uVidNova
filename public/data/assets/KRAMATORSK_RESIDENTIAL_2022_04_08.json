@@ -21,18 +21,18 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Russia Will Pay — Donetsk residential damage assessment",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine Flash Update — Kramatorsk station attack April 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 103,
-      "central_usd_m": 272,
-      "high_usd_m": 440
+      "low_usd_m": 104.7,
+      "central_usd_m": 276.6,
+      "high_usd_m": 447.5
     },
     "code_compliant": {
-      "low_usd_m": 119,
-      "central_usd_m": 335,
-      "high_usd_m": 550
+      "low_usd_m": 121.0,
+      "central_usd_m": 340.7,
+      "high_usd_m": 559.3
     },
     "build_back_better": {
-      "low_usd_m": 135,
-      "central_usd_m": 419,
-      "high_usd_m": 704,
+      "low_usd_m": 137.3,
+      "central_usd_m": 426.1,
+      "high_usd_m": 715.9,
       "tech_overlays": [
         "passive_house_standard",
         "modular_construction",
@@ -181,6 +181,7 @@
     "missile_strike",
     "apartment_blocks"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

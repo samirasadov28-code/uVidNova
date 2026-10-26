@@ -20,24 +20,25 @@
     "destruction_level": "severe",
     "re_damage_count": 5,
     "verified_by": [
-      "UN_OCHA",
+      "KSE",
+      "MSF",
       "UA_GOV",
-      "KSE"
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "Human Rights Watch: Attacks on Kherson Hospital and Medical Facilities",
-        "url": "https://www.hrw.org/news/2023/02/10/ukraine-attacks-kherson-medical-facilities",
+        "title": "MSF: Ukraine - MSF denounces repeated shelling of Kherson hospital",
+        "url": "https://www.doctorswithoutborders.org/latest/ukraine-msf-denounces-repeated-shelling-kherson-hospital",
         "source_code": "OCHA"
       },
       {
-        "title": "UN OCHA Ukraine Situation Report — Kherson Post-Liberation",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kherson-liberation",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Kherson Oblast Infrastructure Damage",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kherson",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -67,19 +68,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 89,
-      "central_usd_m": 162,
-      "high_usd_m": 234
+      "low_usd_m": 96.0,
+      "central_usd_m": 174.7,
+      "high_usd_m": 252.3
     },
     "code_compliant": {
-      "low_usd_m": 103,
-      "central_usd_m": 198,
-      "high_usd_m": 293
+      "low_usd_m": 111.1,
+      "central_usd_m": 213.5,
+      "high_usd_m": 315.9
     },
     "build_back_better": {
-      "low_usd_m": 116,
-      "central_usd_m": 245,
-      "high_usd_m": 374
+      "low_usd_m": 125.1,
+      "central_usd_m": 264.2,
+      "high_usd_m": 403.2
     }
   },
   "financing_structures": {
@@ -185,6 +186,7 @@
     "re_damaged",
     "high_priority"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

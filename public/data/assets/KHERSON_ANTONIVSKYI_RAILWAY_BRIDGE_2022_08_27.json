@@ -21,23 +21,23 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "BELLINGCAT"
+      "PRESS",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Situation Report — Kherson Oblast August 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-kherson-august-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Kherson Oblast Transport Infrastructure Damage Assessment",
-        "url": "https://kse.ua/wp-content/uploads/2022/10/KSE_Kherson_Transport_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Antonivka Bridge Strikes — Damage Verification August 2022",
-        "url": "https://www.bellingcat.com/news/2022/08/antonivka-bridge-damage-verification",
+        "title": "Associated Press: Antonivskyi bridge in Kherson region struck and damaged (July 2022)",
+        "url": "https://apnews.com/article/russia-ukraine-moscow-6a927f75ac4fdb854999d65139b9bd80",
         "source_code": "BELLINGCAT"
       }
     ]
@@ -68,19 +68,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 68,
-      "central_usd_m": 121,
-      "high_usd_m": 174
+      "low_usd_m": 72.8,
+      "central_usd_m": 129.5,
+      "high_usd_m": 186.2
     },
     "code_compliant": {
-      "low_usd_m": 78,
-      "central_usd_m": 148,
-      "high_usd_m": 217
+      "low_usd_m": 83.5,
+      "central_usd_m": 158.4,
+      "high_usd_m": 232.2
     },
     "build_back_better": {
-      "low_usd_m": 88,
-      "central_usd_m": 181,
-      "high_usd_m": 274,
+      "low_usd_m": 94.2,
+      "central_usd_m": 193.7,
+      "high_usd_m": 293.2,
       "tech_overlays": [
         "seismic_resilience",
         "smart_monitoring",
@@ -191,6 +191,7 @@
     "precision_strike",
     "destroyed"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

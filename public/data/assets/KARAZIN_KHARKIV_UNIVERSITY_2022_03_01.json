@@ -21,18 +21,18 @@
     "re_damage_count": 4,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Kharkiv Education Infrastructure Damage 2022–2024",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-kharkiv-education",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine: Education Facility Attacks 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-education-attacks-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 86,
-      "central_usd_m": 211,
-      "high_usd_m": 335
+      "low_usd_m": 92.7,
+      "central_usd_m": 227.5,
+      "high_usd_m": 361.2
     },
     "code_compliant": {
-      "low_usd_m": 99,
-      "central_usd_m": 259,
-      "high_usd_m": 419
+      "low_usd_m": 106.7,
+      "central_usd_m": 279.3,
+      "high_usd_m": 451.8
     },
     "build_back_better": {
-      "low_usd_m": 111,
-      "central_usd_m": 324,
-      "high_usd_m": 537
+      "low_usd_m": 119.7,
+      "central_usd_m": 349.3,
+      "high_usd_m": 579.0
     }
   },
   "financing_structures": {
@@ -179,6 +179,7 @@
     "heritage",
     "re_damaged"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

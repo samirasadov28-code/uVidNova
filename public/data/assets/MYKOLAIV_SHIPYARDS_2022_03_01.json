@@ -20,19 +20,19 @@
     "destruction_level": "severe",
     "re_damage_count": 4,
     "verified_by": [
-      "UN_OCHA",
       "KSE",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Mykolaiv Industrial and Transport Infrastructure Damage",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-mykolaiv-industrial",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine: Mykolaiv Situation Report",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mykolaiv-situation-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 4,
-      "central_usd_m": 10,
-      "high_usd_m": 17
+      "low_usd_m": 4.3,
+      "central_usd_m": 10.7,
+      "high_usd_m": 18.2
     },
     "code_compliant": {
-      "low_usd_m": 4,
-      "central_usd_m": 13,
-      "high_usd_m": 21
+      "low_usd_m": 4.3,
+      "central_usd_m": 13.9,
+      "high_usd_m": 22.5
     },
     "build_back_better": {
-      "low_usd_m": 5,
-      "central_usd_m": 16,
-      "high_usd_m": 27
+      "low_usd_m": 5.3,
+      "central_usd_m": 17.1,
+      "high_usd_m": 28.9
     }
   },
   "financing_structures": {
@@ -179,6 +179,7 @@
     "re_damaged",
     "industrial"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

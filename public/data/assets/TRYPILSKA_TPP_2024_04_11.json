@@ -21,29 +21,24 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
+      "PRESS",
       "UA_GOV",
-      "BELLINGCAT"
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "DTEK Energy: Trypilska TPP totally destroyed by Russian missile strikes",
-        "url": "https://dtek.com/en/media/news/trypilska-tpp-totally-destroyed-by-russian-missile-strikes/",
+        "title": "CNN: Trypilska power plant destroyed in Russian strike (11 April 2024)",
+        "url": "https://www.cnn.com/2024/04/11/europe/ukraine-power-plant-destroyed-russia-intl",
         "source_code": "eRECOVERY"
       },
       {
-        "title": "KSE Institute: DTEK Energy Infrastructure Damage — April 2024",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-damage-to-energy",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine Situation Report — Energy Infrastructure Attacks April 2024",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-april-2024",
-        "source_code": "OCHA"
-      },
-      {
-        "title": "Reuters: Ukraine's Trypilska power plant completely destroyed in Russian strikes",
-        "url": "https://www.reuters.com/world/europe/ukraines-trypilska-power-plant-destroyed-russian-missile-strikes-2024-04-11/",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -80,19 +75,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 747,
-      "central_usd_m": 1330,
-      "high_usd_m": 1913
+      "low_usd_m": 1045.2,
+      "central_usd_m": 1860.9,
+      "high_usd_m": 2676.6
     },
     "code_compliant": {
-      "low_usd_m": 859,
-      "central_usd_m": 1625,
-      "high_usd_m": 2391
+      "low_usd_m": 1201.9,
+      "central_usd_m": 2273.7,
+      "high_usd_m": 3345.4
     },
     "build_back_better": {
-      "low_usd_m": 971,
-      "central_usd_m": 2016,
-      "high_usd_m": 3060,
+      "low_usd_m": 1358.6,
+      "central_usd_m": 2820.7,
+      "high_usd_m": 4281.5,
       "tech_overlays": [
         "combined_cycle_gas",
         "carbon_capture_ready",
@@ -215,6 +210,7 @@
     "large_scale",
     "grid_critical"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

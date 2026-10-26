@@ -5,8 +5,8 @@
     "uk": "Запорізький автомобільний міст через Дніпро (Преображенка)"
   },
   "location": {
-    "lat": 47.8020,
-    "lon": 35.0890,
+    "lat": 47.802,
+    "lon": 35.089,
     "oblast": "Zaporizhzhia",
     "raion": null,
     "settlement": "Zaporizhzhia",
@@ -25,13 +25,13 @@
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update — Zaporizhzhia Infrastructure October 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-zaporizhzhia-october-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Zaporizhzhia Oblast Transport Infrastructure Damage",
-        "url": "https://kse.ua/wp-content/uploads/2022/11/KSE_Zaporizhzhia_Transport_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 35,
-      "central_usd_m": 58,
-      "high_usd_m": 81
+      "low_usd_m": 37.4,
+      "central_usd_m": 62.1,
+      "high_usd_m": 86.7
     },
     "code_compliant": {
-      "low_usd_m": 40,
-      "central_usd_m": 71,
-      "high_usd_m": 101
+      "low_usd_m": 42.8,
+      "central_usd_m": 76.0,
+      "high_usd_m": 108.1
     },
     "build_back_better": {
-      "low_usd_m": 46,
-      "central_usd_m": 87,
-      "high_usd_m": 128,
+      "low_usd_m": 49.2,
+      "central_usd_m": 93.1,
+      "high_usd_m": 137.0,
       "tech_overlays": [
         "seismic_resilience",
         "smart_monitoring",
@@ -185,6 +185,7 @@
     "missile_strike",
     "moderate"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

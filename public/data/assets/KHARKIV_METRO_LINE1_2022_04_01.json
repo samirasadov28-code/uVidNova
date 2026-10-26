@@ -21,18 +21,18 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UA_GOV",
-      "UN_OCHA"
+      "PRESS",
+      "UA_GOV"
     ],
     "evidence_sources": [
       {
-        "title": "Kharkiv Metro engineering report — Line 1 infrastructure damage 2022",
-        "url": "https://www.metro.kharkov.ua/en/news/damage-2022",
+        "title": "Ukrainska Pravda: Kharkiv metro infrastructure damaged by strikes (June 2022)",
+        "url": "https://www.pravda.com.ua/eng/news/2022/06/21/7353791/",
         "source_code": "eRECOVERY"
       },
       {
-        "title": "KSE Institute: Russia Will Pay — Kharkiv transport sector damage",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -63,19 +63,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 10,
-      "central_usd_m": 48,
-      "high_usd_m": 85
+      "low_usd_m": 10.7,
+      "central_usd_m": 51.4,
+      "high_usd_m": 90.9
     },
     "code_compliant": {
-      "low_usd_m": 12,
-      "central_usd_m": 59,
-      "high_usd_m": 107
+      "low_usd_m": 12.8,
+      "central_usd_m": 63.1,
+      "high_usd_m": 114.5
     },
     "build_back_better": {
-      "low_usd_m": 13,
-      "central_usd_m": 75,
-      "high_usd_m": 137,
+      "low_usd_m": 13.9,
+      "central_usd_m": 80.2,
+      "high_usd_m": 146.6,
       "tech_overlays": [
         "etcs_signalling",
         "smart_station_systems",
@@ -187,6 +187,7 @@
     "shelling",
     "under_reconstruction"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

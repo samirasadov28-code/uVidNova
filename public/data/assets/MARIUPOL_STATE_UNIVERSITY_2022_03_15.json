@@ -20,19 +20,18 @@
     "destruction_level": "destroyed",
     "re_damage_count": 0,
     "verified_by": [
-      "UN_OCHA",
-      "BELLINGCAT",
-      "KSE"
+      "UNOSAT",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "Bellingcat: Mariupol Educational Institutions Satellite Analysis",
-        "url": "https://www.bellingcat.com/news/2022/04/15/mariupol-infrastructure-damage",
+        "title": "UNOSAT Damage Assessment Overview Map - Mariupolska Hromada, Donetsk Oblast",
+        "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-mariupolska-hromada-donetsk-oblast-0",
         "source_code": "BELLINGCAT"
       },
       {
-        "title": "UN OCHA Ukraine: Mariupol Situation Report",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-mariupol-situation-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -61,19 +60,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 227,
-      "central_usd_m": 402,
-      "high_usd_m": 576
+      "low_usd_m": 244.7,
+      "central_usd_m": 433.4,
+      "high_usd_m": 621.0
     },
     "code_compliant": {
-      "low_usd_m": 261,
-      "central_usd_m": 491,
-      "high_usd_m": 720
+      "low_usd_m": 281.4,
+      "central_usd_m": 529.4,
+      "high_usd_m": 776.3
     },
     "build_back_better": {
-      "low_usd_m": 295,
-      "central_usd_m": 609,
-      "high_usd_m": 922
+      "low_usd_m": 318.1,
+      "central_usd_m": 656.6,
+      "high_usd_m": 994.1
     }
   },
   "financing_structures": {
@@ -178,6 +177,7 @@
     "shelling",
     "occupied"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

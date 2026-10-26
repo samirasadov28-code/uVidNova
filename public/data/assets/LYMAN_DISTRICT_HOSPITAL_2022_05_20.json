@@ -25,13 +25,13 @@
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Humanitarian Situation Report — May–June 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-humanitarian-situation-report-may-june-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Donetsk Oblast Damage Tracker — Healthcare Facilities",
-        "url": "https://kse.ua/wp-content/uploads/2022/09/KSE_Donetsk_Healthcare_Damage.pdf",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -61,19 +61,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 18,
-      "central_usd_m": 34,
-      "high_usd_m": 50
+      "low_usd_m": 19.4,
+      "central_usd_m": 36.7,
+      "high_usd_m": 53.9
     },
     "code_compliant": {
-      "low_usd_m": 21,
-      "central_usd_m": 41,
-      "high_usd_m": 63
+      "low_usd_m": 22.6,
+      "central_usd_m": 44.2,
+      "high_usd_m": 67.9
     },
     "build_back_better": {
-      "low_usd_m": 24,
-      "central_usd_m": 51,
-      "high_usd_m": 78,
+      "low_usd_m": 25.9,
+      "central_usd_m": 55.0,
+      "high_usd_m": 84.1,
       "tech_overlays": [
         "microgrid",
         "modular_clinical_units",
@@ -185,6 +185,7 @@
     "destroyed",
     "recently_liberated"
   ],
-  "last_reviewed": "2026-05-19",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

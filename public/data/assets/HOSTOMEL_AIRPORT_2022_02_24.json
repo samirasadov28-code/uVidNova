@@ -20,19 +20,19 @@
     "destruction_level": "destroyed",
     "re_damage_count": 0,
     "verified_by": [
-      "UA_GOV",
       "KSE",
-      "BELLINGCAT"
+      "UA_GOV",
+      "UNOSAT"
     ],
     "evidence_sources": [
       {
-        "title": "Bellingcat: Hostomel Airport Satellite Imagery Analysis",
-        "url": "https://www.bellingcat.com/news/2022/04/05/hostomel-airport-damage-analysis",
+        "title": "UNOSAT Damage Assessment Overview Map - Hostomel City, Kyiv Oblast (Mar 2022)",
+        "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-hostomel-city-kyiv-oblast-imagery-analysis-31-march-2022-published-26-april-2022-v1",
         "source_code": "BELLINGCAT"
       },
       {
-        "title": "KSE Institute: Transport Infrastructure Damage — Kyiv Oblast",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay-transport",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -69,19 +69,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 17,
-      "central_usd_m": 35,
-      "high_usd_m": 53
+      "low_usd_m": 18.2,
+      "central_usd_m": 37.4,
+      "high_usd_m": 56.7
     },
     "code_compliant": {
-      "low_usd_m": 19,
-      "central_usd_m": 43,
-      "high_usd_m": 66
+      "low_usd_m": 20.3,
+      "central_usd_m": 46.0,
+      "high_usd_m": 70.6
     },
     "build_back_better": {
-      "low_usd_m": 22,
-      "central_usd_m": 53,
-      "high_usd_m": 85
+      "low_usd_m": 23.5,
+      "central_usd_m": 56.7,
+      "high_usd_m": 90.9
     }
   },
   "financing_structures": {
@@ -197,6 +197,7 @@
     "ground_combat",
     "strategic"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -19,18 +19,11 @@
     "incident_type": "artillery_shelling",
     "destruction_level": "destroyed",
     "re_damage_count": 0,
-    "verified_by": [
-      "KSE",
-      "BELLINGCAT"
-    ],
+    "verified_by": [],
     "evidence_sources": [
       {
         "title": "KSE Russia Will Pay — Illich industrial damage",
         "source_code": "KSE"
-      },
-      {
-        "title": "Bellingcat Mariupol siege documentation",
-        "source_code": "BELLINGCAT"
       }
     ]
   },
@@ -58,19 +51,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 2294,
-      "central_usd_m": 4806,
-      "high_usd_m": 7319
+      "low_usd_m": 2159.1,
+      "central_usd_m": 4523.3,
+      "high_usd_m": 6888.5
     },
     "code_compliant": {
-      "low_usd_m": 2638,
-      "central_usd_m": 5893,
-      "high_usd_m": 9148
+      "low_usd_m": 2482.8,
+      "central_usd_m": 5546.4,
+      "high_usd_m": 8609.9
     },
     "build_back_better": {
-      "low_usd_m": 2983,
-      "central_usd_m": 7346,
-      "high_usd_m": 11710
+      "low_usd_m": 2807.5,
+      "central_usd_m": 6913.9,
+      "high_usd_m": 11021.2
     }
   },
   "financing_structures": {
@@ -185,6 +178,7 @@
     "mariupol",
     "occupied"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

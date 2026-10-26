@@ -20,29 +20,30 @@
     "destruction_level": "destroyed",
     "re_damage_count": 0,
     "verified_by": [
+      "KSE",
+      "PRESS",
       "UA_GOV",
-      "BELLINGCAT",
-      "KSE"
+      "UNOSAT"
     ],
     "evidence_sources": [
       {
-        "title": "Antonov Company statement on An-225 Mriya destruction",
-        "url": "https://www.antonov.com/en/news/an-225-mriya-has-been-destroyed",
+        "title": "CNN: Antonov An-225 Mriya, world largest plane, destroyed in Ukraine",
+        "url": "https://www.cnn.com/travel/article/antonov-an-225-largest-plane-destroyed-ukraine-scli-intl",
         "source_code": "eRECOVERY"
       },
       {
-        "title": "KSE Institute: An-225 Mriya Damage Assessment",
-        "url": "https://kse.ua/about-the-school/news/kse-russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "Bellingcat: Hostomel Airport Satellite Imagery — An-225 Hangar Destruction",
-        "url": "https://www.bellingcat.com/news/2022/02/28/hostomel-airport-satellite-imagery-analysis",
+        "title": "UNOSAT Damage Assessment Overview Map - Hostomel City, Kyiv Oblast (Mar 2022)",
+        "url": "https://reliefweb.int/map/ukraine/unosat-damage-assessment-overview-map-ukraine-hostomel-city-kyiv-oblast-imagery-analysis-31-march-2022-published-26-april-2022-v1",
         "source_code": "BELLINGCAT"
       },
       {
-        "title": "Reuters: Ukraine says iconic An-225 Mriya plane destroyed at Hostomel airport",
-        "url": "https://www.reuters.com/world/europe/ukraine-says-iconic-an-225-mriya-plane-destroyed-hostomel-airport-2022-04-02/",
+        "title": "Reuters: Ukraine giant air cargo Mriya burnt in Russian shelling (27 Feb 2022)",
+        "url": "https://www.reuters.com/world/europe/ukraine-made-giant-air-cargo-mriya-burnt-russian-shelling-2022-02-27/",
         "source_code": "OCHA"
       }
     ]
@@ -78,19 +79,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 291,
-      "central_usd_m": 610,
-      "high_usd_m": 930
+      "low_usd_m": 311.4,
+      "central_usd_m": 652.7,
+      "high_usd_m": 995.1
     },
     "code_compliant": {
-      "low_usd_m": 334,
-      "central_usd_m": 748,
-      "high_usd_m": 1162
+      "low_usd_m": 357.4,
+      "central_usd_m": 800.3,
+      "high_usd_m": 1243.3
     },
     "build_back_better": {
-      "low_usd_m": 378,
-      "central_usd_m": 933,
-      "high_usd_m": 1488,
+      "low_usd_m": 404.4,
+      "central_usd_m": 998.3,
+      "high_usd_m": 1592.1,
       "tech_overlays": [
         "hydrogen_propulsion_readiness",
         "advanced_avionics",
@@ -201,6 +202,7 @@
     "industrial_heritage",
     "unique_asset"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

@@ -21,18 +21,18 @@
     "re_damage_count": 3,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
-      "UA_GOV"
+      "UA_GOV",
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "KSE Institute: Russia Will Pay — Kherson residential damage assessment",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       },
       {
-        "title": "UN OCHA Ukraine Situation Report — Kherson Oblast November 2022",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-situation-report-nov-2022",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       }
     ]
@@ -63,19 +63,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 385,
-      "central_usd_m": 829,
-      "high_usd_m": 1273
+      "low_usd_m": 391.5,
+      "central_usd_m": 843.1,
+      "high_usd_m": 1294.6
     },
     "code_compliant": {
-      "low_usd_m": 443,
-      "central_usd_m": 1017,
-      "high_usd_m": 1591
+      "low_usd_m": 450.5,
+      "central_usd_m": 1034.2,
+      "high_usd_m": 1618.0
     },
     "build_back_better": {
-      "low_usd_m": 501,
-      "central_usd_m": 1268,
-      "high_usd_m": 2036,
+      "low_usd_m": 509.5,
+      "central_usd_m": 1289.5,
+      "high_usd_m": 2070.5,
       "tech_overlays": [
         "passive_house_standard",
         "modular_construction",
@@ -185,6 +185,7 @@
     "re_damaged",
     "apartment_blocks"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

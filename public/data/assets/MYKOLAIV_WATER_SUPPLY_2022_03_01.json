@@ -21,7 +21,7 @@
     "re_damage_count": 0,
     "verified_by": [
       "KSE",
-      "UN_OCHA",
+      "PRESS",
       "UA_GOV"
     ],
     "evidence_sources": [
@@ -31,13 +31,13 @@
         "source_code": "RDNA3"
       },
       {
-        "title": "UNICEF WASH Ukraine — Mykolaiv water supply disruption report 2022",
-        "url": "https://www.unicef.org/ukraine/reports/mykolaiv-wash-2022",
+        "title": "BBC: Mykolaiv residents without water supply after Russian bombardments",
+        "url": "https://www.bbc.co.uk/news/world-europe-63383605",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Russia Will Pay — Mykolaiv water infrastructure",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
       }
     ]
@@ -62,19 +62,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 61,
-      "central_usd_m": 204,
-      "high_usd_m": 348
+      "low_usd_m": 65.8,
+      "central_usd_m": 220.0,
+      "high_usd_m": 375.2
     },
     "code_compliant": {
-      "low_usd_m": 70,
-      "central_usd_m": 252,
-      "high_usd_m": 435
+      "low_usd_m": 75.5,
+      "central_usd_m": 271.7,
+      "high_usd_m": 469.0
     },
     "build_back_better": {
-      "low_usd_m": 79,
-      "central_usd_m": 318,
-      "high_usd_m": 557,
+      "low_usd_m": 85.2,
+      "central_usd_m": 342.9,
+      "high_usd_m": 600.6,
       "tech_overlays": [
         "smart_water_metering",
         "energy_efficient_pumping",
@@ -187,6 +187,7 @@
     "early_reconstruction_precedent",
     "canal"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }

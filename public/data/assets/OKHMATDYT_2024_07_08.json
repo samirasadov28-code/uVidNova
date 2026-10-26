@@ -20,31 +20,25 @@
     "destruction_level": "severe",
     "re_damage_count": 0,
     "verified_by": [
-      "UN_OCHA",
-      "UA_MoH",
+      "HRW",
       "KSE",
-      "HUMAN_RIGHTS_WATCH"
+      "UN_OCHA"
     ],
     "evidence_sources": [
       {
-        "title": "UN OCHA Ukraine Flash Update — 8 July 2024 Mass Casualty Attacks",
-        "url": "https://www.unocha.org/publications/report/ukraine/ukraine-flash-update-8-july-2024",
+        "title": "UN OCHA - Ukraine",
+        "url": "https://www.unocha.org/ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "Human Rights Watch: Ukraine: Russian Missile Strikes Hit Children's Hospital",
-        "url": "https://www.hrw.org/news/2024/07/08/ukraine-russian-missile-strikes-hit-childrens-hospital",
+        "title": "Human Rights Watch: Russia July 8 Attack on Children Hospital in Ukraine (Okhmatdyt)",
+        "url": "https://www.hrw.org/news/2024/07/11/russias-july-8-attack-childrens-hospital-ukraine",
         "source_code": "OCHA"
       },
       {
-        "title": "KSE Institute: Damage to Healthcare Infrastructure — July 2024",
-        "url": "https://kse.ua/about-the-school/news/russia-will-pay",
+        "title": "KSE Institute - Russia Will Pay: Damage Assessment Project",
+        "url": "https://kse.ua/russia-will-pay/",
         "source_code": "KSE"
-      },
-      {
-        "title": "Ministry of Health of Ukraine: Okhmatdyt Damage Report",
-        "url": "https://moz.gov.ua/article/news/ohmatdit",
-        "source_code": "eRECOVERY"
       }
     ]
   },
@@ -80,19 +74,19 @@
   },
   "cost_paths": {
     "baseline": {
-      "low_usd_m": 33,
-      "central_usd_m": 57,
-      "high_usd_m": 82
+      "low_usd_m": 35.6,
+      "central_usd_m": 61.5,
+      "high_usd_m": 88.4
     },
     "code_compliant": {
-      "low_usd_m": 38,
-      "central_usd_m": 70,
-      "high_usd_m": 102
+      "low_usd_m": 41.0,
+      "central_usd_m": 75.5,
+      "high_usd_m": 110.0
     },
     "build_back_better": {
-      "low_usd_m": 43,
-      "central_usd_m": 87,
-      "high_usd_m": 131,
+      "low_usd_m": 46.4,
+      "central_usd_m": 93.8,
+      "high_usd_m": 141.2,
       "tech_overlays": [
         "microgrid",
         "modular_clinical_units",
@@ -208,6 +202,7 @@
     "tertiary_hospital",
     "high_priority"
   ],
-  "last_reviewed": "2026-05-14",
-  "version": "1.0.0"
+  "last_reviewed": "2026-10-22",
+  "version": "1.0.0",
+  "cost_benchmark": "RDNA4 (World Bank/Government of Ukraine/EC/UN, Feb 2025); sector needs ratios applied over RDNA3-based estimates"
 }
