@@ -1,6 +1,6 @@
 [build]
   publish = "public"
-  command = "node scripts/inject-carto-key.js"
+  command = "node scripts/prerender.js"
 
 [functions]
   directory = "functions"
@@ -29,9 +29,20 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# ── Cache: pre-rendered asset pages — always revalidate (deploy updates content) ─
+[[headers]]
+  for = "/assets/*/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 # ── Cache: images and icons — long-lived ──────────────────────────────────────
 [[headers]]
-  for = "/assets/*"
+  for = "/assets/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, immutable"
+
+[[headers]]
+  for = "/assets/*.svg"
   [headers.values]
     Cache-Control = "public, max-age=604800, immutable"
 
@@ -62,6 +73,15 @@
     Content-Type = "application/manifest+json"
 
 # ── Redirects ─────────────────────────────────────────────────────────────────
+
+# Legacy asset.html?id= → clean URL (301 permanent redirect, SEO-friendly)
+[[redirects]]
+  from = "/asset.html"
+  to = "/assets/:query/index.html"
+  status = 301
+  force = false
+  query = {id = ":query"}
+
 [[redirects]]
   from = "/trust"
   to = "/trust.html"
