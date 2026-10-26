@@ -12,21 +12,21 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="uVidNova">
-  <meta name="app-version" content="0.6.2">
+  <meta name="app-version" content="0.6.3">
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:site_name"   content="uVidNova">
   <meta property="og:title"       content="uVidNova - Ukraine Reconstruction Finance Atlas">
-  <meta property="og:description" content="Asset-level, project-finance-grade reconstruction opportunities in Ukraine. USD 41B+ pipeline across 100+ verified damaged assets. Every figure traceable to RDNA3 and KSE benchmarks.">
+  <meta property="og:description" content="USD 63B documented pipeline across 100 verified assets. Every figure traceable to RDNA4 and KSE benchmarks.">
   <meta property="og:url"         content="https://uvidnova.netlify.app/">
-  <meta property="og:image"       content="https://uvidnova.netlify.app/icons/icon-512.png">
+  <meta property="og:image"       content="https://uvidnova.netlify.app/assets/logo_512.png">
 
   <!-- Twitter card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="uVidNova - Ukraine Reconstruction Finance Atlas">
-  <meta name="twitter:description" content="100+ war-damaged assets. USD 41B+ pipeline. Deterministic cost estimates. EBRD/EU financing structures. Every number traceable to source.">
-  <meta name="twitter:image"       content="https://uvidnova.netlify.app/icons/icon-512.png">
+  <meta name="twitter:description" content="100 verified war-damaged assets. USD 63B documented pipeline. Every figure traceable to RDNA4 and KSE benchmarks.">
+  <meta name="twitter:image"       content="https://uvidnova.netlify.app/assets/logo_512.png">
 
   <link rel="manifest"         href="/manifest.webmanifest">
   <link rel="icon"             href="/icons/icon-192.png" sizes="192x192" type="image/png">
@@ -118,15 +118,16 @@
   <link rel="preload" href="/data/geo/ua_oblasts.geojson" as="fetch" crossorigin>
 
   <!-- Preconnect to CartoDB tile CDN for faster first map load -->
-  <link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin>
-  <link rel="dns-prefetch" href="https://b.basemaps.cartocdn.com">
-  <link rel="dns-prefetch" href="https://c.basemaps.cartocdn.com">
-  <link rel="dns-prefetch" href="https://d.basemaps.cartocdn.com">
+  <link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin>
+  <link rel="dns-prefetch" href="https://basemaps.cartocdn.com">
 
   <!-- Leaflet CSS - served locally for reliability -->
   <link rel="stylesheet" href="/css/vendor/leaflet.css">
 
   <link rel="stylesheet" href="/css/app.css">
+
+  <!-- CARTO Basemaps key — generated at build time by scripts/inject-carto-key.js -->
+  <script src="/js/carto-config.js"></script>
 
   <!-- Critical above-the-fold styles inlined to prevent FOUC before app.css loads -->
   <style>
@@ -217,6 +218,7 @@
         <li data-i18n="landing.feat2">Defensible financing structures - grant, concessional, equity, private</li>
         <li data-i18n="landing.feat3">Re-damage tracking and wartime risk classification</li>
       </ul>
+      <p class="landing-pipeline-stat">USD 63B documented pipeline — 100 verified assets, every figure traceable to RDNA4 and KSE benchmarks.</p>
       <button class="landing-cta" id="enterAtlas" data-i18n="landing.cta">Explore the atlas →</button>
       <p class="landing-audience" data-i18n="landing.audience">
         For DFI investment officers · Infrastructure philanthropies · Policy researchers
@@ -226,7 +228,7 @@
       </p>
       <div class="landing-actions">
         <button class="lang-toggle landing-lang-toggle" id="landingLangToggle" aria-label="Switch language">🇺🇦 Українська</button>
-        <span class="landing-version">v0.6.0</span>
+        <span class="landing-version">v0.6.3</span>
         <button class="landing-force-reload" id="landingForceReload" title="Clear cache and reload latest version">↻ Force update</button>
       </div>
       <div class="landing-legal">
@@ -581,7 +583,7 @@
   <!-- ── Disclaimer banner ─────────────────────────────────────────────────── -->
   <div class="disclaimer-banner" id="disclaimerBanner">
     <p>
-      <span data-i18n="disclaimer.text">Cost and financing-structure figures are estimates derived from published unit-cost benchmarks (RDNA3, KSE Institute) and named comparable Ukrainian precedents.
+      <strong>USD 63B documented pipeline — 100 verified assets.</strong> <span data-i18n="disclaimer.text">Cost and financing-structure figures are estimates derived from published unit-cost benchmarks (RDNA4, KSE Institute) and named comparable Ukrainian precedents.
       They are not guarantees, not procurement quotes, and not a substitute for transaction-level due diligence.</span>
       <button class="dismiss-btn" id="dismissDisclaimer" onclick="uvDismissDisclaimer()" data-i18n="disclaimer.dismiss" aria-label="Dismiss disclaimer">Understood</button>
     </p>

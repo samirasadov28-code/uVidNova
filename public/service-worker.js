@@ -4,7 +4,7 @@
  * Strategy: cache-first for static assets; network-first for data files.
  */
 
-const CACHE_VERSION = 'uvidnova-v62';
+const CACHE_VERSION = 'uvidnova-v63';
 const STATIC_CACHE  = `${CACHE_VERSION}-static`;
 const DATA_CACHE    = `${CACHE_VERSION}-data`;
 
@@ -110,8 +110,8 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // CartoDB Positron tiles: network-first with 5 s timeout, fallback to cache
-  if (url.hostname.endsWith('.basemaps.cartocdn.com')) {
+  // CARTO Basemaps tiles: network-first with 5 s timeout, fallback to cache
+  if (url.hostname === 'basemaps.cartocdn.com') {
     event.respondWith(
       Promise.race([
         fetch(request).then(response => {

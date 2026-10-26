@@ -6,3 +6,5 @@ node_modules/
 *.log
 .DS_Store
 Thumbs.db
+# Generated at build time — contains injected CARTO API key
+public/js/carto-config.js

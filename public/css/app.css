@@ -553,6 +553,9 @@ body.asset-page { display: flex; flex-direction: column; }
   padding: 0 1.5rem;
   width: 100%;
 }
+body.asset-page .asset-main {
+  margin-top: calc(var(--header-h) + 1.5rem);
+}
 .loading-state { padding: 3rem; text-align: center; color: var(--colour-text-muted); }
 .error-state { padding: 3rem; text-align: center; }
 .error-state a { color: var(--colour-navy-light); }
@@ -761,7 +764,7 @@ body.asset-page { display: flex; flex-direction: column; }
 .osm-link { font-size: 0.85rem; }
 
 /* ── About page ──────────────────────────────────────────────────────────────── */
-.about-main { max-width: 800px; margin: 2rem auto; padding: 0 1.5rem; flex: 1; }
+.about-main { max-width: 800px; margin: 2rem auto; padding: 0 1.5rem; flex: 1; margin-top: calc(var(--header-h) + 1.5rem); }
 .about-main h1 { font-size: 1.75rem; color: var(--colour-navy); margin-bottom: 0.5rem; }
 .about-main h2 { font-size: 1.1rem; color: var(--colour-navy); margin: 2rem 0 0.5rem; }
 .about-main p, .about-main li { font-size: 0.9rem; line-height: 1.7; margin-bottom: 0.5rem; }
@@ -1072,6 +1075,13 @@ body.asset-page { display: flex; flex-direction: column; }
 .landing-other-products:hover .lop-cta {
   box-shadow: 0 4px 16px rgba(240,165,0,0.60);
   transform: scale(1.04);
+}
+.landing-pipeline-stat {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--colour-gold-light);
+  margin: 0.75rem 0 1rem;
+  letter-spacing: 0.01em;
 }
 .landing-audience {
   font-size: 0.8rem;
@@ -3689,6 +3699,7 @@ details[open] .agg-summary::before { content: '▼ '; }
   margin: 0 auto;
   padding: 1.5rem 1rem 4rem;
   width: 100%;
+  margin-top: calc(var(--header-h) + 1.5rem);
 }
 
 /* Overview section */
@@ -4022,6 +4033,12 @@ details[open] .agg-summary::before { content: '▼ '; }
   }
   /* Finance wizard overlay — align to bottom on phone */
   .fw-overlay { padding-bottom: env(safe-area-inset-bottom, 0px); }
+}
+
+/* Narrow phones — shrink header action buttons before they clip */
+@media (max-width: 430px) {
+  .header-centre { gap: 6px; }
+  .header-action-btn { font-size: 0.72rem; padding: 0.3rem 0.5rem; }
 }
 
 /* Very small phones (SE, Pixel 4a) */

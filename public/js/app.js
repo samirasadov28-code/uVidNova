@@ -1390,11 +1390,14 @@ async function init() {
     maxBoundsViscosity: 0,
   });
 
-  tileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '© <a href="https://carto.com/">CARTO</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(map);
+  const cartoKey = (typeof window !== 'undefined' && window.CARTO_BASEMAPS_KEY) ? window.CARTO_BASEMAPS_KEY : '';
+  tileLayer = L.tileLayer(
+    'https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}{r}.png?key=' + cartoKey,
+    {
+      attribution: '© <a href="https://carto.com/" target="_blank" rel="noopener">CARTO</a> © <a href="https://openstreetmap.org" target="_blank" rel="noopener">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }
+  ).addTo(map);
 
   try {
     const [assets] = await Promise.all([
