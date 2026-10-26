@@ -398,24 +398,6 @@ function renderPage(a) {
       navigator.serviceWorker.register('/service-worker.js').catch(function() {});
     }
   </script>
-  <!-- Enhance pre-rendered page with full interactive SPA -->
-  <script>
-    // If the user has JS, redirect to the interactive asset view which adds
-    // language toggle, cost formula working, growth sector panel, etc.
-    // The pre-rendered content above is already visible, so this is a soft enhancement.
-    (function() {
-      var id = location.pathname.replace(/\\/assets\\/([^\\/]+).*/, '$1');
-      if (id && id !== location.pathname) {
-        // Swap canonical module script to add dynamic features without full page reload
-        document.addEventListener('DOMContentLoaded', function() {
-          var s = document.createElement('script');
-          s.type = 'module';
-          s.src = '/js/asset-view-enhancer.js?id=' + encodeURIComponent(id);
-          document.body.appendChild(s);
-        });
-      }
-    })();
-  </script>
 </head>
 <body class="asset-page">
 
@@ -451,9 +433,10 @@ function renderPage(a) {
 
 // ── Main ──────────────────────────────────────────────────────────────────────
 
-const files = readdirSync(ASSETS_DIR).filter(f => f.endsWith('.json') && f !== 'index.json');
+const files = readdirSync(ASSETS_DIR).filter(f => f.endsWith('.json') && f !== 'index.json').sort();
 let count = 0;
 let errors = 0;
+const sitemapAssets = [];
 
 for (const file of files) {
   const assetId = file.replace('.json', '');
@@ -467,6 +450,7 @@ for (const file of files) {
 
     const html = renderPage(asset);
     writeFileSync(join(dir, 'index.html'), html, 'utf8');
+    sitemapAssets.push({ slug: assetIdLower, lastmod: asset.last_reviewed || '2026-10-26' });
     count++;
   } catch (err) {
     console.error(`  ERROR: ${assetId}: ${err.message}`);
@@ -476,3 +460,27 @@ for (const file of files) {
 
 console.log(`Pre-render complete: ${count} pages written, ${errors} errors.`);
 console.log(`Output: public/assets/<ASSET_ID>/index.html`);
+
+// ── Sitemap generation ────────────────────────────────────────────────────────
+const today = new Date().toISOString().slice(0, 10);
+const staticPages = [
+  { loc: '/',             lastmod: today,        changefreq: 'weekly',  priority: '1.0' },
+  { loc: '/about.html',   lastmod: today,        changefreq: 'weekly',  priority: '0.8' },
+  { loc: '/trust.html',   lastmod: today,        changefreq: 'weekly',  priority: '0.7' },
+  { loc: '/finance.html', lastmod: today,        changefreq: 'weekly',  priority: '0.7' },
+  { loc: '/privacy',      lastmod: '2026-06-02', changefreq: 'yearly',  priority: '0.3' },
+];
+
+const urlEntries = [
+  ...staticPages.map(p =>
+    `  <url><loc>${SITE_URL}${p.loc}</loc><lastmod>${p.lastmod}</lastmod><changefreq>${p.changefreq}</changefreq><priority>${p.priority}</priority></url>`
+  ),
+  ...sitemapAssets.map(a =>
+    `  <url><loc>${SITE_URL}/assets/${a.slug}/</loc><lastmod>${a.lastmod}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>`
+  ),
+].join('\n');
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlEntries}\n</urlset>\n`;
+const sitemapPath = join(ROOT, 'public', 'sitemap.xml');
+writeFileSync(sitemapPath, sitemapXml, 'utf8');
+console.log(`Sitemap written: ${sitemapPath} (${staticPages.length} static + ${sitemapAssets.length} asset pages)`);
