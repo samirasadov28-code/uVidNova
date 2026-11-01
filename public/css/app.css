@@ -4681,3 +4681,13 @@ details[open] .agg-summary::before { content: '▼ '; }
   .fw-rh-row { grid-template-columns: 1fr; }
   .tp-metrics { grid-template-columns: 1fr; }
 }
+
+/* ── Mobile: asset detail page overflow fix ─────────────────────────────────
+   Long unbreakable tokens (asset IDs, dotted type slugs) in .field-table and
+   pill/code elements caused documentElement.scrollWidth > clientWidth at 320px.
+   table-layout:fixed + overflow-wrap:anywhere constrain them to column width. */
+.field-table { table-layout: fixed; }
+.field-table th, .field-table td { overflow-wrap: anywhere; word-break: break-word; }
+.asset-main code, .asset-section code, .pill, .chip, .tag, [class*=pill], [class*=tag] { overflow-wrap: anywhere; word-break: break-word; }
+.asset-main { min-width: 0; }
+.asset-section { min-width: 0; overflow-x: auto; }
